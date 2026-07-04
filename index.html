@@ -4,16 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iGEM Renata</title>
+  <meta
+    name="description"
+    content="iGEM Renata team website starter with animated scrolling and a polished rebirth-inspired design."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
       --orange: #ff6b1a;
-      --light-orange: #ffb36b;
+      --orange-light: #ffb36b;
       --navy: #0a2f73;
-      --light-blue: #eaf6ff;
+      --navy-dark: #06214f;
+      --light-blue: #edf6ff;
+      --light-blue-2: #dfefff;
       --white: #ffffff;
-      --text: #10213f;
-      --muted: #4b5d7d;
+      --text: #13294b;
+      --muted: #526684;
+      --border: rgba(10, 47, 115, 0.1);
+      --shadow-lg: 0 24px 60px rgba(10, 47, 115, 0.12);
+      --shadow-md: 0 14px 32px rgba(10, 47, 115, 0.1);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --transition: 300ms ease;
+      --container: 1180px;
     }
 
     * {
@@ -27,138 +48,296 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--light-blue);
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255, 107, 26, 0.12), transparent 22%),
+        radial-gradient(circle at 85% 25%, rgba(10, 47, 115, 0.08), transparent 18%),
+        linear-gradient(180deg, var(--light-blue) 0%, #f7fbff 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
-      width: min(1100px, 92%);
+      width: min(var(--container), calc(100% - 2rem));
       margin: 0 auto;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      z-index: 2000;
+      box-shadow: 0 0 18px rgba(255, 107, 26, 0.45);
+    }
+
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(14px);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.55;
+    }
+
+    .bg-orb-1 {
+      width: 260px;
+      height: 260px;
+      top: 8%;
+      left: -70px;
+      background: rgba(255, 107, 26, 0.18);
+      animation: floatOrb1 10s ease-in-out infinite;
+    }
+
+    .bg-orb-2 {
+      width: 220px;
+      height: 220px;
+      top: 55%;
+      right: -50px;
+      background: rgba(10, 47, 115, 0.12);
+      animation: floatOrb2 12s ease-in-out infinite;
+    }
+
+    .bg-orb-3 {
+      width: 180px;
+      height: 180px;
+      bottom: 10%;
+      left: 42%;
+      background: rgba(255, 179, 107, 0.22);
+      animation: floatOrb3 9s ease-in-out infinite;
+    }
+
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(18px) translateX(10px); }
+    }
+
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-22px) translateX(-12px); }
+    }
+
+    @keyframes floatOrb3 {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(16px); }
     }
 
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(234, 246, 255, 0.95);
-      border-bottom: 1px solid rgba(10, 47, 115, 0.12);
-      z-index: 100;
+      z-index: 1000;
+      background: rgba(237, 246, 255, 0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(10, 47, 115, 0.08);
+      transition: box-shadow var(--transition), background var(--transition), padding var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(237, 246, 255, 0.9);
+      box-shadow: 0 10px 30px rgba(10, 47, 115, 0.08);
     }
 
     .nav-inner {
+      min-height: 84px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.9rem;
+      font-size: 1.75rem;
+      font-weight: 800;
       color: var(--navy);
-      font-weight: 700;
-      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(10, 47, 115, 0.08);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 20px rgba(10, 47, 115, 0.08);
+      flex-shrink: 0;
     }
 
     .brand-logo {
-      width: 52px;
-      height: 52px;
+      width: 42px;
+      height: 42px;
       object-fit: contain;
-      display: block;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
     .nav-links a {
+      font-weight: 700;
       color: var(--navy);
-      font-weight: 600;
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: var(--orange);
+      transition: width var(--transition);
     }
 
     .nav-links a:hover {
       color: var(--orange);
     }
 
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
     .hero {
-      min-height: 88vh;
+      min-height: calc(100vh - 84px);
       display: flex;
       align-items: center;
-      padding: 70px 0;
+      position: relative;
+      padding: 4rem 0 5rem;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      gap: 4rem;
       align-items: center;
     }
 
     .eyebrow {
       color: var(--orange);
       text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      font-size: 0.92rem;
+      margin-bottom: 1.2rem;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.05;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.98;
       color: var(--navy);
-      margin-bottom: 20px;
+      margin-bottom: 1.35rem;
+      letter-spacing: -0.05em;
     }
 
     .accent {
       color: var(--orange);
+      display: inline-block;
     }
 
     .hero p {
-      font-size: 1.05rem;
+      max-width: 640px;
+      font-size: 1.12rem;
       color: var(--muted);
-      max-width: 650px;
-      margin-bottom: 28px;
+      margin-bottom: 2rem;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.4rem;
       border-radius: 999px;
-      font-weight: 700;
-      display: inline-block;
+      font-weight: 800;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
     }
 
     .btn-primary {
-      background: var(--orange);
+      background: linear-gradient(135deg, var(--orange), #ff8e41);
       color: var(--white);
+      box-shadow: 0 16px 32px rgba(255, 107, 26, 0.28);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 20px 38px rgba(255, 107, 26, 0.38);
     }
 
     .btn-secondary {
-      background: rgba(10, 47, 115, 0.08);
+      background: rgba(10, 47, 115, 0.06);
       color: var(--navy);
-      border: 1px solid rgba(10, 47, 115, 0.12);
+      border: 1px solid rgba(10, 47, 115, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(10, 47, 115, 0.1);
     }
 
     .hero-card {
-      background: var(--white);
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(10, 47, 115, 0.08);
+      border-radius: 32px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      animation: floatCard 5.5s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 107, 26, 0.18),
+        rgba(10, 47, 115, 0.06),
+        rgba(255, 179, 107, 0.18)
+      );
+      z-index: 0;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
       border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 18px 40px rgba(10, 47, 115, 0.12);
+      background: rgba(255, 255, 255, 0.92);
+      padding: 1.25rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -166,81 +345,217 @@
 
     .hero-logo {
       width: 100%;
-      max-width: 340px;
+      max-width: 360px;
       height: auto;
       object-fit: contain;
-      display: block;
+      transform: translateZ(20px);
+      transition: transform 0.2s ease;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
     }
 
     .section {
-      padding: 80px 0;
+      padding: 6rem 0;
+      position: relative;
     }
 
-    .section h2 {
-      font-size: 2.2rem;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .section p {
-      color: var(--muted);
+    .section-heading {
       max-width: 760px;
-      margin-bottom: 28px;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      color: var(--navy-dark);
+      letter-spacing: -0.04em;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.04rem;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 1.35rem;
     }
 
     .card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 14px 28px rgba(10, 47, 115, 0.08);
-      border: 1px solid rgba(10, 47, 115, 0.08);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 42px rgba(10, 47, 115, 0.14);
+      border-color: rgba(255, 107, 26, 0.18);
     }
 
     .card h3 {
       color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 0.7rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .highlight-section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,179,107,0.12) 100%);
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 2rem;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--navy-dark);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 700px;
     }
 
     .footer {
-      background: var(--navy);
-      color: white;
-      padding: 28px 0;
-      margin-top: 40px;
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.92);
+      padding: 2.2rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .footer p {
-      color: white;
+      color: rgba(255,255,255,0.84);
     }
 
-    @media (max-width: 900px) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.24s; }
+
+    @media (max-width: 980px) {
       .hero-grid,
-      .cards {
+      .cards,
+      .contact-box {
         grid-template-columns: 1fr;
       }
 
+      .hero-grid {
+        gap: 2.5rem;
+      }
+
+      .contact-box {
+        display: grid;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 3rem;
+      }
+    }
+
+    @media (max-width: 760px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem 0;
       }
 
       .nav-links {
-        gap: 16px;
+        gap: 1rem 1.4rem;
+      }
+
+      .brand {
+        font-size: 1.45rem;
+      }
+
+      .hero-card {
+        padding: 1.3rem;
+      }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--container), calc(100% - 1.2rem));
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .brand-logo-wrap {
+        width: 50px;
+        height: 50px;
+      }
+
+      .brand-logo {
+        width: 36px;
+        height: 36px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <header class="navbar">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#home" class="brand">
-        <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
+        <div class="brand-logo-wrap">
+          <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
+        </div>
         <span>iGEM Renata</span>
       </a>
 
@@ -253,85 +568,219 @@
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Synthetic Biology • Innovation • Impact</div>
-        <h1>
-          Building the future of
-          <span class="accent">iGEM Renata</span>
-        </h1>
-        <p>
-          Renata, meaning reborn, represents renewal, innovation, and bold scientific
-          thinking. This is a clean starter site you can build into your full iGEM project website.
-        </p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Synthetic Biology • Innovation • Impact</div>
+          <h1>
+            Building the future of
+            <span class="accent">iGEM Renata</span>
+          </h1>
+          <p>
+            Renata, meaning reborn, represents renewal, innovation, and bold
+            scientific thinking. This is a polished starter site you can build
+            into your full iGEM project website.
+          </p>
 
-        <div class="buttons">
-          <a href="#project" class="btn btn-primary">Explore Project</a>
-          <a href="#team" class="btn btn-secondary">Meet the Team</a>
+          <div class="buttons">
+            <a href="#project" class="btn btn-primary">Explore Project</a>
+            <a href="#team" class="btn btn-secondary">Meet the Team</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal delay-1" id="heroCard">
+          <div class="hero-card-inner">
+            <img src="assets/logo.png" alt="iGEM Renata logo" class="hero-logo" id="heroLogo" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-card">
-        <img src="assets/logo.png" alt="iGEM Renata large logo" class="hero-logo" />
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">About</div>
+          <h2>Who we are</h2>
+          <p>
+            Renata means reborn. Our team is built around the idea of renewal
+            through science, using synthetic biology to create meaningful and
+            lasting impact.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Our Mission</h3>
+            <p>
+              Replace this with your team mission and what makes your approach unique.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <h3>Our Vision</h3>
+            <p>
+              Add your long-term goal, impact area, and why your project matters.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <h3>Our Values</h3>
+            <p>
+              Explain your core values: responsibility, collaboration, creativity, and innovation.
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="about">
-    <div class="container">
-      <h2>Who we are</h2>
-      <p>
-        Renata means reborn. Our team is built around the idea of renewal through science,
-        using synthetic biology to create meaningful and lasting impact.
-      </p>
+    <section class="section highlight-section" id="project">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Project</div>
+          <h2>What we are building</h2>
+          <p>
+            This section can later become your project overview with wet lab,
+            dry lab, human practices, implementation, and results.
+          </p>
+        </div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Our Mission</h3>
-          <p>Replace this with your team mission and what makes your approach unique.</p>
-        </div>
-        <div class="card">
-          <h3>Our Vision</h3>
-          <p>Add your long-term goal, impact area, and why your project matters.</p>
-        </div>
-        <div class="card">
-          <h3>Our Values</h3>
-          <p>Explain your core values: responsibility, collaboration, creativity, and innovation.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Problem</h3>
+            <p>
+              Define the real-world issue your project addresses and why it matters.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <h3>Approach</h3>
+            <p>
+              Summarize your biological design, engineering strategy, or modeling plan.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <h3>Impact</h3>
+            <p>
+              Describe who benefits, how your project helps, and what success looks like.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="project">
-    <div class="container">
-      <h2>What we are building</h2>
-      <p>
-        This section can later become your project overview with wet lab, dry lab,
-        human practices, implementation, and results.
-      </p>
-    </div>
-  </section>
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Team</div>
+          <h2>The people behind Renata</h2>
+          <p>
+            Add your team members, roles, advisors, and collaborators here.
+          </p>
+        </div>
 
-  <section class="section" id="team">
-    <div class="container">
-      <h2>The people behind Renata</h2>
-      <p>Add your team members, roles, advisors, and collaborators here.</p>
-    </div>
-  </section>
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Member Name</h3>
+            <p>Team role and short contribution summary.</p>
+          </article>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Replace this with your team email, school, or sponsor information.</p>
-    </div>
-  </section>
+          <article class="card reveal delay-1">
+            <h3>Member Name</h3>
+            <p>Team role and short contribution summary.</p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <h3>Member Name</h3>
+            <p>Team role and short contribution summary.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h2>Let’s build this further</h2>
+            <p>
+              Replace this with your team email, school, sponsors, socials,
+              or advisor contact information.
+            </p>
+          </div>
+
+          <a href="mailto:yourteamemail@example.com" class="btn btn-primary">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-inner">
       <p>© 2026 iGEM Renata. All rights reserved.</p>
+      <p>Built as a starter base for future development.</p>
     </div>
   </footer>
 
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+    const scrollProgress = document.getElementById("scrollProgress");
+    const navbar = document.getElementById("navbar");
+    const heroCard = document.getElementById("heroCard");
+    const heroLogo = document.getElementById("heroLogo");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    function updateScrollEffects() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+      scrollProgress.style.width = progress + "%";
+
+      if (scrollTop > 18) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", updateScrollEffects);
+    window.addEventListener("load", updateScrollEffects);
+
+    if (heroCard && heroLogo && window.innerWidth > 900) {
+      heroCard.addEventListener("mousemove", (e) => {
+        const rect = heroCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+
+        heroCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        heroLogo.style.transform = `translateZ(20px) scale(1.03)`;
+      });
+
+      heroCard.addEventListener("mouseleave", () => {
+        heroCard.style.transform = "";
+        heroLogo.style.transform = "";
+      });
+    }
+  </script>
 </body>
 </html>
