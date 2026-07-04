@@ -6,7 +6,7 @@
   <title>iGEM Renata</title>
   <meta
     name="description"
-    content="iGEM Renata team website starter with animated scrolling and a polished rebirth-inspired design."
+    content="iGEM Renata team website starter with interactive animation and a polished rebirth-inspired design."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,6 +90,7 @@
       pointer-events: none;
       z-index: -1;
       opacity: 0.55;
+      will-change: transform;
     }
 
     .bg-orb-1 {
@@ -141,7 +142,7 @@
       background: rgba(237, 246, 255, 0.75);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(10, 47, 115, 0.08);
-      transition: box-shadow var(--transition), background var(--transition), padding var(--transition);
+      transition: box-shadow var(--transition), background var(--transition);
     }
 
     .navbar.scrolled {
@@ -196,7 +197,7 @@
       font-weight: 700;
       color: var(--navy);
       position: relative;
-      transition: color var(--transition);
+      transition: color var(--transition), transform var(--transition);
     }
 
     .nav-links a::after {
@@ -214,8 +215,13 @@
       color: var(--orange);
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--orange);
     }
 
     .hero {
@@ -224,6 +230,27 @@
       align-items: center;
       position: relative;
       padding: 4rem 0 5rem;
+      overflow: hidden;
+    }
+
+    .hero-spotlight {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          500px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+          rgba(255, 107, 26, 0.14),
+          transparent 40%
+        );
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-grid {
@@ -275,7 +302,13 @@
       padding: 0.95rem 1.4rem;
       border-radius: 999px;
       font-weight: 800;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+      will-change: transform;
     }
 
     .btn:hover {
@@ -302,6 +335,11 @@
       background: rgba(10, 47, 115, 0.1);
     }
 
+    .magnetic {
+      position: relative;
+      will-change: transform;
+    }
+
     .hero-card {
       position: relative;
       background: rgba(255, 255, 255, 0.8);
@@ -315,6 +353,7 @@
       overflow: hidden;
       animation: floatCard 5.5s ease-in-out infinite;
       transform-style: preserve-3d;
+      will-change: transform;
     }
 
     .hero-card::before {
@@ -392,7 +431,35 @@
       box-shadow: var(--shadow-md);
       border-radius: var(--radius-lg);
       padding: 1.6rem;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+      transform-style: preserve-3d;
+      will-change: transform;
+      position: relative;
+    }
+
+    .card::after,
+    .contact-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18),
+        transparent 40%,
+        rgba(255, 107, 26, 0.08)
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::after,
+    .contact-box:hover::after {
+      opacity: 1;
     }
 
     .card:hover {
@@ -425,6 +492,9 @@
       background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
       border: 1px solid var(--border);
       box-shadow: var(--shadow-lg);
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
     .contact-box h2 {
@@ -474,8 +544,7 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .cards,
-      .contact-box {
+      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -570,6 +639,8 @@
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-spotlight" id="heroSpotlight"></div>
+
       <div class="container hero-grid">
         <div class="reveal">
           <div class="eyebrow">Synthetic Biology • Innovation • Impact</div>
@@ -584,8 +655,8 @@
           </p>
 
           <div class="buttons">
-            <a href="#project" class="btn btn-primary">Explore Project</a>
-            <a href="#team" class="btn btn-secondary">Meet the Team</a>
+            <a href="#project" class="btn btn-primary magnetic" data-magnetic>Explore Project</a>
+            <a href="#team" class="btn btn-secondary magnetic" data-magnetic>Meet the Team</a>
           </div>
         </div>
 
@@ -610,21 +681,21 @@
         </div>
 
         <div class="cards">
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <h3>Our Mission</h3>
             <p>
               Replace this with your team mission and what makes your approach unique.
             </p>
           </article>
 
-          <article class="card reveal delay-1">
+          <article class="card reveal delay-1 tilt-card">
             <h3>Our Vision</h3>
             <p>
               Add your long-term goal, impact area, and why your project matters.
             </p>
           </article>
 
-          <article class="card reveal delay-2">
+          <article class="card reveal delay-2 tilt-card">
             <h3>Our Values</h3>
             <p>
               Explain your core values: responsibility, collaboration, creativity, and innovation.
@@ -646,21 +717,21 @@
         </div>
 
         <div class="cards">
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <h3>Problem</h3>
             <p>
               Define the real-world issue your project addresses and why it matters.
             </p>
           </article>
 
-          <article class="card reveal delay-1">
+          <article class="card reveal delay-1 tilt-card">
             <h3>Approach</h3>
             <p>
               Summarize your biological design, engineering strategy, or modeling plan.
             </p>
           </article>
 
-          <article class="card reveal delay-2">
+          <article class="card reveal delay-2 tilt-card">
             <h3>Impact</h3>
             <p>
               Describe who benefits, how your project helps, and what success looks like.
@@ -681,17 +752,17 @@
         </div>
 
         <div class="cards">
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <h3>Member Name</h3>
             <p>Team role and short contribution summary.</p>
           </article>
 
-          <article class="card reveal delay-1">
+          <article class="card reveal delay-1 tilt-card">
             <h3>Member Name</h3>
             <p>Team role and short contribution summary.</p>
           </article>
 
-          <article class="card reveal delay-2">
+          <article class="card reveal delay-2 tilt-card">
             <h3>Member Name</h3>
             <p>Team role and short contribution summary.</p>
           </article>
@@ -701,7 +772,7 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="contact-box reveal">
+        <div class="contact-box reveal tilt-card">
           <div>
             <div class="eyebrow">Contact</div>
             <h2>Let’s build this further</h2>
@@ -711,7 +782,7 @@
             </p>
           </div>
 
-          <a href="mailto:yourteamemail@example.com" class="btn btn-primary">
+          <a href="mailto:yourteamemail@example.com" class="btn btn-primary magnetic" data-magnetic>
             Contact Us
           </a>
         </div>
@@ -732,6 +803,15 @@
     const navbar = document.getElementById("navbar");
     const heroCard = document.getElementById("heroCard");
     const heroLogo = document.getElementById("heroLogo");
+    const heroSection = document.getElementById("home");
+    const heroSpotlight = document.getElementById("heroSpotlight");
+    const magneticElements = document.querySelectorAll("[data-magnetic]");
+    const tiltCards = document.querySelectorAll(".tilt-card");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const sections = document.querySelectorAll("main section[id]");
+    const orb1 = document.querySelector(".bg-orb-1");
+    const orb2 = document.querySelector(".bg-orb-2");
+    const orb3 = document.querySelector(".bg-orb-3");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -758,10 +838,80 @@
       } else {
         navbar.classList.remove("scrolled");
       }
+
+      if (orb1) orb1.style.transform = `translateY(${scrollTop * 0.10}px)`;
+      if (orb2) orb2.style.transform = `translateY(${scrollTop * -0.08}px)`;
+      if (orb3) orb3.style.transform = `translateY(${scrollTop * 0.06}px)`;
+
+      let currentSection = "";
+      sections.forEach((section) => {
+        const top = section.offsetTop - 140;
+        const height = section.offsetHeight;
+        if (scrollTop >= top && scrollTop < top + height) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href === `#${currentSection}`) {
+          link.classList.add("active");
+        }
+      });
     }
 
     window.addEventListener("scroll", updateScrollEffects);
     window.addEventListener("load", updateScrollEffects);
+
+    if (heroSection && heroSpotlight) {
+      heroSection.addEventListener("mousemove", (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        heroSpotlight.style.setProperty("--spotlight-x", `${x}%`);
+        heroSpotlight.style.setProperty("--spotlight-y", `${y}%`);
+      });
+
+      heroSection.addEventListener("mouseleave", () => {
+        heroSpotlight.style.setProperty("--spotlight-x", "50%");
+        heroSpotlight.style.setProperty("--spotlight-y", "50%");
+      });
+    }
+
+    magneticElements.forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        el.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+      });
+
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "translate(0, 0)";
+      });
+    });
+
+    tiltCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        if (window.innerWidth <= 768) return;
+
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
 
     if (heroCard && heroLogo && window.innerWidth > 900) {
       heroCard.addEventListener("mousemove", (e) => {
@@ -769,11 +919,12 @@
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        const rotateX = ((y / rect.height) - 0.5) * -8;
-        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
 
-        heroCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-        heroLogo.style.transform = `translateZ(20px) scale(1.03)`;
+        heroCard.style.transform =
+          `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        heroLogo.style.transform = "translateZ(24px) scale(1.04)";
       });
 
       heroCard.addEventListener("mouseleave", () => {
