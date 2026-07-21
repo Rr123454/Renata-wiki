@@ -191,8 +191,7 @@ window.SITE_DATA = {
             { text: "Human Practices", href: "human-practices.html" },
             { text: "Education", href: "education.html" },
             { text: "Partnerships", href: "partnerships.html" },
-            { text: "Judging Overview", href: "judging.html" },
-            { text: "DBTL 2 Working Document", href: "assets/documents/golden-gate-dbtl-2.pdf", newTab: true }
+            { text: "Judging Overview", href: "judging.html" }
           ]
         }
       ]
@@ -579,7 +578,7 @@ window.SITE_DATA.pages.engineering.details = [
       { label: "Test", text: "Measure sfGFP across promoter/operator and transcription-factor conditions, then vary bile-acid concentration within growth-tolerant ranges." },
       { label: "Learn", text: "Use expression and growth data to select regulatory logic before committing it to the full BtSULT/PAPS circuit." }
     ],
-    note: "The PDF records this as an experimental plan; characterization data have not yet been reported."
+    note: "This cycle records an experimental plan; characterization data have not yet been reported."
   },
   {
     eyebrow: "DBTL 2 evidence map",
@@ -591,8 +590,7 @@ window.SITE_DATA.pages.engineering.details = [
       "A documented set of part-selection and compatibility checks",
       "Explicit unresolved decisions to carry into the next design review"
     ],
-    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation.",
-    source: { label: "View the original DBTL 2 working document", href: "assets/documents/golden-gate-dbtl-2.pdf" }
+    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation."
   }
 ];
 
