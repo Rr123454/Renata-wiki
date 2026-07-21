@@ -36,23 +36,33 @@ window.SITE_DATA = {
       ]
     },
     {
-      key: "wet-lab",
-      label: "Wet Lab",
+      key: "lab-work",
+      label: "Lab Work",
       href: "wet-lab.html",
+      menuOnly: true,
       children: [
-        { key: "experiments", label: "Experiments", href: "experiments.html" },
-        { key: "protocols", label: "Protocols", href: "protocols.html" },
-        { key: "notebook", label: "Notebook", href: "notebook.html" }
-      ]
-    },
-    {
-      key: "dry-lab",
-      label: "Dry Lab",
-      href: "dry-lab.html",
-      children: [
-        { key: "model", label: "Model", href: "model.html" },
-        { key: "software", label: "Software", href: "software.html" },
-        { key: "pcs", label: "PCS", href: "pcs.html" }
+        {
+          key: "wet-lab",
+          label: "Wet Lab",
+          href: "wet-lab.html",
+          description: "Build, assays, and validation",
+          children: [
+            { key: "experiments", label: "Experiments", href: "experiments.html" },
+            { key: "protocols", label: "Protocols", href: "protocols.html" },
+            { key: "notebook", label: "Notebook", href: "notebook.html" }
+          ]
+        },
+        {
+          key: "dry-lab",
+          label: "Dry Lab",
+          href: "dry-lab.html",
+          description: "Models, software, and workflow",
+          children: [
+            { key: "model", label: "Model", href: "model.html" },
+            { key: "software", label: "Software", href: "software.html" },
+            { key: "pcs", label: "PCS", href: "pcs.html" }
+          ]
+        }
       ]
     },
     {
@@ -73,8 +83,8 @@ window.SITE_DATA = {
     home: makePage({
       group: "home",
       kicker: "Synthetic Biology • Rebirth • Impact",
-      title: "Build a <span class='accent-gradient'>better wiki</span>",
-      lead: "A bold homepage for Renata. Keep the story simple, visual, and easy to judge.",
+      title: "Meet <span class='accent-gradient'>Renata</span>",
+      lead: "Explore the people, science, and impact behind our synthetic biology project.",
       buttons: [
         { text: "Project", href: "project.html", style: "primary" },
         { text: "PCS", href: "pcs.html", style: "secondary" }
@@ -84,16 +94,20 @@ window.SITE_DATA = {
         { value: "PCS", label: "workflow" },
         { value: "Judging", label: "focus" }
       ],
-      cardsTitle: "Start here",
-      cardsLead: "Use the homepage to route people into the right pages.",
+      cardsTitle: "Explore our work",
+      cardsLead: "Every part of Renata is connected. Choose a section to follow the story from idea to impact.",
       cards: [
-        { tag: "Project", title: "Project story", text: "Add the problem, the system, and why it matters." },
-        { tag: "PCS", title: "Workflow page", text: "Show the project pipeline clearly and visually." },
-        { tag: "Judging", title: "Judge map", text: "Point judges to the strongest evidence pages." }
+        { tag: "People", title: "Team", href: "team.html", imageLabel: "Team photo", text: "Meet the students, advisors, and collaborators bringing Renata to life." },
+        { tag: "Idea", title: "Project", href: "project.html", imageLabel: "Project overview", text: "Discover the problem we chose, the system we designed, and the change we hope to create." },
+        { tag: "Build", title: "Wet Lab", href: "wet-lab.html", imageLabel: "Wet lab research", text: "Follow our experiments, protocols, and biological validation from bench to result." },
+        { tag: "Compute", title: "Dry Lab", href: "dry-lab.html", imageLabel: "Dry lab modeling", text: "Explore the models, software, and computational workflow supporting our design." },
+        { tag: "Impact", title: "Engagement", href: "engagement.html", imageLabel: "Community engagement", text: "See how human practices, education, and partnerships shaped the project." },
+        { tag: "Evidence", title: "Judging", href: "judging.html", imageLabel: "Judging highlights", text: "Find a clear map of our strongest evidence, achievements, and award criteria." },
+        { tag: "Connect", title: "Contact", href: "contact.html", imageLabel: "Contact the team", text: "Reach the Renata team, learn about our institution, or start a conversation." }
       ],
-      ctaTitle: "Keep the homepage simple",
-      ctaText: "The homepage should be a launch point, not a wall of text.",
-      ctaButton: { text: "Open Judging", href: "judging.html", style: "primary" }
+      ctaTitle: "Ready to dive deeper?",
+      ctaText: "Start with the project story, then follow the evidence through our lab work and community engagement.",
+      ctaButton: { text: "Explore the project", href: "project.html", style: "primary" }
     }),
 
     team: makePage({
@@ -421,3 +435,110 @@ window.SITE_DATA = {
     })
   }
 };
+
+// DBTL 2 working record, organized by the pages where each decision is most useful.
+window.SITE_DATA.pages["project-description"].details = [
+  {
+    eyebrow: "Biological rationale",
+    title: "A two-cassette route to LCA sulfation",
+    text: "Renata's proposed construct pairs the BtSULT sulfotransferase with a dedicated PAPS-supply module. BtSULT is intended to convert lithocholic acid (LCA) to sulfated LCA, while KIATPSL and PcAPSK support production of PAPS, the required sulfate donor.",
+    items: [
+      "Cassette 1: Anderson promoter - RBS - BtSULT CDS - double terminator",
+      "Cassette 2: Anderson promoter - RBS - KIATPSL + PcAPSK CDS - double terminator",
+      "Both transcriptional units are intended for a compatible JUMP destination backbone"
+    ],
+    note: "Design status: proposed architecture. Final part IDs, promoter strengths, junctions, and host optimization still require confirmation."
+  }
+];
+
+window.SITE_DATA.pages.engineering.details = [
+  {
+    eyebrow: "DBTL cycle 2",
+    title: "Design, build, test, learn",
+    text: "This cycle moves from a modular pathway concept to a characterization plan that can distinguish constitutive expression from operator- and transcription-factor-dependent behavior.",
+    steps: [
+      { label: "Design", text: "Define two pathway cassettes and a four-condition sfGFP reporter matrix." },
+      { label: "Build", text: "Assemble Level 0 parts into Level 1 transcriptional units with Type IIS cloning and JUMP-compatible vectors." },
+      { label: "Test", text: "Measure sfGFP across promoter/operator and transcription-factor conditions, then vary bile-acid concentration within growth-tolerant ranges." },
+      { label: "Learn", text: "Use expression and growth data to select regulatory logic before committing it to the full BtSULT/PAPS circuit." }
+    ],
+    note: "The PDF records this as an experimental plan; characterization data have not yet been reported."
+  }
+];
+
+window.SITE_DATA.pages["wet-lab"].details = [
+  {
+    eyebrow: "Assembly architecture",
+    title: "Hierarchical Golden Gate with JUMP",
+    text: "Type IIS restriction enzymes cut outside their recognition sites, creating designed overhangs that order multiple parts in a single reaction. The working plan uses BsaI for basic-part assembly into transcriptional units, followed by a higher-level assembly route for the multi-cassette construct.",
+    steps: [
+      { label: "Level 0", text: "Promoters, RBSs, coding sequences, operators, and terminators are prepared as standardized basic parts." },
+      { label: "Level 1", text: "Basic parts are assembled into complete promoter-RBS-CDS-terminator transcriptional units." },
+      { label: "Level 2", text: "The BtSULT and PAPS-supply transcriptional units are combined in a compatible destination backbone." }
+    ],
+    note: "Candidate backbone noted in the working document: pJUMP29-1A(sfGFP). Backbone level, antibiotic selection, fusion sites, and capacity must be verified before assembly."
+  }
+];
+
+window.SITE_DATA.pages.experiments.details = [
+  {
+    eyebrow: "Reporter characterization",
+    title: "Four constructs isolate regulatory effects",
+    text: "sfGFP serves as the reporter for comparing basal promoter activity, operator effects, and transcription-factor-dependent regulation.",
+    constructs: [
+      { id: "A", title: "Promoter + sfGFP", text: "Constitutive reference without operator or separate transcription factor." },
+      { id: "B", title: "Operator + promoter + sfGFP", text: "Measures the effect of adding the candidate operator sequence." },
+      { id: "A + C", title: "Promoter + sfGFP, plus TF", text: "Tests whether the transcription factor changes the operator-free reporter." },
+      { id: "B + C", title: "Operator + promoter + sfGFP, plus TF", text: "Tests regulation when both the operator and transcription factor are present." }
+    ],
+    note: "Suggested readouts: normalized sfGFP fluorescence and growth across a bile-acid concentration series, with appropriate positive and negative controls."
+  }
+];
+
+window.SITE_DATA.pages.protocols.details = [
+  {
+    eyebrow: "Planned workflow",
+    title: "From kit parts to an assembly-ready map",
+    steps: [
+      { label: "1", text: "Select the destination backbone and confirm assembly level, antibiotic marker, and recipient role." },
+      { label: "2", text: "Choose one bacterial promoter and RBS per cassette, balancing expression against host burden." },
+      { label: "3", text: "Confirm each CDS identity, orientation, completeness, codon optimization, and internal Type IIS sites." },
+      { label: "4", text: "Add double terminators and verify insulation between the two transcriptional units." },
+      { label: "5", text: "Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
+      { label: "6", text: "Build and validate the hierarchical assembly in Benchling, then export the annotated map for wet-lab review." }
+    ],
+    note: "This is a design checklist, not a bench-ready protocol. Reaction volumes, cycling conditions, controls, transformation, screening, and sequence verification must be added before execution."
+  }
+];
+
+window.SITE_DATA.pages["dry-lab"].details = [
+  {
+    eyebrow: "In-silico design",
+    title: "Benchling assembly and compatibility checks",
+    text: "The dry-lab workflow converts the biological design into an auditable hierarchical build before DNA is ordered or assembled.",
+    items: [
+      "Annotate every Level 0 part and its exact sequence source",
+      "Check internal BsaI/BsmBI/SapI sites and assign compatible fusion overhangs",
+      "Simulate Level 0-to-Level 1 and Level 1-to-Level 2 assemblies",
+      "Confirm reading frames, orientations, junction scars, terminators, and antibiotic markers",
+      "Export final maps, sequences, and an assembly manifest for the wet-lab team"
+    ],
+    note: "Open question from DBTL 2: whether a reduced two-transcription-unit route can save time without sacrificing modularity or reliable expression."
+  }
+];
+
+window.SITE_DATA.pages.judging.details = [
+  {
+    eyebrow: "DBTL 2 evidence map",
+    title: "What this cycle establishes",
+    items: [
+      "A biologically motivated two-cassette BtSULT/PAPS pathway architecture",
+      "A hierarchical Golden Gate/JUMP assembly strategy",
+      "A four-condition reporter experiment for separating operator and transcription-factor effects",
+      "A documented set of part-selection and compatibility checks",
+      "Explicit unresolved decisions to carry into the next design review"
+    ],
+    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation.",
+    source: { label: "View the original DBTL 2 working document", href: "assets/documents/golden-gate-dbtl-2.pdf" }
+  }
+];

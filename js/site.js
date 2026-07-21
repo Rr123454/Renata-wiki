@@ -8,6 +8,7 @@
   document.title = `${stripHtml(pageData.title)} | iGEM Renata`;
 
   renderHeader();
+  initNavigation();
   renderMain();
   renderFooter();
   initEffects();
@@ -46,7 +47,7 @@
   }
 
   function renderNavItem(item) {
-    const isMainActive = pageData.group === item.key || pageKey === item.key;
+    const isMainActive = navItemIsActive(item);
 
     if (!item.children) {
       return `
@@ -58,20 +59,76 @@
 
     return `
       <div class="nav-item">
-        <a href="${item.href}" class="tab-link dropdown-toggle magnetic ${isMainActive ? "active" : ""}" data-magnetic>
-          ${item.label}
-        </a>
+        ${item.menuOnly ? `
+          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
+            ${item.label}
+          </button>
+        ` : `
+          <a href="${item.href}" class="tab-link dropdown-toggle magnetic ${isMainActive ? "active" : ""}" data-magnetic>
+            ${item.label}
+          </a>
+        `}
 
         <div class="dropdown-menu">
-          ${item.children
-            .map(
-              (child) => `
-                <a href="${child.href}" class="${pageKey === child.key ? "sub-active" : ""}">
-                  ${child.label}
-                </a>
-              `
-            )
-            .join("")}
+          ${item.children.map(renderDropdownChild).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function initNavigation() {
+    const menuButtons = [...document.querySelectorAll(".nav-menu-button")];
+
+    function closeMenus(except = null) {
+      menuButtons.forEach((button) => {
+        const item = button.closest(".nav-item");
+        if (item === except) return;
+        item?.classList.remove("dropdown-open");
+        button.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    menuButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const item = button.closest(".nav-item");
+        const willOpen = !item.classList.contains("dropdown-open");
+        closeMenus(item);
+        item.classList.toggle("dropdown-open", willOpen);
+        button.setAttribute("aria-expanded", String(willOpen));
+      });
+    });
+
+    document.addEventListener("click", () => closeMenus());
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenus();
+    });
+  }
+
+  function navItemIsActive(item) {
+    if (pageData.group === item.key || pageKey === item.key) return true;
+    return Boolean(item.children?.some(navItemIsActive));
+  }
+
+  function renderDropdownChild(child) {
+    const isActive = navItemIsActive(child);
+
+    if (!child.children) {
+      return `
+        <a href="${child.href}" class="${isActive ? "sub-active" : ""}">
+          ${child.label}
+        </a>
+      `;
+    }
+
+    return `
+      <div class="submenu-item">
+        <a href="${child.href}" class="submenu-trigger ${isActive ? "sub-active" : ""}">
+          <span><strong>${child.label}</strong>${child.description ? `<small>${child.description}</small>` : ""}</span>
+          <span class="submenu-arrow" aria-hidden="true">›</span>
+        </a>
+        <div class="submenu-menu">
+          ${child.children.map(renderDropdownChild).join("")}
         </div>
       </div>
     `;
@@ -122,8 +179,8 @@
             <p class="section-lead">${pageData.cardsLead}</p>
           </div>
 
-          <div class="card-grid">
-            ${pageData.cards.map(renderCard).join("")}
+          <div class="home-section-grid">
+            ${pageData.cards.map(renderHomeSectionCard).join("")}
           </div>
         </div>
       </section>
@@ -170,6 +227,8 @@
         </div>
       </section>
 
+      ${renderDetailSections(pageData.details)}
+
       <section class="page-section">
         <div class="container">
           <div class="cta-panel reveal tilt-card">
@@ -193,6 +252,49 @@
         <p>${card.text}</p>
       </article>
     `;
+  }
+
+  function renderHomeSectionCard(card, index) {
+    const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
+    return `
+      <a href="${card.href}" class="home-section-card reveal tilt-card ${delayClass}">
+        <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
+          <span class="placeholder-mark" aria-hidden="true">+</span>
+          <span>${card.imageLabel}</span>
+        </div>
+        <div class="section-card-copy">
+          <div class="card-tag">${card.tag}</div>
+          <h3>${card.title}</h3>
+          <p>${card.text}</p>
+          <span class="section-card-link">Explore ${card.title} <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    `;
+  }
+
+  function renderDetailSections(details = []) {
+    if (!details.length) return "";
+
+    return details.map((section) => `
+      <section class="page-section detail-section">
+        <div class="container">
+          <article class="detail-panel reveal">
+            ${section.eyebrow ? `<p class="detail-eyebrow">${section.eyebrow}</p>` : ""}
+            <h2>${section.title}</h2>
+            ${section.text ? `<p class="detail-lead">${section.text}</p>` : ""}
+            ${section.items ? `<ul class="detail-list">${section.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+            ${section.steps ? `<div class="detail-steps">${section.steps.map((step) => `
+              <div class="detail-step"><span>${step.label}</span><p>${step.text}</p></div>
+            `).join("")}</div>` : ""}
+            ${section.constructs ? `<div class="construct-grid">${section.constructs.map((construct) => `
+              <div class="construct-card"><span>${construct.id}</span><h3>${construct.title}</h3><p>${construct.text}</p></div>
+            `).join("")}</div>` : ""}
+            ${section.note ? `<div class="evidence-note"><strong>Working note</strong><p>${section.note}</p></div>` : ""}
+            ${section.source ? `<a class="detail-source-link" href="${section.source.href}" target="_blank" rel="noopener">${section.source.label} <span aria-hidden="true">↗</span></a>` : ""}
+          </article>
+        </div>
+      </section>
+    `).join("");
   }
 
   function renderButtons(buttons = []) {
