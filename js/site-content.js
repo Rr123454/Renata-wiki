@@ -151,7 +151,7 @@ window.SITE_DATA = {
         },
         { tag: "Evidence", title: "Judging", href: "judging.html", imageLabel: "Judging highlights", text: "Find a clear map of our strongest evidence, achievements, and award criteria." }
       ],
-      ctaTitle: "Contact & important links",
+      ctaTitle: "CONTACTS & IMPORTANT LINKS",
       ctaText: "Connect with the Renata team or jump directly to the pages that visitors and judges may need most.",
       linkColumns: [
         {
@@ -170,15 +170,15 @@ window.SITE_DATA = {
           title: "Project & Lab Work",
           split: true,
           links: [
-            { text: "Project Overview", href: "#project" },
+            { text: "Project Overview", href: "index.html#project" },
             { text: "Project Description", href: "project-description.html" },
             { text: "Engineering", href: "engineering.html" },
             { text: "Results", href: "results.html" },
-            { text: "Wet Lab Overview", href: "#wet-lab" },
+            { text: "Wet Lab Overview", href: "index.html#wet-lab" },
             { text: "Experiments", href: "experiments.html" },
             { text: "Protocols", href: "protocols.html" },
             { text: "Notebook", href: "notebook.html" },
-            { text: "Dry Lab Overview", href: "#dry-lab" },
+            { text: "Dry Lab Overview", href: "index.html#dry-lab" },
             { text: "Model", href: "model.html" },
             { text: "Software", href: "software.html" },
             { text: "PCS", href: "pcs.html" }
@@ -187,7 +187,7 @@ window.SITE_DATA = {
         {
           title: "Engagement & Resources",
           links: [
-            { text: "Engagement Overview", href: "#engagement" },
+            { text: "Engagement Overview", href: "index.html#engagement" },
             { text: "Human Practices", href: "human-practices.html" },
             { text: "Education", href: "education.html" },
             { text: "Partnerships", href: "partnerships.html" },

@@ -280,29 +280,6 @@ function initNavigation() {
         </div>
       </section>
 
-      <section class="page-section link-directory-section" id="important-links">
-        <div class="container">
-          <div class="link-directory-intro reveal">
-            <h2>${pageData.ctaTitle}</h2>
-            <p>${pageData.ctaText}</p>
-          </div>
-          <div class="link-directory reveal delay-1">
-            ${pageData.linkColumns.map((column) => {
-              const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
-              return `
-                <section class="link-directory-column ${column.split ? "link-directory-column-split" : ""}" aria-labelledby="${headingId}">
-                  <h3 id="${headingId}">${column.title}</h3>
-                  <ul>
-                    ${column.links.map((link) => `
-                      <li><a href="${link.href}"${link.newTab ? ' target="_blank" rel="noopener"' : ""}>${link.text}${link.newTab ? ' <span aria-hidden="true">↗</span>' : ""}</a></li>
-                    `).join("")}
-                  </ul>
-                </section>
-              `;
-            }).join("")}
-          </div>
-        </div>
-      </section>
     `;
   }
 
@@ -485,8 +462,32 @@ function initNavigation() {
   function renderFooter() {
     const footer = document.getElementById("siteFooter");
     if (!footer) return;
+    const directoryData = data.pages.home;
 
     footer.innerHTML = `
+      <section class="link-directory-section" id="important-links">
+        <div class="container">
+          <div class="link-directory-intro reveal">
+            <h2>${directoryData.ctaTitle}</h2>
+            <p>${directoryData.ctaText}</p>
+          </div>
+          <div class="link-directory reveal delay-1">
+            ${directoryData.linkColumns.map((column) => {
+              const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
+              return `
+                <section class="link-directory-column ${column.split ? "link-directory-column-split" : ""}" aria-labelledby="${headingId}">
+                  <h3 id="${headingId}">${column.title}</h3>
+                  <ul>
+                    ${column.links.map((link) => `
+                      <li><a href="${link.href}"${link.newTab ? ' target="_blank" rel="noopener"' : ""}>${link.text}${link.newTab ? ' <span aria-hidden="true">↗</span>' : ""}</a></li>
+                    `).join("")}
+                  </ul>
+                </section>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      </section>
       <div class="container footer-inner">
         <p>© 2026 iGEM Renata. All rights reserved.</p>
         <p>Multi-page wiki • dropdown nav • simplified content</p>
