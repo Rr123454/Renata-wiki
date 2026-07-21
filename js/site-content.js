@@ -24,11 +24,11 @@ window.SITE_DATA = {
 
   nav: [
     { key: "home", label: "Home", href: "index.html" },
-    { key: "team", label: "Team", href: "team.html" },
+    { key: "team", label: "Our Team", href: "team.html" },
     {
       key: "project",
       label: "Project",
-      href: "project.html",
+      href: "index.html#project",
       children: [
         { key: "project-description", label: "Project Description", href: "project-description.html" },
         { key: "engineering", label: "Engineering", href: "engineering.html" },
@@ -38,13 +38,13 @@ window.SITE_DATA = {
     {
       key: "lab-work",
       label: "Lab Work",
-      href: "wet-lab.html",
+      href: "index.html#wet-lab",
       menuOnly: true,
       children: [
         {
           key: "wet-lab",
           label: "Wet Lab",
-          href: "wet-lab.html",
+          href: "index.html#wet-lab",
           description: "Build, assays, and validation",
           children: [
             { key: "experiments", label: "Experiments", href: "experiments.html" },
@@ -55,7 +55,7 @@ window.SITE_DATA = {
         {
           key: "dry-lab",
           label: "Dry Lab",
-          href: "dry-lab.html",
+          href: "index.html#dry-lab",
           description: "Models, software, and workflow",
           children: [
             { key: "model", label: "Model", href: "model.html" },
@@ -68,15 +68,14 @@ window.SITE_DATA = {
     {
       key: "engagement",
       label: "Engagement",
-      href: "engagement.html",
+      href: "index.html#engagement",
       children: [
         { key: "human-practices", label: "Human Practices", href: "human-practices.html" },
         { key: "education", label: "Education", href: "education.html" },
         { key: "partnerships", label: "Partnerships", href: "partnerships.html" }
       ]
     },
-    { key: "judging", label: "Judging", href: "judging.html" },
-    { key: "contact", label: "Contact", href: "contact.html" }
+    { key: "judging", label: "Judging", href: "judging.html" }
   ],
 
   pages: {
@@ -86,7 +85,7 @@ window.SITE_DATA = {
       title: "Meet <span class='accent-gradient'>Renata</span>",
       lead: "Explore the people, science, and impact behind our synthetic biology project.",
       buttons: [
-        { text: "Project", href: "project.html", style: "primary" },
+        { text: "Project", href: "#project", style: "primary" },
         { text: "PCS", href: "pcs.html", style: "secondary" }
       ],
       stats: [
@@ -97,47 +96,149 @@ window.SITE_DATA = {
       cardsTitle: "Explore our work",
       cardsLead: "Every part of Renata is connected. Choose a section to follow the story from idea to impact.",
       cards: [
-        { tag: "People", title: "Team", href: "team.html", imageLabel: "Team photo", text: "Meet the students, advisors, and collaborators bringing Renata to life." },
-        { tag: "Idea", title: "Project", href: "project.html", imageLabel: "Project overview", text: "Discover the problem we chose, the system we designed, and the change we hope to create." },
-        { tag: "Build", title: "Wet Lab", href: "wet-lab.html", imageLabel: "Wet lab research", text: "Follow our experiments, protocols, and biological validation from bench to result." },
-        { tag: "Compute", title: "Dry Lab", href: "dry-lab.html", imageLabel: "Dry lab modeling", text: "Explore the models, software, and computational workflow supporting our design." },
-        { tag: "Impact", title: "Engagement", href: "engagement.html", imageLabel: "Community engagement", text: "See how human practices, education, and partnerships shaped the project." },
-        { tag: "Evidence", title: "Judging", href: "judging.html", imageLabel: "Judging highlights", text: "Find a clear map of our strongest evidence, achievements, and award criteria." },
-        { tag: "Connect", title: "Contact", href: "contact.html", imageLabel: "Contact the team", text: "Reach the Renata team, learn about our institution, or start a conversation." }
+        { tag: "People", title: "Our Team", href: "team.html", imageLabel: "Team photo", text: "Meet the students, advisors, collaborators, and partners bringing Renata to life - and find out how to connect with us." },
+        {
+          tag: "Idea",
+          title: "Project",
+          sectionId: "project",
+          hubPage: "project",
+          imageLabel: "Project overview",
+          text: "Discover the problem we chose, the system we designed, and the change we hope to create.",
+          hubLinks: [
+            { text: "Project Description", href: "project-description.html" },
+            { text: "Engineering", href: "engineering.html" },
+            { text: "Results", href: "results.html" }
+          ]
+        },
+        {
+          tag: "Build",
+          title: "Wet Lab",
+          sectionId: "wet-lab",
+          hubPage: "wet-lab",
+          imageLabel: "Wet lab research",
+          text: "Follow our experiments, protocols, and biological validation from bench to result.",
+          hubLinks: [
+            { text: "Experiments", href: "experiments.html" },
+            { text: "Protocols", href: "protocols.html" },
+            { text: "Notebook", href: "notebook.html" }
+          ]
+        },
+        {
+          tag: "Compute",
+          title: "Dry Lab",
+          sectionId: "dry-lab",
+          hubPage: "dry-lab",
+          imageLabel: "Dry lab modeling",
+          text: "Explore the models, software, and computational workflow supporting our design.",
+          hubLinks: [
+            { text: "Model", href: "model.html" },
+            { text: "Software", href: "software.html" },
+            { text: "PCS", href: "pcs.html" }
+          ]
+        },
+        {
+          tag: "Impact",
+          title: "Engagement",
+          sectionId: "engagement",
+          hubPage: "engagement",
+          imageLabel: "Community engagement",
+          text: "See how human practices, education, and partnerships shaped the project.",
+          hubLinks: [
+            { text: "Human Practices", href: "human-practices.html" },
+            { text: "Education", href: "education.html" },
+            { text: "Partnerships", href: "partnerships.html" }
+          ]
+        },
+        { tag: "Evidence", title: "Judging", href: "judging.html", imageLabel: "Judging highlights", text: "Find a clear map of our strongest evidence, achievements, and award criteria." }
       ],
-      ctaTitle: "Ready to dive deeper?",
-      ctaText: "Start with the project story, then follow the evidence through our lab work and community engagement.",
-      ctaButton: { text: "Explore the project", href: "project.html", style: "primary" }
+      ctaTitle: "Contact & important links",
+      ctaText: "Connect with the Renata team or jump directly to the pages that visitors and judges may need most.",
+      linkColumns: [
+        {
+          title: "Our Team",
+          links: [
+            { text: "Meet Our Team", href: "team.html" },
+            { text: "Supervisors", href: "team.html#supervisors" },
+            { text: "Wet Lab Team", href: "team.html#wet-lab" },
+            { text: "Dry Lab Team", href: "team.html#dry-lab" },
+            { text: "Web Development", href: "team.html#web-dev" },
+            { text: "Business", href: "team.html#business" },
+            { text: "Contact Our Team", href: "team.html#contact" }
+          ]
+        },
+        {
+          title: "Project & Lab Work",
+          split: true,
+          links: [
+            { text: "Project Overview", href: "#project" },
+            { text: "Project Description", href: "project-description.html" },
+            { text: "Engineering", href: "engineering.html" },
+            { text: "Results", href: "results.html" },
+            { text: "Wet Lab Overview", href: "#wet-lab" },
+            { text: "Experiments", href: "experiments.html" },
+            { text: "Protocols", href: "protocols.html" },
+            { text: "Notebook", href: "notebook.html" },
+            { text: "Dry Lab Overview", href: "#dry-lab" },
+            { text: "Model", href: "model.html" },
+            { text: "Software", href: "software.html" },
+            { text: "PCS", href: "pcs.html" }
+          ]
+        },
+        {
+          title: "Engagement & Resources",
+          links: [
+            { text: "Engagement Overview", href: "#engagement" },
+            { text: "Human Practices", href: "human-practices.html" },
+            { text: "Education", href: "education.html" },
+            { text: "Partnerships", href: "partnerships.html" },
+            { text: "Judging Overview", href: "judging.html" },
+            { text: "DBTL 2 Working Document", href: "assets/documents/golden-gate-dbtl-2.pdf", newTab: true }
+          ]
+        }
+      ]
     }),
 
     team: makePage({
       group: "team",
       kicker: "People • Roles • Collaboration",
-      title: "The <span class='accent-gradient'>team</span> behind Renata",
-      lead: "Add members, roles, advisors, and collaborators here.",
-      cardsTitle: "Team blocks",
-      cardsLead: "Keep this page short and readable.",
+      title: "Meet <span class='accent-gradient'>Our Team</span>",
+      lead: "Meet the people behind Renata, see how each person contributed, and learn how to connect with us.",
+      cardsTitle: "The people behind Renata",
+      cardsLead: "Our team brings together students, advisors, collaborators, and community partners.",
       cards: [
         { tag: "Members", title: "Core team", text: "Add names and roles." },
         { tag: "Support", title: "Advisors", text: "Add mentors and faculty." },
-        { tag: "Work", title: "Contributions", text: "Show who handled what." }
+        { tag: "Work", title: "Contributions", text: "Show who handled what." },
+        { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
       ],
-      ctaTitle: "Keep the team page clean",
-      ctaText: "This page should introduce people quickly.",
-      ctaButton: { text: "Contact", href: "contact.html", style: "primary" }
+      ctaTitle: "Start a conversation",
+      ctaText: "Have a question, partnership idea, or opportunity for the Renata team? We would love to hear from you.",
+      ctaButton: { text: "Contact Our Team", href: "team.html#contact", style: "primary" },
+      teamPhoto: {
+        title: "Together, we are Renata",
+        text: "Reserve this space for the complete team photograph.",
+        imageLabel: "Full team photo"
+      },
+      teamGroups: [
+        { key: "supervisors", title: "Supervisors", description: "Faculty, advisors, and mentors guiding the team.", slots: 4, memberLabel: "Supervisor" },
+        { key: "wet-lab", title: "Wet Lab", description: "Members leading experimental design, protocols, and biological validation.", slots: 8, memberLabel: "Wet Lab Member" },
+        { key: "dry-lab", title: "Dry Lab", description: "Members developing models, software, and computational analyses.", slots: 8, memberLabel: "Dry Lab Member" },
+        { key: "web-dev", title: "Web Development", description: "Members designing, building, and maintaining the Renata wiki.", slots: 8, memberLabel: "Web Developer" },
+        { key: "business", title: "Business", description: "Members supporting partnerships, outreach, funding, and project strategy.", slots: 8, memberLabel: "Business Member" }
+      ]
     }),
 
     project: makePage({
       group: "project",
       kicker: "Problem • System • Impact",
       title: "The <span class='accent-gradient'>project</span> at a glance",
-      lead: "Use this page for the overall problem, the system, and the project goal.",
-      cardsTitle: "Core sections",
-      cardsLead: "These three pieces should define the page.",
+      lead: "This overview introduces the problem, the proposed system, and the project goal.",
+      cardsTitle: "Project at a glance",
+      cardsLead: "These three ideas frame the project before visitors continue into the full description, engineering, and results.",
       cards: [
-        { tag: "Problem", title: "What is the issue?", text: "State the real-world problem." },
-        { tag: "System", title: "What are we building?", text: "Explain the project idea simply." },
-        { tag: "Impact", title: "Why does it matter?", text: "Show who benefits and why." }
+        { tag: "Problem", title: "What is the issue?", imageLabel: "Problem image", text: "Use this column to explain the real-world problem, its scale, and who it affects." },
+        { tag: "System", title: "What are we building?", imageLabel: "Project system image", text: "Use this column to introduce Renata's proposed biological system and how its major parts work together." },
+        { tag: "Impact", title: "Why does it matter?", imageLabel: "Project impact image", text: "Use this column to show the intended benefit, stakeholders, and broader significance of the project." }
       ],
       ctaTitle: "Use this page as the overview",
       ctaText: "This should be the clean starting point for the deeper project pages.",
@@ -199,9 +300,9 @@ window.SITE_DATA = {
       group: "wet-lab",
       kicker: "Build • Assays • Validation",
       title: "The <span class='accent-gradient'>wet lab</span> hub",
-      lead: "Use this page to frame the wet-lab work before the deeper pages.",
-      cardsTitle: "Wet lab blocks",
-      cardsLead: "This page should act as the wet-lab gateway.",
+      lead: "This overview frames the experimental work before the deeper wet-lab pages.",
+      cardsTitle: "Wet lab at a glance",
+      cardsLead: "See the experimental objective, the main assays, and how the bench work supports the full project.",
       cards: [
         { tag: "Goal", title: "Objective", text: "State what the wet lab needed to show." },
         { tag: "Work", title: "Assays", text: "Summarize the main experiments." },
@@ -267,9 +368,9 @@ window.SITE_DATA = {
       group: "dry-lab",
       kicker: "Modeling • Software • Analysis",
       title: "The <span class='accent-gradient'>dry lab</span> hub",
-      lead: "Use this page to frame all computational work.",
-      cardsTitle: "Dry lab blocks",
-      cardsLead: "This page should guide people into the deeper dry-lab pages.",
+      lead: "This overview frames the modeling, software, and computational analysis behind Renata.",
+      cardsTitle: "Dry lab at a glance",
+      cardsLead: "See the computational goal, what the team built, and how those tools changed the project.",
       cards: [
         { tag: "Goal", title: "Purpose", text: "State what the dry lab was meant to answer." },
         { tag: "Tools", title: "What was built", text: "Summarize the model or software." },
@@ -336,9 +437,9 @@ window.SITE_DATA = {
       group: "engagement",
       kicker: "Stakeholders • Outreach • Context",
       title: "<span class='accent-gradient'>Engagement</span>",
-      lead: "Use this page as the hub for outward-facing work.",
-      cardsTitle: "Engagement blocks",
-      cardsLead: "Keep the connection to the project visible.",
+      lead: "This overview brings together the people, outreach, and real-world context surrounding the project.",
+      cardsTitle: "Engagement at a glance",
+      cardsLead: "See who shaped the work, what the team learned, and how that input influenced the project.",
       cards: [
         { tag: "People", title: "Who matters", text: "Show relevant groups and stakeholders." },
         { tag: "Input", title: "What you learned", text: "Summarize the main insights." },
@@ -363,7 +464,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the effect visible",
       ctaText: "Judges should clearly see how outside input shaped the project.",
-      ctaButton: { text: "Project", href: "project.html", style: "primary" }
+      ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
     }),
 
     education: makePage({
@@ -414,7 +515,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the wiki easy to score",
       ctaText: "A strong judging page helps the whole site feel organized.",
-      ctaButton: { text: "Project", href: "project.html", style: "primary" }
+      ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
     }),
 
     contact: makePage({
@@ -437,6 +538,22 @@ window.SITE_DATA = {
 };
 
 // DBTL 2 working record, organized by the pages where each decision is most useful.
+window.SITE_DATA.pages.team.details = [
+  {
+    id: "contact",
+    eyebrow: "Contact & collaborate",
+    title: "Connect with Our Team",
+    text: "Use this section for official team contact details, institutional information, sponsor acknowledgments, and new collaboration opportunities.",
+    items: [
+      "Team email: add the official Renata team address",
+      "Institution: add the school, university, or organization name",
+      "Advisors and sponsors: add acknowledgments and public contact links",
+      "Collaborations: describe the best way for other teams and partners to reach out"
+    ],
+    note: "Replace the placeholders above with approved public contact information before publication."
+  }
+];
+
 window.SITE_DATA.pages["project-description"].details = [
   {
     eyebrow: "Biological rationale",
@@ -463,6 +580,19 @@ window.SITE_DATA.pages.engineering.details = [
       { label: "Learn", text: "Use expression and growth data to select regulatory logic before committing it to the full BtSULT/PAPS circuit." }
     ],
     note: "The PDF records this as an experimental plan; characterization data have not yet been reported."
+  },
+  {
+    eyebrow: "DBTL 2 evidence map",
+    title: "What this cycle establishes",
+    items: [
+      "A biologically motivated two-cassette BtSULT/PAPS pathway architecture",
+      "A hierarchical Golden Gate/JUMP assembly strategy",
+      "A four-condition reporter experiment for separating operator and transcription-factor effects",
+      "A documented set of part-selection and compatibility checks",
+      "Explicit unresolved decisions to carry into the next design review"
+    ],
+    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation.",
+    source: { label: "View the original DBTL 2 working document", href: "assets/documents/golden-gate-dbtl-2.pdf" }
   }
 ];
 
@@ -524,21 +654,5 @@ window.SITE_DATA.pages["dry-lab"].details = [
       "Export final maps, sequences, and an assembly manifest for the wet-lab team"
     ],
     note: "Open question from DBTL 2: whether a reduced two-transcription-unit route can save time without sacrificing modularity or reliable expression."
-  }
-];
-
-window.SITE_DATA.pages.judging.details = [
-  {
-    eyebrow: "DBTL 2 evidence map",
-    title: "What this cycle establishes",
-    items: [
-      "A biologically motivated two-cassette BtSULT/PAPS pathway architecture",
-      "A hierarchical Golden Gate/JUMP assembly strategy",
-      "A four-condition reporter experiment for separating operator and transcription-factor effects",
-      "A documented set of part-selection and compatibility checks",
-      "Explicit unresolved decisions to carry into the next design review"
-    ],
-    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation.",
-    source: { label: "View the original DBTL 2 working document", href: "assets/documents/golden-gate-dbtl-2.pdf" }
   }
 ];

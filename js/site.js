@@ -27,12 +27,12 @@
       <div class="container header-inner">
         <div class="brand-row">
           <a href="index.html" class="brand magnetic" data-magnetic>
-            <div class="brand-logo-wrap">
-              <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
-            </div>
             <div class="brand-text">
               <h1>${data.brand.title}</h1>
               <p>${data.brand.subtitle}</p>
+            </div>
+            <div class="brand-logo-wrap">
+              <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
             </div>
           </a>
 
@@ -57,8 +57,8 @@
       `;
     }
 
-    return `
-      <div class="nav-item">
+  return `
+    <div class="nav-item ${item.menuOnly ? "menu-only" : ""}">
         ${item.menuOnly ? `
           <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
             ${item.label}
@@ -76,8 +76,13 @@
     `;
   }
 
-  function initNavigation() {
-    const menuButtons = [...document.querySelectorAll(".nav-menu-button")];
+function initNavigation() {
+  const menuButtons = [...document.querySelectorAll(".nav-menu-button")];
+  const topLevelTriggers = [
+    ...document.querySelectorAll(
+      ".tabs-row > .tab-link, .tabs-row > .nav-item > .tab-link"
+    ),
+  ];
 
     function closeMenus(except = null) {
       menuButtons.forEach((button) => {
@@ -88,22 +93,28 @@
       });
     }
 
-    menuButtons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        event.stopPropagation();
+  menuButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
         const item = button.closest(".nav-item");
         const willOpen = !item.classList.contains("dropdown-open");
         closeMenus(item);
         item.classList.toggle("dropdown-open", willOpen);
-        button.setAttribute("aria-expanded", String(willOpen));
-      });
+      button.setAttribute("aria-expanded", String(willOpen));
     });
+  });
 
-    document.addEventListener("click", () => closeMenus());
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenus();
-    });
-  }
+  topLevelTriggers.forEach((trigger) => {
+    if (trigger.classList.contains("nav-menu-button")) return;
+
+    trigger.addEventListener("mouseenter", () => closeMenus());
+  });
+
+  window.addEventListener("scroll", () => closeMenus(), { passive: true });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenus();
+  });
+}
 
   function navItemIsActive(item) {
     if (pageData.group === item.key || pageKey === item.key) return true;
@@ -140,9 +151,93 @@
 
     if (pageKey === "home") {
       main.innerHTML = renderHomePage();
+    } else if (pageKey === "team") {
+      main.innerHTML = renderTeamPage();
     } else {
       main.innerHTML = renderStandardPage();
     }
+  }
+
+  function renderTeamPage() {
+    return `
+      <section class="page-hero" id="pageHero">
+        <div class="hero-beam" id="heroBeam"></div>
+        <div class="container page-hero-grid">
+          <div class="hero-copy reveal">
+            <p class="hero-kicker">${pageData.kicker}</p>
+            <h1 class="hero-title">${pageData.title}</h1>
+            <p class="hero-lead">${pageData.lead}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section team-photo-section">
+        <div class="container">
+          <div class="section-intro reveal">
+            <h2 class="section-title">${pageData.teamPhoto.title}</h2>
+            <p class="section-lead">${pageData.teamPhoto.text}</p>
+          </div>
+          <div class="team-photo-placeholder reveal" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
+            <span class="team-photo-mark" aria-hidden="true">+</span>
+            <strong>${pageData.teamPhoto.imageLabel}</strong>
+            <small>Panoramic image space</small>
+          </div>
+        </div>
+      </section>
+
+      <div class="team-roster">
+        ${pageData.teamGroups.map(renderTeamGroup).join("")}
+      </div>
+
+      ${renderDetailSections(pageData.details)}
+
+      <section class="page-section">
+        <div class="container">
+          <div class="cta-panel reveal tilt-card">
+            <h2>${pageData.ctaTitle}</h2>
+            <p>${pageData.ctaText}</p>
+            <a href="${pageData.ctaButton.href}" class="btn btn-${pageData.ctaButton.style || "primary"} magnetic" data-magnetic>
+              ${pageData.ctaButton.text}
+            </a>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderTeamGroup(group, groupIndex) {
+    const cards = Array.from({ length: group.slots }, (_, index) => renderMemberPlaceholder(group, index));
+    return `
+      <section class="page-section team-group-section ${groupIndex % 2 ? "team-group-alt" : ""}" id="${group.key}">
+        <div class="container">
+          <div class="team-group-heading reveal">
+            <div>
+              <p class="detail-eyebrow">Our Team</p>
+              <h2>${group.title}</h2>
+            </div>
+            <p>${group.description}</p>
+          </div>
+          <div class="member-grid ${group.key === "supervisors" ? "supervisor-grid" : "department-grid"}">
+            ${cards.join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderMemberPlaceholder(group, index) {
+    const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
+    return `
+      <article class="member-card reveal ${delayClass}">
+        <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${group.memberLabel} ${index + 1}">
+          <span aria-hidden="true">+</span>
+        </div>
+        <div class="member-meta">
+          <h3>Member Name</h3>
+          <p>${group.memberLabel}</p>
+        </div>
+      </article>
+    `;
   }
 
   function renderHomePage() {
@@ -185,14 +280,26 @@
         </div>
       </section>
 
-      <section class="page-section">
+      <section class="page-section link-directory-section" id="important-links">
         <div class="container">
-          <div class="cta-panel reveal tilt-card">
+          <div class="link-directory-intro reveal">
             <h2>${pageData.ctaTitle}</h2>
             <p>${pageData.ctaText}</p>
-            <a href="${pageData.ctaButton.href}" class="btn btn-${pageData.ctaButton.style || "primary"} magnetic" data-magnetic>
-              ${pageData.ctaButton.text}
-            </a>
+          </div>
+          <div class="link-directory reveal delay-1">
+            ${pageData.linkColumns.map((column) => {
+              const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
+              return `
+                <section class="link-directory-column ${column.split ? "link-directory-column-split" : ""}" aria-labelledby="${headingId}">
+                  <h3 id="${headingId}">${column.title}</h3>
+                  <ul>
+                    ${column.links.map((link) => `
+                      <li><a href="${link.href}"${link.newTab ? ' target="_blank" rel="noopener"' : ""}>${link.text}${link.newTab ? ' <span aria-hidden="true">↗</span>' : ""}</a></li>
+                    `).join("")}
+                  </ul>
+                </section>
+              `;
+            }).join("")}
           </div>
         </div>
       </section>
@@ -221,7 +328,7 @@
             <p class="section-lead">${pageData.cardsLead}</p>
           </div>
 
-          <div class="card-grid">
+          <div class="card-grid ${pageKey === "project" ? "project-column-grid" : ""}">
             ${pageData.cards.map(renderCard).join("")}
           </div>
         </div>
@@ -246,7 +353,13 @@
   function renderCard(card, index) {
     const delayClass = index === 1 ? "delay-1" : index === 2 ? "delay-2" : "";
     return `
-      <article class="glass-card reveal tilt-card ${delayClass}">
+      <article class="glass-card reveal ${card.imageLabel ? "image-content-card" : "tilt-card"} ${delayClass}">
+        ${card.imageLabel ? `
+          <div class="card-image-placeholder" role="img" aria-label="Placeholder for ${card.imageLabel}">
+            <span aria-hidden="true">+</span>
+            <small>${card.imageLabel}</small>
+          </div>
+        ` : ""}
         ${card.tag ? `<div class="card-tag">${card.tag}</div>` : ""}
         <h3>${card.title}</h3>
         <p>${card.text}</p>
@@ -256,8 +369,43 @@
 
   function renderHomeSectionCard(card, index) {
     const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
+    const hubPage = card.hubPage ? data.pages[card.hubPage] : null;
+
+    if (hubPage) {
+      return `
+        <section id="${card.sectionId}" class="home-section-card home-hub-section reveal ${delayClass}" aria-labelledby="${card.sectionId}-title">
+          <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
+            <span class="placeholder-mark" aria-hidden="true">+</span>
+            <span>${card.imageLabel}</span>
+          </div>
+          <div class="section-card-copy home-hub-copy">
+            <div class="card-tag">${card.tag}</div>
+            <h3 id="${card.sectionId}-title">${card.title}</h3>
+            <p class="home-hub-kicker">${hubPage.kicker}</p>
+            <p class="home-hub-lead">${card.text} ${hubPage.cardsLead}</p>
+          </div>
+          <div class="home-hub-details">
+            <div class="home-hub-grid">
+              ${hubPage.cards.map((detail) => `
+                <article class="home-hub-card">
+                  <span class="card-tag">${detail.tag}</span>
+                  <h4>${detail.title}</h4>
+                  <p>${detail.text}</p>
+                </article>
+              `).join("")}
+            </div>
+            <nav class="home-hub-links" aria-label="${card.title} pages">
+              ${card.hubLinks.map((link) => `
+                <a href="${link.href}">${link.text} <span aria-hidden="true">→</span></a>
+              `).join("")}
+            </nav>
+          </div>
+        </section>
+      `;
+    }
+
     return `
-      <a href="${card.href}" class="home-section-card reveal tilt-card ${delayClass}">
+      <a href="${card.href}" class="home-section-card reveal ${delayClass}">
         <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
           <span class="placeholder-mark" aria-hidden="true">+</span>
           <span>${card.imageLabel}</span>
@@ -276,7 +424,7 @@
     if (!details.length) return "";
 
     return details.map((section) => `
-      <section class="page-section detail-section">
+      <section class="page-section detail-section"${section.id ? ` id="${section.id}"` : ""}>
         <div class="container">
           <article class="detail-panel reveal">
             ${section.eyebrow ? `<p class="detail-eyebrow">${section.eyebrow}</p>` : ""}
