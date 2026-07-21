@@ -210,9 +210,6 @@ window.SITE_DATA = {
         { tag: "Work", title: "Contributions", text: "Show who handled what." },
         { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
       ],
-      ctaTitle: "Start a conversation",
-      ctaText: "Have a question, partnership idea, or opportunity for the Renata team? We would love to hear from you.",
-      ctaButton: { text: "Contact Our Team", href: "team.html#contact", style: "primary" },
       teamPhoto: {
         title: "Together, we are Renata",
         text: "Reserve this space for the complete team photograph.",

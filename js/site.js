@@ -58,13 +58,13 @@
     }
 
   return `
-    <div class="nav-item ${item.menuOnly ? "menu-only" : ""}">
+    <div class="nav-item click-menu ${item.menuOnly ? "menu-only" : ""}">
         ${item.menuOnly ? `
-          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic data-home-href="${item.href}" aria-haspopup="true" aria-expanded="false">
             ${item.label}
           </button>
         ` : `
-          <a href="${item.href}" class="tab-link dropdown-toggle magnetic ${isMainActive ? "active" : ""}" data-magnetic>
+          <a href="${item.href}" class="tab-link dropdown-toggle nav-dropdown-link magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
             ${item.label}
           </a>
         `}
@@ -78,41 +78,141 @@
 
 function initNavigation() {
   const menuButtons = [...document.querySelectorAll(".nav-menu-button")];
+  const dropdownLinks = [...document.querySelectorAll(".nav-dropdown-link")];
+  const submenuLinks = [...document.querySelectorAll(".submenu-nav-link")];
+  const tabsRow = document.querySelector(".tabs-row");
   const topLevelTriggers = [
     ...document.querySelectorAll(
       ".tabs-row > .tab-link, .tabs-row > .nav-item > .tab-link"
     ),
   ];
 
-    function closeMenus(except = null) {
-      menuButtons.forEach((button) => {
-        const item = button.closest(".nav-item");
-        if (item === except) return;
-        item?.classList.remove("dropdown-open");
-        button.setAttribute("aria-expanded", "false");
-      });
-    }
+  function setMenuState(item, isOpen) {
+    if (!item) return;
+    item.classList.toggle("dropdown-open", isOpen);
+    item.querySelector(":scope > .tab-link")?.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  function setSubmenuState(item, isOpen) {
+    if (!item) return;
+    item.classList.toggle("submenu-open", isOpen);
+    item.querySelector(":scope > .submenu-trigger")?.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  function closeSubmenus(except = null) {
+    document.querySelectorAll(".submenu-item.submenu-open").forEach((item) => {
+      if (item === except) return;
+      setSubmenuState(item, false);
+    });
+  }
+
+  function closeMenus(except = null) {
+    document.querySelectorAll(".nav-item.dropdown-open").forEach((item) => {
+      if (item === except) return;
+      setMenuState(item, false);
+    });
+
+    if (!except) closeSubmenus();
+  }
+
+  function clearNavigationFocus(except = null) {
+    const focused = document.activeElement;
+    if (!(focused instanceof HTMLElement) || !tabsRow?.contains(focused) || focused === except) return;
+    focused.blur();
+  }
 
   menuButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
-        const item = button.closest(".nav-item");
-        const willOpen = !item.classList.contains("dropdown-open");
-        closeMenus(item);
-        item.classList.toggle("dropdown-open", willOpen);
-      button.setAttribute("aria-expanded", String(willOpen));
+      const item = button.closest(".nav-item");
+      closeMenus(item);
+      closeSubmenus();
+      setMenuState(item, true);
+    });
+
+    button.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = button.closest(".nav-item");
+      closeMenus(item);
+      closeSubmenus();
+      setMenuState(item, true);
+      window.location.assign(button.dataset.homeHref);
+    });
+  });
+
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const item = link.closest(".nav-item");
+      event.preventDefault();
+      event.stopPropagation();
+
+      closeMenus(item);
+      closeSubmenus();
+      setMenuState(item, true);
+    });
+
+    link.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = link.closest(".nav-item");
+      closeMenus(item);
+      closeSubmenus();
+      setMenuState(item, true);
+      window.location.assign(link.href);
+    });
+  });
+
+  submenuLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const item = link.closest(".submenu-item");
+      event.preventDefault();
+      event.stopPropagation();
+
+      closeSubmenus(item);
+      setSubmenuState(item, true);
+    });
+
+    link.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = link.closest(".submenu-item");
+      closeSubmenus(item);
+      setSubmenuState(item, true);
+      window.location.assign(link.href);
+    });
+
+    link.addEventListener("mouseenter", () => {
+      tabsRow?.classList.remove("nav-hover-suppressed");
+      clearNavigationFocus(link);
+      closeSubmenus(link.closest(".submenu-item"));
     });
   });
 
   topLevelTriggers.forEach((trigger) => {
-    if (trigger.classList.contains("nav-menu-button")) return;
-
-    trigger.addEventListener("mouseenter", () => closeMenus());
+    trigger.addEventListener("mouseenter", () => {
+      tabsRow?.classList.remove("nav-hover-suppressed");
+      clearNavigationFocus(trigger);
+      closeMenus(trigger.closest(".nav-item"));
+      closeSubmenus();
+    });
   });
 
-  window.addEventListener("scroll", () => closeMenus(), { passive: true });
+  window.addEventListener("scroll", () => {
+    tabsRow?.classList.add("nav-hover-suppressed");
+    clearNavigationFocus();
+    closeMenus();
+  }, { passive: true });
+
+  tabsRow?.addEventListener("focusin", () => {
+    tabsRow.classList.remove("nav-hover-suppressed");
+  });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenus();
+    if (event.key === "Escape") {
+      clearNavigationFocus();
+      closeMenus();
+    }
   });
 }
 
@@ -134,7 +234,7 @@ function initNavigation() {
 
     return `
       <div class="submenu-item">
-        <a href="${child.href}" class="submenu-trigger ${isActive ? "sub-active" : ""}">
+        <a href="${child.href}" class="submenu-trigger submenu-nav-link ${isActive ? "sub-active" : ""}" aria-haspopup="true" aria-expanded="false">
           <span><strong>${child.label}</strong>${child.description ? `<small>${child.description}</small>` : ""}</span>
           <span class="submenu-arrow" aria-hidden="true">›</span>
         </a>
@@ -173,14 +273,14 @@ function initNavigation() {
 
       <section class="page-section team-photo-section">
         <div class="container">
-          <div class="section-intro reveal">
-            <h2 class="section-title">${pageData.teamPhoto.title}</h2>
-            <p class="section-lead">${pageData.teamPhoto.text}</p>
-          </div>
           <div class="team-photo-placeholder reveal" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
             <span class="team-photo-mark" aria-hidden="true">+</span>
             <strong>${pageData.teamPhoto.imageLabel}</strong>
             <small>Panoramic image space</small>
+          </div>
+          <div class="section-intro team-photo-caption reveal">
+            <h2 class="section-title">${pageData.teamPhoto.title}</h2>
+            <p class="section-lead">${pageData.teamPhoto.text}</p>
           </div>
         </div>
       </section>
@@ -190,18 +290,6 @@ function initNavigation() {
       </div>
 
       ${renderDetailSections(pageData.details)}
-
-      <section class="page-section">
-        <div class="container">
-          <div class="cta-panel reveal tilt-card">
-            <h2>${pageData.ctaTitle}</h2>
-            <p>${pageData.ctaText}</p>
-            <a href="${pageData.ctaButton.href}" class="btn btn-${pageData.ctaButton.style || "primary"} magnetic" data-magnetic>
-              ${pageData.ctaButton.text}
-            </a>
-          </div>
-        </div>
-      </section>
     `;
   }
 
@@ -313,13 +401,15 @@ function initNavigation() {
 
       ${renderDetailSections(pageData.details)}
 
-      <section class="page-section">
+      <section class="next-step-section" aria-label="Next step">
         <div class="container">
-          <div class="cta-panel reveal tilt-card">
-            <h2>${pageData.ctaTitle}</h2>
-            <p>${pageData.ctaText}</p>
-            <a href="${pageData.ctaButton.href}" class="btn btn-${pageData.ctaButton.style || "primary"} magnetic" data-magnetic>
-              ${pageData.ctaButton.text}
+          <div class="next-step-nav reveal">
+            <a href="${pageData.ctaButton.href}" class="next-step-link magnetic" data-magnetic>
+              <span class="next-step-copy">
+                <small>Next step:</small>
+                <strong>${pageData.ctaButton.text}</strong>
+              </span>
+              <span class="next-step-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
