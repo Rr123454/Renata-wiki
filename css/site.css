@@ -1519,7 +1519,8 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: 0.9rem;
-  min-width: min(100%, 15rem);
+  width: fit-content;
+  max-width: 100%;
   padding: 0.7rem 0.75rem 0.7rem 1rem;
   color: var(--text);
   text-align: right;
