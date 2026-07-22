@@ -1511,17 +1511,20 @@ a {
 
 .next-step-nav {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .next-step-link {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.9rem;
+  gap: 1.15rem;
   width: fit-content;
   max-width: 100%;
-  padding: 0.7rem 0.75rem 0.7rem 1rem;
+  padding: 0.7rem 1rem;
   color: var(--text);
   text-align: right;
   text-decoration: none;
@@ -1535,7 +1538,25 @@ a {
 .next-step-link:focus-visible {
   border-color: rgba(255, 184, 77, 0.55);
   background: rgba(255, 106, 0, 0.1);
+}
+
+.next-step-link:not(.previous-step-link):hover,
+.next-step-link:not(.previous-step-link):focus-visible {
   transform: translateX(4px);
+}
+
+.next-step-link:not(.previous-step-link) {
+  margin-left: auto;
+}
+
+.previous-step-link {
+  margin-right: auto;
+  text-align: left;
+}
+
+.previous-step-link:hover,
+.previous-step-link:focus-visible {
+  transform: translateX(-4px);
 }
 
 .next-step-copy {

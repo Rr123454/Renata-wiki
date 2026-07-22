@@ -12,6 +12,7 @@ const makePage = (config) => ({
   cards: [],
   ctaTitle: "",
   ctaText: "",
+  previousButton: null,
   ctaButton: { text: "Back Home", href: "index.html", style: "primary" },
   ...config
 });
@@ -255,6 +256,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Next page",
       ctaText: "After this page, lead the reader into engineering or results.",
+      previousButton: { text: "Project Overview", href: "index.html#project" },
       ctaButton: { text: "Engineering", href: "engineering.html", style: "primary" }
     }),
 
@@ -272,6 +274,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make iteration visible",
       ctaText: "This page should prove that the project evolved thoughtfully.",
+      previousButton: { text: "Project Description", href: "project-description.html" },
       ctaButton: { text: "Results", href: "results.html", style: "primary" }
     }),
 
@@ -289,6 +292,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the results readable",
       ctaText: "Judges should be able to understand the meaning of the data quickly.",
+      previousButton: { text: "Engineering", href: "engineering.html" },
       ctaButton: { text: "Judging", href: "judging.html", style: "primary" }
     }),
 
@@ -323,6 +327,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the assays structured",
       ctaText: "This page should make the experiment logic easy to follow.",
+      previousButton: { text: "Wet Lab Overview", href: "index.html#wet-lab" },
       ctaButton: { text: "Protocols", href: "protocols.html", style: "primary" }
     }),
 
@@ -340,6 +345,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the methods useful",
       ctaText: "This page should help readers actually follow the work.",
+      previousButton: { text: "Experiments", href: "experiments.html" },
       ctaButton: { text: "Notebook", href: "notebook.html", style: "primary" }
     }),
 
@@ -357,6 +363,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the notebook readable",
       ctaText: "This page should help people track the project clearly over time.",
+      previousButton: { text: "Protocols", href: "protocols.html" },
       ctaButton: { text: "Engineering", href: "engineering.html", style: "primary" }
     }),
 
@@ -391,6 +398,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the model meaningful",
       ctaText: "The model page should explain why the model mattered.",
+      previousButton: { text: "Dry Lab Overview", href: "index.html#dry-lab" },
       ctaButton: { text: "PCS", href: "pcs.html", style: "primary" }
     }),
 
@@ -408,6 +416,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the software practical",
       ctaText: "This page should explain function and value quickly.",
+      previousButton: { text: "Model", href: "model.html" },
       ctaButton: { text: "Judging", href: "judging.html", style: "primary" }
     }),
 
@@ -426,6 +435,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make PCS a signature page",
       ctaText: "If one workflow page defines Renata, it should be this one.",
+      previousButton: { text: "Software", href: "software.html" },
       ctaButton: { text: "Results", href: "results.html", style: "primary" }
     }),
 
@@ -460,6 +470,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the effect visible",
       ctaText: "Judges should clearly see how outside input shaped the project.",
+      previousButton: { text: "Engagement Overview", href: "index.html#engagement" },
       ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
     }),
 
@@ -477,6 +488,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the page measurable",
       ctaText: "The page should show what was taught and what came from it.",
+      previousButton: { text: "Human Practices", href: "human-practices.html" },
       ctaButton: { text: "Partnerships", href: "partnerships.html", style: "primary" }
     }),
 
@@ -494,6 +506,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Show mutual value",
       ctaText: "The best partnership pages make the shared benefit obvious.",
+      previousButton: { text: "Education", href: "education.html" },
       ctaButton: { text: "Team", href: "team.html", style: "primary" }
     }),
 
@@ -511,6 +524,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the wiki easy to score",
       ctaText: "A strong judging page helps the whole site feel organized.",
+      previousButton: { text: "Results", href: "results.html" },
       ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
     }),
 
@@ -528,6 +542,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the contact path obvious",
       ctaText: "Outside visitors should know exactly how to reach the team.",
+      previousButton: { text: "Our Team", href: "team.html" },
       ctaButton: { text: "Email the Team", href: "mailto:yourteamemail@example.com", style: "primary" }
     })
   }

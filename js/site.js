@@ -401,9 +401,18 @@ function initNavigation() {
 
       ${renderDetailSections(pageData.details)}
 
-      <section class="next-step-section" aria-label="Next step">
+      <section class="next-step-section" aria-label="Page progression">
         <div class="container">
           <div class="next-step-nav reveal">
+            ${pageData.previousButton ? `
+              <a href="${pageData.previousButton.href}" class="next-step-link previous-step-link magnetic" data-magnetic>
+                <span class="next-step-arrow" aria-hidden="true">←</span>
+                <span class="next-step-copy">
+                  <small>Previous step:</small>
+                  <strong>${pageData.previousButton.text}</strong>
+                </span>
+              </a>
+            ` : ""}
             <a href="${pageData.ctaButton.href}" class="next-step-link magnetic" data-magnetic>
               <span class="next-step-copy">
                 <small>Next step:</small>
