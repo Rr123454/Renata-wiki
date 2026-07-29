@@ -23,13 +23,19 @@ window.SITE_DATA = {
     subtitle: "Reborn through synthetic biology"
   },
 
+  sponsorsPartners: [
+    { name: "Sponsor / Partner 01", type: "Logo image placeholder", logo: "" },
+    { name: "Sponsor / Partner 02", type: "Logo image placeholder", logo: "" },
+    { name: "Sponsor / Partner 03", type: "Logo image placeholder", logo: "" }
+  ],
+
   nav: [
     { key: "home", label: "Home", href: "index.html" },
     { key: "team", label: "Our Team", href: "team.html" },
     {
       key: "project",
-      label: "Project",
-      href: "index.html#project",
+      label: "Our Project",
+      href: "index.html#our-project",
       children: [
         { key: "project-description", label: "Project Description", href: "project-description.html" },
         { key: "engineering", label: "Engineering", href: "engineering.html" },
@@ -39,13 +45,13 @@ window.SITE_DATA = {
     {
       key: "lab-work",
       label: "Lab Work",
-      href: "index.html#wet-lab",
+      href: "experiments.html",
       menuOnly: true,
       children: [
         {
           key: "wet-lab",
           label: "Wet Lab",
-          href: "index.html#wet-lab",
+          href: "experiments.html",
           description: "Build, assays, and validation",
           children: [
             { key: "experiments", label: "Experiments", href: "experiments.html" },
@@ -56,7 +62,7 @@ window.SITE_DATA = {
         {
           key: "dry-lab",
           label: "Dry Lab",
-          href: "index.html#dry-lab",
+          href: "model.html",
           description: "Models, software, and workflow",
           children: [
             { key: "model", label: "Model", href: "model.html" },
@@ -69,117 +75,50 @@ window.SITE_DATA = {
     {
       key: "engagement",
       label: "Engagement",
-      href: "index.html#engagement",
+      href: "human-practices.html",
       children: [
         { key: "human-practices", label: "Human Practices", href: "human-practices.html" },
-        { key: "education", label: "Education", href: "education.html" },
-        { key: "partnerships", label: "Partnerships", href: "partnerships.html" }
+        { key: "education", label: "Education", href: "education.html" }
       ]
-    },
-    { key: "judging", label: "Judging", href: "judging.html" }
+    }
   ],
 
   pages: {
     home: makePage({
       group: "home",
       kicker: "Synthetic Biology • Rebirth • Impact",
-      title: "Meet <span class='accent-gradient'>Renata</span>",
+      title: "Our <span class='accent-gradient'>Project</span>",
       lead: "Explore the people, science, and impact behind our synthetic biology project.",
-      buttons: [
-        { text: "Project", href: "#project", style: "primary" },
-        { text: "PCS", href: "pcs.html", style: "secondary" }
-      ],
-      stats: [
-        { value: "Renata", label: "identity" },
-        { value: "PCS", label: "workflow" },
-        { value: "Judging", label: "focus" }
-      ],
-      cardsTitle: "Explore our work",
-      cardsLead: "Every part of Renata is connected. Choose a section to follow the story from idea to impact.",
-      cards: [
-        { tag: "People", title: "Our Team", href: "team.html", imageLabel: "Team photo", text: "Meet the students, advisors, collaborators, and partners bringing Renata to life - and find out how to connect with us." },
-        {
-          tag: "Idea",
-          title: "Project",
-          sectionId: "project",
-          hubPage: "project",
-          imageLabel: "Project overview",
-          text: "Discover the problem we chose, the system we designed, and the change we hope to create.",
-          hubLinks: [
-            { text: "Project Description", href: "project-description.html" },
-            { text: "Engineering", href: "engineering.html" },
-            { text: "Results", href: "results.html" }
-          ]
-        },
-        {
-          tag: "Build",
-          title: "Wet Lab",
-          sectionId: "wet-lab",
-          hubPage: "wet-lab",
-          imageLabel: "Wet lab research",
-          text: "Follow our experiments, protocols, and biological validation from bench to result.",
-          hubLinks: [
-            { text: "Experiments", href: "experiments.html" },
-            { text: "Protocols", href: "protocols.html" },
-            { text: "Notebook", href: "notebook.html" }
-          ]
-        },
-        {
-          tag: "Compute",
-          title: "Dry Lab",
-          sectionId: "dry-lab",
-          hubPage: "dry-lab",
-          imageLabel: "Dry lab modeling",
-          text: "Explore the models, software, and computational workflow supporting our design.",
-          hubLinks: [
-            { text: "Model", href: "model.html" },
-            { text: "Software", href: "software.html" },
-            { text: "PCS", href: "pcs.html" }
-          ]
-        },
-        {
-          tag: "Impact",
-          title: "Engagement",
-          sectionId: "engagement",
-          hubPage: "engagement",
-          imageLabel: "Community engagement",
-          text: "See how human practices, education, and partnerships shaped the project.",
-          hubLinks: [
-            { text: "Human Practices", href: "human-practices.html" },
-            { text: "Education", href: "education.html" },
-            { text: "Partnerships", href: "partnerships.html" }
-          ]
-        },
-        { tag: "Evidence", title: "Judging", href: "judging.html", imageLabel: "Judging highlights", text: "Find a clear map of our strongest evidence, achievements, and award criteria." }
-      ],
       ctaTitle: "CONTACTS & IMPORTANT LINKS",
-      ctaText: "Connect with the Renata team or jump directly to the pages that visitors and judges may need most.",
+      ctaText: "",
       linkColumns: [
         {
           title: "Our Team",
           links: [
             { text: "Meet Our Team", href: "team.html" },
             { text: "Supervisors", href: "team.html#supervisors" },
-            { text: "Wet Lab Team", href: "team.html#wet-lab" },
-            { text: "Dry Lab Team", href: "team.html#dry-lab" },
-            { text: "Web Development", href: "team.html#web-dev" },
-            { text: "Business", href: "team.html#business" },
-            { text: "Contact Our Team", href: "team.html#contact" }
+            { text: "Students", href: "team.html#students" }
           ]
         },
         {
-          title: "Project & Lab Work",
-          split: true,
+          title: "Project",
           links: [
-            { text: "Project Overview", href: "index.html#project" },
             { text: "Project Description", href: "project-description.html" },
             { text: "Engineering", href: "engineering.html" },
-            { text: "Results", href: "results.html" },
-            { text: "Wet Lab Overview", href: "index.html#wet-lab" },
+            { text: "Results", href: "results.html" }
+          ]
+        },
+        {
+          title: "Wet Lab",
+          links: [
             { text: "Experiments", href: "experiments.html" },
             { text: "Protocols", href: "protocols.html" },
-            { text: "Notebook", href: "notebook.html" },
-            { text: "Dry Lab Overview", href: "index.html#dry-lab" },
+            { text: "Notebook", href: "notebook.html" }
+          ]
+        },
+        {
+          title: "Dry Lab",
+          links: [
             { text: "Model", href: "model.html" },
             { text: "Software", href: "software.html" },
             { text: "PCS", href: "pcs.html" }
@@ -188,11 +127,8 @@ window.SITE_DATA = {
         {
           title: "Engagement & Resources",
           links: [
-            { text: "Engagement Overview", href: "index.html#engagement" },
             { text: "Human Practices", href: "human-practices.html" },
-            { text: "Education", href: "education.html" },
-            { text: "Partnerships", href: "partnerships.html" },
-            { text: "Judging Overview", href: "judging.html" }
+            { text: "Education", href: "education.html" }
           ]
         }
       ]
@@ -218,10 +154,7 @@ window.SITE_DATA = {
       },
       teamGroups: [
         { key: "supervisors", title: "Supervisors", description: "Faculty, advisors, and mentors guiding the team.", slots: 4, memberLabel: "Supervisor" },
-        { key: "wet-lab", title: "Wet Lab", description: "Members leading experimental design, protocols, and biological validation.", slots: 8, memberLabel: "Wet Lab Member" },
-        { key: "dry-lab", title: "Dry Lab", description: "Members developing models, software, and computational analyses.", slots: 8, memberLabel: "Dry Lab Member" },
-        { key: "web-dev", title: "Web Development", description: "Members designing, building, and maintaining the Renata wiki.", slots: 8, memberLabel: "Web Developer" },
-        { key: "business", title: "Business", description: "Members supporting partnerships, outreach, funding, and project strategy.", slots: 8, memberLabel: "Business Member" }
+        { key: "students", title: "Students", description: "Student members contributing across the scientific, technical, engagement, and project work behind Renata.", slots: 8, memberLabel: "Student" }
       ]
     }),
 
@@ -256,7 +189,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Next page",
       ctaText: "After this page, lead the reader into engineering or results.",
-      previousButton: { text: "Project Overview", href: "index.html#project" },
+      previousButton: { text: "Project Overview", href: "index.html#our-project" },
       ctaButton: { text: "Engineering", href: "engineering.html", style: "primary" }
     }),
 
@@ -293,7 +226,7 @@ window.SITE_DATA = {
       ctaTitle: "Keep the results readable",
       ctaText: "Judges should be able to understand the meaning of the data quickly.",
       previousButton: { text: "Engineering", href: "engineering.html" },
-      ctaButton: { text: "Judging", href: "judging.html", style: "primary" }
+      ctaButton: { text: "Experiments", href: "experiments.html", style: "primary" }
     }),
 
     "wet-lab": makePage({
@@ -327,7 +260,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the assays structured",
       ctaText: "This page should make the experiment logic easy to follow.",
-      previousButton: { text: "Wet Lab Overview", href: "index.html#wet-lab" },
+      previousButton: { text: "Our Project", href: "index.html#our-project" },
       ctaButton: { text: "Protocols", href: "protocols.html", style: "primary" }
     }),
 
@@ -398,7 +331,7 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the model meaningful",
       ctaText: "The model page should explain why the model mattered.",
-      previousButton: { text: "Dry Lab Overview", href: "index.html#dry-lab" },
+      previousButton: { text: "Notebook", href: "notebook.html" },
       ctaButton: { text: "PCS", href: "pcs.html", style: "primary" }
     }),
 
@@ -417,7 +350,7 @@ window.SITE_DATA = {
       ctaTitle: "Keep the software practical",
       ctaText: "This page should explain function and value quickly.",
       previousButton: { text: "Model", href: "model.html" },
-      ctaButton: { text: "Judging", href: "judging.html", style: "primary" }
+      ctaButton: { text: "PCS", href: "pcs.html", style: "primary" }
     }),
 
     pcs: makePage({
@@ -470,8 +403,8 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the effect visible",
       ctaText: "Judges should clearly see how outside input shaped the project.",
-      previousButton: { text: "Engagement Overview", href: "index.html#engagement" },
-      ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
+      previousButton: { text: "PCS", href: "pcs.html" },
+      ctaButton: { text: "Project", href: "index.html#our-project", style: "primary" }
     }),
 
     education: makePage({
@@ -489,7 +422,7 @@ window.SITE_DATA = {
       ctaTitle: "Keep the page measurable",
       ctaText: "The page should show what was taught and what came from it.",
       previousButton: { text: "Human Practices", href: "human-practices.html" },
-      ctaButton: { text: "Partnerships", href: "partnerships.html", style: "primary" }
+      ctaButton: { text: "Our Team", href: "team.html", style: "primary" }
     }),
 
     partnerships: makePage({
@@ -508,24 +441,6 @@ window.SITE_DATA = {
       ctaText: "The best partnership pages make the shared benefit obvious.",
       previousButton: { text: "Education", href: "education.html" },
       ctaButton: { text: "Team", href: "team.html", style: "primary" }
-    }),
-
-    judging: makePage({
-      group: "judging",
-      kicker: "Medal map • Evidence • Navigation",
-      title: "<span class='accent-gradient'>Judging</span>",
-      lead: "Use this page to map claims and medal criteria to the right pages.",
-      cardsTitle: "Judging blocks",
-      cardsLead: "This page should save judges time.",
-      cards: [
-        { tag: "Map", title: "Criteria map", text: "Point each criterion to the right page." },
-        { tag: "Proof", title: "Evidence", text: "Show where the strongest proof lives." },
-        { tag: "Integration", title: "Connections", text: "Show how the project pieces support each other." }
-      ],
-      ctaTitle: "Make the wiki easy to score",
-      ctaText: "A strong judging page helps the whole site feel organized.",
-      previousButton: { text: "Results", href: "results.html" },
-      ctaButton: { text: "Project", href: "index.html#project", style: "primary" }
     }),
 
     contact: makePage({
@@ -547,23 +462,6 @@ window.SITE_DATA = {
     })
   }
 };
-
-// DBTL 2 working record, organized by the pages where each decision is most useful.
-window.SITE_DATA.pages.team.details = [
-  {
-    id: "contact",
-    eyebrow: "Contact & collaborate",
-    title: "Connect with Our Team",
-    text: "Use this section for official team contact details, institutional information, sponsor acknowledgments, and new collaboration opportunities.",
-    items: [
-      "Team email: add the official Renata team address",
-      "Institution: add the school, university, or organization name",
-      "Advisors and sponsors: add acknowledgments and public contact links",
-      "Collaborations: describe the best way for other teams and partners to reach out"
-    ],
-    note: "Replace the placeholders above with approved public contact information before publication."
-  }
-];
 
 window.SITE_DATA.pages["project-description"].details = [
   {

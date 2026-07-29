@@ -25,19 +25,14 @@
 
     header.innerHTML = `
       <div class="container header-inner">
-        <div class="brand-row">
-          <a href="index.html" class="brand magnetic" data-magnetic>
-            <div class="brand-text">
-              <h1>${data.brand.title}</h1>
-              <p>${data.brand.subtitle}</p>
-            </div>
-            <div class="brand-logo-wrap">
-              <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
-            </div>
-          </a>
-
-          <div class="header-tag">Phoenix / Rebirth / Judge-first</div>
-        </div>
+        <a href="index.html" class="brand magnetic" data-magnetic>
+          <div class="brand-logo-wrap">
+            <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
+          </div>
+          <div class="brand-text">
+            <h1>${data.brand.title}</h1>
+          </div>
+        </a>
 
         <nav class="tabs-row">
           ${data.nav.map(renderNavItem).join("")}
@@ -253,6 +248,8 @@ function initNavigation() {
       main.innerHTML = renderHomePage();
     } else if (pageKey === "team") {
       main.innerHTML = renderTeamPage();
+    } else if (pageKey === "project-description") {
+      main.innerHTML = renderProjectDescriptionPage();
     } else {
       main.innerHTML = renderStandardPage();
     }
@@ -330,7 +327,24 @@ function initNavigation() {
 
   function renderHomePage() {
     return `
-      <section class="page-hero" id="pageHero">
+      <section class="home-video-hero" aria-labelledby="homeVideoTitle">
+        <div class="home-video-frame">
+          <div class="home-video-placeholder">
+            <span class="home-video-play" aria-hidden="true">▶</span>
+            <h1 id="homeVideoTitle">Featured video</h1>
+            <p>Homepage video placeholder</p>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderProjectDescriptionPage() {
+    const rationale = pageData.details?.[0] || {};
+    const agencyCards = pageData.cards || [];
+
+    return `
+      <section class="page-hero" id="project-description">
         <div class="hero-beam" id="heroBeam"></div>
 
         <div class="container home-hero-grid">
@@ -338,36 +352,120 @@ function initNavigation() {
             <p class="hero-kicker">${pageData.kicker}</p>
             <h1 class="hero-title">${pageData.title}</h1>
             <p class="hero-lead">${pageData.lead}</p>
-            ${renderButtons(pageData.buttons)}
-            ${renderStats(pageData.stats)}
           </div>
 
-          <div class="home-logo-stage reveal delay-1">
-            <div class="logo-glow"></div>
-            <div class="logo-orbit-ring"></div>
-            <div class="logo-orbit-ring-2"></div>
-            <div class="logo-orbit-ring-3"></div>
+          <article class="project-explanation-placeholder reveal delay-1">
+            <div class="project-explanation-heading">
+              <span class="project-explanation-mark" aria-hidden="true">+</span>
+              <p class="detail-eyebrow">Project abstract</p>
+            </div>
+            <h2>Renata at a glance</h2>
+            <p>
+              Renata explores a two-cassette synthetic biology strategy for LCA sulfation,
+              pairing BtSULT with a dedicated PAPS-supply module. This page organizes the
+              project story into agency, methodology, current results, and conclusion.
+            </p>
+          </article>
+        </div>
+      </section>
 
-            <div class="logo-core tilt-card" id="logoCore">
-              <img src="assets/logo.png" alt="iGEM Renata logo large" />
+      <section class="home-project-chapter" id="agency">
+        <div class="container project-chapter-grid">
+          <div class="project-chapter-copy reveal">
+            <p class="detail-eyebrow">01 / Project description</p>
+            <h2>Agency</h2>
+            <p>The project story begins by establishing its context, the current gap, and the Renata concept.</p>
+            <div class="project-story-summary">
+              ${agencyCards.map((card) => `
+                <article>
+                  <strong>${card.tag}: ${card.title}</strong>
+                  <p>${card.text}</p>
+                </article>
+              `).join("")}
             </div>
           </div>
+          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for an agency section image">
+            <span aria-hidden="true">+</span>
+            <small>Agency image placeholder</small>
+          </div>
         </div>
       </section>
 
-      <section class="page-section">
+      <section class="home-project-chapter project-chapter-alt" id="methodology">
+        <div class="container project-chapter-grid project-chapter-reverse">
+          <div class="project-chapter-copy reveal">
+            <p class="detail-eyebrow">02 / Project description</p>
+            <h2>Methodology</h2>
+            <h3 class="project-story-subtitle">${rationale.title || "Biological rationale"}</h3>
+            <p>${rationale.text || ""}</p>
+            ${rationale.items?.length ? `
+              <ul class="project-story-points">
+                ${rationale.items.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            ` : ""}
+          </div>
+          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a methodology section image">
+            <span aria-hidden="true">+</span>
+            <small>Methodology image placeholder</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-project-chapter" id="results">
+        <div class="container project-chapter-grid">
+          <div class="project-chapter-copy reveal">
+            <p class="detail-eyebrow">03 / Project description</p>
+            <h2>Results</h2>
+            <p>The current Project Description establishes a proposed pathway architecture rather than a completed experimental outcome.</p>
+            ${rationale.note ? `<p class="project-story-status"><strong>Current design status:</strong> ${rationale.note.replace(/^Design status:\s*/i, "")}</p>` : ""}
+          </div>
+          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a results section image">
+            <span aria-hidden="true">+</span>
+            <small>Results image placeholder</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-project-chapter project-chapter-alt" id="conclusion">
+        <div class="container project-chapter-grid project-chapter-reverse">
+          <div class="project-chapter-copy reveal">
+            <p class="detail-eyebrow">04 / Project description</p>
+            <h2>Conclusion</h2>
+            <p>
+              The working description defines Renata's intended two-cassette route to LCA
+              sulfation and identifies the design decisions that must be confirmed before
+              the project advances into engineering and experimental results.
+            </p>
+          </div>
+          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a conclusion section image">
+            <span aria-hidden="true">+</span>
+            <small>Conclusion image placeholder</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-step-section" aria-label="Page progression">
         <div class="container">
-          <div class="section-intro reveal">
-            <h2 class="section-title">${pageData.cardsTitle}</h2>
-            <p class="section-lead">${pageData.cardsLead}</p>
-          </div>
-
-          <div class="home-section-grid">
-            ${pageData.cards.map(renderHomeSectionCard).join("")}
+          <div class="next-step-nav reveal">
+            ${pageData.previousButton ? `
+              <a href="${pageData.previousButton.href}" class="next-step-link previous-step-link magnetic" data-magnetic>
+                <span class="next-step-arrow" aria-hidden="true">←</span>
+                <span class="next-step-copy">
+                  <small>Previous step:</small>
+                  <strong>${pageData.previousButton.text}</strong>
+                </span>
+              </a>
+            ` : ""}
+            <a href="${pageData.ctaButton.href}" class="next-step-link magnetic" data-magnetic>
+              <span class="next-step-copy">
+                <small>Next step:</small>
+                <strong>${pageData.ctaButton.text}</strong>
+              </span>
+              <span class="next-step-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </section>
-
     `;
   }
 
@@ -470,18 +568,13 @@ function initNavigation() {
                 </article>
               `).join("")}
             </div>
-            <nav class="home-hub-links" aria-label="${card.title} pages">
-              ${card.hubLinks.map((link) => `
-                <a href="${link.href}">${link.text} <span aria-hidden="true">→</span></a>
-              `).join("")}
-            </nav>
           </div>
         </section>
       `;
     }
 
     return `
-      <a href="${card.href}" class="home-section-card reveal ${delayClass}">
+      <article class="home-section-card reveal ${delayClass}">
         <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
           <span class="placeholder-mark" aria-hidden="true">+</span>
           <span>${card.imageLabel}</span>
@@ -490,9 +583,8 @@ function initNavigation() {
           <div class="card-tag">${card.tag}</div>
           <h3>${card.title}</h3>
           <p>${card.text}</p>
-          <span class="section-card-link">Explore ${card.title} <span aria-hidden="true">→</span></span>
         </div>
-      </a>
+      </article>
     `;
   }
 
@@ -562,19 +654,56 @@ function initNavigation() {
     const footer = document.getElementById("siteFooter");
     if (!footer) return;
     const directoryData = data.pages.home;
+    const sponsorOrganizations = data.sponsorsPartners?.length
+      ? data.sponsorsPartners
+      : [{ name: "Sponsor / Partner", logo: "" }];
+    const sponsorRepeatCount = Math.max(1, Math.ceil(8 / sponsorOrganizations.length));
+    const sponsorLoopItems = Array.from(
+      { length: sponsorRepeatCount },
+      (_, repeatIndex) => sponsorOrganizations.map((organization) => ({ organization, repeatIndex }))
+    ).flat();
 
     footer.innerHTML = `
-      <section class="link-directory-section" id="important-links">
+      <section class="sponsor-partner-band" id="sponsors-partners" aria-labelledby="sponsors-partners-title">
         <div class="container">
-          <div class="link-directory-intro reveal">
-            <h2>${directoryData.ctaTitle}</h2>
-            <p>${directoryData.ctaText}</p>
+          <div class="sponsor-partner-heading reveal">
+            <div>
+              <p class="detail-eyebrow">With support from</p>
+              <h2 id="sponsors-partners-title">Sponsors &amp; Partners</h2>
+            </div>
           </div>
+          <div class="sponsor-marquee reveal delay-1" role="region" aria-label="Automatically rotating sponsors and partners">
+            <div class="sponsor-marquee-track">
+              ${[0, 1].map((copyIndex) => `
+                <div class="sponsor-marquee-group"${copyIndex === 1 ? ' aria-hidden="true"' : ""}>
+                  ${sponsorLoopItems.map(({ organization, repeatIndex }) => {
+                    const isAccessibleLogo = copyIndex === 0 && repeatIndex === 0;
+                    return `
+                    <div class="sponsor-marquee-item"${isAccessibleLogo ? ` role="img" aria-label="${organization.name} logo"` : ' aria-hidden="true"'}>
+                      <div class="sponsor-logo-frame">
+                        ${organization.logo ? `
+                          <img src="${organization.logo}" alt="${isAccessibleLogo ? `${organization.name} logo` : ""}" loading="eager" decoding="async" />
+                        ` : `
+                          <span aria-hidden="true">+</span>
+                        `}
+                      </div>
+                    </div>
+                  `;
+                  }).join("")}
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="link-directory-section" id="important-links" aria-label="Contacts and important links">
+        <div class="container">
           <div class="link-directory reveal delay-1">
             ${directoryData.linkColumns.map((column) => {
               const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
               return `
-                <section class="link-directory-column ${column.split ? "link-directory-column-split" : ""}" aria-labelledby="${headingId}">
+                <section class="link-directory-column" aria-labelledby="${headingId}">
                   <h3 id="${headingId}">${column.title}</h3>
                   <ul>
                     ${column.links.map((link) => `
@@ -599,7 +728,7 @@ function initNavigation() {
     const scrollRailFill = document.getElementById("scrollRailFill");
     const scrollRailThumb = document.getElementById("scrollRailThumb");
     const siteHeader = document.getElementById("siteHeader");
-    const hero = document.getElementById("pageHero");
+    const hero = document.querySelector(".page-hero");
     const heroBeam = document.getElementById("heroBeam");
     const cursorRing = document.getElementById("cursorRing");
     const cursorDot = document.getElementById("cursorDot");
