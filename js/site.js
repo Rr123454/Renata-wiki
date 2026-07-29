@@ -231,7 +231,7 @@ function initNavigation() {
       <div class="submenu-item">
         <a href="${child.href}" class="submenu-trigger submenu-nav-link ${isActive ? "sub-active" : ""}" aria-haspopup="true" aria-expanded="false">
           <span><strong>${child.label}</strong>${child.description ? `<small>${child.description}</small>` : ""}</span>
-          <span class="submenu-arrow" aria-hidden="true">›</span>
+          <span class="submenu-arrow" aria-hidden="true">‹</span>
         </a>
         <div class="submenu-menu">
           ${child.children.map(renderDropdownChild).join("")}

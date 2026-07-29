@@ -425,7 +425,8 @@ body {
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 10px);
-  left: 0;
+  right: 0;
+  left: auto;
   min-width: 230px;
   padding: 0.6rem;
   border-radius: 18px;
@@ -504,7 +505,8 @@ a {
 .submenu-menu {
   position: absolute;
   top: -0.6rem;
-  left: calc(100% + 0.55rem);
+  right: calc(100% + 0.55rem);
+  left: auto;
   min-width: 210px;
   padding: 0.6rem;
   border: 1px solid rgba(255,255,255,0.10);
@@ -515,7 +517,7 @@ a {
   box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-8px);
+  transform: translateX(8px);
   transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
   z-index: 5100;
 }
@@ -527,7 +529,7 @@ a {
 }
 
 .submenu-item.submenu-open > .submenu-trigger .submenu-arrow {
-  transform: translateX(3px);
+  transform: translateX(-3px);
 }
 
 @media (hover: hover) {
@@ -551,7 +553,7 @@ a {
 
   .tabs-row:not(.nav-hover-suppressed) .submenu-item:hover > .submenu-trigger .submenu-arrow,
   .tabs-row:not(.nav-hover-suppressed) .submenu-item:focus-within > .submenu-trigger .submenu-arrow {
-    transform: translateX(3px);
+    transform: translateX(-3px);
   }
 }
 
@@ -884,10 +886,10 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 7vw, 5.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.06em;
-  margin-bottom: 1.2rem;
+  font-size: clamp(2.25rem, 4.2vw, 3.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  margin-bottom: 0.9rem;
 }
 
 .accent-gradient {
@@ -1952,7 +1954,12 @@ a {
 
 .link-directory {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.3fr);
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 0.5fr)
+    minmax(0, 0.5fr)
+    minmax(0, 1.3fr);
   gap: clamp(1.25rem, 3vw, 2.5rem);
 }
 
@@ -2082,7 +2089,13 @@ a {
 
 @media (max-width: 1100px) {
   .link-directory {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .link-directory-column:nth-child(1),
+  .link-directory-column:nth-child(2),
+  .link-directory-column:nth-child(5) {
+    grid-column: span 2;
   }
 
   .header-inner {
@@ -2138,7 +2151,7 @@ a {
   }
 
   .link-directory {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
   }
 
@@ -2261,7 +2274,7 @@ a {
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 12vw, 4.2rem);
+    font-size: clamp(2rem, 9vw, 2.9rem);
   }
 
   .logo-orbit-ring,
@@ -2275,8 +2288,8 @@ a {
   }
 
   .dropdown-menu {
-    left: 0;
-    right: auto;
+    right: 0;
+    left: auto;
     min-width: 200px;
   }
 }
