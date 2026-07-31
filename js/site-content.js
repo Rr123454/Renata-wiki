@@ -12,8 +12,6 @@ const makePage = (config) => ({
   cards: [],
   ctaTitle: "",
   ctaText: "",
-  previousButton: null,
-  ctaButton: { text: "Back Home", href: "index.html", style: "primary" },
   ...config
 });
 
@@ -38,8 +36,7 @@ window.SITE_DATA = {
       href: "index.html#our-project",
       children: [
         { key: "project-description", label: "Project Description", href: "project-description.html" },
-        { key: "engineering", label: "Engineering", href: "engineering.html" },
-        { key: "results", label: "Results", href: "results.html" }
+        { key: "engineering", label: "Engineering", href: "engineering.html" }
       ]
     },
     {
@@ -48,28 +45,9 @@ window.SITE_DATA = {
       href: "experiments.html",
       menuOnly: true,
       children: [
-        {
-          key: "wet-lab",
-          label: "Wet Lab",
-          href: "experiments.html",
-          description: "Build, assays, and validation",
-          children: [
-            { key: "experiments", label: "Experiments", href: "experiments.html" },
-            { key: "protocols", label: "Protocols", href: "protocols.html" },
-            { key: "notebook", label: "Notebook", href: "notebook.html" }
-          ]
-        },
-        {
-          key: "dry-lab",
-          label: "Dry Lab",
-          href: "model.html",
-          description: "Models, software, and workflow",
-          children: [
-            { key: "model", label: "Model", href: "model.html" },
-            { key: "software", label: "Software", href: "software.html" },
-            { key: "pcs", label: "PCS", href: "pcs.html" }
-          ]
-        }
+        { key: "experiments", label: "Experiments", href: "experiments.html" },
+        { key: "protocols", label: "Protocols", href: "protocols.html" },
+        { key: "model", label: "Model", href: "model.html" }
       ]
     },
     {
@@ -104,24 +82,20 @@ window.SITE_DATA = {
           title: "Project",
           links: [
             { text: "Project Description", href: "project-description.html" },
-            { text: "Engineering", href: "engineering.html" },
-            { text: "Results", href: "results.html" }
+            { text: "Engineering", href: "engineering.html" }
           ]
         },
         {
           title: "Wet Lab",
           links: [
             { text: "Experiments", href: "experiments.html" },
-            { text: "Protocols", href: "protocols.html" },
-            { text: "Notebook", href: "notebook.html" }
+            { text: "Protocols", href: "protocols.html" }
           ]
         },
         {
           title: "Dry Lab",
           links: [
-            { text: "Model", href: "model.html" },
-            { text: "Software", href: "software.html" },
-            { text: "PCS", href: "pcs.html" }
+            { text: "Model", href: "model.html" }
           ]
         },
         {
@@ -172,7 +146,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Use this page as the overview",
       ctaText: "This should be the clean starting point for the deeper project pages.",
-      ctaButton: { text: "Project Description", href: "project-description.html", style: "primary" }
     }),
 
     "project-description": makePage({
@@ -189,8 +162,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Next page",
       ctaText: "After this page, lead the reader into engineering or results.",
-      previousButton: { text: "Project Overview", href: "index.html#our-project" },
-      ctaButton: { text: "Engineering", href: "engineering.html", style: "primary" }
     }),
 
     engineering: makePage({
@@ -207,26 +178,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make iteration visible",
       ctaText: "This page should prove that the project evolved thoughtfully.",
-      previousButton: { text: "Project Description", href: "project-description.html" },
-      ctaButton: { text: "Results", href: "results.html", style: "primary" }
-    }),
-
-    results: makePage({
-      group: "project",
-      kicker: "Evidence • Readouts • Meaning",
-      title: "<span class='accent-gradient'>Results</span>",
-      lead: "Use this page for the strongest project results and what they mean.",
-      cardsTitle: "Result blocks",
-      cardsLead: "Keep the outputs simple and clear.",
-      cards: [
-        { tag: "Data", title: "Main result", text: "Show the strongest result first." },
-        { tag: "Meaning", title: "Interpretation", text: "Explain what the result means." },
-        { tag: "Limits", title: "Next step", text: "Show what still needs work." }
-      ],
-      ctaTitle: "Keep the results readable",
-      ctaText: "Judges should be able to understand the meaning of the data quickly.",
-      previousButton: { text: "Engineering", href: "engineering.html" },
-      ctaButton: { text: "Experiments", href: "experiments.html", style: "primary" }
     }),
 
     "wet-lab": makePage({
@@ -242,26 +193,24 @@ window.SITE_DATA = {
         { tag: "Link", title: "Connection", text: "Show how it supports the project." }
       ],
       ctaTitle: "Route into the wet-lab details",
-      ctaText: "This page should send visitors to Experiments, Protocols, and Notebook.",
-      ctaButton: { text: "Experiments", href: "experiments.html", style: "primary" }
+      ctaText: "This page should send visitors to Experiments and Protocols.",
     }),
 
     experiments: makePage({
       group: "wet-lab",
       kicker: "Assays • Controls • Readouts",
       title: "<span class='accent-gradient'>Experiments</span>",
-      lead: "Use this page for the main assay structure and logic.",
+      lead: "Use this page for the main assay structure, logic, and experimental record.",
       cardsTitle: "Main blocks",
-      cardsLead: "Keep the question, control, and output clear.",
+      cardsLead: "Keep the question, control, output, and experiment timeline clear.",
       cards: [
         { tag: "Question", title: "Assay goal", text: "State what each experiment tested." },
         { tag: "Control", title: "Comparison", text: "Show controls and validation." },
-        { tag: "Output", title: "Readout", text: "Show what was measured." }
+        { tag: "Output", title: "Readout", text: "Show what was measured." },
+        { tag: "Record", title: "Experiment notebook", text: "Trace the chronology, what each experiment answered, how the results were interpreted, and how the project continued." }
       ],
       ctaTitle: "Keep the assays structured",
       ctaText: "This page should make the experiment logic easy to follow.",
-      previousButton: { text: "Our Project", href: "index.html#our-project" },
-      ctaButton: { text: "Protocols", href: "protocols.html", style: "primary" }
     }),
 
     protocols: makePage({
@@ -278,43 +227,22 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the methods useful",
       ctaText: "This page should help readers actually follow the work.",
-      previousButton: { text: "Experiments", href: "experiments.html" },
-      ctaButton: { text: "Notebook", href: "notebook.html", style: "primary" }
-    }),
-
-    notebook: makePage({
-      group: "wet-lab",
-      kicker: "Dates • Milestones • Traceability",
-      title: "Project <span class='accent-gradient'>notebook</span>",
-      lead: "Use this page for progress over time.",
-      cardsTitle: "Notebook blocks",
-      cardsLead: "Keep entries organized and meaningful.",
-      cards: [
-        { tag: "Time", title: "Chronology", text: "Show when major work happened." },
-        { tag: "Reason", title: "Why", text: "State the reason for each block of work." },
-        { tag: "Outcome", title: "Result", text: "Show what it led to." }
-      ],
-      ctaTitle: "Make the notebook readable",
-      ctaText: "This page should help people track the project clearly over time.",
-      previousButton: { text: "Protocols", href: "protocols.html" },
-      ctaButton: { text: "Engineering", href: "engineering.html", style: "primary" }
     }),
 
     "dry-lab": makePage({
       group: "dry-lab",
-      kicker: "Modeling • Software • Analysis",
+      kicker: "Modeling • Analysis • Workflow",
       title: "The <span class='accent-gradient'>dry lab</span> hub",
-      lead: "This overview frames the modeling, software, and computational analysis behind Renata.",
+      lead: "This overview frames the modeling and computational analysis behind Renata.",
       cardsTitle: "Dry lab at a glance",
       cardsLead: "See the computational goal, what the team built, and how those tools changed the project.",
       cards: [
         { tag: "Goal", title: "Purpose", text: "State what the dry lab was meant to answer." },
-        { tag: "Tools", title: "What was built", text: "Summarize the model or software." },
+        { tag: "Tools", title: "What was built", text: "Summarize the model or computational workflow." },
         { tag: "Impact", title: "Project effect", text: "Show how it changed the project." }
       ],
       ctaTitle: "Route into the dry-lab details",
-      ctaText: "This page should send visitors to Model, Software, and PCS.",
-      ctaButton: { text: "Model", href: "model.html", style: "primary" }
+      ctaText: "This page should send visitors to the Model.",
     }),
 
     model: makePage({
@@ -331,45 +259,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the model meaningful",
       ctaText: "The model page should explain why the model mattered.",
-      previousButton: { text: "Notebook", href: "notebook.html" },
-      ctaButton: { text: "PCS", href: "pcs.html", style: "primary" }
-    }),
-
-    software: makePage({
-      group: "dry-lab",
-      kicker: "Tool • Input • Output",
-      title: "Project <span class='accent-gradient'>software</span>",
-      lead: "Use this page for the software, its use, and its value.",
-      cardsTitle: "Software blocks",
-      cardsLead: "Keep the software story practical.",
-      cards: [
-        { tag: "Purpose", title: "What it does", text: "State the problem the software solves." },
-        { tag: "Flow", title: "How it works", text: "Show the input-output flow." },
-        { tag: "Value", title: "Why it matters", text: "Tie it to the project." }
-      ],
-      ctaTitle: "Keep the software practical",
-      ctaText: "This page should explain function and value quickly.",
-      previousButton: { text: "Model", href: "model.html" },
-      ctaButton: { text: "PCS", href: "pcs.html", style: "primary" }
-    }),
-
-    pcs: makePage({
-      group: "dry-lab",
-      kicker: "Design • Construct • Screen • Characterize",
-      title: "The <span class='accent-gradient'>PCS workflow</span>",
-      lead: "Use this page for the project pipeline and how each phase connects.",
-      cardsTitle: "PCS phases",
-      cardsLead: "Keep the workflow visual and simple.",
-      cards: [
-        { tag: "P", title: "Design", text: "Target, logic, and planning." },
-        { tag: "C", title: "Construct", text: "System build and setup." },
-        { tag: "S", title: "Screen", text: "Selection and validation." },
-        { tag: "C", title: "Characterize", text: "Performance and meaning." }
-      ],
-      ctaTitle: "Make PCS a signature page",
-      ctaText: "If one workflow page defines Renata, it should be this one.",
-      previousButton: { text: "Software", href: "software.html" },
-      ctaButton: { text: "Results", href: "results.html", style: "primary" }
     }),
 
     engagement: makePage({
@@ -386,7 +275,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Use engagement to strengthen the project",
       ctaText: "This page should show that the project exists in a real-world context.",
-      ctaButton: { text: "Human Practices", href: "human-practices.html", style: "primary" }
     }),
 
     "human-practices": makePage({
@@ -403,8 +291,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the effect visible",
       ctaText: "Judges should clearly see how outside input shaped the project.",
-      previousButton: { text: "PCS", href: "pcs.html" },
-      ctaButton: { text: "Project", href: "index.html#our-project", style: "primary" }
     }),
 
     education: makePage({
@@ -421,8 +307,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the page measurable",
       ctaText: "The page should show what was taught and what came from it.",
-      previousButton: { text: "Human Practices", href: "human-practices.html" },
-      ctaButton: { text: "Our Team", href: "team.html", style: "primary" }
     }),
 
     partnerships: makePage({
@@ -439,8 +323,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Show mutual value",
       ctaText: "The best partnership pages make the shared benefit obvious.",
-      previousButton: { text: "Education", href: "education.html" },
-      ctaButton: { text: "Team", href: "team.html", style: "primary" }
     }),
 
     contact: makePage({
@@ -457,8 +339,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Make the contact path obvious",
       ctaText: "Outside visitors should know exactly how to reach the team.",
-      previousButton: { text: "Our Team", href: "team.html" },
-      ctaButton: { text: "Email the Team", href: "mailto:yourteamemail@example.com", style: "primary" }
     })
   }
 };
@@ -530,6 +410,19 @@ window.SITE_DATA.pages.experiments.details = [
       { id: "B + C", title: "Operator + promoter + sfGFP, plus TF", text: "Tests regulation when both the operator and transcription factor are present." }
     ],
     note: "Suggested readouts: normalized sfGFP fluorescence and growth across a bile-acid concentration series, with appropriate positive and negative controls."
+  },
+  {
+    id: "experiment-notebook",
+    eyebrow: "Experiment notebook",
+    title: "From question to next step",
+    text: "Keep the experimental story chronological while showing what each experiment was meant to answer, how the team interpreted its results, and how that interpretation shaped the work that followed.",
+    steps: [
+      { label: "Chronology", text: "Record when the experiment occurred and place it in the sequence of the project." },
+      { label: "Answers", text: "State the question the experiment addressed and what the result directly answered." },
+      { label: "Interpretation", text: "Explain what the team concluded from the result, including uncertainty and limitations." },
+      { label: "Continuation", text: "Show how that interpretation informed the next experiment, design decision, or project direction." }
+    ],
+    note: "Each dated entry should connect the experimental question, result, interpretation, and resulting next step, with links to its assay, protocol, and raw data."
   }
 ];
 

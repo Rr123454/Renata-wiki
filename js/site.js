@@ -10,6 +10,7 @@
   renderHeader();
   initNavigation();
   renderMain();
+  initProjectSidebar();
   renderFooter();
   initEffects();
 
@@ -55,7 +56,7 @@
   return `
     <div class="nav-item click-menu ${item.menuOnly ? "menu-only" : ""}">
         ${item.menuOnly ? `
-          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic data-home-href="${item.href}" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
             ${item.label}
           </button>
         ` : `
@@ -81,15 +82,61 @@ function initNavigation() {
       ".tabs-row > .tab-link, .tabs-row > .nav-item > .tab-link"
     ),
   ];
+  const viewportBuffer = 12;
+
+  function positionDropdown(item) {
+    if (!item) return;
+    const menu = item.querySelector(":scope > .dropdown-menu");
+    if (!menu) return;
+
+    item.classList.remove("dropdown-align-left");
+    const itemRect = item.getBoundingClientRect();
+    const menuWidth = menu.offsetWidth;
+    const wouldOverflowRight = itemRect.left + menuWidth > window.innerWidth - viewportBuffer;
+    const fitsOnLeft = itemRect.right - menuWidth >= viewportBuffer;
+    item.classList.toggle("dropdown-align-left", wouldOverflowRight && fitsOnLeft);
+  }
+
+  function positionSubmenu(item) {
+    if (!item) return;
+    const menu = item.querySelector(":scope > .submenu-menu");
+    const arrow = item.querySelector(":scope > .submenu-trigger .submenu-arrow");
+    if (!menu) return;
+
+    item.classList.remove("submenu-align-left");
+
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      if (arrow) arrow.textContent = "›";
+      return;
+    }
+
+    const itemRect = item.getBoundingClientRect();
+    const menuWidth = menu.offsetWidth;
+    const submenuGap = 9;
+    const wouldOverflowRight =
+      itemRect.right + submenuGap + menuWidth > window.innerWidth - viewportBuffer;
+    const fitsOnLeft = itemRect.left - submenuGap - menuWidth >= viewportBuffer;
+    const shouldOpenLeft = wouldOverflowRight && fitsOnLeft;
+
+    item.classList.toggle("submenu-align-left", shouldOpenLeft);
+    if (arrow) arrow.textContent = shouldOpenLeft ? "‹" : "›";
+  }
+
+  function positionAllMenus() {
+    document.querySelectorAll(".nav-item").forEach(positionDropdown);
+    document.querySelectorAll(".submenu-item").forEach(positionSubmenu);
+  }
 
   function setMenuState(item, isOpen) {
     if (!item) return;
+    if (isOpen) positionDropdown(item);
     item.classList.toggle("dropdown-open", isOpen);
     item.querySelector(":scope > .tab-link")?.setAttribute("aria-expanded", String(isOpen));
   }
 
   function setSubmenuState(item, isOpen) {
     if (!item) return;
+    if (isOpen) positionSubmenu(item);
     item.classList.toggle("submenu-open", isOpen);
     item.querySelector(":scope > .submenu-trigger")?.setAttribute("aria-expanded", String(isOpen));
   }
@@ -126,15 +173,6 @@ function initNavigation() {
       setMenuState(item, true);
     });
 
-    button.addEventListener("dblclick", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const item = button.closest(".nav-item");
-      closeMenus(item);
-      closeSubmenus();
-      setMenuState(item, true);
-      window.location.assign(button.dataset.homeHref);
-    });
   });
 
   dropdownLinks.forEach((link) => {
@@ -148,15 +186,6 @@ function initNavigation() {
       setMenuState(item, true);
     });
 
-    link.addEventListener("dblclick", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const item = link.closest(".nav-item");
-      closeMenus(item);
-      closeSubmenus();
-      setMenuState(item, true);
-      window.location.assign(link.href);
-    });
   });
 
   submenuLinks.forEach((link) => {
@@ -169,19 +198,11 @@ function initNavigation() {
       setSubmenuState(item, true);
     });
 
-    link.addEventListener("dblclick", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const item = link.closest(".submenu-item");
-      closeSubmenus(item);
-      setSubmenuState(item, true);
-      window.location.assign(link.href);
-    });
-
     link.addEventListener("mouseenter", () => {
       tabsRow?.classList.remove("nav-hover-suppressed");
       clearNavigationFocus(link);
       closeSubmenus(link.closest(".submenu-item"));
+      positionSubmenu(link.closest(".submenu-item"));
     });
   });
 
@@ -191,8 +212,16 @@ function initNavigation() {
       clearNavigationFocus(trigger);
       closeMenus(trigger.closest(".nav-item"));
       closeSubmenus();
+      positionDropdown(trigger.closest(".nav-item"));
     });
   });
+
+  let resizeFrame = null;
+  window.addEventListener("resize", () => {
+    if (resizeFrame) cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(positionAllMenus);
+  });
+  requestAnimationFrame(positionAllMenus);
 
   window.addEventListener("scroll", () => {
     tabsRow?.classList.add("nav-hover-suppressed");
@@ -210,6 +239,38 @@ function initNavigation() {
     }
   });
 }
+
+  function initProjectSidebar() {
+    const tabs = [...document.querySelectorAll(".project-sidebar-tab")];
+    const panels = [...document.querySelectorAll(".project-sidebar-panel")];
+    if (!tabs.length || !panels.length) return;
+
+    function activateTab(activeTab) {
+      tabs.forEach((tab) => {
+        const isActive = tab === activeTab;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === activeTab.dataset.projectPanel;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+      });
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activateTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        const offset = event.key === "ArrowRight" ? 1 : -1;
+        const nextTab = tabs[(index + offset + tabs.length) % tabs.length];
+        activateTab(nextTab);
+        nextTab.focus();
+      });
+    });
+  }
 
   function navItemIsActive(item) {
     if (pageData.group === item.key || pageKey === item.key) return true;
@@ -231,7 +292,7 @@ function initNavigation() {
       <div class="submenu-item">
         <a href="${child.href}" class="submenu-trigger submenu-nav-link ${isActive ? "sub-active" : ""}" aria-haspopup="true" aria-expanded="false">
           <span><strong>${child.label}</strong>${child.description ? `<small>${child.description}</small>` : ""}</span>
-          <span class="submenu-arrow" aria-hidden="true">‹</span>
+          <span class="submenu-arrow" aria-hidden="true">›</span>
         </a>
         <div class="submenu-menu">
           ${child.children.map(renderDropdownChild).join("")}
@@ -257,19 +318,9 @@ function initNavigation() {
 
   function renderTeamPage() {
     return `
-      <section class="page-hero" id="pageHero">
-        <div class="hero-beam" id="heroBeam"></div>
-        <div class="container page-hero-grid">
-          <div class="hero-copy reveal">
-            <p class="hero-kicker">${pageData.kicker}</p>
-            <h1 class="hero-title">${pageData.title}</h1>
-            <p class="hero-lead">${pageData.lead}</p>
-          </div>
-        </div>
-      </section>
-
       <section class="page-section team-photo-section">
         <div class="container">
+          <h1 class="team-photo-kicker reveal">Meet Our Team</h1>
           <div class="team-photo-placeholder reveal" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
             <span class="team-photo-mark" aria-hidden="true">+</span>
             <strong>${pageData.teamPhoto.imageLabel}</strong>
@@ -341,131 +392,195 @@ function initNavigation() {
 
   function renderProjectDescriptionPage() {
     const rationale = pageData.details?.[0] || {};
-    const agencyCards = pageData.cards || [];
 
     return `
-      <section class="page-hero" id="project-description">
-        <div class="hero-beam" id="heroBeam"></div>
+      <section class="project-paper-page" id="project-description">
+        <div class="container project-paper-layout">
+          <article class="project-paper reveal" aria-labelledby="project-paper-title">
+            <header class="project-paper-header">
+              <p class="project-paper-type">Project Description</p>
+              <h1 id="project-paper-title">${pageData.title}</h1>
+              <p class="project-paper-deck">
+                Renata explores a two-cassette synthetic biology strategy for LCA sulfation,
+                pairing BtSULT with a dedicated PAPS-supply module.
+              </p>
+              <div class="project-paper-meta" aria-label="Project document details">
+                <span>iGEM Renata</span>
+                <span>2026 project cycle</span>
+                <span>Working description</span>
+              </div>
+            </header>
 
-        <div class="container home-hero-grid">
-          <div class="hero-copy reveal">
-            <p class="hero-kicker">${pageData.kicker}</p>
-            <h1 class="hero-title">${pageData.title}</h1>
-            <p class="hero-lead">${pageData.lead}</p>
-          </div>
+            <section class="project-paper-section" id="abstract">
+              <p class="project-paper-section-number">Summary</p>
+              <h2>Abstract</h2>
+              <p>
+                Renata proposes a synthetic biology route for sulfating lithocholic acid (LCA).
+                The design combines a BtSULT sulfotransferase cassette with a second cassette
+                intended to supply PAPS, the required sulfate donor. The current project description
+                establishes the biological rationale, planned architecture, and design boundaries;
+                it does not yet claim successful assembly, expression, or LCA sulfation.
+              </p>
+              <div class="project-paper-note">
+                <strong>Abstract content note</strong>
+                <p>
+                  Incorporate the project's agency directly into the final abstract by stating
+                  the biological context, the current gap, and the Renata concept.
+                </p>
+              </div>
+              <figure class="project-paper-figure" id="figure-concept">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the Renata project concept figure">
+                  <span aria-hidden="true">+</span>
+                  <small>Project concept figure</small>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Placeholder for the problem, proposed system, and intended impact.</figcaption>
+              </figure>
+            </section>
 
-          <article class="project-explanation-placeholder reveal delay-1">
-            <div class="project-explanation-heading">
-              <span class="project-explanation-mark" aria-hidden="true">+</span>
-              <p class="detail-eyebrow">Project abstract</p>
-            </div>
-            <h2>Renata at a glance</h2>
-            <p>
-              Renata explores a two-cassette synthetic biology strategy for LCA sulfation,
-              pairing BtSULT with a dedicated PAPS-supply module. This page organizes the
-              project story into agency, methodology, current results, and conclusion.
-            </p>
-          </article>
-        </div>
-      </section>
+            <section class="project-paper-section" id="methodology">
+              <p class="project-paper-section-number">01</p>
+              <h2>Methodology</h2>
+              <h3>${rationale.title || "Biological rationale"}</h3>
+              <p>${rationale.text || ""}</p>
+              ${rationale.items?.length ? `
+                <ul class="project-paper-list">
+                  ${rationale.items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              ` : ""}
+              <div class="project-paper-note">
+                <strong>Methodology content note</strong>
+                <p>
+                  Describe the software tools, inputs, outputs, and computational workflow
+                  within the final Methodology rather than on a separate Software page.
+                </p>
+              </div>
+              <figure class="project-paper-figure" id="figure-pathway">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the two-cassette pathway architecture figure">
+                  <span aria-hidden="true">+</span>
+                  <small>Pathway architecture figure</small>
+                </div>
+                <figcaption><strong>Figure 2.</strong> Planned BtSULT and PAPS-supply cassette architecture.</figcaption>
+              </figure>
+              <figure class="project-paper-figure" id="figure-pcs-development">
+                <div class="project-paper-figure-placeholder pcs-visual" role="img" aria-label="PCS development workflow from Design to Construct, Screen, and Characterize">
+                  <p class="pcs-visual-title">How the workflow was developed</p>
+                  <div class="pcs-workflow-steps">
+                    <div class="pcs-workflow-step"><strong>P</strong><small>Design</small></div>
+                    <div class="pcs-workflow-step"><strong>C</strong><small>Construct</small></div>
+                    <div class="pcs-workflow-step"><strong>S</strong><small>Screen</small></div>
+                    <div class="pcs-workflow-step"><strong>C</strong><small>Characterize</small></div>
+                  </div>
+                </div>
+                <figcaption><strong>Figure 3.</strong> Development sequence for the PCS workflow: Design, Construct, Screen, and Characterize.</figcaption>
+              </figure>
+              <figure class="project-paper-figure" id="figure-pcs-use">
+                <div class="project-paper-figure-placeholder pcs-visual" role="img" aria-label="Intended use of the PCS workflow and the project areas it affects">
+                  <p class="pcs-visual-title">How the workflow should be used and what it affects</p>
+                  <div class="pcs-impact-map">
+                    <div class="pcs-impact-source">
+                      <strong>Use the PCS workflow</strong>
+                      <small>Organize evidence and guide project decisions</small>
+                    </div>
+                    <div class="pcs-impact-outcomes" aria-label="Affected project areas">
+                      <div><strong>Design cycle</strong><small>Plan the next iteration</small></div>
+                      <div><strong>Experiments</strong><small>Prioritize follow-up work</small></div>
+                      <div><strong>Interpretation</strong><small>Connect results to decisions</small></div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption><strong>Figure 4.</strong> Intended use of the PCS workflow and its effects on subsequent project decisions.</figcaption>
+              </figure>
+            </section>
 
-      <section class="home-project-chapter" id="agency">
-        <div class="container project-chapter-grid">
-          <div class="project-chapter-copy reveal">
-            <p class="detail-eyebrow">01 / Project description</p>
-            <h2>Agency</h2>
-            <p>The project story begins by establishing its context, the current gap, and the Renata concept.</p>
-            <div class="project-story-summary">
-              ${agencyCards.map((card) => `
+            <section class="project-paper-section" id="results">
+              <p class="project-paper-section-number">02</p>
+              <h2>Results</h2>
+              <p>
+                The current Project Description establishes a proposed pathway architecture rather
+                than a completed experimental outcome.
+              </p>
+              <div class="project-paper-subsections" aria-label="Results summary structure">
                 <article>
-                  <strong>${card.tag}: ${card.title}</strong>
-                  <p>${card.text}</p>
+                  <p>Data</p>
+                  <h3>Main result</h3>
+                  <p>Present the strongest result and its most important readout first.</p>
                 </article>
-              `).join("")}
+                <article>
+                  <p>Meaning</p>
+                  <h3>Interpretation</h3>
+                  <p>Explain what the evidence supports and what cannot yet be concluded.</p>
+                </article>
+                <article>
+                  <p>Limits</p>
+                  <h3>Next step</h3>
+                  <p>Identify remaining limitations and the work needed to resolve them.</p>
+                </article>
+              </div>
+              ${rationale.note ? `<div class="project-paper-note"><strong>Current design status</strong><p>${rationale.note.replace(/^Design status:\s*/i, "")}</p></div>` : ""}
+              <figure class="project-paper-figure" id="figure-status">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the current evidence status figure">
+                  <span aria-hidden="true">+</span>
+                  <small>Evidence status figure</small>
+                </div>
+                <figcaption><strong>Figure 5.</strong> Placeholder for current evidence, limitations, and unresolved design decisions.</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-paper-section" id="conclusion">
+              <p class="project-paper-section-number">03</p>
+              <h2>Conclusion</h2>
+              <p>
+                The working description defines Renata's intended two-cassette route to LCA
+                sulfation and identifies the design decisions that must be confirmed before
+                the project advances into engineering and experimental results.
+              </p>
+            </section>
+
+          </article>
+
+          <aside class="project-paper-sidebar reveal delay-1" aria-label="Project description navigation">
+            <div class="project-paper-sidebar-inner">
+              <h2>Explore this page</h2>
+              <div class="project-sidebar-tabs" role="tablist" aria-label="Project description resources">
+                <button type="button" class="project-sidebar-tab active" id="project-tab-links" role="tab" aria-selected="true" aria-controls="project-panel-links" data-project-panel="project-panel-links">Sections</button>
+                <button type="button" class="project-sidebar-tab" id="project-tab-figures" role="tab" aria-selected="false" aria-controls="project-panel-figures" data-project-panel="project-panel-figures">Figures</button>
+                <button type="button" class="project-sidebar-tab" id="project-tab-references" role="tab" aria-selected="false" aria-controls="project-panel-references" data-project-panel="project-panel-references">References</button>
+              </div>
+
+              <div class="project-sidebar-panel active" id="project-panel-links" role="tabpanel" aria-labelledby="project-tab-links">
+                <a href="#abstract">Abstract</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#results">Results</a>
+                <a href="#conclusion">Conclusion</a>
+              </div>
+
+              <div class="project-sidebar-panel" id="project-panel-figures" role="tabpanel" aria-labelledby="project-tab-figures" hidden>
+                <a href="#figure-concept"><span>Figure 1</span> Project concept</a>
+                <a href="#figure-pathway"><span>Figure 2</span> Pathway architecture</a>
+                <a href="#figure-pcs-development"><span>Figure 3</span> Workflow development</a>
+                <a href="#figure-pcs-use"><span>Figure 4</span> Intended use and effects</a>
+                <a href="#figure-status"><span>Figure 5</span> Evidence status</a>
+              </div>
+
+              <div class="project-sidebar-panel" id="project-panel-references" role="tabpanel" aria-labelledby="project-tab-references" hidden>
+                <div class="project-sidebar-reference">
+                  <strong>Background literature</strong>
+                  <span>Add sources supporting the biological context and project need.</span>
+                </div>
+                <div class="project-sidebar-reference">
+                  <strong>Pathway literature</strong>
+                  <span>Add sources for BtSULT, PAPS supply, and LCA sulfation.</span>
+                </div>
+                <div class="project-sidebar-reference">
+                  <strong>Assembly literature</strong>
+                  <span>Add sources for the Golden Gate and JUMP design strategy.</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for an agency section image">
-            <span aria-hidden="true">+</span>
-            <small>Agency image placeholder</small>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section class="home-project-chapter project-chapter-alt" id="methodology">
-        <div class="container project-chapter-grid project-chapter-reverse">
-          <div class="project-chapter-copy reveal">
-            <p class="detail-eyebrow">02 / Project description</p>
-            <h2>Methodology</h2>
-            <h3 class="project-story-subtitle">${rationale.title || "Biological rationale"}</h3>
-            <p>${rationale.text || ""}</p>
-            ${rationale.items?.length ? `
-              <ul class="project-story-points">
-                ${rationale.items.map((item) => `<li>${item}</li>`).join("")}
-              </ul>
-            ` : ""}
-          </div>
-          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a methodology section image">
-            <span aria-hidden="true">+</span>
-            <small>Methodology image placeholder</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-project-chapter" id="results">
-        <div class="container project-chapter-grid">
-          <div class="project-chapter-copy reveal">
-            <p class="detail-eyebrow">03 / Project description</p>
-            <h2>Results</h2>
-            <p>The current Project Description establishes a proposed pathway architecture rather than a completed experimental outcome.</p>
-            ${rationale.note ? `<p class="project-story-status"><strong>Current design status:</strong> ${rationale.note.replace(/^Design status:\s*/i, "")}</p>` : ""}
-          </div>
-          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a results section image">
-            <span aria-hidden="true">+</span>
-            <small>Results image placeholder</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-project-chapter project-chapter-alt" id="conclusion">
-        <div class="container project-chapter-grid project-chapter-reverse">
-          <div class="project-chapter-copy reveal">
-            <p class="detail-eyebrow">04 / Project description</p>
-            <h2>Conclusion</h2>
-            <p>
-              The working description defines Renata's intended two-cassette route to LCA
-              sulfation and identifies the design decisions that must be confirmed before
-              the project advances into engineering and experimental results.
-            </p>
-          </div>
-          <div class="project-chapter-image reveal delay-1" role="img" aria-label="Placeholder for a conclusion section image">
-            <span aria-hidden="true">+</span>
-            <small>Conclusion image placeholder</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="next-step-section" aria-label="Page progression">
-        <div class="container">
-          <div class="next-step-nav reveal">
-            ${pageData.previousButton ? `
-              <a href="${pageData.previousButton.href}" class="next-step-link previous-step-link magnetic" data-magnetic>
-                <span class="next-step-arrow" aria-hidden="true">←</span>
-                <span class="next-step-copy">
-                  <small>Previous step:</small>
-                  <strong>${pageData.previousButton.text}</strong>
-                </span>
-              </a>
-            ` : ""}
-            <a href="${pageData.ctaButton.href}" class="next-step-link magnetic" data-magnetic>
-              <span class="next-step-copy">
-                <small>Next step:</small>
-                <strong>${pageData.ctaButton.text}</strong>
-              </span>
-              <span class="next-step-arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
     `;
   }
 
@@ -499,28 +614,6 @@ function initNavigation() {
 
       ${renderDetailSections(pageData.details)}
 
-      <section class="next-step-section" aria-label="Page progression">
-        <div class="container">
-          <div class="next-step-nav reveal">
-            ${pageData.previousButton ? `
-              <a href="${pageData.previousButton.href}" class="next-step-link previous-step-link magnetic" data-magnetic>
-                <span class="next-step-arrow" aria-hidden="true">←</span>
-                <span class="next-step-copy">
-                  <small>Previous step:</small>
-                  <strong>${pageData.previousButton.text}</strong>
-                </span>
-              </a>
-            ` : ""}
-            <a href="${pageData.ctaButton.href}" class="next-step-link magnetic" data-magnetic>
-              <span class="next-step-copy">
-                <small>Next step:</small>
-                <strong>${pageData.ctaButton.text}</strong>
-              </span>
-              <span class="next-step-arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
     `;
   }
 
