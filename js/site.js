@@ -400,15 +400,6 @@ function initNavigation() {
             <header class="project-paper-header">
               <p class="project-paper-type">Project Description</p>
               <h1 id="project-paper-title">${pageData.title}</h1>
-              <p class="project-paper-deck">
-                Renata explores a two-cassette synthetic biology strategy for LCA sulfation,
-                pairing BtSULT with a dedicated PAPS-supply module.
-              </p>
-              <div class="project-paper-meta" aria-label="Project document details">
-                <span>iGEM Renata</span>
-                <span>2026 project cycle</span>
-                <span>Working description</span>
-              </div>
             </header>
 
             <section class="project-paper-section" id="abstract">
@@ -555,11 +546,26 @@ function initNavigation() {
               </div>
 
               <div class="project-sidebar-panel" id="project-panel-figures" role="tabpanel" aria-labelledby="project-tab-figures" hidden>
-                <a href="#figure-concept"><span>Figure 1</span> Project concept</a>
-                <a href="#figure-pathway"><span>Figure 2</span> Pathway architecture</a>
-                <a href="#figure-pcs-development"><span>Figure 3</span> Workflow development</a>
-                <a href="#figure-pcs-use"><span>Figure 4</span> Intended use and effects</a>
-                <a href="#figure-status"><span>Figure 5</span> Evidence status</a>
+                <a href="#figure-concept" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 1"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Project concept</strong></span>
+                </a>
+                <a href="#figure-pathway" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 2"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 2</span><strong>Pathway architecture</strong></span>
+                </a>
+                <a href="#figure-pcs-development" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 3"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 3</span><strong>Workflow development</strong></span>
+                </a>
+                <a href="#figure-pcs-use" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 4"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 4</span><strong>Intended use and effects</strong></span>
+                </a>
+                <a href="#figure-status" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 5"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 5</span><strong>Evidence status</strong></span>
+                </a>
               </div>
 
               <div class="project-sidebar-panel" id="project-panel-references" role="tabpanel" aria-labelledby="project-tab-references" hidden>
@@ -795,8 +801,9 @@ function initNavigation() {
           <div class="link-directory reveal delay-1">
             ${directoryData.linkColumns.map((column) => {
               const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
+              const columnClass = headingId.replace(/-links$/, "");
               return `
-                <section class="link-directory-column" aria-labelledby="${headingId}">
+                <section class="link-directory-column link-directory-column-${columnClass}" aria-labelledby="${headingId}">
                   <h3 id="${headingId}">${column.title}</h3>
                   <ul>
                     ${column.links.map((link) => `
@@ -825,14 +832,11 @@ function initNavigation() {
     const heroBeam = document.getElementById("heroBeam");
     const cursorRing = document.getElementById("cursorRing");
     const cursorDot = document.getElementById("cursorDot");
-    const emberField = document.getElementById("emberField");
     const revealEls = [...document.querySelectorAll(".reveal")];
     const magneticEls = [...document.querySelectorAll("[data-magnetic]")];
     const tiltEls = [...document.querySelectorAll(".tilt-card")];
     const interactiveEls = [...document.querySelectorAll("a, button, .tilt-card, .glass-card, .logo-core")];
     const logoCore = document.getElementById("logoCore");
-
-    createEmbers(22);
 
     let observer = null;
     if ("IntersectionObserver" in window) {
@@ -993,20 +997,5 @@ function initNavigation() {
 
     animateCursor();
 
-    function createEmbers(count) {
-      if (!emberField) return;
-
-      for (let i = 0; i < count; i += 1) {
-        const ember = document.createElement("span");
-        ember.className = "ember";
-        ember.style.left = `${Math.random() * 100}%`;
-        ember.style.top = `${55 + Math.random() * 46}%`;
-        ember.style.animationDuration = `${6 + Math.random() * 8}s`;
-        ember.style.animationDelay = `${Math.random() * 8}s`;
-        ember.style.width = `${5 + Math.random() * 8}px`;
-        ember.style.height = ember.style.width;
-        emberField.appendChild(ember);
-      }
-    }
   }
 })();

@@ -86,15 +86,10 @@ window.SITE_DATA = {
           ]
         },
         {
-          title: "Wet Lab",
+          title: "Lab Work",
           links: [
             { text: "Experiments", href: "experiments.html" },
-            { text: "Protocols", href: "protocols.html" }
-          ]
-        },
-        {
-          title: "Dry Lab",
-          links: [
+            { text: "Protocols", href: "protocols.html" },
             { text: "Model", href: "model.html" }
           ]
         },
@@ -151,7 +146,7 @@ window.SITE_DATA = {
     "project-description": makePage({
       group: "project",
       kicker: "Background • Gap • Concept",
-      title: "Project <span class='accent-gradient'>description</span>",
+      title: "Description",
       lead: "Use this page for the full project story.",
       cardsTitle: "Main sections",
       cardsLead: "Keep the structure simple.",
