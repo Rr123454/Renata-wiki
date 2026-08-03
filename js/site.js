@@ -342,7 +342,13 @@ function initNavigation() {
   }
 
   function renderTeamGroup(group, groupIndex) {
-    const cards = Array.from({ length: group.slots }, (_, index) => renderMemberPlaceholder(group, index));
+    const members = group.members || Array.from({ length: group.slots || 0 }, () => "Member Name");
+    const gridClass = group.layout === "pi"
+      ? "pi-member-grid"
+      : group.layout === "compact"
+        ? "compact-member-grid"
+        : "department-grid";
+    const cards = members.map((member, index) => renderMemberCard(group, member, index));
     return `
       <section class="page-section team-group-section ${groupIndex % 2 ? "team-group-alt" : ""}" id="${group.key}">
         <div class="container">
@@ -353,7 +359,7 @@ function initNavigation() {
             </div>
             <p>${group.description}</p>
           </div>
-          <div class="member-grid ${group.key === "supervisors" ? "supervisor-grid" : "department-grid"}">
+          <div class="member-grid ${gridClass}">
             ${cards.join("")}
           </div>
         </div>
@@ -361,16 +367,18 @@ function initNavigation() {
     `;
   }
 
-  function renderMemberPlaceholder(group, index) {
+  function renderMemberCard(group, member, index) {
+    const memberName = typeof member === "string" ? member : member.name;
+    const memberRole = typeof member === "string" ? group.memberLabel : member.role;
     const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
     return `
       <article class="member-card reveal ${delayClass}">
-        <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${group.memberLabel} ${index + 1}">
+        <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
           <span aria-hidden="true">+</span>
         </div>
         <div class="member-meta">
-          <h3>Member Name</h3>
-          <p>${group.memberLabel}</p>
+          <h3>${memberName}</h3>
+          <p>${memberRole}</p>
         </div>
       </article>
     `;
@@ -818,25 +826,13 @@ function initNavigation() {
       </section>
       <div class="container footer-inner">
         <p>© 2026 iGEM Renata. All rights reserved.</p>
-        <p>Multi-page wiki • dropdown nav • simplified content</p>
       </div>
     `;
   }
 
   function initEffects() {
-    const progressBar = document.getElementById("progressBar");
-    const scrollRailFill = document.getElementById("scrollRailFill");
-    const scrollRailThumb = document.getElementById("scrollRailThumb");
     const siteHeader = document.getElementById("siteHeader");
-    const hero = document.querySelector(".page-hero");
-    const heroBeam = document.getElementById("heroBeam");
-    const cursorRing = document.getElementById("cursorRing");
-    const cursorDot = document.getElementById("cursorDot");
     const revealEls = [...document.querySelectorAll(".reveal")];
-    const magneticEls = [...document.querySelectorAll("[data-magnetic]")];
-    const tiltEls = [...document.querySelectorAll(".tilt-card")];
-    const interactiveEls = [...document.querySelectorAll("a, button, .tilt-card, .glass-card, .logo-core")];
-    const logoCore = document.getElementById("logoCore");
 
     let observer = null;
     if ("IntersectionObserver" in window) {
@@ -860,22 +856,6 @@ function initNavigation() {
 
     function updateScroll() {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) : 0;
-
-      if (progressBar) {
-        progressBar.style.width = `${progress * 100}%`;
-      }
-
-      if (scrollRailFill) {
-        scrollRailFill.style.height = `${progress * 100}%`;
-      }
-
-      if (scrollRailThumb) {
-        const railHeight = 240;
-        const thumbY = progress * (railHeight - 22);
-        scrollRailThumb.style.transform = `translate(-50%, ${thumbY}px)`;
-      }
 
       if (siteHeader) {
         if (scrollTop > 20) siteHeader.classList.add("scrolled");
@@ -886,116 +866,6 @@ function initNavigation() {
     window.addEventListener("scroll", updateScroll, { passive: true });
     window.addEventListener("load", updateScroll);
     updateScroll();
-
-    if (hero && heroBeam) {
-      hero.addEventListener("mousemove", (e) => {
-        const rect = hero.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-        heroBeam.style.setProperty("--spotlight-x", `${x}%`);
-        heroBeam.style.setProperty("--spotlight-y", `${y}%`);
-      });
-
-      hero.addEventListener("mouseleave", () => {
-        heroBeam.style.setProperty("--spotlight-x", "62%");
-        heroBeam.style.setProperty("--spotlight-y", "28%");
-      });
-    }
-
-    magneticEls.forEach((el) => {
-      el.addEventListener("mousemove", (e) => {
-        if (window.innerWidth <= 768) return;
-
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-
-        el.style.transform = `translate(${x * 0.10}px, ${y * 0.10}px)`;
-      });
-
-      el.addEventListener("mouseleave", () => {
-        el.style.transform = "translate(0, 0)";
-      });
-    });
-
-    tiltEls.forEach((el) => {
-      el.addEventListener("mousemove", (e) => {
-        if (window.innerWidth <= 768) return;
-
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const rotateX = ((y / rect.height) - 0.5) * -10;
-        const rotateY = ((x / rect.width) - 0.5) * 10;
-
-        el.style.transform = `perspective(950px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-      });
-
-      el.addEventListener("mouseleave", () => {
-        el.style.transform = "";
-      });
-    });
-
-    if (logoCore) {
-      logoCore.addEventListener("mousemove", (e) => {
-        if (window.innerWidth <= 768) return;
-
-        const rect = logoCore.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const rotateX = ((y / rect.height) - 0.5) * -13;
-        const rotateY = ((x / rect.width) - 0.5) * 13;
-
-        logoCore.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.01)`;
-      });
-
-      logoCore.addEventListener("mouseleave", () => {
-        logoCore.style.transform = "";
-      });
-    }
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
-    let dotX = mouseX;
-    let dotY = mouseY;
-
-    window.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-      if (!cursorRing || !cursorDot) return;
-
-      ringX += (mouseX - ringX) * 0.14;
-      ringY += (mouseY - ringY) * 0.14;
-      dotX += (mouseX - dotX) * 0.34;
-      dotY += (mouseY - dotY) * 0.34;
-
-      if (window.innerWidth > 768) {
-        cursorRing.style.transform = `translate(${ringX - 21}px, ${ringY - 21}px)`;
-        cursorDot.style.transform = `translate(${dotX - 5}px, ${dotY - 5}px)`;
-      }
-
-      requestAnimationFrame(animateCursor);
-    }
-
-    interactiveEls.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        if (cursorRing) cursorRing.classList.add("active");
-      });
-
-      el.addEventListener("mouseleave", () => {
-        if (cursorRing) cursorRing.classList.remove("active");
-      });
-    });
-
-    animateCursor();
 
   }
 })();

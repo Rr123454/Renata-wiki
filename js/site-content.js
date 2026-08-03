@@ -64,7 +64,7 @@ window.SITE_DATA = {
   pages: {
     home: makePage({
       group: "home",
-      kicker: "Synthetic Biology • Rebirth • Impact",
+      kicker: "Synthetic Biology / Rebirth / Impact",
       title: "Our <span class='accent-gradient'>Project</span>",
       lead: "Explore the people, science, and impact behind our synthetic biology project.",
       ctaTitle: "CONTACTS & IMPORTANT LINKS",
@@ -74,8 +74,8 @@ window.SITE_DATA = {
           title: "Our Team",
           links: [
             { text: "Meet Our Team", href: "team.html" },
-            { text: "Supervisors", href: "team.html#supervisors" },
-            { text: "Students", href: "team.html#students" }
+            { text: "PIs & Advisors", href: "team.html#pis" },
+            { text: "Students", href: "team.html#student-leaders" }
           ]
         },
         {
@@ -105,7 +105,7 @@ window.SITE_DATA = {
 
     team: makePage({
       group: "team",
-      kicker: "People • Roles • Collaboration",
+      kicker: "People / Roles / Collaboration",
       title: "Meet <span class='accent-gradient'>Our Team</span>",
       lead: "Meet the people behind Renata, see how each person contributed, and learn how to connect with us.",
       cardsTitle: "The people behind Renata",
@@ -122,14 +122,58 @@ window.SITE_DATA = {
         imageLabel: "Full team photo"
       },
       teamGroups: [
-        { key: "supervisors", title: "Supervisors", description: "Faculty, advisors, and mentors guiding the team.", slots: 4, memberLabel: "Supervisor" },
-        { key: "students", title: "Students", description: "Student members contributing across the scientific, technical, engagement, and project work behind Renata.", slots: 8, memberLabel: "Student" }
+        {
+          key: "pis",
+          title: "PIs",
+          description: "Primary and secondary investigators leading and supporting the project.",
+          layout: "pi",
+          members: [
+            { name: "Emma Zschunke", role: "Primary PI" },
+            { name: "Preya Shrivastava", role: "Secondary PI" }
+          ]
+        },
+        {
+          key: "advisors",
+          title: "Advisors",
+          description: "Advisors providing scientific and project guidance.",
+          memberLabel: "Advisor",
+          layout: "compact",
+          members: ["Matt M.", "Tasha B."]
+        },
+        {
+          key: "community-mentor",
+          title: "Community Mentor",
+          description: "Community mentorship connecting the project with broader perspectives.",
+          memberLabel: "Community Mentor",
+          layout: "compact",
+          members: ["Sharan S."]
+        },
+        {
+          key: "student-leaders",
+          title: "Student Leaders",
+          description: "Student leaders coordinating the team's scientific, technical, and organizational work.",
+          memberLabel: "Student Leader",
+          layout: "wide",
+          members: ["Humza S.", "Karthik S.", "Kavi S.", "Kyle K.", "Ritvin R."]
+        },
+        {
+          key: "students",
+          title: "Students",
+          description: "Student members contributing across the project.",
+          memberLabel: "Student",
+          layout: "wide",
+          members: [
+            "Aaron T.", "Aiden R.", "Brandon", "Ella Y.", "Faizaan M.",
+            "Hannah B.", "Hanyu H.", "Kylie T.", "Margaret L.", "Matthew S.",
+            "Ryan J.", "Tiger L.", "Toni D.", "Vanessa L.", "Yuqing Z"
+          ]
+        }
       ]
     }),
 
     project: makePage({
       group: "project",
-      kicker: "Problem • System • Impact",
+      kicker: "Problem / System / Impact",
       title: "The <span class='accent-gradient'>project</span> at a glance",
       lead: "This overview introduces the problem, the proposed system, and the project goal.",
       cardsTitle: "Project at a glance",
@@ -145,7 +189,7 @@ window.SITE_DATA = {
 
     "project-description": makePage({
       group: "project",
-      kicker: "Background • Gap • Concept",
+      kicker: "Background / Gap / Concept",
       title: "Description",
       lead: "Use this page for the full project story.",
       cardsTitle: "Main sections",
@@ -161,7 +205,7 @@ window.SITE_DATA = {
 
     engineering: makePage({
       group: "project",
-      kicker: "Design • Build • Learn",
+      kicker: "Design / Build / Learn",
       title: "<span class='accent-gradient'>Engineering</span> the system",
       lead: "Use this page to show iteration and design changes.",
       cardsTitle: "Iteration blocks",
@@ -177,7 +221,7 @@ window.SITE_DATA = {
 
     "wet-lab": makePage({
       group: "wet-lab",
-      kicker: "Build • Assays • Validation",
+      kicker: "Build / Assays / Validation",
       title: "The <span class='accent-gradient'>wet lab</span> hub",
       lead: "This overview frames the experimental work before the deeper wet-lab pages.",
       cardsTitle: "Wet lab at a glance",
@@ -193,7 +237,7 @@ window.SITE_DATA = {
 
     experiments: makePage({
       group: "wet-lab",
-      kicker: "Assays • Controls • Readouts",
+      kicker: "Assays / Controls / Readouts",
       title: "<span class='accent-gradient'>Experiments</span>",
       lead: "Use this page for the main assay structure, logic, and experimental record.",
       cardsTitle: "Main blocks",
@@ -210,7 +254,7 @@ window.SITE_DATA = {
 
     protocols: makePage({
       group: "wet-lab",
-      kicker: "Methods • Conditions • Reproducibility",
+      kicker: "Methods / Conditions / Reproducibility",
       title: "<span class='accent-gradient'>Protocols</span>",
       lead: "Use this page for method details and reproducibility.",
       cardsTitle: "Protocol blocks",
@@ -226,7 +270,7 @@ window.SITE_DATA = {
 
     "dry-lab": makePage({
       group: "dry-lab",
-      kicker: "Modeling • Analysis • Workflow",
+      kicker: "Modeling / Analysis / Workflow",
       title: "The <span class='accent-gradient'>dry lab</span> hub",
       lead: "This overview frames the modeling and computational analysis behind Renata.",
       cardsTitle: "Dry lab at a glance",
@@ -242,7 +286,7 @@ window.SITE_DATA = {
 
     model: makePage({
       group: "dry-lab",
-      kicker: "Assumptions • Variables • Prediction",
+      kicker: "Assumptions / Variables / Prediction",
       title: "Project <span class='accent-gradient'>model</span>",
       lead: "Use this page for the model, its assumptions, and what it predicts.",
       cardsTitle: "Model blocks",
@@ -258,7 +302,7 @@ window.SITE_DATA = {
 
     engagement: makePage({
       group: "engagement",
-      kicker: "Stakeholders • Outreach • Context",
+      kicker: "Stakeholders / Outreach / Context",
       title: "<span class='accent-gradient'>Engagement</span>",
       lead: "This overview brings together the people, outreach, and real-world context surrounding the project.",
       cardsTitle: "Engagement at a glance",
@@ -274,7 +318,7 @@ window.SITE_DATA = {
 
     "human-practices": makePage({
       group: "engagement",
-      kicker: "Stakeholders • Decisions • Integration",
+      kicker: "Stakeholders / Decisions / Integration",
       title: "<span class='accent-gradient'>Human Practices</span>",
       lead: "Use this page to show who you talked to and what changed because of it.",
       cardsTitle: "Human Practices blocks",
@@ -290,7 +334,7 @@ window.SITE_DATA = {
 
     education: makePage({
       group: "engagement",
-      kicker: "Audience • Material • Outcome",
+      kicker: "Audience / Material / Outcome",
       title: "Project <span class='accent-gradient'>education</span>",
       lead: "Use this page for the audience, material, and result of your educational work.",
       cardsTitle: "Education blocks",
@@ -306,7 +350,7 @@ window.SITE_DATA = {
 
     partnerships: makePage({
       group: "engagement",
-      kicker: "Collaboration • Shared work • Impact",
+      kicker: "Collaboration / Shared work / Impact",
       title: "<span class='accent-gradient'>Partnerships</span>",
       lead: "Use this page for partner teams and external collaboration.",
       cardsTitle: "Partnership blocks",
@@ -322,7 +366,7 @@ window.SITE_DATA = {
 
     contact: makePage({
       group: "contact",
-      kicker: "Email • Sponsors • Advisors",
+      kicker: "Email / Sponsors / Advisors",
       title: "Get in <span class='accent-gradient'>contact</span>",
       lead: "Use this page for the team email, institution, sponsors, and public contact info.",
       cardsTitle: "Contact blocks",

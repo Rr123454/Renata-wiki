@@ -1,29 +1,33 @@
 :root {
-  --bg-0: #020714;
-  --bg-1: #061121;
-  --bg-2: #0a1b35;
+  --bg-0: #101a22;
+  --bg-1: #101a22;
+  --bg-2: #101a22;
 
-  /* Bright type and accents sampled from the orange, navy, and white Renata mark. */
-  --text: #fffaf0;
-  --muted: #f3dfc4;
-  --muted-2: #d9e5f7;
+  /* Restrained Renata system: navy, warm ivory, and one orange accent. */
+  --text: #f3efe6;
+  --muted: #d7d0c3;
+  --muted-2: #9da8b0;
 
-  --ember: #ff5714;
-  --orange: #ff681f;
-  --amber: #ff9348;
-  --gold: #ffc56e;
-  --cyan: #ffad63;
-  --cyan-2: #fff0cf;
-  --white-soft: rgba(255, 255, 255, 0.08);
-  --line: rgba(255, 255, 255, 0.12);
+  --accent: #f06b32;
+  --accent-orange: var(--accent);
+  --accent-yellow: var(--accent);
+  --cream: var(--text);
+  --ember: var(--accent);
+  --orange: var(--accent);
+  --amber: var(--accent);
+  --gold: var(--accent);
+  --cyan: var(--accent);
+  --cyan-2: var(--text);
+  --white-soft: rgba(243, 239, 230, 0.06);
+  --line: rgba(243, 239, 230, 0.17);
 
-  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.38);
-  --shadow-md: 0 18px 42px rgba(0, 0, 0, 0.26);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.16);
 
-  --radius-xl: 34px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 14px;
+  --radius-xl: 6px;
+  --radius-lg: 4px;
+  --radius-md: 3px;
+  --radius-sm: 2px;
 
   --container: 1240px;
   --transition: 280ms ease;
@@ -31,7 +35,7 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 179, 71, 0.95) rgba(255, 255, 255, 0.04);
+  scrollbar-color: var(--accent) rgba(243, 239, 230, 0.05);
 }
 
 body::-webkit-scrollbar {
@@ -43,177 +47,27 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--gold), var(--ember), var(--cyan));
-  border-radius: 999px;
-  border: 2px solid rgba(2, 7, 20, 0.85);
+  background: var(--accent);
+  border-radius: 0;
+  border: 2px solid var(--bg-0);
 }
 
 body {
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
+    "Trebuchet MS",
+    "Gill Sans MT",
+    "Avenir Next",
     sans-serif;
   color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
-  cursor: none;
-  background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 44%, var(--bg-2) 100%);
-}
-
-@media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
+  cursor: auto;
+  background: var(--bg-0);
 }
 
 .container {
   width: min(var(--container), calc(100% - 2rem));
   margin: 0 auto;
-}
-
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  z-index: 6000;
-  background: linear-gradient(90deg, var(--ember), var(--gold), var(--cyan));
-  box-shadow: 0 0 22px rgba(255, 106, 0, 0.45);
-}
-
-.scroll-rail {
-  position: fixed;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 240px;
-  z-index: 5500;
-  pointer-events: none;
-}
-
-.scroll-rail-track {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.28);
-}
-
-.scroll-rail-fill {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 6px;
-  height: 0%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold), var(--ember), var(--cyan));
-  box-shadow: 0 0 20px rgba(255, 106, 0, 0.38);
-}
-
-.scroll-rail-thumb {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  transform: translate(-50%, 0);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.96), rgba(255,209,102,0.96) 42%, rgba(255,106,0,0.96) 70%, transparent 72%);
-  box-shadow:
-    0 0 20px rgba(255, 106, 0, 0.50),
-    0 0 36px rgba(255, 147, 72, 0.22);
-  animation: railPulse 2.2s ease-in-out infinite;
-}
-
-.scroll-rail-thumb::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  opacity: 0.62;
-}
-
-@keyframes railPulse {
-  0%, 100% {
-    transform: translate(-50%, 0) scale(1);
-  }
-  50% {
-    transform: translate(-50%, 0) scale(1.08);
-  }
-}
-
-@media (max-width: 760px) {
-  .scroll-rail {
-    display: none;
-  }
-}
-
-.cursor-ring,
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 7000;
-}
-
-.cursor-ring {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: radial-gradient(circle, rgba(255, 106, 0, 0.12), transparent 70%);
-  transition:
-    width 0.18s ease,
-    height 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.cursor-ring.active {
-  width: 68px;
-  height: 68px;
-  border-color: rgba(255, 173, 99, 0.46);
-}
-
-.cursor-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--ember));
-  box-shadow: 0 0 18px rgba(255, 106, 0, 0.58);
-}
-
-@media (pointer: coarse) {
-  .cursor-ring,
-  .cursor-dot {
-    display: none;
-  }
-}
-
-.backdrop-grid {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-
-.backdrop-grid {
-  z-index: -4;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.08) 68%, transparent);
 }
 
 .site-header {
@@ -747,10 +601,13 @@ a {
 }
 
 .project-story-points li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--accent-orange);
+  top: 0.8em;
+  width: 0.75rem;
+  height: 2px;
+  background: var(--accent-orange);
 }
 
 .project-story-status {
@@ -1887,6 +1744,16 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.compact-member-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+  justify-content: start;
+}
+
+.pi-member-grid {
+  grid-template-columns: repeat(2, minmax(0, 240px));
+  justify-content: start;
+}
+
 .department-grid {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
@@ -2433,6 +2300,342 @@ a {
 @keyframes sweep {
   0% { left: -30%; }
   100% { left: 120%; }
+}
+
+/* Editorial reset: fewer effects, one accent, and hierarchy instead of card chrome. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.section-title,
+.team-group-heading h2,
+.project-paper-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.site-header {
+  border-top-color: var(--accent);
+  background: rgba(16, 26, 34, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+
+.site-header.scrolled {
+  background: rgba(16, 26, 34, 0.99);
+}
+
+.tab-link,
+.dropdown-menu,
+.dropdown-menu a,
+.submenu-menu {
+  border-radius: 2px;
+}
+
+.tab-link::before,
+.btn::after,
+.glass-card::before,
+.cta-panel::before,
+.hero-beam,
+.logo-glow,
+.logo-orbit-ring,
+.logo-orbit-ring-2,
+.logo-orbit-ring-3,
+.logo-core::before {
+  display: none;
+}
+
+.dropdown-menu,
+.submenu-menu {
+  background: #17232c;
+  border-color: var(--line);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.sub-active {
+  background: rgba(243, 239, 230, 0.06);
+  color: var(--accent);
+}
+
+.page-hero,
+.home-project-chapter,
+.project-chapter-alt,
+.section-zone,
+.team-roster-section,
+.detail-section {
+  background: transparent;
+}
+
+.hero-kicker,
+.detail-eyebrow,
+.card-tag,
+.team-photo-kicker,
+.project-paper-eyebrow {
+  color: var(--accent);
+}
+
+.hero-kicker::before {
+  width: 24px;
+  height: 1px;
+  border-radius: 0;
+  background: var(--accent);
+}
+
+.accent-gradient {
+  background: none;
+  color: var(--accent);
+  -webkit-text-fill-color: currentColor;
+}
+
+.btn {
+  border-radius: 2px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.btn:hover {
+  transform: none;
+}
+
+.btn-primary {
+  color: #101a22;
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.home-video-hero,
+.home-video-frame {
+  background: #0c151c;
+}
+
+.home-video-play {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+  box-shadow: none;
+}
+
+.project-explanation-placeholder,
+.logo-core,
+.card-image-placeholder,
+.project-chapter-image,
+.project-paper-figure-placeholder,
+.project-sidebar-figure-thumb,
+.section-card-image,
+.team-photo-placeholder,
+.member-photo-placeholder {
+  background: #15222b;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.project-explanation-mark,
+.project-sidebar-tab.active,
+.project-sidebar-tab:hover,
+.project-sidebar-tab:focus-visible {
+  background: var(--accent);
+}
+
+.logo-core {
+  border-radius: 4px;
+  animation: none;
+  backdrop-filter: none;
+}
+
+.glass-card,
+.cta-panel,
+.detail-panel,
+.member-card,
+.detail-step,
+.construct-card,
+.project-paper-subsections article,
+.pcs-workflow-step,
+.pcs-impact-source,
+.pcs-impact-outcomes > div,
+.stat-card {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.glass-card {
+  padding: 1.25rem 0;
+  border: 0;
+  border-top: 2px solid var(--accent);
+  overflow: visible;
+}
+
+.glass-card:hover {
+  transform: none;
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+.card-tag {
+  display: block;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.cta-panel,
+.detail-panel {
+  padding-inline: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  overflow: visible;
+}
+
+.detail-list {
+  gap: 0;
+}
+
+.detail-list li {
+  padding: 0.85rem 0 0.85rem 2rem;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.detail-list li::before {
+  top: 1.45rem;
+  left: 0;
+  width: 1rem;
+  height: 2px;
+  border-radius: 0;
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.detail-step,
+.construct-card,
+.project-paper-subsections article,
+.pcs-workflow-step,
+.pcs-impact-source,
+.pcs-impact-outcomes > div {
+  padding-inline: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.detail-step > span {
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.construct-card > span,
+.project-sidebar-tabs button,
+.project-sidebar-link,
+.project-figure-thumb {
+  border-radius: 0;
+}
+
+.construct-card > span {
+  padding: 0;
+  border: 0;
+}
+
+.evidence-note {
+  border-radius: 0;
+  background: transparent;
+}
+
+.member-card {
+  overflow: visible;
+  border: 0;
+}
+
+.member-photo-placeholder {
+  border: 1px solid var(--line);
+}
+
+.member-meta {
+  padding-inline: 0;
+}
+
+.project-paper-sidebar-inner {
+  padding-inline: 1.1rem 0;
+  border: 0;
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.project-paper-subsections article {
+  padding-top: 1.25rem;
+}
+
+.home-section-card {
+  background: transparent;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.home-section-card:nth-child(even),
+.home-section-card:hover {
+  background: transparent;
+}
+
+.home-section-card:hover,
+.link-directory-column a:hover,
+.link-directory-column a:focus-visible {
+  transform: none;
+}
+
+.project-story-summary article {
+  background: transparent;
+}
+
+.project-story-points li::before {
+  content: "";
+  top: 0.8em;
+  width: 0.75rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.project-story-status,
+.project-paper-note {
+  border: 0;
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+}
+
+.sponsor-partner-band,
+.link-directory-section,
+.site-footer {
+  background: #0c151c;
+}
+
+.sponsor-marquee-item {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.sponsor-logo-frame {
+  border-radius: 2px;
+}
+
+.link-directory-column a,
+.detail-source-link {
+  color: var(--accent);
 }
 
 @media (max-width: 900px) {
