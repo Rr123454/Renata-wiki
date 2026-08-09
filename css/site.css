@@ -667,7 +667,7 @@ a {
 
 .project-paper-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+  grid-template-columns: minmax(0, 1fr) minmax(310px, 370px);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: start;
 }
@@ -976,9 +976,9 @@ a {
 }
 
 .project-paper-sidebar-inner {
-  max-height: calc(100vh - 6.5rem);
-  overflow: auto;
-  padding: 1.1rem;
+  max-height: none;
+  overflow: visible;
+  padding: 1rem;
   border: 1px solid rgba(255, 197, 110, 0.18);
   border-radius: var(--radius-lg);
   background:
@@ -988,7 +988,7 @@ a {
 }
 
 .project-paper-sidebar-inner > h2 {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.7rem;
   color: var(--text);
   font-size: 1.25rem;
   line-height: 1.2;
@@ -997,23 +997,26 @@ a {
 .project-sidebar-tabs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
 .project-sidebar-tab {
+  width: 100%;
   min-width: 0;
-  padding: 0.65rem 0.35rem;
+  padding: 0.58rem 0.25rem;
   border: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--muted-2);
   background: rgba(255, 255, 255, 0.035);
   font-family: inherit;
-  font-size: 0.68rem;
+  font-size: clamp(0.6rem, 0.72vw, 0.68rem);
   font-weight: 900;
   line-height: 1.2;
   text-transform: uppercase;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -1031,7 +1034,7 @@ a {
 .project-sidebar-panel {
   display: grid;
   gap: 0.15rem;
-  padding-top: 0.9rem;
+  padding-top: 0.65rem;
 }
 
 .project-sidebar-panel[hidden] {
@@ -1041,7 +1044,7 @@ a {
 .project-sidebar-panel a {
   display: grid;
   gap: 0.05rem;
-  padding: 0.68rem 0.75rem;
+  padding: 0.52rem 0.6rem;
   border-radius: 10px;
   color: var(--muted);
   font-size: 0.88rem;
@@ -1059,13 +1062,13 @@ a {
 }
 
 .project-sidebar-figure-link {
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 0.7rem !important;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 0.6rem !important;
   align-items: center;
 }
 
 .project-sidebar-figure-thumb {
-  width: 76px;
+  width: 62px;
   aspect-ratio: 16 / 10;
   display: grid;
   place-items: center;
@@ -1113,7 +1116,7 @@ a {
 .project-sidebar-reference {
   display: grid;
   gap: 0.2rem;
-  padding: 0.7rem 0.75rem;
+  padding: 0.55rem 0.6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -2567,7 +2570,9 @@ h6,
 }
 
 .project-paper-sidebar-inner {
-  padding-inline: 1.1rem 0;
+  max-height: none;
+  overflow: visible;
+  padding-inline: 1rem;
   border: 0;
   border-left: 2px solid var(--accent);
   border-radius: 0;
