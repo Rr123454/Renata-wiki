@@ -22,9 +22,9 @@ window.SITE_DATA = {
   },
 
   sponsorsPartners: [
-    { name: "Sponsor / Partner 01", type: "Logo image placeholder", logo: "" },
-    { name: "Sponsor / Partner 02", type: "Logo image placeholder", logo: "" },
-    { name: "Sponsor / Partner 03", type: "Logo image placeholder", logo: "" }
+    { name: "The Seva Collective", logo: "assets/sponsors/seva-collective.png" },
+    { name: "University Lab Partners", logo: "assets/sponsors/university-lab-partners.png" },
+    { name: "Broadcom", logo: "assets/sponsors/broadcom.png" }
   ],
 
   nav: [
@@ -74,8 +74,8 @@ window.SITE_DATA = {
           title: "Our Team",
           links: [
             { text: "Meet Our Team", href: "team.html" },
-            { text: "PIs & Advisors", href: "team.html#pis" },
-            { text: "Students", href: "team.html#student-leaders" }
+            { text: "PIs & Mentors", href: "team.html#mentors" },
+            { text: "Students", href: "team.html#students" }
           ]
         },
         {
@@ -109,10 +109,10 @@ window.SITE_DATA = {
       title: "Meet <span class='accent-gradient'>Our Team</span>",
       lead: "Meet the people behind Renata, see how each person contributed, and learn how to connect with us.",
       cardsTitle: "The people behind Renata",
-      cardsLead: "Our team brings together students, advisors, collaborators, and community partners.",
+      cardsLead: "Our team brings together students, mentors, collaborators, and community partners.",
       cards: [
         { tag: "Members", title: "Core team", text: "Add names and roles." },
-        { tag: "Support", title: "Advisors", text: "Add mentors and faculty." },
+        { tag: "Support", title: "Mentors", text: "Add mentors and faculty." },
         { tag: "Work", title: "Contributions", text: "Show who handled what." },
         { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
       ],
@@ -123,49 +123,44 @@ window.SITE_DATA = {
       },
       teamGroups: [
         {
-          key: "pis",
-          title: "PIs",
-          description: "Primary and secondary investigators leading and supporting the project.",
-          layout: "pi",
+          key: "mentors",
+          title: "Mentors",
+          description: "Principal investigators, advisors, and community mentors guiding the project.",
+          layout: "wide",
           members: [
             { name: "Emma Zschunke", role: "Primary PI" },
-            { name: "Preya Shrivastava", role: "Secondary PI" }
+            { name: "Preya Shrivastava", role: "Secondary PI" },
+            { name: "Matt M.", role: "Advisor" },
+            { name: "Tasha B.", role: "Advisor" },
+            { name: "Sharan S.", role: "Community Mentor" }
           ]
-        },
-        {
-          key: "advisors",
-          title: "Advisors",
-          description: "Advisors providing scientific and project guidance.",
-          memberLabel: "Advisor",
-          layout: "compact",
-          members: ["Matt M.", "Tasha B."]
-        },
-        {
-          key: "community-mentor",
-          title: "Community Mentor",
-          description: "Community mentorship connecting the project with broader perspectives.",
-          memberLabel: "Community Mentor",
-          layout: "compact",
-          members: ["Sharan S."]
-        },
-        {
-          key: "student-leaders",
-          title: "Student Leaders",
-          description: "Student leaders coordinating the team's scientific, technical, and organizational work.",
-          memberLabel: "Student Leader",
-          layout: "wide",
-          members: ["Humza S.", "Karthik S.", "Kavi S.", "Kyle K.", "Ritvin R."]
         },
         {
           key: "students",
           title: "Students",
-          description: "Student members contributing across the project.",
-          memberLabel: "Student",
+          description: "Student leaders and members contributing across the project.",
           layout: "wide",
           members: [
-            "Aaron T.", "Aiden R.", "Brandon", "Ella Y.", "Faizaan M.",
-            "Hannah B.", "Hanyu H.", "Kylie T.", "Margaret L.", "Matthew S.",
-            "Ryan J.", "Tiger L.", "Toni D.", "Vanessa L.", "Yuqing Z"
+            { name: "Humza S.", role: "Student Leader" },
+            { name: "Karthik S.", role: "Student Leader" },
+            { name: "Kavi S.", role: "Student Leader" },
+            { name: "Kyle K.", role: "Student Leader" },
+            { name: "Ritvin R.", role: "Student Leader" },
+            { name: "Aaron T.", role: "Student" },
+            { name: "Aiden R.", role: "Student" },
+            { name: "Brandon", role: "Student" },
+            { name: "Ella Y.", role: "Student" },
+            { name: "Faizaan M.", role: "Student" },
+            { name: "Hannah B.", role: "Student" },
+            { name: "Hanyu H.", role: "Student" },
+            { name: "Kylie T.", role: "Student" },
+            { name: "Margaret L.", role: "Student" },
+            { name: "Matthew S.", role: "Student" },
+            { name: "Ryan J.", role: "Student" },
+            { name: "Tiger L.", role: "Student" },
+            { name: "Toni D.", role: "Student" },
+            { name: "Vanessa L.", role: "Student" },
+            { name: "Yuqing Z", role: "Student" }
           ]
         }
       ]

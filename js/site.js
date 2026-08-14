@@ -349,6 +349,20 @@ function initNavigation() {
         ? "compact-member-grid"
         : "department-grid";
     const cards = members.map((member, index) => renderMemberCard(group, member, index));
+    const memberLines = group.memberLines || [];
+    const memberContent = memberLines.length
+      ? memberLines.map((line) => `
+          <div class="team-member-line" id="${line.key}">
+            <div class="team-member-line-heading reveal">
+              <h3>${line.title}</h3>
+              <p>${line.description}</p>
+            </div>
+            <div class="member-grid department-grid">
+              ${line.members.map((member, index) => renderMemberCard(group, member, index)).join("")}
+            </div>
+          </div>
+        `).join("")
+      : `<div class="member-grid ${gridClass}">${cards.join("")}</div>`;
     return `
       <section class="page-section team-group-section ${groupIndex % 2 ? "team-group-alt" : ""}" id="${group.key}">
         <div class="container">
@@ -359,9 +373,7 @@ function initNavigation() {
             </div>
             <p>${group.description}</p>
           </div>
-          <div class="member-grid ${gridClass}">
-            ${cards.join("")}
-          </div>
+          ${memberContent}
         </div>
       </section>
     `;
