@@ -1,37 +1,52 @@
-/* Small reliability overrides for the scroll-driven homepage animation. */
+/* Reliability overrides for the scroll-driven homepage animation. */
 
 .renata-story-frame {
   position: relative;
   min-height: 0;
 }
 
-.renata-story-error {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  min-height: 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.96);
-}
-
 .renata-story-video {
   min-height: 0;
+  background: #fff;
 }
 
 .renata-story-loading {
   position: absolute;
   inset: 0;
   z-index: 4;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
   color: #071224;
-  background: rgba(255, 255, 255, 0.9);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,0.82), rgba(255,255,255,0.95));
   font-weight: 800;
-  transition: opacity 220ms ease, visibility 220ms ease;
+  transition: opacity 300ms ease, visibility 300ms ease;
 }
 
 .renata-story-loading.ready {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.renata-story-loader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd166, #ff6a00);
+  box-shadow: 0 0 16px rgba(255,106,0,0.42);
+  animation: renataLoaderPulse 1s ease-in-out infinite;
+}
+
+@keyframes renataLoaderPulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
