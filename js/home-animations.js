@@ -69,11 +69,17 @@
               >
                 <source src="assets/Scroll%20Animation.mp4" type="video/mp4" />
               </video>
+
+              <div class="renata-story-loading" id="renataStoryLoading">
+                Loading project animation…
+              </div>
+
               <div class="renata-story-progress" aria-hidden="true">
                 <span id="renataStoryProgress"></span>
               </div>
+
               <div class="renata-story-error" id="renataStoryError" hidden>
-                Scroll animation could not be loaded.
+                Project animation unavailable. The project story remains readable on the right.
               </div>
             </div>
           </div>
@@ -139,15 +145,18 @@
   const storyVideo = document.getElementById("renataStoryVideo");
   const storyProgress = document.getElementById("renataStoryProgress");
   const storyError = document.getElementById("renataStoryError");
+  const storyLoading = document.getElementById("renataStoryLoading");
   const steps = [...document.querySelectorAll("[data-renata-story-step]")];
   const dots = [...document.querySelectorAll("[data-renata-story-dot]")];
 
   if (promoVideo && soundToggle) {
     promoVideo.muted = true;
+
     soundToggle.addEventListener("click", async () => {
       promoVideo.muted = !promoVideo.muted;
       soundToggle.setAttribute("aria-pressed", String(!promoVideo.muted));
       soundToggle.textContent = promoVideo.muted ? "Sound on" : "Mute";
+
       if (promoVideo.paused) {
         try {
           await promoVideo.play();
@@ -161,21 +170,53 @@
   if (!story || !storyVideo) return;
 
   let metadataReady = false;
+  let mediaReady = false;
   let ticking = false;
-  let targetTime = 0;
+  let seekQueued = false;
+  let desiredTime = 0;
 
   storyVideo.pause();
 
+  function markStoryReady() {
+    mediaReady = true;
+    if (storyLoading) storyLoading.classList.add("ready");
+    if (storyError) storyError.hidden = true;
+    requestStoryUpdate();
+  }
+
   storyVideo.addEventListener("loadedmetadata", () => {
     metadataReady = Number.isFinite(storyVideo.duration) && storyVideo.duration > 0;
+
     if (metadataReady) {
-      storyVideo.currentTime = 0;
-      updateStory();
+      try {
+        storyVideo.currentTime = 0.001;
+      } catch (error) {
+        // Safari may not permit seeking until more data is available.
+      }
+    }
+  });
+
+  storyVideo.addEventListener("loadeddata", markStoryReady, { once: true });
+  storyVideo.addEventListener("canplay", markStoryReady, { once: true });
+
+  storyVideo.addEventListener("seeked", () => {
+    seekQueued = false;
+
+    if (metadataReady && Math.abs(storyVideo.currentTime - desiredTime) > 0.045) {
+      applyDesiredTime();
     }
   });
 
   storyVideo.addEventListener("error", () => {
-    if (storyError) storyError.hidden = false;
+    const mediaError = storyVideo.error;
+    console.warn("Scroll animation media error", mediaError);
+
+    if (storyLoading) storyLoading.classList.add("ready");
+
+    // Only replace the visual if the browser truly has no usable frame/data.
+    if (!mediaReady && storyVideo.readyState === 0 && storyError) {
+      storyError.hidden = false;
+    }
   });
 
   function clamp(value, min, max) {
@@ -194,6 +235,27 @@
     });
   }
 
+  function applyDesiredTime() {
+    if (!metadataReady || !mediaReady || storyVideo.seeking) return;
+
+    const safeDuration = Math.max(0, storyVideo.duration - 0.04);
+    desiredTime = clamp(desiredTime, 0, safeDuration);
+
+    if (Math.abs(storyVideo.currentTime - desiredTime) < 0.035) return;
+
+    seekQueued = true;
+
+    try {
+      if (typeof storyVideo.fastSeek === "function") {
+        storyVideo.fastSeek(desiredTime);
+      } else {
+        storyVideo.currentTime = desiredTime;
+      }
+    } catch (error) {
+      seekQueued = false;
+    }
+  }
+
   function updateStory() {
     ticking = false;
 
@@ -210,15 +272,11 @@
 
     if (!metadataReady) return;
 
-    const safeDuration = Math.max(0, storyVideo.duration - 0.035);
-    targetTime = progress * safeDuration;
+    const safeDuration = Math.max(0, storyVideo.duration - 0.04);
+    desiredTime = progress * safeDuration;
 
-    if (Math.abs(storyVideo.currentTime - targetTime) > 0.018) {
-      try {
-        storyVideo.currentTime = targetTime;
-      } catch (error) {
-        // Some browsers reject seeks until enough media is buffered. The next scroll frame retries.
-      }
+    if (!seekQueued) {
+      applyDesiredTime();
     }
   }
 
@@ -231,5 +289,6 @@
   window.addEventListener("scroll", requestStoryUpdate, { passive: true });
   window.addEventListener("resize", requestStoryUpdate);
   window.addEventListener("load", requestStoryUpdate);
+
   requestStoryUpdate();
 })();
