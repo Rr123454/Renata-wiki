@@ -66,20 +66,16 @@
                 muted
                 playsinline
                 preload="auto"
-              >
-                <source src="assets/Scroll%20Animation.mp4" type="video/mp4" />
-              </video>
+                data-scroll-video="assets/Scroll%20Animation.mp4"
+              ></video>
 
-              <div class="renata-story-loading" id="renataStoryLoading">
-                Loading project animation…
+              <div class="renata-story-loading" id="renataStoryLoading" aria-live="polite">
+                <span class="renata-story-loader-dot" aria-hidden="true"></span>
+                <span>Preparing project animation…</span>
               </div>
 
               <div class="renata-story-progress" aria-hidden="true">
                 <span id="renataStoryProgress"></span>
-              </div>
-
-              <div class="renata-story-error" id="renataStoryError" hidden>
-                Project animation unavailable. The project story remains readable on the right.
               </div>
             </div>
           </div>
@@ -144,7 +140,6 @@
   const story = document.getElementById("renataProjectStory");
   const storyVideo = document.getElementById("renataStoryVideo");
   const storyProgress = document.getElementById("renataStoryProgress");
-  const storyError = document.getElementById("renataStoryError");
   const storyLoading = document.getElementById("renataStoryLoading");
   const steps = [...document.querySelectorAll("[data-renata-story-step]")];
   const dots = [...document.querySelectorAll("[data-renata-story-dot]")];
@@ -169,126 +164,164 @@
 
   if (!story || !storyVideo) return;
 
+  const sourceUrl = storyVideo.dataset.scrollVideo;
+
   let metadataReady = false;
   let mediaReady = false;
-  let ticking = false;
-  let seekQueued = false;
-  let desiredTime = 0;
+  let blobUrl = null;
+  let targetProgress = 0;
+  let visualProgress = 0;
+  let activeStep = -1;
+  let animationFrame = null;
 
   storyVideo.pause();
-
-  function markStoryReady() {
-    mediaReady = true;
-    if (storyLoading) storyLoading.classList.add("ready");
-    if (storyError) storyError.hidden = true;
-    requestStoryUpdate();
-  }
-
-  storyVideo.addEventListener("loadedmetadata", () => {
-    metadataReady = Number.isFinite(storyVideo.duration) && storyVideo.duration > 0;
-
-    if (metadataReady) {
-      try {
-        storyVideo.currentTime = 0.001;
-      } catch (error) {
-        // Safari may not permit seeking until more data is available.
-      }
-    }
-  });
-
-  storyVideo.addEventListener("loadeddata", markStoryReady, { once: true });
-  storyVideo.addEventListener("canplay", markStoryReady, { once: true });
-
-  storyVideo.addEventListener("seeked", () => {
-    seekQueued = false;
-
-    if (metadataReady && Math.abs(storyVideo.currentTime - desiredTime) > 0.045) {
-      applyDesiredTime();
-    }
-  });
-
-  storyVideo.addEventListener("error", () => {
-    const mediaError = storyVideo.error;
-    console.warn("Scroll animation media error", mediaError);
-
-    if (storyLoading) storyLoading.classList.add("ready");
-
-    // Only replace the visual if the browser truly has no usable frame/data.
-    if (!mediaReady && storyVideo.readyState === 0 && storyError) {
-      storyError.hidden = false;
-    }
-  });
 
   function clamp(value, min, max) {
     return Math.min(max, Math.max(min, value));
   }
 
+  function setLoadingReady() {
+    if (storyLoading) storyLoading.classList.add("ready");
+  }
+
+  function setStorySource(url) {
+    return new Promise((resolve, reject) => {
+      const handleMetadata = () => {
+        metadataReady = Number.isFinite(storyVideo.duration) && storyVideo.duration > 0;
+      };
+
+      const handleReady = () => {
+        if (!metadataReady) {
+          metadataReady = Number.isFinite(storyVideo.duration) && storyVideo.duration > 0;
+        }
+
+        mediaReady = metadataReady;
+        setLoadingReady();
+        cleanup();
+        resolve();
+      };
+
+      const handleError = () => {
+        cleanup();
+        reject(storyVideo.error || new Error("Unable to decode scroll animation."));
+      };
+
+      function cleanup() {
+        storyVideo.removeEventListener("loadedmetadata", handleMetadata);
+        storyVideo.removeEventListener("loadeddata", handleReady);
+        storyVideo.removeEventListener("canplay", handleReady);
+        storyVideo.removeEventListener("error", handleError);
+      }
+
+      storyVideo.addEventListener("loadedmetadata", handleMetadata);
+      storyVideo.addEventListener("loadeddata", handleReady, { once: true });
+      storyVideo.addEventListener("canplay", handleReady, { once: true });
+      storyVideo.addEventListener("error", handleError, { once: true });
+
+      storyVideo.src = url;
+      storyVideo.load();
+    });
+  }
+
+  async function loadStoryVideoIntoMemory() {
+    try {
+      const response = await fetch(sourceUrl, { cache: "force-cache" });
+      if (!response.ok) throw new Error(`Scroll animation request failed: ${response.status}`);
+
+      const blob = await response.blob();
+      blobUrl = URL.createObjectURL(blob);
+      await setStorySource(blobUrl);
+    } catch (error) {
+      console.warn("Blob preload failed; falling back to direct video source.", error);
+
+      try {
+        await setStorySource(sourceUrl);
+      } catch (fallbackError) {
+        console.warn("Scroll animation could not be decoded.", fallbackError);
+        setLoadingReady();
+      }
+    }
+
+    requestStoryUpdate();
+  }
+
+  function updateTargetProgress() {
+    const rect = story.getBoundingClientRect();
+    const scrollableDistance = Math.max(1, story.offsetHeight - window.innerHeight);
+    targetProgress = clamp(-rect.top / scrollableDistance, 0, 1);
+    requestStoryUpdate();
+  }
+
   function updateStoryStep(progress) {
-    const stepIndex = clamp(Math.floor(progress * steps.length), 0, steps.length - 1);
+    const nextStep = clamp(Math.floor(progress * steps.length), 0, steps.length - 1);
+    if (nextStep === activeStep) return;
+
+    activeStep = nextStep;
 
     steps.forEach((step, index) => {
-      step.classList.toggle("active", index === stepIndex);
+      step.classList.toggle("active", index === nextStep);
     });
 
     dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === stepIndex);
+      dot.classList.toggle("active", index === nextStep);
     });
   }
 
-  function applyDesiredTime() {
-    if (!metadataReady || !mediaReady || storyVideo.seeking) return;
+  function updateVideoFrame(progress) {
+    if (!mediaReady || !metadataReady || !Number.isFinite(storyVideo.duration)) return;
 
-    const safeDuration = Math.max(0, storyVideo.duration - 0.04);
-    desiredTime = clamp(desiredTime, 0, safeDuration);
+    const safeDuration = Math.max(0, storyVideo.duration - 0.035);
+    const targetTime = progress * safeDuration;
 
-    if (Math.abs(storyVideo.currentTime - desiredTime) < 0.035) return;
-
-    seekQueued = true;
+    if (storyVideo.seeking) return;
+    if (Math.abs(storyVideo.currentTime - targetTime) < 0.022) return;
 
     try {
-      if (typeof storyVideo.fastSeek === "function") {
-        storyVideo.fastSeek(desiredTime);
-      } else {
-        storyVideo.currentTime = desiredTime;
-      }
+      // Exact currentTime seeking is intentionally used here instead of fastSeek.
+      // fastSeek may jump to distant keyframes and makes this short animation look jerky.
+      storyVideo.currentTime = targetTime;
     } catch (error) {
-      seekQueued = false;
+      // A later animation frame will retry after the browser is ready.
     }
   }
 
-  function updateStory() {
-    ticking = false;
+  function renderStoryFrame() {
+    animationFrame = null;
 
-    const rect = story.getBoundingClientRect();
-    const scrollableDistance = Math.max(1, story.offsetHeight - window.innerHeight);
-    const travelled = -rect.top;
-    const progress = clamp(travelled / scrollableDistance, 0, 1);
+    const difference = targetProgress - visualProgress;
+    const smoothing = Math.abs(difference) > 0.18 ? 0.18 : 0.12;
 
-    if (storyProgress) {
-      storyProgress.style.width = `${progress * 100}%`;
+    visualProgress += difference * smoothing;
+
+    if (Math.abs(difference) < 0.0006) {
+      visualProgress = targetProgress;
     }
 
-    updateStoryStep(progress);
+    if (storyProgress) {
+      storyProgress.style.width = `${visualProgress * 100}%`;
+    }
 
-    if (!metadataReady) return;
+    updateStoryStep(visualProgress);
+    updateVideoFrame(visualProgress);
 
-    const safeDuration = Math.max(0, storyVideo.duration - 0.04);
-    desiredTime = progress * safeDuration;
-
-    if (!seekQueued) {
-      applyDesiredTime();
+    if (Math.abs(targetProgress - visualProgress) > 0.0006) {
+      animationFrame = requestAnimationFrame(renderStoryFrame);
     }
   }
 
   function requestStoryUpdate() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(updateStory);
+    if (animationFrame) return;
+    animationFrame = requestAnimationFrame(renderStoryFrame);
   }
 
-  window.addEventListener("scroll", requestStoryUpdate, { passive: true });
-  window.addEventListener("resize", requestStoryUpdate);
-  window.addEventListener("load", requestStoryUpdate);
+  window.addEventListener("scroll", updateTargetProgress, { passive: true });
+  window.addEventListener("resize", updateTargetProgress);
+  window.addEventListener("load", updateTargetProgress);
 
-  requestStoryUpdate();
+  window.addEventListener("pagehide", () => {
+    if (blobUrl) URL.revokeObjectURL(blobUrl);
+  });
+
+  updateTargetProgress();
+  loadStoryVideoIntoMemory();
 })();
