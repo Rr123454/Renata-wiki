@@ -2,7 +2,7 @@
 
 .renata-cinematic-hero {
   position: relative;
-  min-height: calc(100vh - 108px);
+  min-height: calc(100svh - var(--renata-header-height, 71px));
   overflow: hidden;
   isolation: isolate;
   background: #020714;
@@ -136,6 +136,15 @@
   border-color: rgba(255, 209, 102, 0.36);
 }
 
+.renata-sound-toggle {
+  position: absolute;
+  right: clamp(1rem, 2.5vw, 2rem);
+  bottom: clamp(1rem, 2.5vw, 2rem);
+  z-index: 3;
+  min-width: 7rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+}
+
 .renata-film-button.primary {
   color: #08111f;
   border-color: transparent;
@@ -246,8 +255,8 @@
 
 .renata-story-sticky {
   position: sticky;
-  top: 0;
-  min-height: 100vh;
+  top: var(--renata-header-height, 71px);
+  min-height: calc(100svh - var(--renata-header-height, 71px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -523,7 +532,7 @@
 @media (max-width: 640px) {
   .renata-cinematic-hero,
   .renata-promo-content {
-    min-height: calc(100svh - 92px);
+    min-height: calc(100svh - var(--renata-header-height, 92px));
   }
 
   .renata-promo-shade {

@@ -4,8 +4,17 @@
   const main = document.getElementById("siteMain");
   if (!main) return;
 
+  const siteHeader = document.getElementById("siteHeader");
+
+  function syncHeaderHeight() {
+    const headerHeight = siteHeader ? Math.round(siteHeader.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty("--renata-header-height", `${headerHeight}px`);
+  }
+
+  syncHeaderHeight();
+
   main.innerHTML = `
-    <section class="renata-cinematic-hero" id="renataHero" aria-labelledby="renataHeroTitle">
+    <section class="renata-cinematic-hero" id="renataHero" aria-label="Renata project video">
       <video
         class="renata-promo-video"
         id="renataPromoVideo"
@@ -21,38 +30,9 @@
         />
       </video>
 
-      <div class="renata-promo-shade"></div>
-      <div class="renata-promo-noise"></div>
-
-      <div class="container renata-promo-content">
-        <div class="renata-promo-copy">
-          <p class="renata-promo-eyebrow">iGEM Renata</p>
-          <h1 class="renata-promo-title" id="renataHeroTitle">
-            Rebuilding
-            <span>biology.</span>
-          </h1>
-          <p class="renata-promo-lead">
-            Explore our approach to post-cholecystectomy syndrome through synthetic biology,
-            pathway engineering, modeling, and human-centered design.
-          </p>
-
-          <div class="renata-promo-actions">
-            <a class="renata-film-button primary" href="#renataProjectStory">
-              Explore the project <span aria-hidden="true">↓</span>
-            </a>
-            <button class="renata-film-button" id="renataSoundToggle" type="button" aria-pressed="false">
-              Sound on
-            </button>
-          </div>
-        </div>
-
-        <div class="renata-promo-logo-stage" aria-hidden="true">
-          <div class="renata-promo-logo-glow"></div>
-          <img class="renata-promo-logo" src="assets/logo.png" alt="" />
-        </div>
-      </div>
-
-      <div class="renata-scroll-cue" aria-hidden="true">Scroll to explore</div>
+      <button class="renata-film-button renata-sound-toggle" id="renataSoundToggle" type="button" aria-pressed="false">
+        Sound on
+      </button>
     </section>
 
     <section class="renata-project-story" id="renataProjectStory" aria-label="Renata project story">
@@ -286,9 +266,19 @@
     requestAnimationFrame(updateStory);
   }
 
+  function handleViewportResize() {
+    syncHeaderHeight();
+    requestStoryUpdate();
+  }
+
   window.addEventListener("scroll", requestStoryUpdate, { passive: true });
-  window.addEventListener("resize", requestStoryUpdate);
+  window.addEventListener("resize", handleViewportResize);
   window.addEventListener("load", requestStoryUpdate);
+
+  if (siteHeader && "ResizeObserver" in window) {
+    const headerObserver = new ResizeObserver(handleViewportResize);
+    headerObserver.observe(siteHeader);
+  }
 
   requestStoryUpdate();
 })();
