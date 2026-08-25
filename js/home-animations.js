@@ -66,7 +66,7 @@
                 muted
                 playsinline
                 preload="auto"
-                data-scroll-video="assets/Scroll%20Animation.mp4"
+                data-scroll-video="assets/Render_Final.mp4"
               ></video>
 
               <div class="renata-story-loading" id="renataStoryLoading" aria-live="polite">
@@ -277,8 +277,6 @@
     if (Math.abs(storyVideo.currentTime - targetTime) < 0.022) return;
 
     try {
-      // Exact currentTime seeking is intentionally used here instead of fastSeek.
-      // fastSeek may jump to distant keyframes and makes this short animation look jerky.
       storyVideo.currentTime = targetTime;
     } catch (error) {
       // A later animation frame will retry after the browser is ready.
