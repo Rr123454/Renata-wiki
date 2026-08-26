@@ -150,6 +150,7 @@ window.SITE_DATA = {
             { name: "Aiden R.", role: "Student" },
             { name: "Brandon", role: "Student" },
             { name: "Ella Y.", role: "Student" },
+            { name: "Alex F.", role: "Student" },
             { name: "Faizaan M.", role: "Student" },
             { name: "Hannah B.", role: "Student" },
             { name: "Hanyu H.", role: "Student" },
