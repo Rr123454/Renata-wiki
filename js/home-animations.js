@@ -254,7 +254,9 @@
     const targetTime = progress * safeDuration;
 
     if (storyVideo.seeking) return;
-    if (Math.abs(storyVideo.currentTime - targetTime) < 0.022) return;
+    /* Half a frame at 24fps. Tighter than this just queues seeks the decoder
+       cannot service; looser drops visible frames. */
+    if (Math.abs(storyVideo.currentTime - targetTime) < 0.021) return;
 
     try {
       storyVideo.currentTime = targetTime;
@@ -267,7 +269,9 @@
     animationFrame = null;
 
     const difference = targetProgress - visualProgress;
-    const smoothing = Math.abs(difference) > 0.18 ? 0.18 : 0.12;
+    /* Track scroll faster when far from the target and settle gently when
+       close. The old flat 0.12 lagged noticeably on a fast flick. */
+    const smoothing = Math.abs(difference) > 0.18 ? 0.28 : 0.16;
 
     visualProgress += difference * smoothing;
 

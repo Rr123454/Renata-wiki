@@ -71,7 +71,7 @@
   --radius: 2px;
 
   --page-gutter: clamp(1rem, 3.5vw, 4.5rem);
-  --measure: 68ch;
+  --measure: 76ch;
 
   --transition: 160ms ease;
 }
