@@ -56,9 +56,11 @@ window.SITE_DATA = {
       href: "human-practices.html",
       children: [
         { key: "human-practices", label: "Human Practices", href: "human-practices.html" },
-        { key: "education", label: "Education", href: "education.html" }
+        { key: "education", label: "Education", href: "education.html" },
+        { key: "partnerships", label: "Partnerships", href: "partnerships.html" }
       ]
-    }
+    },
+    { key: "contact", label: "Contact", href: "contact.html" }
   ],
 
   pages: {
@@ -126,7 +128,7 @@ window.SITE_DATA = {
           key: "mentors",
           title: "Mentors",
           description: "Principal investigators, advisors, and community mentors guiding the project.",
-          layout: "wide",
+          layout: "compact",
           members: [
             { name: "Emma Zschunke", role: "Primary PI" },
             { name: "Preya Shrivastava", role: "Secondary PI" },

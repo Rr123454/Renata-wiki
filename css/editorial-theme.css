@@ -1,113 +1,14 @@
 /* =========================================================
-   RENATA EDITORIAL THEME
-   Light, restrained inner-page treatment inspired by the clarity of strong
-   iGEM wikis while keeping Renata's navy / ivory / orange identity.
-   Loaded AFTER site.css on all non-home pages.
+   RENATA DOCUMENT LAYOUT
+   Loaded after site.css on every page except the homepage.
+
+   This file no longer sets a single colour. Colour is the job of
+   tokens.css, switched by data-theme="document" on <body>. What is left
+   here is layout: how a reading page is proportioned, how the project
+   paper is set, how the roster is arranged.
    ========================================================= */
 
-body {
-  --bg-0: #f6f3ec;
-  --bg-1: #f6f3ec;
-  --bg-2: #eef3f5;
-  --text: #142437;
-  --muted: #53677a;
-  --muted-2: #74879a;
-  --accent: #ee7a2b;
-  --accent-orange: #ee7a2b;
-  --accent-yellow: #f3a326;
-  --ember: #ee7a2b;
-  --orange: #ee7a2b;
-  --amber: #f3a326;
-  --gold: #ee7a2b;
-  --cyan: #7ca9bf;
-  --cyan-2: #245b76;
-  --cream: #fffdfa;
-  --line: rgba(20, 36, 55, 0.13);
-  --shadow-lg: 0 18px 50px rgba(36, 53, 71, 0.10);
-  --shadow-md: 0 8px 24px rgba(36, 53, 71, 0.08);
-  color: var(--text);
-  background:
-    radial-gradient(circle at 98% 10%, rgba(124, 169, 191, 0.12), transparent 22rem),
-    linear-gradient(180deg, #faf8f3 0%, #f6f3ec 42%, #f2f4f1 100%);
-}
-
-body::-webkit-scrollbar-track {
-  background: #ece8df;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border: 3px solid #ece8df;
-  border-radius: 999px;
-}
-
-/* ---------- calmer, lighter navigation ---------- */
-
-.site-header {
-  background: rgba(250, 248, 243, 0.94);
-  border-top: 3px solid var(--accent);
-  border-bottom: 1px solid rgba(20, 36, 55, 0.10);
-  box-shadow: 0 7px 25px rgba(31, 50, 68, 0.07);
-  backdrop-filter: blur(16px) saturate(125%);
-}
-
-.site-header.scrolled {
-  background: rgba(250, 248, 243, 0.985);
-}
-
-.brand,
-.brand-text h1 {
-  color: var(--text);
-}
-
-.brand-logo-wrap {
-  border: 1px solid rgba(20, 36, 55, 0.12);
-  box-shadow: 0 7px 18px rgba(31, 50, 68, 0.08);
-}
-
-.tab-link {
-  color: #53677a;
-  border-bottom-width: 2px;
-}
-
-.tab-link:hover {
-  color: var(--text);
-  background: rgba(124, 169, 191, 0.08);
-  border-bottom-color: rgba(238, 122, 43, 0.55);
-}
-
-.tab-link.active {
-  color: #b94d0d;
-  background: rgba(238, 122, 43, 0.07);
-  border-bottom-color: var(--accent);
-}
-
-.dropdown-menu,
-.submenu-menu {
-  background: rgba(255, 253, 250, 0.985);
-  border: 1px solid rgba(20, 36, 55, 0.12);
-  box-shadow: 0 18px 48px rgba(31, 50, 68, 0.13);
-}
-
-.dropdown-menu a,
-.submenu-menu a,
-.submenu-trigger strong {
-  color: #445b70;
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu a.sub-active,
-.submenu-menu a:hover,
-.submenu-menu a.sub-active {
-  color: #b94d0d;
-  background: rgba(238, 122, 43, 0.08);
-}
-
-.submenu-trigger small {
-  color: #8291a0;
-}
-
-/* ---------- simple page opening ---------- */
+/* ---------- page opening ---------- */
 
 .page-main {
   background: transparent;
@@ -115,229 +16,179 @@ body::-webkit-scrollbar-thumb {
 
 .page-hero {
   min-height: 0;
-  padding: clamp(4.4rem, 8vw, 7rem) 0 clamp(3.2rem, 6vw, 5rem);
-  border-bottom: 1px solid rgba(20, 36, 55, 0.10);
-  background:
-    linear-gradient(90deg, rgba(238, 122, 43, 0.055), transparent 34%),
-    rgba(255, 253, 250, 0.72);
+  padding: clamp(3.2rem, 6vw, 5rem) 0 clamp(2.4rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--rule-strong);
+  background: transparent;
 }
 
-.page-hero::after {
-  content: "";
-  position: absolute;
-  right: clamp(2rem, 7vw, 8rem);
-  top: 20%;
-  width: clamp(110px, 13vw, 190px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(124, 169, 191, 0.18);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero-beam {
-  display: none;
-}
-
-.page-hero-grid {
-  position: relative;
-  z-index: 1;
-  max-width: 1120px;
-}
-
+/* No coloured left stripe. The kicker rule and the size jump to the H1 are
+   already doing the work a stripe was trying to do. */
 .hero-copy {
   position: relative;
-  max-width: 930px;
-  padding-left: clamp(1.3rem, 3vw, 2.5rem);
-}
-
-.hero-copy::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.35rem;
-  bottom: 0.35rem;
-  width: 3px;
-  background: var(--accent);
-}
-
-.hero-kicker,
-.detail-eyebrow,
-.project-paper-type,
-.project-paper-section-number {
-  color: var(--accent);
-  letter-spacing: 0.13em;
-}
-
-.hero-kicker::before {
-  background: var(--accent);
-}
-
-.hero-title,
-.section-title,
-.detail-panel h2,
-.project-paper-header h1,
-.project-paper-section > h2,
-.team-group-heading h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
-  font-weight: 700;
+  max-width: 46ch;
+  padding-left: 0;
 }
 
 .hero-title {
-  max-width: 13ch;
-  font-size: clamp(3.1rem, 6.5vw, 6.6rem);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  max-width: 15ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
-.accent-gradient {
-  background: none;
-  color: var(--accent);
-  -webkit-text-fill-color: currentColor;
+.hero-lead {
+  max-width: 52ch;
+  color: var(--ink-muted);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.6;
 }
 
-.hero-lead,
-.section-lead,
-.detail-lead {
-  color: var(--muted);
-}
-
-.btn {
-  border-radius: 7px;
-  box-shadow: none;
-}
-
-.btn-primary {
-  color: #fffdfa;
-  background: var(--accent);
-  box-shadow: none;
-}
-
-.btn-secondary {
-  color: var(--text);
-  background: transparent;
-  border: 1px solid rgba(20, 36, 55, 0.18);
-}
-
-/* ---------- editorial content ---------- */
+/* ---------- sections ---------- */
 
 .page-section {
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(3rem, 6vw, 5rem) 0;
   background: transparent;
-}
-
-.page-section:nth-of-type(even) {
-  background: rgba(232, 239, 242, 0.28);
 }
 
 .section-intro {
-  max-width: 820px;
-  margin-bottom: clamp(1.7rem, 3vw, 2.6rem);
+  max-width: 46ch;
+  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 .section-title {
-  font-size: clamp(2.15rem, 4.2vw, 4rem);
-  letter-spacing: -0.045em;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  letter-spacing: -0.035em;
 }
 
+.section-lead {
+  color: var(--ink-muted);
+}
+
+/* ---------- the former three-card row ---------- */
+/* Was: repeat(auto-fit, minmax(240px, 1fr)), which on every inner page
+   produced three equal cards side by side. It is now an indexed list, so
+   the section reads top to bottom like a document and the number of items
+   stops changing the layout. */
+
 .card-grid {
-  gap: 1px;
-  border-top: 1px solid rgba(20, 36, 55, 0.14);
-  border-bottom: 1px solid rgba(20, 36, 55, 0.14);
-  background: rgba(20, 36, 55, 0.12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule-strong);
+  background: transparent;
 }
 
 .glass-card {
-  min-height: 230px;
-  padding: clamp(1.4rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  column-gap: clamp(1.25rem, 4vw, 3.5rem);
+  row-gap: 0.4rem;
+  align-items: start;
+  min-height: 0;
+  padding: clamp(1.3rem, 2.6vw, 2rem) 0;
   border: 0;
+  border-bottom: 1px solid var(--rule);
   border-radius: 0;
-  background: #fffdfa;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
-.glass-card::before {
-  display: none;
-}
-
-.glass-card:hover {
-  transform: none;
-  border-color: transparent;
-  box-shadow: inset 0 4px 0 rgba(238, 122, 43, 0.9);
-}
-
-.card-tag {
-  display: inline-block;
-  margin-bottom: 0.9rem;
-  padding: 0;
-  color: var(--accent);
   background: transparent;
-  border: 0;
-  border-radius: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  box-shadow: none;
+}
+
+.glass-card .card-tag {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin: 0.35rem 0 0;
 }
 
 .glass-card h3 {
-  color: var(--text);
-  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 24ch;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  line-height: 1.15;
 }
 
-.glass-card p {
-  color: var(--muted);
+.glass-card > p {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 58ch;
+  color: var(--ink-muted);
+  line-height: 1.65;
 }
 
-.card-image-placeholder,
-.project-chapter-image,
-.project-explanation-placeholder {
-  background: #eef3f5;
-  border-color: rgba(20, 36, 55, 0.12);
+.glass-card:hover {
+  background: transparent;
   box-shadow: none;
+  transform: none;
 }
+
+/* Cards that carry an image slot keep a stacked shape. */
+.image-content-card {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.image-content-card .card-image-placeholder,
+.image-content-card .card-tag,
+.image-content-card h3,
+.image-content-card > p {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+.card-image-placeholder {
+  min-height: 220px;
+  margin: 0 0 1.1rem;
+  border: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- detail panels ---------- */
 
 .detail-section {
-  border-top: 1px solid rgba(20, 36, 55, 0.09);
+  border-top: 0;
+  padding-top: 0;
 }
 
 .detail-panel {
   position: relative;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3.3rem) clamp(1.6rem, 4vw, 3.5rem);
-  border: 1px solid rgba(20, 36, 55, 0.11);
-  border-left: 4px solid var(--accent);
-  border-radius: 12px;
-  color: var(--text);
-  background: rgba(255, 253, 250, 0.9);
-  box-shadow: 0 12px 34px rgba(31, 50, 68, 0.06);
-}
-
-.detail-panel::before {
-  display: none;
-}
-
-.detail-list li,
-.detail-step p {
-  color: var(--muted);
-}
-
-.detail-list li::before {
-  background: var(--accent);
+  max-width: none;
+  margin: 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 0;
+  border: 0;
+  border-top: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 
-/* ---------- project-description: Maastricht-like reading layout ---------- */
+.detail-panel > h2 {
+  max-width: 20ch;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+}
+
+.detail-lead {
+  max-width: 62ch;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.detail-steps {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ---------- project description: reading layout ---------- */
 
 .project-paper-page {
-  padding: clamp(3rem, 6vw, 5.5rem) 0 5rem;
-  background: #faf8f3;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 4rem;
+  background: transparent;
 }
 
 .project-paper-layout {
-  grid-template-columns: minmax(235px, 285px) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  max-width: 1500px;
+  grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  max-width: 1400px;
 }
 
 .project-paper-sidebar {
@@ -348,149 +199,147 @@ body::-webkit-scrollbar-thumb {
 .project-paper-sidebar-inner {
   position: sticky;
   top: 96px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
 }
 
 .project-paper-sidebar-inner > h2 {
-  margin: 0 0 1rem;
-  color: #6d8294;
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule-strong);
+  color: var(--ink-faint);
+  font-family: var(--font-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .project-sidebar-tabs {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.65rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
   margin-bottom: 1rem;
+  border: 1px solid var(--rule);
 }
 
 .project-sidebar-tab {
-  width: 100%;
-  min-height: 52px;
-  padding: 0.8rem 1rem;
-  border: 1px solid rgba(20, 36, 55, 0.10);
-  border-radius: 13px;
-  color: #526b80;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 4px 12px rgba(31, 50, 68, 0.04);
-  text-align: left;
-  cursor: pointer;
+  min-height: 0;
+  padding: 0.55rem 0.3rem;
+  border: 0;
+  border-right: 1px solid var(--rule);
+  color: var(--ink-muted);
+  background: transparent;
+  font-size: 0.64rem;
+  text-align: center;
 }
 
-.project-sidebar-tab.active {
-  color: #174d69;
-  border-color: rgba(124, 169, 191, 0.30);
-  background: #eaf1f5;
-  box-shadow: inset 3px 0 0 #2a78a4;
-}
-
-.project-sidebar-panel {
-  display: grid;
-  gap: 0.55rem;
+.project-sidebar-tab:last-child {
+  border-right: 0;
 }
 
 .project-sidebar-panel a {
   display: block;
-  padding: 0.78rem 0.95rem;
-  border: 1px solid rgba(20, 36, 55, 0.09);
-  border-radius: 11px;
-  color: #40576b;
-  background: rgba(255, 255, 255, 0.68);
-  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+  padding: 0.5rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  color: var(--ink-muted);
+  background: transparent;
 }
 
-.project-sidebar-panel a:hover {
-  color: #b94d0d;
-  background: #fffdfa;
-  transform: translateX(3px);
+.project-sidebar-panel a:hover,
+.project-sidebar-panel a[aria-current] {
+  color: var(--accent);
+  background: transparent;
+  transform: none;
 }
 
+/* No accent rule down the side of the article. */
 .project-paper {
   min-width: 0;
-  padding-left: clamp(1.8rem, 4vw, 4rem);
-  border-left: 3px solid rgba(238, 122, 43, 0.82);
+  padding-left: 0;
+  border-left: 0;
 }
 
 .project-paper-header {
-  padding-bottom: 2.2rem;
-  border-bottom: 1px solid rgba(20, 36, 55, 0.13);
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .project-paper-header h1 {
-  color: var(--accent);
-  font-size: clamp(3rem, 6vw, 5.8rem);
-  line-height: 0.93;
+  color: inherit;
+  max-width: 16ch;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 0.98;
 }
 
 .project-paper-section {
-  padding: clamp(2.7rem, 5vw, 4.6rem) 0;
-  border-bottom: 1px solid rgba(20, 36, 55, 0.12);
+  padding: clamp(2.4rem, 4.5vw, 3.8rem) 0;
+  border-bottom: 1px solid var(--rule);
 }
 
 .project-paper-section > h2 {
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
-}
-
-.project-paper-section > h3,
-.project-paper-subsections h3,
-.project-paper-note strong,
-.project-paper-figure figcaption strong {
-  color: var(--text);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
 }
 
 .project-paper-section > p,
 .project-paper-section li,
 .project-paper-subsections p,
-.project-paper-note p,
 .project-paper-figure figcaption {
-  color: var(--muted);
-}
-
-.project-paper-note {
-  margin: 1.6rem 0;
-  padding: 1.1rem 1.2rem;
-  border: 0;
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  background: #fff0df;
+  color: var(--ink-muted);
 }
 
 .project-paper-figure {
   margin: 2rem 0;
 }
 
+/* Flat well. The 36px graph-paper grid that used to sit here was decoration
+   pretending to be a blueprint. */
 .project-paper-figure-placeholder {
-  min-height: 340px;
-  border: 1px solid rgba(20, 36, 55, 0.12);
-  border-radius: 12px;
-  color: #688095;
-  background:
-    linear-gradient(rgba(124, 169, 191, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 169, 191, 0.06) 1px, transparent 1px),
-    #eef3f5;
-  background-size: 36px 36px;
+  min-height: 320px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: var(--bg-sunken);
+  background-image: none;
+  color: var(--ink-faint);
 }
 
 .project-paper-subsections {
-  gap: 1px;
-  background: rgba(20, 36, 55, 0.12);
-  border-top: 1px solid rgba(20, 36, 55, 0.12);
-  border-bottom: 1px solid rgba(20, 36, 55, 0.12);
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: transparent;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 0;
 }
 
 .project-paper-subsections article {
+  display: grid;
+  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+  column-gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 1.1rem 0;
   border: 0;
+  border-bottom: 1px solid var(--rule);
   border-radius: 0;
-  background: #fffdfa;
+  background: transparent;
 }
 
-/* ---------- team page ---------- */
+.project-paper-subsections article > p:first-child {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin: 0.2rem 0 0;
+  color: var(--accent);
+}
+
+.project-paper-subsections h3 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.project-paper-subsections article > p:last-child {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ---------- team ---------- */
 
 .team-photo-section,
 .team-group-section {
@@ -498,111 +347,72 @@ body::-webkit-scrollbar-thumb {
 }
 
 .team-group-alt {
-  background: rgba(232, 239, 242, 0.38);
+  background: transparent;
 }
 
-.team-photo-kicker,
-.team-group-heading h2 {
-  color: var(--text);
+.team-group-section + .team-group-section {
+  border-top: 1px solid var(--rule-strong);
 }
 
 .team-photo-placeholder {
-  border: 1px solid rgba(20, 36, 55, 0.12);
-  border-radius: 14px;
-  color: #678096;
-  background: #edf2f4;
-  box-shadow: none;
-}
-
-.member-card {
-  border: 0;
+  border: 1px solid var(--rule);
   border-radius: 0;
-  background: transparent;
+  background: var(--bg-sunken);
   box-shadow: none;
 }
 
 .member-photo-placeholder {
-  border: 1px solid rgba(20, 36, 55, 0.10);
-  border-radius: 9px;
-  background: #e8eff2;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: var(--bg-sunken);
 }
 
 .member-meta h3 {
-  color: var(--text);
+  color: inherit;
 }
 
-.member-meta p,
-.team-group-heading > p,
-.team-member-line-heading p {
-  color: var(--muted);
-}
-
-/* ---------- footer ---------- */
-
-.site-footer {
-  margin-top: 0;
-  color: #dce6ee;
-  background: #142437;
-  border-top: 0;
-}
-
-.site-footer a,
-.site-footer strong,
-.site-footer h2,
-.site-footer h3 {
-  color: #f8f5ee;
-}
-
-.site-footer p,
-.site-footer small {
-  color: #aebdca;
-}
-
-/* ---------- Maastricht-style back-to-top control ---------- */
+/* ---------- back to top ---------- */
+/* Was a 54px orange disc with a white ring and a drop shadow that lifted on
+   hover. Now a flat square control that stays put. */
 
 .renata-back-to-top {
   position: fixed;
   z-index: 3900;
-  right: clamp(1rem, 2.6vw, 2.2rem);
+  right: clamp(1rem, 2.6vw, 2rem);
   bottom: clamp(1rem, 2.6vw, 2rem);
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   padding: 0;
-  border: 3px solid #fff7e8;
-  border-radius: 50%;
-  color: #fff;
-  background: var(--accent);
-  box-shadow: 0 8px 18px rgba(31, 50, 68, 0.18);
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--bg);
+  box-shadow: none;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
+  transition: opacity var(--transition), visibility var(--transition);
 }
 
 .renata-back-to-top.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .renata-back-to-top:hover {
-  transform: translateY(-3px);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: none;
 }
 
 .renata-back-to-top span {
-  font-size: 1.55rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
-/* ---------- reduce generic motion on reading pages ---------- */
-
-.tilt-card:hover,
-.glass-card:hover {
-  perspective: none;
-}
+/* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
   .project-paper-layout {
@@ -619,51 +429,36 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 1.5rem;
   }
 
-  .project-sidebar-tabs {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .project-paper {
+  .project-paper-header {
     padding-left: 0;
     border-left: 0;
   }
-
-  .project-paper-header {
-    padding-left: 1.2rem;
-    border-left: 3px solid var(--accent);
-  }
 }
 
-@media (max-width: 640px) {
-  .site-header {
-    background: rgba(250, 248, 243, 0.98);
+@media (max-width: 680px) {
+  .glass-card,
+  .project-paper-subsections article {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
   }
 
-  .hero-copy {
-    padding-left: 1rem;
-  }
-
-  .page-hero::after {
-    display: none;
-  }
-
-  .card-grid {
-    gap: 1px;
+  .glass-card .card-tag,
+  .glass-card h3,
+  .glass-card > p,
+  .project-paper-subsections article > p:first-child,
+  .project-paper-subsections h3,
+  .project-paper-subsections article > p:last-child {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .project-sidebar-tabs {
     grid-template-columns: 1fr;
   }
 
-  .renata-back-to-top {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .renata-back-to-top,
-  .project-sidebar-panel a {
-    transition: none;
+  .project-sidebar-tab {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
   }
 }

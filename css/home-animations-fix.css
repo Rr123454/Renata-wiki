@@ -1,37 +1,38 @@
-/* Reliability overrides for the scroll-driven homepage animation. */
+/* Reliability rules for the scroll-driven homepage animation. */
 
 .renata-story-frame {
   position: relative;
   min-height: 0;
 }
 
-/* Never show an error message over the project animation. If the media cannot
-   advance, the last available frame simply remains visible instead. */
+/* Never show an error message over the project animation. If the media
+   cannot advance, the last available frame simply stays visible. */
 .renata-story-error,
 #renataStoryError {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
 }
 
 .renata-story-video {
   min-height: 0;
 }
 
+/* A plain label, not a pulsing dot. There is nothing to simulate here:
+   either the video is ready or it is not, and a fake progress indicator
+   is the same lie a skeleton loader tells. */
 .renata-story-loading {
   position: absolute;
   inset: 0;
   z-index: 4;
   display: grid;
-  grid-template-columns: auto auto;
   place-content: center;
-  align-items: center;
-  gap: 0.65rem;
-  color: #071224;
-  background: rgba(255, 255, 255, 0.88);
-  font-weight: 800;
-  transition: opacity 260ms ease, visibility 260ms ease;
+  color: var(--ink-faint);
+  background: var(--bg-raised);
+  font-family: var(--font-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: opacity var(--transition), visibility var(--transition);
 }
 
 .renata-story-loading.ready {
@@ -41,22 +42,5 @@
 }
 
 .renata-story-loader-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ff6a00;
-  box-shadow: 0 0 16px rgba(255, 106, 0, 0.48);
-  animation: renataLoaderPulse 900ms ease-in-out infinite alternate;
-}
-
-@keyframes renataLoaderPulse {
-  from {
-    transform: scale(0.72);
-    opacity: 0.45;
-  }
-
-  to {
-    transform: scale(1.12);
-    opacity: 1;
-  }
+  display: none;
 }
