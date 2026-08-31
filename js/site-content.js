@@ -3,10 +3,9 @@ const makePage = (config) => ({
   kicker: "",
   title: "",
   lead: "",
-  /* No default CTA. A button has to have somewhere real to go, and a hero
-     button that says "Edit this page" pointing at "#" is scaffolding that
-     shipped. Pages that need an action declare their own. */
-  buttons: [],
+  buttons: [
+    { text: "Edit this page", href: "#", style: "primary" }
+  ],
   stats: [],
   cardsTitle: "",
   cardsLead: "",
