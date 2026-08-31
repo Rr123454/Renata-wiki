@@ -5,7 +5,7 @@
   min-height: calc(100vh - 108px);
   overflow: hidden;
   isolation: isolate;
-  background: #020714;
+  background: var(--bg);
 }
 
 .renata-promo-video {
@@ -24,23 +24,6 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(2, 7, 20, 0.9) 0%, rgba(2, 7, 20, 0.56) 33%, rgba(2, 7, 20, 0.08) 72%),
-    linear-gradient(180deg, rgba(2, 7, 20, 0.16) 0%, transparent 45%, rgba(2, 7, 20, 0.82) 100%),
-    radial-gradient(circle at 78% 42%, transparent 0%, rgba(2, 7, 20, 0.16) 72%);
-}
-
-.renata-promo-noise {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0.16;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 38px 38px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), transparent 92%);
 }
 
 .renata-promo-content {
@@ -48,9 +31,7 @@
   z-index: 3;
   min-height: calc(100vh - 108px);
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
-  align-items: center;
-  gap: clamp(2rem, 6vw, 6rem);
+  align-content: center;
   padding-top: clamp(4rem, 10vh, 8rem);
   padding-bottom: clamp(5rem, 11vh, 9rem);
 }
@@ -64,7 +45,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
-  color: var(--gold, #ffd166);
+  color: var(--accent);
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -74,35 +55,34 @@
 .renata-promo-eyebrow::before {
   content: "";
   width: 34px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ember, #ff6a00), var(--gold, #ffd166));
-  box-shadow: 0 0 16px rgba(255, 106, 0, 0.48);
+  height: 1px;
+  border-radius: 0;
+  background: currentColor;
+  box-shadow: none;
 }
 
 .renata-promo-title {
   margin: 0;
   max-width: 8.5ch;
-  color: #f5f8ff;
+  color: var(--ink);
   font-size: clamp(4rem, 9vw, 8.6rem);
   line-height: 0.86;
   letter-spacing: -0.07em;
-  text-shadow: 0 18px 50px rgba(0,0,0,0.38);
+  text-shadow: none;
 }
 
 .renata-promo-title span {
   display: block;
-  color: transparent;
-  background: linear-gradient(120deg, #ffd166 4%, #ff6a00 46%, #59ddff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(255,106,0,0.14));
+  color: var(--accent);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
 }
 
 .renata-promo-lead {
   max-width: 590px;
   margin-top: 1.35rem;
-  color: rgba(235, 244, 255, 0.82);
+  color: var(--ink-muted);
   font-size: clamp(1rem, 1.35vw, 1.18rem);
 }
 
@@ -120,105 +100,27 @@
   gap: 0.55rem;
   min-height: 48px;
   padding: 0.8rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.14);
-  color: #f4f8ff;
-  background: rgba(4, 12, 27, 0.48);
-  backdrop-filter: blur(14px);
-  font-weight: 800;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  background: transparent;
+  backdrop-filter: none;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 .renata-film-button:hover {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255, 209, 102, 0.36);
+  transform: none;
+  background: transparent;
+  border-color: currentColor;
 }
 
 .renata-film-button.primary {
-  color: #08111f;
-  border-color: transparent;
-  background: linear-gradient(135deg, var(--gold, #ffd166), var(--ember, #ff6a00));
-  box-shadow: 0 15px 34px rgba(255, 106, 0, 0.24);
-}
-
-.renata-promo-logo-stage {
-  position: relative;
-  min-height: 420px;
-  display: grid;
-  place-items: center;
-}
-
-.renata-promo-logo-stage::before,
-.renata-promo-logo-stage::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.renata-promo-logo-stage::before {
-  width: min(31vw, 430px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 0 70px rgba(78, 220, 255, 0.09), inset 0 0 70px rgba(255, 106, 0, 0.04);
-  animation: renataOrbit 14s linear infinite;
-}
-
-.renata-promo-logo-stage::after {
-  width: min(25vw, 350px);
-  aspect-ratio: 1;
-  border: 1px dashed rgba(255, 209, 102, 0.26);
-  animation: renataOrbitReverse 18s linear infinite;
-}
-
-.renata-promo-logo {
-  width: min(24vw, 330px);
-  max-width: 82%;
-  position: relative;
-  z-index: 2;
-  padding: 14px;
-  border-radius: 34px;
-  background: rgba(255,255,255,0.92);
-  box-shadow:
-    0 36px 70px rgba(0,0,0,0.32),
-    0 0 54px rgba(255,106,0,0.14);
-  animation: renataLogoFloat 5.2s ease-in-out infinite;
-}
-
-.renata-promo-logo-glow {
-  position: absolute;
-  width: min(34vw, 480px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,106,0,0.24), rgba(78,220,255,0.08) 46%, transparent 70%);
-  filter: blur(28px);
-  animation: renataGlowPulse 4.8s ease-in-out infinite;
-}
-
-.renata-scroll-cue {
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
-  display: grid;
-  place-items: center;
-  gap: 0.4rem;
-  color: rgba(238,245,255,0.7);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.renata-scroll-cue::after {
-  content: "";
-  width: 1px;
-  height: 34px;
-  background: linear-gradient(180deg, var(--gold, #ffd166), transparent);
-  animation: renataScrollCue 1.8s ease-in-out infinite;
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: none;
 }
 
 /* Scroll-driven project story */
@@ -226,22 +128,7 @@
 .renata-project-story {
   position: relative;
   height: 390vh;
-  background:
-    radial-gradient(circle at 12% 25%, rgba(255,106,0,0.11), transparent 24%),
-    radial-gradient(circle at 86% 60%, rgba(78,220,255,0.08), transparent 28%),
-    linear-gradient(180deg, #071224 0%, #06111f 54%, #08182d 100%);
-}
-
-.renata-project-story::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+  background: var(--bg);
 }
 
 .renata-story-sticky {
@@ -270,28 +157,15 @@
   min-height: 560px;
 }
 
-.renata-story-visual::before {
-  content: "";
-  position: absolute;
-  width: 78%;
-  height: 68%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,106,0,0.17), rgba(78,220,255,0.055) 48%, transparent 72%);
-  filter: blur(38px);
-  animation: renataGlowPulse 5s ease-in-out infinite;
-}
-
 .renata-story-frame {
   width: min(100%, 760px);
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border-radius: 30px;
-  background: #fff;
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow:
-    0 42px 86px rgba(0,0,0,0.42),
-    0 0 58px rgba(255,106,0,0.07);
+  border-radius: 0;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  box-shadow: none;
 }
 
 .renata-story-frame::before {
@@ -300,11 +174,11 @@
   z-index: 2;
   top: 14px;
   left: 16px;
-  padding: 0.38rem 0.58rem;
-  border-radius: 999px;
-  color: #071224;
-  background: rgba(255,255,255,0.86);
-  border: 1px solid rgba(7,18,36,0.1);
+  padding: 0.3rem 0;
+  border-radius: 0;
+  color: var(--ink-faint);
+  background: transparent;
+  border: 0;
   font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -316,7 +190,7 @@
   width: 100%;
   aspect-ratio: 854 / 480;
   object-fit: cover;
-  background: #fff;
+  background: var(--bg-raised);
 }
 
 .renata-story-progress {
@@ -325,19 +199,19 @@
   left: 16px;
   right: 16px;
   bottom: 14px;
-  height: 4px;
-  border-radius: 999px;
+  height: 2px;
+  border-radius: 0;
   overflow: hidden;
-  background: rgba(7,18,36,0.12);
+  background: var(--rule);
 }
 
 .renata-story-progress > span {
   display: block;
   width: 0%;
   height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ff6a00, #ffd166, #4edcff);
-  box-shadow: 0 0 16px rgba(255,106,0,0.28);
+  border-radius: 0;
+  background: var(--accent);
+  box-shadow: none;
 }
 
 .renata-story-copy {
@@ -365,7 +239,7 @@
 .renata-story-number {
   display: block;
   margin-bottom: 1rem;
-  color: var(--ember, #ff6a00);
+  color: var(--accent);
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.15em;
@@ -374,7 +248,7 @@
 .renata-story-step h2 {
   max-width: 11ch;
   margin: 0 0 1.15rem;
-  color: #f1f6ff;
+  color: var(--ink);
   font-size: clamp(2.5rem, 5.2vw, 5.2rem);
   line-height: 0.94;
   letter-spacing: -0.06em;
@@ -383,7 +257,7 @@
 .renata-story-step p {
   max-width: 34rem;
   margin: 0;
-  color: rgba(221,233,248,0.72);
+  color: var(--ink-muted);
   font-size: clamp(1rem, 1.3vw, 1.12rem);
 }
 
@@ -392,8 +266,8 @@
   margin-top: 1.25rem;
   align-items: center;
   gap: 0.55rem;
-  color: var(--gold, #ffd166);
-  font-weight: 800;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .renata-story-steps-rail {
@@ -411,14 +285,14 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(255,255,255,0.22);
-  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+  background: var(--rule-strong);
+  transition: background var(--transition);
 }
 
 .renata-story-dot.active {
-  transform: scale(1.5);
-  background: var(--gold, #ffd166);
-  box-shadow: 0 0 15px rgba(255,106,0,0.55);
+  transform: none;
+  background: var(--accent);
+  box-shadow: none;
 }
 
 .renata-story-error {
@@ -426,38 +300,12 @@
   place-items: center;
   min-height: 340px;
   padding: 2rem;
-  color: #071224;
+  color: var(--ink);
   text-align: center;
   font-weight: 800;
 }
 
-@keyframes renataOrbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes renataOrbitReverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-}
-
-@keyframes renataLogoFloat {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-16px) rotate(1deg); }
-}
-
-@keyframes renataGlowPulse {
-  0%, 100% { transform: scale(0.94); opacity: 0.48; }
-  50% { transform: scale(1.08); opacity: 0.86; }
-}
-
-@keyframes renataScrollCue {
-  0%, 100% { transform: scaleY(0.45); transform-origin: top; opacity: 0.45; }
-  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-}
-
 @media (max-width: 960px) {
-  .renata-promo-content,
   .renata-story-layout {
     grid-template-columns: 1fr;
   }
@@ -467,23 +315,7 @@
     align-content: center;
   }
 
-  .renata-promo-logo-stage {
-    min-height: 310px;
-  }
-
-  .renata-promo-logo-stage::before {
-    width: 330px;
-  }
-
-  .renata-promo-logo-stage::after {
-    width: 270px;
-  }
-
-  .renata-promo-logo {
-    width: 250px;
-  }
-
-  .renata-project-story {
+          .renata-project-story {
     height: 410vh;
   }
 
@@ -527,9 +359,9 @@
   }
 
   .renata-promo-shade {
-    background:
-      linear-gradient(180deg, rgba(2,7,20,0.58), rgba(2,7,20,0.74)),
-      radial-gradient(circle at 50% 30%, transparent, rgba(2,7,20,0.18));
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--bg) 62%, transparent),
+      color-mix(in srgb, var(--bg) 82%, transparent));
   }
 
   .renata-promo-content {
@@ -545,24 +377,7 @@
     font-size: clamp(3.6rem, 20vw, 5.6rem);
   }
 
-  .renata-promo-logo-stage {
-    min-height: 220px;
-  }
-
-  .renata-promo-logo-stage::before {
-    width: 220px;
-  }
-
-  .renata-promo-logo-stage::after {
-    width: 180px;
-  }
-
-  .renata-promo-logo {
-    width: 165px;
-    border-radius: 24px;
-  }
-
-  .renata-project-story {
+          .renata-project-story {
     height: 360vh;
   }
 
@@ -597,15 +412,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .renata-promo-logo-stage::before,
-  .renata-promo-logo-stage::after,
-  .renata-promo-logo,
-  .renata-promo-logo-glow,
-  .renata-scroll-cue::after,
-  .renata-story-visual::before {
-    animation: none !important;
-  }
-
   .renata-story-step {
     transition: none;
   }
