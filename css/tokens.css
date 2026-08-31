@@ -1,0 +1,83 @@
+/* =========================================================
+   RENATA TOKENS
+   The one place background and foreground are decided together.
+
+   A theme is a contract: if you change --bg you MUST change --ink in the
+   same block. That is why they live here and nowhere else. Every previous
+   invisible-text bug on this site came from a background being flipped in
+   one file while the text colour stayed behind in another.
+
+   Two themes:
+     film      - the homepage title sequence. Dark, cinematic, no reading.
+     document  - the wiki itself. Light, for long-form scientific text.
+
+   Put data-theme on <body> for a whole page, or on any single <section>
+   that changes background mid-page. The section then paints itself and
+   carries the matching ink automatically.
+   ========================================================= */
+
+:root,
+[data-theme="film"] {
+  --bg:          #101a22;
+  --bg-raised:   #15222b;
+  --bg-sunken:   #0b1319;
+
+  --ink:         #f3efe6;
+  --ink-muted:   #c7c0b2;
+  --ink-faint:   #97a1a9;
+
+  /* Lifted from #f06b32 so small text clears 4.5:1 on --bg. */
+  --accent:      #f4813f;
+  --accent-ink:  #101a22;   /* text placed ON the accent */
+
+  --rule:        rgba(243, 239, 230, 0.18);
+  --rule-strong: rgba(243, 239, 230, 0.38);
+}
+
+[data-theme="document"] {
+  --bg:          #f6f3ec;
+  --bg-raised:   #fffdfa;
+  --bg-sunken:   #ece7dc;
+
+  --ink:         #142437;
+  --ink-muted:   #4a5c6e;
+  /* Chosen so it still clears 4.5:1 against --bg-sunken, which is the
+     darkest surface a faint label ever sits on (figure wells, image slots). */
+  --ink-faint:   #566674;
+
+  /* Darkened from #ee7a2b, which was 2.7:1 on cream. Checked against all
+     three document surfaces, not just --bg: 4.8:1 on --bg-sunken. */
+  --accent:      #a94510;
+  --accent-ink:  #fffdfa;
+
+  --rule:        rgba(20, 36, 55, 0.16);
+  --rule-strong: rgba(20, 36, 55, 0.34);
+}
+
+/* Anything that declares a theme paints itself. This is what makes the
+   contract structural instead of a convention people have to remember. */
+[data-theme] {
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* ---------- non-colour tokens ---------- */
+
+:root {
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-text: "Trebuchet MS", "Gill Sans MT", "Avenir Next", sans-serif;
+
+  /* Deliberately near-square. Nothing on this site is a pill or a bubble. */
+  --radius: 2px;
+
+  --page-gutter: clamp(1rem, 3.5vw, 4.5rem);
+  --measure: 68ch;
+
+  --transition: 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0ms;
+  }
+}
