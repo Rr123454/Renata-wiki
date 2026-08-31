@@ -9,20 +9,17 @@
       <video
         class="renata-promo-video"
         id="renataPromoVideo"
+        poster="assets/hero-poster.jpg"
         autoplay
         muted
         loop
         playsinline
         preload="metadata"
       >
-        <source
-          src="assets/ULP-CA_%20Renata%20-%20Post-Cholecystectomy%20Syndrome%20(2026)%20-%20Project%20Promotion%20(1).mp4"
-          type="video/mp4"
-        />
+        <source src="assets/hero-loop.mp4" type="video/mp4" />
       </video>
 
       <div class="renata-promo-shade"></div>
-      <div class="renata-promo-noise"></div>
 
       <div class="container renata-promo-content">
         <div class="renata-promo-copy">
@@ -40,19 +37,15 @@
             <a class="renata-film-button primary" href="#renataProjectStory">
               Explore the project <span aria-hidden="true">↓</span>
             </a>
-            <button class="renata-film-button" id="renataSoundToggle" type="button" aria-pressed="false">
-              Sound on
-            </button>
+            <a
+              class="renata-film-button"
+              href="assets/ULP-CA_%20Renata%20-%20Post-Cholecystectomy%20Syndrome%20(2026)%20-%20Project%20Promotion%20(1).mp4"
+            >
+              Watch the full film
+            </a>
           </div>
         </div>
-
-        <div class="renata-promo-logo-stage" aria-hidden="true">
-          <div class="renata-promo-logo-glow"></div>
-          <img class="renata-promo-logo" src="assets/logo.png" alt="" />
-        </div>
       </div>
-
-      <div class="renata-scroll-cue" aria-hidden="true">Scroll to explore</div>
     </section>
 
     <section class="renata-project-story" id="renataProjectStory" aria-label="Renata project story">
@@ -136,7 +129,6 @@
   `;
 
   const promoVideo = document.getElementById("renataPromoVideo");
-  const soundToggle = document.getElementById("renataSoundToggle");
   const story = document.getElementById("renataProjectStory");
   const storyVideo = document.getElementById("renataStoryVideo");
   const storyProgress = document.getElementById("renataStoryProgress");
@@ -144,23 +136,11 @@
   const steps = [...document.querySelectorAll("[data-renata-story-step]")];
   const dots = [...document.querySelectorAll("[data-renata-story-dot]")];
 
-  if (promoVideo && soundToggle) {
-    promoVideo.muted = true;
-
-    soundToggle.addEventListener("click", async () => {
-      promoVideo.muted = !promoVideo.muted;
-      soundToggle.setAttribute("aria-pressed", String(!promoVideo.muted));
-      soundToggle.textContent = promoVideo.muted ? "Sound on" : "Mute";
-
-      if (promoVideo.paused) {
-        try {
-          await promoVideo.play();
-        } catch (error) {
-          console.warn("Promo video playback was blocked by the browser.", error);
-        }
-      }
-    });
-  }
+  /* The hero used to autoplay the full 42 MB, 1080p60, two-minute promotion
+     film as wallpaper. It is now a 14-second silent 720p loop (~0.9 MB) with
+     a poster frame, and the full film is a link. If the loop cannot play,
+     the poster stays. */
+  promoVideo?.play?.().catch(() => {});
 
   if (!story || !storyVideo) return;
 

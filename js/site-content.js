@@ -3,9 +3,10 @@ const makePage = (config) => ({
   kicker: "",
   title: "",
   lead: "",
-  buttons: [
-    { text: "Edit this page", href: "#", style: "primary" }
-  ],
+  /* No default CTA. A button has to have somewhere real to go, and a hero
+     button that says "Edit this page" pointing at "#" is scaffolding that
+     shipped. Pages that need an action declare their own. */
+  buttons: [],
   stats: [],
   cardsTitle: "",
   cardsLead: "",
@@ -56,9 +57,11 @@ window.SITE_DATA = {
       href: "human-practices.html",
       children: [
         { key: "human-practices", label: "Human Practices", href: "human-practices.html" },
-        { key: "education", label: "Education", href: "education.html" }
+        { key: "education", label: "Education", href: "education.html" },
+        { key: "partnerships", label: "Partnerships", href: "partnerships.html" }
       ]
-    }
+    },
+    { key: "contact", label: "Contact", href: "contact.html" }
   ],
 
   pages: {
@@ -126,7 +129,7 @@ window.SITE_DATA = {
           key: "mentors",
           title: "Mentors",
           description: "Principal investigators, advisors, and community mentors guiding the project.",
-          layout: "wide",
+          layout: "compact",
           members: [
             { name: "Emma Zschunke", role: "Primary PI" },
             { name: "Preya Shrivastava", role: "Secondary PI" },
