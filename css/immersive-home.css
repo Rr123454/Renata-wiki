@@ -99,10 +99,13 @@
 
 /* ---------- pathway overlay: this one is content ---------- */
 
+/* Shifted right so the curve clears the copy column instead of running
+   through it. Percentage, so it holds at any width. */
 .renata-pathway-overlay {
   position: absolute;
   z-index: 2;
   inset: 0;
+  translate: 26% 4%;
   pointer-events: none;
   overflow: visible;
 }

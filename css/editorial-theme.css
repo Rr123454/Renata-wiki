@@ -188,7 +188,10 @@
 .project-paper-layout {
   grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem);
-  max-width: 1400px;
+  /* Sized so the reading column lands close to the paragraph measure. At
+     1400px the column was ~130ch wide while paragraphs capped at 74ch, which
+     is where the empty band on wide screens came from. */
+  max-width: min(1180px, 100%);
 }
 
 .project-paper-sidebar {
@@ -295,12 +298,24 @@
 /* Flat well. The 36px graph-paper grid that used to sit here was decoration
    pretending to be a blueprint. */
 .project-paper-figure-placeholder {
-  min-height: 320px;
+  /* Was min-height: 320px. A fixed pixel floor leaves a growing band of dead
+     space as the viewport widens, because the well stops scaling but the page
+     does not. An aspect ratio keeps the proportion constant at every width. */
+  aspect-ratio: 16 / 7;
+  min-height: 0;
   border: 1px solid var(--rule);
   border-radius: 0;
   background: var(--bg-sunken);
   background-image: none;
   color: var(--ink-faint);
+}
+
+/* Diagram figures carry content, so they size to it. Only the empty
+   placeholder wells use the aspect ratio above. */
+.pcs-visual {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding-block: clamp(1.4rem, 2.6vw, 2.4rem);
 }
 
 .project-paper-subsections {
@@ -380,15 +395,15 @@
   z-index: 3900;
   right: clamp(1rem, 2.6vw, 2rem);
   bottom: clamp(1rem, 2.6vw, 2rem);
-  width: 44px;
-  height: 44px;
+  width: clamp(2.75rem, 3.4vw, 3.4rem);
+  aspect-ratio: 1;
   display: grid;
   place-items: center;
   padding: 0;
-  border: 1px solid var(--rule-strong);
-  border-radius: 0;
-  color: var(--ink);
-  background: var(--bg);
+  border: 0;
+  border-radius: 50%;
+  color: var(--accent-ink);
+  background: var(--accent);
   box-shadow: none;
   cursor: pointer;
   opacity: 0;
@@ -401,10 +416,9 @@
   visibility: visible;
 }
 
-.renata-back-to-top:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: none;
+.renata-back-to-top:hover,
+.renata-back-to-top:focus-visible {
+  background: color-mix(in srgb, var(--accent) 82%, var(--ink));
 }
 
 .renata-back-to-top span {
