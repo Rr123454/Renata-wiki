@@ -1,6 +1,4 @@
 (function () {
-  document.body.classList.add("js-animate");
-
   const data = window.SITE_DATA;
   const pageKey = document.body.dataset.page || "home";
   const pageData = data.pages[pageKey] || data.pages.home;
@@ -328,13 +326,13 @@ function initNavigation() {
     return `
       <section class="page-section team-photo-section">
         <div class="container">
-          <h1 class="team-photo-kicker reveal">Meet Our Team</h1>
-          <div class="team-photo-placeholder reveal" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
+          <h1 class="team-photo-kicker">Meet Our Team</h1>
+          <div class="team-photo-placeholder" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
             <span class="team-photo-mark" aria-hidden="true">+</span>
             <strong>${pageData.teamPhoto.imageLabel}</strong>
             <small>Panoramic image space</small>
           </div>
-          <div class="section-intro team-photo-caption reveal">
+          <div class="section-intro team-photo-caption">
             <h2 class="section-title">${pageData.teamPhoto.title}</h2>
             <p class="section-lead">${pageData.teamPhoto.text}</p>
           </div>
@@ -351,17 +349,18 @@ function initNavigation() {
 
   function renderTeamGroup(group, groupIndex) {
     const members = group.members || Array.from({ length: group.slots || 0 }, () => "Member Name");
-    const gridClass = group.layout === "pi"
-      ? "pi-member-grid"
-      : group.layout === "compact"
-        ? "compact-member-grid"
-        : "department-grid";
+    const gridLayouts = {
+      pi: "pi-member-grid",
+      compact: "compact-member-grid",
+      wide: "department-grid",
+    };
+    const gridClass = gridLayouts[group.layout] || "department-grid";
     const cards = members.map((member, index) => renderMemberCard(group, member, index));
     const memberLines = group.memberLines || [];
     const memberContent = memberLines.length
       ? memberLines.map((line) => `
           <div class="team-member-line" id="${line.key}">
-            <div class="team-member-line-heading reveal">
+            <div class="team-member-line-heading">
               <h3>${line.title}</h3>
               <p>${line.description}</p>
             </div>
@@ -374,7 +373,7 @@ function initNavigation() {
     return `
       <section class="page-section team-group-section ${groupIndex % 2 ? "team-group-alt" : ""}" id="${group.key}">
         <div class="container">
-          <div class="team-group-heading reveal">
+          <div class="team-group-heading">
             <div>
               <p class="detail-eyebrow">Our Team</p>
               <h2>${group.title}</h2>
@@ -390,9 +389,8 @@ function initNavigation() {
   function renderMemberCard(group, member, index) {
     const memberName = typeof member === "string" ? member : member.name;
     const memberRole = typeof member === "string" ? group.memberLabel : member.role;
-    const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
     return `
-      <article class="member-card reveal ${delayClass}">
+      <article class="member-card">
         <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
           <span aria-hidden="true">+</span>
         </div>
@@ -594,7 +592,7 @@ function initNavigation() {
     return `
       <section class="project-paper-page" id="project-description">
         <div class="container project-paper-layout">
-          <article class="project-paper reveal" aria-labelledby="project-paper-title">
+          <article class="project-paper" aria-labelledby="project-paper-title">
             <header class="project-paper-header">
               <p class="project-paper-type">Project Description</p>
               <h1 id="project-paper-title">${pageData.title}</h1>
@@ -727,7 +725,7 @@ function initNavigation() {
 
           </article>
 
-          <aside class="project-paper-sidebar reveal delay-1" aria-label="Project description navigation">
+          <aside class="project-paper-sidebar" aria-label="Project description navigation">
             <div class="project-paper-sidebar-inner">
               <h2>Explore this page</h2>
               <div class="project-sidebar-tabs" role="tablist" aria-label="Project description resources">
@@ -951,10 +949,8 @@ function initNavigation() {
   function renderStandardPage() {
     return `
       <section class="page-hero" id="pageHero">
-        <div class="hero-beam" id="heroBeam"></div>
-
         <div class="container page-hero-grid">
-          <div class="hero-copy reveal">
+          <div class="hero-copy">
             <p class="hero-kicker">${pageData.kicker}</p>
             <h1 class="hero-title">${pageData.title}</h1>
             <p class="hero-lead">${pageData.lead}</p>
@@ -965,7 +961,7 @@ function initNavigation() {
 
       <section class="page-section">
         <div class="container">
-          <div class="section-intro reveal">
+          <div class="section-intro">
             <h2 class="section-title">${pageData.cardsTitle}</h2>
             <p class="section-lead">${pageData.cardsLead}</p>
           </div>
@@ -982,9 +978,8 @@ function initNavigation() {
   }
 
   function renderCard(card, index) {
-    const delayClass = index === 1 ? "delay-1" : index === 2 ? "delay-2" : "";
     return `
-      <article class="glass-card reveal ${card.imageLabel ? "image-content-card" : "tilt-card"} ${delayClass}">
+      <article class="glass-card ${card.imageLabel ? "image-content-card" : "tilt-card"}">
         ${card.imageLabel ? `
           <div class="card-image-placeholder" role="img" aria-label="Placeholder for ${card.imageLabel}">
             <span aria-hidden="true">+</span>
@@ -999,12 +994,11 @@ function initNavigation() {
   }
 
   function renderHomeSectionCard(card, index) {
-    const delayClass = index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : "";
     const hubPage = card.hubPage ? data.pages[card.hubPage] : null;
 
     if (hubPage) {
       return `
-        <section id="${card.sectionId}" class="home-section-card home-hub-section reveal ${delayClass}" aria-labelledby="${card.sectionId}-title">
+        <section id="${card.sectionId}" class="home-section-card home-hub-section" aria-labelledby="${card.sectionId}-title">
           <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
             <span class="placeholder-mark" aria-hidden="true">+</span>
             <span>${card.imageLabel}</span>
@@ -1031,7 +1025,7 @@ function initNavigation() {
     }
 
     return `
-      <article class="home-section-card reveal ${delayClass}">
+      <article class="home-section-card">
         <div class="section-card-image" role="img" aria-label="Placeholder for ${card.imageLabel}">
           <span class="placeholder-mark" aria-hidden="true">+</span>
           <span>${card.imageLabel}</span>
@@ -1051,7 +1045,7 @@ function initNavigation() {
     return details.map((section) => `
       <section class="page-section detail-section"${section.id ? ` id="${section.id}"` : ""}>
         <div class="container">
-          <article class="detail-panel reveal">
+          <article class="detail-panel">
             ${section.eyebrow ? `<p class="detail-eyebrow">${section.eyebrow}</p>` : ""}
             <h2>${section.title}</h2>
             ${section.text ? `<p class="detail-lead">${section.text}</p>` : ""}
@@ -1123,13 +1117,13 @@ function initNavigation() {
     footer.innerHTML = `
       <section class="sponsor-partner-band" id="sponsors-partners" aria-labelledby="sponsors-partners-title">
         <div class="container">
-          <div class="sponsor-partner-heading reveal">
+          <div class="sponsor-partner-heading">
             <div>
               <p class="detail-eyebrow">With support from</p>
               <h2 id="sponsors-partners-title">Sponsors &amp; Partners</h2>
             </div>
           </div>
-          <div class="sponsor-marquee reveal delay-1" role="region" aria-label="Automatically rotating sponsors and partners">
+          <div class="sponsor-marquee" role="region" aria-label="Automatically rotating sponsors and partners">
             <div class="sponsor-marquee-track">
               ${[0, 1].map((copyIndex) => `
                 <div class="sponsor-marquee-group"${copyIndex === 1 ? ' aria-hidden="true"' : ""}>
@@ -1156,7 +1150,7 @@ function initNavigation() {
 
       <section class="link-directory-section" id="important-links" aria-label="Contacts and important links">
         <div class="container">
-          <div class="link-directory reveal delay-1">
+          <div class="link-directory">
             ${directoryData.linkColumns.map((column) => {
               const headingId = `${column.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-links`;
               const columnClass = headingId.replace(/-links$/, "");
@@ -1182,27 +1176,6 @@ function initNavigation() {
 
   function initEffects() {
     const siteHeader = document.getElementById("siteHeader");
-    const revealEls = [...document.querySelectorAll(".reveal")];
-
-    let observer = null;
-    if ("IntersectionObserver" in window) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-
-      revealEls.forEach((el) => observer.observe(el));
-    }
-
-    requestAnimationFrame(() => {
-      revealEls.forEach((el) => el.classList.add("show"));
-    });
 
     function updateScroll() {
       const scrollTop = window.scrollY;
