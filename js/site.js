@@ -311,6 +311,14 @@ function initNavigation() {
       main.innerHTML = renderTeamPage();
     } else if (pageKey === "project-description") {
       main.innerHTML = renderProjectDescriptionPage();
+    } else if (pageKey === "human-practices") {
+      main.innerHTML = renderHumanPracticesPage();
+    } else if (pageKey === "experiments") {
+      main.innerHTML = renderExperimentsPage();
+    } else if (pageKey === "education") {
+      main.innerHTML = renderEducationPage();
+    } else if (pageKey.startsWith("experiment-")) {
+      main.innerHTML = renderExperimentRecordPage();
     } else {
       main.innerHTML = renderStandardPage();
     }
@@ -409,6 +417,176 @@ function initNavigation() {
       </section>
     `;
   }
+
+  function renderExperimentsPage() {
+    const experimentRoutes = data.experimentRoutes || [];
+    const projectModel = data.labWorkModel || {};
+
+    return `
+      <section class="experiment-index-page" aria-labelledby="lab-work-title">
+        <div class="container experiment-index-container">
+          <header class="experiment-index-header reveal">
+            <p class="hero-kicker">Model / Experiments / Evidence</p>
+            <h1 id="lab-work-title">Lab Work</h1>
+            <p>Begin with the project model, then explore the experimental records that test and refine the system.</p>
+          </header>
+
+          <figure class="lab-work-model-feature reveal" id="project-model">
+            <div class="lab-work-model-image" role="img" aria-label="Placeholder for ${projectModel.imageLabel || "project model image"}">
+              <span aria-hidden="true">+</span>
+              <small>${projectModel.imageLabel || "Project model image"}</small>
+            </div>
+            <figcaption>
+              <p class="detail-eyebrow">First view</p>
+              <strong>${projectModel.title || "Project model"}</strong>
+              <p>${projectModel.text || "Add the final project model and its interpretation here."}</p>
+            </figcaption>
+          </figure>
+
+          <header class="experiment-list-header reveal" id="experiments-list">
+            <p class="hero-kicker">Experimental record</p>
+            <h2>Experiments</h2>
+            <p>Each block opens a dedicated record connecting the question, method, evidence, interpretation, and resulting project decision.</p>
+          </header>
+
+          <div class="experiment-route-list" aria-label="Experiment pages">
+            ${experimentRoutes.map((experiment, index) => `
+              <a class="experiment-route-block reveal ${index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : ""}" href="${experiment.href}">
+                <span class="experiment-route-number">${experiment.number}</span>
+                <span class="experiment-route-copy">
+                  <span class="experiment-route-status">${experiment.status}</span>
+                  <strong>${experiment.title}</strong>
+                  <small>${experiment.summary}</small>
+                </span>
+                <span class="experiment-route-arrow" aria-hidden="true">→</span>
+              </a>
+            `).join("")}
+          </div>
+
+          <div class="experiment-evidence-note reveal">
+            <strong>Current evidence status</strong>
+            <p>These pages establish the experiment-record structure from the documented plan. Replace the working prompts with dated methods, results, figures, raw-data links, and interpretations after each experiment is conducted.</p>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderEducationPage() {
+    const eventRoutes = data.educationEventRoutes || [];
+
+    return `
+      <section class="experiment-index-page education-event-index" aria-labelledby="education-title">
+        <div class="container experiment-index-container">
+          <header class="experiment-index-header reveal">
+            <p class="hero-kicker">Events / Audiences / Outcomes</p>
+            <h1 id="education-title">Project education</h1>
+            <p>Each education event has its own record connecting the audience, activity, evidence, reflection, and effect on later work.</p>
+          </header>
+
+          <div class="experiment-route-list" aria-label="Education event pages">
+            ${eventRoutes.map((event, index) => `
+              <a class="experiment-route-block education-event-route reveal ${index % 3 === 1 ? "delay-1" : index % 3 === 2 ? "delay-2" : ""}" href="${event.href}">
+                <span class="experiment-route-number">${event.number}</span>
+                <span class="experiment-route-copy">
+                  <span class="experiment-route-status">${event.status}</span>
+                  <strong>${event.title}</strong>
+                  <small>${event.summary}</small>
+                </span>
+                <span class="experiment-route-arrow" aria-hidden="true">→</span>
+              </a>
+            `).join("")}
+          </div>
+
+          <div class="experiment-evidence-note reveal">
+            <strong>Content status</strong>
+            <p>These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderExperimentRecordPage() {
+    const recordKey = pageData.recordKey || pageKey;
+    const recordData = data.experimentRecordTabs?.[recordKey] || {};
+    const recordView = pageData.recordView || "overview";
+    const recordRoutes = [
+      { key: "overview", label: "Experiment Details", href: `${recordKey}.html` },
+      { key: "notebook", label: "Notebook", href: `${recordKey}-notebook.html` },
+      { key: "protocols", label: "Protocols", href: `${recordKey}-protocols.html` }
+    ];
+    const isOverview = recordView === "overview";
+    const resourceTitle = recordView === "notebook" ? "Notebook" : "Protocols";
+    const resourceLead = recordView === "notebook" ? recordData.notebookLead : recordData.protocolsLead;
+    const resourceEntries = recordView === "notebook" ? recordData.notebook : recordData.protocols;
+
+    return `
+      <section class="page-hero experiment-record-hero" id="pageHero">
+        <div class="container page-hero-grid">
+          <div class="hero-copy reveal">
+            <p class="hero-kicker">${pageData.kicker}</p>
+            <h1 class="hero-title">${pageData.title}</h1>
+            <p class="hero-lead">${pageData.lead}</p>
+            ${renderButtons(pageData.buttons)}
+          </div>
+        </div>
+      </section>
+
+      <section class="experiment-record-workspace">
+        <div class="container">
+          <nav class="experiment-record-tabs reveal" aria-label="Pages for this experiment">
+            ${recordRoutes.map((route) => `
+              <a class="experiment-record-tab ${route.key === recordView ? "active" : ""}" href="${route.href}" ${route.key === recordView ? 'aria-current="page"' : ""}>${route.label}</a>
+            `).join("")}
+          </nav>
+
+          ${isOverview ? `
+            <div class="experiment-record-panel">
+              <div class="section-intro reveal">
+                <h2 class="section-title">${pageData.cardsTitle}</h2>
+                <p class="section-lead">${pageData.cardsLead}</p>
+              </div>
+              <div class="card-grid experiment-record-overview-grid">
+                ${pageData.cards.map(renderCard).join("")}
+              </div>
+              ${renderDetailSections(pageData.details)}
+            </div>
+          ` : `
+            <div class="experiment-record-panel">
+              ${renderExperimentRecordEntries(resourceTitle, resourceLead, resourceEntries || [])}
+            </div>
+          `}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderExperimentRecordEntries(title, lead, entries) {
+    return `
+      <header class="experiment-record-panel-header reveal">
+        <p class="detail-eyebrow">Experiment record</p>
+        <h2>${title}</h2>
+        <p>${lead || "Add the verified experiment record here."}</p>
+      </header>
+      <div class="experiment-record-entry-list">
+        ${entries.map((entry, index) => `
+          <article class="experiment-record-entry reveal ${index % 2 ? "delay-1" : ""}">
+            <span>${entry.label}</span>
+            <div>
+              <h3>${entry.title}</h3>
+              <p>${entry.text}</p>
+            </div>
+          </article>
+        `).join("")}
+      </div>
+      <div class="experiment-evidence-note reveal">
+        <strong>Working record</strong>
+        <p>Replace these prompts with dated notebook entries or validated protocol details. Keep planned work clearly separated from completed procedures and observed results.</p>
+      </div>
+    `;
+  }
+
 
   function renderProjectDescriptionPage() {
     const rationale = pageData.details?.[0] || {};
@@ -607,6 +785,166 @@ function initNavigation() {
         </div>
       </section>
 
+    `;
+  }
+
+  function renderHumanPracticesPage() {
+    return `
+      <section class="project-paper-page human-practices-paper-page" id="human-practices">
+        <div class="container project-paper-layout">
+          <article class="project-paper reveal" aria-labelledby="human-practices-paper-title">
+            <header class="project-paper-header">
+              <p class="project-paper-type">Human Practices</p>
+              <h1 id="human-practices-paper-title">Human Practices</h1>
+            </header>
+
+            <section class="project-paper-section" id="hp-abstract">
+              <p class="project-paper-section-number">Summary</p>
+              <h2>Abstract</h2>
+              <p>
+                Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
+                the methods used to collect input, the principal findings, and the project decisions
+                that changed as a result. Keep claims proportional to the documented evidence.
+              </p>
+              <div class="project-paper-note">
+                <strong>Abstract content note</strong>
+                <p>Write this section last so it accurately reflects the completed Human Practices record.</p>
+              </div>
+              <figure class="project-paper-figure" id="hp-figure-stakeholders">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the stakeholder map">
+                  <span aria-hidden="true">+</span>
+                  <small>Stakeholder map</small>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-paper-section" id="hp-introduction">
+              <p class="project-paper-section-number">01</p>
+              <h2>Introduction</h2>
+              <p>
+                Establish the social, ethical, clinical, environmental, and implementation questions
+                that made stakeholder engagement necessary. Define the scope of the inquiry and explain
+                how those questions connect to the proposed LCA-sulfation system.
+              </p>
+            </section>
+
+            <section class="project-paper-section" id="hp-methodology">
+              <p class="project-paper-section-number">02</p>
+              <h2>Methodology</h2>
+              <p>
+                Report how stakeholders were selected, contacted, and consulted. For each interview,
+                survey, workshop, or review, record the date, participant role, guiding questions,
+                consent process, documentation method, and approach used to interpret the response.
+              </p>
+              <div class="project-paper-subsections" aria-label="Human Practices methodology structure">
+                <article><p>Selection</p><h3>Who participated</h3><p>Explain why each stakeholder perspective was relevant.</p></article>
+                <article><p>Collection</p><h3>How input was gathered</h3><p>Describe the interview, survey, workshop, or review procedure.</p></article>
+                <article><p>Analysis</p><h3>How input was interpreted</h3><p>State how themes, disagreements, and limitations were identified.</p></article>
+              </div>
+              <figure class="project-paper-figure" id="hp-figure-methods">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the engagement methodology figure">
+                  <span aria-hidden="true">+</span>
+                  <small>Engagement methodology</small>
+                </div>
+                <figcaption><strong>Figure 2.</strong> Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-paper-section" id="hp-findings">
+              <p class="project-paper-section-number">03</p>
+              <h2>Findings</h2>
+              <p>
+                Present the strongest documented insights by theme. Distinguish direct stakeholder input,
+                the team's interpretation, and questions that remain unresolved. Add attributed quotations
+                only when permission and context are documented.
+              </p>
+              <div class="project-paper-note">
+                <strong>Evidence boundary</strong>
+                <p>Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
+              </div>
+            </section>
+
+            <section class="project-paper-section" id="hp-integration">
+              <p class="project-paper-section-number">04</p>
+              <h2>Integration</h2>
+              <p>
+                Trace each material insight to a concrete project response. Record what changed in the
+                design, experiments, safety planning, communication, implementation strategy, or decision
+                criteria—and identify cases where the team retained its original approach with justification.
+              </p>
+              <figure class="project-paper-figure" id="hp-figure-integration">
+                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the Human Practices integration figure">
+                  <span aria-hidden="true">+</span>
+                  <small>Insight-to-decision map</small>
+                </div>
+                <figcaption><strong>Figure 3.</strong> Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-paper-section" id="hp-discussion">
+              <p class="project-paper-section-number">05</p>
+              <h2>Discussion</h2>
+              <p>
+                Interpret where stakeholder perspectives converged or conflicted, assess how representative
+                the engagement was, and identify methodological limits. Explain how uncertainty affects the
+                project's responsible-development claims and future engagement priorities.
+              </p>
+            </section>
+
+            <section class="project-paper-section" id="hp-conclusion">
+              <p class="project-paper-section-number">06</p>
+              <h2>Conclusion</h2>
+              <p>
+                Summarize what the Human Practices evidence contributed to Renata and state which social,
+                ethical, or implementation questions still require further consultation.
+              </p>
+            </section>
+          </article>
+
+          <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices navigation">
+            <div class="project-paper-sidebar-inner">
+              <h2>Explore this page</h2>
+              <div class="project-sidebar-tabs" role="tablist" aria-label="Human Practices resources">
+                <button type="button" class="project-sidebar-tab active" id="hp-tab-sections" role="tab" aria-selected="true" aria-controls="hp-panel-sections" data-project-panel="hp-panel-sections">Sections</button>
+                <button type="button" class="project-sidebar-tab" id="hp-tab-figures" role="tab" aria-selected="false" aria-controls="hp-panel-figures" data-project-panel="hp-panel-figures">Figures</button>
+                <button type="button" class="project-sidebar-tab" id="hp-tab-references" role="tab" aria-selected="false" aria-controls="hp-panel-references" data-project-panel="hp-panel-references">References</button>
+              </div>
+
+              <div class="project-sidebar-panel active" id="hp-panel-sections" role="tabpanel" aria-labelledby="hp-tab-sections">
+                <a href="#hp-abstract">Abstract</a>
+                <a href="#hp-introduction">Introduction</a>
+                <a href="#hp-methodology">Methodology</a>
+                <a href="#hp-findings">Findings</a>
+                <a href="#hp-integration">Integration</a>
+                <a href="#hp-discussion">Discussion</a>
+                <a href="#hp-conclusion">Conclusion</a>
+              </div>
+
+              <div class="project-sidebar-panel" id="hp-panel-figures" role="tabpanel" aria-labelledby="hp-tab-figures" hidden>
+                <a href="#hp-figure-stakeholders" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 1"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Stakeholder map</strong></span>
+                </a>
+                <a href="#hp-figure-methods" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 2"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 2</span><strong>Engagement methodology</strong></span>
+                </a>
+                <a href="#hp-figure-integration" class="project-sidebar-figure-link">
+                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 3"><span aria-hidden="true">+</span></span>
+                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 3</span><strong>Insight-to-decision map</strong></span>
+                </a>
+              </div>
+
+              <div class="project-sidebar-panel" id="hp-panel-references" role="tabpanel" aria-labelledby="hp-tab-references" hidden>
+                <div class="project-sidebar-reference"><strong>Stakeholder records</strong><span>Add consented interview, survey, workshop, and meeting records.</span></div>
+                <div class="project-sidebar-reference"><strong>Context literature</strong><span>Add credible sources supporting the social, clinical, ethical, and implementation context.</span></div>
+                <div class="project-sidebar-reference"><strong>Decision evidence</strong><span>Link each integration claim to the record that supports it.</span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
     `;
   }
 

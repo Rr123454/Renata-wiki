@@ -39,17 +39,7 @@ window.SITE_DATA = {
         { key: "engineering", label: "Engineering", href: "engineering.html" }
       ]
     },
-    {
-      key: "lab-work",
-      label: "Lab Work",
-      href: "experiments.html",
-      menuOnly: true,
-      children: [
-        { key: "experiments", label: "Experiments", href: "experiments.html" },
-        { key: "protocols", label: "Protocols", href: "protocols.html" },
-        { key: "model", label: "Model", href: "model.html" }
-      ]
-    },
+    { key: "lab-work", label: "Lab Work", href: "experiments.html" },
     {
       key: "engagement",
       label: "Engagement",
@@ -88,9 +78,7 @@ window.SITE_DATA = {
         {
           title: "Lab Work",
           links: [
-            { text: "Experiments", href: "experiments.html" },
-            { text: "Protocols", href: "protocols.html" },
-            { text: "Model", href: "model.html" }
+            { text: "Experiments", href: "experiments.html#experiments-list" }
           ]
         },
         {
@@ -150,6 +138,7 @@ window.SITE_DATA = {
             { name: "Aiden R.", role: "Student" },
             { name: "Brandon", role: "Student" },
             { name: "Ella Y.", role: "Student" },
+            { name: "Alex F.", role: "Student" },
             { name: "Faizaan M.", role: "Student" },
             { name: "Hannah B.", role: "Student" },
             { name: "Hanyu H.", role: "Student" },
@@ -227,13 +216,13 @@ window.SITE_DATA = {
         { tag: "Link", title: "Connection", text: "Show how it supports the project." }
       ],
       ctaTitle: "Route into the wet-lab details",
-      ctaText: "This page should send visitors to Experiments and Protocols.",
+      ctaText: "This page should send visitors to Experiments.",
     }),
 
     experiments: makePage({
-      group: "wet-lab",
+      group: "lab-work",
       kicker: "Assays / Controls / Readouts",
-      title: "<span class='accent-gradient'>Experiments</span>",
+      title: "<span class='accent-gradient'>Lab Work</span>",
       lead: "Use this page for the main assay structure, logic, and experimental record.",
       cardsTitle: "Main blocks",
       cardsLead: "Keep the question, control, output, and experiment timeline clear.",
@@ -245,22 +234,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Keep the assays structured",
       ctaText: "This page should make the experiment logic easy to follow.",
-    }),
-
-    protocols: makePage({
-      group: "wet-lab",
-      kicker: "Methods / Conditions / Reproducibility",
-      title: "<span class='accent-gradient'>Protocols</span>",
-      lead: "Use this page for method details and reproducibility.",
-      cardsTitle: "Protocol blocks",
-      cardsLead: "Keep the methods concrete and repeatable.",
-      cards: [
-        { tag: "Setup", title: "Materials", text: "List the core materials and setup." },
-        { tag: "Method", title: "Procedure", text: "Write the main steps clearly." },
-        { tag: "Notes", title: "Important details", text: "Add conditions that matter most." }
-      ],
-      ctaTitle: "Keep the methods useful",
-      ctaText: "This page should help readers actually follow the work.",
     }),
 
     "dry-lab": makePage({
@@ -277,22 +250,6 @@ window.SITE_DATA = {
       ],
       ctaTitle: "Route into the dry-lab details",
       ctaText: "This page should send visitors to the Model.",
-    }),
-
-    model: makePage({
-      group: "dry-lab",
-      kicker: "Assumptions / Variables / Prediction",
-      title: "Project <span class='accent-gradient'>model</span>",
-      lead: "Use this page for the model, its assumptions, and what it predicts.",
-      cardsTitle: "Model blocks",
-      cardsLead: "Keep the model understandable.",
-      cards: [
-        { tag: "Setup", title: "Assumptions", text: "State the key assumptions." },
-        { tag: "Output", title: "Predictions", text: "Show the main outputs." },
-        { tag: "Use", title: "Project effect", text: "Show what the model changed." }
-      ],
-      ctaTitle: "Keep the model meaningful",
-      ctaText: "The model page should explain why the model mattered.",
     }),
 
     engagement: makePage({
@@ -315,32 +272,18 @@ window.SITE_DATA = {
       group: "engagement",
       kicker: "Stakeholders / Decisions / Integration",
       title: "<span class='accent-gradient'>Human Practices</span>",
-      lead: "Use this page to show who you talked to and what changed because of it.",
-      cardsTitle: "Human Practices blocks",
-      cardsLead: "Keep this page concrete.",
-      cards: [
-        { tag: "Who", title: "Stakeholders", text: "Identify the important voices." },
-        { tag: "Insight", title: "What they said", text: "Summarize the useful input." },
-        { tag: "Change", title: "What shifted", text: "Show the project change directly." }
-      ],
-      ctaTitle: "Make the effect visible",
-      ctaText: "Judges should clearly see how outside input shaped the project.",
+      lead: "Document the stakeholders, methods, evidence, interpretation, and project decisions that shaped Renata.",
+      buttons: [],
+      cards: [],
     }),
 
     education: makePage({
       group: "engagement",
-      kicker: "Audience / Material / Outcome",
+      kicker: "Events / Audiences / Outcomes",
       title: "Project <span class='accent-gradient'>education</span>",
-      lead: "Use this page for the audience, material, and result of your educational work.",
-      cardsTitle: "Education blocks",
-      cardsLead: "Keep the educational work measurable and easy to read.",
-      cards: [
-        { tag: "Audience", title: "Who it was for", text: "Add the target audience." },
-        { tag: "Material", title: "What you made", text: "Add the lesson, event, or materials." },
-        { tag: "Outcome", title: "What happened", text: "Add the result or response." }
-      ],
-      ctaTitle: "Keep the page measurable",
-      ctaText: "The page should show what was taught and what came from it.",
+      lead: "Explore each education event as its own record, from the intended audience and activity to the evidence, reflection, and resulting project effect.",
+      buttons: [],
+      cards: [],
     }),
 
     partnerships: makePage({
@@ -376,6 +319,267 @@ window.SITE_DATA = {
     })
   }
 };
+
+window.SITE_DATA.experimentRoutes = [
+  {
+    number: "01",
+    title: "Assembly and verification",
+    summary: "Document the hierarchical Golden Gate/JUMP build, screening, and sequence verification record.",
+    href: "experiment-assembly.html",
+    status: "Planned record"
+  },
+  {
+    number: "02",
+    title: "Reporter characterization",
+    summary: "Compare the four sfGFP constructs to separate promoter, operator, and transcription-factor effects.",
+    href: "experiment-reporter.html",
+    status: "Planned record"
+  },
+  {
+    number: "03",
+    title: "Bile-acid growth response",
+    summary: "Track growth and normalized fluorescence across a concentration series within tolerated conditions.",
+    href: "experiment-growth-response.html",
+    status: "Planned record"
+  }
+];
+
+window.SITE_DATA.labWorkModel = {
+  title: "Project model",
+  imageLabel: "Project model image",
+  text: "Place the final model figure here. Its caption should state the model assumptions, variables, principal predictions, and the specific laboratory decisions those predictions informed."
+};
+
+window.SITE_DATA.educationEventRoutes = [
+  {
+    number: "01",
+    title: "Education event 01",
+    summary: "Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-01.html",
+    status: "Event record placeholder"
+  },
+  {
+    number: "02",
+    title: "Education event 02",
+    summary: "Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-02.html",
+    status: "Event record placeholder"
+  },
+  {
+    number: "03",
+    title: "Education event 03",
+    summary: "Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-03.html",
+    status: "Event record placeholder"
+  }
+];
+
+const makeEducationEvent = (number) => makePage({
+  group: "engagement",
+  kicker: `Education Event ${number} / Event Record`,
+  title: `Education <span class='accent-gradient'>event ${number}</span>`,
+  lead: "Replace this placeholder with the event's verified name, date, location, audience, and learning objective.",
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Event record",
+  cardsLead: "Document what the team planned, delivered, observed, and learned from this specific event.",
+  cards: [
+    { tag: "Context", title: "Audience and objective", text: "Identify the participants, their prior knowledge, and the learning objective chosen for them." },
+    { tag: "Activity", title: "What happened", text: "Describe the format, materials, facilitation, and event chronology." },
+    { tag: "Evidence", title: "What was observed", text: "Add attendance, feedback, participant work, survey responses, or other direct evidence." },
+    { tag: "Effect", title: "What changed", text: "Explain the team's interpretation and how this event shaped later education or project decisions." }
+  ],
+  details: [
+    {
+      eyebrow: "Event chronology",
+      title: "Plan, delivery, and follow-up",
+      text: "Keep the sequence and evidence for this event together so readers can trace what the team did and why.",
+      steps: [
+        { label: "Before", text: "Record the audience need, learning objective, preparation, and planned method of evaluation." },
+        { label: "During", text: "Document the activity sequence, participation, questions, adaptations, and materials used." },
+        { label: "After", text: "Report the direct evidence, limitations, interpretation, and next decision." }
+      ],
+      note: "This page is a structural placeholder. Replace prompts with verified event records and avoid claiming outcomes that the collected evidence cannot support."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-event-01"] = makeEducationEvent("01");
+window.SITE_DATA.pages["education-event-02"] = makeEducationEvent("02");
+window.SITE_DATA.pages["education-event-03"] = makeEducationEvent("03");
+
+window.SITE_DATA.pages["experiment-assembly"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 01 / Assembly",
+  title: "Assembly and <span class='accent-gradient'>verification</span>",
+  lead: "A dedicated record for the hierarchical Golden Gate/JUMP build and the evidence used to confirm each assembly stage.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Experiment record",
+  cardsLead: "Replace each working prompt with the dated methods, observations, and files from the completed experiment.",
+  cards: [
+    { tag: "Question", title: "What was tested?", text: "Whether the selected Level 0 parts assemble into the intended transcriptional units and higher-level construct." },
+    { tag: "Method", title: "How was it tested?", text: "Record reaction composition, cycling conditions, transformation, colony screening, and sequence verification." },
+    { tag: "Controls", title: "What was compared?", text: "Document negative controls, positive controls, expected fragment sizes, and acceptance criteria." },
+    { tag: "Readout", title: "What was measured?", text: "Add colony counts, screening results, gel images, sequencing traces, and final construct maps." }
+  ],
+  details: [
+    {
+      eyebrow: "Method and reproducibility",
+      title: "From kit parts to an assembly-ready map",
+      text: "Keep the materials, setup, procedure, experimental conditions, and deviations alongside the experiment they support.",
+      steps: [
+        { label: "1", text: "Select the destination backbone and confirm assembly level, antibiotic marker, and recipient role." },
+        { label: "2", text: "Choose one bacterial promoter and RBS per cassette, balancing expression against host burden." },
+        { label: "3", text: "Confirm each CDS identity, orientation, completeness, codon optimization, and internal Type IIS sites." },
+        { label: "4", text: "Add double terminators and verify insulation between the two transcriptional units." },
+        { label: "5", text: "Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
+        { label: "6", text: "Build and validate the hierarchical assembly in Benchling, then export the annotated map for wet-lab review." }
+      ],
+      note: "This is a design checklist rather than a bench-ready method. Add reaction volumes, cycling conditions, controls, transformation, screening, and sequence verification before execution."
+    },
+    {
+      eyebrow: "Interpretation and continuation",
+      title: "Connect the build result to the next decision",
+      text: "State what the evidence directly confirms, identify failed or ambiguous junctions, and explain which construct advanced to characterization.",
+      steps: [
+        { label: "Chronology", text: "Add the experiment date and its place in the build sequence." },
+        { label: "Interpretation", text: "Explain what the screening and sequencing evidence supports." },
+        { label: "Continuation", text: "Link the accepted construct or redesign to the next experiment." }
+      ],
+      note: "Current evidence boundary: the repository contains an assembly strategy, while completed assembly and verification results have not yet been reported."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["experiment-reporter"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 02 / Regulation",
+  title: "Reporter <span class='accent-gradient'>characterization</span>",
+  lead: "A four-condition sfGFP comparison designed to separate promoter, operator, and transcription-factor effects.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Four-condition design",
+  cardsLead: "Each condition isolates a specific regulatory comparison within the same reporter framework.",
+  cards: [
+    { tag: "A", title: "Promoter + sfGFP", text: "Constitutive reference without an operator or separate transcription factor." },
+    { tag: "B", title: "Operator + promoter + sfGFP", text: "Measures the effect of adding the candidate operator sequence." },
+    { tag: "A + C", title: "Promoter + sfGFP, plus TF", text: "Tests whether the transcription factor changes the operator-free reporter." },
+    { tag: "B + C", title: "Operator + promoter + sfGFP, plus TF", text: "Tests regulation when the operator and transcription factor are both present." }
+  ],
+  details: [{
+    eyebrow: "Experiment record",
+    title: "Question, readout, and interpretation",
+    text: "Record normalized sfGFP fluorescence and growth for every condition, then connect the observed differences to the next regulatory design decision.",
+    steps: [
+      { label: "Chronology", text: "Add the date, replicate structure, and order of experimental events." },
+      { label: "Answers", text: "State which comparisons directly answer the operator and transcription-factor questions." },
+      { label: "Interpretation", text: "Separate supported conclusions from uncertainty and technical limitations." },
+      { label: "Continuation", text: "Identify the regulatory configuration selected for follow-up work." }
+    ],
+    note: "Current evidence boundary: this reporter matrix is documented as an experimental plan; characterization data have not yet been reported."
+  }]
+});
+
+window.SITE_DATA.pages["experiment-growth-response"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 03 / Response",
+  title: "Bile-acid <span class='accent-gradient'>growth response</span>",
+  lead: "A concentration-series record for interpreting growth tolerance alongside normalized reporter output.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Experiment record",
+  cardsLead: "Use the same structure for every concentration, replicate, and time point.",
+  cards: [
+    { tag: "Question", title: "What was tested?", text: "How bile-acid concentration affects host growth and reporter behavior within the selected experimental range." },
+    { tag: "Method", title: "How was it tested?", text: "Add the concentration series, exposure timing, culture conditions, sampling schedule, and normalization method." },
+    { tag: "Controls", title: "What was compared?", text: "Document vehicle, untreated, reporter, and growth controls with the replicate design." },
+    { tag: "Readout", title: "What was measured?", text: "Add optical density, fluorescence, normalized response, uncertainty, and any exclusion criteria." }
+  ],
+  details: [{
+    eyebrow: "Interpretation and continuation",
+    title: "Separate response from growth burden",
+    text: "Interpret fluorescence together with growth so a stressed culture is not mistaken for a regulatory response.",
+    steps: [
+      { label: "Chronology", text: "Add the date, time course, and relationship to reporter characterization." },
+      { label: "Interpretation", text: "Identify the concentration range supported by both growth and reporter evidence." },
+      { label: "Continuation", text: "Explain how the result changed the next assay or construct decision." }
+    ],
+    note: "Current evidence boundary: the repository proposes a bile-acid concentration series; completed growth-response data have not yet been reported."
+  }]
+});
+
+window.SITE_DATA.experimentRecordTabs = {
+  "experiment-assembly": {
+    notebookLead: "Record each assembly attempt in chronological order, including deviations, observations, verification evidence, interpretation, and the next build decision.",
+    notebook: [
+      { label: "Entry 01", title: "Assembly setup", text: "Add the date, construct version, selected parts, reaction setup, operators, and any deviations from the planned workflow." },
+      { label: "Entry 02", title: "Transformation and screening", text: "Add colony observations, plate controls, screening results, images, and links to the raw record." },
+      { label: "Entry 03", title: "Verification and continuation", text: "Add gel or sequencing evidence, interpret accepted and failed junctions, and state which construct advanced or was redesigned." }
+    ],
+    protocolsLead: "Keep the assembly, transformation, screening, and verification procedures beside the experiment they support.",
+    protocols: [
+      { label: "Protocol 01", title: "Golden Gate/JUMP assembly", text: "Add the validated reaction composition, part-to-vector ratios, enzyme system, cycling program, controls, and acceptance criteria." },
+      { label: "Protocol 02", title: "Transformation and colony screening", text: "Add the competent-cell method, recovery, selection, plating, colony-screening procedure, and required controls." },
+      { label: "Protocol 03", title: "Construct verification", text: "Add the digest, PCR, or sequencing workflow used to confirm identity, orientation, junctions, and complete construct sequence." }
+    ]
+  },
+  "experiment-reporter": {
+    notebookLead: "Track every reporter run with its four experimental conditions, replicate structure, observations, normalized readouts, interpretation, and follow-up decision.",
+    notebook: [
+      { label: "Entry 01", title: "Culture and condition setup", text: "Add the date, construct identities, culture conditions, replicate plan, instrument settings, and deviations." },
+      { label: "Entry 02", title: "Reporter measurements", text: "Add growth and fluorescence observations for all four conditions with links to raw plate-reader files." },
+      { label: "Entry 03", title: "Interpretation and continuation", text: "State which comparisons answer the operator and transcription-factor questions and which configuration advanced." }
+    ],
+    protocolsLead: "Document the shared procedure used to compare promoter, operator, and transcription-factor effects across the reporter matrix.",
+    protocols: [
+      { label: "Protocol 01", title: "Reporter culture preparation", text: "Add inoculation, growth, induction or exposure conditions, plate layout, timing, and biological and technical replicate requirements." },
+      { label: "Protocol 02", title: "Growth and fluorescence measurement", text: "Add instrument settings, sampling schedule, blank correction, fluorescence normalization, and quality-control criteria." },
+      { label: "Protocol 03", title: "Four-condition comparison", text: "Define the planned contrasts, uncertainty reporting, exclusion rules, and criteria used to identify a supported regulatory effect." }
+    ]
+  },
+  "experiment-growth-response": {
+    notebookLead: "Record each bile-acid response run chronologically, keeping concentration preparation, growth behavior, reporter output, exclusions, and decisions together.",
+    notebook: [
+      { label: "Entry 01", title: "Concentration-series setup", text: "Add the date, bile-acid identity, stock preparation, concentration range, plate map, controls, and replicate plan." },
+      { label: "Entry 02", title: "Growth and reporter observations", text: "Add time-resolved optical density and fluorescence data, anomalies, exclusions, and links to raw files." },
+      { label: "Entry 03", title: "Interpretation and continuation", text: "Identify the range supported by both growth and normalized reporter evidence, then record the next assay decision." }
+    ],
+    protocolsLead: "Keep concentration preparation, exposure, measurement, and analysis procedures together for reproducible growth-response testing.",
+    protocols: [
+      { label: "Protocol 01", title: "Bile-acid concentration preparation", text: "Add stock solvent, dilution sequence, final concentration range, vehicle matching, storage, and handling requirements." },
+      { label: "Protocol 02", title: "Exposure and time-course measurement", text: "Add culture state, exposure timing, incubation conditions, plate layout, sampling intervals, and instrument settings." },
+      { label: "Protocol 03", title: "Normalization and analysis", text: "Add blank correction, growth normalization, replicate aggregation, uncertainty reporting, exclusion criteria, and supported comparison tests." }
+    ]
+  }
+};
+
+const registerExperimentResourcePages = (recordKey, experimentTitle) => {
+  window.SITE_DATA.pages[recordKey].recordKey = recordKey;
+  window.SITE_DATA.pages[recordKey].recordView = "overview";
+
+  window.SITE_DATA.pages[`${recordKey}-notebook`] = makePage({
+    group: "lab-work",
+    recordKey,
+    recordView: "notebook",
+    kicker: `${experimentTitle} / Notebook`,
+    title: `${experimentTitle} <span class='accent-gradient'>notebook</span>`,
+    lead: "A dedicated chronological record for this experiment's setup, observations, interpretation, and continuation decisions.",
+    buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+    cards: []
+  });
+
+  window.SITE_DATA.pages[`${recordKey}-protocols`] = makePage({
+    group: "lab-work",
+    recordKey,
+    recordView: "protocols",
+    kicker: `${experimentTitle} / Protocols`,
+    title: `${experimentTitle} <span class='accent-gradient'>protocols</span>`,
+    lead: "A dedicated procedure record for this experiment's preparation, controls, measurements, and validation criteria.",
+    buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+    cards: []
+  });
+};
+
+registerExperimentResourcePages("experiment-assembly", "Assembly and verification");
+registerExperimentResourcePages("experiment-reporter", "Reporter characterization");
+registerExperimentResourcePages("experiment-growth-response", "Bile-acid growth response");
 
 window.SITE_DATA.pages["project-description"].details = [
   {
@@ -456,23 +660,7 @@ window.SITE_DATA.pages.experiments.details = [
       { label: "Interpretation", text: "Explain what the team concluded from the result, including uncertainty and limitations." },
       { label: "Continuation", text: "Show how that interpretation informed the next experiment, design decision, or project direction." }
     ],
-    note: "Each dated entry should connect the experimental question, result, interpretation, and resulting next step, with links to its assay, protocol, and raw data."
-  }
-];
-
-window.SITE_DATA.pages.protocols.details = [
-  {
-    eyebrow: "Planned workflow",
-    title: "From kit parts to an assembly-ready map",
-    steps: [
-      { label: "1", text: "Select the destination backbone and confirm assembly level, antibiotic marker, and recipient role." },
-      { label: "2", text: "Choose one bacterial promoter and RBS per cassette, balancing expression against host burden." },
-      { label: "3", text: "Confirm each CDS identity, orientation, completeness, codon optimization, and internal Type IIS sites." },
-      { label: "4", text: "Add double terminators and verify insulation between the two transcriptional units." },
-      { label: "5", text: "Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
-      { label: "6", text: "Build and validate the hierarchical assembly in Benchling, then export the annotated map for wet-lab review." }
-    ],
-    note: "This is a design checklist, not a bench-ready protocol. Reaction volumes, cycling conditions, controls, transformation, screening, and sequence verification must be added before execution."
+    note: "Each dated entry should connect the experimental question, result, interpretation, and resulting next step, with links to its assay, method record, and raw data."
   }
 ];
 

@@ -1,14 +1,14 @@
 :root {
-  --bg-0: #101a22;
-  --bg-1: #101a22;
-  --bg-2: #101a22;
+  --bg-0: #182432;
+  --bg-1: #182432;
+  --bg-2: #182432;
 
   /* Restrained Renata system: navy, warm ivory, and one orange accent. */
-  --text: #f3efe6;
-  --muted: #d7d0c3;
-  --muted-2: #9da8b0;
+  --text: #dedbd3;
+  --muted: #bdbab1;
+  --muted-2: #899297;
 
-  --accent: #f06b32;
+  --accent: #d86b30;
   --accent-orange: var(--accent);
   --accent-yellow: var(--accent);
   --cream: var(--text);
@@ -18,8 +18,9 @@
   --gold: var(--accent);
   --cyan: var(--accent);
   --cyan-2: var(--text);
-  --white-soft: rgba(243, 239, 230, 0.06);
-  --line: rgba(243, 239, 230, 0.17);
+  --white-soft: rgba(222, 219, 211, 0.055);
+  --footer-white: #dedbd3;
+  --line: rgba(222, 219, 211, 0.14);
 
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.22);
   --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.16);
@@ -36,7 +37,7 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent) rgba(243, 239, 230, 0.05);
+  scrollbar-color: var(--accent) rgba(222, 219, 211, 0.05);
 }
 
 body::-webkit-scrollbar {
@@ -78,15 +79,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 4000;
-  background: rgba(5, 12, 24, 0.94);
+  background: rgba(18, 30, 43, 0.95);
   backdrop-filter: blur(18px) saturate(155%);
-  border-top: 3px solid rgba(255, 147, 72, 0.72);
+  border-top: 3px solid rgba(168, 97, 67, 0.72);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
 }
 
 .site-header.scrolled {
-  background: rgba(5, 12, 24, 0.985);
+  background: rgba(18, 30, 43, 0.985);
 }
 
 .header-inner {
@@ -116,8 +117,8 @@ body {
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 197, 110, 0.26);
-  box-shadow: 0 8px 22px rgba(255, 87, 20, 0.16);
+  border: 1px solid rgba(176, 151, 117, 0.24);
+  box-shadow: 0 8px 22px rgba(132, 71, 50, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -2672,6 +2673,20 @@ h6,
 .link-directory-column a,
 .detail-source-link {
   color: var(--accent);
+}
+
+/* Keep the full footer system in the same softened white used by the logo palette. */
+.sponsor-partner-band .detail-eyebrow,
+.sponsor-partner-heading h2,
+.link-directory-column h3,
+.link-directory-column a,
+.link-directory-column a:hover,
+.link-directory-column a:focus-visible {
+  color: var(--footer-white);
+}
+
+.footer-inner p {
+  color: var(--footer-white);
 }
 
 @media (max-width: 900px) {

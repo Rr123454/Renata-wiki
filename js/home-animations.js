@@ -46,7 +46,7 @@
                 muted
                 playsinline
                 preload="auto"
-                data-scroll-video="assets/Scroll%20Animation.mp4"
+                data-scroll-video="assets/Render_Final.mp4"
               ></video>
 
               <div class="renata-story-loading" id="renataStoryLoading" aria-live="polite">
@@ -117,6 +117,7 @@
 
   const promoVideo = document.getElementById("renataPromoVideo");
   const soundToggle = document.getElementById("renataSoundToggle");
+  const hero = document.getElementById("renataHero");
   const story = document.getElementById("renataProjectStory");
   const storyVideo = document.getElementById("renataStoryVideo");
   const storyProgress = document.getElementById("renataStoryProgress");
@@ -143,6 +144,14 @@
   }
 
   if (!story || !storyVideo) return;
+
+  function updateHomepageTheme() {
+    if (!hero) return;
+
+    const headerHeight = siteHeader ? siteHeader.getBoundingClientRect().height : 0;
+    const videoIsOnScreen = hero.getBoundingClientRect().bottom > headerHeight + 1;
+    document.body.classList.toggle("home-video-mode", videoIsOnScreen);
+  }
 
   const sourceUrl = storyVideo.dataset.scrollVideo;
 
@@ -257,8 +266,6 @@
     if (Math.abs(storyVideo.currentTime - targetTime) < 0.022) return;
 
     try {
-      // Exact currentTime seeking is intentionally used here instead of fastSeek.
-      // fastSeek may jump to distant keyframes and makes this short animation look jerky.
       storyVideo.currentTime = targetTime;
     } catch (error) {
       // A later animation frame will retry after the browser is ready.
@@ -296,12 +303,18 @@
 
   function handleViewportResize() {
     syncHeaderHeight();
+    updateHomepageTheme();
     updateTargetProgress();
   }
 
-  window.addEventListener("scroll", updateTargetProgress, { passive: true });
+  function handlePageScroll() {
+    updateHomepageTheme();
+    updateTargetProgress();
+  }
+
+  window.addEventListener("scroll", handlePageScroll, { passive: true });
   window.addEventListener("resize", handleViewportResize);
-  window.addEventListener("load", updateTargetProgress);
+  window.addEventListener("load", handlePageScroll);
 
   if (siteHeader && "ResizeObserver" in window) {
     const headerObserver = new ResizeObserver(handleViewportResize);
@@ -312,6 +325,7 @@
     if (blobUrl) URL.revokeObjectURL(blobUrl);
   });
 
+  updateHomepageTheme();
   updateTargetProgress();
   loadStoryVideoIntoMemory();
 })();

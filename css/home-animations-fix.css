@@ -44,8 +44,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ff6a00;
-  box-shadow: 0 0 16px rgba(255, 106, 0, 0.48);
+  background: #c75a25;
+  box-shadow: 0 0 16px rgba(199, 90, 37, 0.34);
   animation: renataLoaderPulse 900ms ease-in-out infinite alternate;
 }
 
