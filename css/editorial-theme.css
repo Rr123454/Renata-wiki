@@ -12,13 +12,13 @@ body {
   --text: #1b3048;
   --muted: #4f6070;
   --muted-2: #71808d;
-  --accent: #99451f;
-  --accent-orange: #99451f;
+  --accent: #ed6b32;
+  --accent-orange: #ed6b32;
   --accent-yellow: #9b8050;
-  --ember: #99451f;
-  --orange: #99451f;
+  --ember: #ed6b32;
+  --orange: #ed6b32;
   --amber: #9b8050;
-  --gold: #99451f;
+  --gold: #ed6b32;
   --cyan: #657b89;
   --cyan-2: #425f73;
   --cream: #e2e2dc;
@@ -194,6 +194,20 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color: var(--accent);
   -webkit-text-fill-color: currentColor;
+  /* A painted outline preserves the existing glyph metrics and layout. */
+  -webkit-text-stroke: 0.55px #000;
+  paint-order: stroke fill;
+}
+
+.project-paper-header h1 {
+  -webkit-text-stroke: 0.55px #000;
+  paint-order: stroke fill;
+}
+
+.btn-primary,
+.renata-back-to-top {
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .hero-lead,

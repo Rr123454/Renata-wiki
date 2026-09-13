@@ -52,19 +52,22 @@
 
 .renata-promo-title span {
   background: none;
-  color: #d86b30;
+  color: #ed6b32;
   -webkit-text-fill-color: currentColor;
+  /* A painted outline preserves the existing glyph metrics and layout. */
+  -webkit-text-stroke: 0.55px #000;
+  paint-order: stroke fill;
   filter: none;
 }
 
 .renata-promo-eyebrow {
-  color: #df7a42;
+  color: #ed6b32;
   font-size: 0.75rem;
 }
 
 .renata-promo-eyebrow::before {
   width: 48px;
-  background: #c75a25;
+  background: #ed6b32;
   box-shadow: none;
 }
 
@@ -81,7 +84,9 @@
 
 .renata-film-button.primary {
   color: #182432;
-  background: #df7a42;
+  background: #ed6b32;
+  border: 1px solid #000;
+  box-sizing: border-box;
   box-shadow: none;
 }
 
@@ -117,7 +122,7 @@
 }
 
 .renata-bio-orbit .orbit-ring.secondary {
-  stroke: rgba(216, 107, 48, 0.18);
+  stroke: rgba(237, 107, 50, 0.18);
   stroke-dasharray: 1 13;
   animation-direction: reverse;
   animation-duration: 22s;
@@ -129,7 +134,7 @@
 }
 
 .renata-bio-orbit .molecule-node {
-  fill: #d86b30;
+  fill: #ed6b32;
 }
 
 .renata-bio-orbit .molecule-node.cool {
@@ -157,7 +162,7 @@
 }
 
 .renata-feather-ribbon .feather-main {
-  stroke: rgba(199, 90, 37, 0.38);
+  stroke: rgba(237, 107, 50, 0.38);
   stroke-width: 2.4;
   stroke-dasharray: 16 14;
   animation: renataPathFlow 12s linear infinite;
@@ -185,7 +190,7 @@
 
 .renata-project-story {
   background:
-    radial-gradient(circle at 14% 22%, rgba(199, 90, 37, 0.06), transparent 23%),
+    radial-gradient(circle at 14% 22%, rgba(237, 107, 50, 0.06), transparent 23%),
     radial-gradient(circle at 88% 65%, rgba(113, 137, 145, 0.04), transparent 26%),
     #182432;
 }
@@ -229,12 +234,12 @@
 }
 
 .renata-story-progress > span {
-  background: #d86b30;
+  background: #ed6b32;
   box-shadow: none;
 }
 
 .renata-story-number {
-  color: #d86b30;
+  color: #ed6b32;
 }
 
 .renata-story-step h2 {
@@ -249,8 +254,8 @@
 }
 
 .renata-story-link {
-  color: #df7a42;
-  border-bottom: 1px solid rgba(223, 122, 66, 0.28);
+  color: #ed6b32;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.72);
   padding-bottom: 0.15rem;
 }
 
@@ -259,7 +264,7 @@
 }
 
 .renata-story-dot.active {
-  background: #c75a25;
+  background: #ed6b32;
   box-shadow: none;
 }
 
@@ -311,7 +316,7 @@
 }
 
 .renata-system-kicker {
-  color: #99451f;
+  color: #ed6b32;
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -346,7 +351,7 @@
 
 .renata-system-link:hover {
   padding-left: 16px;
-  color: #99451f;
+  color: #ed6b32;
 }
 
 .renata-system-index {
