@@ -893,8 +893,8 @@ body[data-page^="education-event-"] .hero-title {
 
 .site-footer {
   margin-top: 0;
-  color: #dce6ee;
-  background: #142437;
+  color: var(--footer-blue-white);
+  background: var(--footer-navy-bottom);
   border-top: 0;
 }
 
@@ -902,22 +902,31 @@ body[data-page^="education-event-"] .hero-title {
 .site-footer strong,
 .site-footer h2,
 .site-footer h3 {
-  color: #f8f5ee;
+  color: var(--footer-ivory);
 }
 
 .site-footer p,
 .site-footer small {
-  color: #aebdca;
+  color: var(--footer-blue-white);
 }
 
-.site-footer .sponsor-partner-band .detail-eyebrow,
+.site-footer .sponsor-partner-band .detail-eyebrow {
+  color: var(--footer-orange);
+}
+
 .site-footer .sponsor-partner-heading h2,
 .site-footer .link-directory-column h3,
-.site-footer .link-directory-column a,
-.site-footer .link-directory-column a:hover,
-.site-footer .link-directory-column a:focus-visible,
 .site-footer .footer-inner p {
-  color: var(--footer-white);
+  color: var(--footer-ivory);
+}
+
+.site-footer .link-directory-column a {
+  color: var(--footer-blue-white);
+}
+
+.site-footer .link-directory-column a:hover,
+.site-footer .link-directory-column a:focus-visible {
+  color: var(--footer-orange);
 }
 
 /* ---------- Maastricht-style back-to-top control ---------- */

@@ -20,6 +20,19 @@
   --cyan-2: var(--text);
   --white-soft: rgba(222, 219, 211, 0.055);
   --footer-white: #dedbd3;
+  /* Light footer system derived from the Renata logo palette. */
+  --footer-paper: #f6f3ed;
+  --footer-paper-alt: #efeae1;
+  --footer-paper-bottom: #e6dfd4;
+  --footer-ink: #14263f;
+  --footer-ink-muted: #40536a;
+  --footer-orange: #b84f25;
+  /* Compatibility aliases used by the shared editorial footer rules. */
+  --footer-navy: var(--footer-paper);
+  --footer-navy-deep: var(--footer-paper-alt);
+  --footer-navy-bottom: var(--footer-paper-bottom);
+  --footer-ivory: var(--footer-ink);
+  --footer-blue-white: var(--footer-ink-muted);
   --line: rgba(222, 219, 211, 0.14);
 
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.22);
@@ -2090,11 +2103,11 @@ a {
   z-index: 2;
   margin-top: 1rem;
   padding: clamp(0.8rem, 1.7vw, 1.25rem) 0;
-  border-top: 1px solid rgba(255, 197, 110, 0.24);
-  border-bottom: 1px solid rgba(255, 197, 110, 0.16);
+  border-top: 1px solid rgba(214, 106, 59, 0.38);
+  border-bottom: 1px solid rgba(214, 106, 59, 0.26);
   background:
-    linear-gradient(90deg, rgba(255, 87, 20, 0.09), transparent 46%),
-    rgba(7, 16, 31, 0.72);
+    linear-gradient(90deg, rgba(214, 106, 59, 0.10), transparent 42%),
+    var(--footer-navy);
 }
 
 .sponsor-partner-band > .container {
@@ -2162,8 +2175,9 @@ a {
   place-items: center;
   gap: 0.2rem;
   padding: 0.25rem;
+  border: 1px solid rgba(20, 38, 63, 0.14);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.94);
+  background: #fff;
   overflow: hidden;
 }
 
@@ -2188,9 +2202,9 @@ a {
   margin-top: 0;
   padding: clamp(1.75rem, 3vw, 2.75rem) 0;
   scroll-margin-top: 6rem;
-  background: rgba(0, 0, 0, 0.42);
-  border-top: 1px solid rgba(255, 197, 110, 0.18);
-  border-bottom: 1px solid rgba(255, 197, 110, 0.12);
+  background: var(--footer-navy-deep);
+  border-top: 1px solid rgba(214, 106, 59, 0.22);
+  border-bottom: 1px solid rgba(214, 106, 59, 0.18);
 }
 
 .link-directory {
@@ -2209,7 +2223,7 @@ a {
   color: var(--text);
   font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   line-height: 1.2;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+  border-bottom: 1px solid rgba(20, 38, 63, 0.24);
 }
 
 .link-directory-column ul {
@@ -2227,7 +2241,7 @@ a {
 }
 
 .link-directory-column li:not(:last-child) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(20, 38, 63, 0.12);
 }
 
 .link-directory-column a {
@@ -2247,10 +2261,10 @@ a {
 }
 
 .site-footer {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(214, 106, 59, 0.18);
   margin-top: 1rem;
   padding: 1.4rem 0 2rem;
-  background: rgba(0,0,0,0.12);
+  background: var(--footer-navy-bottom);
 }
 
 .footer-inner {
@@ -2654,12 +2668,6 @@ h6,
   background: transparent;
 }
 
-.sponsor-partner-band,
-.link-directory-section,
-.site-footer {
-  background: #0c151c;
-}
-
 .sponsor-marquee-item {
   border: 0;
   border-radius: 0;
@@ -2675,18 +2683,24 @@ h6,
   color: var(--accent);
 }
 
-/* Keep the full footer system in the same softened white used by the logo palette. */
-.sponsor-partner-band .detail-eyebrow,
-.sponsor-partner-heading h2,
-.link-directory-column h3,
-.link-directory-column a,
-.link-directory-column a:hover,
-.link-directory-column a:focus-visible {
-  color: var(--footer-white);
+/* Logo-derived footer palette, softened for long-form viewing. */
+.sponsor-partner-band .detail-eyebrow {
+  color: var(--footer-orange);
 }
 
+.sponsor-partner-heading h2,
+.link-directory-column h3,
 .footer-inner p {
-  color: var(--footer-white);
+  color: var(--footer-ivory);
+}
+
+.link-directory-column a {
+  color: var(--footer-blue-white);
+}
+
+.link-directory-column a:hover,
+.link-directory-column a:focus-visible {
+  color: var(--footer-orange);
 }
 
 @media (max-width: 900px) {

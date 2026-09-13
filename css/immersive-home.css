@@ -37,8 +37,7 @@
 }
 
 .renata-promo-title,
-.renata-story-step h2,
-.renata-system-title {
+.renata-story-step h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
 }
@@ -283,127 +282,6 @@
   pointer-events: none;
 }
 
-/* ---------- transition into the wider wiki ---------- */
-
-.renata-system-strip {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(6rem, 12vw, 10rem) 0;
-  background: #f1eee7;
-  color: #182432;
-}
-
-.renata-system-strip::before {
-  content: "";
-  position: absolute;
-  width: 44vw;
-  height: 44vw;
-  min-width: 430px;
-  min-height: 430px;
-  right: -12vw;
-  top: -18vw;
-  border: 1px solid rgba(24, 36, 50, 0.10);
-  border-radius: 50%;
-}
-
-.renata-system-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(3rem, 8vw, 8rem);
-  align-items: start;
-}
-
-.renata-system-kicker {
-  color: #ed6b32;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.renata-system-title {
-  margin: 0.9rem 0 0;
-  max-width: 8ch;
-  font-size: clamp(3.2rem, 7vw, 7rem);
-  line-height: 0.88;
-  letter-spacing: -0.065em;
-}
-
-.renata-system-links {
-  display: grid;
-  border-top: 1px solid rgba(24, 36, 50, 0.18);
-}
-
-.renata-system-link {
-  position: relative;
-  display: grid;
-  grid-template-columns: 64px 1fr auto;
-  gap: 1.2rem;
-  align-items: center;
-  min-height: 128px;
-  padding: 1.4rem 0;
-  color: #182432;
-  border-bottom: 1px solid rgba(24, 36, 50, 0.18);
-  transition: padding 260ms cubic-bezier(.16,1,.3,1), color 180ms ease;
-}
-
-.renata-system-link:hover {
-  padding-left: 16px;
-  color: #ed6b32;
-}
-
-.renata-system-index {
-  color: rgba(24, 36, 50, 0.40);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-}
-
-.renata-system-link strong {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.6rem, 3vw, 2.7rem);
-  line-height: 1;
-}
-
-.renata-system-link small {
-  display: block;
-  margin-top: 0.5rem;
-  color: rgba(24, 36, 50, 0.55);
-  font-size: 0.9rem;
-}
-
-.renata-system-arrow {
-  font-size: 2rem;
-  transition: transform 220ms ease;
-}
-
-.renata-system-link:hover .renata-system-arrow {
-  transform: translateX(8px);
-}
-
-.renata-system-object {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.16;
-}
-
-.renata-system-object.one {
-  left: 8%;
-  bottom: 4%;
-  width: 170px;
-  animation: renataObjectDrift 8s ease-in-out infinite;
-}
-
-.renata-system-object.two {
-  right: 5%;
-  bottom: 8%;
-  width: 210px;
-  animation: renataObjectDrift 10s ease-in-out infinite reverse;
-}
-
 /* The video viewport uses light interface chrome. Everything after the video
    returns to the dark Renata reading environment. */
 body[data-page="home"] .site-header,
@@ -494,40 +372,6 @@ body[data-page="home"].home-video-mode .renata-sound-toggle {
   box-shadow: 0 10px 28px rgba(16, 26, 34, 0.18);
 }
 
-.renata-system-strip {
-  background: #182432;
-  color: #f3efe6;
-}
-
-.renata-system-strip::before {
-  border-color: rgba(243, 239, 230, 0.12);
-}
-
-.renata-system-links,
-.renata-system-link {
-  border-color: rgba(243, 239, 230, 0.16);
-}
-
-.renata-system-link {
-  color: #f3efe6;
-}
-
-.renata-system-index {
-  color: rgba(243, 239, 230, 0.40);
-}
-
-.renata-system-link small {
-  color: rgba(243, 239, 230, 0.62);
-}
-
-.renata-system-object [stroke="#071224"] {
-  stroke: #d7d0c3;
-}
-
-.renata-system-object [fill="#071224"] {
-  fill: #d7d0c3;
-}
-
 /* Full-screen scroll story: the animation and narrative share one surface. */
 .renata-story-sticky {
   height: calc(100svh - var(--renata-header-height, 71px));
@@ -605,10 +449,29 @@ body[data-page="home"].home-video-mode .renata-sound-toggle {
   min-height: 0;
 }
 
+.renata-story-step {
+  max-width: 44rem;
+  padding: clamp(1.15rem, 2.4vw, 1.8rem) clamp(1.3rem, 3vw, 2.2rem);
+  border-left: 3px solid rgba(237, 107, 50, 0.82);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 22, 39, 0.94) 0%,
+    rgba(14, 28, 48, 0.86) 68%,
+    rgba(14, 28, 48, 0.42) 88%,
+    transparent 100%
+  );
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
 .renata-story-step h2,
 .renata-story-step p,
 .renata-story-link {
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.62);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.52);
+}
+
+.renata-story-step p {
+  color: rgba(231, 225, 214, 0.88);
 }
 
 .renata-story-steps-rail {
@@ -645,14 +508,6 @@ body[data-page="home"].home-video-mode .renata-sound-toggle {
     display: none;
   }
 
-  .renata-system-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .renata-system-title {
-    max-width: 12ch;
-  }
-
   .renata-story-frame::after {
     background:
       linear-gradient(180deg, rgba(24, 36, 50, 0.12) 0%, rgba(24, 36, 50, 0.34) 38%, rgba(24, 36, 50, 0.90) 100%);
@@ -666,6 +521,7 @@ body[data-page="home"].home-video-mode .renata-sound-toggle {
 
   .renata-story-step {
     inset: auto 0 clamp(4.5rem, 10vh, 7rem);
+    max-width: min(44rem, calc(100% - 2.5rem));
     transform: translateY(30px);
   }
 
@@ -701,21 +557,16 @@ body[data-page="home"].home-video-mode .renata-sound-toggle {
     display: none;
   }
 
-  .renata-system-link {
-    grid-template-columns: 42px 1fr auto;
-    min-height: 108px;
-    gap: 0.8rem;
+  .renata-story-step {
+    max-width: calc(100% - 1rem);
+    padding: 1rem 1.15rem;
   }
 
-  .renata-system-link small {
-    font-size: 0.82rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .renata-bio-orbit .orbit-ring,
-  .renata-feather-ribbon .feather-main,
-  .renata-system-object {
+  .renata-feather-ribbon .feather-main {
     animation: none !important;
   }
 }
