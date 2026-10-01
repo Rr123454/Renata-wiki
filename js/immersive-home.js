@@ -1,5 +1,5 @@
 (function () {
-  if (document.body.dataset.page !== "home") return;
+  if (document.body.dataset.page !== "project-description") return;
 
   const hero = document.getElementById("renataHero");
   const story = document.getElementById("renataProjectStory");

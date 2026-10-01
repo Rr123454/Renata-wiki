@@ -1,5 +1,5 @@
 (function () {
-  if (document.body.dataset.page !== "home") return;
+  if (document.body.dataset.page !== "project-description") return;
 
   const main = document.getElementById("siteMain");
   if (!main) return;
@@ -13,7 +13,8 @@
 
   syncHeaderHeight();
 
-  main.innerHTML = `
+  // Preserve the article and its initialized sidebar controls below the story.
+  main.insertAdjacentHTML("afterbegin", `
     <section class="renata-cinematic-hero" id="renataHero" aria-label="Renata project video">
       <video
         class="renata-promo-video"
@@ -86,7 +87,7 @@
                 Introduce Renata's core concept here: the pathway, engineered components, and the
                 intended biological effect.
               </p>
-              <a class="renata-story-link" href="project-description.html">
+              <a class="renata-story-link" href="#project-description">
                 Read the project description <span aria-hidden="true">→</span>
               </a>
             </article>
@@ -113,7 +114,7 @@
         </div>
       </div>
     </section>
-  `;
+  `);
 
   const promoVideo = document.getElementById("renataPromoVideo");
   const soundToggle = document.getElementById("renataSoundToggle");
@@ -145,12 +146,14 @@
 
   if (!story || !storyVideo) return;
 
-  function updateHomepageTheme() {
+  function updateProjectTheme() {
     if (!hero) return;
 
     const headerHeight = siteHeader ? siteHeader.getBoundingClientRect().height : 0;
     const videoIsOnScreen = hero.getBoundingClientRect().bottom > headerHeight + 1;
+    const storyIsOnScreen = story.getBoundingClientRect().bottom > headerHeight + 1;
     document.body.classList.toggle("home-video-mode", videoIsOnScreen);
+    document.body.classList.toggle("project-story-mode", !videoIsOnScreen && storyIsOnScreen);
   }
 
   const sourceUrl = storyVideo.dataset.scrollVideo;
@@ -303,12 +306,12 @@
 
   function handleViewportResize() {
     syncHeaderHeight();
-    updateHomepageTheme();
+    updateProjectTheme();
     updateTargetProgress();
   }
 
   function handlePageScroll() {
-    updateHomepageTheme();
+    updateProjectTheme();
     updateTargetProgress();
   }
 
@@ -325,7 +328,7 @@
     if (blobUrl) URL.revokeObjectURL(blobUrl);
   });
 
-  updateHomepageTheme();
+  updateProjectTheme();
   updateTargetProgress();
   loadStoryVideoIntoMemory();
 })();

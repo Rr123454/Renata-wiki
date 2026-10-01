@@ -1,0 +1,347 @@
+/* Site-wide Yakult-space palette. Loaded last on every HTML entry point.
+   Keep decorative colors separate from reading text: Deep Ink is the small-text color. */
+:root {
+  --cosmic-sky: #748cff;
+  --orbit-blue: #8fb8ff;
+  --nebula-lavender: #b59cff;
+  --starlight: #ffffff;
+  --cloud-white: #f4f7ff;
+  --yakult-cream: #fff0d8;
+  --yakult-red: #f0182d;
+  --rocket-coral: #ff6675;
+  --electric-cyan: #55e6ff;
+  --star-yellow: #ffe16a;
+  --cosmic-pink: #ff8bd8;
+  --deep-ink: #18265a;
+}
+
+body[data-page] {
+  --bg-0: var(--cosmic-sky);
+  --bg-1: var(--orbit-blue);
+  --bg-2: var(--cloud-white);
+  --bg: var(--cosmic-sky);
+  --bg-raised: var(--cloud-white);
+  --bg-sunken: var(--orbit-blue);
+  --text: var(--deep-ink);
+  --muted: var(--deep-ink);
+  --muted-2: var(--deep-ink);
+  --ink: var(--deep-ink);
+  --ink-muted: var(--deep-ink);
+  --ink-faint: var(--deep-ink);
+  --accent: var(--yakult-red);
+  --accent-orange: var(--yakult-red);
+  --accent-yellow: var(--deep-ink);
+  --accent-ink: var(--starlight);
+  --ember: var(--yakult-red);
+  --orange: var(--yakult-red);
+  --amber: var(--star-yellow);
+  /* Legacy gold/cream names are used for text throughout the older templates. */
+  --gold: var(--deep-ink);
+  --cyan: var(--electric-cyan);
+  --cyan-2: var(--orbit-blue);
+  --cream: var(--deep-ink);
+  --line: rgba(24, 38, 90, 0.2);
+  --rule: var(--line);
+  --rule-strong: rgba(24, 38, 90, 0.4);
+  --shadow-lg: 0 18px 44px rgba(24, 38, 90, 0.12);
+  --shadow-md: 0 10px 24px rgba(24, 38, 90, 0.08);
+  --footer-paper: var(--cloud-white);
+  --footer-paper-alt: var(--cloud-white);
+  --footer-paper-bottom: var(--yakult-cream);
+  --footer-ink: var(--deep-ink);
+  --footer-ink-muted: var(--deep-ink);
+  --footer-orange: var(--deep-ink);
+  --footer-navy: var(--cloud-white);
+  --footer-navy-deep: var(--cloud-white);
+  --footer-navy-bottom: var(--yakult-cream);
+  --footer-ivory: var(--deep-ink);
+  --footer-blue-white: var(--deep-ink);
+  color: var(--deep-ink);
+  background: var(--cosmic-sky);
+}
+
+html, html:has(.space-home) { scrollbar-color: #18265a #8fb8ff; }
+body[data-page]::-webkit-scrollbar-track { background: var(--orbit-blue); }
+body[data-page]::-webkit-scrollbar-thumb { background: var(--deep-ink); border-color: var(--orbit-blue); }
+body[data-page] ::selection { color: var(--deep-ink); background: var(--star-yellow); }
+body[data-page] :is(a, button):focus-visible { outline-color: var(--deep-ink); }
+
+/* One navigation treatment, including the video's two scroll states. */
+body[data-page] .site-header,
+body[data-page].home-video-mode .site-header,
+body[data-page].home-video-mode .site-header.scrolled,
+body[data-page].project-story-mode .site-header {
+  --text: var(--deep-ink);
+  --muted: var(--deep-ink);
+  --cream: var(--deep-ink);
+  --accent: var(--yakult-red);
+  --accent-yellow: var(--yakult-red);
+  --accent-orange: var(--yakult-red);
+  color: var(--deep-ink);
+  background: var(--cloud-white);
+  border-top-color: var(--yakult-red);
+  border-bottom-color: var(--line);
+  box-shadow: 0 4px 18px rgba(24, 38, 90, 0.06);
+}
+body[data-page] .site-header :is(.brand, .brand-text h1, .tab-link, .dropdown-menu a, .submenu-menu a, .submenu-trigger small, .submenu-trigger strong) {
+  color: var(--deep-ink);
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+body[data-page] .site-header .brand-logo-wrap { background: var(--starlight); border-color: var(--line); box-shadow: none; }
+body[data-page] .site-header .tab-link.active { color: var(--deep-ink); background: var(--yakult-cream); border-bottom-color: var(--yakult-red); }
+body[data-page] .site-header .tab-link:hover { color: var(--deep-ink); background: var(--orbit-blue); border-bottom-color: var(--electric-cyan); }
+body[data-page] .site-header :is(.dropdown-menu, .submenu-menu) { background: var(--cloud-white); border-color: var(--line); }
+body[data-page] .site-header :is(.dropdown-menu a, .submenu-menu a):is(:hover, .sub-active) { color: var(--deep-ink); background: var(--yakult-cream); }
+
+/* Inner pages: open sky around the reading surfaces, with no layout changes. */
+body[data-page] :is(.page-main, .section-zone, .detail-section, .team-roster-section) { background: transparent; }
+body[data-page] .page-hero { background: var(--cosmic-sky); border-color: var(--line); }
+body[data-page] .page-hero::after { border-color: rgba(255, 255, 255, 0.4); }
+body[data-page] .page-section:nth-of-type(even),
+body[data-page] .team-group-alt { background: var(--orbit-blue); }
+body[data-page] :is(.hero-title, .experiment-index-header h1) { color: var(--starlight); }
+body[data-page] :is(.hero-title .accent-gradient, .experiment-index-header h1 .accent-gradient) { color: var(--starlight); }
+body[data-page] :is(.accent-gradient, .project-paper-header h1, .renata-promo-title span) { -webkit-text-stroke: 0; text-shadow: none; }
+body[data-page] :is(.hero-kicker, .detail-eyebrow, .card-tag, .project-paper-type, .project-paper-section-number, .team-photo-kicker, .project-paper-eyebrow, .experiment-route-status, .experiment-route-number, .experiment-record-entry > span, .construct-card > span, .project-story-status, .detail-source-link) { color: var(--deep-ink); }
+body[data-page] :is(.glass-card, .detail-panel, .experiment-route-block, .project-paper-subsections article, .stat-card, .cta-panel) {
+  color: var(--deep-ink);
+  background: var(--cloud-white);
+  border-color: var(--line);
+}
+body[data-page] :is(.detail-panel, .experiment-route-block) { border-left-color: var(--yakult-red); }
+body[data-page] .glass-card:hover { box-shadow: inset 0 4px 0 var(--rocket-coral); }
+body[data-page] .experiment-route-block:is(:hover, :focus-visible) { background: var(--yakult-cream); border-color: var(--rocket-coral); }
+body[data-page] .experiment-route-arrow { color: var(--yakult-red); }
+body[data-page] :is(.experiment-evidence-note, .project-paper-note, .evidence-note) { background: var(--yakult-cream); color: var(--deep-ink); border-color: var(--yakult-red); }
+body[data-page] .card-grid { background: var(--line); border-color: var(--line); }
+
+body[data-page] :is(.card-image-placeholder, .project-chapter-image, .project-explanation-placeholder, .team-photo-placeholder, .member-photo-placeholder, .section-card-image, .project-sidebar-figure-thumb) {
+  background: var(--cloud-white);
+  color: var(--deep-ink);
+  border-color: var(--line);
+}
+body[data-page] :is(.lab-work-model-image, .project-paper-figure-placeholder) {
+  color: var(--deep-ink);
+  border-color: var(--line);
+  background:
+    linear-gradient(rgba(24, 38, 90, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 38, 90, 0.07) 1px, transparent 1px),
+    var(--cloud-white);
+  background-size: 36px 36px;
+}
+body[data-page] :is(.member-photo-placeholder, .team-photo-placeholder) > :is(span, small) { color: var(--deep-ink); }
+body[data-page] :is(.project-paper-figure-placeholder > span, .project-chapter-image > span, .placeholder-mark, .team-photo-mark, .member-photo-placeholder > span, .construct-card > span) { color: var(--deep-ink); border-color: var(--line); }
+body[data-page] .project-paper-page { background: var(--cloud-white); }
+body[data-page] .project-paper { border-left-color: var(--yakult-red); }
+body[data-page] .project-paper-header h1 { color: var(--yakult-red); }
+body[data-page] .project-paper-sidebar-inner > h2 { color: var(--deep-ink); }
+body[data-page] :is(.project-sidebar-tab, .project-sidebar-panel a) { color: var(--deep-ink); background: var(--cloud-white); border-color: var(--line); }
+body[data-page] .project-sidebar-tab:is(.active, :hover, :focus-visible) { color: var(--deep-ink); background: var(--electric-cyan); box-shadow: inset 0 -3px 0 var(--yakult-red); border-color: var(--deep-ink); }
+body[data-page] .project-sidebar-panel a:hover { color: var(--deep-ink); background: var(--yakult-cream); }
+body[data-page] .experiment-record-tab.active { color: var(--deep-ink); border-bottom-color: var(--yakult-red); background: var(--electric-cyan); }
+body[data-page] .detail-step > span { color: var(--deep-ink); background: var(--star-yellow); }
+body[data-page] :is(.btn-primary, .renata-film-button.primary, .space-launch) {
+  color: var(--starlight) !important;
+  background: var(--yakult-red);
+  border-color: var(--deep-ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body[data-page] :is(.btn-primary, .renata-film-button.primary, .space-launch):hover { color: var(--deep-ink) !important; background: var(--rocket-coral); }
+body[data-page] .btn-secondary { color: var(--deep-ink); border-color: var(--deep-ink); }
+body[data-page] .renata-back-to-top { background: var(--yakult-red); color: var(--starlight); border-color: var(--yakult-cream); }
+
+/* The film itself retains its original pixels; its surrounding interface follows the palette. */
+body[data-page] :is(.renata-cinematic-hero, .renata-project-story) {
+  --bg: var(--cosmic-sky);
+  --bg-raised: var(--orbit-blue);
+  --ink: var(--deep-ink);
+  --ink-muted: var(--deep-ink);
+  color: var(--deep-ink);
+  background: var(--cosmic-sky);
+}
+body[data-page] .renata-cinematic-hero::after { background: var(--cosmic-sky); }
+body[data-page].home-video-mode .renata-cinematic-hero,
+body[data-page].home-video-mode .renata-cinematic-hero::after { background: var(--cosmic-sky); }
+body[data-page].home-video-mode .renata-cinematic-hero::before { background: transparent; }
+body[data-page] .renata-promo-shade { background: linear-gradient(180deg, transparent 70%, rgba(116, 140, 255, 0.2)); }
+body[data-page] :is(.renata-story-frame, .renata-story-video) { background: var(--orbit-blue); }
+body[data-page] .renata-story-frame::after { background: linear-gradient(90deg, transparent 20%, rgba(143, 184, 255, 0.2) 70%, rgba(116, 140, 255, 0.45)); }
+body[data-page] .renata-story-step { background: var(--cloud-white); color: var(--deep-ink); border-left-color: var(--yakult-red); }
+body[data-page] .renata-story-step :is(h2, p),
+body[data-page] .renata-story-link { color: var(--deep-ink); text-shadow: none; }
+body[data-page] :is(.renata-story-number, .renata-story-kicker, .renata-story-eyebrow, .renata-story-chapter, .renata-promo-eyebrow) { color: var(--deep-ink); }
+body[data-page] .renata-story-dot { border-color: var(--deep-ink); background: var(--cloud-white); }
+body[data-page] .renata-story-dot.active { background: var(--yakult-red); }
+body[data-page] .renata-story-link { border-color: var(--yakult-red); }
+body[data-page] .renata-story-link:hover { color: var(--deep-ink); background: var(--yakult-cream); }
+body[data-page] .renata-story-loading { background: var(--cloud-white); color: var(--deep-ink); }
+body[data-page] .renata-story-loader-dot,
+body[data-page] .renata-story-progress > span { background: var(--yakult-red); box-shadow: none; }
+body[data-page] .renata-sound-toggle,
+body[data-page].home-video-mode .renata-sound-toggle { color: var(--deep-ink); background: var(--yakult-cream); border-color: var(--deep-ink); }
+
+/* Home: the same route and animations, with a bright cosmic sky. */
+body[data-page="home"] {
+  --space-deep: var(--cosmic-sky);
+  --space-blue: var(--orbit-blue);
+  --space-nebula: var(--nebula-lavender);
+  --space-white: var(--starlight);
+  --space-moon: var(--deep-ink);
+  --space-cream: var(--yakult-cream);
+  --space-red: var(--yakult-red);
+  --space-coral: var(--rocket-coral);
+  --space-cyan: var(--electric-cyan);
+  --space-gold: var(--star-yellow);
+}
+.space-home { color: var(--deep-ink); background: var(--cosmic-sky); }
+.space-sky {
+  background:
+    radial-gradient(ellipse 55% 12% at 95% 9%, rgba(143, 184, 255, 0.75), transparent 80%),
+    radial-gradient(ellipse 60% 14% at 0% 34%, rgba(181, 156, 255, 0.6), transparent 80%),
+    radial-gradient(ellipse 45% 12% at 95% 68%, rgba(255, 139, 216, 0.3), transparent 80%),
+    linear-gradient(var(--cosmic-sky) 20%, var(--orbit-blue) 45%, var(--nebula-lavender) 72%, var(--cosmic-sky));
+}
+.space-hero h1, .space-hero h1 em { color: var(--starlight); text-shadow: 0 1px 2px rgba(24, 38, 90, 0.3); }
+.space-station h2, .space-station h2 em, .space-arrival h2 { color: var(--deep-ink); }
+.space-eyebrow, .space-station-index, .space-station-index span { color: var(--deep-ink); }
+.space-eyebrow::before { background: var(--electric-cyan); }
+.space-station-index span { border-bottom: 2px solid var(--star-yellow); }
+.space-motion:hover { color: var(--deep-ink) !important; text-decoration: underline; text-decoration-color: var(--yakult-red); }
+.space-scroll::before { background: linear-gradient(var(--deep-ink), var(--electric-cyan)); }
+.space-home .space-text-link { color: var(--deep-ink) !important; border-color: var(--deep-ink); }
+.space-home .space-text-link span { color: var(--deep-ink); }
+.space-home .space-text-link:hover { color: var(--deep-ink) !important; border-color: var(--yakult-red); }
+.space-home .space-text-link:hover span { color: var(--deep-ink); }
+.space-route-base { stroke: var(--deep-ink); stroke-opacity: 0.32; }
+.space-route-travelled { stroke: var(--electric-cyan); stroke-opacity: 1; stroke-width: 2.2; }
+.space-planet {
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.6), transparent 55%),
+    radial-gradient(circle at 25% 25%, var(--orbit-blue), var(--nebula-lavender) 58%, var(--cosmic-sky) 85%);
+  box-shadow: inset 3px 1px 5px rgba(255, 255, 255, 0.7), 0 0 70px rgba(181, 156, 255, 0.45);
+}
+.space-orbit { border-color: rgba(24, 38, 90, 0.25); }
+.space-station-art { color: var(--deep-ink); opacity: 0.82; }
+.space-ship { filter: drop-shadow(0 8px 12px rgba(24, 38, 90, 0.2)); }
+
+/* Light sponsor and link areas remain light, now in Cloud White and Yakult Cream. */
+body[data-page] .sponsor-partner-band { background: var(--yakult-cream); border-color: var(--line); }
+body[data-page] .link-directory-section { background: var(--cloud-white); border-color: var(--line); }
+body[data-page] .site-footer { background: var(--yakult-cream); }
+body[data-page] .site-footer :is(a, p, small, strong, h2, h3, .detail-eyebrow) { color: var(--deep-ink); }
+body[data-page] .site-footer .link-directory-column a:is(:hover, :focus-visible) { color: var(--deep-ink); text-decoration: underline; text-decoration-color: var(--yakult-red); text-underline-offset: 4px; }
+body[data-page] .sponsor-logo-frame { background: var(--starlight); border-color: var(--line); }
+
+/* Reading pages share the bottle's warm cream, while Home keeps its cosmic sky.
+   Restrict every override to non-home pages so the flight scene is unchanged. */
+body[data-page]:not([data-page="home"]) {
+  --main-cream: #fff4e3;
+  --light-cream: #fffaf2;
+  --warm-beige: #f4dec4;
+  --cosmic-blue: #748cff;
+  --soft-periwinkle: #aebbff;
+  --navigation-cyan: #55e6ff;
+  --soft-coral: #ff7180;
+  --deep-ink: #24305e;
+  --muted-ink: #667095;
+  --cloud-white: var(--light-cream);
+  --yakult-cream: var(--main-cream);
+  --orbit-blue: var(--soft-periwinkle);
+  --rocket-coral: var(--soft-coral);
+  --bg-0: var(--main-cream);
+  --bg-1: var(--light-cream);
+  --bg-2: var(--warm-beige);
+  --bg: var(--main-cream);
+  --bg-raised: var(--light-cream);
+  --bg-sunken: var(--warm-beige);
+  --line: var(--warm-beige);
+  --rule-strong: var(--soft-periwinkle);
+  --shadow-lg: 0 18px 44px rgba(36, 48, 94, 0.08);
+  --shadow-md: 0 10px 24px rgba(36, 48, 94, 0.05);
+  --footer-ink-muted: var(--muted-ink);
+  --footer-paper-bottom: var(--main-cream);
+  --footer-navy-bottom: var(--main-cream);
+  color: var(--deep-ink);
+  background: var(--main-cream);
+}
+
+html:has(body[data-page]:not([data-page="home"])) { scrollbar-color: #748cff #fff4e3; }
+body[data-page]:not([data-page="home"])::-webkit-scrollbar-track { background: var(--main-cream); }
+body[data-page]:not([data-page="home"])::-webkit-scrollbar-thumb { background: var(--cosmic-blue); border-color: var(--main-cream); }
+body[data-page]:not([data-page="home"]) :is(a, button):focus-visible { outline: 2px solid var(--deep-ink); outline-offset: 4px; }
+
+body[data-page]:not([data-page="home"]) .site-header .tab-link.active { background: var(--soft-periwinkle); }
+body[data-page]:not([data-page="home"]) .site-header .tab-link:hover { background: var(--main-cream); border-bottom-color: var(--navigation-cyan); }
+body[data-page]:not([data-page="home"]) .site-header :is(.dropdown-menu a, .submenu-menu a):is(:hover, .sub-active) { background: var(--soft-periwinkle); }
+
+body[data-page]:not([data-page="home"]) :is(.page-hero, .page-section:nth-of-type(even), .team-group-alt) { background: var(--light-cream); }
+body[data-page]:not([data-page="home"]) .page-hero::after { border-color: var(--soft-periwinkle); }
+body[data-page]:not([data-page="home"]) :is(.hero-title, .experiment-index-header h1, .project-paper-header h1) { color: var(--deep-ink); }
+body[data-page]:not([data-page="home"]) :is(.hero-title .accent-gradient, .experiment-index-header h1 .accent-gradient) { color: var(--yakult-red); }
+body[data-page]:not([data-page="home"]) .hero-copy::before,
+body[data-page]:not([data-page="home"]) .project-story-points li::before { background: var(--cosmic-blue); }
+body[data-page]:not([data-page="home"]) :is(.detail-panel, .experiment-route-block, .project-paper, .project-paper-header, .lab-work-model-feature figcaption) { border-left-color: var(--cosmic-blue); }
+body[data-page]:not([data-page="home"]) :is(.detail-section, .project-paper-section, .project-paper-header, .experiment-record-entry, .experiment-record-entry-list, .experiment-record-tabs, .project-paper-subsections) { border-color: var(--warm-beige); }
+body[data-page]:not([data-page="home"]) .project-paper-subsections { background: var(--warm-beige); }
+
+/* Muted Ink reaches small-text contrast on Light Cream. Main Cream and
+   colored surfaces retain Deep Ink for body copy and small role labels. */
+body[data-page]:not([data-page="home"]) :is(.page-hero, .glass-card, .detail-panel, .experiment-route-block, .project-paper-subsections article, .renata-story-step) {
+  --muted: var(--muted-ink);
+  --muted-2: var(--muted-ink);
+}
+body[data-page]:not([data-page="home"]) :is(.experiment-route-block:hover, .experiment-route-block:focus-visible) { --muted: var(--deep-ink); background: var(--main-cream); border-color: var(--soft-coral); }
+body[data-page]:not([data-page="home"]) .renata-story-step p { color: var(--muted-ink); }
+body[data-page]:not([data-page="home"]) :is(.team-group-alt .member-meta p, .team-group-alt .team-group-heading > p, .project-paper-sidebar-inner > h2) { color: var(--deep-ink); }
+
+body[data-page]:not([data-page="home"]) :is(.team-photo-placeholder, .member-photo-placeholder, .project-chapter-image, .project-explanation-placeholder, .card-image-placeholder) {
+  color: var(--deep-ink);
+  background: var(--warm-beige);
+  border-color: var(--warm-beige);
+}
+body[data-page]:not([data-page="home"]) :is(.project-sidebar-figure-thumb, .section-card-image) { background: var(--soft-periwinkle); border-color: var(--warm-beige); }
+body[data-page]:not([data-page="home"]) :is(.lab-work-model-image, .project-paper-figure-placeholder) {
+  background-image:
+    linear-gradient(var(--warm-beige) 1px, transparent 1px),
+    linear-gradient(90deg, var(--warm-beige) 1px, transparent 1px);
+  background-color: var(--light-cream);
+}
+body[data-page]:not([data-page="home"]) .lab-work-model-image > span { color: var(--deep-ink); }
+body[data-page]:not([data-page="home"]) .project-paper-page { background: var(--main-cream); }
+body[data-page]:not([data-page="home"]) :is(.project-paper-note, .experiment-evidence-note, .evidence-note) { --muted: var(--deep-ink); background: var(--warm-beige); border-color: var(--yakult-red); }
+
+body[data-page]:not([data-page="home"]) .project-sidebar-tab:is(.active, :hover, :focus-visible),
+body[data-page]:not([data-page="home"]) .experiment-record-tab.active {
+  color: var(--deep-ink);
+  background: var(--soft-periwinkle);
+  border-color: var(--cosmic-blue);
+  box-shadow: inset 0 -3px 0 var(--navigation-cyan);
+}
+body[data-page]:not([data-page="home"]) .project-sidebar-panel a:hover { background: var(--main-cream); border-color: var(--navigation-cyan); }
+body[data-page]:not([data-page="home"]) .experiment-route-arrow { color: var(--deep-ink); text-decoration: underline; text-decoration-color: var(--navigation-cyan); text-underline-offset: 5px; }
+body[data-page]:not([data-page="home"]) .detail-source-link { color: var(--deep-ink); text-decoration: underline; text-decoration-color: var(--navigation-cyan); text-underline-offset: 4px; }
+body[data-page]:not([data-page="home"]) .detail-source-link:hover { color: var(--deep-ink); text-decoration-color: var(--soft-coral); }
+body[data-page]:not([data-page="home"]) .btn-secondary:hover { background: var(--soft-periwinkle); }
+body[data-page]:not([data-page="home"]) .renata-back-to-top { color: var(--deep-ink); background: var(--soft-periwinkle); border-color: var(--navigation-cyan); }
+body[data-page]:not([data-page="home"]) .renata-back-to-top:hover { background: var(--soft-coral); }
+
+/* The project video keeps its source colors; cream replaces the surrounding wash. */
+body[data-page]:not([data-page="home"]) :is(.renata-cinematic-hero, .renata-project-story) {
+  --bg: var(--main-cream);
+  --bg-raised: var(--light-cream);
+  --ink-muted: var(--muted-ink);
+  background: var(--main-cream);
+}
+body[data-page]:not([data-page="home"]).home-video-mode .renata-cinematic-hero,
+body[data-page]:not([data-page="home"]) .renata-cinematic-hero::after { background: var(--main-cream); }
+body[data-page]:not([data-page="home"]) :is(.renata-story-frame, .renata-story-video) { background: var(--main-cream); }
+body[data-page]:not([data-page="home"]) .renata-promo-shade { background: linear-gradient(180deg, transparent 70%, rgba(255, 244, 227, 0.2)); }
+body[data-page]:not([data-page="home"]) .renata-story-frame::after { background: linear-gradient(90deg, transparent 20%, rgba(255, 244, 227, 0.2) 70%, rgba(255, 244, 227, 0.45)); }
+body[data-page]:not([data-page="home"]) .renata-story-dot.active { background: var(--cosmic-blue); }
+body[data-page]:not([data-page="home"]) .renata-story-step { border-left-color: var(--cosmic-blue); }
+
+body[data-page]:not([data-page="home"]) .site-footer :is(p, small) { color: var(--deep-ink); }
+body[data-page]:not([data-page="home"]) .sponsor-partner-band { background: var(--main-cream); }
+body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--light-cream); }

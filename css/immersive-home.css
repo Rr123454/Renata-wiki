@@ -187,6 +187,16 @@
 
 /* ---------- story scene refinement ---------- */
 
+.renata-cinematic-hero,
+.renata-project-story {
+  /* Keep the moved media introduction legible within the light article page. */
+  --bg: #182432;
+  --bg-raised: #152130;
+  --ink: #dedbd3;
+  --ink-muted: #bdbab1;
+  color: var(--ink);
+}
+
 .renata-project-story {
   background:
     radial-gradient(circle at 14% 22%, rgba(237, 107, 50, 0.06), transparent 23%),
@@ -284,13 +294,13 @@
 
 /* The video viewport uses light interface chrome. Everything after the video
    returns to the dark Renata reading environment. */
-body[data-page="home"] .site-header,
-body[data-page="home"] .site-header.scrolled,
-body[data-page="home"] .brand,
-body[data-page="home"] .tab-link,
-body[data-page="home"] .dropdown-menu,
-body[data-page="home"] .submenu-menu,
-body[data-page="home"] .renata-sound-toggle {
+body.project-story-page .site-header,
+body.project-story-page .site-header.scrolled,
+body.project-story-page .brand,
+body.project-story-page .tab-link,
+body.project-story-page .dropdown-menu,
+body.project-story-page .submenu-menu,
+body.project-story-page .renata-sound-toggle {
   transition:
     color 240ms ease,
     background-color 240ms ease,
@@ -298,8 +308,8 @@ body[data-page="home"] .renata-sound-toggle {
     box-shadow 240ms ease;
 }
 
-body[data-page="home"].home-video-mode .site-header,
-body[data-page="home"].home-video-mode .site-header.scrolled {
+body.project-story-page.home-video-mode .site-header,
+body.project-story-page.home-video-mode .site-header.scrolled {
   color-scheme: light;
   background: rgba(215, 218, 214, 0.96);
   border-top-color: #97604d;
@@ -307,11 +317,11 @@ body[data-page="home"].home-video-mode .site-header.scrolled {
   box-shadow: 0 8px 24px rgba(16, 26, 34, 0.10);
 }
 
-body[data-page="home"].home-video-mode .renata-cinematic-hero {
+body.project-story-page.home-video-mode .renata-cinematic-hero {
   background: #d6dad7;
 }
 
-body[data-page="home"].home-video-mode .renata-cinematic-hero::before {
+body.project-story-page.home-video-mode .renata-cinematic-hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -321,55 +331,84 @@ body[data-page="home"].home-video-mode .renata-cinematic-hero::before {
     linear-gradient(180deg, rgba(210, 215, 211, 0.12), rgba(210, 215, 211, 0.04) 62%, rgba(210, 215, 211, 0.10));
 }
 
-body[data-page="home"].home-video-mode .renata-cinematic-hero::after {
+body.project-story-page.home-video-mode .renata-cinematic-hero::after {
   background: #d6dad7;
 }
 
-body[data-page="home"].home-video-mode .renata-promo-video {
+body.project-story-page.home-video-mode .renata-promo-video {
   filter: saturate(0.82) contrast(0.96) brightness(0.92);
 }
 
-body[data-page="home"].home-video-mode .brand,
-body[data-page="home"].home-video-mode .brand h1,
-body[data-page="home"].home-video-mode .tab-link {
+body.project-story-page.home-video-mode .brand,
+body.project-story-page.home-video-mode .brand h1,
+body.project-story-page.home-video-mode .tab-link {
   color: #18262f;
 }
 
-body[data-page="home"].home-video-mode .tab-link:hover {
+body.project-story-page.home-video-mode .tab-link:hover {
   color: #0c171e;
   background: rgba(16, 26, 34, 0.06);
   border-bottom-color: rgba(153, 69, 31, 0.48);
 }
 
-body[data-page="home"].home-video-mode .tab-link.active {
+body.project-story-page.home-video-mode .tab-link.active {
   color: #863b1a;
   background: rgba(153, 69, 31, 0.09);
   border-bottom-color: #97604d;
 }
 
-body[data-page="home"].home-video-mode .dropdown-menu,
-body[data-page="home"].home-video-mode .submenu-menu {
+body.project-story-page.home-video-mode .dropdown-menu,
+body.project-story-page.home-video-mode .submenu-menu {
   background: #d6dad7;
   border-color: rgba(16, 26, 34, 0.16);
   box-shadow: 0 14px 32px rgba(16, 26, 34, 0.14);
 }
 
-body[data-page="home"].home-video-mode .dropdown-menu a,
-body[data-page="home"].home-video-mode .submenu-trigger small {
+body.project-story-page.home-video-mode .dropdown-menu a,
+body.project-story-page.home-video-mode .submenu-trigger small {
   color: #52616a;
 }
 
-body[data-page="home"].home-video-mode .dropdown-menu a:hover,
-body[data-page="home"].home-video-mode .dropdown-menu a.sub-active {
+body.project-story-page.home-video-mode .dropdown-menu a:hover,
+body.project-story-page.home-video-mode .dropdown-menu a.sub-active {
   color: #863b1a;
   background: rgba(153, 69, 31, 0.09);
 }
 
-body[data-page="home"].home-video-mode .renata-sound-toggle {
+body.project-story-page.home-video-mode .renata-sound-toggle {
   color: #18262f;
   background: rgba(215, 218, 214, 0.96);
   border-color: rgba(16, 26, 34, 0.22);
   box-shadow: 0 10px 28px rgba(16, 26, 34, 0.18);
+}
+
+/* Restore dark navigation while the story is visible; the article uses its light theme. */
+body.project-story-page.project-story-mode .site-header {
+  --text: #dedbd3;
+  background: rgba(18, 30, 43, 0.985);
+  border-top-color: rgba(168, 97, 67, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.project-story-page.project-story-mode .tab-link,
+body.project-story-page.project-story-mode .dropdown-menu a {
+  color: #dedbd3;
+}
+
+body.project-story-page.project-story-mode .tab-link.active,
+body.project-story-page.project-story-mode .tab-link:hover,
+body.project-story-page.project-story-mode .dropdown-menu a:hover,
+body.project-story-page.project-story-mode .dropdown-menu a.sub-active {
+  color: #ed6b32;
+}
+
+body.project-story-page.project-story-mode .dropdown-menu {
+  background: #182432;
+  border-color: rgba(222, 219, 211, 0.14);
+}
+
+body.project-story-page #project-description {
+  scroll-margin-top: calc(var(--renata-header-height, 71px) + 1rem);
 }
 
 /* Full-screen scroll story: the animation and narrative share one surface. */

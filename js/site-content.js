@@ -33,7 +33,7 @@ window.SITE_DATA = {
     {
       key: "project",
       label: "Our Project",
-      href: "index.html#our-project",
+      href: "project-description.html",
       children: [
         { key: "project-description", label: "Project Description", href: "project-description.html" },
         { key: "engineering", label: "Engineering", href: "engineering.html" }
@@ -55,7 +55,7 @@ window.SITE_DATA = {
     home: makePage({
       group: "home",
       kicker: "Synthetic Biology / Rebirth / Impact",
-      title: "Our <span class='accent-gradient'>Project</span>",
+      title: "Home",
       lead: "Explore the people, science, and impact behind our synthetic biology project.",
       ctaTitle: "CONTACTS & IMPORTANT LINKS",
       ctaText: "",

@@ -403,17 +403,8 @@ function initNavigation() {
   }
 
   function renderHomePage() {
-    return `
-      <section class="home-video-hero" aria-labelledby="homeVideoTitle">
-        <div class="home-video-frame">
-          <div class="home-video-placeholder">
-            <span class="home-video-play" aria-hidden="true">▶</span>
-            <h1 id="homeVideoTitle">Featured video</h1>
-            <p>Homepage video placeholder</p>
-          </div>
-        </div>
-      </section>
-    `;
+    // The video and scroll story now introduce the Project Description page.
+    return "";
   }
 
   function renderExperimentsPage() {
