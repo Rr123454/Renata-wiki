@@ -13,6 +13,7 @@
   --star-yellow: #ffe16a;
   --cosmic-pink: #ff8bd8;
   --deep-ink: #18265a;
+  --footer-cream: #fff4e3;
 }
 
 body[data-page] {
@@ -45,15 +46,15 @@ body[data-page] {
   --rule-strong: rgba(24, 38, 90, 0.4);
   --shadow-lg: 0 18px 44px rgba(24, 38, 90, 0.12);
   --shadow-md: 0 10px 24px rgba(24, 38, 90, 0.08);
-  --footer-paper: var(--cloud-white);
-  --footer-paper-alt: var(--cloud-white);
-  --footer-paper-bottom: var(--yakult-cream);
+  --footer-paper: var(--footer-cream);
+  --footer-paper-alt: var(--footer-cream);
+  --footer-paper-bottom: var(--footer-cream);
   --footer-ink: var(--deep-ink);
   --footer-ink-muted: var(--deep-ink);
   --footer-orange: var(--deep-ink);
-  --footer-navy: var(--cloud-white);
-  --footer-navy-deep: var(--cloud-white);
-  --footer-navy-bottom: var(--yakult-cream);
+  --footer-navy: var(--footer-cream);
+  --footer-navy-deep: var(--footer-cream);
+  --footer-navy-bottom: var(--footer-cream);
   --footer-ivory: var(--deep-ink);
   --footer-blue-white: var(--deep-ink);
   color: var(--deep-ink);
@@ -226,13 +227,14 @@ body[data-page="home"] {
 .space-station-art { color: var(--deep-ink); opacity: 0.82; }
 .space-ship { filter: drop-shadow(0 8px 12px rgba(24, 38, 90, 0.2)); }
 
-/* Light sponsor and link areas remain light, now in Cloud White and Yakult Cream. */
-body[data-page] .sponsor-partner-band { background: var(--yakult-cream); border-color: var(--line); }
-body[data-page] .link-directory-section { background: var(--cloud-white); border-color: var(--line); }
-body[data-page] .site-footer { background: var(--yakult-cream); }
+/* One warm cream across the entire shared footer, including Home. */
+body[data-page] .sponsor-partner-band { background: var(--footer-cream); border-color: var(--line); }
+body[data-page] .link-directory-section { background: var(--footer-cream); border-color: var(--line); }
+body[data-page] .site-footer,
+body[data-page] .footer-inner { background: var(--footer-cream); }
 body[data-page] .site-footer :is(a, p, small, strong, h2, h3, .detail-eyebrow) { color: var(--deep-ink); }
 body[data-page] .site-footer .link-directory-column a:is(:hover, :focus-visible) { color: var(--deep-ink); text-decoration: underline; text-decoration-color: var(--yakult-red); text-underline-offset: 4px; }
-body[data-page] .sponsor-logo-frame { background: var(--starlight); border-color: var(--line); }
+body[data-page] .sponsor-logo-frame { background: var(--footer-cream); border-color: var(--line); }
 
 /* Reading pages share the bottle's warm cream, while Home keeps its cosmic sky.
    Restrict every override to non-home pages so the flight scene is unchanged. */
@@ -261,8 +263,8 @@ body[data-page]:not([data-page="home"]) {
   --shadow-lg: 0 18px 44px rgba(36, 48, 94, 0.08);
   --shadow-md: 0 10px 24px rgba(36, 48, 94, 0.05);
   --footer-ink-muted: var(--muted-ink);
-  --footer-paper-bottom: var(--main-cream);
-  --footer-navy-bottom: var(--main-cream);
+  --footer-paper-bottom: var(--footer-cream);
+  --footer-navy-bottom: var(--footer-cream);
   color: var(--deep-ink);
   background: var(--main-cream);
 }
@@ -343,5 +345,5 @@ body[data-page]:not([data-page="home"]) .renata-story-dot.active { background: v
 body[data-page]:not([data-page="home"]) .renata-story-step { border-left-color: var(--cosmic-blue); }
 
 body[data-page]:not([data-page="home"]) .site-footer :is(p, small) { color: var(--deep-ink); }
-body[data-page]:not([data-page="home"]) .sponsor-partner-band { background: var(--main-cream); }
-body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--light-cream); }
+body[data-page]:not([data-page="home"]) .sponsor-partner-band { background: var(--footer-cream); }
+body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--footer-cream); }

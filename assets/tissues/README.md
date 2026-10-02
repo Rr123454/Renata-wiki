@@ -2,7 +2,7 @@
 
 ## Current homepage: one continuous body
 
-`contiguous-body.png` is the active homepage illustration. It joins the head, neck, chest, and abdomen in one cutaway, held in a sticky stage while the chapter text scrolls beside it. One SVG coordinate space keeps the original bottle photo aligned to this anatomy at every viewport size. The stage ends before the research context and shared footer.
+`contiguous-body.png` is the active homepage illustration. It joins the head, neck, chest, and abdomen in one cutaway, filling a sticky full-viewport backdrop while the chapter text scrolls over it. The SVG camera follows the bottle horizontally and vertically through the unchanged illustration. Desktop copy alternates between the outer thirds over feathered cream washes; on narrow screens, copy overlays the lower scene while the bottle stays toward the top. One SVG coordinate space keeps the original bottle photo aligned to the anatomy at every viewport size. Pause/reduced-motion mode freezes the bottle and camera together. The stage ends before the research context and shared footer.
 
 The full generation prompt, provenance, sources, and anatomical-review limits are in [contiguous-body-prompt.md](contiguous-body-prompt.md). This is schematic educational artwork; it has not received professional anatomical validation.
 

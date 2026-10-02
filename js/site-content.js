@@ -129,27 +129,81 @@ window.SITE_DATA = {
           description: "Student leaders and members contributing across the project.",
           layout: "wide",
           members: [
-            { name: "Humza S.", role: "Student Leader" },
-            { name: "Karthik S.", role: "Student Leader" },
+            {
+              name: "Humza Shahzad", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              bio: "I'm a huge Don Toliver fan. I used to build custom keyboards, and I believe that we can rebuild the world with biotech someday."
+            },
+            {
+              name: "Karthik Sajeev", role: "Student Leader · Education & Human Practices", school: "Troy High School", classYear: "2027",
+              bio: "I'm a senior at Troy, and I love to spend my time meeting new people. I'm interested in biomedical engineering and biotechnology, and I lead the Education and Human Practices sub-teams within Renata. I love watching Unstable Universe and hanging out with my friends in my free time! A fun fact about me is that I have a playlist for virtually every mood I'm in!"
+            },
             { name: "Kavi S.", role: "Student Leader" },
-            { name: "Kyle K.", role: "Student Leader" },
+            {
+              name: "Kyle Kao", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
+            },
             { name: "Ritvin R.", role: "Student Leader" },
-            { name: "Aaron T.", role: "Student" },
+            {
+              name: "Aaron Torres", role: "Student", school: "Troy High School", classYear: "2029",
+              bio: "I play tennis and enjoy gaming. A fun fact about me is that I can chug a plastic water bottle really fast."
+            },
             { name: "Aiden R.", role: "Student" },
-            { name: "Brandon", role: "Student" },
+            {
+              name: "Brandon Trinh", role: "Student · Dry Lab", school: "Chino Hills High School", classYear: "2027",
+              bio: "I love coding in my free time and watching movies. Fun fact: my favorite movie is Fight Club."
+            },
             { name: "Ella Y.", role: "Student" },
-            { name: "Alex F.", role: "Student" },
+            {
+              name: "Alex Fang", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "I am a man of many loves, from sports and music to the act of lying down. But what I love most is working with other people on research."
+            },
             { name: "Faizaan M.", role: "Student" },
             { name: "Hannah B.", role: "Student" },
-            { name: "Hanyu H.", role: "Student" },
-            { name: "Kylie T.", role: "Student" },
-            { name: "Margaret L.", role: "Student" },
-            { name: "Matthew S.", role: "Student" },
-            { name: "Ryan J.", role: "Student" },
-            { name: "Tiger L.", role: "Student" },
+            {
+              name: "Hanyu Huang", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "Pianist, swimmer, and competitive Pokémon player."
+            },
+            {
+              name: "Kylie Tien", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "In terms of hobbies and interests, I am an avid enjoyer of K-dramas, crochet, and photography! I joined iGEM Renata to dabble further in the world of biology and to meet new people. A fun fact about me is that I enjoy crocheting and handmaking flower crafts to gift to my friends."
+            },
+            {
+              name: "Margaret Lin", role: "Student", school: "Troy High School", schoolStage: "Senior",
+              bio: "I'm interested in electrical and computer engineering, and I like solving aristocrat ciphers."
+            },
+            {
+              name: "Matthew She", role: "Student", school: "Diamond Bar High School", schoolStage: "Sophomore", classYear: "2029",
+              bio: "I love playing piano, badminton, and listening to classical music. I joined iGEM to see how a synthetic biology team actually operated and to gain experience with their work in PCS. Fun fact: I love limes!"
+            },
+            {
+              name: "Ryan Jian", role: "Student", school: "Troy High School", classYear: "2028",
+              bio: "I like playing piano in my free time and working on AI projects. I am interested in iGEM Human Practices because it gives experience in logistical planning and the human practices side of projects. HP gives skills that can be applied beyond a synthetic biology competition. One fun fact is that I have two dogs."
+            },
+            {
+              name: "Tiger Liu", role: "Student", school: "Troy High School", schoolStage: "Junior", classYear: "2028",
+              bio: "I have a strong passion for bioengineering. Fun fact: I have been playing chess for over six years!"
+            },
             { name: "Toni D.", role: "Student" },
-            { name: "Vanessa L.", role: "Student" },
-            { name: "Yuqing Z", role: "Student" }
+            {
+              name: "Vanessa Liang", role: "Student", school: "Claremont High School", classYear: "2029",
+              bio: "I enjoy tennis with friends, baking and trying new recipes, and trying new food places with friends. I play both piano and violin. Fun fact: I hate doing dishes; it is my least favorite chore."
+            },
+            {
+              name: "Yuqing Zhuo", role: "Student", school: "Troy High School", schoolStage: "Senior",
+              bio: "I am really passionate about helping others in my community. During my free time, I love to try out new restaurants with my family, journal, and listen to music. Through iGEM, I was able to meet and work with a lot of other students who are motivated and inspiring. In the future, I hope to go into law where I can continue to use my knowledge to help other people in need. A fun fact about me is that I can talk with my mouth open!"
+            },
+            {
+              name: "Deena Singh", role: "Student", school: "Arnold O. Beckman High School", schoolStage: "Junior", classYear: "2028",
+              bio: "Outside of school, I enjoy spending time with my friends, dancing, and baking. I'm especially interested in biology and medicine, which is what initially drew me to this iGEM team. I'm so glad to be part of such a great team and have enjoyed learning more about biotechnology and fundraising. It's been an incredibly valuable experience to be part of a project that has the potential to make a real-world impact. One fun fact about me is that I've traveled to every continent except Antarctica!"
+            },
+            {
+              name: "Noah Chu", role: "Student · Video Production", school: "Troy High School", classYear: "2027",
+              bio: "Hi! My name is Noah, and I'm a senior at Troy High School. In my free time, I enjoy cooking, keeping aquariums, making video projects, and practicing photography. I also play tennis and run cross country and track and field. Fun fact: I'm a real Canadian."
+            },
+            {
+              name: "Lakshya Gupta", role: "Student · Molecular Visualization", school: "Troy High School", classYear: "2027",
+              bio: "I make music and film and am interested in philosophy. I work on visualizing the molecules for the explanation video."
+            }
           ]
         }
       ]

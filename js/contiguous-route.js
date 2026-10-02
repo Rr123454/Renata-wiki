@@ -24,13 +24,27 @@
       [446, 920, 495, 942, 486, 960]
     ] },
     { id: "intestine", label: "Intestinal absorption", curves: [
-      [472, 1002, 436, 1031, 408, 1017],
-      [350, 1008, 376, 1068, 436, 1080],
-      [478, 1090, 386, 1121, 408, 1154],
-      [430, 1190, 491, 1222, 476, 1170],
-      [446, 1111, 504, 1079, 530, 1130],
-      [546, 1170, 625, 1214, 607, 1160],
-      [600, 1142, 574, 1134, 573, 1115]
+      // Entrance beneath the transverse bowel, then the visible left coils.
+      [482, 987, 462, 1026, 439, 1024],
+      [420, 1023, 402, 1009, 386, 1011],
+      [367, 1013, 366, 1028, 383, 1037],
+      [403, 1047, 404, 1063, 388, 1065],
+      [375, 1067, 365, 1069, 368, 1080],
+      [371, 1093, 396, 1104, 417, 1099],
+      [430, 1096, 434, 1107, 425, 1115],
+      [416, 1123, 405, 1120, 412, 1134],
+      [418, 1146, 430, 1145, 419, 1159],
+      [410, 1169, 395, 1167, 407, 1180],
+      [415, 1188, 440, 1183, 445, 1197],
+      [450, 1210, 428, 1225, 441, 1225],
+      // Follow the long lower loop up its left leg, over the arch and right.
+      [459, 1224, 472, 1194, 473, 1173],
+      [474, 1154, 466, 1123, 486, 1117],
+      [510, 1108, 520, 1124, 526, 1145],
+      [532, 1164, 555, 1172, 575, 1167],
+      [589, 1164, 598, 1165, 600, 1159],
+      // One schematic lining crossing into the existing mesenteric vessel route.
+      [604, 1146, 589, 1122, 573, 1115]
     ] },
     { id: "portal", label: "Portal circulation", curves: [
       [548, 1096, 525, 1043, 509, 994],
@@ -80,10 +94,13 @@
     return { x: prev.x + (next.x - prev.x) * t, y: prev.y + (next.y - prev.y) * t };
   }
   function pose(route, distance, direction = 1) {
-    const point = pointAtDistance(route, distance);
-    const before = pointAtDistance(route, distance - 2), after = pointAtDistance(route, distance + 2);
+    const value = clamp(distance, 0, route.totalLength);
+    const point = pointAtDistance(route, value);
+    const before = pointAtDistance(route, value - 2), after = pointAtDistance(route, value + 2);
+    // At the starting position, face the mouth even after scrolling backward.
+    const facing = value === 0 ? 1 : direction;
     // Original bottle photo points up: +90 aligns its red cap to the tangent.
-    const angle = Math.atan2((after.y - before.y) * direction, (after.x - before.x) * direction) * 180 / Math.PI + 90;
+    const angle = Math.atan2((after.y - before.y) * facing, (after.x - before.x) * facing) * 180 / Math.PI + 90;
     return { ...point, angle };
   }
   function distanceAtScroll(route, stops, scroll) {
@@ -96,5 +113,19 @@
     }
     return route.totalLength;
   }
-  return { build, pointAtDistance, pose, distanceAtScroll };
+  function camera(width, height, focus, compact = false) {
+    // The artwork fills the backdrop. Follow the bottle horizontally as well
+    // as vertically, leaving both outer thirds available for editorial copy.
+    const aspect = Math.max(1, width) / Math.max(1, height);
+    const viewWidth = compact ? 700 * aspect : Math.max(1000, 440 * aspect);
+    const viewHeight = viewWidth / aspect;
+    return {
+      x: focus.x - viewWidth * .5,
+      // Mobile reserves the lower view for text, including at the final organs.
+      y: compact ? Math.max(0, focus.y - viewHeight * .23) : clamp(focus.y - viewHeight * .48, 0, Math.max(0, 1500 - viewHeight)),
+      width: viewWidth,
+      height: viewHeight
+    };
+  }
+  return { build, pointAtDistance, pose, distanceAtScroll, camera };
 });

@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Intestinal route alignment</title>
+<style>body{margin:0;background:#fff4e3;color:#24305e;font:16px Arial}header{padding:14px;display:flex;gap:20px}main{display:flex;gap:12px}svg{width:calc(50vw - 6px);height:calc(100vh - 55px)}.route{fill:none;stroke:#55e6ff;stroke-width:3;stroke-linecap:round}text{font:8px Arial;fill:#24305e;paint-order:stroke;stroke:#fff4e3;stroke-width:1.5px}button{padding:5px 12px}</style>
+<header><strong>Image-space alignment check (1000 × 1500)</strong><button id="grid">Toggle coordinates</button><button id="route">Toggle route</button></header><main></main>
+<script src="../js/contiguous-route.js?v=20261001-intestine1"></script><script>
+const ns='http://www.w3.org/2000/svg';
+for(let i=0;i<2;i++){
+ const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','325 920 380 340');
+ svg.innerHTML='<image href="../assets/tissues/contiguous-body.png" width="1000" height="1500"/><g class="grid" stroke="#24305e" stroke-opacity=".2" stroke-width=".5"></g>';
+ const g=svg.querySelector('.grid');
+ for(let x=350;x<=700;x+=25)g.innerHTML+=`<path d="M${x} 920V1260"/><text x="${x+1}" y="931">${x}</text>`;
+ for(let y=950;y<=1250;y+=25)g.innerHTML+=`<path d="M325 ${y}H705"/><text x="326" y="${y-1}">${y}</text>`;
+ if(i){const p=document.createElementNS(ns,'path');p.setAttribute('class','route');p.setAttribute('d',BODY_ROUTE.build().d);svg.append(p)}
+ document.querySelector('main').append(svg);
+}
+document.querySelector('#grid').onclick=()=>document.querySelectorAll('.grid').forEach(e=>e.style.display=e.style.display==='none'?'':'none');
+document.querySelector('#route').onclick=()=>document.querySelector('.route').style.opacity=document.querySelector('.route').style.opacity==='0'?'1':'0';
+</script></html>

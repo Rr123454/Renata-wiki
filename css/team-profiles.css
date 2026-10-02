@@ -1,0 +1,62 @@
+/* Keep the dealt cards compact; longer biographies live in the profile dialog. */
+#siteMain .member-card { position: relative; }
+#siteMain .team-card-table .team-card-front { padding-bottom: 48px; }
+#siteMain .member-profile-open {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--deep-ink, #24305e);
+  font: inherit;
+  cursor: pointer;
+}
+#siteMain .member-profile-open > span {
+  position: absolute;
+  bottom: 25px;
+  left: 14px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+#siteMain .member-profile-open:hover > span { text-decoration: underline; text-underline-offset: 3px; }
+#siteMain .member-profile-open:focus-visible { outline: 3px solid var(--cosmic-blue, #748cff); outline-offset: 4px; }
+body.team-profile-is-open { overflow: hidden; }
+.team-profile-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(960px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 48px 32px 32px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #f4dec4;
+  border-radius: 14px;
+  background: #fffaf2;
+  color: #24305e;
+  box-shadow: 0 24px 80px #18265a40;
+}
+.team-profile-dialog::backdrop { background: #18265a99; }
+.team-profile-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; gap: clamp(24px, 4vw, 48px); }
+.team-profile-photo { aspect-ratio: 4 / 5; min-width: 0; border-radius: 8px; background: #f4dec4; }
+.team-profile-photo > :is(img, .member-photo, .member-photo-placeholder) { width: 100%; height: 100%; max-height: none; aspect-ratio: auto; border: 0; border-radius: 8px; object-fit: cover; }
+.team-profile-photo .member-photo-placeholder { display: grid; place-items: center; background: #f4dec4; color: #667095; font-size: 3rem; position: relative; }
+.team-profile-photo .member-photo-placeholder::after { content: "Portrait coming soon"; position: absolute; bottom: 24px; font-size: .8rem; letter-spacing: .04em; }
+.team-profile-copy { min-width: 0; align-self: center; }
+.team-profile-dialog .team-profile-role { margin: 0 0 12px; color: #24305e; font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
+.team-profile-dialog h2 { margin: 0; font-family: var(--font-display, Georgia, serif); font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.1; overflow-wrap: anywhere; }
+.team-profile-dialog .team-profile-school { margin: 16px 0 0; font-size: .9rem; line-height: 1.5; color: #667095; }
+.team-profile-dialog .team-profile-bio { margin: 24px 0 0; font-size: 1rem; line-height: 1.7; color: #24305e; white-space: pre-line; }
+.team-profile-close { position: absolute; top: 8px; right: 10px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #fffaf2; color: #24305e; font: 2rem/1 Georgia, serif; cursor: pointer; z-index: 2; }
+.team-profile-close:hover { background: #f4dec4; }
+.team-profile-close:focus-visible { outline: 3px solid #748cff; outline-offset: 2px; }
+@media (max-width: 650px) {
+  .team-profile-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 24px); padding: 52px 22px 28px; }
+  .team-profile-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .team-profile-photo { width: 100%; height: min(36svh, 280px); aspect-ratio: auto; }
+  .team-profile-dialog .team-profile-bio { margin-top: 18px; }
+}

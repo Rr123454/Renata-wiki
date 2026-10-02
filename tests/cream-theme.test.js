@@ -40,7 +40,7 @@ test("all 21 entry points load the refreshed theme last", () => {
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     const sheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map(m => m[1]);
-    assert.equal(sheets.at(-1), "css/cosmic-theme.css?v=20261001-cream1", file);
+    assert.equal(sheets.at(-1), "css/cosmic-theme.css?v=20261001-footercream2", file);
   }
 });
 
@@ -55,9 +55,23 @@ function contrast(a, b) {
 }
 
 test("reading text and control labels retain appropriate contrast", () => {
+  assert.ok(contrast("18265a", "fff4e3") >= 7, "Home footer retains strong navy-on-cream contrast");
   for (const surface of ["fff4e3", "fffaf2", "f4dec4", "aebbff", "55e6ff", "ff7180", "ffe16a"]) {
     assert.ok(contrast("24305e", surface) >= 4.5, `Deep Ink on ${surface}`);
   }
   assert.ok(contrast("667095", "fffaf2") >= 4.5, "Muted Ink is reserved for Light Cream surfaces");
   assert.ok(contrast("ffffff", "f0182d") >= 3, "bold 1.2rem primary-button text");
+});
+
+test("every footer surface shares the same warm cream on Home and reading pages", () => {
+  assert.ok(css.includes("--footer-cream: #fff4e3;"));
+  for (const token of ["footer-paper", "footer-paper-alt", "footer-paper-bottom", "footer-navy", "footer-navy-deep", "footer-navy-bottom"]) {
+    const assignments = [...css.matchAll(new RegExp(`--${token}:\\s*([^;]+);`, "g"))];
+    assert.ok(assignments.length > 0, token);
+    for (const match of assignments) assert.equal(match[1], "var(--footer-cream)", token);
+  }
+  for (const selector of ["sponsor-partner-band", "link-directory-section", "footer-inner", "sponsor-logo-frame"]) {
+    assert.ok(css.includes(`body[data-page] .${selector} { background: var(--footer-cream);`), selector);
+  }
+  assert.ok(css.includes('body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--footer-cream); }'));
 });

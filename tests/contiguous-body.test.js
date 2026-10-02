@@ -9,9 +9,9 @@ const read = file => fs.readFileSync(path.join(__dirname, "..", file), "utf8");
 
 test("Home loads the continuous body implementation with the shared theme last", () => {
   const html = read("index.html");
-  assert.match(html, /css\/body-home.css\?v=20261001-contiguous1/);
-  assert.match(html, /js\/contiguous-route.js\?v=20261001-contiguous1/);
-  assert.match(html, /js\/body-home.js\?v=20261001-contiguous1/);
+  assert.match(html, /css\/body-home.css\?v=20261001-backdrop1/);
+  assert.match(html, /js\/contiguous-route.js\?v=20261001-intestine1/);
+  assert.match(html, /js\/body-home.js\?v=20261001-backdrop1/);
   assert.doesNotMatch(html, /(?:space-home|tissue-route)\.(?:js|css)/);
   assert.ok(html.indexOf("css/cosmic-theme.css") > html.indexOf("css/body-home.css"));
 });
@@ -56,6 +56,32 @@ test("portal blood moves back upward from intestine to the liver", () => {
   assert.ok(arrival.x >= 270 && arrival.x <= 540 && arrival.y >= 680 && arrival.y <= 900);
 });
 
+test("intestinal route follows the traced image coils and keeps its existing connections", () => {
+  const phase = route.phases.find(p => p.id === "intestine");
+  const samples = route.samples.filter(p => p.distance >= phase.start && p.distance <= phase.end);
+  assert.deepEqual(api.pointAtDistance(route, phase.start), { x: 486, y: 960 });
+  assert.deepEqual(api.pointAtDistance(route, phase.end), { x: 573, y: 1115 });
+  // Centers picked on the unchanged illustration in its 1000 x 1500 space.
+  const coilCenters = [[386,1011],[396,1051],[398,1096],[416,1143],[410,1182],[442,1220],[477,1128],[520,1130],[568,1167]];
+  for (const [x, y] of coilCenters) {
+    const gap = Math.min(...samples.map(p => Math.hypot(p.x - x, p.y - y)));
+    assert.ok(gap < 10, `route misses image coil at ${x},${y} by ${gap}`);
+  }
+});
+
+test("intestinal folds have no accidental self-crossing loops", () => {
+  const phase = route.phases.find(p => p.id === "intestine");
+  const points = route.samples.filter(p => p.distance >= phase.start && p.distance <= phase.end);
+  const side = (a,b,c) => (b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);
+  for (let i = 1; i < points.length; i++) {
+    for (let j = i + 2; j < points.length; j++) {
+      const [a,b,c,d] = [points[i-1],points[i],points[j-1],points[j]];
+      const crosses = side(a,b,c)*side(a,b,d) < -1e-9 && side(c,d,a)*side(c,d,b) < -1e-9;
+      assert.ok(!crosses, `segments ${i} and ${j} cross`);
+    }
+  }
+});
+
 test("scroll mapping is continuous, reversible and reaches each phase", () => {
   const stops = [0, 1000, 2100, 3200, 4300, 4900];
   let previous = -1;
@@ -71,8 +97,20 @@ test("scroll mapping is continuous, reversible and reaches each phase", () => {
   }
 });
 
-test("red cap points along movement in both scroll directions", () => {
-  for (let d = 0; d <= route.totalLength; d += 7) {
+test("red cap faces the mouth at the start even after returning backward", () => {
+  const forward = api.pose(route, 0, 1);
+  for (const distance of [-100, -1, 0]) {
+    for (const direction of [-1, 1]) {
+      const p = api.pose(route, distance, direction);
+      assert.deepEqual(p, forward);
+      const angle = p.angle * Math.PI / 180;
+      assert.ok(Math.sin(angle) > .999, "red cap points right toward the mouth");
+    }
+  }
+});
+
+test("red cap points along movement in both scroll directions away from the start", () => {
+  for (let d = .1; d <= route.totalLength; d += 7) {
     const before = api.pointAtDistance(route, d - 2), after = api.pointAtDistance(route, d + 2);
     const dx = after.x - before.x, dy = after.y - before.y, len = Math.hypot(dx, dy);
     for (const direction of [-1, 1]) {
@@ -84,12 +122,40 @@ test("red cap points along movement in both scroll directions", () => {
   }
 });
 
-test("the anatomy is sticky within the journey and mobile copy has its own space", () => {
+test("the anatomy stays behind the copy within the journey on every screen size", () => {
   const css = read("css/body-home.css"), js = read("js/body-home.js");
   assert.match(css, /\.body-visual\s*\{\s*position: sticky/);
   assert.doesNotMatch(css, /position:\s*fixed/);
-  assert.match(css, /padding: calc\(var\(--body-mobile-stage\) \+ 22px\)/);
+  assert.match(css, /padding: max\(35svh, 220px\) var\(--body-gutter\) 52px/);
+  assert.doesNotMatch(css, /body-mobile-stage|\.body-visual::after/);
+  assert.match(css, /\.body-chapter-copy::before[^}]+background: #fff4e3fa/);
+  assert.match(js, /body-chapter--\$\{i % 2 \? "right" : "left"\}/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(js, /if \(!paused\) current = target/);
   assert.ok(js.indexOf('class="body-arrival"') > js.indexOf('class="body-chapters"'));
+});
+
+test("backdrop camera keeps the bottle between desktop copy areas and above mobile copy", () => {
+  for (const [width, height, compact] of [[320,774,true],[391,774,true],[768,954,true],[1024,696,false],[1440,820,false],[1920,903,false],[2560,1360,false]]) {
+    for (let distance = 0; distance <= route.totalLength; distance += 10) {
+      const p = api.pointAtDistance(route, distance);
+      const view = api.camera(width, height, p, compact);
+      assert.ok(Math.abs(view.width / view.height - width / height) < 1e-9, "uniform scale");
+      const x = (p.x - view.x) / view.width;
+      const y = (p.y - view.y) / view.height;
+      assert.ok(Math.abs(x - .5) < 1e-9, "bottle stays centered between the text areas");
+      assert.ok(y > .03 && y < .96, "bottle stays in the full-screen backdrop");
+      if (compact) assert.ok(Math.abs(y - .23) < 1e-9, "bottle stays above the text");
+      else assert.ok(view.y >= 0 && view.y <= Math.max(0, 1500 - view.height));
+    }
+  }
+});
+
+test("the stage covers the viewport and camera freezes with the bottle", () => {
+  const css = read("css/body-home.css"), js = read("js/body-home.js");
+  assert.match(css, /height: calc\(100svh - var\(--body-header\)\);\s*width: 100%;\s*grid-area: 1 \/ 1/);
+  assert.match(css, /width: min\(30vw, 560px\)/);
+  assert.match(css, /\.body-hud[^}]+z-index: 4; pointer-events: none/);
+  assert.match(js, /BODY_ROUTE.camera\(artWidth, artHeight, p, compact.matches\)/);
+  assert.match(js, /if \(paused \|\| document.hidden\) return/);
 });

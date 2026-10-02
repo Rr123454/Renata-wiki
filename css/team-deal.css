@@ -1,0 +1,82 @@
+/* The dealing table begins below the existing team photograph and caption. */
+#siteMain .team-card-table {
+  --dealer-top: 72px;
+  --dealer-height: 132px;
+  --dealer-min-height: 132px;
+  position: relative;
+  padding-bottom: 56px;
+  background: var(--main-cream, #fff4e3);
+  isolation: isolate;
+}
+#siteMain .team-dealer {
+  position: sticky;
+  top: var(--dealer-top);
+  z-index: 35;
+  min-height: var(--dealer-min-height);
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 12px clamp(22px, 4vw, 76px);
+  background: var(--main-cream, #fff4e3);
+  border-block: 1px solid var(--warm-beige, #f4dec4);
+}
+.team-dealer-copy > span { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 7px; }
+.team-dealer-copy > strong { display: block; font-family: var(--font-display, Georgia, serif); font-size: clamp(1.3rem, 2vw, 2rem); line-height: 1.15; }
+.team-dealer-copy > p { margin: 6px 0 0; font-size: .8rem; }
+.team-dealer-art { width: 180px; height: 108px; overflow: visible; }
+.team-dealer-hand { transform-origin: 156px 40px; }
+.team-dealer-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+#siteMain .team-dealer-actions button { background: transparent; border: 1px solid var(--deep-ink); color: var(--deep-ink); padding: 9px 14px; font: inherit; font-size: .8rem; cursor: pointer; border-radius: 3px; }
+#siteMain .team-dealer-actions button:hover { background: var(--soft-periwinkle); }
+#siteMain .team-dealer-actions button:focus-visible { outline: 2px solid var(--deep-ink); outline-offset: 3px; }
+#siteMain .team-dealer-actions button:disabled { opacity: .5; cursor: default; }
+#siteMain .team-card-table .team-group-section { padding: 44px 0 20px; border: 0; background: transparent; scroll-margin-top: calc(var(--dealer-top) + var(--dealer-height) + 20px); }
+#siteMain .team-card-table .team-group-section + .team-group-section { margin-top: 24px; }
+#siteMain .team-card-table .team-group-heading { align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--warm-beige); margin-bottom: 28px; }
+#siteMain .team-card-table .team-group-heading h2 { font-size: clamp(2rem, 3vw, 3.2rem); }
+#siteMain .team-card-table .team-group-heading .detail-eyebrow { font-size: .72rem; letter-spacing: .15em; }
+#siteMain .team-card-table .member-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); align-items: stretch; }
+#siteMain .team-card-table #mentors .member-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+#siteMain .team-card-table .member-card { position: relative; overflow: visible; background: transparent; border: 0; box-shadow: none; perspective: 1000px; transform-origin: center; }
+#siteMain .team-card-table .member-card.is-waiting { opacity: 0; }
+#siteMain .team-card-table .member-card.is-dealing { z-index: 30; }
+.team-card-inner { position: relative; height: 100%; transform-style: preserve-3d; }
+#siteMain .team-card-table .team-card-front,
+#siteMain .team-card-table .team-card-back { border: 1px solid var(--deep-ink); border-radius: 10px; backface-visibility: hidden; }
+#siteMain .team-card-table .team-card-front { position: relative; height: 100%; padding: 28px 12px 18px; background: var(--light-cream, #fffaf2); box-shadow: 3px 4px 0 var(--warm-beige); }
+.team-card-index { position: absolute; font-size: .64rem; font-weight: 700; letter-spacing: .06em; color: var(--deep-ink); top: 8px; left: 12px; }
+.team-card-index--bottom { inset: auto 12px 7px auto; transform: rotate(180deg); }
+#siteMain .team-card-table .team-card-back { position: absolute; inset: 0; display: grid; place-items: center; transform: rotateY(180deg); color: var(--deep-ink); background: repeating-linear-gradient(45deg, transparent 0 12px, #24305e18 12px 13px), var(--soft-periwinkle); box-shadow: inset 0 0 0 7px var(--light-cream); }
+.team-card-back span { display: grid; place-items: center; width: 58%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; font: italic 3rem Georgia, serif; background: var(--soft-periwinkle); }
+#siteMain .team-card-table .member-card .member-photo-placeholder { position: relative; aspect-ratio: 4 / 4.5; border: 0; border-radius: 4px; background: var(--warm-beige); }
+#siteMain .team-card-table .member-photo-placeholder::after { content: "Portrait"; position: absolute; bottom: 14px; font-size: .65rem; text-transform: uppercase; letter-spacing: .13em; color: var(--deep-ink); }
+#siteMain .team-card-table .member-meta { padding: 16px 2px 8px; }
+#siteMain .team-card-table .member-meta h3 { white-space: normal; overflow: visible; text-overflow: clip; font-size: clamp(1rem, 1.35vw, 1.25rem); line-height: 1.2; letter-spacing: -.02em; }
+#siteMain .team-card-table .member-meta p { color: var(--deep-ink); font-size: .75rem; line-height: 1.45; margin-top: 8px; font-weight: 500; }
+#siteMain .team-card-table .team-card-front:hover { box-shadow: 3px 6px 0 var(--soft-periwinkle); }
+@media (max-width: 1100px) {
+  #siteMain .team-card-table .member-grid,
+  #siteMain .team-card-table #mentors .member-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  #siteMain .team-card-table { --dealer-min-height: 100px; }
+  #siteMain .team-dealer { grid-template-columns: 1fr 100px; gap: 4px 8px; padding: 10px 22px; }
+  .team-dealer-copy > strong { font-size: 1.1rem; }
+  .team-dealer-copy > span { font-size: .58rem; }
+  .team-dealer-copy > p { display: none; }
+  .team-dealer-art { grid-column: 2; grid-row: 1 / 3; width: 100px; height: 76px; }
+  .team-dealer-actions { justify-content: flex-start; gap: 6px; }
+  #siteMain .team-dealer-actions button { font-size: .68rem; padding: 5px 8px; }
+  #siteMain .team-card-table .team-group-section { padding-top: 28px; }
+  #siteMain .team-card-table .team-group-heading { display: block; padding-bottom: 16px; margin-bottom: 20px; }
+  #siteMain .team-card-table .team-group-heading > p { margin-top: 12px; font-size: .88rem; }
+  #siteMain .team-card-table .member-grid,
+  #siteMain .team-card-table #mentors .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  #siteMain .team-card-table .team-card-front { padding-inline: 8px; }
+  #siteMain .team-card-table .member-meta h3 { font-size: 1rem; }
+  #siteMain .team-card-table .member-meta p { font-size: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #siteMain .team-card-table .member-card.is-waiting { opacity: 1; }
+}

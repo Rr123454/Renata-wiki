@@ -1,0 +1,183 @@
+127.0.0.1 - - [01/Oct/2026 13:02:54] "GET /team.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:07:14] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:07:14] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:07:14] "GET /js/team-deal.js?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:10:14] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:10:14] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:10:14] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:10:14] "GET /js/team-deal.js?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 13:11:55] "GET /team.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:11:55] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:11:55] "GET /js/team-deal.js?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:13:48] "GET /team.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:13:48] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 13:13:48] "GET /js/team-deal.js?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /js/team-deal.js?v=20261001-deal1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /js/site-content.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:55:09] "GET /js/site.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:57:26] "GET /tmp/intestine-alignment.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:57:49] "GET /tmp/intestine-alignment.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:57:49] "GET /js/contiguous-route.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:57:49] "GET /assets/tissues/contiguous-body.png HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:58:18] "GET /project-description.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:58:18] "GET /css/immersive-home.css?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:58:18] "GET /js/home-animations.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:58:18] "GET /js/immersive-home.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 16:58:18] "GET /assets/ULP-CA_%20Renata%20-%20Post-Cholecystectomy%20Syndrome%20(2026)%20-%20Project%20Promotion%20(1).mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 16:58:48] "GET /experiments.html HTTP/1.1" 304 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53928)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+----------------------------------------
+127.0.0.1 - - [01/Oct/2026 16:58:53] "GET /human-practices.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:01:19] "GET /tmp/intestine-alignment.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:02:18] "GET /tmp/intestine-alignment.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:02:18] "GET /js/contiguous-route.js?v=20261001-intestine1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:14:11] "GET /js/contiguous-route.js?v=20261001-intestine1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:18:27] "GET /engineering.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:18:27] "GET /js/site.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:27] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:27] "GET /js/site-content.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:33] "GET /project-description.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:18:34] "GET /css/immersive-home.css?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:34] "GET /js/immersive-home.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:34] "GET /js/home-animations.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:18:34] "GET /assets/ULP-CA_%20Renata%20-%20Post-Cholecystectomy%20Syndrome%20(2026)%20-%20Project%20Promotion%20(1).mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:18:44] "GET /experiments.html HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53748)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+----------------------------------------
+127.0.0.1 - - [01/Oct/2026 17:18:51] "GET /human-practices.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:20:34] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:20:34] "GET /js/team-deal.js?v=20261001-deal2 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:25:53] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:25:53] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Oct/2026 17:25:53] "GET /js/team-deal.js?v=20261001-deal2 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:33:55] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:33:55] "GET /js/site-content.js?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:33:55] "GET /js/team-profiles.js?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:38:00] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 17:38:00] "GET /js/team-deal.js?v=20261001-deal4 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:43:31] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:43:31] "GET /css/body-home.css?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:43:31] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:43:31] "GET /js/site-content.js?v=20260930-project-story1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:43:31] "GET /js/contiguous-route.js?v=20261001-intestine1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:43:32] "GET /js/site.js?v=20260930-project-story1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:43:32] "GET /js/body-home.js?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:43:32] "GET /assets/yakult-bottle.png HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:43:32] "GET /assets/tissues/contiguous-body.png HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:44:14] "GET /project-description.html HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:44:14] "GET /css/immersive-home.css?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:44:14] "GET /js/immersive-home.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:44:14] "GET /js/home-animations.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 00:44:14] "GET /assets/ULP-CA_%20Renata%20-%20Post-Cholecystectomy%20Syndrome%20(2026)%20-%20Project%20Promotion%20(1).mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 00:44:18] "GET /engineering.html HTTP/1.1" 304 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 52620)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+----------------------------------------
+127.0.0.1 - - [02/Oct/2026 00:44:20] "GET /experiments.html HTTP/1.1" 304 -

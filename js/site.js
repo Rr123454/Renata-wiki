@@ -387,8 +387,9 @@ function initNavigation() {
   }
 
   function renderMemberCard(group, member, index) {
-    const memberName = typeof member === "string" ? member : member.name;
-    const memberRole = typeof member === "string" ? group.memberLabel : member.role;
+    const escape = value => String(value || "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
+    const memberName = escape(typeof member === "string" ? member : member.name);
+    const memberRole = escape(typeof member === "string" ? group.memberLabel : member.role);
     return `
       <article class="member-card">
         <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
@@ -398,6 +399,7 @@ function initNavigation() {
           <h3>${memberName}</h3>
           <p>${memberRole}</p>
         </div>
+        <button class="member-profile-open" type="button" data-member-profile="${escape(group.key)}:${index}" aria-haspopup="dialog" aria-label="View profile: ${memberName}"><span>View profile <span aria-hidden="true">↗</span></span></button>
       </article>
     `;
   }

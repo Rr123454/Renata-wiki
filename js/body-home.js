@@ -15,7 +15,6 @@
       <div class="body-stars" aria-hidden="true"></div>
       <div class="body-journey">
         <figure class="body-visual" aria-label="One continuous body showing the journey from ingestion to the liver">
-          <div class="body-visual-bar"><span class="body-overline">Renata / Inside the body</span><button type="button" class="body-motion" aria-pressed="false">Pause motion</button></div>
           <svg class="body-anatomy" viewBox="0 0 1000 1500" role="img" aria-labelledby="body-art-title body-art-desc">
             <title id="body-art-title">A connected digestive tract inside one body</title>
             <desc id="body-art-desc">The head, neck and torso form a continuous cutaway. The route runs from the mouth down the esophagus, through the stomach and intestine, then follows portal blood upward to the liver. The bottle is a symbolic guide.</desc>
@@ -23,10 +22,13 @@
             <path class="body-route-base"/><path class="body-route-travelled"/>
             <g class="body-bottle" aria-hidden="true"><svg x="-43" y="-83.17" width="86" height="166.34" viewBox="89 180 152 294"><image href="assets/yakult-bottle.png" width="335" height="597"/></svg></g>
           </svg>
-          <figcaption class="body-position"><span class="body-position-number">01 / 05</span><span class="body-position-name">Mouth &amp; esophagus</span></figcaption>
         </figure>
+        <div class="body-hud">
+          <div class="body-visual-bar"><span class="body-overline">Renata / Inside the body</span><button type="button" class="body-motion" aria-pressed="false">Pause motion</button></div>
+          <p class="body-position"><span class="body-position-number">01 / 05</span><span class="body-position-name">Mouth &amp; esophagus</span></p>
+        </div>
         <div class="body-chapters">
-          ${chapters.map((chapter, i) => `<section class="body-chapter" id="${chapter.id}" aria-labelledby="${chapter.id}-heading"><div class="body-chapter-copy"><p class="body-kicker">0${i + 1} / ${chapter.label}</p><${i ? "h2" : "h1"} id="${chapter.id}-heading">${chapter.title}</${i ? "h2" : "h1"}><p>${chapter.text}</p><p class="body-note">${chapter.note}</p><a class="body-next" href="#${chapter.next}">${i ? "Keep following" : "Scroll to begin"}<span aria-hidden="true">↓</span></a></div></section>`).join("")}
+          ${chapters.map((chapter, i) => `<section class="body-chapter body-chapter--${i % 2 ? "right" : "left"}" id="${chapter.id}" aria-labelledby="${chapter.id}-heading"><div class="body-chapter-copy"><p class="body-kicker">0${i + 1} / ${chapter.label}</p><${i ? "h2" : "h1"} id="${chapter.id}-heading">${chapter.title}</${i ? "h2" : "h1"}><p>${chapter.text}</p><p class="body-note">${chapter.note}</p><a class="body-next" href="#${chapter.next}">${i ? "Keep following" : "Scroll to begin"}<span aria-hidden="true">↓</span></a></div></section>`).join("")}
         </div>
       </div>
       <section class="body-arrival" id="journey-context" aria-labelledby="body-arrival-title">
@@ -47,7 +49,9 @@
   const positionName = main.querySelector(".body-position-name"), positionNumber = main.querySelector(".body-position-number");
   const button = main.querySelector(".body-motion"), route = window.BODY_ROUTE.build();
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const compact = window.matchMedia("(max-width: 760px)");
+  const compact = window.matchMedia("(max-width: 900px)");
+  const anatomy = main.querySelector(".body-anatomy");
+  let artWidth = 1, artHeight = 1;
   let paused = reduced.matches, current = 0, target = 0, direction = 1, frame = 0, lastTime = 0, stops = [], active = -1;
   for (const path of main.querySelectorAll(".body-route-base, .body-route-travelled")) {
     path.setAttribute("d", route.d);
@@ -67,8 +71,12 @@
   main.querySelector(".body-stars").appendChild(stars);
   function draw() {
     const p = window.BODY_ROUTE.pose(route, current, direction);
+    const camera = window.BODY_ROUTE.camera(artWidth, artHeight, p, compact.matches);
+    anatomy.setAttribute("viewBox", `${camera.x.toFixed(2)} ${camera.y.toFixed(2)} ${camera.width.toFixed(2)} ${camera.height.toFixed(2)}`);
     const shrink = Math.min(1, current / 110);
-    const scale = 1 - shrink * (compact.matches ? .27 : .45);
+    // Keep the guide small even when the anatomy is magnified behind the copy.
+    const maxHeight = (compact.matches ? 74 : 130) - shrink * (compact.matches ? 22 : 42);
+    const scale = Math.min(1 - shrink * (compact.matches ? .27 : .45), maxHeight * camera.width / (166.34 * artWidth));
     bottle.setAttribute("transform", `translate(${p.x.toFixed(2)} ${p.y.toFixed(2)}) rotate(${p.angle.toFixed(2)}) scale(${scale.toFixed(3)})`);
     trail.style.strokeDashoffset = String(route.totalLength - current);
     const found = route.phases.findIndex(phase => current < phase.end - .1);
@@ -100,8 +108,11 @@
   function measure() {
     const headerHeight = header ? header.getBoundingClientRect().height : 0;
     home.style.setProperty("--body-header", `${headerHeight}px`);
+    const artBounds = anatomy.getBoundingClientRect();
+    artWidth = artBounds.width;
+    artHeight = artBounds.height;
     stops = sections.map(section => section.getBoundingClientRect().top + window.scrollY - headerHeight);
-    // Finish while the final chapter and complete body are both still visible.
+    // Finish while the final chapter and its anatomical region are both visible.
     const last = sections[sections.length - 1];
     const available = Math.max(1, last.offsetHeight - (window.innerHeight - headerHeight) * .45);
     stops.push(stops[stops.length - 1] + available);
