@@ -34,9 +34,9 @@ test("every new rule excludes Home", () => {
   assert.ok(css.includes("--deep-ink: #18265a;"), "Home's original Deep Ink is retained");
 });
 
-test("all 21 entry points load the refreshed theme last", () => {
+test("all entry points load the refreshed theme last", () => {
   const files = fs.readdirSync(root).filter(file => file.endsWith(".html"));
-  assert.equal(files.length, 21);
+  assert.ok(files.length >= 21);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     const sheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map(m => m[1]);

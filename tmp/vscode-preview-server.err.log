@@ -1,0 +1,161 @@
+127.0.0.1 - - [02/Oct/2026 14:20:41] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /css/body-home.css?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /js/site-content.js?v=20260930-project-story1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /js/site.js?v=20260930-project-story1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /js/body-home.js?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 14:23:56] "GET /js/contiguous-route.js?v=20261001-intestine1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 14:23:57] "GET /assets/yakult-bottle.png HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 14:23:57] "GET /assets/tissues/contiguous-body.png HTTP/1.1" 304 -
+127.0.0.1 - - [02/Oct/2026 14:23:57] code 404, message File not found
+127.0.0.1 - - [02/Oct/2026 14:23:57] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Oct/2026 06:53:16] "GET /experiments.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 06:53:16] "GET /experiment-enzyme-design.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 06:53:16] "GET /experiment-enzyme-design-notebook.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 06:53:17] "GET /experiment-enzyme-design-protocols.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 06:53:17] "GET /js/dry-lab-content.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 06:53:17] "GET /assets/dry-lab/cofactor-region.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:45] "GET /experiments.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /css/editorial-theme.css?v=20260912-lab-work-direct1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /css/cosmic-theme.css?v=20261001-footercream2 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /css/site.css?v=20260912-white-footer2 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /js/site-content.js?v=20260930-project-story1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /js/dry-lab-content.js?v=20261002-drylab1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /js/editorial-ui.js?v=20260825-editorial1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /js/site.js?v=20261002-drylab1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /assets/sponsors/seva-collective.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /assets/logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /assets/sponsors/university-lab-partners.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:46] "GET /assets/sponsors/broadcom.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /team.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /css/team-profiles.css?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /css/team-deal.css?v=20261001-deal1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /css/editorial-theme.css?v=20260912-vibrant-orange1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /js/site-content.js?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:51] "GET /js/site.js?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:52] "GET /js/team-deal.js?v=20261001-deal4 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:34:52] "GET /js/team-profiles.js?v=20261001-profiles1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /js/site.js?v=20260930-project-story1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /css/body-home.css?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /js/contiguous-route.js?v=20261001-intestine1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /js/body-home.js?v=20261001-backdrop1 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /assets/tissues/contiguous-body.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:35:27] "GET /assets/yakult-bottle.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2026 10:36:37] "GET /experiment-assembly.html HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 61206)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+----------------------------------------
+127.0.0.1 - - [05/Oct/2026 10:36:39] "GET /experiment-assembly.html HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53779)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+----------------------------------------
+127.0.0.1 - - [05/Oct/2026 10:36:40] "GET /experiment-assembly.html HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 60117)
+Traceback (most recent call last):
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 739, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 942, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 257, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\27fan\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+----------------------------------------
+127.0.0.1 - - [05/Oct/2026 10:36:40] "GET /experiment-assembly.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 10:36:42] "GET /css/editorial-theme.css?v=20260912-experiment-pages1 HTTP/1.1" 304 -

@@ -456,7 +456,7 @@ function initNavigation() {
 
           <div class="experiment-evidence-note reveal">
             <strong>Current evidence status</strong>
-            <p>These pages establish the experiment-record structure from the documented plan. Replace the working prompts with dated methods, results, figures, raw-data links, and interpretations after each experiment is conducted.</p>
+            <p>The wet-lab pages contain planned records. The BtSULT enzyme-design record contains reported computational observations and proposed follow-up work. Each record identifies its evidence, interpretation, and remaining questions.</p>
           </div>
         </div>
       </section>
@@ -503,7 +503,7 @@ function initNavigation() {
     const recordData = data.experimentRecordTabs?.[recordKey] || {};
     const recordView = pageData.recordView || "overview";
     const recordRoutes = [
-      { key: "overview", label: "Experiment Details", href: `${recordKey}.html` },
+      { key: "overview", label: recordData.overviewLabel || "Experiment Details", href: `${recordKey}.html` },
       { key: "notebook", label: "Notebook", href: `${recordKey}-notebook.html` },
       { key: "protocols", label: "Protocols", href: `${recordKey}-protocols.html` }
     ];
@@ -532,7 +532,7 @@ function initNavigation() {
             `).join("")}
           </nav>
 
-          ${isOverview ? `
+          ${recordData.content?.[recordView] ? recordData.content[recordView] : isOverview ? `
             <div class="experiment-record-panel">
               <div class="section-intro reveal">
                 <h2 class="section-title">${pageData.cardsTitle}</h2>

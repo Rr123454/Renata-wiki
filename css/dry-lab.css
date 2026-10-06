@@ -1,0 +1,42 @@
+/* Reading records use the site's cream palette and editorial typography. */
+.dry-lab-record { max-width: 1440px; margin-inline: auto; line-height: 1.75; }
+.dry-lab-record a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.dry-lab-record a:hover { text-decoration-thickness: 2px; }
+.dry-lab-intro { max-width: 78ch; margin-bottom: 2rem; }
+.dry-lab-status { padding: 1.15rem 1.5rem; margin-block: 1.7rem; border-left: 3px solid var(--yakult-red); background: var(--light-cream, #fffaf2); }
+.dry-lab-status strong { display: block; margin-bottom: .35rem; }
+.dry-lab-status p { margin: 0; }
+.dry-lab-toc { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; padding-block: 1rem; margin-bottom: 2.5rem; border-block: 1px solid var(--line); }
+.dry-lab-section { padding-block: 2.4rem; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.dry-lab-section h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 2.5vw, 2.6rem); line-height: 1.2; margin-bottom: 1rem; }
+.dry-lab-section h3 { font-size: 1.12rem; margin-block: 1.8rem .7rem; }
+.dry-lab-section > p, .dry-lab-section > ol, .dry-lab-section > ul { max-width: 86ch; margin-bottom: 1rem; }
+.dry-lab-record :is(ul, ol) { padding-left: 1.4rem; }
+.dry-lab-record ul { list-style: disc; }
+.dry-lab-record ol { list-style: decimal; }
+.dry-lab-record li { margin-bottom: .55rem; }
+.dry-lab-citation { font-size: .78em; white-space: nowrap; font-weight: 700; }
+.dry-lab-table-wrap { max-width: 100%; overflow-x: auto; margin-block: 1.3rem; }
+.dry-lab-table { width: 100%; min-width: 500px; border-collapse: collapse; font-size: .93rem; text-align: left; }
+.dry-lab-table caption { font-weight: 700; text-align: left; padding-bottom: .65rem; }
+.dry-lab-table :is(th, td) { padding: .85rem 1rem; vertical-align: top; border-bottom: 1px solid var(--line); }
+.dry-lab-table thead { background: var(--warm-beige, #f4dec4); }
+.dry-lab-table tbody th { font-weight: 700; }
+.dry-lab-table tbody tr:nth-child(even) { background: var(--light-cream, #fffaf2); }
+.dry-lab-record pre { padding: 1.25rem; margin-block: 1rem; max-width: 100%; overflow-x: auto; white-space: pre; border: 1px solid var(--line); background: var(--light-cream, #fffaf2); font: .85rem/1.65 Consolas, monospace; }
+.dry-lab-record :not(pre) > code { overflow-wrap: anywhere; font: .92em Consolas, monospace; }
+.dry-lab-record details { padding-block: 1rem; margin-block: .6rem; border-block: 1px solid var(--line); }
+.dry-lab-record summary { cursor: pointer; font-weight: 700; list-style: disclosure-closed; }
+.dry-lab-record details[open] summary { list-style: disclosure-open; margin-bottom: 1rem; }
+.dry-lab-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-block: 2rem; }
+.dry-lab-figure { margin: 0; min-width: 0; }
+.dry-lab-figure img { display: block; width: 100%; height: auto; background: #000; }
+.dry-lab-figure figcaption { margin-top: .75rem; font-size: .87rem; line-height: 1.55; }
+.dry-lab-references { font-size: .87rem; overflow-wrap: anywhere; }
+.dry-lab-references li { scroll-margin-top: 100px; margin-bottom: 1rem; }
+@media (max-width: 720px) {
+  .dry-lab-figures { grid-template-columns: 1fr; }
+  .dry-lab-status { padding-inline: 1rem; }
+  .dry-lab-table :is(th, td) { padding: .7rem; }
+  .dry-lab-section { padding-block: 1.75rem; }
+}
