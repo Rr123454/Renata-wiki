@@ -49,7 +49,8 @@
 .team-card-index--bottom { inset: auto 12px 7px auto; transform: rotate(180deg); }
 #siteMain .team-card-table .team-card-back { position: absolute; inset: 0; display: grid; place-items: center; transform: rotateY(180deg); color: var(--deep-ink); background: repeating-linear-gradient(45deg, transparent 0 12px, #24305e18 12px 13px), var(--soft-periwinkle); box-shadow: inset 0 0 0 7px var(--light-cream); }
 .team-card-back span { display: grid; place-items: center; width: 58%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; font: italic 3rem Georgia, serif; background: var(--soft-periwinkle); }
-#siteMain .team-card-table .member-card .member-photo-placeholder { position: relative; aspect-ratio: 4 / 4.5; border: 0; border-radius: 4px; background: var(--warm-beige); }
+#siteMain .team-card-table .member-card :is(.member-photo-placeholder, .member-photo) { position: relative; aspect-ratio: 4 / 4.5; border: 0; border-radius: 4px; background: var(--warm-beige); }
+#siteMain .team-card-table .member-card .member-photo { display: block; width: 100%; object-fit: cover; object-position: center 15%; }
 #siteMain .team-card-table .member-photo-placeholder::after { content: "Portrait"; position: absolute; bottom: 14px; font-size: .65rem; text-transform: uppercase; letter-spacing: .13em; color: var(--deep-ink); }
 #siteMain .team-card-table .member-meta { padding: 16px 2px 8px; }
 #siteMain .team-card-table .member-meta h3 { white-space: normal; overflow: visible; text-overflow: clip; font-size: clamp(1rem, 1.35vw, 1.25rem); line-height: 1.2; letter-spacing: -.02em; }

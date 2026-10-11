@@ -390,11 +390,15 @@ function initNavigation() {
     const escape = value => String(value || "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
     const memberName = escape(typeof member === "string" ? member : member.name);
     const memberRole = escape(typeof member === "string" ? group.memberLabel : member.role);
+    const memberPhoto = typeof member === "string" ? "" : member.photo;
+    const portrait = memberPhoto
+      ? `<img class="member-photo" src="${escape(memberPhoto)}" alt="Portrait of ${memberName}" loading="lazy" decoding="async" />`
+      : `<div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
+          <span aria-hidden="true">+</span>
+        </div>`;
     return `
       <article class="member-card">
-        <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
-          <span aria-hidden="true">+</span>
-        </div>
+        ${portrait}
         <div class="member-meta">
           <h3>${memberName}</h3>
           <p>${memberRole}</p>
