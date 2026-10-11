@@ -4,7 +4,7 @@
         {
             "label": "Serve website",
             "type": "shell",
-            "command": "python",
+            "command": "python3",
             "args": [
                 "-u",
                 "-m",
