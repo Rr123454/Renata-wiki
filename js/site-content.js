@@ -189,7 +189,7 @@ window.SITE_DATA = {
               bio: "I enjoy tennis with friends, baking and trying new recipes, and trying new food places with friends. I play both piano and violin. Fun fact: I hate doing dishes; it is my least favorite chore."
             },
             {
-              name: "Yuqing Zhuo", role: "Student", school: "Troy High School", schoolStage: "Senior",
+              name: "Yuqing Zhuo", photo: "assets/Team Images/skylar zhuo.jpg", role: "Student", school: "Troy High School", schoolStage: "Senior",
               bio: "I am really passionate about helping others in my community. During my free time, I love to try out new restaurants with my family, journal, and listen to music. Through iGEM, I was able to meet and work with a lot of other students who are motivated and inspiring. In the future, I hope to go into law where I can continue to use my knowledge to help other people in need. A fun fact about me is that I can talk with my mouth open!"
             },
             {
