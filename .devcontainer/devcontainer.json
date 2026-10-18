@@ -1,0 +1,25 @@
+{
+  "name": "Renata Wiki website",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Renata Wiki preview",
+      "onAutoForward": "openPreview",
+      "visibility": "private"
+    }
+  },
+  "postStartCommand": "if ! curl -fsS http://127.0.0.1:8000 >/dev/null 2>&1; then nohup python3 -m http.server 8000 --directory \"${containerWorkspaceFolder}\" >/tmp/renata-wiki-preview.log 2>&1 & fi",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot-chat",
+        "ritwickdey.LiveServer"
+      ],
+      "settings": {
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000
+      }
+    }
+  }
+}
