@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="560" viewBox="0 0 480 560" fill="none">
+  <title>Sulflux, Renata’s flame-crested bird guide</title>
+  <desc>A confident orange bird with a cream face, a flame-shaped crest, and wings on its hips. Its blue chest badge reads Sulflux.</desc>
+  <defs>
+    <linearGradient id="feathers" x1="150" y1="100" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#FFBB62"/><stop offset="1" stop-color="#EB703F"/></linearGradient>
+    <linearGradient id="chest" x1="190" y1="300" x2="300" y2="470" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF4E3"/><stop offset="1" stop-color="#F4DEC4"/></linearGradient>
+  </defs>
+  <g stroke="#24305E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M180 447 154 510l45-12 26 12 5-57m31-4 10 61 27-12 43 12-39-66" fill="#F3A042"/>
+    <path d="M148 265c-40 5-69 35-90 72L29 396l68 63 48-24-52-52 55-40m185-78c40 5 69 35 90 72l29 59-68 63-48-24 52-52-55-40" fill="url(#feathers)"/>
+    <path d="m55 401 35 17m335-17-35 17" stroke="#B9512B" stroke-width="5"/>
+    <path d="M142 248c-21 42-28 101-23 147 5 55 52 88 121 88s116-33 121-88c5-46-2-105-23-147" fill="url(#feathers)"/>
+    <path d="M181 293c-31 36-39 103-20 138 16 30 43 40 79 40s63-10 79-40c19-35 11-102-20-138" fill="url(#chest)" stroke-width="5"/>
+    <path d="m239 106-24-31 16-20 2-29 23 23 4 27 20-8-11 39" fill="#F3A042"/>
+    <path d="M141 125c20-25 55-35 99-35s79 10 99 35l15-16 5 55c22 29 26 61 10 88l16 12-38 13 13 16-47-2c-21 17-44 24-73 24s-52-7-73-24l-47 2 13-16-38-13 16-12c-16-27-12-59 10-88l5-55Z" fill="url(#feathers)"/>
+    <path d="M144 160c21-14 58-2 96 15 38-17 75-29 96-15 19 13 19 42 6 69-13 28-50 56-102 62-52-6-89-34-102-62-13-27-13-56 6-69Z" fill="#FFF4E3" stroke-width="5"/>
+    <path d="m162 187 40 16m116-16-40 16" stroke-width="10"/>
+    <path d="M218 223q22-26 44 0l-22 42Z" fill="#D67827" stroke-width="5"/>
+    <path d="m140 265 30 8m170-8-30 8" stroke="#B9512B" stroke-width="5"/>
+    <path d="m141 328 99 23 99-23-15 65-84 22-84-22Z" fill="#748CFF" stroke-width="5"/>
+    <path d="m108 412 34-3 9 18-13 19-33-13m267-21-34-3-9 18 13 19 33-13" fill="#FFBB62" stroke-width="5"/>
+  </g>
+  <text x="240" y="384" text-anchor="middle" fill="#18265A" font-family="Trebuchet MS, sans-serif" font-weight="700" font-size="30" letter-spacing="1">SULFLUX</text>
+</svg>

@@ -137,12 +137,15 @@ window.SITE_DATA = {
               name: "Karthik Sajeev", photo: "assets/Team Images/Karthik Sajeev.png", role: "Student Leader · Education & Human Practices", school: "Troy High School", classYear: "2027",
               bio: "I'm a senior at Troy, and I love to spend my time meeting new people. I'm interested in biomedical engineering and biotechnology, and I lead the Education and Human Practices sub-teams within Renata. I love watching Unstable Universe and hanging out with my friends in my free time! A fun fact about me is that I have a playlist for virtually every mood I'm in!"
             },
-            { name: "Kavi S.", photo: "assets/Team Images/Kavi S.jpg", role: "Student Leader" },
+            { name: "Kavi S.", photo: "assets/Team Images/Kavi S.jpg", role: "Student Leader", school: "Troy High School", classYear: "2027" ,
+              bio: ""
+            },
             {
               name: "Kyle Kao", photo: "assets/Team Images/Kyle Kao.png", role: "Student Leader", school: "Troy High School", classYear: "2027",
               bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
             },
-            { name: "Ritvin R.", role: "Student Leader" },
+            { name: "Ritvin R.", role: "Student Leader", school: "Troy High School", classYear: "2027", 
+              bio: " " },
             {
               name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
               bio: "I play tennis and enjoy gaming. A fun fact about me is that I can chug a plastic water bottle really fast."
@@ -176,7 +179,7 @@ window.SITE_DATA = {
               bio: "I love playing piano, badminton, and listening to classical music. I joined iGEM to see how a synthetic biology team actually operated and to gain experience with their work in PCS. Fun fact: I love limes!"
             },
             {
-              name: "Ryan Jian", photo: "assets/Team Images/Ryan Jian.jpeg", role: "Student", school: "Troy High School", classYear: "2028",
+              name: "Ryan Jian", photo: "assets/Team Images/Ryan Jian.jpeg", role: "Student", school: "Troy High School", schoolStage: "Junior", classYear: "2028",
               bio: "I like playing piano in my free time and working on AI projects. I am interested in iGEM Human Practices because it gives experience in logistical planning and the human practices side of projects. HP gives skills that can be applied beyond a synthetic biology competition. One fun fact is that I have two dogs."
             },
             {

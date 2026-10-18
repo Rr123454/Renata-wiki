@@ -11,6 +11,14 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
             "preLaunchTask": "Serve website"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Compare Renata — Into orbit",
+            "url": "http://localhost:8080/home-orbit.html",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "Serve website"
         }
     ]
 }

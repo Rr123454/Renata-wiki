@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 490" fill="none">
+  <title>Sulflux bottle</title>
+  <desc>A hand-drawn cream bottle with a red foil cap, a Sulflux label, and a coral wave at its base.</desc>
+  <defs>
+    <linearGradient id="paper" x1="55" y1="140" x2="255" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#fff9e3"/><stop offset="1" stop-color="#f3e8ce"/></linearGradient>
+    <linearGradient id="cap" x1="80" y1="25" x2="220" y2="91" gradientUnits="userSpaceOnUse"><stop stop-color="#ff6a65"/><stop offset="1" stop-color="#f22736"/></linearGradient>
+    <clipPath id="body"><path d="M86 68C82 107 76 124 58 146C45 161 33 176 34 203C33 225 48 236 53 247C57 261 49 276 40 293C30 314 31 352 32 381L34 432Q35 465 66 472Q151 484 234 471Q265 464 266 430L268 333C268 306 259 287 250 267Q242 251 252 236C263 222 268 207 264 185C261 169 248 155 239 141C224 120 219 95 215 69Z"/></clipPath>
+  </defs>
+  <path d="M94 85C87 127 74 144 55 166C34 197 42 224 62 252C68 266 53 288 46 310L44 436Q43 476 80 482Q168 493 245 480Q276 473 278 439L280 346Q281 302 264 272Q255 254 264 240Q287 210 273 182C257 155 238 131 229 83Z" fill="#102958" opacity=".3"/>
+  <path d="M86 68C82 107 76 124 58 146C45 161 33 176 34 203C33 225 48 236 53 247C57 261 49 276 40 293C30 314 31 352 32 381L34 432Q35 465 66 472Q151 484 234 471Q265 464 266 430L268 333C268 306 259 287 250 267Q242 251 252 236C263 222 268 207 264 185C261 169 248 155 239 141C224 120 219 95 215 69Z" fill="url(#paper)" stroke="#ac1832" stroke-width="5"/>
+  <g clip-path="url(#body)">
+    <path d="M16 171Q151 194 286 169L284 211Q152 236 19 211Z" fill="#f7d7a6" opacity=".75"/>
+    <path d="M16 169Q148 189 286 166" stroke="#fffcef" stroke-width="8"/>
+    <path d="M28 385C71 370 79 427 129 418C179 408 182 438 224 413L280 383V490H22Z" fill="#ffadb0"/>
+    <path d="M25 402C66 388 81 444 133 430C178 417 195 453 237 425L282 404V492H21Z" fill="#ff5965"/>
+    <path d="M48 188C42 211 61 225 68 242C76 265 54 287 51 312L52 370" stroke="#fffdf0" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+    <path d="M247 185Q256 214 236 239Q227 257 241 280L251 313" stroke="#e7caa2" stroke-width="8" opacity=".6"/>
+  </g>
+  <path d="M79 41Q88 25 148 24Q210 22 222 38L229 61L238 82Q225 92 211 86L198 81L182 88L166 83L151 89L135 84L119 89L102 84L84 88L68 84L63 78Q73 59 79 41Z" fill="url(#cap)" stroke="#b8172d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M86 42Q148 31 216 40" stroke="#ff9c8b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M88 47L80 79M107 44L102 78M127 43L125 79M149 42L151 80M170 43L176 78M193 45L200 78M211 47L219 78" stroke="#bf162a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M91 48L86 75M131 46L130 75M174 47L180 75M214 49L221 75" stroke="#ffb1a3" stroke-width="3" stroke-linecap="round"/>
+  <g transform="rotate(-7 150 275)">
+    <text x="150" y="286" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-size="51" font-weight="700" letter-spacing="-3" fill="#eb2343">sulflux</text>
+    <path d="M57 301Q142 296 246 300" stroke="#ed2843" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

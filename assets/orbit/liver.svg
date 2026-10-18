@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" fill="none">
+  <title>Illustrated liver world</title>
+  <desc>A large wine-colored liver with a coral right-hand section and a bold plum outline.</desc>
+  <path d="M69 177C188 90 385 53 590 78C775 100 923 191 938 306C958 443 774 508 571 523C379 541 191 507 111 392C77 341 52 235 69 177Z" fill="#a73154" stroke="#70214d" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M721 105C674 186 649 265 666 358C678 420 719 464 786 471C889 433 950 373 938 306C924 215 842 146 721 105Z" fill="#c34862" stroke="#70214d" stroke-width="8"/>
+  <path d="M291 304L460 271L510 152L479 275L575 216L498 304L607 422L468 320L344 446L433 318Z" fill="#76264f"/>
+  <path d="M124 192Q329 83 563 103" stroke="#bf4a65" stroke-width="8" stroke-linecap="round"/>
+</svg>

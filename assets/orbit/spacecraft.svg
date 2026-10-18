@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 440" fill="none">
+  <title>Sulflux spacecraft</title>
+  <desc>A blue illustrated spacecraft with swept wings, twin engines, cream outlines, and glowing cyan windows, pointing downward.</desc>
+  <g stroke="#153c72" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M111 81V43Q126 24 142 43V91M158 91V43Q174 24 189 43V81" fill="#ffe16a"/>
+    <path d="M110 62Q126 50 143 63M157 63Q175 50 191 62" stroke="#fff4c5" stroke-width="8"/>
+    <path d="M111 88Q91 70 53 25Q45 14 39 25L35 71Q37 101 65 132L103 172L99 260L37 304Q25 313 31 328L65 345L121 316H179L235 345L269 328Q275 313 263 304L201 260L197 172L235 132Q263 101 265 71L261 25Q255 14 247 25Q209 70 189 88Z" fill="#ffdb69"/>
+    <path d="M111 103L50 41L48 79Q56 106 104 153L114 223L105 274L46 318L67 330L125 303H175L233 330L254 318L195 274L186 223L196 153Q244 106 252 79L250 41L189 103Z" fill="#087dc7" stroke="#fff1bd" stroke-width="4"/>
+    <path d="M64 62L75 94L101 120M236 62L225 94L199 120" stroke="#13c5ed" stroke-width="7"/>
+    <path d="M109 128L74 102M191 128L226 102M103 285L68 314M197 285L232 314" stroke="#073e86" stroke-width="11"/>
+    <path d="M111 84Q150 63 189 84L199 165L187 225Q209 283 197 335Q184 389 150 423Q116 389 103 335Q91 283 113 225L101 165Z" fill="#0e63ae"/>
+    <path d="M126 86Q151 75 174 86L181 168L168 225Q190 287 178 335Q168 377 150 401Q132 377 122 335Q110 287 132 225L119 168Z" fill="#079bce" stroke="#fff2c3" stroke-width="5"/>
+    <path d="M134 112Q150 105 166 112L168 161L160 180H138L130 160Z" fill="#103b70" stroke-width="3"/>
+    <path d="M137 117L140 151" stroke="#7fe6e8" stroke-width="5"/>
+    <path d="M143 196V226M159 191V212M130 246L123 269" stroke="#96f1e7" stroke-width="6"/>
+    <path d="M149 277C111 285 122 352 149 386C177 352 190 283 149 277Z" fill="#082c5c" stroke="#fff1c2" stroke-width="6"/>
+    <path d="M155 291Q173 302 160 332" stroke="#167fc0" stroke-width="10"/>
+    <path d="M140 359L148 376" stroke="#a3f4e9" stroke-width="5"/>
+    <path d="M106 204L107 225M192 204L191 225M109 301L111 317M189 301L187 317" stroke="#ffd34f" stroke-width="6"/>
+  </g>
+</svg>

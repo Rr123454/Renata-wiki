@@ -1,0 +1,208 @@
+/* Homepage 02: illustrated Sulflux flight, following the supplied screen recording. */
+body[data-home-variant="orbit"] { overflow-x: clip; --flight-cream: #fff1bc; --flight-blue: #173e84; --flight-plum: #74264e; }
+body[data-home-variant="orbit"] :is(.orbit-home, .flight-header, .flight-controls, .flight-footer) { font-family: "Trebuchet MS", "Avenir Next", Arial, sans-serif; color: var(--flight-cream); }
+body[data-home-variant="orbit"] :is(a, button):focus-visible { outline: 3px solid #fff1bc; outline-offset: 5px; }
+.orbit-home :is(h1, h2, h3) { font-family: "Trebuchet MS", "Avenir Next", Arial, sans-serif; font-weight: 800; letter-spacing: -.045em; }
+.flight-skip { position: fixed; top: 12px; left: 12px; z-index: 6000; transform: translateY(-160%); padding: 12px 20px; color: #173e84; background: #fff1bc; border-radius: 30px; }
+.flight-skip:focus { transform: none; }
+.flight-header { position: fixed; inset: 0 0 auto; z-index: 4000; padding: 26px 6vw 18px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: start; gap: 22px; transition: background .2s; }
+.flight-header.is-reading { background: #142d64ed; backdrop-filter: blur(12px); }
+.flight-brand { position: relative; display: inline-block; width: max-content; font-size: clamp(1.7rem, 2.7vw, 2.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -.065em; }
+.flight-brand > span { display: block; height: 9px; width: 70%; margin: 3px auto 0; border-bottom: 3px solid #fff1bc; border-radius: 50%; transform: rotate(2deg); }
+.flight-nav { display: flex; align-items: center; gap: clamp(5px, 1.3vw, 24px); padding-top: 3px; }
+.flight-nav a { padding: 8px 13px; font-size: .8rem; font-weight: 700; white-space: nowrap; border: 1px solid transparent; border-radius: 24px; }
+.flight-nav a[aria-current], .flight-nav a:hover { border-color: #fff1bc80; background: #fff1bc0b; }
+.flight-header-actions { justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.flight-pill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 40px; padding: 15px 26px; background: #fff1bc; color: #173762; font-weight: 800; font-size: .84rem; box-shadow: 0 9px 25px #ffe49f25; transition: transform .2s, background .2s; }
+.flight-pill:hover { background: #ffe17c; transform: translateY(-2px); }
+.flight-pill > span { font-size: 1.1em; }
+.flight-compare { font-size: .6rem; font-weight: 700; text-align: center; }
+.flight-compare:hover { text-decoration: underline; text-underline-offset: 4px; }
+.flight-compare span { padding-inline: 4px; }
+.flight-journey { position: relative; isolation: isolate; }
+.flight-launch { position: relative; background: #173e84; }
+.flight-launch-stage { position: relative; isolation: isolate; overflow: clip; min-height: 700px; height: 100svh; }
+.flight-enhanced .flight-launch { height: 225svh; }
+.flight-enhanced .flight-launch-stage { position: sticky; top: 0; }
+.flight-stars { position: absolute; z-index: -5; inset: 0; overflow: hidden; background-image: radial-gradient(circle, #fff1bc88 1px, transparent 1.7px), radial-gradient(circle, #a4d7edaa 1px, transparent 1.5px); background-size: 83px 71px, 137px 113px; background-position: 12px 4px, 43px 47px; }
+.flight-star { position: absolute; width: var(--size); height: var(--size); border-radius: 50%; background: #ffdc84; opacity: var(--alpha); box-shadow: 0 0 9px 2px #ffe19c55; }
+.flight-saturn { position: absolute; z-index: -3; right: 2%; top: -7%; width: 24vw; aspect-ratio: 1; background: #cd86b0; border: 9px solid #102c66; border-radius: 50%; transform: rotate(-16deg); }
+.flight-saturn > i { position: absolute; left: -22%; top: 40%; width: 144%; height: 27%; border: clamp(12px, 1.6vw, 25px) solid #ffdb86; border-radius: 50%; }
+.flight-moon { position: absolute; z-index: -3; top: 18%; left: 11%; width: 42px; height: 42px; background: #ffda77; border: 6px solid #0c2d66; border-radius: 50%; }
+.flight-comet { position: absolute; z-index: -4; top: 40%; left: -20%; width: 51%; height: 13%; border: 7px solid #f29a76; border-radius: 50%; background: #ffe5a8; transform: rotate(19deg); }
+.flight-ground { position: absolute; z-index: -3; top: 86%; left: -15%; width: 130%; height: 43%; background: #f2dba2; border: 7px solid #d79175; border-radius: 50%; transform: rotate(2deg); }
+.flight-night { position: absolute; z-index: -2; inset: 0; background: #180a36; opacity: var(--night, 0); }
+.flight-hero-copy { position: absolute; z-index: 4; left: 41%; right: 3%; top: 28%; text-align: center; opacity: var(--intro, 1); transform: translateY(var(--intro-y, 0px)); }
+.orbit-home .flight-title { display: flex; justify-content: center; line-height: 1.1; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-weight: 700; font-size: clamp(5rem, 12.4vw, 14rem); letter-spacing: -.045em; margin: 0 0 14px; transform: rotate(-2deg); }
+.flight-title span { color: #15a8e4; -webkit-text-stroke: clamp(6px, .85vw, 13px) #dff5ef; paint-order: stroke fill; filter: drop-shadow(2px 3px 0 #9cc0c6); }
+.flight-title span:nth-child(even) { color: #f6d254; -webkit-text-stroke-color: #fff0b7; filter: drop-shadow(2px 4px 0 #ce974c); }
+.flight-hero-copy > p { color: #fff1c8; font-size: clamp(1rem, 1.8vw, 1.65rem); font-weight: 800; line-height: 1.2; letter-spacing: .01em; margin: 0 0 26px; }
+.flight-hero-copy .flight-pill { padding: 15px 28px; }
+.flight-bottle { position: absolute; z-index: 5; left: var(--bottle-x, 24%); top: var(--bottle-y, 66%); width: clamp(200px, 23vw, 330px); height: auto; aspect-ratio: 300 / 490; max-width: none; transform: translate(-50%, -50%) rotate(var(--bottle-angle, 0deg)) scale(var(--bottle-scale, 1)); opacity: var(--bottle-opacity, 1); filter: drop-shadow(9px 10px 0 #09245935); will-change: transform; }
+.flight-scroll { position: absolute; z-index: 8; bottom: 12%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 7px; color: #fff9da; font-size: .55rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; opacity: var(--intro, 1); }
+.flight-mouse { display: block; width: 18px; height: 29px; border: 2px solid #fff1bc; border-radius: 14px; }
+.flight-mouse > i { display: block; height: 7px; width: 2px; background: #fff1bc; margin: 5px auto; }
+.flight-world { position: relative; min-height: 720px; height: 108svh; border-top: 8px solid #75254c; overflow: clip; isolation: isolate; }
+.flight-world--stomach { background: #f28e79; }
+.flight-world--intestine { background: #f4b18a; }
+.flight-world--portal { background: #ef9488; }
+.flight-world--liver { background: #ec9874; }
+.flight-world-copy { position: absolute; top: 22%; left: 4%; width: 30%; z-index: 3; }
+.flight-kicker { color: #ffec9d; text-transform: uppercase; letter-spacing: .19em; font-weight: 800; font-size: .64rem; }
+.flight-world-copy h2 { color: #ffe7b6; font-size: clamp(2.8rem, 6.4vw, 6.8rem); line-height: .99; margin-block: 18px 22px; text-shadow: 3px 5px 0 #a6534a28; }
+.flight-world-copy > p:not(.flight-kicker) { font-size: clamp(.95rem, 1.55vw, 1.3rem); line-height: 1.4; font-weight: 700; max-width: 23ch; color: #74264e; }
+.flight-world-copy .flight-kicker { color: #74264e; }
+.flight-world-tag { display: inline-block; margin-top: 19px; padding: 7px 13px; border-radius: 30px; font-size: .56rem; letter-spacing: .1em; font-weight: 800; text-transform: uppercase; background: #ab476025; color: #74264e; }
+.flight-organ { position: absolute; z-index: 1; width: min(74vw, 1060px); max-width: none; height: 90%; object-fit: contain; left: 59%; top: 56%; transform: translate(-50%, -50%); }
+.flight-world--stomach .flight-organ { left: 62%; }
+.flight-world--intestine .flight-organ { top: 64%; height: 88%; left: 59%; }
+.flight-world--liver .flight-organ { left: 50%; top: 51%; width: min(80vw, 1200px); height: 76%; }
+.flight-world-dots { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.flight-world-dots i { position: absolute; display: block; width: 70px; height: 70px; border-radius: 50%; background: #ffe17d; }
+.flight-world-dots i:nth-child(1) { left: 6%; top: 16%; width: 9vw; height: 9vw; max-width: 120px; max-height: 120px; border: 7px solid #76284f; }
+.flight-world-dots i:nth-child(2) { right: 12%; bottom: 15%; width: 9vw; height: 9vw; background: #ffba76; }
+.flight-world-dots i:nth-child(3) { left: 14%; bottom: 12%; width: 43px; height: 43px; background: #ffe5a0; }
+.flight-world-dots i:nth-child(4) { right: 10%; top: 28%; width: 55px; height: 55px; background: #fff3ab; border-radius: 0; clip-path: polygon(50% 0,65% 35%,100% 50%,65% 65%,50% 100%,35% 65%,0 50%,35% 35%); }
+.flight-world:not(.flight-world--liver) .flight-world-dots i:nth-child(1) { top: 10%; width: 48px; height: 48px; left: 17%; border-width: 0; }
+.flight-microbe { position: absolute; z-index: 4; top: 56%; left: 10%; width: 68px; height: 48px; background: #9ae2e3; border: 5px solid #5f4874; border-radius: 48%; transform: rotate(-13deg); box-shadow: inset 0 0 0 5px #49a7c4; }
+.flight-microbe i, .flight-microbe b { position: absolute; top: 13px; width: 4px; height: 6px; background: #286080; border-radius: 50%; left: 20px; }
+.flight-microbe b { left: 37px; }
+.flight-microbe span { position: absolute; top: 11px; left: 26px; color: #286080; font-size: 18px; }
+.flight-static-craft { position: absolute; z-index: 3; width: clamp(100px, 15vw, 210px); left: 54%; top: 43%; transform: translateX(-50%) rotate(-13deg); }
+.flight-enhanced .flight-static-craft { display: none; }
+.flight-craft-layer { display: none; }
+.flight-enhanced .flight-craft-layer { display: block; position: fixed; z-index: 12; inset: 0; pointer-events: none; visibility: hidden; }
+.flight-craft { position: absolute; left: 0; top: 0; width: clamp(145px, 18vw, 270px); transform: translate(-50%, -50%); will-change: transform; }
+.flight-craft > img { position: relative; width: 100%; height: auto; filter: drop-shadow(0 0 calc(var(--ignition, 0) * 12px) #ffe38a50) drop-shadow(5px 7px 0 #38134420); }
+.flight-exhaust { position: absolute; bottom: 89%; left: 31%; width: 38%; height: 210px; transform-origin: bottom; transform: scaleY(var(--exhaust, 0)); opacity: var(--exhaust-opacity, 0); }
+.flight-arrival { position: absolute; left: 10%; right: 10%; bottom: 13%; z-index: 5; text-align: center; }
+.flight-arrival h2 { color: #fff3ce; font-size: clamp(1.4rem, 2.4vw, 2.4rem); margin-block: 8px; letter-spacing: -.025em; }
+.flight-arrival > a { display: inline-block; font-size: .7rem; padding: 8px; font-weight: 700; }
+.flight-arrival > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.flight-controls { position: fixed; z-index: 100; left: 0; right: 0; bottom: 23px; display: flex; justify-content: center; align-items: center; pointer-events: none; transition: opacity .2s; }
+.flight-controls.is-finished { opacity: 0; visibility: hidden; }
+.flight-progress { pointer-events: auto; display: flex; align-items: center; gap: 28px; width: min(440px, 44vw); min-height: 31px; padding: 4px 15px; border: 1px solid #fff1bc36; border-radius: 30px; background: #602e5c30; box-shadow: 0 6px 28px #ffbf852c; backdrop-filter: blur(10px); }
+.flight-progress-label { min-width: 92px; text-transform: uppercase; font-weight: 800; font-size: .5rem; letter-spacing: .08em; line-height: 1.3; }
+.flight-progress-dots { position: relative; display: flex; flex: 1; align-items: center; justify-content: space-between; }
+.flight-progress-dots::before, .flight-progress-dots::after { content: ""; position: absolute; height: 2px; top: 50%; left: 8px; right: 8px; background: #fff1bc38; }
+.flight-progress-dots::after { transform-origin: left; transform: scaleX(var(--journey-progress, 0)); background: linear-gradient(90deg, #ffe590, #b3efe9); box-shadow: 0 0 8px #ffe48d; }
+.flight-progress-dots a { position: relative; z-index: 1; display: grid; place-items: center; width: 24px; height: 28px; }
+.flight-progress-dots i { display: block; width: 6px; height: 6px; border: 1px solid #fff1bc9c; background: #772c61; border-radius: 50%; }
+.flight-progress-dots a.is-visited i, .flight-progress-dots a[aria-current] i { background: #fff3ae; box-shadow: 0 0 8px 2px #ffeb9590; }
+.flight-playback { position: absolute; right: 3%; pointer-events: auto; display: flex; gap: 7px; }
+.flight-playback :is(a, button) { color: #fff1bc; border: 1px solid #fff1bc65; border-radius: 20px; background: #331b4938; padding: 8px 12px; font-size: .55rem; line-height: 1; letter-spacing: .08em; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+.flight-playback :is(a, button):hover { background: #331b4980; }
+.flight-playback span { font-size: .85rem; vertical-align: middle; margin-right: 3px; }
+.flight-motion[hidden] { display: none; }
+.flight-mission { background: #183c7c; text-align: center; position: relative; z-index: 20; padding: 115px 7vw 70px; }
+.flight-mission h2 { color: #fff1bc; font-size: clamp(2.6rem, 5vw, 5.3rem); line-height: 1.08; margin: 20px 0 28px; }
+.flight-mission h2 span { color: #f7d15b; }
+.flight-mission > p:not(.flight-kicker) { max-width: 65ch; margin: 0 auto 28px; font-size: 1rem; line-height: 1.8; color: #fff3d7; }
+.flight-next { display: flex; justify-content: center; gap: 55px; margin: 60px auto 40px; padding-block: 24px; max-width: 950px; border-block: 1px solid #fff1bc35; }
+.flight-next a { font-size: .9rem; font-weight: 700; }
+.flight-next a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.flight-next span { margin-left: 14px; }
+.flight-mission > .flight-context { max-width: 95ch !important; font-size: .72rem !important; color: #e1e6ef !important; }
+.flight-footer { background: #10295d; padding: 35px 7vw; display: flex; align-items: center; justify-content: space-between; gap: 30px; position: relative; z-index: 20; }
+.flight-footer p { font-size: .75rem; }
+.flight-footer > a:last-child { font-size: .7rem; }
+.flight-footer .flight-brand { font-size: 1.7rem; }
+html:has(.flight-paused) { scroll-behavior: auto; }
+@media (max-width: 1100px) {
+  .flight-header { padding-inline: 4vw; grid-template-columns: auto 1fr auto; gap: 14px; }
+  .flight-nav { justify-content: center; gap: 1px; }
+  .flight-nav a { padding: 8px; font-size: .7rem; }
+  .flight-header .flight-pill { padding: 12px 18px; font-size: .75rem; }
+  .flight-compare { font-size: .5rem; }
+  .flight-progress { width: 42vw; gap: 16px; }
+}
+@media (max-width: 760px) {
+  .flight-header { padding: 18px 22px 10px; grid-template-columns: 1fr 1fr; row-gap: 12px; }
+  .flight-brand { font-size: 1.9rem; }
+  .flight-nav { grid-row: 2; grid-column: 1 / -1; justify-content: space-between; }
+  .flight-nav a { font-size: .65rem; padding: 5px 8px; }
+  .flight-header-actions { grid-row: 1; grid-column: 2; }
+  .flight-header .flight-pill { padding: 10px 18px; }
+  .flight-compare { font-size: .5rem; }
+  .flight-launch-stage { min-height: 700px; }
+  .flight-hero-copy { top: 25%; left: 10%; right: 10%; }
+  .orbit-home .flight-title { font-size: 17vw; margin-bottom: 12px; }
+  .flight-title span { -webkit-text-stroke-width: 7px; }
+  .flight-hero-copy > p { font-size: 1rem; }
+  .flight-hero-copy .flight-pill { padding: 12px 20px; font-size: .75rem; }
+  .flight-bottle { left: var(--bottle-x, 25%); top: var(--bottle-y, 73%); width: clamp(150px, 30vw, 220px); }
+  .flight-saturn { width: 40vw; right: -8%; top: 12%; border-width: 6px; }
+  .flight-saturn i { border-width: 12px; }
+  .flight-moon { left: 8%; top: 20%; width: 28px; height: 28px; border-width: 4px; }
+  .flight-comet { width: 70%; top: 62%; left: -22%; height: 10%; border-width: 5px; }
+  .flight-ground { top: 88%; height: 26%; border-width: 5px; }
+  .flight-scroll { left: 66%; bottom: 18%; }
+  .flight-world { min-height: 720px; height: 100svh; border-top-width: 6px; }
+  .flight-world-copy { top: 20%; left: 6%; width: 80%; }
+  .flight-world-copy h2 { font-size: clamp(2.8rem, 9.5vw, 4.2rem); line-height: .98; margin-block: 12px 14px; }
+  .flight-world-copy > p:not(.flight-kicker) { font-size: .9rem; max-width: 30ch; }
+  .flight-kicker { font-size: .56rem; }
+  .flight-world-tag { margin-top: 12px; font-size: .5rem; }
+  .flight-world .flight-organ { width: 102vw; height: 62%; top: 70%; left: 58%; }
+  .flight-world--intestine .flight-organ { top: 72%; height: 65%; }
+  .flight-world--liver .flight-organ { width: 101vw; height: 67%; left: 50%; top: 51%; }
+  .flight-world-dots i:nth-child(1) { border-width: 4px; width: 16vw; height: 16vw; }
+  .flight-world-dots i:nth-child(2) { width: 16vw; height: 16vw; right: 6%; }
+  .flight-world-dots i:nth-child(3) { width: 28px; height: 28px; left: 8%; }
+  .flight-world-dots i:nth-child(4) { width: 34px; height: 34px; right: 6%; }
+  .flight-world:not(.flight-world--liver) .flight-world-dots i:nth-child(1) { top: 18%; left: 80%; width: 27px; height: 27px; }
+  .flight-microbe { top: 59%; left: 8%; transform: rotate(-13deg) scale(.75); }
+  .flight-static-craft { top: 54%; left: 61%; width: 130px; }
+  .flight-world--liver .flight-static-craft { top: 41%; left: 50%; }
+  .flight-arrival { bottom: 18%; left: 6%; right: 6%; }
+  .flight-arrival h2 { font-size: 1.45rem; }
+  .flight-controls { bottom: 14px; padding-inline: 16px; flex-direction: column; gap: 8px; }
+  .flight-progress { width: min(360px, 100%); min-height: 32px; padding-inline: 13px; gap: 12px; }
+  .flight-progress-label { min-width: 82px; font-size: .46rem; }
+  .flight-playback { position: static; }
+  .flight-playback :is(a, button) { padding: 7px 11px; }
+  .flight-craft { width: clamp(125px, 27vw, 180px); }
+  .flight-exhaust { height: 170px; }
+  .flight-mission { padding: 90px 24px 40px; }
+  .flight-mission h2 { font-size: 2.8rem; }
+  .flight-mission > p:not(.flight-kicker) { font-size: .9rem; }
+  .flight-next { flex-direction: column; gap: 24px; margin-top: 40px; }
+  .flight-footer { flex-wrap: wrap; padding: 28px 24px 38px; }
+  .flight-footer > a:last-child { width: 100%; }
+}
+/* Scroll choreography is driven by one damped clock, with no perpetual loops. */
+.flight-bottle > svg { width: 100%; height: auto; overflow: visible; }
+.flight-label-rocket { opacity: var(--label-opacity, 1); }
+.flight-launch-ring { position: absolute; left: 0; top: 0; width: 72px; height: 72px; border: 2px solid #fff2bd; border-radius: 50%; opacity: 0; box-shadow: 0 0 18px #ffe17b70, inset 0 0 15px #ffe17b40; pointer-events: none; }
+.flight-exhaust { overflow: visible; }
+.flight-exhaust-halo { filter: blur(9px); opacity: .55; }
+.flight-enhanced .flight-stars { transform: translate3d(0, var(--stars-y, 0px), 0) scale(1.12); }
+.flight-enhanced .flight-saturn { transform: translate3d(0, var(--planet-y, 0px), 0) rotate(var(--planet-turn, -16deg)); }
+.flight-enhanced .flight-comet { transform: translate3d(var(--comet-x, 0px), 0, 0) rotate(19deg); }
+.flight-enhanced .flight-ground { transform: translate3d(0, var(--ground-y, 0px), 0) rotate(2deg); }
+.flight-enhanced .flight-world-copy > *, .flight-enhanced .flight-arrival > * {
+  opacity: var(--copy-opacity, 1);
+  transform: translate3d(var(--copy-x, 0px), var(--copy-y, 0px), 0);
+}
+.flight-enhanced .flight-world-copy, .flight-enhanced .flight-arrival { perspective: 1000px; }
+.flight-enhanced .flight-arrival:focus-within > *, .flight-paused .flight-world-copy > *, .flight-paused .flight-arrival > * { opacity: 1; transform: none; }
+.flight-enhanced .flight-organ { transform: translate(-50%, -50%) translateY(var(--organ-y, 0px)) rotate(var(--organ-turn, 0deg)) scale(var(--organ-scale, 1)); }
+.flight-enhanced .flight-world-dots { transform: translateY(var(--particles-y, 0px)); }
+.flight-enhanced .flight-microbe { transform: translateY(var(--microbe-y, 0px)) rotate(var(--microbe-turn, -13deg)) scale(var(--microbe-scale, 1)); }
+@media (min-width: 761px) {
+  .flight-world--intestine .flight-world-copy { left: auto; right: 5%; text-align: right; }
+  .flight-world--intestine .flight-world-copy > p:not(.flight-kicker) { margin-left: auto; }
+  .flight-world--intestine .flight-organ { left: 42%; }
+}
+@media (max-width: 760px) {
+  .flight-world { --microbe-scale: .75; }
+}
+
+/* The complete illustrated story is readable without animated camera movement. */
+body:not(.flight-enhanced) .flight-craft-layer { display: none; }
+body:not(.flight-ready) .flight-header { position: absolute; }
+body:not(.flight-enhanced) .flight-progress-label { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html:has(.orbit-home) { scroll-behavior: auto; }
+  .orbit-home *, .flight-header, .flight-controls { transition: none !important; }
+}

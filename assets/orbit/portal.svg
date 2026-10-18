@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" fill="none">
+  <title>Illustrated portal circulation</title>
+  <desc>Coral vessel branches merge into a broad central vessel, surrounded by decorative blood cells.</desc>
+  <path d="M64 107Q201 175 293 324L343 407V760H565V397L631 311Q725 181 853 139L800 24Q613 70 483 257L457 301L427 254Q296 71 121-9Z" fill="#ef6578" stroke="#79254f" stroke-width="15"/>
+  <path d="M101 69Q257 144 349 312L400 394V770M828 79Q654 136 559 309L511 390V770" stroke="#ffb590" stroke-width="29"/>
+  <path d="M102 368Q230 396 345 508M832 370Q683 404 565 515" stroke="#79254f" stroke-width="105"/>
+  <path d="M102 368Q230 396 364 529M832 370Q683 404 548 535" stroke="#ee7081" stroke-width="81"/>
+  <path d="M140 363Q238 400 306 465M791 363Q679 403 608 467" stroke="#ffb590" stroke-width="17" stroke-linecap="round"/>
+  <g fill="#bd3a60" stroke="#79254f" stroke-width="7">
+    <ellipse cx="451" cy="453" rx="42" ry="26" transform="rotate(-22 451 453)"/><ellipse cx="476" cy="630" rx="42" ry="26" transform="rotate(22 476 630)"/><ellipse cx="280" cy="221" rx="37" ry="23" transform="rotate(42 280 221)"/><ellipse cx="643" cy="216" rx="37" ry="23" transform="rotate(-36 643 216)"/>
+  </g>
+  <path d="M434 451Q449 438 465 445M460 625Q478 620 491 633" stroke="#f78791" stroke-width="8" stroke-linecap="round"/>
+</svg>

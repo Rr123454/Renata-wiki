@@ -3,7 +3,8 @@
   const pageKey = document.body.dataset.page || "home";
   const pageData = data.pages[pageKey] || data.pages.home;
 
-  document.title = `${stripHtml(pageData.title)} | iGEM Renata`;
+  const orbitalHome = pageKey === "home" && document.body.dataset.homeVariant === "orbit";
+  document.title = `${orbitalHome ? "Orbital Home" : stripHtml(pageData.title)} | iGEM Renata`;
 
   renderHeader();
   initNavigation();
@@ -37,6 +38,13 @@
           ${data.nav.map(renderNavItem).join("")}
         </nav>
       </div>
+      ${pageKey === "home" ? `
+        <nav class="home-compare" aria-label="Compare homepage designs">
+          <span>Explore the homepages</span>
+          <a href="index.html" ${orbitalHome ? "" : 'aria-current="page"'}>01 <span>Inside the body</span></a>
+          <a href="home-orbit.html" ${orbitalHome ? 'aria-current="page"' : ""}>02 <span>Into orbit</span></a>
+        </nav>
+      ` : ""}
     `;
   }
 
@@ -301,7 +309,7 @@ function initNavigation() {
 
   function renderMain() {
     const main = document.getElementById("siteMain");
-    if (!main) return;
+    if (!main || main.dataset.staticContent === "true") return;
 
     if (pageKey === "home") {
       main.innerHTML = renderHomePage();
