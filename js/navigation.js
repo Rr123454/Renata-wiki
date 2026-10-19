@@ -29,7 +29,7 @@
                 return `<li><a class="renata-nav-card${inSection ? " is-section" : ""}" href="${escape(child.href)}"${current ? ' aria-current="page"' : ""}>
                   ${badge(child.icon, 48)}
                   <span class="renata-nav-copy"><strong>${escape(child.label)}</strong><small>${escape(child.description)}</small></span>
-                  <span class="renata-nav-arrow" aria-hidden="true">${current ? "●" : "↗"}</span>
+                  ${current ? "" : '<span class="renata-nav-arrow" aria-hidden="true">↗</span>'}
                 </a>${child.children?.length ? `<ul class="renata-nav-subpages" aria-label="${escape(child.label)} pages">${child.children.map(sub => `<li><a href="${escape(sub.href)}"${sub.key === pageKey ? ' aria-current="page"' : ""}>${escape(sub.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>` : ""}</li>`;
               }).join("")}</ul>
             </div>

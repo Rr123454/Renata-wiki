@@ -57,7 +57,9 @@ body[data-page].orbit-pages :is(.project-paper-page, .experiment-index-page, .ex
 body[data-page].orbit-pages :is(.experiment-index-container, .experiment-record-workspace > .container, .page-section > .container) { max-width: 1440px; margin-inline: auto; }
 body[data-page].orbit-pages :is(.experiment-index-page, .experiment-record-workspace) { padding-block: clamp(32px, 5vw, 76px); }
 body[data-page].orbit-pages :is(.section-title, .detail-panel h2, .experiment-list-header h2, .project-paper-section > h2, .dry-lab-section > h2) { color: #173e84; line-height: 1.12; font-family: var(--font-display); font-weight: 800; }
-body[data-page].orbit-pages .project-paper-layout { grid-template-columns: 250px minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); max-width: 1440px; }
+/* The outline sits to the right of the article, matching Model and Our Project. */
+body[data-page].orbit-pages .project-paper-layout { grid-template-columns: minmax(0, 1fr) 250px; gap: clamp(24px, 4vw, 60px); max-width: 1440px; }
+body[data-page].orbit-pages .project-paper-sidebar { order: 0; }
 body[data-page].orbit-pages .project-paper { padding: 0; border-left: 0; }
 body[data-page].orbit-pages .project-paper-section { padding: 0 0 44px; margin: 0 0 44px; border-color: #173e8426; }
 body[data-page].orbit-pages .project-paper-section > h2 { max-width: 22ch; }
@@ -132,7 +134,7 @@ body[data-page].orbit-pages .renata-back-to-top { border-radius: 50%; background
   .orbit-page-hero-grid { min-height: 0; padding-block: 40px 100px; gap: 10px; }
   .orbit-page-breadcrumb { margin-bottom: 25px; }
   body[data-page].orbit-pages .orbit-page-hero h1 { font-size: clamp(2.6rem, 5.5vw, 4rem); }
-  body[data-page].orbit-pages .project-paper-layout { grid-template-columns: 210px minmax(0, 1fr); gap: 24px; }
+  body[data-page].orbit-pages .project-paper-layout { grid-template-columns: minmax(0, 1fr) 210px; gap: 24px; }
   .orbit-next a { gap: 16px; padding: 24px; }
 }
 @media (max-width: 720px) {
@@ -147,6 +149,7 @@ body[data-page].orbit-pages .renata-back-to-top { border-radius: 50%; background
   .orbit-page-hero--record .orbit-scene-caption { justify-content: center; }
   .orbit-chapter-nav { height: 56px; }
   body[data-page].orbit-pages .project-paper-layout { display: flex; flex-direction: column; }
+  /* Stacked layouts lift the outline above the article, as Model does. */
   body[data-page].orbit-pages .project-paper-sidebar { position: static; width: 100%; order: -1; }
   body[data-page].orbit-pages .project-paper-sidebar-inner { max-height: 260px; }
   body[data-page].orbit-pages .experiment-route-block { padding: 20px 16px; gap: 14px; grid-template-columns: 40px minmax(0, 1fr); }
