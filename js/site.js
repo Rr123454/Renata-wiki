@@ -7,8 +7,9 @@
   document.title = `${orbitalHome ? "Orbital Home" : stripHtml(pageData.title)} | iGEM Renata`;
 
   renderHeader();
-  initNavigation();
+  window.RenataNavigation.init(document.querySelector(".renata-nav"));
   renderMain();
+  if (pageKey !== "home") window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
   initProjectSidebar();
   renderFooter();
   initEffects();
@@ -34,8 +35,8 @@
           </div>
         </a>
 
-        <nav class="tabs-row">
-          ${data.nav.map(renderNavItem).join("")}
+        <nav class="renata-nav" aria-label="Main navigation">
+          ${window.RenataNavigation.render(data.nav, { pageKey, group: pageData.group, orbit: orbitalHome })}
         </nav>
       </div>
       ${pageKey === "home" ? `
@@ -47,204 +48,6 @@
       ` : ""}
     `;
   }
-
-  function renderNavItem(item) {
-    const isMainActive = navItemIsActive(item);
-
-    if (!item.children) {
-      return `
-        <a href="${item.href}" class="tab-link magnetic ${isMainActive ? "active" : ""}" data-magnetic>
-          ${item.label}
-        </a>
-      `;
-    }
-
-  return `
-    <div class="nav-item click-menu ${item.menuOnly ? "menu-only" : ""}">
-        ${item.menuOnly ? `
-          <button type="button" class="tab-link dropdown-toggle nav-menu-button magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
-            ${item.label}
-          </button>
-        ` : `
-          <a href="${item.href}" class="tab-link dropdown-toggle nav-dropdown-link magnetic ${isMainActive ? "active" : ""}" data-magnetic aria-haspopup="true" aria-expanded="false">
-            ${item.label}
-          </a>
-        `}
-
-        <div class="dropdown-menu">
-          ${item.children.map(renderDropdownChild).join("")}
-        </div>
-      </div>
-    `;
-  }
-
-function initNavigation() {
-  const menuButtons = [...document.querySelectorAll(".nav-menu-button")];
-  const dropdownLinks = [...document.querySelectorAll(".nav-dropdown-link")];
-  const submenuLinks = [...document.querySelectorAll(".submenu-nav-link")];
-  const tabsRow = document.querySelector(".tabs-row");
-  const topLevelTriggers = [
-    ...document.querySelectorAll(
-      ".tabs-row > .tab-link, .tabs-row > .nav-item > .tab-link"
-    ),
-  ];
-  const viewportBuffer = 12;
-
-  function positionDropdown(item) {
-    if (!item) return;
-    const menu = item.querySelector(":scope > .dropdown-menu");
-    if (!menu) return;
-
-    item.classList.remove("dropdown-align-left");
-    const itemRect = item.getBoundingClientRect();
-    const menuWidth = menu.offsetWidth;
-    const wouldOverflowRight = itemRect.left + menuWidth > window.innerWidth - viewportBuffer;
-    const fitsOnLeft = itemRect.right - menuWidth >= viewportBuffer;
-    item.classList.toggle("dropdown-align-left", wouldOverflowRight && fitsOnLeft);
-  }
-
-  function positionSubmenu(item) {
-    if (!item) return;
-    const menu = item.querySelector(":scope > .submenu-menu");
-    const arrow = item.querySelector(":scope > .submenu-trigger .submenu-arrow");
-    if (!menu) return;
-
-    item.classList.remove("submenu-align-left");
-
-    if (window.matchMedia("(max-width: 760px)").matches) {
-      if (arrow) arrow.textContent = "›";
-      return;
-    }
-
-    const itemRect = item.getBoundingClientRect();
-    const menuWidth = menu.offsetWidth;
-    const submenuGap = 9;
-    const wouldOverflowRight =
-      itemRect.right + submenuGap + menuWidth > window.innerWidth - viewportBuffer;
-    const fitsOnLeft = itemRect.left - submenuGap - menuWidth >= viewportBuffer;
-    const shouldOpenLeft = wouldOverflowRight && fitsOnLeft;
-
-    item.classList.toggle("submenu-align-left", shouldOpenLeft);
-    if (arrow) arrow.textContent = shouldOpenLeft ? "‹" : "›";
-  }
-
-  function positionAllMenus() {
-    document.querySelectorAll(".nav-item").forEach(positionDropdown);
-    document.querySelectorAll(".submenu-item").forEach(positionSubmenu);
-  }
-
-  function setMenuState(item, isOpen) {
-    if (!item) return;
-    if (isOpen) positionDropdown(item);
-    item.classList.toggle("dropdown-open", isOpen);
-    item.querySelector(":scope > .tab-link")?.setAttribute("aria-expanded", String(isOpen));
-  }
-
-  function setSubmenuState(item, isOpen) {
-    if (!item) return;
-    if (isOpen) positionSubmenu(item);
-    item.classList.toggle("submenu-open", isOpen);
-    item.querySelector(":scope > .submenu-trigger")?.setAttribute("aria-expanded", String(isOpen));
-  }
-
-  function closeSubmenus(except = null) {
-    document.querySelectorAll(".submenu-item.submenu-open").forEach((item) => {
-      if (item === except) return;
-      setSubmenuState(item, false);
-    });
-  }
-
-  function closeMenus(except = null) {
-    document.querySelectorAll(".nav-item.dropdown-open").forEach((item) => {
-      if (item === except) return;
-      setMenuState(item, false);
-    });
-
-    if (!except) closeSubmenus();
-  }
-
-  function clearNavigationFocus(except = null) {
-    const focused = document.activeElement;
-    if (!(focused instanceof HTMLElement) || !tabsRow?.contains(focused) || focused === except) return;
-    focused.blur();
-  }
-
-  menuButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const item = button.closest(".nav-item");
-      closeMenus(item);
-      closeSubmenus();
-      setMenuState(item, true);
-    });
-
-  });
-
-  dropdownLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const item = link.closest(".nav-item");
-      event.preventDefault();
-      event.stopPropagation();
-
-      closeMenus(item);
-      closeSubmenus();
-      setMenuState(item, true);
-    });
-
-  });
-
-  submenuLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const item = link.closest(".submenu-item");
-      event.preventDefault();
-      event.stopPropagation();
-
-      closeSubmenus(item);
-      setSubmenuState(item, true);
-    });
-
-    link.addEventListener("mouseenter", () => {
-      tabsRow?.classList.remove("nav-hover-suppressed");
-      clearNavigationFocus(link);
-      closeSubmenus(link.closest(".submenu-item"));
-      positionSubmenu(link.closest(".submenu-item"));
-    });
-  });
-
-  topLevelTriggers.forEach((trigger) => {
-    trigger.addEventListener("mouseenter", () => {
-      tabsRow?.classList.remove("nav-hover-suppressed");
-      clearNavigationFocus(trigger);
-      closeMenus(trigger.closest(".nav-item"));
-      closeSubmenus();
-      positionDropdown(trigger.closest(".nav-item"));
-    });
-  });
-
-  let resizeFrame = null;
-  window.addEventListener("resize", () => {
-    if (resizeFrame) cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(positionAllMenus);
-  });
-  requestAnimationFrame(positionAllMenus);
-
-  window.addEventListener("scroll", () => {
-    tabsRow?.classList.add("nav-hover-suppressed");
-    clearNavigationFocus();
-    closeMenus();
-  }, { passive: true });
-
-  tabsRow?.addEventListener("focusin", () => {
-    tabsRow.classList.remove("nav-hover-suppressed");
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      clearNavigationFocus();
-      closeMenus();
-    }
-  });
-}
 
   function initProjectSidebar() {
     const tabs = [...document.querySelectorAll(".project-sidebar-tab")];
@@ -276,35 +79,6 @@ function initNavigation() {
         nextTab.focus();
       });
     });
-  }
-
-  function navItemIsActive(item) {
-    if (pageData.group === item.key || pageKey === item.key) return true;
-    return Boolean(item.children?.some(navItemIsActive));
-  }
-
-  function renderDropdownChild(child) {
-    const isActive = navItemIsActive(child);
-
-    if (!child.children) {
-      return `
-        <a href="${child.href}" class="${isActive ? "sub-active" : ""}">
-          ${child.label}
-        </a>
-      `;
-    }
-
-    return `
-      <div class="submenu-item">
-        <a href="${child.href}" class="submenu-trigger submenu-nav-link ${isActive ? "sub-active" : ""}" aria-haspopup="true" aria-expanded="false">
-          <span><strong>${child.label}</strong>${child.description ? `<small>${child.description}</small>` : ""}</span>
-          <span class="submenu-arrow" aria-hidden="true">›</span>
-        </a>
-        <div class="submenu-menu">
-          ${child.children.map(renderDropdownChild).join("")}
-        </div>
-      </div>
-    `;
   }
 
   function renderMain() {

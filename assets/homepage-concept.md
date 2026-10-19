@@ -1,37 +1,36 @@
 # Into orbit — alternate homepage
 
-Open `home-orbit.html`, choose **02 Into orbit** on the original homepage, or use the **Compare Renata — Into orbit** VS Code launch configuration. The alternate page links back to Home 01 in its header and footer.
+Open `home-orbit.html`, choose **02 Into orbit** on the original homepage, or use **Compare Renata — Into orbit** in VS Code. Home 01 remains available for comparison.
 
-## Visual reference
+## Current sequence
 
-The current design follows the supplied **Screen Recording 2026-10-18 at 11.28.21 AM.mov**: a deep-blue starfield, Sulflux wordmark, blue-and-yellow outlined RENATA title, red-capped illustrated bottle, blue spacecraft, warm peach body scenes, and a bottom chapter tracker with replay.
+1. **Look closer:** Renata exits to the right while the camera zooms into the supplied SulFlux bottle. PCS context enters from the left. The spacecraft begins as a blueprint aligned with the bottle label.
+2. **Form and launch:** details progressively appear inside the outline. The same spacecraft remains registered to the bottle until it lifts away. The bottle then fades into space.
+3. **Direct flight:** the ship follows a continuous curve through space to the gallbladder illustration. This replaces the earlier stomach–intestine–portal route on Home 02.
+4. **The story:** illustrated sections explain the gallbladder, symptoms after removal, human SULT2A1, LCA/DCA, native BtSULT, and Renata’s proposed engineered SulFlux system. Text enters from alternating sides. Before/after buttons change the gallbladder schematic; a slider explores the proposed enzyme fit.
+5. **Continue exploring:** project, laboratory, and team links lead into the matching illustrated chapter pages.
 
-The initial frame and frames at approximately 2.2, 4.4, 6.6, and 8.5 seconds were inspected. Artwork is newly authored SVG inspired by those frames, rather than extracted screenshots. The reference recording is not a runtime dependency.
+The flight is a visual metaphor, not a biological delivery route. The homepage uses the current research status: SulFlux binding, conversion, delivery, and benefit remain proposed or unconfirmed. The unsupported “60 million” estimate is omitted. Background sources are linked in the page’s research notes.
 
-## Sequence
+## Motion and accessibility
 
-1. **Launch:** the Sulflux bottle sits in front of the starfield. Its small emblem uses the same spacecraft artwork as the flight. Scrolling moves the bottle and camera together; the emblem lifts away along a curved path, grows, turns downward, and ignites its engines before the bottle fades. The extended opening gives this transition room to unfold.
-2. **Stomach:** the craft enters a coral-and-gold schematic world.
-3. **Small intestine:** large looping shapes continue the visual journey.
-4. **Portal circulation:** vessel branches connect the next scene.
-5. **Liver:** the flight settles over the final illustration, with a link to the project research.
+Native scrolling drives a damped camera; scrolling backward retraces the flight. Motion off, reduced-motion preferences, short viewports, and JavaScript-disabled browsers retain the complete static story. The animation frame loop sleeps when settled and stops in hidden tabs. Chapter links and Skip the launch bypass the introduction.
 
-The chapter dots are real section links. Organ text slides in from alternating sides, with staggered headings, paragraphs, and labels. The intestine chapter places its text on the right on desktop. Organ illustrations, background particles, and microbes move at different speeds for subtle depth. The ship banks along a continuous curved route, and its engine trail reacts to scroll speed.
+Every page has a short, skippable loader with real image completion, a JavaScript timeout, and an independent CSS fallback. The team deck retains its original interaction and profile dialogs, with slower curved flights and no snapping during small scrolls.
 
-A damped animation clock softens trackpad and mouse-wheel steps without changing native page scrolling. The route retraces when scrolling backward. Pause freezes the moving artwork and keeps all chapter text readable; Replay resumes motion and returns to the opening. Reduced-motion settings, short screens, and JavaScript-disabled browsers show the complete static story with a spacecraft in each world. The animation loop sleeps when settled and stops when the tab is hidden.
+## Files
 
-## Source and artwork
+- `home-orbit.html`: static story, inline vector compositions, citations, and controls.
+- `css/mission-home.css` and `js/mission-home.js`: current layout, bottle registration, direct flight, narrative reveals, and interactions.
+- `js/mission-art.js`: source functions for the inline SVG compositions. After editing a composition, replace its corresponding markup in the static page; the mission tests verify the bottle and ship remain synchronized.
+- `assets/story/`: unchanged copies of the five supplied PNGs. SVG clipping frames the bottle and rocket without editing their source pixels.
+- `css/orbit-pages.css` and `js/orbit-pages.js`: shared illustrated chapter heroes, orbital scenes, reading progress, and content reveals.
+- `css/loading-screen.css` and `js/loading-screen.js`: shared loading screen.
+- `css/navigation.css` and `js/navigation.js`: shared illustrated dropdown navigation.
+- `js/team-deal.js`: the team’s dedicated card-dealing controller.
 
-- `home-orbit.html`: static, accessible page content, navigation, chapter links, and research context.
-- `css/orbit-home.css`: page-scoped illustration layout, responsive styles, and colors.
-- `js/orbit-home.js`: scroll-driven scene state, chapter tracking, pause/replay, and motion preferences.
-- `assets/orbit/`: editable bottle, spacecraft, stomach, intestine, vessel, and liver SVGs. Each includes a title and description. The bottle's emblem is composited in the HTML SVG so its live coordinate system can match the flying spacecraft exactly.
-- `assets/sulflux.svg`: the earlier cleaned bird mascot remains available as a separate asset.
+`css/orbit-home.css` still supplies the alternate homepage’s header/footer foundation. The earlier `js/orbit-home.js` flight model and `assets/orbit/` illustrations are retained but no longer drive Home 02. Chapter heroes reuse the small vector spacecraft.
 
-This is a visual metaphor, not a validated anatomical diagram or a demonstrated delivery mechanism. The final section distinguishes Renata’s proposed LCA-sulfation design from established results; the reference’s health-benefit tagline and placeholder headings are replaced with project-appropriate copy.
+## Verification
 
-The original homepage remains at `index.html`. The alternate page uses its own static header and footer, so its visual changes do not alter the original homepage or other wiki pages.
-
-## Local verification
-
-`tests/orbit-home.test.js` checks the bottle/emblem alignment at multiple sizes, continuous launch and chapter motion, reversible scrolling, staggered text entrances, frame-rate-independent damping, and the actual controller's pause, resume, replay, reduced-motion, and hidden-tab behavior. The controller checks use a local DOM/frame-clock harness and require no browser, service, or network access.
+Run the Node test files under `tests/`. `mission-home.test.js` checks the live homepage’s composition, continuous and reversible flight at desktop/phone sizes, real controller behavior, and static fallbacks. `orbit-pages.test.js`, `loading-screen.test.js`, `navigation.test.js`, and `team-deal.test.js` cover the shared interactions. These use local DOM/frame-clock fixtures, require no service or network, and do not replace a browser visual review.

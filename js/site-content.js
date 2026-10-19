@@ -29,24 +29,49 @@ window.SITE_DATA = {
 
   nav: [
     { key: "home", label: "Home", href: "index.html" },
-    { key: "team", label: "Our Team", href: "team.html" },
+    {
+      key: "team", label: "Our Team", icon: "Phoenix",
+      heading: "The people behind Renata.",
+      description: "Meet the students, mentors, and partners who bring our ideas to life.",
+      children: [
+        { key: "team", label: "Meet the team", href: "team.html", icon: "Phoenix", description: "Our people, roles, and stories." },
+        { key: "mentors", label: "PIs & mentors", href: "team.html#mentors", icon: "DNA", description: "The guidance behind the science." },
+        { key: "partners", label: "Sponsors & partners", href: "index.html#sponsors-partners", icon: "Eiffel_tower", description: "The community supporting our work." }
+      ]
+    },
     {
       key: "project",
       label: "Our Project",
       href: "project-description.html",
+      icon: "Stomach",
+      heading: "Small biology. Big questions.",
+      description: "Start with the problem, then explore the thinking behind Sulflux.",
       children: [
-        { key: "project-description", label: "Project Description", href: "project-description.html" },
-        { key: "engineering", label: "Engineering", href: "engineering.html" }
+        { key: "project-description", label: "Project description", href: "project-description.html", icon: "Stomach", description: "The context, the question, and our proposed approach." },
+        { key: "engineering", label: "Engineering", href: "engineering.html", icon: "DNA", description: "Follow the design–build–test–learn process." }
       ]
     },
-    { key: "lab-work", label: "Lab Work", href: "experiments.html" },
+    {
+      key: "lab-work", label: "Lab Work", icon: "DNA",
+      heading: "Follow the science.",
+      description: "Explore our experimental plans, protocols, and notebook records.",
+      children: [
+        { key: "experiments", label: "Inside the lab", href: "experiments.html", icon: "DNA", description: "An overview of the experimental workflow." },
+        { key: "experiment-assembly", label: "Assembly & verification", href: "experiment-assembly.html", icon: "DNA", description: "Construct design, screening, and verification." },
+        { key: "experiment-reporter", label: "Reporter characterization", href: "experiment-reporter.html", icon: "Mic", description: "The planned fluorescence readouts." },
+        { key: "experiment-growth-response", label: "Bile-acid growth response", href: "experiment-growth-response.html", icon: "Plant", description: "Growth and fluorescence across a concentration series." }
+      ]
+    },
     {
       key: "engagement",
       label: "Engagement",
       href: "human-practices.html",
+      icon: "Mic",
+      heading: "Science grows through connection.",
+      description: "Listen, share, and explore how people shape our project.",
       children: [
-        { key: "human-practices", label: "Human Practices", href: "human-practices.html" },
-        { key: "education", label: "Education", href: "education.html" }
+        { key: "human-practices", label: "Human practices", href: "human-practices.html", icon: "Mic", description: "Stakeholder perspectives and project decisions." },
+        { key: "education", label: "Education", href: "education.html", icon: "Plant", description: "Learning, outreach, and shared curiosity." }
       ]
     }
   ],

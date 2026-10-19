@@ -5,15 +5,16 @@
   else api.init();
 })(typeof window !== "undefined" ? window : this, function () {
   "use strict";
-  const DEAL_TIMING = Object.freeze({ flight: 360, stagger: 50, hand: 140, scrollSettle: 90 });
+  const DEAL_TIMING = Object.freeze({ flight: 850, stagger: 120, hand: 260, scrollSettle: 90 });
   function dealFrames(origin, target, index) {
     const x = origin.left + origin.width / 2 - target.left - target.width / 2;
     const y = origin.top + origin.height / 2 - target.top - target.height / 2;
     const tilt = x > 0 ? 12 : -12;
     return [
       { transform: `translate(${x}px, ${y}px) rotate(${tilt + index % 3 * 3}deg) scale(.18)`, opacity: 0, offset: 0 },
-      { transform: `translate(${x * .78}px, ${y * .68}px) rotate(${tilt}deg) scale(.42)`, opacity: 1, offset: .25 },
-      { transform: "translate(0, -6px) rotate(-1deg) scale(1.01)", opacity: 1, offset: .85 },
+      { transform: `translate(${x * .82}px, ${y * .62 - 24}px) rotate(${tilt * .7}deg) scale(.46)`, opacity: 1, offset: .25 },
+      { transform: `translate(${x * .26}px, ${y * .12 - 14}px) rotate(${tilt * .2}deg) scale(.88)`, opacity: 1, offset: .65 },
+      { transform: "translate(0, -2px) rotate(-.3deg) scale(1)", opacity: 1, offset: .92 },
       { transform: "translate(0, 0) rotate(0deg) scale(1)", opacity: 1, offset: 1 }
     ];
   }
@@ -32,8 +33,15 @@
       return bounds.bottom > top && bounds.top < view.innerHeight - 24
         && bounds.right > 0 && bounds.left < view.innerWidth;
     }
-    function settleActive(deferOffscreen = false) {
+    function settleActive(deferOffscreen = false, keepVisible = false) {
       [...active.keys()].forEach(card => {
+        // Visible flights keep gliding toward their own grid position while
+        // the page moves. Cancel only cards whose resting position left view.
+        const parent = card.offsetParent;
+        const bounds = parent ? parent.getBoundingClientRect() : null;
+        const target = bounds ? { top: bounds.top + card.offsetTop + parent.clientTop, bottom: bounds.top + card.offsetTop + parent.clientTop + card.offsetHeight,
+          left: bounds.left + card.offsetLeft + parent.clientLeft, right: bounds.left + card.offsetLeft + parent.clientLeft + card.offsetWidth } : card.getBoundingClientRect();
+        if (keepVisible && isVisible(target)) return;
         // Cancel the transform before measuring its actual grid position.
         settle(card);
         if (deferOffscreen && !isVisible(card.getBoundingClientRect())) card.classList.add("is-waiting");
@@ -94,9 +102,8 @@
     }
     function onScroll() {
       if (!enabled) return;
-      // Land in-flight cards before their measured deck/target positions move.
-      // Resume from fresh layout once the wheel/touch/anchor movement settles.
-      stopTimer(); settleActive(true);
+      // Keep visible flights smooth; queue off-screen cards for their next visit.
+      stopTimer(); settleActive(true, true);
       scheduleDeal(DEAL_TIMING.scrollSettle);
     }
     function onVisibilityChange() {

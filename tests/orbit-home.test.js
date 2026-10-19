@@ -1,8 +1,8 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const fs = require("node:fs");
-const path = require("node:path");
+// Retained unit coverage for the earlier flight model. The current homepage's
+// PNG composition and live controller are covered by mission-home.test.js.
 const { flightState, bottleDock, routePose, revealState, damp, initFlight } = require("../js/orbit-home.js");
 const stops = [0, 1800, 2880, 3960, 5040];
 const near = (a, b, tolerance = 1e-8) => assert.ok(Math.abs(a - b) < tolerance, `${a} ≈ ${b}`);
@@ -13,11 +13,7 @@ function rotate(point, center, degrees) {
   return { x: center.x + x * Math.cos(a) - y * Math.sin(a), y: center.y + x * Math.sin(a) + y * Math.cos(a) };
 }
 
-test("the flying spacecraft exactly occupies the bottle emblem until detachment", () => {
-  const html = fs.readFileSync(path.join(__dirname, "../home-orbit.html"), "utf8");
-  assert.match(html, /rotate\(-7 150 275\)/);
-  assert.match(html, /translate\(196 329\) rotate\(-90\)/);
-  assert.match(html, /spacecraft.svg" x="-24" y="-35.2" width="48" height="70.4"/);
+test("the earlier flight model retains exact bottle-emblem registration", () => {
   for (const [width, height, bottleWidth, craftWidth] of [[1440, 1000, 330, 259.2], [390, 844, 150, 125], [768, 1024, 200, 145]]) {
     const geometry = { width, height, bottleWidth, craftWidth, stageHeight: height, stageTop: 0 };
     for (const scroll of [0, 125, 300, 350]) {

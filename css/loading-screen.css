@@ -1,0 +1,14 @@
+.site-loader { position: fixed; inset: 0; z-index: 10000; display: grid; place-content: center; justify-items: center; gap: 18px; padding: 28px; color: #fff1bc; background: #173e84; font-family: "Trebuchet MS", Arial, sans-serif; text-align: center; transition: opacity .45s, visibility .45s; animation: loader-fail-open 0s 5s forwards; }
+.site-loader.is-dismissed { opacity: 0; visibility: hidden; pointer-events: none; }
+.site-loader-art { width: 115px; height: 115px; position: relative; border: 1px dashed #fff1bc70; border-radius: 50%; }
+.site-loader-art img { width: 62px; height: 62px; position: absolute; left: 26px; top: 26px; image-rendering: pixelated; }
+.site-loader-art::after { content: ""; position: absolute; inset: -6px; border: 3px solid transparent; border-top-color: #ffcf78; border-right-color: #ef9a7d; border-radius: 50%; animation: loader-orbit 1.5s linear infinite; }
+.site-loader > strong { font-size: 2.6rem; font-weight: 800; letter-spacing: -.06em; }
+.site-loader > p { font-size: .8rem; }
+.site-loader-track { width: 200px; height: 4px; border-radius: 5px; background: #fff1bc30; overflow: hidden; }
+.site-loader-track > span { display: block; height: 100%; background: #ffcf78; transform: scaleX(0); transform-origin: left; transition: transform .2s; }
+.site-loader button { min-height: 44px; padding: 8px 20px; border: 1px solid #fff1bc65; border-radius: 30px; background: transparent; color: #fff1bc; font: inherit; font-size: .75rem; cursor: pointer; }
+.site-loader button:focus-visible { outline: 3px solid #fff1bc; outline-offset: 4px; }
+@keyframes loader-orbit { to { transform: rotate(360deg); } }
+@keyframes loader-fail-open { to { visibility: hidden; pointer-events: none; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .site-loader, .site-loader-track > span { transition: none; } .site-loader-art::after { animation: none; } }

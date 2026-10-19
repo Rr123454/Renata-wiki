@@ -1,0 +1,85 @@
+/* Renata's illustrated navigation. Deliberately independent of the page theme. */
+.site-header .header-inner { position: relative; }
+.renata-nav { --nav-ink: #24305e; --nav-paper: #fffaf2; --nav-line: #24305e24; margin-left: auto; color: var(--nav-ink); }
+.renata-nav [hidden] { display: none !important; }
+.renata-nav .renata-nav-list { display: flex; align-items: center; gap: clamp(2px, .7vw, 12px); margin: 0; padding: 0; list-style: none; }
+.renata-nav .renata-nav-trigger,
+.renata-nav .renata-nav-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 15px; border: 1px solid transparent; border-radius: 12px; background: transparent; color: inherit; font: inherit; font-size: .88rem; font-weight: 750; line-height: 1.2; white-space: nowrap; cursor: pointer; transition: background .18s, border-color .18s; }
+.renata-nav .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #aebbff38; border-color: var(--nav-line); }
+.renata-nav .renata-nav-trigger.is-active { box-shadow: inset 0 -3px #e85e6d; }
+.renata-nav .renata-nav-chevron { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.renata-nav [aria-expanded="true"] .renata-nav-chevron { transform: translateY(2px) rotate(225deg); }
+.renata-nav .renata-nav-toggle { display: none; }
+.site-header .renata-nav .renata-nav-panel { right: var(--page-gutter, 16px); }
+.renata-nav .renata-nav-panel { position: absolute; z-index: 5000; top: 100%; right: 0; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - 140px); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: 235px minmax(0, 1fr); padding: 9px; border: 1px solid var(--nav-line); border-top: 3px solid #aebbff; border-radius: 0 0 22px 22px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 22px 60px #18265a26; animation: renata-menu-in .2s ease-out both; text-align: left; }
+.renata-nav .renata-nav-intro { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding: 24px 22px; border-radius: 12px; background: #e7eaff; background-image: radial-gradient(#24305e18 .8px, transparent .8px); background-size: 12px 12px; }
+.renata-nav .renata-nav-eyebrow { display: block; color: #536080; font-size: .63rem; font-weight: 800; line-height: 1.5; letter-spacing: .13em; text-transform: uppercase; }
+.renata-nav .renata-nav-icon { flex: none; object-fit: contain; image-rendering: pixelated; }
+.renata-nav .renata-nav-intro > .renata-nav-icon { width: 80px; height: 80px; margin-block: 6px 0; filter: drop-shadow(0 5px 0 #24305e10); }
+.renata-nav .renata-nav-heading { margin: 0; color: var(--nav-ink); font-size: 1.65rem; font-weight: 800; line-height: 1.1; letter-spacing: -.045em; }
+.renata-nav .renata-nav-description { margin: 0; color: #4a5578; font-size: .8rem; line-height: 1.6; }
+.renata-nav .renata-nav-pages { min-width: 0; padding: 17px 13px 12px; }
+.renata-nav .renata-nav-pages > .renata-nav-eyebrow { margin: 0 10px 12px; }
+.renata-nav .renata-nav-pages ul { list-style: none; padding: 0; margin: 0; }
+.renata-nav .renata-nav-pages li + li { margin-top: 5px; }
+.renata-nav .renata-nav-card { display: flex; align-items: center; gap: 15px; min-height: 88px; padding: 13px 11px; border: 1px solid transparent; border-radius: 12px; color: var(--nav-ink); text-decoration: none; transition: background .18s, border-color .18s; }
+.renata-nav .renata-nav-card > .renata-nav-icon { width: 48px; height: 48px; transition: transform .2s; }
+.renata-nav .renata-nav-card:is(:hover, :focus-visible) { background: #edf0ff; border-color: var(--nav-line); }
+.renata-nav .renata-nav-card:is(:hover, :focus-visible) > .renata-nav-icon { transform: translateY(-3px) rotate(-5deg); }
+.renata-nav .renata-nav-card:is([aria-current="page"], .is-section) { background: #fff0d8; border-color: #e8c5a0; }
+.renata-nav .renata-nav-copy { display: grid; gap: 5px; flex: 1; min-width: 0; }
+.renata-nav .renata-nav-copy strong { color: var(--nav-ink); font-size: .92rem; line-height: 1.3; font-weight: 800; }
+.renata-nav .renata-nav-copy small { color: #536080; font-size: .76rem; font-weight: 400; line-height: 1.5; }
+.renata-nav .renata-nav-arrow { flex: none; color: #65729d; font-size: 1.1rem; transition: transform .2s; }
+.renata-nav [aria-current="page"] > .renata-nav-arrow { color: #a84050; font-size: .5rem; }
+.renata-nav .renata-nav-card:hover .renata-nav-arrow { transform: translate(2px, -2px); }
+body[data-page] .renata-nav :is(a, button):focus-visible { outline: 3px solid #24305e; outline-offset: 3px; }
+
+/* The flight homepage shares the menu, with cream controls over its blue sky. */
+.flight-header > .renata-nav { margin: 0; padding-top: 0; color: #fff1bc; }
+.flight-header .renata-nav-trigger { padding-inline: 11px; font-size: .8rem; border-radius: 24px; }
+.flight-header .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #fff1bc17; border-color: #fff1bc70; }
+.flight-header .renata-nav-panel { right: 6vw; }
+body[data-home-variant="orbit"] .renata-nav :is(.renata-nav-trigger, .renata-nav-toggle):focus-visible { outline-color: #fff1bc; }
+
+@keyframes renata-menu-in { from { opacity: 0; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1100px) and (min-width: 981px) {
+  .flight-header { padding-inline: 3vw; gap: 12px; }
+  .flight-header .renata-nav-trigger { padding-inline: 7px; font-size: .75rem; }
+}
+
+@media (max-width: 980px) {
+  .site-header .header-inner { flex-wrap: nowrap; min-height: 72px; }
+  .renata-nav { margin-left: auto; }
+  .renata-nav .renata-nav-toggle { display: inline-flex; border-color: currentColor; min-height: 44px; font-size: .78rem; }
+  .renata-nav .renata-nav-toggle-symbol { font-size: 1.2rem; line-height: 1; transition: transform .2s; }
+  .renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-toggle-symbol { transform: rotate(45deg); }
+  .renata-nav .renata-nav-list { position: absolute; top: 100%; right: 0; width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 150px); overflow-y: auto; overscroll-behavior: contain; display: block; padding: 12px; border: 1px solid var(--nav-line); border-radius: 0 0 18px 18px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 20px 40px #18265a26; }
+  .renata-nav .renata-nav-list > li + li { border-top: 1px solid var(--nav-line); }
+  .site-header .renata-nav-list { right: 12px; }
+  .renata-nav .renata-nav-trigger { display: flex; justify-content: space-between; width: 100%; min-height: 50px; padding: 14px; font-size: .9rem; border-radius: 8px; }
+  .renata-nav .renata-nav-panel { position: static; display: block; width: 100%; max-height: none; overflow: visible; padding: 0; border: 0; border-radius: 0; box-shadow: none; animation: none; }
+  .renata-nav .renata-nav-intro { display: none; }
+  .renata-nav .renata-nav-pages { padding: 10px 0 14px; }
+  .renata-nav .renata-nav-pages > .renata-nav-eyebrow { margin-left: 14px; }
+  .renata-nav .renata-nav-card { min-height: 78px; padding: 10px 12px; gap: 12px; }
+  .renata-nav .renata-nav-card > .renata-nav-icon { width: 42px; height: 42px; }
+  .flight-header { grid-template-columns: 1fr auto; row-gap: 12px; }
+  .flight-header > .renata-nav { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; }
+  .flight-header .renata-nav-toggle { width: 100%; justify-content: space-between; border-color: #fff1bc70; background: #142d64b3; }
+  .flight-header .renata-nav-list { right: 3vw; width: 94vw; max-height: calc(100dvh - 175px); }
+  .flight-header .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #aebbff38; border-color: var(--nav-line); }
+  .flight-header .flight-header-actions { grid-row: 1; grid-column: 2; }
+  body[data-home-variant="orbit"] .renata-nav .renata-nav-trigger:focus-visible { outline-color: #24305e; }
+}
+
+@media (max-width: 420px) {
+  .site-header .brand-text h1 { font-size: 1rem; }
+  .renata-nav .renata-nav-toggle { gap: 6px; padding-inline: 9px; font-size: .72rem; }
+  .renata-nav .renata-nav-copy strong { font-size: .85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .renata-nav *, .renata-nav .renata-nav-panel { animation: none; transition: none; }
+}

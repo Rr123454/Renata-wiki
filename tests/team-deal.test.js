@@ -37,7 +37,7 @@ test("dealing preserves roster order and offers an immediate complete roster", (
   assert.match(js, /if \(reduced.matches \|\| !cards.every/);
   assert.match(js, /data-deal-show/);
   assert.match(js, /window.addEventListener\("scroll", controller.onScroll, \{ passive: true \}\)/);
-  assert.match(read("team.html"), /js\/team-deal.js\?v=20261001-deal4/);
+  assert.match(read("team.html"), /js\/team-deal.js\?v=20261018-deal5/);
 });
 
 // Exercise the real controller with a deterministic clock and scrollable layout.
@@ -105,13 +105,13 @@ function harness(tops = [300, 300, 300, 300, 300]) {
   };
 }
 
-test("a five-card row deals in order in 560ms with 50ms between cards", async () => {
+test("a five-card row glides into place in 1330ms with 120ms between cards", async () => {
   const h = harness(); h.controller.begin();
-  await h.tick(49); assert.deepEqual(h.starts, [0]);
+  await h.tick(119); assert.deepEqual(h.starts, [0]);
   await h.tick(1); assert.deepEqual(h.starts, [0, 1]);
-  await h.tick(510);
+  await h.tick(1210);
   assert.deepEqual(h.starts, [0, 1, 2, 3, 4]);
-  assert.equal(DEAL_TIMING.flight, 360);
+  assert.equal(DEAL_TIMING.flight, 850);
   assert.equal(h.waiting().length, 0); assert.equal(h.dealing().length, 0);
 });
 
@@ -124,27 +124,39 @@ test("a fast jump prioritizes visible cards and defers interrupted and skipped r
   await h.tick(16);
   assert.ok(h.cards.slice(0,4).every(card => card.classList.contains("is-waiting")));
   await h.tick(74); assert.deepEqual(h.starts, [0,4]);
-  h.scrollTo(0); await h.tick(500);
+  h.scrollTo(0); await h.tick(1500);
   assert.deepEqual(h.starts, [0,4,0,1], "returning upward deals the deferred cards");
   assert.ok(h.cards.slice(0,2).every(card => !card.classList.contains("is-waiting")));
   assert.ok(h.cards.slice(2).every(card => card.classList.contains("is-waiting")));
   h.scrollTo(3000); await h.tick(100);
   assert.equal(h.waiting().length, 4, "off-screen cards remain queued");
-  h.scrollTo(0); await h.tick(500);
+  h.scrollTo(0); await h.tick(1500);
   assert.deepEqual(h.starts, [0,4,0,1], "completed cards never replay automatically");
   h.scrollTo(900); await h.tick(90);
   assert.deepEqual(h.starts, [0,4,0,1,2], "a skipped middle row starts when it returns");
   h.controller.showAll();
 });
 
+test("small scrolls preserve a visible card’s glide instead of snapping it into place", async () => {
+  const h = harness([320, 320]);
+  h.controller.begin(); await h.tick(160);
+  const motion = h.cards[0].motions[0];
+  h.scrollTo(20);
+  assert.equal(motion.canceled, false);
+  assert.equal(h.cards[0].classList.contains("is-dealing"), true);
+  await h.tick(1000);
+  assert.equal(h.dealing().length, 0);
+  assert.deepEqual(h.starts, [0, 1]);
+});
+
 test("starting lower in the roster deals visible students before off-screen earlier rows", async () => {
   const h = harness([320,320,1100,1100,2000,2000]);
-  h.scrollTo(1900); h.controller.begin(); await h.tick(500);
+  h.scrollTo(1900); h.controller.begin(); await h.tick(1500);
   assert.deepEqual(h.starts, [4,5]);
   assert.equal(h.waiting().length, 4);
-  h.scrollTo(900); await h.tick(500);
+  h.scrollTo(900); await h.tick(1500);
   assert.deepEqual(h.starts, [4,5,2,3]);
-  h.scrollTo(0); await h.tick(500);
+  h.scrollTo(0); await h.tick(1500);
   assert.deepEqual(h.starts, [4,5,2,3,0,1]);
   assert.equal(h.waiting().length, 0);
 });
@@ -154,7 +166,7 @@ test("keyboard focus reveals its selected card without consuming off-screen card
   h.controller.showCard(h.cards[1]);
   assert.equal(h.cards[1].classList.contains("is-waiting"), false);
   assert.equal(h.waiting().length, 2);
-  await h.tick(500);
+  await h.tick(1500);
   assert.deepEqual(h.starts, [0]);
   assert.equal(h.cards[2].classList.contains("is-waiting"), true);
   h.controller.showAll();
@@ -164,10 +176,10 @@ test("cards outside the viewport horizontally stay queued until layout brings th
   const h = harness([300,300]);
   const bounds = h.cards[1].getBoundingClientRect;
   h.cards[1].getBoundingClientRect = () => ({ ...bounds(), left: 2000, right: 2140 });
-  h.controller.begin(); await h.tick(500);
+  h.controller.begin(); await h.tick(1500);
   assert.deepEqual(h.starts, [0]); assert.equal(h.waiting().length, 1);
   h.cards[1].getBoundingClientRect = bounds;
-  h.controller.onScroll(); await h.tick(500);
+  h.controller.onScroll(); await h.tick(1500);
   assert.deepEqual(h.starts, [0,1]); assert.equal(h.waiting().length, 0);
 });
 
@@ -185,7 +197,7 @@ test("rapid wheel bursts wait for settled layout before starting another flight"
 
 test("cards partly behind the dealer can deal without another intersection callback", async () => {
   const h = harness([100,100,100]); h.controller.begin();
-  await h.tick(500);
+  await h.tick(1500);
   assert.deepEqual(h.starts, [0,1,2]); assert.equal(h.waiting().length, 0);
   h.controller.showAll();
 });
@@ -197,7 +209,7 @@ test("canceling an old replay cannot clear the new flight's state", async () => 
   assert.equal(old.canceled, true);
   assert.equal(h.dealing().length, 1);
   assert.equal(h.cards[0].motions[1].canceled, false);
-  await h.tick(360); assert.equal(h.dealing().length, 0);
+  await h.tick(850); assert.equal(h.dealing().length, 0);
 });
 
 test("Show all, reduced motion and unavailable animation always expose the roster", async () => {

@@ -34,13 +34,15 @@ test("every new rule excludes Home", () => {
   assert.ok(css.includes("--deep-ink: #18265a;"), "Home's original Deep Ink is retained");
 });
 
-test("all entry points load the refreshed theme last", () => {
+test("entry points retain the base theme and load their final page theme last", () => {
   const files = fs.readdirSync(root).filter(file => file.endsWith(".html"));
   assert.ok(files.length >= 21);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     const sheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map(m => m[1]);
-    assert.equal(sheets.at(-1), "css/cosmic-theme.css?v=20261001-footercream2", file);
+    assert.ok(sheets.includes("css/cosmic-theme.css?v=20261001-footercream2"), file);
+    const last = file === "index.html" ? "css/cosmic-theme.css?v=20261001-footercream2" : file === "home-orbit.html" ? "css/mission-home.css?v=20261018-story1" : "css/orbit-pages.css?v=20261018-chapters1";
+    assert.equal(sheets.at(-1), last, file);
   }
 });
 
