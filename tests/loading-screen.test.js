@@ -5,6 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const source = fs.readFileSync(path.join(__dirname, "../js/loading-screen.js"), "utf8");
+const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "wet-lab-notebook.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
 
 function fixture({ reduced = false, marked = ["bottle.png rocket.png"], fallback = [] } = {}) {
   let now = 0, count = 0;
@@ -88,7 +89,7 @@ test("reduced motion has no artificial delay and chapter artwork is deduplicated
 
 test("every homepage and chapter includes the loader with an independent CSS fail-open", () => {
   const root = path.join(__dirname, "..");
-  for (const name of fs.readdirSync(root).filter(file => file.endsWith(".html"))) {
+  for (const name of fs.readdirSync(root).filter(file => file.endsWith(".html") && !redirects.includes(file))) {
     const html = fs.readFileSync(path.join(root, name), "utf8");
     assert.match(html, /css\/loading-screen\.css/, name);
     assert.match(html, /<body[^>]*>\s*<script src="js\/loading-screen\.js/, name);
@@ -96,4 +97,16 @@ test("every homepage and chapter includes the loader with an independent CSS fai
   const css = fs.readFileSync(path.join(root, "css/loading-screen.css"), "utf8");
   assert.match(css, /animation: loader-fail-open 0s 5s forwards/);
   assert.match(css, /@keyframes loader-fail-open \{ to \{ visibility: hidden; pointer-events: none; opacity: 0/);
+});
+
+test("compatibility redirects stay lightweight and offer working fallback links", () => {
+  for (const file of redirects) {
+    const html = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
+    assert.match(html, /window\.location\.replace\(destination\.href\)/, file);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+    assert.ok(canonical, file);
+    assert.ok(fs.existsSync(path.join(__dirname, "..", canonical[1].split("#")[0])), file);
+    assert.ok(html.includes(`<a href="${canonical[1]}">`), file);
+    assert.doesNotMatch(html, /loading-screen\.(?:js|css)/, file);
+  }
 });

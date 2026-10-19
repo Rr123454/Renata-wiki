@@ -10,6 +10,8 @@ These are unchanged copies of the team’s supplied PNG files:
 | `sulflux-bottle.png` | `sulflux bottle.png` |
 | `btsult.png` | `Btsult.png` |
 
-The homepage uses SVG view boxes and clip paths to frame the bottle and spacecraft. The rocket blueprint uses the same silhouette as the detailed artwork, so the ship can develop on the bottle before departure. No image-generation service or external image host is needed at runtime.
+`rocket-cutout.png` is the transparent cutout selected in chat on 18 October 2026. It is an unchanged copy of that generated output; the source `rocket-left.png` and `rocket-right.png` files remain available. The cutout is used for the homepage flight, return link, and chapter orbits.
 
-The other story illustrations are editable SVG compositions authored in `js/mission-art.js` and included directly in `home-orbit.html`. The SulFlux fit illustration represents a proposed design, not a confirmed experimental result.
+The homepage uses an SVG clip path for the bottle and the cutout's alpha channel for its orange spacecraft emblem. Both the emblem and detailed ship share the same image geometry, so the ship can develop on the bottle before departure. No image-generation service or external image host is needed at runtime.
+
+The other story illustrations are editable SVG compositions authored in `js/mission-art.js` and included directly in `index.html`, the sole homepage. The SulFlux fit illustration represents a proposed design, not a confirmed experimental result.

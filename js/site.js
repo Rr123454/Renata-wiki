@@ -1,18 +1,54 @@
 (function () {
   const data = window.SITE_DATA;
-  const pageKey = document.body.dataset.page || "home";
-  const pageData = data.pages[pageKey] || data.pages.home;
+  const pageKey = document.body.dataset.page;
+  const pageData = data.pages[pageKey];
+
+  // Unknown page templates must return to the one canonical, static homepage.
+  if (!pageData) {
+    window.location.replace("index.html");
+    return;
+  }
 
   const orbitalHome = pageKey === "home" && document.body.dataset.homeVariant === "orbit";
-  document.title = `${orbitalHome ? "Orbital Home" : stripHtml(pageData.title)} | iGEM Renata`;
+  document.title = `${orbitalHome ? "SulFlux" : stripHtml(pageData.title)} | iGEM Renata`;
 
   renderHeader();
   window.RenataNavigation.init(document.querySelector(".renata-nav"));
   renderMain();
-  if (pageKey !== "home") window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
+  if (!["home", "project-description", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
   initProjectSidebar();
   renderFooter();
   initEffects();
+  initProjectAnchor();
+
+  function initProjectAnchor() {
+    if (!["project-description", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) return;
+
+    // The article is rendered by JS and the story is prepended by a later script.
+    // Resolve deep links once that initial layout exists, including legacy redirects.
+    const scrollToAnchor = () => {
+      let id;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); }
+      catch { return; }
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (target) {
+        let disclosure = target.closest?.("details");
+        while (disclosure) {
+          disclosure.open = true;
+          disclosure = disclosure.parentElement?.closest("details");
+        }
+        target.scrollIntoView({ block: "start", behavior: "instant" });
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(scrollToAnchor), { once: true });
+    } else {
+      requestAnimationFrame(scrollToAnchor);
+    }
+    window.addEventListener("hashchange", () => requestAnimationFrame(scrollToAnchor));
+  }
 
   function stripHtml(html) {
     const div = document.createElement("div");
@@ -24,29 +60,7 @@
     const header = document.getElementById("siteHeader");
     if (!header) return;
 
-    header.innerHTML = `
-      <div class="container header-inner">
-        <a href="index.html" class="brand magnetic" data-magnetic>
-          <div class="brand-logo-wrap">
-            <img src="assets/logo.png" alt="iGEM Renata logo" class="brand-logo" />
-          </div>
-          <div class="brand-text">
-            <h1>${data.brand.title}</h1>
-          </div>
-        </a>
-
-        <nav class="renata-nav" aria-label="Main navigation">
-          ${window.RenataNavigation.render(data.nav, { pageKey, group: pageData.group, orbit: orbitalHome })}
-        </nav>
-      </div>
-      ${pageKey === "home" ? `
-        <nav class="home-compare" aria-label="Compare homepage designs">
-          <span>Explore the homepages</span>
-          <a href="index.html" ${orbitalHome ? "" : 'aria-current="page"'}>01 <span>Inside the body</span></a>
-          <a href="home-orbit.html" ${orbitalHome ? 'aria-current="page"' : ""}>02 <span>Into orbit</span></a>
-        </nav>
-      ` : ""}
-    `;
+    header.innerHTML = window.RenataNavigation.header(data, { pageKey, group: pageData.group });
   }
 
   function initProjectSidebar() {
@@ -83,14 +97,14 @@
 
   function renderMain() {
     const main = document.getElementById("siteMain");
-    if (!main || main.dataset.staticContent === "true") return;
+    if (!main || pageKey === "home" || main.dataset.staticContent === "true") return;
 
-    if (pageKey === "home") {
-      main.innerHTML = renderHomePage();
-    } else if (pageKey === "team") {
+    if (pageKey === "team") {
       main.innerHTML = renderTeamPage();
     } else if (pageKey === "project-description") {
-      main.innerHTML = renderProjectDescriptionPage();
+      main.innerHTML = window.RenataProject.render(pageData);
+    } else if (["wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) {
+      main.innerHTML = window.RenataLab.render(pageKey);
     } else if (pageKey === "human-practices") {
       main.innerHTML = renderHumanPracticesPage();
     } else if (pageKey === "experiments") {
@@ -106,21 +120,6 @@
 
   function renderTeamPage() {
     return `
-      <section class="page-section team-photo-section">
-        <div class="container">
-          <h1 class="team-photo-kicker">Meet Our Team</h1>
-          <div class="team-photo-placeholder" role="img" aria-label="Placeholder for ${pageData.teamPhoto.imageLabel}">
-            <span class="team-photo-mark" aria-hidden="true">+</span>
-            <strong>${pageData.teamPhoto.imageLabel}</strong>
-            <small>Panoramic image space</small>
-          </div>
-          <div class="section-intro team-photo-caption">
-            <h2 class="section-title">${pageData.teamPhoto.title}</h2>
-            <p class="section-lead">${pageData.teamPhoto.text}</p>
-          </div>
-        </div>
-      </section>
-
       <div class="team-roster">
         ${pageData.teamGroups.map(renderTeamGroup).join("")}
       </div>
@@ -188,11 +187,6 @@
         <button class="member-profile-open" type="button" data-member-profile="${escape(group.key)}:${index}" aria-haspopup="dialog" aria-label="View profile: ${memberName}"><span>View profile <span aria-hidden="true">↗</span></span></button>
       </article>
     `;
-  }
-
-  function renderHomePage() {
-    // The video and scroll story now introduce the Project Description page.
-    return "";
   }
 
   function renderExperimentsPage() {
@@ -365,205 +359,6 @@
   }
 
 
-  function renderProjectDescriptionPage() {
-    const rationale = pageData.details?.[0] || {};
-
-    return `
-      <section class="project-paper-page" id="project-description">
-        <div class="container project-paper-layout">
-          <article class="project-paper" aria-labelledby="project-paper-title">
-            <header class="project-paper-header">
-              <p class="project-paper-type">Project Description</p>
-              <h1 id="project-paper-title">${pageData.title}</h1>
-            </header>
-
-            <section class="project-paper-section" id="abstract">
-              <p class="project-paper-section-number">Summary</p>
-              <h2>Abstract</h2>
-              <p>
-                Renata proposes a synthetic biology route for sulfating lithocholic acid (LCA).
-                The design combines a BtSULT sulfotransferase cassette with a second cassette
-                intended to supply PAPS, the required sulfate donor. The current project description
-                establishes the biological rationale, planned architecture, and design boundaries;
-                it does not yet claim successful assembly, expression, or LCA sulfation.
-              </p>
-              <div class="project-paper-note">
-                <strong>Abstract content note</strong>
-                <p>
-                  Incorporate the project's agency directly into the final abstract by stating
-                  the biological context, the current gap, and the Renata concept.
-                </p>
-              </div>
-              <figure class="project-paper-figure" id="figure-concept">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the Renata project concept figure">
-                  <span aria-hidden="true">+</span>
-                  <small>Project concept figure</small>
-                </div>
-                <figcaption><strong>Figure 1.</strong> Placeholder for the problem, proposed system, and intended impact.</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-paper-section" id="methodology">
-              <p class="project-paper-section-number">01</p>
-              <h2>Methodology</h2>
-              <h3>${rationale.title || "Biological rationale"}</h3>
-              <p>${rationale.text || ""}</p>
-              ${rationale.items?.length ? `
-                <ul class="project-paper-list">
-                  ${rationale.items.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-              ` : ""}
-              <div class="project-paper-note">
-                <strong>Methodology content note</strong>
-                <p>
-                  Describe the software tools, inputs, outputs, and computational workflow
-                  within the final Methodology rather than on a separate Software page.
-                </p>
-              </div>
-              <figure class="project-paper-figure" id="figure-pathway">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the two-cassette pathway architecture figure">
-                  <span aria-hidden="true">+</span>
-                  <small>Pathway architecture figure</small>
-                </div>
-                <figcaption><strong>Figure 2.</strong> Planned BtSULT and PAPS-supply cassette architecture.</figcaption>
-              </figure>
-              <figure class="project-paper-figure" id="figure-pcs-development">
-                <div class="project-paper-figure-placeholder pcs-visual" role="img" aria-label="PCS development workflow from Design to Construct, Screen, and Characterize">
-                  <p class="pcs-visual-title">How the workflow was developed</p>
-                  <div class="pcs-workflow-steps">
-                    <div class="pcs-workflow-step"><strong>P</strong><small>Design</small></div>
-                    <div class="pcs-workflow-step"><strong>C</strong><small>Construct</small></div>
-                    <div class="pcs-workflow-step"><strong>S</strong><small>Screen</small></div>
-                    <div class="pcs-workflow-step"><strong>C</strong><small>Characterize</small></div>
-                  </div>
-                </div>
-                <figcaption><strong>Figure 3.</strong> Development sequence for the PCS workflow: Design, Construct, Screen, and Characterize.</figcaption>
-              </figure>
-              <figure class="project-paper-figure" id="figure-pcs-use">
-                <div class="project-paper-figure-placeholder pcs-visual" role="img" aria-label="Intended use of the PCS workflow and the project areas it affects">
-                  <p class="pcs-visual-title">How the workflow should be used and what it affects</p>
-                  <div class="pcs-impact-map">
-                    <div class="pcs-impact-source">
-                      <strong>Use the PCS workflow</strong>
-                      <small>Organize evidence and guide project decisions</small>
-                    </div>
-                    <div class="pcs-impact-outcomes" aria-label="Affected project areas">
-                      <div><strong>Design cycle</strong><small>Plan the next iteration</small></div>
-                      <div><strong>Experiments</strong><small>Prioritize follow-up work</small></div>
-                      <div><strong>Interpretation</strong><small>Connect results to decisions</small></div>
-                    </div>
-                  </div>
-                </div>
-                <figcaption><strong>Figure 4.</strong> Intended use of the PCS workflow and its effects on subsequent project decisions.</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-paper-section" id="results">
-              <p class="project-paper-section-number">02</p>
-              <h2>Results</h2>
-              <p>
-                The current Project Description establishes a proposed pathway architecture rather
-                than a completed experimental outcome.
-              </p>
-              <div class="project-paper-subsections" aria-label="Results summary structure">
-                <article>
-                  <p>Data</p>
-                  <h3>Main result</h3>
-                  <p>Present the strongest result and its most important readout first.</p>
-                </article>
-                <article>
-                  <p>Meaning</p>
-                  <h3>Interpretation</h3>
-                  <p>Explain what the evidence supports and what cannot yet be concluded.</p>
-                </article>
-                <article>
-                  <p>Limits</p>
-                  <h3>Next step</h3>
-                  <p>Identify remaining limitations and the work needed to resolve them.</p>
-                </article>
-              </div>
-              ${rationale.note ? `<div class="project-paper-note"><strong>Current design status</strong><p>${rationale.note.replace(/^Design status:\s*/i, "")}</p></div>` : ""}
-              <figure class="project-paper-figure" id="figure-status">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the current evidence status figure">
-                  <span aria-hidden="true">+</span>
-                  <small>Evidence status figure</small>
-                </div>
-                <figcaption><strong>Figure 5.</strong> Placeholder for current evidence, limitations, and unresolved design decisions.</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-paper-section" id="conclusion">
-              <p class="project-paper-section-number">03</p>
-              <h2>Conclusion</h2>
-              <p>
-                The working description defines Renata's intended two-cassette route to LCA
-                sulfation and identifies the design decisions that must be confirmed before
-                the project advances into engineering and experimental results.
-              </p>
-            </section>
-
-          </article>
-
-          <aside class="project-paper-sidebar" aria-label="Project description navigation">
-            <div class="project-paper-sidebar-inner">
-              <h2>Explore this page</h2>
-              <div class="project-sidebar-tabs" role="tablist" aria-label="Project description resources">
-                <button type="button" class="project-sidebar-tab active" id="project-tab-links" role="tab" aria-selected="true" aria-controls="project-panel-links" data-project-panel="project-panel-links">Sections</button>
-                <button type="button" class="project-sidebar-tab" id="project-tab-figures" role="tab" aria-selected="false" aria-controls="project-panel-figures" data-project-panel="project-panel-figures">Figures</button>
-                <button type="button" class="project-sidebar-tab" id="project-tab-references" role="tab" aria-selected="false" aria-controls="project-panel-references" data-project-panel="project-panel-references">References</button>
-              </div>
-
-              <div class="project-sidebar-panel active" id="project-panel-links" role="tabpanel" aria-labelledby="project-tab-links">
-                <a href="#abstract">Abstract</a>
-                <a href="#methodology">Methodology</a>
-                <a href="#results">Results</a>
-                <a href="#conclusion">Conclusion</a>
-              </div>
-
-              <div class="project-sidebar-panel" id="project-panel-figures" role="tabpanel" aria-labelledby="project-tab-figures" hidden>
-                <a href="#figure-concept" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 1"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Project concept</strong></span>
-                </a>
-                <a href="#figure-pathway" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 2"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 2</span><strong>Pathway architecture</strong></span>
-                </a>
-                <a href="#figure-pcs-development" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 3"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 3</span><strong>Workflow development</strong></span>
-                </a>
-                <a href="#figure-pcs-use" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 4"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 4</span><strong>Intended use and effects</strong></span>
-                </a>
-                <a href="#figure-status" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 5"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 5</span><strong>Evidence status</strong></span>
-                </a>
-              </div>
-
-              <div class="project-sidebar-panel" id="project-panel-references" role="tabpanel" aria-labelledby="project-tab-references" hidden>
-                <div class="project-sidebar-reference">
-                  <strong>Background literature</strong>
-                  <span>Add sources supporting the biological context and project need.</span>
-                </div>
-                <div class="project-sidebar-reference">
-                  <strong>Pathway literature</strong>
-                  <span>Add sources for BtSULT, PAPS supply, and LCA sulfation.</span>
-                </div>
-                <div class="project-sidebar-reference">
-                  <strong>Assembly literature</strong>
-                  <span>Add sources for the Golden Gate and JUMP design strategy.</span>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-    `;
-  }
 
   function renderHumanPracticesPage() {
     return `

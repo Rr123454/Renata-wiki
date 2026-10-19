@@ -22,6 +22,9 @@
 .renata-nav .renata-nav-pages > .renata-nav-eyebrow { margin: 0 10px 12px; }
 .renata-nav .renata-nav-pages ul { list-style: none; padding: 0; margin: 0; }
 .renata-nav .renata-nav-pages li + li { margin-top: 5px; }
+.renata-nav .renata-nav-subpages { margin: 0 12px 14px 74px; padding-left: 14px; border-left: 2px solid #db8050; }
+.renata-nav .renata-nav-subpages a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 8px 12px; color: var(--nav-ink); font-size: .8rem; text-decoration: underline; text-underline-offset: 4px; }
+.renata-nav .renata-nav-subpages a:is(:hover, [aria-current="page"]) { background: #fff0d8; }
 .renata-nav .renata-nav-card { display: flex; align-items: center; gap: 15px; min-height: 88px; padding: 13px 11px; border: 1px solid transparent; border-radius: 12px; color: var(--nav-ink); text-decoration: none; transition: background .18s, border-color .18s; }
 .renata-nav .renata-nav-card > .renata-nav-icon { width: 48px; height: 48px; transition: transform .2s; }
 .renata-nav .renata-nav-card:is(:hover, :focus-visible) { background: #edf0ff; border-color: var(--nav-line); }

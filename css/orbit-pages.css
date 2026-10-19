@@ -41,11 +41,8 @@ body[data-page].orbit-pages .orbit-page-hero a:focus-visible { outline-color: #f
 .orbit-page-art { min-width: 0; align-self: center; }
 .orbit-page-scene { width: 100%; overflow: visible; transform-origin: center; }
 .orbit-scene-badge { image-rendering: pixelated; }
-.orbit-scene-trail { stroke-dasharray: 1; stroke-dashoffset: .65; }
+.orbit-scene-trail { stroke-linecap: round; }
 .orbit-scene-caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #dce9f5; font-size: .65rem; margin: -15px 20px 0; position: relative; }
-.orbit-scene-toggle { background: #10295d66; color: #fff1bc; border: 1px solid #fff1bc60; border-radius: 30px; padding: 10px 13px; font: inherit; cursor: pointer; }
-.orbit-scene-toggle[hidden] { display: none; }
-body[data-page].orbit-pages .orbit-scene-toggle:focus-visible { outline-color: #fff1bc; }
 .orbit-page-horizon { position: absolute; bottom: -1px; left: 0; width: 100%; height: 85px; z-index: -1; }
 body[data-page].orbit-pages .orbit-page-hero--record h1 { font-size: clamp(2.3rem, 4vw, 4.7rem); }
 .orbit-page-hero--record .orbit-page-hero-grid { min-height: 500px; padding-top: 35px; padding-bottom: 100px; }

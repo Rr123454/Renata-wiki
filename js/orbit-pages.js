@@ -6,8 +6,7 @@
   const plain = value => String(value || "").replace(/<[^>]*>/g, "");
   const chapters = {
     team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["The people.", "The possibility."], lead: "Meet the students and mentors bringing Renata to life. Every perspective adds something to the story.", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
-    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Small biology.", "A bigger question."], lead: "Explore the thinking behind Sulflux: a proposed synthetic biology approach to lithocholic acid sulfation.", next: "engineering.html", nextLabel: "Follow the engineering", nextIcon: "DNA" },
-    engineering: { number: "03", label: "Engineering", icon: "DNA", satellite: "Stomach", title: ["Build. Test.", "Begin again."], lead: "Follow the questions, design choices, and iterations behind Renata’s proposed system.", next: "experiments.html", nextLabel: "Step inside the lab", nextIcon: "DNA" },
+    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Small biology.", "A bigger question."], lead: "Explore the thinking behind Sulflux: a proposed synthetic biology approach to lithocholic acid sulfation.", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
     lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Big questions.", "Small beginnings."], lead: "From experimental plans to computational observations, explore the records behind the research.", next: "human-practices.html", nextLabel: "Meet the perspectives", nextIcon: "Mic" },
     engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Better science.", "Starts with listening."], lead: "Explore the people, perspectives, and conversations that inform our project decisions.", next: "education.html", nextLabel: "Share the curiosity", nextIcon: "Plant" },
     education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Curiosity.", "Pass it on."], lead: "A place for our learning activities, outreach records, and reflections on sharing synthetic biology.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },
@@ -15,14 +14,15 @@
   };
 
   function pageChapter(pageKey, pageData) {
-    const key = pageKey.startsWith("education") ? "education" : pageKey === "engineering" ? "engineering" : pageData.group === "lab-work" ? "lab" : ["contact", "partnerships"].includes(pageKey) ? "community" : pageData.group in chapters ? pageData.group : "project";
+    const group = pageData?.group;
+    const key = pageKey.startsWith("education") ? "education" : group === "lab-work" ? "lab" : ["contact", "partnerships"].includes(pageKey) ? "community" : group in chapters ? group : "project";
     const chapter = { ...chapters[key], key };
     if (pageKey.startsWith("experiment-") || pageKey.startsWith("education-event-")) {
       chapter.title = [plain(pageData.title)];
       chapter.lead = plain(pageData.lead);
       chapter.record = true;
-      chapter.next = pageKey.startsWith("experiment-") ? "experiments.html" : "education.html";
-      chapter.nextLabel = pageKey.startsWith("experiment-") ? "Explore all lab records" : "Explore education";
+      chapter.next = pageKey.startsWith("experiment-") ? "wet-lab.html" : "education.html";
+      chapter.nextLabel = pageKey.startsWith("experiment-") ? "Wetlab work & analysis" : "Explore education";
       chapter.nextIcon = chapter.icon;
     }
     if (pageKey === "contact") { chapter.title = ["Keep in touch.", "Keep exploring."]; chapter.icon = "Mic"; }
@@ -30,9 +30,10 @@
   }
 
   function illustration(chapter) {
+    const start = sceneState(0, 0);
     return `<svg class="orbit-page-scene" viewBox="0 0 600 500" aria-hidden="true" focusable="false">
       <g class="orbit-scene-far" fill="#ffe9a6"><path d="m88 92 5 13 13 5-13 5-5 13-5-13-13-5 13-5Z"/><path d="m501 70 4 10 10 4-10 4-4 10-4-10-10-4 10-4Z"/><circle cx="130" cy="372" r="4"/><circle cx="452" cy="430" r="3"/><circle cx="548" cy="316" r="5"/></g>
-      <g class="orbit-scene-ring"><ellipse cx="300" cy="250" rx="235" ry="154" transform="rotate(-18 300 250)" fill="none" stroke="#fff1bc38" stroke-width="2" stroke-dasharray="4 8"/><ellipse cx="300" cy="250" rx="220" ry="135" transform="rotate(-18 300 250)" fill="none" stroke="#ffcf78" stroke-width="3" pathLength="1" class="orbit-scene-trail"/></g>
+      <g class="orbit-scene-ring"><ellipse cx="300" cy="250" rx="220" ry="135" transform="rotate(-18 300 250)" fill="none" stroke="#fff1bc38" stroke-width="2" stroke-dasharray="4 8"/><path d="${trailPath(start)}" fill="none" stroke="#db8050" stroke-width="4" class="orbit-scene-trail"/></g>
       <g class="orbit-scene-center">
         <circle cx="300" cy="250" r="138" fill="#132e64"/>
         <circle cx="300" cy="250" r="126" fill="#cb85af" stroke="#112c62" stroke-width="6"/>
@@ -44,7 +45,7 @@
       </g>
       <g class="orbit-scene-moon"><circle cx="475" cy="140" r="43" fill="#ffda77" stroke="#122b60" stroke-width="5"/><ellipse cx="475" cy="140" rx="64" ry="16" fill="none" stroke="#f2a57c" stroke-width="10" transform="rotate(-25 475 140)"/></g>
       <g class="orbit-scene-satellite"><rect x="69" y="285" width="89" height="89" rx="23" fill="#b2e4e4" stroke="#122b60" stroke-width="4" transform="rotate(10 113 330)"/><image href="assets/nav-icons/${chapter.satellite}.png" x="84" y="300" width="60" height="60" class="orbit-scene-badge"/></g>
-      <g class="orbit-scene-craft" transform="translate(487 191) rotate(66)"><path d="M-7 26Q0 68 7 26" fill="#f9a17e"/><path d="M-3 26Q0 50 3 26" fill="#fff1bc"/><image href="assets/orbit/spacecraft.svg" x="-22" y="-33" width="44" height="65"/></g>
+      <g class="orbit-scene-craft" transform="translate(${start.x} ${start.y}) rotate(${start.angle})"><path d="M-7 -26Q0 -68 7 -26" fill="#f9a17e"/><path d="M-3 -26Q0 -50 3 -26" fill="#fff1bc"/><image href="assets/story/rocket-cutout.png" x="-34" y="-25.5" width="68" height="51" transform="rotate(72)"/></g>
     </svg>`;
   }
 
@@ -53,40 +54,56 @@
       <div class="orbit-page-stars" aria-hidden="true"></div>
       <div class="container orbit-page-hero-grid">
         <div class="orbit-page-copy">
-          <nav class="orbit-page-breadcrumb" aria-label="Breadcrumb"><a href="home-orbit.html">Into orbit</a><span aria-hidden="true">/</span><span>${escape(pageTitle)}</span></nav>
+          <nav class="orbit-page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Homepage</a><span aria-hidden="true">/</span><span>${escape(pageTitle)}</span></nav>
           <p class="orbit-page-kicker">${chapter.number} <span aria-hidden="true">—</span> ${escape(chapter.label)}</p>
           <h1 id="${escape(titleId)}">${chapter.title.map((line, index) => `<span class="orbit-title-line"><span style="--line:${index}">${escape(line)}</span></span>`).join("")}</h1>
           <p class="orbit-page-lead">${escape(chapter.lead)}</p>
           <a class="orbit-page-cta" href="#page-content">${chapter.key === "team" ? "Meet the crew" : "Explore this chapter"}<span aria-hidden="true">↓</span></a>
         </div>
-        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>One project. Many perspectives.</span><button class="orbit-scene-toggle" type="button" aria-pressed="false" hidden>Pause scene</button></div></div>
+        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>One project. Many perspectives.</span></div></div>
       </div>
       <svg class="orbit-page-horizon" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q240 0 500 50T1000 45T1440 22V100H0Z" fill="#ef9a7d"/><path d="M0 87Q350 28 610 73T1150 65T1440 80V100H0Z" fill="#fff4e3"/></svg>
     </section>
     ${links.length ? `<nav class="orbit-chapter-nav" aria-label="On this page"><span>In this chapter</span>${links.slice(0, 6).map((link, index) => `<a href="#${escape(link.id)}"><span>${String(index + 1).padStart(2, "0")}</span>${escape(link.label)}</a>`).join("")}</nav>` : ""}`;
   }
 
-  function sceneState(progress, time, pointer = { x: 0, y: 0 }) {
+  function orbitPoint(theta) {
+    const turn = -Math.PI / 10;
+    const x = 220 * Math.cos(theta), y = 135 * Math.sin(theta);
+    return { x: 300 + x * Math.cos(turn) - y * Math.sin(turn), y: 250 + x * Math.sin(turn) + y * Math.cos(turn) };
+  }
+
+  function trailPath(state) {
+    // An exact elliptical arc ends under the craft, with its tail behind travel.
+    return `M${state.trailX} ${state.trailY} A220 135 -18 0 ${state.trailSweep} ${state.x} ${state.y}`;
+  }
+
+  function sceneState(progress, time, pointer = { x: 0, y: 0 }, direction = 1) {
     const scroll = clamp(progress);
     const theta = -.7 + scroll * 3.1 + time * .00012;
     const turn = -Math.PI / 10;
-    const x = 220 * Math.cos(theta), y = 135 * Math.sin(theta);
+    const forward = direction < 0 ? -1 : 1;
+    const position = orbitPoint(theta);
+    const trail = orbitPoint(theta - forward * 1.45);
     const dx = -220 * Math.sin(theta), dy = 135 * Math.cos(theta);
     return {
-      x: 300 + x * Math.cos(turn) - y * Math.sin(turn),
-      y: 250 + x * Math.sin(turn) + y * Math.cos(turn),
-      angle: (Math.atan2(dy, dx) + turn) * 180 / Math.PI + 90,
+      x: position.x, y: position.y, theta, direction: forward,
+      // The cutout's 18-degree nose is rotated 72 degrees in the SVG to face
+      // down (+Y), retaining the existing tangent and exhaust registration.
+      angle: (Math.atan2(dy, dx) + turn) * 180 / Math.PI - 90 + (forward < 0 ? 180 : 0),
+      trailX: trail.x, trailY: trail.y, trailSweep: forward > 0 ? 1 : 0,
       float: Math.sin(time * .0007) * 5 - scroll * 12,
       tiltX: clamp(pointer.y, -1, 1) * -5, tiltY: clamp(pointer.x, -1, 1) * 7,
       moon: Math.sin(time * .0006 + 1) * 8 - scroll * 30,
-      stars: scroll * 40, trail: .65 - scroll * .5
+      stars: scroll * 40
     };
   }
 
-  function createSceneController({ win, doc, reduced, measure, paint, onState = () => {} }) {
-    let frame = 0, last = null, elapsed = 0, paused = false, visible = true, progress = 0;
+  function createSceneController({ win, doc, reduced, measure, paint }) {
+    let frame = 0, last = null, elapsed = 0, visible = true, progress = 0;
+    let previousTheta = null, direction = 1;
     let target = { x: 0, y: 0 }, pointer = { x: 0, y: 0 };
-    function allowed() { return !paused && !reduced.matches && !doc.hidden && visible; }
+    function allowed() { return !reduced.matches && !doc.hidden && visible; }
     function cancel() { if (frame) win.cancelAnimationFrame(frame); frame = 0; last = null; }
     function render(time) {
       frame = 0;
@@ -97,12 +114,16 @@
       pointer.x += (target.x - pointer.x) * smoothing;
       pointer.y += (target.y - pointer.y) * smoothing;
       progress += (measure().progress - progress) * smoothing;
-      paint(sceneState(progress, elapsed, pointer));
+      let state = sceneState(progress, elapsed, pointer);
+      const turn = previousTheta === null ? 0 : state.theta - previousTheta;
+      if (Math.abs(turn) > 1e-7) direction = turn < 0 ? -1 : 1;
+      previousTheta = state.theta;
+      if (direction < 0) state = sceneState(progress, elapsed, pointer, direction);
+      paint(state);
       frame = win.requestAnimationFrame(render);
     }
     function sync() {
       const bounds = measure(); visible = bounds.visible;
-      onState({ paused, reduced: reduced.matches });
       if (!allowed()) {
         cancel();
         if (reduced.matches) paint(sceneState(0, 0));
@@ -111,14 +132,12 @@
     return {
       sync,
       point(x, y) { target = { x: clamp(x, -1, 1), y: clamp(y, -1, 1) }; },
-      toggle() { paused = !paused; sync(); },
       destroy: cancel
     };
   }
 
   function enhanceScene(hero, win, doc) {
     const scene = hero.querySelector(".orbit-page-scene");
-    const button = hero.querySelector(".orbit-scene-toggle");
     const craft = scene.querySelector(".orbit-scene-craft");
     const center = scene.querySelector(".orbit-scene-center");
     const moon = scene.querySelector(".orbit-scene-moon");
@@ -136,9 +155,8 @@
         satellite.setAttribute("transform", `translate(0 ${-state.float * 1.3})`);
         scene.style.transform = `perspective(900px) rotateX(${state.tiltX}deg) rotateY(${state.tiltY}deg)`;
         stars.style.transform = `translateY(${state.stars}px)`;
-        trail.style.strokeDashoffset = state.trail;
-      },
-      onState({ paused, reduced: reduce }) { button.hidden = reduce; button.setAttribute("aria-pressed", String(paused)); button.textContent = paused ? "Resume scene" : "Pause scene"; }
+        trail.setAttribute("d", trailPath(state));
+      }
     });
     hero.addEventListener("pointermove", event => {
       if (!fine.matches || event.pointerType !== "mouse") return;
@@ -146,7 +164,6 @@
       controller.point((event.clientX - box.left) / box.width * 2 - 1, (event.clientY - box.top) / box.height * 2 - 1);
     });
     hero.addEventListener("pointerleave", () => controller.point(0, 0));
-    button.addEventListener("click", controller.toggle);
     win.addEventListener("scroll", controller.sync, { passive: true });
     win.addEventListener("resize", controller.sync);
     doc.addEventListener("visibilitychange", controller.sync);
@@ -239,7 +256,7 @@
     enhanceScene(main.querySelector(".orbit-page-hero"), win, doc);
     enhanceReading(main, links, win, doc);
   }
-  const api = { pageChapter, heroMarkup, sceneState, createSceneController, decorate };
+  const api = { pageChapter, heroMarkup, sceneState, trailPath, createSceneController, decorate };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.RenataPages = api;
 })(typeof window === "undefined" ? globalThis : window);

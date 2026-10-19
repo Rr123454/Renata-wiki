@@ -1,22 +1,16 @@
-/* Inline vector compositions retain the team's original PNG artwork. */
+/* Inline compositions use local artwork, including the selected transparent rocket. */
 (function (root) {
   "use strict";
-  // A paper-sticker silhouette around the supplied rocket, also used as its blueprint.
-  const hull = "M165 72Q170 61 184 70L305 140Q399 55 521 78Q627 95 660 289L729 253Q744 249 755 263L846 378Q858 397 843 409L817 427Q874 490 896 565Q916 626 892 651Q858 688 776 666L665 645Q549 644 440 620L333 624Q249 626 157 599Q141 594 144 575L147 538Q173 510 205 493L178 381L76 387Q44 382 48 352L51 337Q63 326 83 321L147 303Q151 246 188 191L163 95Q158 79 165 72Z";
+  // The cutout's alpha registers the orange emblem and detailed ship exactly.
+  const rocketAsset = "assets/story/rocket-cutout.png";
   function rocket(id = "mission-rocket") {
-    return `<svg viewBox="0 0 1000 750" width="1000" height="750" class="mission-rocket-art" aria-hidden="true" focusable="false"><defs><clipPath id="${id}-cut"><path d="${hull}"/></clipPath></defs>
-      <g class="mission-blueprint" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="${hull}" pathLength="1" class="mission-blueprint-hull"/>
-        <path d="M304 142Q434 50 554 126Q628 191 660 289Q653 391 458 390Q337 384 306 305Q271 229 304 142ZM660 289Q737 330 817 427M205 493 445 415 620 492 333 624M188 191Q212 270 288 307M665 645Q615 505 727 441Q796 405 817 427"/>
-        <ellipse cx="300" cy="427" rx="28" ry="44" transform="rotate(-20 300 427)"/><ellipse cx="472" cy="499" rx="24" ry="44" transform="rotate(-20 472 499)"/>
-        <path d="M114 165H231M190 160V106M803 191H930M868 195V285M740 713H924" stroke-width="2" stroke-dasharray="7 7"/>
-        <g fill="currentColor" stroke="none" font-family="monospace" font-size="20"><text x="94" y="146">01 / HULL</text><text x="795" y="175">02 / FLIGHT</text><text x="750" y="706">SULFLUX</text></g>
-      </g>
-      <g class="mission-rocket-details" clip-path="url(#${id}-cut)"><image href="assets/story/rocket-right.png" width="1000" height="750"/></g>
+    return `<svg viewBox="0 0 1000 750" width="1000" height="750" class="mission-rocket-art" aria-hidden="true" focusable="false"><defs><mask id="${id}-alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="750" style="mask-type:alpha"><image href="${rocketAsset}" width="1000" height="750"/></mask></defs>
+      <rect class="mission-rocket-silhouette" width="1000" height="750" fill="#DB8050" mask="url(#${id}-alpha)"/>
+      <image class="mission-rocket-details" href="${rocketAsset}" width="1000" height="750"/>
     </svg>`;
   }
   function bottle() {
-    return `<svg viewBox="700 470 490 750" class="mission-bottle-art" role="img" aria-label="The team’s SulFlux bottle illustration, with a spacecraft blueprint on its label"><defs><clipPath id="mission-bottle-cut"><path d="M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z"/></clipPath></defs><image href="assets/story/sulflux-bottle.png" width="1936" height="1452" clip-path="url(#mission-bottle-cut)"/><rect x="961" y="1022" width="186" height="138" rx="34" fill="#ffe9d6"/><g class="mission-bottle-emblem" transform="translate(974 1030) scale(.17)">${rocket("bottle-emblem")}</g></svg>`;
+    return `<svg viewBox="700 470 490 750" class="mission-bottle-art" role="img" aria-label="The team’s SulFlux bottle illustration, with a solid orange spacecraft emblem on its label"><defs><clipPath id="mission-bottle-cut"><path d="M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z"/></clipPath></defs><image href="assets/story/sulflux-bottle.png" width="1936" height="1452" clip-path="url(#mission-bottle-cut)"/><rect x="961" y="1022" width="186" height="138" rx="34" fill="#ffe9d6"/><g class="mission-bottle-emblem" transform="translate(974 1030) scale(.17)">${rocket("bottle-emblem")}</g></svg>`;
   }
   function anatomy() {
     return `<svg viewBox="0 0 700 650" role="img" aria-label="Schematic liver above the gallbladder, with bile ducts leading toward the intestine">

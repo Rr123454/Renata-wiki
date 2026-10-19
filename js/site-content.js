@@ -28,15 +28,14 @@ window.SITE_DATA = {
   ],
 
   nav: [
-    { key: "home", label: "Home", href: "index.html" },
+    { key: "home", label: "Homepage", href: "index.html" },
     {
       key: "team", label: "Our Team", icon: "Phoenix",
       heading: "The people behind Renata.",
-      description: "Meet the students, mentors, and partners who bring our ideas to life.",
+      description: "Meet the students and mentors who bring our ideas to life.",
       children: [
         { key: "team", label: "Meet the team", href: "team.html", icon: "Phoenix", description: "Our people, roles, and stories." },
-        { key: "mentors", label: "PIs & mentors", href: "team.html#mentors", icon: "DNA", description: "The guidance behind the science." },
-        { key: "partners", label: "Sponsors & partners", href: "index.html#sponsors-partners", icon: "Eiffel_tower", description: "The community supporting our work." }
+        { key: "mentors", label: "PIs & mentors", href: "team.html#mentors", icon: "DNA", description: "The guidance behind the science." }
       ]
     },
     {
@@ -45,26 +44,26 @@ window.SITE_DATA = {
       href: "project-description.html",
       icon: "Stomach",
       heading: "Small biology. Big questions.",
-      description: "Start with the problem, then explore the thinking behind Sulflux.",
+      description: "The SulFlux question, the evidence, and the design–build–test–learn cycle.",
       children: [
-        { key: "project-description", label: "Project description", href: "project-description.html", icon: "Stomach", description: "The context, the question, and our proposed approach." },
-        { key: "engineering", label: "Engineering", href: "engineering.html", icon: "DNA", description: "Follow the design–build–test–learn process." }
+        { key: "project-description", label: "Abstract", href: "project-description.html", icon: "Stomach", description: "PCS, our goal, engineering, wetlab evidence, and results." },
+        { key: "dbtl-cycle", label: "DBTL Cycle", href: "project-description.html", icon: "DNA", description: "Design the vector. Build the construct. Test the enzyme. Learn from the evidence." }
       ]
     },
     {
-      key: "lab-work", label: "Lab Work", icon: "DNA",
+      key: "lab-work", label: "Our Lab Work", icon: "DNA",
       heading: "Follow the science.",
-      description: "Explore our experimental plans, protocols, and notebook records.",
+      description: "Two connected records: experiments at the bench and computational enzyme engineering.",
       children: [
-        { key: "experiments", label: "Inside the lab", href: "experiments.html", icon: "DNA", description: "An overview of the experimental workflow." },
-        { key: "experiment-assembly", label: "Assembly & verification", href: "experiment-assembly.html", icon: "DNA", description: "Construct design, screening, and verification." },
-        { key: "experiment-reporter", label: "Reporter characterization", href: "experiment-reporter.html", icon: "Mic", description: "The planned fluorescence readouts." },
-        { key: "experiment-growth-response", label: "Bile-acid growth response", href: "experiment-growth-response.html", icon: "Plant", description: "Growth and fluorescence across a concentration series." }
+        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation.", children: [
+          { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab.html#notebook" }
+        ] },
+        { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
       ]
     },
     {
       key: "engagement",
-      label: "Engagement",
+      label: "Education + HP",
       href: "human-practices.html",
       icon: "Mic",
       heading: "Science grows through connection.",
@@ -94,20 +93,22 @@ window.SITE_DATA = {
           ]
         },
         {
-          title: "Project",
+          title: "Our Project",
           links: [
-            { text: "Project Description", href: "project-description.html" },
-            { text: "Engineering", href: "engineering.html" }
+            { text: "Abstract", href: "project-description.html" },
+            { text: "DBTL Cycle", href: "project-description.html" }
           ]
         },
         {
-          title: "Lab Work",
+          title: "Our Lab Work",
           links: [
-            { text: "Experiments", href: "experiments.html#experiments-list" }
+            { text: "Wetlab", href: "wet-lab.html" },
+            { text: "Notebook", href: "wet-lab.html#notebook" },
+            { text: "Model", href: "model.html" }
           ]
         },
         {
-          title: "Engagement & Resources",
+          title: "Education + HP",
           links: [
             { text: "Human Practices", href: "human-practices.html" },
             { text: "Education", href: "education.html" }
@@ -129,11 +130,6 @@ window.SITE_DATA = {
         { tag: "Work", title: "Contributions", text: "Show who handled what." },
         { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
       ],
-      teamPhoto: {
-        title: "Together, we are Renata",
-        text: "Reserve this space for the complete team photograph.",
-        imageLabel: "Full team photo"
-      },
       teamGroups: [
         {
           key: "mentors",
@@ -266,23 +262,7 @@ window.SITE_DATA = {
         { tag: "Concept", title: "Renata idea", text: "Explain the concept clearly." }
       ],
       ctaTitle: "Next page",
-      ctaText: "After this page, lead the reader into engineering or results.",
-    }),
-
-    engineering: makePage({
-      group: "project",
-      kicker: "Design / Build / Learn",
-      title: "<span class='accent-gradient'>Engineering</span> the system",
-      lead: "Use this page to show iteration and design changes.",
-      cardsTitle: "Iteration blocks",
-      cardsLead: "Judges want to see how the system changed.",
-      cards: [
-        { tag: "Cycle 1", title: "Initial design", text: "Show the first version." },
-        { tag: "Cycle 2", title: "What changed", text: "Show why you changed it." },
-        { tag: "Cycle 3", title: "Final version", text: "Show the stronger version." }
-      ],
-      ctaTitle: "Make iteration visible",
-      ctaText: "This page should prove that the project evolved thoughtfully.",
+      ctaText: "The project description brings together the methodology, engineering decisions, and results.",
     }),
 
     "wet-lab": makePage({
@@ -677,8 +657,9 @@ window.SITE_DATA.pages["project-description"].details = [
   }
 ];
 
-window.SITE_DATA.pages.engineering.details = [
+window.SITE_DATA.pages["project-description"].engineering = { details: [
   {
+    id: "assembly-design-cycle",
     eyebrow: "DBTL cycle 2",
     title: "Design, build, test, learn",
     text: "This cycle moves from a modular pathway concept to a characterization plan that can distinguish constitutive expression from operator- and transcription-factor-dependent behavior.",
@@ -691,6 +672,7 @@ window.SITE_DATA.pages.engineering.details = [
     note: "This cycle records an experimental plan; characterization data have not yet been reported."
   },
   {
+    id: "assembly-evidence-map",
     eyebrow: "DBTL 2 evidence map",
     title: "What this cycle establishes",
     items: [
@@ -702,7 +684,7 @@ window.SITE_DATA.pages.engineering.details = [
     ],
     note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation."
   }
-];
+] };
 
 window.SITE_DATA.pages["wet-lab"].details = [
   {

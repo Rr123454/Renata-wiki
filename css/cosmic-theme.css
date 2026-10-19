@@ -1,4 +1,4 @@
-/* Site-wide Yakult-space palette. Loaded last on every HTML entry point.
+/* Site-wide Yakult-space palette. Loaded before each page's final theme.
    Keep decorative colors separate from reading text: Deep Ink is the small-text color. */
 :root {
   --cosmic-sky: #748cff;
@@ -14,6 +14,8 @@
   --cosmic-pink: #ff8bd8;
   --deep-ink: #18265a;
   --footer-cream: #fff4e3;
+  --footer-blue: #10295d;
+  --footer-text: #fff1bc;
 }
 
 body[data-page] {
@@ -46,17 +48,17 @@ body[data-page] {
   --rule-strong: rgba(24, 38, 90, 0.4);
   --shadow-lg: 0 18px 44px rgba(24, 38, 90, 0.12);
   --shadow-md: 0 10px 24px rgba(24, 38, 90, 0.08);
-  --footer-paper: var(--footer-cream);
-  --footer-paper-alt: var(--footer-cream);
-  --footer-paper-bottom: var(--footer-cream);
-  --footer-ink: var(--deep-ink);
-  --footer-ink-muted: var(--deep-ink);
-  --footer-orange: var(--deep-ink);
-  --footer-navy: var(--footer-cream);
-  --footer-navy-deep: var(--footer-cream);
-  --footer-navy-bottom: var(--footer-cream);
-  --footer-ivory: var(--deep-ink);
-  --footer-blue-white: var(--deep-ink);
+  --footer-paper: var(--footer-blue);
+  --footer-paper-alt: var(--footer-blue);
+  --footer-paper-bottom: var(--footer-blue);
+  --footer-ink: var(--footer-text);
+  --footer-ink-muted: var(--footer-text);
+  --footer-orange: var(--footer-text);
+  --footer-navy: var(--footer-blue);
+  --footer-navy-deep: var(--footer-blue);
+  --footer-navy-bottom: var(--footer-blue);
+  --footer-ivory: var(--footer-text);
+  --footer-blue-white: var(--footer-text);
   color: var(--deep-ink);
   background: var(--cosmic-sky);
 }
@@ -227,14 +229,31 @@ body[data-page="home"] {
 .space-station-art { color: var(--deep-ink); opacity: 0.82; }
 .space-ship { filter: drop-shadow(0 8px 12px rgba(24, 38, 90, 0.2)); }
 
-/* One warm cream across the entire shared footer, including Home. */
-body[data-page] .sponsor-partner-band { background: var(--footer-cream); border-color: var(--line); }
-body[data-page] .link-directory-section { background: var(--footer-cream); border-color: var(--line); }
-body[data-page] .site-footer,
-body[data-page] .footer-inner { background: var(--footer-cream); }
-body[data-page] .site-footer :is(a, p, small, strong, h2, h3, .detail-eyebrow) { color: var(--deep-ink); }
-body[data-page] .site-footer .link-directory-column a:is(:hover, :focus-visible) { color: var(--deep-ink); text-decoration: underline; text-decoration-color: var(--yakult-red); text-underline-offset: 4px; }
-body[data-page] .sponsor-logo-frame { background: var(--footer-cream); border-color: var(--line); }
+/* One dark-blue footer across all pages, including its outer padding.
+   ID scoping prevents a chapter theme from restoring a cream sponsor strip. */
+body[data-page] #siteFooter {
+  --text: var(--footer-text);
+  --muted: var(--footer-text);
+  --muted-2: var(--footer-text);
+  --line: #fff1bc26;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--footer-blue);
+  color: var(--footer-text);
+  font-family: "Trebuchet MS", "Avenir Next", Arial, sans-serif;
+}
+body[data-page] #siteFooter :is(.sponsor-partner-band, .link-directory-section, .footer-inner, .sponsor-marquee-item, .sponsor-logo-frame) { background: var(--footer-blue); border-color: var(--line); }
+body[data-page] #siteFooter .sponsor-partner-band { margin-top: 0; }
+body[data-page] #siteFooter :is(a, p, small, strong, h2, h3, .detail-eyebrow) { color: var(--footer-text); }
+body[data-page] #siteFooter :is(h2, h3) { font-family: inherit; }
+body[data-page] #siteFooter .link-directory-column :is(h3, li) { border-color: var(--line); }
+body[data-page] #siteFooter .link-directory-column a:is(:hover, :focus-visible) { color: var(--footer-text); text-decoration: underline; text-decoration-color: #ffcf78; text-underline-offset: 4px; }
+body[data-page] #siteFooter a:focus-visible { outline: 3px solid var(--footer-text); outline-offset: 4px; }
+body[data-page] #siteFooter .footer-inner { width: 100%; max-width: none; padding: .65rem var(--page-gutter, 24px) 1.25rem; border-top: 1px solid var(--line); }
+/* Preserve original logo colors; only the image-sized backing remains light. */
+body[data-page] #siteFooter .sponsor-logo-frame { border: 0; }
+body[data-page] #siteFooter .sponsor-logo-frame img { width: auto; max-width: 125px; height: 54px; padding: 5px; border-radius: 2px; background: var(--footer-cream); object-fit: contain; }
 
 /* Reading pages share the bottle's warm cream, while Home keeps its cosmic sky.
    Restrict every override to non-home pages so the flight scene is unchanged. */
@@ -262,9 +281,6 @@ body[data-page]:not([data-page="home"]) {
   --rule-strong: var(--soft-periwinkle);
   --shadow-lg: 0 18px 44px rgba(36, 48, 94, 0.08);
   --shadow-md: 0 10px 24px rgba(36, 48, 94, 0.05);
-  --footer-ink-muted: var(--muted-ink);
-  --footer-paper-bottom: var(--footer-cream);
-  --footer-navy-bottom: var(--footer-cream);
   color: var(--deep-ink);
   background: var(--main-cream);
 }
@@ -343,7 +359,3 @@ body[data-page]:not([data-page="home"]) .renata-promo-shade { background: linear
 body[data-page]:not([data-page="home"]) .renata-story-frame::after { background: linear-gradient(90deg, transparent 20%, rgba(255, 244, 227, 0.2) 70%, rgba(255, 244, 227, 0.45)); }
 body[data-page]:not([data-page="home"]) .renata-story-dot.active { background: var(--cosmic-blue); }
 body[data-page]:not([data-page="home"]) .renata-story-step { border-left-color: var(--cosmic-blue); }
-
-body[data-page]:not([data-page="home"]) .site-footer :is(p, small) { color: var(--deep-ink); }
-body[data-page]:not([data-page="home"]) .sponsor-partner-band { background: var(--footer-cream); }
-body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--footer-cream); }

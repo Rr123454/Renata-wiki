@@ -5,7 +5,7 @@
   const ease = value => { const t = clamp(value); return clamp(t * t * t * (t * (t * 6 - 15) + 10)); };
   const damp = (a, b, dt) => mix(a, b, 1 - Math.exp(-Math.max(0, dt) / 125));
   const bezier = (a, b, c, d, t) => (1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t * t * c + t ** 3 * d;
-  // These coordinates match the blueprint in the supplied bottle composition.
+  // These coordinates match the solid emblem in the supplied bottle composition.
   const DOCK = Object.freeze({ x: (1059 - 700) / 490, y: (1093.75 - 470) / 750, width: 170 / 490 });
 
   function flightState(scroll, geometry) {
@@ -74,16 +74,16 @@
     const gallery = doc.getElementById("gallbladder");
     const header = doc.querySelector(".flight-header");
     const controls = doc.querySelector(".mission-controls");
-    const toggle = doc.querySelector(".mission-motion-toggle");
     const reduced = win.matchMedia("(prefers-reduced-motion: reduce)");
     const compact = win.matchMedia("(max-width: 760px)");
     const checkpoints = [...doc.querySelectorAll(".mission-checkpoints a")];
+    const atmospheres = [...doc.querySelectorAll("[data-mission-atmosphere]")];
     const sections = [launch, ...doc.querySelectorAll(".mission-transit, .mission-scene, .mission-engineering")];
     const scenes = sections.slice(1).map((section, index) => {
       const copy = section.querySelector(".mission-scene-copy, .mission-transit-copy, .mission-engineering-intro");
       return { section, index, copy, parts: copy ? [...copy.children] : [], top: 0, copyTop: 0, height: 1 };
     });
-    let geometry = {}, current = win.scrollY, target = current, frame = 0, lastTime = null, enabled = false, paused = false;
+    let geometry = {}, current = win.scrollY, target = current, frame = 0, lastTime = null, enabled = false;
     let finaleTop = Infinity;
 
     function measure() {
@@ -102,7 +102,16 @@
       finaleTop = doc.getElementById("mission").getBoundingClientRect().top + win.scrollY;
       target = Math.max(0, win.scrollY);
     }
+    function updateAtmosphere() {
+      // CSS owns the ambient loops. Only visible sky layers run; no idle RAF work.
+      for (const atmosphere of atmospheres) {
+        const bounds = atmosphere.getBoundingClientRect();
+        const visible = bounds.bottom > 0 && bounds.top < win.innerHeight;
+        atmosphere.classList.toggle("is-atmosphere-active", enabled && !doc.hidden && visible);
+      }
+    }
     function ui() {
+      updateAtmosphere();
       header.classList.toggle("is-reading", target > 30);
       let active = 0;
       checkpoints.forEach((link, index) => {
@@ -126,14 +135,13 @@
       set("--stars-y", `${-state.launch * 90}px`); set("--stars-x", `${-state.launch * 75}px`);
       set("--planet-y", `${-state.launch * 170}px`); set("--ground-y", `${state.launch * 300}px`);
       set("--scroll-cue", 1 - ease(state.launch / .12));
-      set("--blueprint-label", ease((state.launch - .24) / .15) * (1 - ease((state.launch - .75) / .15)));
+      set("--launch-label", ease((state.launch - .24) / .15) * (1 - ease((state.launch - .75) / .15)));
       const introHidden = state.launch > .25;
       intro.style.visibility = introHidden ? "hidden" : "visible"; intro.inert = introHidden;
       zoomCopy.style.visibility = state.copy < .01 ? "hidden" : "visible"; zoomCopy.inert = state.copy < .01;
       craft.style.transform = `translate3d(${state.craftX}px, ${state.craftY}px, 0) translate(-50%, -50%) rotate(${state.craftAngle}deg) scale(${state.craftScale})`;
       craft.style.opacity = state.craftOpacity;
       craft.style.setProperty("--ship-detail", state.detail);
-      craft.style.setProperty("--outline-dash", (1 - state.detail) * .08 * Math.sin(state.launch * Math.PI));
       craft.style.setProperty("--exhaust", state.exhaust);
       layer.style.visibility = state.craftOpacity > .001 ? "visible" : "hidden";
       for (const scene of scenes) {
@@ -167,7 +175,7 @@
     }
     function schedule() { if (!frame && !doc.hidden) frame = win.requestAnimationFrame(tick); }
     function configure(preservePosition = false) {
-      const nextEnabled = !reduced.matches && !paused && win.innerHeight >= 640;
+      const nextEnabled = !reduced.matches && win.innerHeight >= 640;
       let anchor, fraction = 0;
       if (preservePosition && enabled !== nextEnabled) {
         anchor = [...sections].reverse().find(section => section.getBoundingClientRect().top <= win.innerHeight * .3) || launch;
@@ -175,9 +183,6 @@
       }
       enabled = nextEnabled;
       doc.body.classList.toggle("mission-enhanced", enabled);
-      toggle.hidden = reduced.matches || win.innerHeight < 640;
-      toggle.textContent = paused ? "Motion on" : "Motion off";
-      toggle.setAttribute("aria-pressed", String(paused));
       if (!enabled) {
         stage.removeAttribute("style"); intro.style.visibility = ""; intro.inert = false;
         zoomCopy.style.visibility = ""; zoomCopy.inert = false; layer.style.visibility = "hidden";
@@ -185,6 +190,7 @@
       }
       if (anchor) win.scrollTo({ top: anchor.getBoundingClientRect().top + win.scrollY + fraction * anchor.offsetHeight, behavior: "instant" });
       measure(); current = target;
+      updateAtmosphere();
       if (enabled) draw();
       schedule();
     }
@@ -194,9 +200,9 @@
     doc.addEventListener("visibilitychange", () => {
       if (doc.hidden) { if (frame) win.cancelAnimationFrame(frame); frame = 0; lastTime = null; }
       else { measure(); current = target; schedule(); }
+      updateAtmosphere();
     });
     reduced.addEventListener("change", () => configure(true));
-    toggle.addEventListener("click", () => { paused = !paused; configure(true); });
     doc.querySelectorAll(".mission-anatomy-controls button").forEach(button => {
       button.addEventListener("click", () => {
         const after = button.dataset.anatomy === "after";

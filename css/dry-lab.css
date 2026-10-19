@@ -3,6 +3,7 @@
 .dry-lab-record a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 .dry-lab-record a:hover { text-decoration-thickness: 2px; }
 .dry-lab-intro { max-width: 78ch; margin-bottom: 2rem; }
+.dry-lab-document-link { max-width: 78ch; margin-block: -1rem 1.5rem; font-size: .9rem; }
 .dry-lab-status { padding: 1.15rem 1.5rem; margin-block: 1.7rem; border-left: 3px solid var(--yakult-red); background: var(--light-cream, #fffaf2); }
 .dry-lab-status strong { display: block; margin-bottom: .35rem; }
 .dry-lab-status p { margin: 0; }

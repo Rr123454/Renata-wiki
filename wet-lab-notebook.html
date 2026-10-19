@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wetlab Notebook | iGEM Renata</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/site.css?v=20260912-white-footer2" />
+  <link rel="stylesheet" href="css/cosmic-theme.css?v=20261019-blue-footer1" />
+  <link rel="canonical" href="wet-lab.html#notebook" />
+  <script>
+    const destination = new URL("wet-lab.html", window.location.href);
+    destination.search = window.location.search;
+    const sections = {
+      "#assembly": "#notebook-assembly",
+      "#reporter": "#notebook-reporter",
+      "#growth-response": "#notebook-growth-response",
+      "#assay-notebook": "#notebook-assay"
+    };
+    const hash = window.location.hash;
+    const notebookAnchors = new Set(["#notebook", ...Object.values(sections)]);
+    destination.hash = sections[hash] || (notebookAnchors.has(hash) ? hash : "#notebook");
+    window.location.replace(destination.href);
+  </script>
+</head>
+<body data-page="wet-lab">
+  <main class="container page-section">
+    <h1>The notebook is now beside Work &amp; analysis.</h1>
+    <p><a href="wet-lab.html#notebook">Open the combined Wetlab page</a>.</p>
+  </main>
+</body>
+</html>

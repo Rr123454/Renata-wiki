@@ -8,15 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Run Renata Wiki",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "Serve website"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Compare Renata — Into orbit",
-            "url": "http://localhost:8080/home-orbit.html",
+            "url": "http://localhost:8080/index.html",
             "webRoot": "${workspaceFolder}",
             "preLaunchTask": "Serve website"
         }

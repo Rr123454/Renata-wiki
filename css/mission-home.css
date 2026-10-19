@@ -1,13 +1,15 @@
 body.mission-page { --mission-blue: #173e84; --mission-cream: #fff1bc; --mission-plum: #653355; color: #fff1bc; background: #173e84; }
+/* Legacy links and strong text use --text; change it only on the dark scenes.
+   Cream buttons and navigation panels retain their explicit dark ink colors. */
+body.mission-page :is(.flight-header, .mission-launch, .mission-transit, .mission-scene--proposal, .mission-finale) { --text: #fff1bc; }
+body.mission-page :is(.mission-launch, .mission-transit, .mission-scene--proposal) .mission-source,
+body.mission-page .mission-finale #story-sources a { color: #ffcf78; }
 .mission-home { font-family: "Trebuchet MS", "Avenir Next", Arial, sans-serif; overflow-x: clip; }
 .mission-home :is(h1, h2, h3) { font-family: inherit; font-weight: 800; letter-spacing: -.055em; }
 body.mission-page .mission-home :is(a, button, input):focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
-body.mission-page :is(.flight-header-actions, .flight-footer, .mission-controls) :is(a, button):focus-visible,
-body.mission-page .flight-header > .flight-brand:focus-visible { outline: 3px solid #fff1bc; outline-offset: 5px; }
-body.mission-page .flight-header-actions .flight-pill:focus-visible { outline-offset: 7px; }
+body.mission-page :is(.flight-footer, .mission-controls) :is(a, button):focus-visible { outline: 3px solid #fff1bc; outline-offset: 5px; }
 .mission-home section[id] { scroll-margin-top: calc(var(--mission-header-height, 110px) + 16px); }
-body.mission-page .flight-header { position: fixed; background: #173e84e8; padding-block: 18px 12px; }
-.mission-page .flight-header.is-reading { background: #142d64f5; }
+/* Header layout and navigation are shared through site-header.css. */
 .mission-eyebrow { font-size: .65rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; line-height: 1.5; }
 .mission-button { display: inline-flex; align-items: center; justify-content: center; gap: 24px; border: 2px solid #fff1bc; border-radius: 40px; padding: 14px 23px; font-size: .85rem; font-weight: 800; color: #173e84; background: #fff1bc; box-shadow: 4px 5px 0 #10295d40; transition: translate .2s, box-shadow .2s; }
 .mission-button:hover { translate: 0 -3px; box-shadow: 5px 8px 0 #10295d40; }
@@ -16,8 +18,16 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
 .mission-launch-stage { position: relative; isolation: isolate; min-height: 1100px; overflow: hidden; padding: 170px 6vw 90px; }
 .mission-enhanced .mission-launch { height: 360svh; }
 .mission-enhanced .mission-launch-stage { position: sticky; top: 0; min-height: 640px; height: 100svh; padding: 0; }
-.mission-stars { position: absolute; inset: -20%; z-index: -4; pointer-events: none; background-image: radial-gradient(circle, #ffefc2aa 1px, transparent 2px), radial-gradient(circle, #a2d5f366 2px, transparent 3px); background-size: 97px 107px, 173px 163px; background-position: 20px 40px, 74px 92px; transform: translate3d(0, var(--stars-y, 0px), 0); }
+.mission-atmosphere { position: absolute; inset: 0; z-index: -4; overflow: hidden; pointer-events: none; }
+.mission-stars { position: absolute; inset: -20%; pointer-events: none; background-image: radial-gradient(circle, #ffefc2aa 1px, transparent 2px), radial-gradient(circle, #a2d5f366 2px, transparent 3px); background-size: 97px 107px, 173px 163px; background-position: 20px 40px, 74px 92px; transform: translate3d(0, var(--stars-y, 0px), 0); }
 .mission-stars--far { background-size: 263px 223px, 139px 263px; opacity: .45; transform: translate3d(var(--stars-x, 0px), calc(var(--stars-y, 0px) * .45), 0); }
+.mission-star { position: absolute; left: var(--star-x); top: var(--star-y); width: var(--star-size, 3px); height: var(--star-size, 3px); border-radius: 50%; background: #fff1bc; opacity: .5; box-shadow: 0 0 5px #fff1bc40; }
+.mission-atmosphere.is-atmosphere-active .mission-star { animation: mission-twinkle var(--star-period, 6s) ease-in-out var(--star-delay, 0s) infinite; }
+.mission-comet { position: absolute; top: 12%; left: -20%; width: clamp(75px, 12vw, 180px); height: 2px; border-radius: 50%; background: linear-gradient(90deg, transparent, #fff1bcba); opacity: 0; transform: rotate(24deg); }
+.mission-comet::after { content: ""; position: absolute; right: 0; top: -1px; width: 4px; height: 4px; border-radius: 50%; background: #fff7da; box-shadow: 0 0 6px #fff1bc77; }
+.mission-comet--distant { top: 33%; width: clamp(55px, 8vw, 120px); --comet-period: 29s; --comet-delay: 11s; --comet-drop: 30vh; }
+.mission-atmosphere.is-atmosphere-active .mission-comet { animation: mission-comet var(--comet-period, 19s) linear var(--comet-delay, 3s) infinite; }
+.mission-atmosphere:not(.is-atmosphere-active) .mission-comet { visibility: hidden; }
 .mission-planet { position: absolute; z-index: -2; width: 23vw; height: 23vw; min-width: 200px; min-height: 200px; right: -3%; top: 5%; border: 7px solid #10295d; border-radius: 50%; background: #ca82ac; transform: translateY(var(--planet-y, 0px)) rotate(-15deg); }
 .mission-planet i { position: absolute; width: 140%; height: 25%; top: 38%; left: -20%; border: clamp(10px, 1.3vw, 20px) solid #ffce77; border-radius: 50%; }
 .mission-horizon { position: absolute; z-index: -3; top: 88%; left: -25%; width: 150%; height: 55%; border: 8px solid #d88a73; border-radius: 50%; background: #f6dca6; transform: translateY(var(--ground-y, 0px)) rotate(3deg); }
@@ -31,7 +41,7 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
 .mission-bottle { position: absolute; z-index: 3; width: clamp(220px, 23vw, 330px); aspect-ratio: 490 / 750; left: var(--bottle-x, 23%); top: var(--bottle-y, 37%); transform: translate(-50%, -50%) scale(var(--bottle-scale, 1)); opacity: var(--bottle-opacity, 1); transform-origin: center; filter: drop-shadow(8px 12px 0 #10295d30); }
 .mission-bottle-art { display: block; width: 100%; height: auto; overflow: visible; }
 .mission-bottle-art .mission-rocket-art { width: 1000px; height: 750px; }
-.mission-bottle-emblem { color: #315895; }
+.mission-bottle-emblem { color: #db8050; }
 .mission-bottle .mission-rocket-details { opacity: 0; }
 .mission-enhanced .mission-bottle-emblem { visibility: hidden; }
 .mission-zoom-copy { position: relative; margin-top: 160px; width: min(500px, 95%); z-index: 5; padding: 24px; border: 1px solid #fff1bc40; border-radius: 25px; background: #173e84e8; }
@@ -40,7 +50,7 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
 .mission-zoom-copy > p:not(.mission-eyebrow) { color: #e5edf7; font-size: .95rem; line-height: 1.65; margin-bottom: 12px; }
 .mission-scroll-cue { position: absolute; bottom: 7%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; font-size: .65rem; text-transform: uppercase; letter-spacing: .13em; color: #173e84; font-weight: 800; opacity: var(--scroll-cue, 1); }
 .mission-scroll-cue > span { font-size: 1.5rem; }
-.mission-blueprint-label { position: absolute; bottom: 14%; right: 7%; font: .6rem monospace; letter-spacing: .15em; color: #fff1bc; opacity: var(--blueprint-label, 0); }
+.mission-launch-label { position: absolute; bottom: 14%; right: 7%; font: .6rem monospace; letter-spacing: .15em; color: #fff1bc; opacity: var(--launch-label, 0); }
 .mission-transit { min-height: 105svh; padding: 120px 7vw; position: relative; isolation: isolate; overflow: hidden; background: #142e64; background-image: radial-gradient(circle, #fff1bc80 1px, transparent 2px); background-size: 81px 103px; }
 .mission-transit-copy { width: 42%; max-width: 540px; position: relative; z-index: 3; padding-top: 8vh; }
 .mission-transit h2 { font-size: clamp(3rem, 5.2vw, 6rem); line-height: 1.03; margin: 22px 0; color: #fff1bc; }
@@ -110,14 +120,13 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
 #story-sources ol { list-style: decimal; padding-left: 20px; margin-top: 18px; }
 #story-sources a { text-decoration: underline; text-underline-offset: 3px; }
 .mission-return { display: inline-flex; align-items: center; gap: 16px; padding: 7px 20px 7px 10px; background: #fff; border-radius: 45px; color: #173e84; font-size: .8rem; font-weight: 800; }
-.mission-return img { width: 70px; height: 55px; object-fit: contain; border-radius: 20px; }
+.mission-return img { width: 70px; height: 55px; object-fit: contain; transform: scaleX(-1); }
 .mission-craft-layer { display: none; position: fixed; inset: 0; z-index: 15; pointer-events: none; }
 .mission-enhanced .mission-craft-layer { display: block; }
 .mission-craft { position: absolute; left: 0; top: 0; width: clamp(220px, 25vw, 380px); aspect-ratio: 4 / 3; transform-origin: center; color: #315895; }
 .mission-craft > svg { position: relative; width: 100%; height: auto; overflow: visible; }
-.mission-rocket-details { opacity: var(--ship-detail, 0); clip-path: inset(0 calc((1 - var(--ship-detail, 0)) * 100%) 0 0); }
-.mission-blueprint { opacity: calc(1 - var(--ship-detail, 0)); }
-.mission-blueprint-hull { stroke-dasharray: 1; stroke-dashoffset: var(--outline-dash, 0); }
+.mission-rocket-details { opacity: var(--ship-detail, 0); }
+.mission-rocket-silhouette { opacity: calc(1 - var(--ship-detail, 0)); }
 .mission-exhaust { position: absolute; width: 42%; height: 10%; background: linear-gradient(90deg, transparent, #ef9a7d, #fff1bc); border-radius: 90% 20% 20% 90%; left: -20%; top: 43%; transform: rotate(18deg) scaleX(var(--exhaust, 0)); transform-origin: right; opacity: var(--exhaust, 0); filter: blur(2px); }
 .mission-controls { position: fixed; z-index: 100; bottom: 18px; left: 50%; translate: -50% 0; display: flex; align-items: center; gap: 10px; padding: 6px 10px; background: #10295ded; border: 1px solid #fff1bc55; border-radius: 40px; color: #fff1bc; transition: opacity .2s; }
 .mission-controls.is-finished { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -125,15 +134,19 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
 .mission-checkpoints a { display: grid; place-items: center; width: 28px; height: 32px; }
 .mission-checkpoints i { display: block; width: 6px; height: 6px; border: 1px solid #fff1bc; border-radius: 50%; }
 .mission-checkpoints a[aria-current] i { background: #ffcf78; box-shadow: 0 0 0 4px #ffcf7825; }
-.mission-motion-toggle { padding: 8px 12px; min-height: 32px; border: 1px solid #fff1bc50; color: #fff1bc; border-radius: 30px; font: 700 .6rem "Trebuchet MS", sans-serif; background: transparent; white-space: nowrap; cursor: pointer; }
-.mission-motion-toggle[hidden] { display: none; }
 .mission-enhanced .mission-scene-copy > *, .mission-enhanced .mission-engineering-intro > *, .mission-enhanced .mission-transit-copy > * { opacity: var(--reveal-opacity, 1); transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 0px), 0); }
 .mission-enhanced .mission-scene-art { transform: translateY(var(--art-y, 0px)) rotate(var(--art-turn, 0deg)); }
 .mission-enhanced .mission-acid--lca { translate: 0 var(--acid-y, 0px); }
 .mission-enhanced .mission-acid--dca { translate: 0 calc(var(--acid-y, 0px) * -1); }
 @keyframes mission-bile { to { stroke-dashoffset: -54; } }
+@keyframes mission-twinkle { 0%, 100% { opacity: .35; } 50% { opacity: .85; } }
+@keyframes mission-comet {
+  0%, 2% { opacity: 0; transform: translate3d(0, 0, 0) rotate(24deg); }
+  3% { opacity: .6; }
+  11% { opacity: 0; transform: translate3d(145vw, var(--comet-drop, 48vh), 0) rotate(24deg); }
+  100% { opacity: 0; transform: translate3d(145vw, var(--comet-drop, 48vh), 0) rotate(24deg); }
+}
 @media (max-width: 980px) {
-  body.mission-page .flight-header { padding-block: 12px; }
   .mission-scene { padding: 80px 5vw; gap: 24px; }
   .mission-scene h2 { font-size: clamp(2.4rem, 4.8vw, 4.2rem); }
   .mission-enzyme-comparison { gap: 12px; grid-template-columns: minmax(0, 1fr) 50px minmax(0, 1fr); }
@@ -159,7 +172,7 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
   .mission-zoom-copy .mission-source { font-size: .6rem; }
   .mission-scroll-cue { bottom: 10%; left: 68%; width: 40%; font-size: .5rem; gap: 8px; }
   .mission-planet { right: -14%; top: 55%; width: 45vw; height: 45vw; min-width: 0; min-height: 0; }
-  .mission-blueprint-label { right: 7%; bottom: 10%; font-size: .4rem; }
+  .mission-launch-label { right: 7%; bottom: 10%; font-size: .4rem; }
   .mission-transit { padding: 130px 24px 80px; min-height: 100svh; }
   .mission-transit-copy { width: 100%; padding: 0; }
   .mission-transit h2 { font-size: 2.8rem; }
@@ -184,7 +197,6 @@ body.mission-page .flight-header { position: fixed; background: #173e84e8; paddi
   .mission-controls { gap: 4px; bottom: 12px; padding-inline: 7px; }
   .mission-checkpoints { gap: 2px; }
   .mission-checkpoints a { width: 23px; }
-  .mission-motion-toggle { font-size: .55rem; padding: 8px; }
   .mission-finale { padding: 65px 24px; }
   .mission-next-links { flex-direction: column; }
   .mission-next-links a { width: 100%; }

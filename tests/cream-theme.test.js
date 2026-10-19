@@ -8,6 +8,7 @@ const root = path.join(__dirname, "..");
 const css = fs.readFileSync(path.join(root, "css/cosmic-theme.css"), "utf8");
 const marker = "/* Reading pages share the bottle's warm cream";
 const innerTheme = css.slice(css.indexOf(marker));
+const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "wet-lab-notebook.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
 
 test("the reading palette uses the requested color values", () => {
   for (const [name, value] of Object.entries({
@@ -39,11 +40,32 @@ test("entry points retain the base theme and load their final page theme last", 
   assert.ok(files.length >= 21);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
-    const sheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map(m => m[1]);
-    assert.ok(sheets.includes("css/cosmic-theme.css?v=20261001-footercream2"), file);
-    const last = file === "index.html" ? "css/cosmic-theme.css?v=20261001-footercream2" : file === "home-orbit.html" ? "css/mission-home.css?v=20261018-story1" : "css/orbit-pages.css?v=20261018-chapters1";
+    if (redirects.includes(file)) {
+      assert.match(html, /<link rel="canonical" href="[^"]+"/, file);
+      assert.match(html, /window\.location\.replace\(destination\.href\)/, file);
+      assert.doesNotMatch(html, /css\/(?:mission-home|orbit-pages)\.css/, file);
+      continue;
+    }
+    const sheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map(m => m[1].split("?")[0]);
+    assert.ok(sheets.includes("css/cosmic-theme.css"), file);
+    const last = ({
+      "index.html": "css/mission-home.css",
+      "team.html": "css/team-space.css",
+      "project-description.html": "css/project-research.css",
+      "wet-lab.html": "css/lab-work.css",
+      "wet-lab-notebook.html": "css/lab-work.css",
+      "model.html": "css/lab-work.css"
+    })[file] || "css/orbit-pages.css";
     assert.equal(sheets.at(-1), last, file);
   }
+});
+
+test("the Engineering redirect retains the cream reading theme for its fallback", () => {
+  const html = fs.readFileSync(path.join(root, "engineering.html"), "utf8");
+  assert.match(html, /<body data-page="project-description">/);
+  assert.match(html, /href="css\/cosmic-theme\.css(?:\?[^\"]+)?"/);
+  assert.match(html, /<a href="project-description\.html#(?:engineering|dbtl-cycle)">/);
+  assert.doesNotMatch(html, /css\/orbit-pages\.css/);
 });
 
 function luminance(hex) {
@@ -57,7 +79,7 @@ function contrast(a, b) {
 }
 
 test("reading text and control labels retain appropriate contrast", () => {
-  assert.ok(contrast("18265a", "fff4e3") >= 7, "Home footer retains strong navy-on-cream contrast");
+  assert.ok(contrast("fff1bc", "10295d") >= 7, "Shared footer retains strong cream-on-navy contrast");
   for (const surface of ["fff4e3", "fffaf2", "f4dec4", "aebbff", "55e6ff", "ff7180", "ffe16a"]) {
     assert.ok(contrast("24305e", surface) >= 4.5, `Deep Ink on ${surface}`);
   }
@@ -65,15 +87,33 @@ test("reading text and control labels retain appropriate contrast", () => {
   assert.ok(contrast("ffffff", "f0182d") >= 3, "bold 1.2rem primary-button text");
 });
 
-test("every footer surface shares the same warm cream on Home and reading pages", () => {
-  assert.ok(css.includes("--footer-cream: #fff4e3;"));
+test("every footer surface shares the reference dark blue on Home and reading pages", () => {
+  assert.ok(css.includes("--footer-blue: #10295d;"));
+  assert.ok(css.includes("--footer-text: #fff1bc;"));
   for (const token of ["footer-paper", "footer-paper-alt", "footer-paper-bottom", "footer-navy", "footer-navy-deep", "footer-navy-bottom"]) {
     const assignments = [...css.matchAll(new RegExp(`--${token}:\\s*([^;]+);`, "g"))];
     assert.ok(assignments.length > 0, token);
-    for (const match of assignments) assert.equal(match[1], "var(--footer-cream)", token);
+    for (const match of assignments) assert.equal(match[1], "var(--footer-blue)", token);
   }
-  for (const selector of ["sponsor-partner-band", "link-directory-section", "footer-inner", "sponsor-logo-frame"]) {
-    assert.ok(css.includes(`body[data-page] .${selector} { background: var(--footer-cream);`), selector);
+  assert.match(css, /body\[data-page\] #siteFooter\s*\{[^}]*margin: 0;[^}]*padding: 0;[^}]*background: var\(--footer-blue\);/);
+  assert.match(css, /#siteFooter :is\(\.sponsor-partner-band, \.link-directory-section, \.footer-inner, \.sponsor-marquee-item, \.sponsor-logo-frame\) \{ background: var\(--footer-blue\);/);
+  assert.match(css, /#siteFooter :is\(a, p, small, strong, h2, h3, \.detail-eyebrow\) \{ color: var\(--footer-text\);/);
+  assert.match(css, /#siteFooter a:focus-visible \{ outline: 3px solid var\(--footer-text\);/);
+  assert.match(css, /#siteFooter \.sponsor-logo-frame img \{[^}]*background: var\(--footer-cream\);/);
+  assert.doesNotMatch(innerTheme, /\.site-footer|\.sponsor-partner-band|\.link-directory-section/);
+});
+
+test("all content pages mount the shared sponsor, links, and copyright footer", () => {
+  const files = fs.readdirSync(root).filter(file => file.endsWith(".html") && !redirects.includes(file));
+  assert.equal(files.length, 21);
+  for (const file of files) {
+    const html = fs.readFileSync(path.join(root, file), "utf8");
+    assert.equal((html.match(/id="siteFooter"/g) || []).length, 1, file);
+    assert.match(html, /css\/cosmic-theme\.css\?v=20261019-blue-footer1/, file);
+    assert.match(html, /src="js\/site\.js/, file);
   }
-  assert.ok(css.includes('body[data-page]:not([data-page="home"]) .link-directory-section { background: var(--footer-cream); }'));
+  const renderer = fs.readFileSync(path.join(root, "js/site.js"), "utf8");
+  assert.match(renderer, /renderFooter\(\);/);
+  for (const marker of ['id="sponsors-partners"', 'id="important-links"', 'class="container footer-inner"']) assert.ok(renderer.includes(marker), marker);
+  assert.match(renderer, /© 2026 iGEM Renata\. All rights reserved\./);
 });
