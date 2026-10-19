@@ -38,7 +38,6 @@
   display: block;
   padding: 10px 0;
   border: 0;
-  border-bottom: 1px solid #24305e22;
   border-radius: 0;
   background: none;
   color: #254780;
@@ -46,6 +45,11 @@
   line-height: 1.4;
   text-decoration: none;
 }
+
+/* A rule closes each top-level entry, so a heading and its figures read as
+   one group rather than as separate rows. */
+.page-outline > ul > li { border-bottom: 1px solid #24305e22; }
+.page-outline > ul > li:last-child { border-bottom: 0; }
 
 .page-outline a:hover,
 .page-outline a:focus-visible {
@@ -62,17 +66,14 @@
 
 /* Sub-items sit under their parent rather than in a tab of their own. */
 .page-outline ul ul {
-  margin: 0 0 0 2px;
-  padding-left: 14px;
-  border-left: 1px solid #24305e22;
+  margin: 0;
+  padding-left: 16px;
 }
 
 .page-outline ul ul a {
-  padding: 8px 0;
+  padding: 6px 0 8px;
   font-size: 0.8rem;
 }
-
-.page-outline li:last-child > a { border-bottom: 0; }
 
 .page-outline-related {
   display: inline-block;

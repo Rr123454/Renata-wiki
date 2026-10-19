@@ -71,7 +71,10 @@ body[data-page].orbit-pages .project-sidebar-panel a { border-radius: 12px; }
 body[data-page].orbit-pages .project-sidebar-panel a.current { background: #fff4e3; }
 body[data-page].orbit-pages :is(.project-paper-note, .evidence-note, .experiment-evidence-note, .dry-lab-status) { background: #f7dfc2; border: 0; border-left: 4px solid #be654d; border-radius: 0 20px 20px 0; padding: 22px; }
 body[data-page].orbit-pages .project-paper-subsections { gap: 20px; background: transparent; border: 0; }
-body[data-page].orbit-pages .project-paper-subsections article { background: #fffaef; border: 1px solid #173e8426; border-radius: 20px; }
+/* site.css flattens these cards with padding-inline: 0 for the borderless
+   editorial variant. This restores the box here, so the side padding has to
+   come back with it or the text sits on the rounded edge. */
+body[data-page].orbit-pages .project-paper-subsections article { background: #fffaef; border: 1px solid #173e8426; border-radius: 20px; padding: 1.25rem 1.5rem 1.35rem; }
 body[data-page].orbit-pages :is(.project-paper-figure-placeholder, .lab-work-model-image, .card-image-placeholder) { border: 2px solid #173e8440; border-radius: 22px; background-color: #f6dfbc; background-image: radial-gradient(#173e8424 1px, transparent 1px); background-size: 16px 16px; }
 body[data-page].orbit-pages .lab-work-model-feature { padding: 18px; background: #fffaef; border: 2px solid #173e84; border-radius: 28px; box-shadow: 7px 8px 0 #edcbae; }
 body[data-page].orbit-pages .lab-work-model-feature figcaption { border: 0; padding: 20px 6px 5px; }

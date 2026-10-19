@@ -740,12 +740,20 @@ a {
   line-height: 1.25;
 }
 
-.project-paper-section > p:not(.project-paper-section-number),
-.project-paper-subsections article > p:last-child {
+.project-paper-section > p:not(.project-paper-section-number) {
   max-width: 74ch;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.8;
+}
+
+/* Card text sets its own measure: body line-height is far too airy inside a
+   ~280px column and pulls each line away from the heading above it. */
+.project-paper-subsections article > p:last-child {
+  max-width: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .project-paper-subsections {
