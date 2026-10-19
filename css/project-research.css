@@ -43,7 +43,7 @@ body.project-dbtl-page .project-sidebar-reference summary { cursor: pointer; col
 body.project-dbtl-page .project-sidebar-reference p { font-size: .78rem; line-height: 1.6; margin: .6rem 0; color: var(--muted-ink); }
 body.project-dbtl-page .project-paper :is(.project-paper-section, .project-dbtl-stage, .project-engineering-record, [id="results"], [id="conclusion"], .project-legacy-anchor) { scroll-margin-top: calc(var(--site-header-height, 71px) + 1.5rem); }
 .project-legacy-anchor { display: block; height: 0; }
-.project-cycle-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin: 1.5rem 0 2rem; }
+.project-cycle-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin: 1.5rem 0 2rem; max-width: 74ch; }
 .project-cycle-nav a { display: flex; gap: .6rem; align-items: center; padding: .7rem 0; border-block: 1px solid var(--warm-beige); color: var(--deep-ink); text-decoration: none; font-weight: 700; }
 .project-cycle-nav span { font-size: .7rem; color: var(--muted-ink); }
 .project-dbtl-stage { padding: 2.5rem 0; border-top: 1px solid var(--warm-beige); }
