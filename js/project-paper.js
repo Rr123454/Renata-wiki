@@ -7,7 +7,7 @@
 
   function recordMarkup(record) {
     return `<details class="project-engineering-record" id="${escape(record.id)}">
-      <summary><span class="detail-eyebrow">${escape(record.eyebrow)}</span><strong class="project-record-title" id="${escape(record.id)}-title">${escape(record.title)}</strong><span class="project-record-prompt">View supporting record</span></summary>
+      <summary><span class="detail-eyebrow">${escape(record.eyebrow)}</span><strong class="project-record-title" id="${escape(record.id)}-title">${escape(record.title)}</strong></summary>
       <div class="project-record-body">
         ${record.text ? `<p>${record.text}</p>` : ""}
         ${record.items ? `<ul>${record.items.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
@@ -38,7 +38,6 @@
     const engineering = pageData.engineering || {};
     const stages = paper.dbtl?.stages || [];
     const records = new Map((engineering.details || []).map(record => [record.id, record]));
-    const sections = [{ id: "abstract", label: "Abstract" }, { id: "engineering", label: "DBTL Cycle" }, ...stages.map(stage => ({ id: stage.id, label: stage.label }))];
     return `<section class="project-paper-page project-dbtl-paper" id="project-description">
       <div class="container project-paper-layout">
         <article class="project-paper" aria-labelledby="project-paper-title">
@@ -67,19 +66,29 @@
             <p id="engineering-sources">${engineering.sourceNote || ""}</p>
           </section>
         </article>
-        <aside class="project-paper-sidebar" aria-label="Project page resources">
-          <div class="project-paper-sidebar-inner">
-            <h2>Explore this page</h2>
-            <div class="project-sidebar-tabs" role="tablist" aria-label="Project resources">
-              ${[["links", "Sections"], ["figures", "Figures"], ["references", "References"]].map(([id, label], index) => `<button type="button" class="project-sidebar-tab${index === 0 ? " active" : ""}" id="project-tab-${id}" role="tab" aria-selected="${index === 0}" aria-controls="project-panel-${id}" data-project-panel="project-panel-${id}">${label}</button>`).join("")}
-            </div>
-            <div class="project-sidebar-panel active" id="project-panel-links" role="tabpanel" aria-labelledby="project-tab-links">${sections.map(section => `<a href="#${escape(section.id)}">${escape(section.label)}</a>`).join("")}</div>
-            <div class="project-sidebar-panel" id="project-panel-figures" role="tabpanel" aria-labelledby="project-tab-figures" hidden>
-              <a href="#figure-expression-vector" class="project-sidebar-figure-link"><span class="project-sidebar-figure-thumb project-vector-thumbnail" aria-hidden="true">T7 → BtSULT</span><span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Expression vector</strong><small>Schematic placeholder</small></span></a>
-              <a class="project-model-figure-link" href="model.html">Molecular figures and model analysis</a>
-            </div>
-            <div class="project-sidebar-panel" id="project-panel-references" role="tabpanel" aria-labelledby="project-tab-references" hidden>${(paper.references || []).map((reference, index) => `<details class="project-sidebar-reference"><summary>${index + 1}. ${escape(reference.title)}</summary><p>${reference.citation}</p><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">Open source ${index + 1}</a></details>`).join("")}</div>
-          </div>
+        <aside class="project-paper-sidebar" aria-label="Project page outline">
+          <nav class="page-outline" aria-labelledby="project-outline-title">
+            <p class="page-outline-title" id="project-outline-title">On this page</p>
+            <ul>
+              <li><a href="#abstract">Abstract</a></li>
+              <li>
+                <a href="#engineering">DBTL Cycle</a>
+                <ul>${stages.map(stage => `<li><a href="#${escape(stage.id)}">${escape(stage.label)}</a></li>`).join("")}</ul>
+              </li>
+              <li>
+                <a href="#figure-expression-vector">Figures</a>
+                <ul>
+                  <li><a href="#figure-expression-vector">Figure 1 — Expression vector</a></li>
+                  <li><a href="model.html">Molecular figures and model analysis</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#engineering-sources">References</a>
+                <ul>${(paper.references || []).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join("")}</ul>
+              </li>
+            </ul>
+          </nav>
+          <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
         </aside>
       </div>
     </section>`;

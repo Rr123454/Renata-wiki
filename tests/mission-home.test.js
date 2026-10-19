@@ -101,7 +101,8 @@ test("the live homepage uses the new route, supplied assets, evidence status, an
   assert.match(html, /Proposed design · not a validated treatment/);
   assert.doesNotMatch(html, /Over 60 million|we have created a new version|is able to bind to and sulfonate/);
   assert.match(html, /data-anatomy="after"/);
-  assert.match(html, /id="design-progress" type="range"/);
+  assert.doesNotMatch(html, /design-progress|type="range"|mission-design-control|Explore the proposed fit/);
+  assert.match(html, /Character metaphor · molecules do not literally bite tissue\./);
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(new Set(ids).size, ids.length, "SVG and page IDs remain unique");
   for (const match of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(match[1]), match[1]);
@@ -201,7 +202,6 @@ function fixture() {
   gallery.querySelector = selector => selector.includes("svg") ? art : selector.includes("status") ? status : copy;
   gallery.querySelectorAll = () => anatomyButtons;
   ids.mission = element(); ids.mission.getBoundingClientRect = () => ({ top: launch.offsetHeight + 8000 - win.scrollY });
-  ids["design-progress"] = element(); ids["design-progress"].value = "0";
   const atmospheres = [element(), element()];
   atmospheres[0].getBoundingClientRect = () => {
     const top = Math.min(0, launch.offsetHeight - nodes[".mission-launch-stage"].offsetHeight - win.scrollY);
@@ -256,8 +256,7 @@ test("the actual controller docks, animates scroll, and exposes the interactive 
   assert.equal(f.ids.gallbladder.classList.contains("is-after"), true);
   assert.equal(f.anatomyButtons[1].attrs["aria-pressed"], "true");
   assert.match(f.status.textContent, /directly from the liver/);
-  f.ids["design-progress"].value = "65"; f.ids["design-progress"].events.input();
-  assert.equal(f.ids["engineering-story"].style["--fit-progress"], .65);
+  assert.equal(f.ids["engineering-story"].style["--fit-progress"], 1, "the molecule docks without a slider");
   f.scroll(0); f.settle();
   assert.equal(f.nodes[".mission-craft"].style.transform, initial, "replaying returns to the bottle exactly");
 });

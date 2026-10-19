@@ -43,9 +43,6 @@
     setText(roster, ".team-dealer-copy > strong", "Meet the people on board.");
     setText(roster, ".team-dealer-copy > p", "Mentors, then students. Select a card to meet a team member.");
     setText(roster, ".team-dealer-art text", "S");
-    roster.querySelectorAll(".team-card-back > span").forEach(label => {
-      label.textContent = "SulFlux";
-    });
     return true;
   }
 

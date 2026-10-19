@@ -148,9 +148,12 @@ test("the project opens with Abstract and a Design–Build–Test–Learn cycle"
   assert.match(project.main, /<h1 id="project-paper-title">Our Project<\/h1>/);
   const stageIds = [...project.main.matchAll(/<section class="project-dbtl-stage" id="([^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(stageIds, ["design", "build", "test", "learn"]);
-  const sidebar = project.main.match(/<div class="project-sidebar-panel active" id="project-panel-links"[\s\S]*?<\/div>/)?.[0];
-  assert.ok(sidebar);
-  assert.deepEqual([...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), [...sectionIds, ...stageIds]);
+  const sidebar = project.main.match(/<nav class="page-outline"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(sidebar, "the page carries a flat On this page outline");
+  assert.doesNotMatch(sidebar, /project-sidebar-tab|role="tablist"|Explore this page/);
+  // Abstract, then DBTL Cycle with its four stages indented beneath it.
+  assert.deepEqual([...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]).slice(0, 6), [...sectionIds, ...stageIds]);
+  assert.match(sidebar, /<li>\s*<a href="#engineering">DBTL Cycle<\/a>\s*<ul>/);
   for (const [stage, title, recordIds] of [
     ["design", "Expression Vector", ["system-integration-decisions", "enzyme-design-cycle"]],
     ["build", "Transformation Experiments", ["assembly-design-cycle", "assembly-evidence-map"]],

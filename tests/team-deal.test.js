@@ -105,14 +105,26 @@ function harness(tops = [300, 300, 300, 300, 300]) {
   };
 }
 
-test("a five-card row glides into place in 1330ms with 120ms between cards", async () => {
+test("a five-card row lands in 640ms with 55ms between cards", async () => {
   const h = harness(); h.controller.begin();
-  await h.tick(119); assert.deepEqual(h.starts, [0]);
+  await h.tick(54); assert.deepEqual(h.starts, [0]);
   await h.tick(1); assert.deepEqual(h.starts, [0, 1]);
-  await h.tick(1210);
+  await h.tick(600);
   assert.deepEqual(h.starts, [0, 1, 2, 3, 4]);
-  assert.equal(DEAL_TIMING.flight, 850);
+  assert.equal(DEAL_TIMING.flight, 420);
+  assert.equal(DEAL_TIMING.stagger, 55);
   assert.equal(h.waiting().length, 0); assert.equal(h.dealing().length, 0);
+});
+
+test("cards no longer turn over, and the hand slides once for the whole deal", async () => {
+  const js = read("js/team-deal.js");
+  assert.doesNotMatch(js, /rotateY|team-card-back|backface/, "the flip and the card back are gone");
+  assert.doesNotMatch(js, /data-deal-replay/, "only Show all cards remains");
+  assert.match(js, /data-deal-show/);
+  assert.match(js, /if \(!handSlid\)/);
+  const slide = js.match(/handMotion = hand\.animate\(\[[\s\S]*?\]/)[0];
+  assert.match(slide, /translate\(/);
+  assert.doesNotMatch(slide, /rotate\(/, "the hand slides rather than turning");
 });
 
 test("a fast jump prioritizes visible cards and defers interrupted and skipped rows", async () => {
@@ -189,7 +201,7 @@ test("rapid wheel bursts wait for settled layout before starting another flight"
     h.scrollTo(offset); await h.tick(16);
     assert.equal(h.starts.length, 0);
   }
-  await h.tick(73); assert.equal(h.starts.length, 0);
+  await h.tick(33); assert.equal(h.starts.length, 0);
   await h.tick(1); assert.deepEqual(h.starts, [0]);
   assert.ok(h.cards[0].motions[0].frames[0].transform.includes("-400px"), "fresh scrolled target coordinates");
   h.controller.showAll();

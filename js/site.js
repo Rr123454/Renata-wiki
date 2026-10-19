@@ -210,7 +210,7 @@
             <figcaption>
               <p class="detail-eyebrow">First view</p>
               <strong>${projectModel.title || "Project model"}</strong>
-              <p>${projectModel.text || "Add the final project model and its interpretation here."}</p>
+              <p>${projectModel.text || "PLACEHOLDER: Add the final project model and its interpretation here."}</p>
             </figcaption>
           </figure>
 
@@ -271,7 +271,7 @@
 
           <div class="experiment-evidence-note reveal">
             <strong>Content status</strong>
-            <p>These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
+            <p>PLACEHOLDER: These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
           </div>
         </div>
       </section>
@@ -338,7 +338,7 @@
       <header class="experiment-record-panel-header reveal">
         <p class="detail-eyebrow">Experiment record</p>
         <h2>${title}</h2>
-        <p>${lead || "Add the verified experiment record here."}</p>
+        <p>${lead || "PLACEHOLDER: Add the verified experiment record here."}</p>
       </header>
       <div class="experiment-record-entry-list">
         ${entries.map((entry, index) => `
@@ -374,20 +374,20 @@
               <p class="project-paper-section-number">Summary</p>
               <h2>Abstract</h2>
               <p>
-                Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
+                PLACEHOLDER: Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
                 the methods used to collect input, the principal findings, and the project decisions
                 that changed as a result. Keep claims proportional to the documented evidence.
               </p>
               <div class="project-paper-note">
                 <strong>Abstract content note</strong>
-                <p>Write this section last so it accurately reflects the completed Human Practices record.</p>
+                <p>PLACEHOLDER: Write this section last so it accurately reflects the completed Human Practices record.</p>
               </div>
               <figure class="project-paper-figure" id="hp-figure-stakeholders">
                 <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the stakeholder map">
                   <span aria-hidden="true">+</span>
                   <small>Stakeholder map</small>
                 </div>
-                <figcaption><strong>Figure 1.</strong> Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
+                <figcaption><strong>Figure 1.</strong> PLACEHOLDER: Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
               </figure>
             </section>
 
@@ -395,7 +395,7 @@
               <p class="project-paper-section-number">01</p>
               <h2>Introduction</h2>
               <p>
-                Establish the social, ethical, clinical, environmental, and implementation questions
+                PLACEHOLDER: Establish the social, ethical, clinical, environmental, and implementation questions
                 that made stakeholder engagement necessary. Define the scope of the inquiry and explain
                 how those questions connect to the proposed LCA-sulfation system.
               </p>
@@ -405,21 +405,21 @@
               <p class="project-paper-section-number">02</p>
               <h2>Methodology</h2>
               <p>
-                Report how stakeholders were selected, contacted, and consulted. For each interview,
+                PLACEHOLDER: Report how stakeholders were selected, contacted, and consulted. For each interview,
                 survey, workshop, or review, record the date, participant role, guiding questions,
                 consent process, documentation method, and approach used to interpret the response.
               </p>
               <div class="project-paper-subsections" aria-label="Human Practices methodology structure">
-                <article><p>Selection</p><h3>Who participated</h3><p>Explain why each stakeholder perspective was relevant.</p></article>
-                <article><p>Collection</p><h3>How input was gathered</h3><p>Describe the interview, survey, workshop, or review procedure.</p></article>
-                <article><p>Analysis</p><h3>How input was interpreted</h3><p>State how themes, disagreements, and limitations were identified.</p></article>
+                <article><p>Selection</p><h3>Who participated</h3><p>PLACEHOLDER: Explain why each stakeholder perspective was relevant.</p></article>
+                <article><p>Collection</p><h3>How input was gathered</h3><p>PLACEHOLDER: Describe the interview, survey, workshop, or review procedure.</p></article>
+                <article><p>Analysis</p><h3>How input was interpreted</h3><p>PLACEHOLDER: State how themes, disagreements, and limitations were identified.</p></article>
               </div>
               <figure class="project-paper-figure" id="hp-figure-methods">
                 <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the engagement methodology figure">
                   <span aria-hidden="true">+</span>
                   <small>Engagement methodology</small>
                 </div>
-                <figcaption><strong>Figure 2.</strong> Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
+                <figcaption><strong>Figure 2.</strong> PLACEHOLDER: Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
               </figure>
             </section>
 
@@ -427,13 +427,13 @@
               <p class="project-paper-section-number">03</p>
               <h2>Findings</h2>
               <p>
-                Present the strongest documented insights by theme. Distinguish direct stakeholder input,
+                PLACEHOLDER: Present the strongest documented insights by theme. Distinguish direct stakeholder input,
                 the team's interpretation, and questions that remain unresolved. Add attributed quotations
                 only when permission and context are documented.
               </p>
               <div class="project-paper-note">
                 <strong>Evidence boundary</strong>
-                <p>Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
+                <p>PLACEHOLDER: Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
               </div>
             </section>
 
@@ -441,7 +441,7 @@
               <p class="project-paper-section-number">04</p>
               <h2>Integration</h2>
               <p>
-                Trace each material insight to a concrete project response. Record what changed in the
+                PLACEHOLDER: Trace each material insight to a concrete project response. Record what changed in the
                 design, experiments, safety planning, communication, implementation strategy, or decision
                 criteria—and identify cases where the team retained its original approach with justification.
               </p>
@@ -450,7 +450,7 @@
                   <span aria-hidden="true">+</span>
                   <small>Insight-to-decision map</small>
                 </div>
-                <figcaption><strong>Figure 3.</strong> Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
+                <figcaption><strong>Figure 3.</strong> PLACEHOLDER: Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
               </figure>
             </section>
 
@@ -458,7 +458,7 @@
               <p class="project-paper-section-number">05</p>
               <h2>Discussion</h2>
               <p>
-                Interpret where stakeholder perspectives converged or conflicted, assess how representative
+                PLACEHOLDER: Interpret where stakeholder perspectives converged or conflicted, assess how representative
                 the engagement was, and identify methodological limits. Explain how uncertainty affects the
                 project's responsible-development claims and future engagement priorities.
               </p>
@@ -468,52 +468,35 @@
               <p class="project-paper-section-number">06</p>
               <h2>Conclusion</h2>
               <p>
-                Summarize what the Human Practices evidence contributed to Renata and state which social,
+                PLACEHOLDER: Summarize what the Human Practices evidence contributed to Renata and state which social,
                 ethical, or implementation questions still require further consultation.
               </p>
             </section>
           </article>
 
-          <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices navigation">
-            <div class="project-paper-sidebar-inner">
-              <h2>Explore this page</h2>
-              <div class="project-sidebar-tabs" role="tablist" aria-label="Human Practices resources">
-                <button type="button" class="project-sidebar-tab active" id="hp-tab-sections" role="tab" aria-selected="true" aria-controls="hp-panel-sections" data-project-panel="hp-panel-sections">Sections</button>
-                <button type="button" class="project-sidebar-tab" id="hp-tab-figures" role="tab" aria-selected="false" aria-controls="hp-panel-figures" data-project-panel="hp-panel-figures">Figures</button>
-                <button type="button" class="project-sidebar-tab" id="hp-tab-references" role="tab" aria-selected="false" aria-controls="hp-panel-references" data-project-panel="hp-panel-references">References</button>
-              </div>
-
-              <div class="project-sidebar-panel active" id="hp-panel-sections" role="tabpanel" aria-labelledby="hp-tab-sections">
-                <a href="#hp-abstract">Abstract</a>
-                <a href="#hp-introduction">Introduction</a>
-                <a href="#hp-methodology">Methodology</a>
-                <a href="#hp-findings">Findings</a>
-                <a href="#hp-integration">Integration</a>
-                <a href="#hp-discussion">Discussion</a>
-                <a href="#hp-conclusion">Conclusion</a>
-              </div>
-
-              <div class="project-sidebar-panel" id="hp-panel-figures" role="tabpanel" aria-labelledby="hp-tab-figures" hidden>
-                <a href="#hp-figure-stakeholders" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 1"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Stakeholder map</strong></span>
-                </a>
-                <a href="#hp-figure-methods" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 2"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 2</span><strong>Engagement methodology</strong></span>
-                </a>
-                <a href="#hp-figure-integration" class="project-sidebar-figure-link">
-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 3"><span aria-hidden="true">+</span></span>
-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 3</span><strong>Insight-to-decision map</strong></span>
-                </a>
-              </div>
-
-              <div class="project-sidebar-panel" id="hp-panel-references" role="tabpanel" aria-labelledby="hp-tab-references" hidden>
-                <div class="project-sidebar-reference"><strong>Stakeholder records</strong><span>Add consented interview, survey, workshop, and meeting records.</span></div>
-                <div class="project-sidebar-reference"><strong>Context literature</strong><span>Add credible sources supporting the social, clinical, ethical, and implementation context.</span></div>
-                <div class="project-sidebar-reference"><strong>Decision evidence</strong><span>Link each integration claim to the record that supports it.</span></div>
-              </div>
-            </div>
+          <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices page outline">
+            <nav class="page-outline" aria-labelledby="hp-outline-title">
+              <p class="page-outline-title" id="hp-outline-title">On this page</p>
+              <ul>
+                <li>
+                  <a href="#hp-abstract">Abstract</a>
+                  <ul><li><a href="#hp-figure-stakeholders">Figure 1 — Stakeholder map</a></li></ul>
+                </li>
+                <li><a href="#hp-introduction">Introduction</a></li>
+                <li>
+                  <a href="#hp-methodology">Methodology</a>
+                  <ul><li><a href="#hp-figure-methods">Figure 2 — Engagement methodology</a></li></ul>
+                </li>
+                <li><a href="#hp-findings">Findings</a></li>
+                <li>
+                  <a href="#hp-integration">Integration</a>
+                  <ul><li><a href="#hp-figure-integration">Figure 3 — Insight-to-decision map</a></li></ul>
+                </li>
+                <li><a href="#hp-discussion">Discussion</a></li>
+                <li><a href="#hp-conclusion">Conclusion</a></li>
+              </ul>
+            </nav>
+            <a class="page-outline-related" href="education.html">Education records ↗</a>
           </aside>
         </div>
       </section>
@@ -744,6 +727,14 @@
       </section>
       <div class="container footer-inner">
         <p>© 2026 iGEM Renata. All rights reserved.</p>
+        <section class="footer-statement" id="content-license" aria-labelledby="content-license-title">
+          <h3 id="content-license-title">Content license</h3>
+          <p>PLACEHOLDER: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </section>
+        <section class="footer-statement" id="ai-use" aria-labelledby="ai-use-title">
+          <h3 id="ai-use-title">AI use disclosure</h3>
+          <p>PLACEHOLDER: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
       </div>
     `;
   }

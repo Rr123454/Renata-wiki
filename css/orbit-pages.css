@@ -48,11 +48,9 @@ body[data-page].orbit-pages .orbit-page-hero--record h1 { font-size: clamp(2.3re
 .orbit-page-hero--record .orbit-page-hero-grid { min-height: 500px; padding-top: 35px; padding-bottom: 100px; }
 .orbit-page-hero--record .orbit-page-art { max-width: 400px; justify-self: center; }
 .orbit-page-hero--record .orbit-page-breadcrumb { margin-bottom: 24px; }
-.orbit-chapter-nav { display: flex; align-items: center; gap: 12px; overflow-x: auto; padding: 24px var(--page-gutter); border-bottom: 1px solid #173e8426; background: #fff4e3; scrollbar-width: thin; }
-.orbit-chapter-nav > span { flex: none; font-size: .62rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; padding-right: 12px; }
-.orbit-chapter-nav a { display: inline-flex; align-items: center; gap: 9px; flex: none; padding: 11px 15px; min-height: 44px; border: 1px solid #173e8435; border-radius: 30px; font-size: .75rem; font-weight: 700; transition: background .2s; }
-.orbit-chapter-nav a > span { font-size: .6rem; color: #52637b; }
-.orbit-chapter-nav a:is(:hover, [aria-current]) { background: #ffe3a8; border-color: #173e84; }
+/* A decorative sand band between the blue hero and the article. The chapter
+   chips moved out; each reading page carries its own "On this page" outline. */
+.orbit-chapter-nav { height: 90px; border-bottom: 1px solid #173e8426; background: #fff4e3; }
 
 /* Open, rounded research layouts keep the scientific record easy to read. */
 body[data-page].orbit-pages :is(.project-paper-page, .experiment-index-page, .experiment-record-workspace, .page-section) { background: #fff4e3; }
@@ -104,8 +102,6 @@ body[data-page].orbit-pages #siteMain .team-card-table { background: #ffe9bf; }
 body[data-page].orbit-pages #siteMain .team-dealer { background: #ffe9bf; border-color: #173e8440; }
 body[data-page].orbit-pages #siteMain .team-dealer-actions button { border: 2px solid #173e84; border-radius: 30px; background: #fffaef; font-weight: 700; }
 body[data-page].orbit-pages #siteMain .team-card-table .team-card-front { border: 2px solid #173e84; border-radius: 18px; background: #fffaf0; box-shadow: 4px 5px 0 #d9b58e; }
-body[data-page].orbit-pages #siteMain .team-card-table .team-card-back { border: 2px solid #173e84; border-radius: 18px; background: radial-gradient(#ffda7770 1px, transparent 1px) 0 0 / 13px 13px, #173e84; color: #fff1bc; }
-body[data-page].orbit-pages .team-card-back span { background: #173e84; font-family: var(--font-display); }
 body[data-page].orbit-pages .team-profile-dialog { border: 3px solid #173e84; border-radius: 28px; box-shadow: 8px 10px 0 #e9b99c; background: #fff4e3; }
 body[data-page].orbit-pages .team-profile-dialog[open] { animation: orbit-profile-enter .4s cubic-bezier(.2,.75,.2,1) both; }
 body[data-page].orbit-pages .team-profile-dialog::backdrop { background: #10295dc9; }
@@ -115,10 +111,12 @@ body[data-page].orbit-pages .team-profile-dialog h2 { font-family: var(--font-di
 .orbit-next > .container { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1440px; }
 .orbit-next-copy > p { color: #ffcf78; font-size: .65rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; margin-bottom: 16px; }
 body[data-page].orbit-pages .orbit-next-copy h2 { color: #fff1bc; font-size: clamp(2.6rem, 4vw, 4.7rem); line-height: 1.05; }
-.orbit-next a { display: flex; align-items: center; gap: 24px; padding: 25px 32px; border: 2px solid #fff1bc; border-radius: 26px; background: #10295d; font-size: 1.1rem; font-weight: 800; transition: translate .2s, background .2s; }
+/* Sand card on the blue band: the pixel badges read far better on sand than
+   on navy, and the rose border keeps the card distinct from the page body. */
+.orbit-next a { color: #3d2340; display: flex; align-items: center; gap: 24px; padding: 25px 32px; border: 2px solid #b9627e; border-radius: 26px; background: #f7e3bd; font-size: 1.1rem; font-weight: 800; transition: translate .2s, background .2s; }
 .orbit-next a > img { width: 72px; height: 72px; image-rendering: pixelated; }
 .orbit-next a > span:last-child { font-size: 2rem; }
-.orbit-next a:hover { translate: 0 -5px; background: #214c91; }
+.orbit-next a:hover { translate: 0 -5px; background: #fff0d8; border-color: #8f4463; }
 body[data-page].orbit-pages .orbit-next a:focus-visible { outline-color: #fff1bc; }
 body[data-page].orbit-pages :is(.link-directory-section, .footer-inner) { background: #10295d; }
 body[data-page].orbit-pages .site-footer :is(.link-directory-section, .footer-inner) :is(a, p, h3) { color: #fff1bc; }
@@ -147,7 +145,7 @@ body[data-page].orbit-pages .renata-back-to-top { border-radius: 50%; background
   .orbit-page-hero--record .orbit-page-art { width: min(75%, 300px); }
   .orbit-page-hero--record .orbit-scene-caption > span { display: none; }
   .orbit-page-hero--record .orbit-scene-caption { justify-content: center; }
-  .orbit-chapter-nav { padding: 18px 20px; }
+  .orbit-chapter-nav { height: 56px; }
   body[data-page].orbit-pages .project-paper-layout { display: flex; flex-direction: column; }
   body[data-page].orbit-pages .project-paper-sidebar { position: static; width: 100%; order: -1; }
   body[data-page].orbit-pages .project-paper-sidebar-inner { max-height: 260px; }

@@ -5,7 +5,9 @@
   else api.init();
 })(typeof window !== "undefined" ? window : this, function () {
   "use strict";
-  const DEAL_TIMING = Object.freeze({ flight: 850, stagger: 120, hand: 260, scrollSettle: 90 });
+  // Cards follow the scroll closely, so the flight is short and the gap between
+  // cards is small enough that a row lands almost together.
+  const DEAL_TIMING = Object.freeze({ flight: 420, stagger: 55, hand: 320, scrollSettle: 50 });
   function dealFrames(origin, target, index) {
     const x = origin.left + origin.width / 2 - target.left - target.width / 2;
     const y = origin.top + origin.height / 2 - target.top - target.height / 2;
@@ -20,7 +22,7 @@
   }
   function createDealController({ cards, dealer, deck, hand, replay, reduced, view, page }) {
     const active = new Map();
-    let timer = 0, generation = 0, enabled = false, handMotion;
+    let timer = 0, generation = 0, enabled = false, handMotion, handSlid = false;
     function stopTimer() { view.clearTimeout(timer); timer = 0; }
     function settle(card) {
       const motions = active.get(card);
@@ -83,21 +85,23 @@
       const motion = card.animate(dealFrames(deck.getBoundingClientRect(), bounds, cards.indexOf(card)), {
         duration: DEAL_TIMING.flight, easing: "cubic-bezier(.2,.65,.25,1)"
       });
-      const flip = card.querySelector(".team-card-inner").animate([
-        { transform: "rotateY(-180deg)", offset: 0 },
-        { transform: "rotateY(-180deg)", offset: .2 },
-        { transform: "rotateY(0deg)", offset: .8 },
-        { transform: "rotateY(0deg)", offset: 1 }
-      ], { duration: DEAL_TIMING.flight, easing: "ease-out" });
-      const motions = [motion, flip];
+      const motions = [motion];
       active.set(card, motions);
       // Canceled flights from a previous replay must never alter the new deal.
       const finish = () => { if (active.get(card) === motions) settle(card); };
       motion.finished.then(finish, finish);
-      flip.finished.catch(() => {});
-      if (handMotion) handMotion.cancel();
-      handMotion = hand.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(-9deg) translate(-5px, 3px)" }, { transform: "rotate(0deg)" }], { duration: DEAL_TIMING.hand });
-      handMotion.finished.catch(() => {});
+      // The hand makes one slide to push the cards out, rather than turning
+      // itself over again for every card that lands.
+      if (!handSlid) {
+        handSlid = true;
+        if (handMotion) handMotion.cancel();
+        handMotion = hand.animate([
+          { transform: "translate(0, 0)" },
+          { transform: "translate(-22px, 7px)" },
+          { transform: "translate(0, 0)" }
+        ], { duration: DEAL_TIMING.hand, easing: "ease-out" });
+        handMotion.finished.catch(() => {});
+      }
       scheduleDeal(DEAL_TIMING.stagger);
     }
     function onScroll() {
@@ -112,7 +116,8 @@
     }
     function begin() {
       showAll();
-      replay.disabled = reduced.matches;
+      handSlid = false;
+      if (replay) replay.disabled = reduced.matches;
       if (reduced.matches || !cards.every(card => typeof card.animate === "function")) return;
       enabled = true;
       cards.forEach(card => card.classList.add("is-waiting"));
@@ -149,12 +154,12 @@
           <path d="M164 35 177 42 181 37 168 30Z" fill="#ff7180"/>
         </g>
       </svg>
-      <div class="team-dealer-actions"><button type="button" data-deal-replay>Replay deal</button><button type="button" data-deal-show>Show all cards</button></div>`;
+      <div class="team-dealer-actions"><button type="button" data-deal-show>Show all cards</button></div>`;
     roster.prepend(dealer);
     groups.forEach((group, groupIndex) => {
       group.querySelector(".detail-eyebrow").textContent = `0${groupIndex + 1} / ${group.querySelectorAll(".member-card").length} people`;
       [...group.querySelectorAll(".member-card")].forEach((card, index) => {
-        const inner = document.createElement("div"), front = document.createElement("div"), back = document.createElement("div");
+        const inner = document.createElement("div"), front = document.createElement("div");
         inner.className = "team-card-inner";
         front.className = "team-card-front";
         front.dataset.cardLabel = `${group.id === "mentors" ? "M" : "S"}${String(index + 1).padStart(2, "0")}`;
@@ -166,15 +171,12 @@
           corner.setAttribute("aria-hidden", "true");
           front.appendChild(corner);
         }
-        back.className = "team-card-back";
-        back.setAttribute("aria-hidden", "true");
-        back.innerHTML = "<span>R</span>";
-        inner.append(front, back);
+        inner.append(front);
         card.appendChild(inner);
       });
     });
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const replay = dealer.querySelector("[data-deal-replay]");
+    const replay = null;
     const deck = dealer.querySelector(".team-deck-source");
     const hand = dealer.querySelector(".team-dealer-hand");
     const controller = createDealController({ cards, dealer, deck, hand, replay, reduced, view: window, page: document });
@@ -184,7 +186,6 @@
       roster.style.setProperty("--dealer-height", `${dealer.getBoundingClientRect().height}px`);
     }
     dealer.querySelector("[data-deal-show]").addEventListener("click", controller.showAll);
-    replay.addEventListener("click", controller.begin);
     reduced.addEventListener("change", controller.begin);
     roster.addEventListener("focusin", event => {
       const card = event.target.closest(".member-card");

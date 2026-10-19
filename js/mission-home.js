@@ -62,6 +62,22 @@
     return { opacity: amount, x: (fromRight ? 1 : -1) * 85 * (1 - amount), y: 14 * (1 - amount) };
   }
 
+  // The illustrated molecule used to be dragged into place on a range input.
+  // It now docks by itself the first time the scene is scrolled into view, so
+  // the scene reads as an illustration rather than a control.
+  function dockOnView(scene, win, reduced) {
+    if (!scene) return;
+    const dock = () => scene.style.setProperty("--fit-progress", 1);
+    if (reduced.matches || typeof win.IntersectionObserver !== "function") { dock(); return; }
+    const observer = new win.IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      dock();
+    }, { threshold: .45 });
+    observer.observe(scene);
+    reduced.addEventListener("change", () => { if (reduced.matches) { observer.disconnect(); dock(); } });
+  }
+
   function init(win, doc) {
     const launch = doc.querySelector(".mission-launch");
     if (!launch) return;
@@ -211,8 +227,7 @@
         gallery.querySelector(".mission-diagram-status").textContent = after ? "Without the storage step, bile flows directly from the liver to the small intestine." : "The gallbladder stores bile between meals.";
       });
     });
-    const slider = doc.getElementById("design-progress");
-    slider.addEventListener("input", () => doc.getElementById("engineering-story").style.setProperty("--fit-progress", Number(slider.value) / 100));
+    dockOnView(doc.getElementById("engineering-story"), win, reduced);
     configure();
     return { configure, measure };
   }

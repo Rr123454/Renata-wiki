@@ -1,0 +1,2060 @@
+diff --git a/assets/documents/wet-lab-notebook.pdf b/assets/documents/wet-lab-notebook.pdf
+index 3a6230a..bd6e439 100644
+--- a/assets/documents/wet-lab-notebook.pdf
++++ b/assets/documents/wet-lab-notebook.pdf
+@@ -73,7 +73,7 @@ endobj
+ 10 0 obj
+ <<
+ /Author (iGEM Renata) /CreationDate (D:20000101000000+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+-  /Subject (Undated entry prompts; source-sha256:6d43e80642c8d1ed4732d33f009e8d405628a0e6c2dc5da258e096dfcce1c5b0) /Title (Wetlab notebook) /Trapped /False
++  /Subject (Undated entry prompts; source-sha256:e4b1221cac816699fef2ad8b48cdbc8b855166560f384f11918b73605a1d9ccb) /Title (Wetlab notebook) /Trapped /False
+ >>
+ endobj
+ 11 0 obj
+@@ -83,38 +83,38 @@ endobj
+ endobj
+ 12 0 obj
+ <<
+-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1031
++/Filter [ /ASCII85Decode /FlateDecode ] /Length 1029
+ >>
+ stream
+-Gatm:9lJcG'YO<E%!l$#(C=qVT0Ct5Dc!gK]8kTQO0nOg0p,"nA3O8Z`tsnMa%73daS$fC'&U?I1IFbS6O^fcCL.+,%"j$h\3P3D*jQ@1#>DJ\f,irqk=H*%do6G^=:hC8875N4[R_NXC.9cB8g[\rb7P-p-%^t!MNQHQX0_%\/>fan2T>_5e*OtsK%W8U:?M0BIj2Kkp/_@4dO7gY#SmmF.-=n<%h]I_ERkf5lff0EmXT'Ul%hbPM'&?i3:F+;7,\D&8E)>^H`S6+NeBhQo:PRh_j9h*>t@`pf%/>dmr40>eE`!\B1pZu#tqh6Ku9@$U%IVXMF50)A>;E.4'7LDU4]<Bp:g7oCL]cFRj5+dl+jH<Lp2GJ$kZo(QUmU^qA83C\V)l4QH!/oC&4oJQmRT*O6QDk2;!%gA&.oKl$W%#h<YQB(A!TZZ?$F.rUTCDFS>GCPPOCpg[X:<UI567c2=?Vd"Vr6+)]?b;9NTa5kf'"W[@,\=R';\JX85cG@RUtm81r0_NIGK[bn*:$="L],M`#>3<Eo5'fh#MU^\m*;X(&MV/k[u%;qaaLLFF%n0Pon4'\eC:A03Ml,_^RYDbYrd[ogZP4.h8/thIcUS(jPAMh&&OY=i9Xs=J0,nS5d!TgF_Q!@A.Ni=!DUK=D<?WK0;W>Tns*#3GXrq)67)RZTdH)&JI>(X](P$0BLK$-e:DCXp./528Ur=J&&>ZT"4OSZaU=WoH#dAA\"c11V(a#H;5'h&(7KCLkc6?Lo7mOU??)p@#6:;c^snPf(^Y$3IgeU<i,q>q0E4%JtLg>EKd/%)uG[Vj!(N/1#3[DcJE5/779Zo6L!7:&S:F&,hbq_aKar2i@R4CFm53gI6*Yd3E:2i"bE)sui;&Wuul+qYkMe_`8BrLaCkF)l>dbV48j]0&ep_)'a6']AlqcZ=/;o:sItj=i)KK5LT,[\6F-beE`>5bBiKrrYeb0,`WRXe1*@g@KHn5<ZJkhK22r:tOt8@OP]?.lVFidqN^,-gfSe\,((]oY(E6)`q%~>endstream
++Gatm:>Ar7S'Roe[39\8A%1-NB=$PE>()1WQc;>PIOd8aY-5*;?8fSZEnN4>7FjaCrZGM,8o5`-#,@q?pqXF2?.fj62>lMQj$V52eqojif"!m-pmh+SDk>;MDa0G+8?sX\*+p,@t[@7<;c(54Lq^jYIqs*#TJk.R-"Z0B!RCZ!S_D7NTdj\P=9p0smc="@WPM'F8r`;YZ+T8Dk_;^!6q7qS:T7i_\E\A%+/?_ME[NjTD%f=*hGk$FjJhS7c$Fh-3:B^ZMp-t_tnO'EAD@R6d>3,^?>Due)T62c%bb;>>XD.tVOO6FHc.EAG[K2;SZ+5JoFftB5LrFAMaCc/^K_r'FkQaUNs!49KCP`;bH"?"I*T./MrMF[H#Ur9V7,/>8]>;(?/'t05Pqi$ZR_EJ$a3en]+oT,tp%D\G(i\=h>qFmJRpX"0jl5<uoU=DZ?f&Ijk.`8t>C<$WSM'p\"=!VVpeMeqb:^lrc<MEtGif5"WC!XXe29(K3\^9Kb7^XuYh2W2fZ6Q.G>U<-5H:79DiNQT5-$X+&87n?kSU*7geeDNWH?Ub:mn>A*BZG[%YJJe")S2l[rAAT4?jN:.u3gqf#m2t:qB,#=fhMX;Wj_CM,7]Z*">2NejtKGCc;Jop'Cl`%L(sh<+L<+Ce/+jR_1suITg;\U7kd/8%bC=]%A4`6V1NgD)=g:/J?p?OBU+1!LIXWIisuHL:M"rH6>MCLk9XdP2ODE=[9F#7[q8rGJj?1DfL4djTY\IJFPP`6M/sr:)5h5)U$nYVK%"5pj)O-f1sM!F\fo-1BINke2]']'Y.SD[Sf30C>">S#`+:DFi7%$mh(X-<lS$`aWP;/7Si=8O+@H5:Bf_kO;ULT6=q^&[5H^M\YNM"cJTfV&cGZO!<Gdaf3O6jklK3m\JkZ-p.f1c!5/H3\&V))jj.mPRg5Dl.`3K[.^XV,0(tuuqokXXH-j0a62*SD[B([,2f7lIn#?#0h&UCZDU"Z"'ATO5F\X-;OMRL"FK3?=bg=V6CNelIh?kt5(LA%B<<~>endstream
+ endobj
+ 13 0 obj
+ <<
+-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1017
++/Filter [ /ASCII85Decode /FlateDecode ] /Length 1029
+ >>
+ stream
+-Gatn$>BAOW&;B$7/'_'`m3jdl?M,_eWgd]P:K43Z5/Q5M@R:,Q!(ljumsruCEas8>UDM12+El*!GBV(>+p@4\AHU^'\G;D@E>0q-3/CFZ`4QpMN<0kOQDFjhT(=?r&>aZp1RRj6]>Tj/44><8>e)ErE>bJ^8]Ck(,q4]Uj6D*m#F=u#XI.rN?fo>Jfe!sM`VfGgiV/sAHq!R`%h[koT(<db'!c5o&4A(lG_5&ULgrYI?/Y>d\3Z?TK7mn%q,r\A7mY(WG`!WddPta7=@_0U=cdaJ^T3iZS`7tq'TPem7Q7HUGR(4;[O2%@Od+Y:OOU/7BM"JS>5,&\#L)18)Y*G:QK&0@n't4/VpXbb'FCDGe0,c,@&T1IXUpVUI,_u005LK2EAoE1GIYKUbNqUd@<%@_q;V?k=O,eg/FP2:]G;*bSqr;(Ytr?LceoJB0&t\U_0BQD237DdIY'@Bfp+ITE0XHk!oc3-G@AjR]f*eMX7$/n$XXIO`(PLp"t\!h0L;taGhI'=$+YUHaqN&tdlLG8EauK)[9cp4eBk'<1I7jJ^%Iaid]VjbY`iQ+@2E!0=u*_-&U%]b<@,8lTNtQ\P2tX_19D_O*D@ST$+D'+qT%Q7>LhgikdVm@fh/;QYZ3eI[HdDs9<[EQq4_!jNK=SUM5JCU0KUK=@'#FUC`H)cgC@gj_]QtDVJj"V4=ad+p]W@&eB0hYQ-LWI4=7:3PO+Tf0[<F$8B?g4Vf`'sOqCHYZU;a(ZV\t2pL%QSe)b:ZTbNdEC\)CClhqsq.$!-c*_$"<_"jW7`i]Z]\6'9t?s%-!eE(THNt.bXf>fOeXjo3[8%PgV,OYkMFDWC<Gq`d<[<FsfLc*k'XAA'G8q"$b\moTqrp\k`Us,%oGMr-kS6qV'1ao0/?`l]jYPq_tN.!c<[Jf!$!h3M`q`:+rj;0p04`*b^:\$T:)F@&2rO@3f.oFhrip0Wf,QDMsXn*=]D^r<^/IkYGKT]=2>^KmfW$GTL'b-X_A`o?TBnXmKg:(lH~>endstream
++Gau1,gJZc[&;KZF'RSA%42G%i.IN`-(RWXH9hh$^$<mf@>7Qf_b1h-:*,m=91JF1[A7E[7rHH"@.fq>PM#GV7J>3M_^CVM%Z7-@BnKGMp2!`ul*9%VEL#A'OOEppe?8r@-"EN)"LF<SURFhht7rX`pUO+Tr&Tqb$i+<Gsnhg:LPB<%"#opf^RU%1/0H+Tgd<PT^,@n9FI52t9@=ZIIDuuBE+i0\eMeE*SdiO3S:Y<JA3cGPb0QmMT)RjJsr9QEb%K%'h7\LodD6/_7!g+-ujY,nrY#Tiu$Dr(LF4o&aXl'2"r)%I?G0NI)"-Vi,//6==-qZ40<RD9nq+g;(E"eOHq*F>s+5#fE]3#;t=*<T3+ja3pfn/iij=Lm/9Nh>;d7KLt-^ZNs9$Xd7d4$'3UZ4/+E'0_^lpu@R_BgcG4/mUkMGfYS,U>;.lUHGSU(jf7X%2pb=u)eKNNAO#)potIp\f7O3doXqK5\!F.m(?n`$@$7%pXn"dEojf-1iRN)fUN?fg[%3RNlGn"lqVJ&P^g"b+)I^YAuY=ot4HFbY[eadT3"FRi5NN\%,OE5-26OJ]i(k&^2KXOTI\`9cVF>>]O[?#/EV-qM'X\Il(C`b,X(sm2%l<'u&aN[YdQ/<^#=aiL[]HNj?cFE(QB-0+QjUCkE/07,#_RN2*mhbW@V9mMdpFpbfPQ^L&8,l.Pjk,b9=;Uf[XQdpR\^5U\3#\Mei#-)c(-F#th<e-KBTZ.]ENgB%T+bdh8qO_P&jM8tpI@#AI6k*]:E#`Q3.jP@1XQC[Y2hg:?skL'7VVk$-[fdm#;B3*Z>WEaHrFpID!3q+bHB.r=*)%bWlT,jV>DTnec;rR=4>5OJ`7:kg_eni@X*iM\NVa*0V]O]4YQ-tMZ#4ZKMWB]/kEj&D4C\$foq60M-1u0nR/B-V`[fqWQ4#<LKEt@1nrI0;rgfsn6%!5m&cKAdNT_L,5.4ZoR\m:,>m1nquD>^]P.Idak)C_b4?l64(\X#p_)[`aj),>fZ8!#-43<FMV!WL;dT)~>endstream
+ endobj
+ 14 0 obj
+ <<
+-/Filter [ /ASCII85Decode /FlateDecode ] /Length 994
++/Filter [ /ASCII85Decode /FlateDecode ] /Length 1011
+ >>
+ stream
+-Gatn$9lo&I&;KZO(%9Q;a><pH8Opm'>u+CEU+heq&HPrK)@E8@cq<oq4.mikni5upWs]F`Yk.3F]1[ka&Qndl)dl_)ju3La;67Qr0L>40o-/Dh6C'<kB*d18bi9CGS;f=r_`S+Y-'#7F1C:DdQ!(AQb7I07Eusm7btr4qV=*Mr@Q@dhM^`Q5AR9bOcEMOEk-N+K5CPog2i:sjLiAlEa#lYT7Vn5BKJAC+SmlseE,5X4"jZgm2i,M<0]dS'Hro9*&B6h,-4&Wo96/V(3cHn9@G6jYaj$T@pp2T,UCrQc2iY/RL9*=.7K2+EdW,daZ8SOJ6b67nkp229J9_c&@\+UW`je<\EqEl2*;!l"UjTJk6Z0PfTgTC",/cZcmt3?ef%&s&h6`R,i<IaadtcpkEKAe#EVhh`o@q=Ih&4(FLkqTg%(=!7+urK(%YO?_@nBC3*#Zi*0L@fUlA'>YejBF/P.Ul>::sWR^qc\8@[;0OKb<kpk_75F0F&fNC2B/>6TL')h&=Z7L5aiJG+sSiFf@L&*Vhd^P/>UtqT:kJ9%Ot"U&JfK]Q?`u&ThkJU/F4SKHX4DXg96#mDq,=>^'ocThDKPWiEP[D:?NV8LgcU*=gYTkC%2RIq%)bRV0>_Q@C&e6QknEI?11V,7_`=*8S&gY@gq+^@nelNYQjR,E(E0_'VD6Q"aC<XU0IS8"O7h)QG(MPZ)*_OF,P;HN[%hoVf7!\cBIDHnnI]-bF/EP$ZY@CBfL58c1C'EQg'dS.C3*G#@5sC=nWPXW_$q3s<@jm..0K9YGT7h*b:\D9,>tP0TpCX4fg<eS\#"V=2u*V=_6gqo[GC@dABVdC%j3A?\rH%85jJEUU[AP`.7G3?A;`=YH,'r,B+?%`@[uDZB;]^a<^MrVq"iEdg'YCF.TgcWh;u]g\X^Q:s70F[JVXDd/QI7VF<3C-:bR8k<$QhXbe]G1QlrkTQm2WMe>6F"LaPQ;e?OBDHP*ILHec$S-pEao~>endstream
++Gau1,?#SFN'Sc)P($DllBSr?6ZF^*>>E-Hg;cUGO'*DS4<QBZm^OF3(;Q*27+Y"`Oq;_65kBVJLTSGa0s$nNR+G?f!":0^#%`C+R#fdL0S`c#!/4*SH%+=TCdg!^3q@7X6/irYP$@TV.1S!hJ*$sA'Ae/^E)Uu0715-*U*INWF0_%LPY2CH/a8Q&cdkDV4Vr'[(p`%)r3eYninLt=Z]14u=i0hN*W=?3"%Y]$QWrkH<^aYY!c`ej5CrR*tlPLtV/J%TeNocENekS.)f<B&Pn*6d`>4I"V1W<iPA=aR:KM.-j,N3t8O_<&S,`cs`QVd0&(>3.MMuA1/AU#PEG%"*=hqhT6'+<Wt`B:*.aWjD8J[Rs;"4G\])]j[rZnCbo,<lT+Gb"flhhJV(CD[2<i=/[%:1p=($#`9)aM*I2)n`2TFt-$7K@3rCN#0$(>XGf.P"#-l?C2@NegA2<X:k`(QH#A2m+g><-?cL8`1rrTYIOLgfX?ZJQ,-Y&,m_FNcRT>":P&@?SgfsJDT&Q?Q<h0O&J=kJVu!,eZAMU-Go-%lP04Tp0$SF)Z:)?u9dF@k?7?j.)'2mNY3K"m?s/F9-:tqcXGS?:bTg!E][9n%l8H%q4%5YqR4"ATZX;'(D*gqB4pBAp&c./#0H*uKY%M%0VY3i,oie&5AN7@:A.\4.=+6,,@;n"CO+Q%$nDbA8P(W0+>qKj0*CPi56%p<;7U+huL1u`-`do=BR5TX,TH0mc;qO"NN>l?@&fV4ddPicL(k'l/kG:sYKof5Z`,YWJT1CsmZ'r6lAX`\dqB*q0+nIR7L\e/#<A&P7@Gg5QpDn1W"I:<Us(J@G3apKF&s5>BTQ6-1Xc9"KV="e[m9CpLSN+$jA&P@s5;.#_<QJM,3=#*/K:]Tbp37m`s1T#^UE@SV:?hYe?4))?opa:'-oFV_Q"rdbgHgkg"B-4e(,sa.`"eCKKpI3Ka2\Z+4BK2N3'eq%$_#>ZU6=9LitXpc`N:a8Y.a!"kkkOVHuhR~>endstream
+ endobj
+ 15 0 obj
+ <<
+-/Filter [ /ASCII85Decode /FlateDecode ] /Length 997
++/Filter [ /ASCII85Decode /FlateDecode ] /Length 1015
+ >>
+ stream
+-Gau1-9lo;R&;KZQ(%3l`73"u"Jg2OW2RTleL@s'G*0&bTD2dP<6o)uihibd&Uh5"qZ59Of8(XMb\f2J16t$##=p'ri2nq.&NoC?r#nn!p0eIuq6-'\YndHZ\%XFQgN3cs4F6I2n06%EVSPbdAY=sh%>_Y4)Re)X(Bng)V.rdfP$hNV!>`<ZT0@Sq@G_4UY0qCEjrqQT65:Cu%+i7YK*:a5@)R3/Z&B69HH&DEG_!r=6+#r![?6^MO_Na6:ENR(75oB2M)'Ot1/BQQg<l`IHLT)[$.6!;MnRl!kQ>3d1X]oR[NCp>-L>:L7A@7#d9'P'&-!:Vd4F+n[^cVon1!dG8$#Yir*;pS!$P$f*UjTOr8%!LEqB")@M@dD@#9So8B3fqWh2R?W*H!S114CVmB(qZdB=E@u5.uB7hjkq'Ko"A16uNq_.?]^CGmqt]`^DY*>um]>;QEmbZ=[8d%J9`I8b*@A3,r+B!s=I)MHT3nk$Ae$XB&FCLcQ76NC:2&8ub?479)7jG(=5"<lcR:,qG-ZQW>Nf;.$`"g2aY\kao5U<V[i'*^EZ)Zm?0hZ0fO@5i8VS@t^"WJ5XssW=o3r+eVh.Z7F@3Ddms?8Bfg?Q<gG0VR'b2'bTa6M+?fW%!@.](crCQH^a#26X#S&+hMH8.C/.X'Q!Eb3Z6O,m#'_)IrJ:7U*aT.h%!hoWh+3Bs/\JY9=^k7Ytgb9'%UX[cWRB=I0F;!)c=/j[OGdkof.eXANc(LAZbQ1&B6>;rI3?WqfM0dAmn6Fpfs7O(7o1=K6sl#CJ@8U02t<HedV`2,`T$4chZ(,PU9=kXF-G#cDFd3N?E;LrjLW%+eK4FJhCF#,T8GO_KgJ*'mR?U$nj+nmKGV=2jY*T+>)hYPMPnh99&6E+ZF&_ok,[hFB7Z+h=lQjl)1Y%Gi,n_S(:YLNPuY@AQR\uGG%iJVtgQ<MtQ<2`D)/G"tl:us"j.q-%36NN@D>lRGY':ji>46.7!AUc_kOZ~>endstream
++Gau1-9lo#B&;KZOMERgWiZS%)pVquXAsu%ZS]UM;CdHk/Ot-hOqWka/i0Z@r^lVuZ!EiU@]C3(A'BnD1R.$gN(e/K;R/iol/V#gH"48]R;<L`q+q>d1#8ZRuWU5:KH[UtO+I=*iLdJj;'3O,Z#d0=rFLqd\:G(kDGd2dWloP%KZZ%[U#&jb?@<=RJ_IOR=_s-gZ#DdgroW\a3oj,4u".%[dJOf4$`:g/<Zg/*TV[bY:]j9Otm!`?Q'K+HW3W/5G2KbPjcha6nP<.9$2Z_fVNUf#Ne"0Eaa4".s'M9g3;Cf81"FoL6>+7=>4Fgt!OK!hpnMK:L7Ma7!^1.=)p%Df79]']'rIK[*pL51#f]J;1Plkl[OP37;MHp$E8<qcFh./X(_D0nbE'LjhDC3sh$n%f'ke_!o)]qUq/YYb(,$H^G;;pkA&0lg*,@d,&lnV>A'UDWZl)JKu'O7n$!KQ31+M`.M>Dk)Y]rf8l2(E4X.UY!b2Qmk_V1;fj804Sb+rAERM=Z,DKh'-TZk[H@$0,4/3YQnEqP'4UN43TYI;3is&?dl5],8'm;DSVgV9>.l!dd]5Q,:eG$SbF#AP$M5ecE0\1B#"aeQNgTf7eKuM0NYW-_*T2?dL$76L;KN`M't2#RNLFB[eU(V.)2i$5CsiZ;lV14$a#VNcO^hFta9<9Q.u1lk9fU'[RGjk!6D,9pVO%9Ht`RMrYJ=.+ED]:]iK898la1(^c/1lrI)".InJh(a2E;n02c/XU*R>I1-/2VWUBu[L+1U9Sqd8>]6*F=,pS`bRoQ:WM+(UJrbHV"sGML,n:?GYOMW98mRD_Ch'W0"=&5TY68`.f+Z%qquT7071n^=o`'OdchO7:/J+$l=<M+ReU?]ea5!Rfs1IdSX[3qikT'$JE:b)28T,QF.S\G;).+E.h7'2AJA.fS2l>=G)`%gp++ma^L/31/fYC`7[*+oog2elWjnW97^mV=*fob2<^gMQa!au.Op8fE<.c/[9L/ne?ml!.Uc9KUXFa*~>endstream
+ endobj
+ 16 0 obj
+ <<
+ /Filter [ /ASCII85Decode /FlateDecode ] /Length 787
+ >>
+ stream
+-Gat=gh+ucZ'ZJu$=.Dc=Pr*YJX$*kP0a):"/r4/(>Zu'&*Gfprrq\&mr;_gli['cTH]NX=Sf<Ca!Ef@R)dlQOpm$DM'_c!t+/-26??d!PcQ^BW"?t!a*ld]e,YN@hZgdf<Ni_Oaq8l:QUj19u#Qr!opN[Z)-lSVsMu5[!q/fl#0uRp8>`U8"cAI!)RpCG/nI*>!:;Y?:/E7??3+/M7_%0\9negs+O5nVd]l<Ndg`Xg1Ia$8OIok[.kD)0[7e";PM,Le2g2]!FIb^.ePFDe?nVsQ%UC+-N:$X?*;<k$\WOobe<A%^Ye>BNb8QAY?%U9t\VNF(MH*W]p0gpCcqSR[LG-qWc52,c[RkB8%7^cS'_G5BC#@j=,PFLh4\B)uN`;"M'=^4]T0Zg5*h_<C&B(PUq#]CjfFpN)0%JCL`Q@ecHSG*l2H<rO`E[cqq*?"Z(SC@n_>-U6q&Ok(P+Mt(8[c:b'_'Wb0pEWg./Ze.kKMWCUXfO=ZdQpp0S94'_GNXpfm/TU<_N:_gb1T(i"P'Mo>MbQAX*\QLhTDKmPKK#%%CqH]V\eE[A:,(aJmGd$/ZD(5b>goE;m]K(aHf<POki\7D(V"N!eJT#MUKU2d]L-VYiHoYXHRc96Ot\]W:GuZP,GoX^3sJ\]2(`^On!@fcb\87l&Qp?FAa^aY'R.<J*7_uR-Y^j+,#X1h1I>Af'$.=WaOr;kp+So1pSIo[-Bt3"OW!t3ac/EWERj%8%D*cU%EdIa?"<B9=ojRTVn*7liXCf/r`oCer04UGi8N(WhF04~>endstream
++Gat=g5uZMl&;BTP'ml_sC+S&Dj6=YdQSQou9$M;j[Rep%P*(u`nE[]P8I/#3J]WiuQF*^]m<^/kiK*bHh#U2"3;H$o:oNf5,[gc)'pM_f&;2;P,YK:+P6m3dKQ0%EBa//]p`^'/TdC<!k7V#Gce[Ue=@PZH1#2-R8=l/4i4>En<<4Id>?4hE'P?s:SBg;aT:l#ie`WVp3+7&7![3ImSeA]"`#3-*I3)3e#Keu#T,Vtc:\'TEADF;pn1+cSb*!`[ZS]eFY1Ju/5Sc+Nra0O]H/]dnE$lRfNUD+*i="01V\R,'SP\tlN2X-u/G)7d;D%TAlo3.O0TTqZD9Ga>gH56F#JE3W3bU_BW4Tls6UJl>aEZp]o7N,jf$Vb/XJj8t]WSar/uji_3D@WLl$%7.FFJZ3$K3R)7.qc6`o)OpfhrBB6)hmQe^LB/:bTB<[1c"nE@8-qDCs`cJk2'c!t]H-=PJgtN^fKEo-BYhoO.LQ+`Pu)S]X""WZB/M-n!j5GZ]#V\+UXI?_bHMd49uj(kMrfDL%<4gq>P8QZDH)8VQ/M,MX]nl%O(L@7$oY!plrU>D^11FM6u/14NuhXV&!"nkRhW.aYY0frr2"9H_VTr^FKYQ!8gP(9E^:Mgu<gBg`UU*$idPK7(:"fXk?boTAZ^ViN8LYGP[.\TIV3]VtC!a)C/QI[m\SJ<9]b*"7RpT=q[(@HHO9[1Ih\PHD&aX2+pk!V%M8!SGsrdB$O1X[EgZ./f;3/E1lUZqF'nLrUPMmL=%gnjY.clG_nf4V7MnWhF04~>endstream
+ endobj
+ xref
+ 0 17
+@@ -131,14 +131,14 @@ xref
+ 0000001415 00000 n 
+ 0000001782 00000 n 
+ 0000001866 00000 n 
+-0000002989 00000 n 
+-0000004098 00000 n 
+-0000005183 00000 n 
+-0000006271 00000 n 
++0000002987 00000 n 
++0000004108 00000 n 
++0000005211 00000 n 
++0000006318 00000 n 
+ trailer
+ <<
+ /ID 
+-[<f6bf092af51d105af3fe025cee7ef638><f6bf092af51d105af3fe025cee7ef638>]
++[<ee4ba67d844321a3c5ef3f7fc33e0dad><ee4ba67d844321a3c5ef3f7fc33e0dad>]
+ % ReportLab generated PDF document -- digest (opensource)
+ 
+ /Info 10 0 R
+@@ -146,5 +146,5 @@ trailer
+ /Size 17
+ >>
+ startxref
+-7149
++7196
+ %%EOF
+diff --git a/css/mission-home.css b/css/mission-home.css
+index 5fbf248..7a5522f 100644
+--- a/css/mission-home.css
++++ b/css/mission-home.css
+@@ -98,11 +98,7 @@ body.mission-page :is(.flight-footer, .mission-controls) :is(a, button):focus-vi
+ .mission-enzyme-comparison figcaption > strong { font-size: 1.15rem; }
+ .mission-design-arrow { text-align: center; font-size: 2.5rem; }
+ .mission-design-arrow span { display: block; font-size: .55rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; line-height: 1.7; }
+-.mission-design-control { max-width: 600px; text-align: center; margin: 0 auto 30px; }
+-.mission-design-control label { display: block; font-size: .8rem; font-weight: 800; }
+-.mission-design-control input { width: 100%; accent-color: #735097; height: 44px; margin-top: 5px; cursor: pointer; }
+-.mission-design-control p { font-size: .75rem; line-height: 1.65; }
+-.mission-fit-molecule { transform: translate(calc((1 - var(--fit-progress, 0)) * 65px), calc((1 - var(--fit-progress, 0)) * -105px)) rotate(calc((1 - var(--fit-progress, 0)) * 16deg)); transform-origin: 350px 320px; }
++.mission-fit-molecule { transition: transform 1.05s cubic-bezier(.2,.7,.2,1); transform: translate(calc((1 - var(--fit-progress, 0)) * 65px), calc((1 - var(--fit-progress, 0)) * -105px)) rotate(calc((1 - var(--fit-progress, 0)) * 16deg)); transform-origin: 350px 320px; }
+ .mission-engineering > .mission-button { display: flex; width: max-content; max-width: 100%; margin-inline: auto; background: #4b356e; color: #fff1bc; border-color: #4b356e; }
+ .mission-scene--proposal { background: #173e84; color: #e0e9f6; border-color: #10295d; }
+ .mission-scene--proposal .mission-eyebrow { color: #ffcf78; }
+@@ -192,7 +188,6 @@ body.mission-page :is(.flight-footer, .mission-controls) :is(a, button):focus-vi
+   .mission-enzyme-comparison :is(img, svg) { height: 280px; }
+   .mission-design-arrow { font-size: 2rem; transform: rotate(90deg); padding: 0; }
+   .mission-design-arrow span { display: none; }
+-  .mission-design-control p { font-size: .68rem; }
+   .mission-craft { width: clamp(190px, 52vw, 270px); }
+   .mission-controls { gap: 4px; bottom: 12px; padding-inline: 7px; }
+   .mission-checkpoints { gap: 2px; }
+diff --git a/css/navigation.css b/css/navigation.css
+index 290a577..c6eb315 100644
+--- a/css/navigation.css
++++ b/css/navigation.css
+@@ -10,8 +10,20 @@
+ .renata-nav .renata-nav-chevron { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+ .renata-nav [aria-expanded="true"] .renata-nav-chevron { transform: translateY(2px) rotate(225deg); }
+ .renata-nav .renata-nav-toggle { display: none; }
+-.site-header .renata-nav .renata-nav-panel { right: var(--page-gutter, 16px); }
+-.renata-nav .renata-nav-panel { position: absolute; z-index: 5000; top: 100%; right: 0; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - 140px); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: 235px minmax(0, 1fr); padding: 9px; border: 1px solid var(--nav-line); border-top: 3px solid #aebbff; border-radius: 0 0 22px 22px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 22px 60px #18265a26; animation: renata-menu-in .2s ease-out both; text-align: left; }
++.renata-nav .renata-nav-bars { position: relative; }
++.renata-nav .renata-nav-bars,
++.renata-nav .renata-nav-bars::before,
++.renata-nav .renata-nav-bars::after { display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor; }
++.renata-nav .renata-nav-bars::before,
++.renata-nav .renata-nav-bars::after { content: ""; position: absolute; left: 0; transition: transform .18s, top .18s; }
++.renata-nav .renata-nav-bars::before { top: -6px; }
++.renata-nav .renata-nav-bars::after { top: 6px; }
++.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars { background: transparent; }
++.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars::before { top: 0; transform: rotate(45deg); }
++.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars::after { top: 0; transform: rotate(-45deg); }
++/* Panels are fixed so they clear the header's own overflow, and JS writes
++   --nav-panel-left from the trigger's box so each one opens under its button. */
++.renata-nav .renata-nav-panel { position: fixed; z-index: 5000; top: var(--nav-panel-top, 88px); left: var(--nav-panel-left, auto); right: auto; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - var(--nav-panel-top, 88px) - 16px); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: 235px minmax(0, 1fr); padding: 9px; border: 1px solid var(--nav-line); border-top: 3px solid #aebbff; border-radius: 0 0 22px 22px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 22px 60px #18265a26; animation: renata-menu-in .2s ease-out both; text-align: left; }
+ .renata-nav .renata-nav-intro { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding: 24px 22px; border-radius: 12px; background: #e7eaff; background-image: radial-gradient(#24305e18 .8px, transparent .8px); background-size: 12px 12px; }
+ .renata-nav .renata-nav-eyebrow { display: block; color: #536080; font-size: .63rem; font-weight: 800; line-height: 1.5; letter-spacing: .13em; text-transform: uppercase; }
+ .renata-nav .renata-nav-icon { flex: none; object-fit: contain; image-rendering: pixelated; }
+@@ -42,7 +54,6 @@ body[data-page] .renata-nav :is(a, button):focus-visible { outline: 3px solid #2
+ .flight-header > .renata-nav { margin: 0; padding-top: 0; color: #fff1bc; }
+ .flight-header .renata-nav-trigger { padding-inline: 11px; font-size: .8rem; border-radius: 24px; }
+ .flight-header .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #fff1bc17; border-color: #fff1bc70; }
+-.flight-header .renata-nav-panel { right: 6vw; }
+ body[data-home-variant="orbit"] .renata-nav :is(.renata-nav-trigger, .renata-nav-toggle):focus-visible { outline-color: #fff1bc; }
+ 
+ @keyframes renata-menu-in { from { opacity: 0; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
+@@ -55,9 +66,8 @@ body[data-home-variant="orbit"] .renata-nav :is(.renata-nav-trigger, .renata-nav
+ @media (max-width: 980px) {
+   .site-header .header-inner { flex-wrap: nowrap; min-height: 72px; }
+   .renata-nav { margin-left: auto; }
+-  .renata-nav .renata-nav-toggle { display: inline-flex; border-color: currentColor; min-height: 44px; font-size: .78rem; }
+-  .renata-nav .renata-nav-toggle-symbol { font-size: 1.2rem; line-height: 1; transition: transform .2s; }
+-  .renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-toggle-symbol { transform: rotate(45deg); }
++  .renata-nav .renata-nav-toggle { display: inline-flex; width: 48px; min-height: 44px; padding: 0; border-color: currentColor; }
++  .renata-nav[data-nav-open="false"] .renata-nav-list { display: none; }
+   .renata-nav .renata-nav-list { position: absolute; top: 100%; right: 0; width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 150px); overflow-y: auto; overscroll-behavior: contain; display: block; padding: 12px; border: 1px solid var(--nav-line); border-radius: 0 0 18px 18px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 20px 40px #18265a26; }
+   .renata-nav .renata-nav-list > li + li { border-top: 1px solid var(--nav-line); }
+   .site-header .renata-nav-list { right: 12px; }
+diff --git a/css/orbit-pages.css b/css/orbit-pages.css
+index 091c9f2..b4a7932 100644
+--- a/css/orbit-pages.css
++++ b/css/orbit-pages.css
+@@ -48,11 +48,9 @@ body[data-page].orbit-pages .orbit-page-hero--record h1 { font-size: clamp(2.3re
+ .orbit-page-hero--record .orbit-page-hero-grid { min-height: 500px; padding-top: 35px; padding-bottom: 100px; }
+ .orbit-page-hero--record .orbit-page-art { max-width: 400px; justify-self: center; }
+ .orbit-page-hero--record .orbit-page-breadcrumb { margin-bottom: 24px; }
+-.orbit-chapter-nav { display: flex; align-items: center; gap: 12px; overflow-x: auto; padding: 24px var(--page-gutter); border-bottom: 1px solid #173e8426; background: #fff4e3; scrollbar-width: thin; }
+-.orbit-chapter-nav > span { flex: none; font-size: .62rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; padding-right: 12px; }
+-.orbit-chapter-nav a { display: inline-flex; align-items: center; gap: 9px; flex: none; padding: 11px 15px; min-height: 44px; border: 1px solid #173e8435; border-radius: 30px; font-size: .75rem; font-weight: 700; transition: background .2s; }
+-.orbit-chapter-nav a > span { font-size: .6rem; color: #52637b; }
+-.orbit-chapter-nav a:is(:hover, [aria-current]) { background: #ffe3a8; border-color: #173e84; }
++/* A decorative sand band between the blue hero and the article. The chapter
++   chips moved out; each reading page carries its own "On this page" outline. */
++.orbit-chapter-nav { height: 90px; border-bottom: 1px solid #173e8426; background: #fff4e3; }
+ 
+ /* Open, rounded research layouts keep the scientific record easy to read. */
+ body[data-page].orbit-pages :is(.project-paper-page, .experiment-index-page, .experiment-record-workspace, .page-section) { background: #fff4e3; }
+@@ -104,8 +102,6 @@ body[data-page].orbit-pages #siteMain .team-card-table { background: #ffe9bf; }
+ body[data-page].orbit-pages #siteMain .team-dealer { background: #ffe9bf; border-color: #173e8440; }
+ body[data-page].orbit-pages #siteMain .team-dealer-actions button { border: 2px solid #173e84; border-radius: 30px; background: #fffaef; font-weight: 700; }
+ body[data-page].orbit-pages #siteMain .team-card-table .team-card-front { border: 2px solid #173e84; border-radius: 18px; background: #fffaf0; box-shadow: 4px 5px 0 #d9b58e; }
+-body[data-page].orbit-pages #siteMain .team-card-table .team-card-back { border: 2px solid #173e84; border-radius: 18px; background: radial-gradient(#ffda7770 1px, transparent 1px) 0 0 / 13px 13px, #173e84; color: #fff1bc; }
+-body[data-page].orbit-pages .team-card-back span { background: #173e84; font-family: var(--font-display); }
+ body[data-page].orbit-pages .team-profile-dialog { border: 3px solid #173e84; border-radius: 28px; box-shadow: 8px 10px 0 #e9b99c; background: #fff4e3; }
+ body[data-page].orbit-pages .team-profile-dialog[open] { animation: orbit-profile-enter .4s cubic-bezier(.2,.75,.2,1) both; }
+ body[data-page].orbit-pages .team-profile-dialog::backdrop { background: #10295dc9; }
+@@ -115,10 +111,12 @@ body[data-page].orbit-pages .team-profile-dialog h2 { font-family: var(--font-di
+ .orbit-next > .container { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1440px; }
+ .orbit-next-copy > p { color: #ffcf78; font-size: .65rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; margin-bottom: 16px; }
+ body[data-page].orbit-pages .orbit-next-copy h2 { color: #fff1bc; font-size: clamp(2.6rem, 4vw, 4.7rem); line-height: 1.05; }
+-.orbit-next a { display: flex; align-items: center; gap: 24px; padding: 25px 32px; border: 2px solid #fff1bc; border-radius: 26px; background: #10295d; font-size: 1.1rem; font-weight: 800; transition: translate .2s, background .2s; }
++/* Sand card on the blue band: the pixel badges read far better on sand than
++   on navy, and the rose border keeps the card distinct from the page body. */
++.orbit-next a { color: #3d2340; display: flex; align-items: center; gap: 24px; padding: 25px 32px; border: 2px solid #b9627e; border-radius: 26px; background: #f7e3bd; font-size: 1.1rem; font-weight: 800; transition: translate .2s, background .2s; }
+ .orbit-next a > img { width: 72px; height: 72px; image-rendering: pixelated; }
+ .orbit-next a > span:last-child { font-size: 2rem; }
+-.orbit-next a:hover { translate: 0 -5px; background: #214c91; }
++.orbit-next a:hover { translate: 0 -5px; background: #fff0d8; border-color: #8f4463; }
+ body[data-page].orbit-pages .orbit-next a:focus-visible { outline-color: #fff1bc; }
+ body[data-page].orbit-pages :is(.link-directory-section, .footer-inner) { background: #10295d; }
+ body[data-page].orbit-pages .site-footer :is(.link-directory-section, .footer-inner) :is(a, p, h3) { color: #fff1bc; }
+@@ -147,7 +145,7 @@ body[data-page].orbit-pages .renata-back-to-top { border-radius: 50%; background
+   .orbit-page-hero--record .orbit-page-art { width: min(75%, 300px); }
+   .orbit-page-hero--record .orbit-scene-caption > span { display: none; }
+   .orbit-page-hero--record .orbit-scene-caption { justify-content: center; }
+-  .orbit-chapter-nav { padding: 18px 20px; }
++  .orbit-chapter-nav { height: 56px; }
+   body[data-page].orbit-pages .project-paper-layout { display: flex; flex-direction: column; }
+   body[data-page].orbit-pages .project-paper-sidebar { position: static; width: 100%; order: -1; }
+   body[data-page].orbit-pages .project-paper-sidebar-inner { max-height: 260px; }
+diff --git a/css/page-outline.css b/css/page-outline.css
+new file mode 100644
+index 0000000..6e600e4
+--- /dev/null
++++ b/css/page-outline.css
+@@ -0,0 +1,102 @@
++/* One shared "On this page" outline for the Project and Human Practices
++   articles. It matches the Wetlab and Model sidebars (.lab-sidebar) so every
++   reading page offers the same control: a rule, a label, and plain links.
++   Loaded last so it is not re-boxed by the page themes. */
++
++.page-outline {
++  max-height: calc(100svh - var(--site-header-height, 88px) - 3rem);
++  overflow-y: auto;
++  overscroll-behavior: contain;
++  scrollbar-width: none;
++  padding: 12px 0 0;
++  border: 0;
++  border-top: 3px solid #db8050;
++  border-radius: 0;
++  background: none;
++  box-shadow: none;
++}
++
++.page-outline::-webkit-scrollbar { display: none; }
++
++.page-outline-title {
++  margin: 0 0 12px;
++  color: #52637b;
++  font-size: 0.72rem;
++  font-weight: 750;
++  line-height: 1.4;
++  letter-spacing: 0.1em;
++  text-transform: uppercase;
++}
++
++.page-outline ul {
++  margin: 0;
++  padding: 0;
++  list-style: none;
++}
++
++.page-outline a {
++  display: block;
++  padding: 10px 0;
++  border: 0;
++  border-bottom: 1px solid #24305e22;
++  border-radius: 0;
++  background: none;
++  color: #254780;
++  font-size: 0.86rem;
++  line-height: 1.4;
++  text-decoration: none;
++}
++
++.page-outline a:hover,
++.page-outline a:focus-visible {
++  background: none;
++  color: #9a4426;
++  text-decoration: underline;
++  text-underline-offset: 4px;
++}
++
++.page-outline a[aria-current="location"] {
++  color: #9a4426;
++  font-weight: 750;
++}
++
++/* Sub-items sit under their parent rather than in a tab of their own. */
++.page-outline ul ul {
++  margin: 0 0 0 2px;
++  padding-left: 14px;
++  border-left: 1px solid #24305e22;
++}
++
++.page-outline ul ul a {
++  padding: 8px 0;
++  font-size: 0.8rem;
++}
++
++.page-outline li:last-child > a { border-bottom: 0; }
++
++.page-outline-related {
++  display: inline-block;
++  margin-top: 14px;
++  padding: 10px 0;
++  border: 0;
++  color: #254780;
++  font-size: 0.82rem;
++  text-decoration: underline;
++  text-underline-offset: 4px;
++}
++
++.page-outline-related:hover { color: #9a4426; }
++
++@media (max-width: 900px) {
++  .page-outline {
++    max-height: none;
++    overflow: visible;
++    padding-top: 10px;
++  }
++  .page-outline ul {
++    display: grid;
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++    column-gap: 20px;
++  }
++  .page-outline ul ul { grid-column: 1 / -1; display: block; }
++}
+diff --git a/css/project-research.css b/css/project-research.css
+index f7a640f..3f05647 100644
+--- a/css/project-research.css
++++ b/css/project-research.css
+@@ -47,6 +47,10 @@ body.project-dbtl-page .project-paper :is(.project-paper-section, .project-dbtl-
+ .project-cycle-nav a { display: flex; gap: .6rem; align-items: center; padding: .7rem 0; border-block: 1px solid var(--warm-beige); color: var(--deep-ink); text-decoration: none; font-weight: 700; }
+ .project-cycle-nav span { font-size: .7rem; color: var(--muted-ink); }
+ .project-dbtl-stage { padding: 2.5rem 0; border-top: 1px solid var(--warm-beige); }
++/* Stage prose sits one level below .project-paper-section, so it never picked
++   up that section's 74ch measure and ran the full column width. Give the four
++   steps their own, slightly tighter measure. Figures stay full width. */
++body.project-dbtl-page :is(.project-dbtl-stage, .project-record-body) > :is(p, ul, ol, .project-paper-note) { max-width: 65ch; }
+ .project-stage-label { margin: 0 0 .6rem; color: var(--muted-ink); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 800; }
+ .project-dbtl-stage > h3 { font-size: clamp(1.65rem, 3vw, 2.3rem); line-height: 1.15; margin: .5rem 0 1.2rem; }
+ .project-stage-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 0; margin: 1.4rem 0; list-style: none; }
+@@ -68,8 +72,6 @@ body.project-dbtl-page .project-engineering-record { padding: 0; margin: .8rem 0
+ .project-engineering-record > summary { padding: 1rem 1.6rem 1rem 0; cursor: pointer; }
+ .project-engineering-record > summary .project-record-title { display: inline; font-family: inherit; font-size: 1rem; line-height: 1.45; color: var(--deep-ink); }
+ .project-engineering-record > summary .detail-eyebrow { display: block; margin: 0 0 .2rem; font-size: .65rem; }
+-.project-record-prompt { display: block; color: var(--muted-ink); font-size: .75rem; margin-top: .3rem; }
+-.project-engineering-record[open] .project-record-prompt { display: none; }
+ .project-record-body { padding: 0 0 1.2rem; }
+ .project-record-body > p { margin: 1rem 0; }
+ .project-record-body .project-paper-note { margin-bottom: 1rem; }
+diff --git a/css/site-header.css b/css/site-header.css
+index cb3efe3..c323955 100644
+--- a/css/site-header.css
++++ b/css/site-header.css
+@@ -37,29 +37,43 @@ body[data-page] #siteHeader .brand-text { color: var(--header-cream); font: 800
+ body[data-page] #siteHeader .renata-nav { min-width: 0; margin: 0 0 0 auto; padding: 0; color: var(--header-cream); }
+ body[data-page] #siteHeader .renata-nav-list { position: static; display: flex; align-items: center; flex-wrap: nowrap; gap: 12px; width: auto; max-height: none; overflow: visible; margin: 0; padding: 0; list-style: none; border: 0; border-radius: 0; background: transparent; color: var(--header-cream); box-shadow: none; }
+ body[data-page] #siteHeader .renata-nav-list > li { flex: none; border: 0; }
+-body[data-page] #siteHeader .renata-nav-row { display: flex; align-items: center; gap: 2px; }
+ body[data-page] #siteHeader .renata-nav-trigger { display: inline-flex; align-items: center; justify-content: center; gap: 7px; width: auto; min-height: 44px; padding: 10px 7px; border: 1px solid transparent; border-radius: 8px; color: var(--header-cream); font: 750 .8rem/1.2 "Trebuchet MS", "Avenir Next", Arial, sans-serif; }
+ body[data-page] #siteHeader .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #fff1bc14; border-color: #fff1bc45; }
+ body[data-page] #siteHeader .renata-nav-trigger.is-active { box-shadow: inset 0 -2px #ffcf78; }
+-body[data-page] #siteHeader .renata-nav-shortcuts { display: inline-flex; align-items: center; gap: 1px; }
+-body[data-page] #siteHeader .renata-nav-shortcut { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 40px; min-height: 44px; border: 1px solid transparent; border-radius: 50%; color: var(--header-cream); }
+-body[data-page] #siteHeader .renata-nav-shortcut .renata-nav-icon { width: 32px; height: 32px; }
+-body[data-page] #siteHeader .renata-nav-shortcut:is(:hover, .is-current) { background: #fff1bc18; border-color: #ffcf78; }
++body[data-page] #siteHeader .renata-nav-toggle { color: var(--header-cream); border-color: #fff1bc70; }
+ /* Fixed panels escape the narrow-screen row's horizontal scroll container. */
+-body[data-page] #siteHeader .renata-nav-panel { position: fixed; z-index: 5000; top: var(--nav-panel-top, 88px); right: 16px; display: block; width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - var(--nav-panel-top, 88px) - 16px); overflow-y: auto; overscroll-behavior: contain; padding: 12px; border: 1px solid var(--nav-line); border-top: 2px solid #ffcf78; border-radius: 0 0 16px 16px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 16px 32px #10295d26; animation: none; }
++body[data-page] #siteHeader .renata-nav-panel { position: fixed; z-index: 5000; top: var(--nav-panel-top, 88px); left: var(--nav-panel-left, auto); right: auto; display: block; width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - var(--nav-panel-top, 88px) - 16px); overflow-y: auto; overscroll-behavior: contain; padding: 12px; border: 1px solid var(--nav-line); border-top: 2px solid #ffcf78; border-radius: 0 0 16px 16px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 16px 32px #10295d26; animation: none; }
+ body[data-page] #siteHeader .renata-nav-intro { display: none; }
+ body[data-page] #siteHeader .renata-nav-pages { padding: 4px; }
+ body[data-page] #siteHeader .renata-nav-pages > .renata-nav-eyebrow { margin: 6px 10px 10px; }
+ body[data-page] #siteHeader .renata-nav-card { min-height: 66px; padding: 12px; }
+ body[data-page] #siteHeader .renata-nav-subpages { margin: 0 12px 12px 24px; }
+-body[data-page] #siteHeader :is(.brand, .renata-nav-trigger, .renata-nav-shortcut):focus-visible { outline: 3px solid var(--header-cream); outline-offset: -2px; }
++body[data-page] #siteHeader :is(.brand, .renata-nav-trigger, .renata-nav-toggle):focus-visible { outline: 3px solid var(--header-cream); outline-offset: -2px; }
+ body[data-page] #siteHeader .renata-nav-panel :is(a, button):focus-visible { outline-color: var(--nav-ink); outline-offset: -3px; }
++/* Four text-only triggers fit on one row down to the hamburger breakpoint, so
++   the header no longer wraps the nav into its own horizontally scrolling band. */
+ @media (max-width: 1279px) {
+-  body[data-page] #siteHeader .header-inner { flex-wrap: wrap; gap: 4px; padding: 10px 16px 4px; }
++  body[data-page] #siteHeader .header-inner { min-height: 72px; gap: 12px; padding: 10px 16px; }
+   body[data-page] #siteHeader .brand-logo-wrap { width: 38px; height: 38px; }
+   body[data-page] #siteHeader .brand-text { font-size: 1.15rem; }
+-  body[data-page] #siteHeader .renata-nav { flex: 1 0 100%; width: 100%; margin: 0; }
+-  body[data-page] #siteHeader .renata-nav-list { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #fff1bc60 transparent; padding-block: 4px; gap: 14px; }
++  body[data-page] #siteHeader .renata-nav-list { gap: 6px; }
++}
++/* The id-scoped desktop row above out-ranks navigation.css, so the collapsed
++   menu restates the panel's own box here. */
++@media (max-width: 980px) {
++  body[data-page] #siteHeader .renata-nav-list {
++    position: absolute; top: calc(100% + 1px); right: 12px;
++    display: block; width: min(620px, calc(100vw - 24px));
++    max-height: calc(100dvh - var(--nav-panel-top, 72px) - 16px); overflow-y: auto; overscroll-behavior: contain;
++    gap: 0; padding: 12px;
++    border: 1px solid var(--nav-line); border-top: 2px solid #ffcf78; border-radius: 0 0 16px 16px;
++    background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 16px 32px #10295d26;
++  }
++  body[data-page] #siteHeader .renata-nav-list > li + li { border-top: 1px solid var(--nav-line); }
++  body[data-page] #siteHeader .renata-nav-trigger { display: flex; justify-content: space-between; width: 100%; min-height: 50px; padding: 14px; color: var(--nav-ink); font-size: .9rem; }
++  body[data-page] #siteHeader .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #aebbff38; border-color: var(--nav-line); }
++  body[data-page] #siteHeader .renata-nav-panel { position: static; width: 100%; max-height: none; overflow: visible; padding: 0; border: 0; border-radius: 0; box-shadow: none; }
++  body[data-page] #siteHeader .renata-nav-panel :is(a, button):focus-visible { outline-color: var(--nav-ink); }
+ }
+ @media (max-width: 520px) {
+   body[data-page] #siteHeader .header-inner { padding-inline: 12px; }
+diff --git a/css/site.css b/css/site.css
+index a1e0129..a0168f6 100644
+--- a/css/site.css
++++ b/css/site.css
+@@ -2274,6 +2274,26 @@ a {
+   flex-wrap: wrap;
+ }
+ 
++/* iGEM requires a content-license statement and an AI-use disclosure. */
++.footer-statement {
++  flex: 1 1 320px;
++  min-width: 0;
++  max-width: 62ch;
++}
++
++.footer-statement h3 {
++  margin: 0 0 0.35rem;
++  font-size: 0.72rem;
++  font-weight: 800;
++  letter-spacing: 0.12em;
++  text-transform: uppercase;
++}
++
++.footer-statement p {
++  font-size: 0.78rem;
++  line-height: 1.65;
++}
++
+ .footer-inner p {
+   color: var(--muted-2);
+   font-size: 0.95rem;
+diff --git a/css/team-deal.css b/css/team-deal.css
+index 4445571..b3a70c2 100644
+--- a/css/team-deal.css
++++ b/css/team-deal.css
+@@ -25,7 +25,6 @@
+ .team-dealer-copy > strong { display: block; font-family: var(--font-display, Georgia, serif); font-size: clamp(1.3rem, 2vw, 2rem); line-height: 1.15; }
+ .team-dealer-copy > p { margin: 6px 0 0; font-size: .8rem; }
+ .team-dealer-art { width: 180px; height: 108px; overflow: visible; }
+-.team-dealer-hand { transform-origin: 156px 40px; }
+ .team-dealer-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+ #siteMain .team-dealer-actions button { background: transparent; border: 1px solid var(--deep-ink); color: var(--deep-ink); padding: 9px 14px; font: inherit; font-size: .8rem; cursor: pointer; border-radius: 3px; }
+ #siteMain .team-dealer-actions button:hover { background: var(--soft-periwinkle); }
+@@ -38,17 +37,14 @@
+ #siteMain .team-card-table .team-group-heading .detail-eyebrow { font-size: .72rem; letter-spacing: .15em; }
+ #siteMain .team-card-table .member-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); align-items: stretch; }
+ #siteMain .team-card-table #mentors .member-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+-#siteMain .team-card-table .member-card { position: relative; overflow: visible; background: transparent; border: 0; box-shadow: none; perspective: 1000px; transform-origin: center; }
++#siteMain .team-card-table .member-card { position: relative; overflow: visible; background: transparent; border: 0; box-shadow: none; transform-origin: center; }
+ #siteMain .team-card-table .member-card.is-waiting { opacity: 0; }
+ #siteMain .team-card-table .member-card.is-dealing { z-index: 30; }
+-.team-card-inner { position: relative; height: 100%; transform-style: preserve-3d; }
+-#siteMain .team-card-table .team-card-front,
+-#siteMain .team-card-table .team-card-back { border: 1px solid var(--deep-ink); border-radius: 10px; backface-visibility: hidden; }
++.team-card-inner { position: relative; height: 100%; }
++#siteMain .team-card-table .team-card-front { border: 1px solid var(--deep-ink); border-radius: 10px; }
+ #siteMain .team-card-table .team-card-front { position: relative; height: 100%; padding: 28px 12px 18px; background: var(--light-cream, #fffaf2); box-shadow: 3px 4px 0 var(--warm-beige); }
+ .team-card-index { position: absolute; font-size: .64rem; font-weight: 700; letter-spacing: .06em; color: var(--deep-ink); top: 8px; left: 12px; }
+ .team-card-index--bottom { inset: auto 12px 7px auto; transform: rotate(180deg); }
+-#siteMain .team-card-table .team-card-back { position: absolute; inset: 0; display: grid; place-items: center; transform: rotateY(180deg); color: var(--deep-ink); background: repeating-linear-gradient(45deg, transparent 0 12px, #24305e18 12px 13px), var(--soft-periwinkle); box-shadow: inset 0 0 0 7px var(--light-cream); }
+-.team-card-back span { display: grid; place-items: center; width: 58%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; font: italic 3rem Georgia, serif; background: var(--soft-periwinkle); }
+ #siteMain .team-card-table .member-card :is(.member-photo-placeholder, .member-photo) { position: relative; aspect-ratio: 4 / 4.5; border: 0; border-radius: 4px; background: var(--warm-beige); }
+ #siteMain .team-card-table .member-card .member-photo { display: block; width: 100%; object-fit: cover; object-position: center 15%; }
+ #siteMain .team-card-table .member-photo-placeholder::after { content: "Portrait"; position: absolute; bottom: 14px; font-size: .65rem; text-transform: uppercase; letter-spacing: .13em; color: var(--deep-ink); }
+diff --git a/css/team-space.css b/css/team-space.css
+index f93bf91..db663b4 100644
+--- a/css/team-space.css
++++ b/css/team-space.css
+@@ -76,30 +76,6 @@ body[data-page="team"].orbit-pages #siteMain .team-card-table .team-card-front::
+   background: var(--crew-orange);
+   border-radius: 3px;
+ }
+-body[data-page="team"].orbit-pages #siteMain .team-card-table .team-card-back {
+-  border-color: var(--crew-night);
+-  border-radius: 12px;
+-  background: radial-gradient(circle, #fff4e37a 1px, transparent 1.5px) 0 0 / 29px 31px, var(--crew-blue);
+-  box-shadow: inset 0 0 0 7px var(--crew-cream), inset 0 0 0 8px var(--crew-orange);
+-}
+-body[data-page="team"].orbit-pages .team-card-back > span {
+-  position: relative;
+-  width: 72%;
+-  font: 800 clamp(.85rem, 1.5vw, 1.3rem) / 1 var(--font-display);
+-  letter-spacing: -.03em;
+-  color: var(--crew-cream);
+-  background: var(--crew-night);
+-  border: 2px solid var(--crew-orange);
+-}
+-body[data-page="team"].orbit-pages .team-card-back > span::after {
+-  content: "";
+-  position: absolute;
+-  inset: 16% -13%;
+-  border: 1px solid #ffc79799;
+-  border-radius: 50%;
+-  rotate: -28deg;
+-  pointer-events: none;
+-}
+ body[data-page="team"].orbit-pages #siteMain .team-card-table .member-meta h3 { color: var(--crew-night); }
+ body[data-page="team"].orbit-pages #siteMain .team-card-table .member-meta p { color: #44577b; }
+ body[data-page="team"].orbit-pages #siteMain .member-profile-open:focus-visible { outline: 3px solid #ffc797; outline-offset: 4px; }
+@@ -114,5 +90,4 @@ body[data-page="team"].orbit-pages .team-profile-dialog { box-shadow: 7px 8px 0
+ }
+ @media (max-width: 650px) {
+   body[data-page="team"].orbit-pages .team-dealer-copy > strong { font-size: 1.05rem; }
+-  body[data-page="team"].orbit-pages .team-card-back > span { font-size: 1rem; }
+ }
+diff --git a/human-practices.html b/human-practices.html
+index 28ae23b..f86fe75 100644
+--- a/human-practices.html
++++ b/human-practices.html
+@@ -12,6 +12,7 @@
+   <link rel="stylesheet" href="css/navigation.css?v=20261019-shared-header1" />
+   <link rel="stylesheet" href="css/site-header.css?v=20261019-icon-bar1" />
+   <link rel="stylesheet" href="css/cosmic-theme.css?v=20261019-blue-footer1" />
++  <link rel="stylesheet" href="css/page-outline.css?v=20261019-outline1" />
+   <link rel="stylesheet" href="css/orbit-pages.css?v=20261019-autoplay1" />
+ </head>
+ <body data-page="human-practices">
+diff --git a/index.html b/index.html
+index 19d597d..fc83df5 100644
+--- a/index.html
++++ b/index.html
+@@ -26,11 +26,10 @@
+       </a>
+       <nav class="renata-nav" aria-label="Main navigation">
+         <ul class="renata-nav-list">
+-          <li><a class="renata-nav-trigger" href="index.html">Homepage</a></li>
+-          <li class="renata-nav-row"><a class="renata-nav-trigger" href="team.html">Our Team</a><a class="renata-nav-shortcut" href="team.html" aria-label="Meet the team" title="Meet the team"><img class="renata-nav-icon" src="assets/nav-icons/Phoenix.png" width="32" height="32" alt="" /></a><a class="renata-nav-shortcut" href="team.html#mentors" aria-label="PIs &amp; mentors" title="PIs &amp; mentors"><img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="32" height="32" alt="" /></a></li>
+-          <li class="renata-nav-row"><a class="renata-nav-trigger" href="project-description.html">Our Project</a><a class="renata-nav-shortcut" href="project-description.html" aria-label="Abstract" title="Abstract"><img class="renata-nav-icon" src="assets/nav-icons/Stomach.png" width="32" height="32" alt="" /></a><a class="renata-nav-shortcut" href="project-description.html" aria-label="DBTL Cycle" title="DBTL Cycle"><img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="32" height="32" alt="" /></a></li>
+-          <li class="renata-nav-row"><a class="renata-nav-trigger" href="wet-lab.html">Our Lab Work</a><a class="renata-nav-shortcut" href="wet-lab.html" aria-label="Wetlab" title="Wetlab"><img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="32" height="32" alt="" /></a><a class="renata-nav-shortcut" href="model.html" aria-label="Model" title="Model"><img class="renata-nav-icon" src="assets/nav-icons/Stomach.png" width="32" height="32" alt="" /></a></li>
+-          <li class="renata-nav-row"><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a><a class="renata-nav-shortcut" href="human-practices.html" aria-label="Human practices" title="Human practices"><img class="renata-nav-icon" src="assets/nav-icons/Mic.png" width="32" height="32" alt="" /></a><a class="renata-nav-shortcut" href="education.html" aria-label="Education" title="Education"><img class="renata-nav-icon" src="assets/nav-icons/Plant.png" width="32" height="32" alt="" /></a></li>
++          <li><a class="renata-nav-trigger" href="team.html">Our Team</a></li>
++          <li><a class="renata-nav-trigger" href="project-description.html">Our Project</a></li>
++          <li><a class="renata-nav-trigger" href="wet-lab.html">Our Lab Work</a></li>
++          <li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li>
+         </ul>
+       </nav>
+     </div>
+@@ -153,7 +152,6 @@
+       <path d="m456 198 12 23 26 4-19 19 5 26-24-12-23 12 4-26-18-19 25-4Z" fill="#fff1bc"/>
+       <g fill="#263b76" font-family="Trebuchet MS,Arial" text-anchor="middle"><text x="350" y="150" font-size="36" font-weight="800">SulFlux</text><text x="350" y="185" font-size="18">Proposed engineered pocket</text><text x="350" y="490" font-size="17">LCA + PAPS → sulfated LCA</text></g></svg><figcaption><strong>SulFlux · proposed</strong><span>An engineered pocket to investigate LCA sulfation.</span></figcaption></figure>
+       </div>
+-      <div class="mission-design-control"><label for="design-progress">Explore the proposed fit</label><input id="design-progress" type="range" min="0" max="100" value="0" aria-describedby="design-note"/><p id="design-note">Drag to align the illustrated molecule. This demonstrates the design idea, not a measured binding result.</p></div>
+       <a class="mission-button" href="model.html">Read the computational record <span aria-hidden="true">↗</span></a>
+     </section>
+ 
+diff --git a/js/mission-home.js b/js/mission-home.js
+index 5846920..a8c7a01 100644
+--- a/js/mission-home.js
++++ b/js/mission-home.js
+@@ -62,6 +62,22 @@
+     return { opacity: amount, x: (fromRight ? 1 : -1) * 85 * (1 - amount), y: 14 * (1 - amount) };
+   }
+ 
++  // The illustrated molecule used to be dragged into place on a range input.
++  // It now docks by itself the first time the scene is scrolled into view, so
++  // the scene reads as an illustration rather than a control.
++  function dockOnView(scene, win, reduced) {
++    if (!scene) return;
++    const dock = () => scene.style.setProperty("--fit-progress", 1);
++    if (reduced.matches || typeof win.IntersectionObserver !== "function") { dock(); return; }
++    const observer = new win.IntersectionObserver(entries => {
++      if (!entries.some(entry => entry.isIntersecting)) return;
++      observer.disconnect();
++      dock();
++    }, { threshold: .45 });
++    observer.observe(scene);
++    reduced.addEventListener("change", () => { if (reduced.matches) { observer.disconnect(); dock(); } });
++  }
++
+   function init(win, doc) {
+     const launch = doc.querySelector(".mission-launch");
+     if (!launch) return;
+@@ -211,8 +227,7 @@
+         gallery.querySelector(".mission-diagram-status").textContent = after ? "Without the storage step, bile flows directly from the liver to the small intestine." : "The gallbladder stores bile between meals.";
+       });
+     });
+-    const slider = doc.getElementById("design-progress");
+-    slider.addEventListener("input", () => doc.getElementById("engineering-story").style.setProperty("--fit-progress", Number(slider.value) / 100));
++    dockOnView(doc.getElementById("engineering-story"), win, reduced);
+     configure();
+     return { configure, measure };
+   }
+diff --git a/js/navigation.js b/js/navigation.js
+index fe2cdf3..2a8a2ea 100644
+--- a/js/navigation.js
++++ b/js/navigation.js
+@@ -7,26 +7,27 @@
+   const badge = (name, size) => `<img class="renata-nav-icon" src="assets/nav-icons/${escape(name)}.png" width="${size}" height="${size}" alt="" decoding="async" />`;
+ 
+   function render(items, { pageKey = "home", group = "home" } = {}) {
+-    return `<ul class="renata-nav-list" id="renata-nav-list">${items.map((item, index) => {
++    return `<button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu"><span class="renata-nav-bars" aria-hidden="true"></span></button>
++      <ul class="renata-nav-list" id="renata-nav-list">${items.map((item, index) => {
+         const active = item.key === group || item.key === pageKey;
+-        if (!item.children) return `<li><a class="renata-nav-trigger${active ? " is-active" : ""}" href="${escape(item.href)}"${item.key === pageKey ? ' aria-current="page"' : ""}>${escape(item.label)}</a></li>`;
++        // A childless label is itself the destination, so it carries the
++        // current-page marker whenever this page belongs to its section.
++        if (!item.children) return `<li><a class="renata-nav-trigger${active ? " is-active" : ""}" href="${escape(item.href)}"${active ? ' aria-current="page"' : ""}>${escape(item.label)}</a></li>`;
+         const panelId = `renata-nav-${item.key}`;
+         return `<li class="renata-nav-group">
+-          <div class="renata-nav-row">
+           <button class="renata-nav-trigger${active ? " is-active" : ""}" type="button" aria-expanded="false" aria-controls="${escape(panelId)}" id="${escape(panelId)}-trigger">${escape(item.label)}<span class="renata-nav-chevron" aria-hidden="true"></span></button>
+-          <span class="renata-nav-shortcuts">${item.children.map(child => `<a class="renata-nav-shortcut${child.key === pageKey ? " is-current" : ""}" href="${escape(child.href)}" aria-label="${escape(child.label)}" title="${escape(child.label)}">${badge(child.icon, 32)}</a>`).join("")}</span>
+-          </div>
+           <div class="renata-nav-panel" id="${escape(panelId)}" aria-labelledby="${escape(panelId)}-trigger" hidden>
+             <div class="renata-nav-intro">
+-              <span class="renata-nav-eyebrow">0${index} / ${escape(item.label)}</span>
++              <span class="renata-nav-eyebrow">0${index + 1} / ${escape(item.label)}</span>
+               <p class="renata-nav-heading">${escape(item.heading)}</p>
+               <p class="renata-nav-description">${escape(item.description)}</p>
+             </div>
+-            <div class="renata-nav-pages"><span class="renata-nav-eyebrow">Explore this section</span>
++            <div class="renata-nav-pages">
+               <ul>${item.children.map(child => {
+                 const current = child.key === pageKey;
+                 const inSection = !current && (pageKey.startsWith(`${child.key}-`) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
+                 return `<li><a class="renata-nav-card${inSection ? " is-section" : ""}" href="${escape(child.href)}"${current ? ' aria-current="page"' : ""}>
++                  ${badge(child.icon, 48)}
+                   <span class="renata-nav-copy"><strong>${escape(child.label)}</strong><small>${escape(child.description)}</small></span>
+                   <span class="renata-nav-arrow" aria-hidden="true">${current ? "●" : "↗"}</span>
+                 </a>${child.children?.length ? `<ul class="renata-nav-subpages" aria-label="${escape(child.label)} pages">${child.children.map(sub => `<li><a href="${escape(sub.href)}"${sub.key === pageKey ? ' aria-current="page"' : ""}>${escape(sub.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>` : ""}</li>`;
+@@ -54,6 +55,7 @@
+     const mobile = win.matchMedia("(max-width: 980px)");
+     const hover = win.matchMedia("(hover: hover) and (pointer: fine)");
+     const list = nav.querySelector(".renata-nav-list");
++    const toggle = nav.querySelector(".renata-nav-toggle");
+     const triggers = [...nav.querySelectorAll(".renata-nav-trigger")];
+     const entries = [...nav.querySelectorAll(".renata-nav-group")].map(group => ({
+       group, trigger: group.querySelector(".renata-nav-trigger"), panel: group.querySelector(".renata-nav-panel")
+@@ -70,6 +72,21 @@
+       doc.documentElement.style.setProperty("--site-header-height", `${box.height}px`);
+     }
+ 
++    // Desktop panels are taken out of flow, so they are placed under their own
++    // trigger instead of pinning to the header's right edge. The panel is kept
++    // inside the viewport when a trigger sits close to the right-hand gutter.
++    function placePanel(entry) {
++      const panel = entry.panel;
++      if (!panel.style) return;
++      panel.style.removeProperty("--nav-panel-left");
++      if (mobile.matches || typeof entry.trigger.getBoundingClientRect !== "function") return;
++      const gutter = 16;
++      const trigger = entry.trigger.getBoundingClientRect();
++      const width = panel.offsetWidth;
++      const rightmost = Math.max(gutter, win.innerWidth - width - gutter);
++      panel.style.setProperty("--nav-panel-left", `${Math.round(Math.min(Math.max(gutter, trigger.left), rightmost))}px`);
++    }
++
+     function close(restoreFocus = false) {
+       cancelHover();
+       if (!opened) return;
+@@ -88,6 +105,13 @@
+       opened = entry;
+       entry.trigger.setAttribute("aria-expanded", "true");
+       entry.panel.hidden = false;
++      placePanel(entry);
++    }
++
++    function setMenu(open) {
++      nav.dataset.navOpen = open ? "true" : "false";
++      toggle?.setAttribute("aria-expanded", open ? "true" : "false");
++      if (!open) close();
+     }
+ 
+     entries.forEach(entry => {
+@@ -116,9 +140,8 @@
+         links[next].focus();
+       });
+     });
+-    nav.querySelectorAll(".renata-nav-shortcut").forEach(link => {
+-      link.addEventListener("focus", () => close());
+-    });
++    setMenu(false);
++    toggle?.addEventListener("click", () => setMenu(nav.dataset.navOpen !== "true"));
+     triggers.forEach((trigger, index) => {
+       trigger.addEventListener("focus", () => {
+         if (opened && opened.trigger !== trigger) close();
+@@ -139,13 +162,19 @@
+     });
+     doc.addEventListener("keydown", event => {
+       if (event.key !== "Escape") return;
+-      if (!opened) return;
+-      event.preventDefault();
+-      close(true);
++      if (opened) {
++        event.preventDefault();
++        close(true);
++      } else if (nav.dataset.navOpen === "true") {
++        event.preventDefault();
++        setMenu(false);
++        toggle?.focus();
++      }
+     });
+     doc.addEventListener("pointerdown", event => {
+       if (nav.contains(event.target)) return;
+       close(opened?.panel.contains(doc.activeElement));
++      setMenu(false);
+     });
+     nav.addEventListener("focusout", () => {
+       win.setTimeout(() => {
+@@ -156,14 +185,19 @@
+       if (event.target.closest("a")) {
+         // Keep same-page anchor navigation from leaving focus in a hidden panel.
+         close(opened?.panel.contains(event.target));
++        setMenu(false);
+       }
+     });
+     mobile.addEventListener("change", () => {
+       close(opened?.panel.contains(doc.activeElement));
++      setMenu(false);
+       measureHeader();
+     });
+     list.addEventListener("scroll", () => close(opened?.panel.contains(doc.activeElement)), { passive: true });
+-    win.addEventListener?.("resize", measureHeader);
++    win.addEventListener?.("resize", () => {
++      measureHeader();
++      if (opened) placePanel(opened);
++    });
+     if (win.ResizeObserver) new win.ResizeObserver(measureHeader).observe(nav);
+     measureHeader();
+   }
+diff --git a/js/orbit-pages.js b/js/orbit-pages.js
+index ce464c4..6371d00 100644
+--- a/js/orbit-pages.js
++++ b/js/orbit-pages.js
+@@ -64,7 +64,7 @@
+       </div>
+       <svg class="orbit-page-horizon" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q240 0 500 50T1000 45T1440 22V100H0Z" fill="#ef9a7d"/><path d="M0 87Q350 28 610 73T1150 65T1440 80V100H0Z" fill="#fff4e3"/></svg>
+     </section>
+-    ${links.length ? `<nav class="orbit-chapter-nav" aria-label="On this page"><span>In this chapter</span>${links.slice(0, 6).map((link, index) => `<a href="#${escape(link.id)}"><span>${String(index + 1).padStart(2, "0")}</span>${escape(link.label)}</a>`).join("")}</nav>` : ""}`;
++    <div class="orbit-chapter-nav" aria-hidden="true"></div>`;
+   }
+ 
+   function orbitPoint(theta) {
+@@ -209,7 +209,7 @@
+     meter.setAttribute("aria-valuemin", "0"); meter.setAttribute("aria-valuemax", "100");
+     meter.innerHTML = '<span></span>';
+     doc.getElementById("siteHeader").appendChild(meter);
+-    const chapterLinks = [...main.querySelectorAll(".orbit-chapter-nav a")];
++    const chapterLinks = [...main.querySelectorAll(".page-outline a")];
+     let frame = 0;
+     function update() {
+       frame = 0;
+diff --git a/js/project-paper.js b/js/project-paper.js
+index f68cbbe..abc1e33 100644
+--- a/js/project-paper.js
++++ b/js/project-paper.js
+@@ -7,7 +7,7 @@
+ 
+   function recordMarkup(record) {
+     return `<details class="project-engineering-record" id="${escape(record.id)}">
+-      <summary><span class="detail-eyebrow">${escape(record.eyebrow)}</span><strong class="project-record-title" id="${escape(record.id)}-title">${escape(record.title)}</strong><span class="project-record-prompt">View supporting record</span></summary>
++      <summary><span class="detail-eyebrow">${escape(record.eyebrow)}</span><strong class="project-record-title" id="${escape(record.id)}-title">${escape(record.title)}</strong></summary>
+       <div class="project-record-body">
+         ${record.text ? `<p>${record.text}</p>` : ""}
+         ${record.items ? `<ul>${record.items.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
+@@ -38,7 +38,6 @@
+     const engineering = pageData.engineering || {};
+     const stages = paper.dbtl?.stages || [];
+     const records = new Map((engineering.details || []).map(record => [record.id, record]));
+-    const sections = [{ id: "abstract", label: "Abstract" }, { id: "engineering", label: "DBTL Cycle" }, ...stages.map(stage => ({ id: stage.id, label: stage.label }))];
+     return `<section class="project-paper-page project-dbtl-paper" id="project-description">
+       <div class="container project-paper-layout">
+         <article class="project-paper" aria-labelledby="project-paper-title">
+@@ -67,19 +66,29 @@
+             <p id="engineering-sources">${engineering.sourceNote || ""}</p>
+           </section>
+         </article>
+-        <aside class="project-paper-sidebar" aria-label="Project page resources">
+-          <div class="project-paper-sidebar-inner">
+-            <h2>Explore this page</h2>
+-            <div class="project-sidebar-tabs" role="tablist" aria-label="Project resources">
+-              ${[["links", "Sections"], ["figures", "Figures"], ["references", "References"]].map(([id, label], index) => `<button type="button" class="project-sidebar-tab${index === 0 ? " active" : ""}" id="project-tab-${id}" role="tab" aria-selected="${index === 0}" aria-controls="project-panel-${id}" data-project-panel="project-panel-${id}">${label}</button>`).join("")}
+-            </div>
+-            <div class="project-sidebar-panel active" id="project-panel-links" role="tabpanel" aria-labelledby="project-tab-links">${sections.map(section => `<a href="#${escape(section.id)}">${escape(section.label)}</a>`).join("")}</div>
+-            <div class="project-sidebar-panel" id="project-panel-figures" role="tabpanel" aria-labelledby="project-tab-figures" hidden>
+-              <a href="#figure-expression-vector" class="project-sidebar-figure-link"><span class="project-sidebar-figure-thumb project-vector-thumbnail" aria-hidden="true">T7 → BtSULT</span><span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Expression vector</strong><small>Schematic placeholder</small></span></a>
+-              <a class="project-model-figure-link" href="model.html">Molecular figures and model analysis</a>
+-            </div>
+-            <div class="project-sidebar-panel" id="project-panel-references" role="tabpanel" aria-labelledby="project-tab-references" hidden>${(paper.references || []).map((reference, index) => `<details class="project-sidebar-reference"><summary>${index + 1}. ${escape(reference.title)}</summary><p>${reference.citation}</p><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">Open source ${index + 1}</a></details>`).join("")}</div>
+-          </div>
++        <aside class="project-paper-sidebar" aria-label="Project page outline">
++          <nav class="page-outline" aria-labelledby="project-outline-title">
++            <p class="page-outline-title" id="project-outline-title">On this page</p>
++            <ul>
++              <li><a href="#abstract">Abstract</a></li>
++              <li>
++                <a href="#engineering">DBTL Cycle</a>
++                <ul>${stages.map(stage => `<li><a href="#${escape(stage.id)}">${escape(stage.label)}</a></li>`).join("")}</ul>
++              </li>
++              <li>
++                <a href="#figure-expression-vector">Figures</a>
++                <ul>
++                  <li><a href="#figure-expression-vector">Figure 1 — Expression vector</a></li>
++                  <li><a href="model.html">Molecular figures and model analysis</a></li>
++                </ul>
++              </li>
++              <li>
++                <a href="#engineering-sources">References</a>
++                <ul>${(paper.references || []).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join("")}</ul>
++              </li>
++            </ul>
++          </nav>
++          <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
+         </aside>
+       </div>
+     </section>`;
+diff --git a/js/site-content.js b/js/site-content.js
+index 0836aa6..34dd174 100644
+--- a/js/site-content.js
++++ b/js/site-content.js
+@@ -28,36 +28,14 @@ window.SITE_DATA = {
+   ],
+ 
+   nav: [
+-    { key: "home", label: "Homepage", href: "index.html" },
+-    {
+-      key: "team", label: "Our Team", icon: "Phoenix",
+-      heading: "The people behind Renata.",
+-      description: "Meet the students and mentors who bring our ideas to life.",
+-      children: [
+-        { key: "team", label: "Meet the team", href: "team.html", icon: "Phoenix", description: "Our people, roles, and stories." },
+-        { key: "mentors", label: "PIs & mentors", href: "team.html#mentors", icon: "DNA", description: "The guidance behind the science." }
+-      ]
+-    },
+-    {
+-      key: "project",
+-      label: "Our Project",
+-      href: "project-description.html",
+-      icon: "Stomach",
+-      heading: "Small biology. Big questions.",
+-      description: "The SulFlux question, the evidence, and the design–build–test–learn cycle.",
+-      children: [
+-        { key: "project-description", label: "Abstract", href: "project-description.html", icon: "Stomach", description: "PCS, our goal, engineering, wetlab evidence, and results." },
+-        { key: "dbtl-cycle", label: "DBTL Cycle", href: "project-description.html", icon: "DNA", description: "Design the vector. Build the construct. Test the enzyme. Learn from the evidence." }
+-      ]
+-    },
++    { key: "team", label: "Our Team", href: "team.html" },
++    { key: "project", label: "Our Project", href: "project-description.html" },
+     {
+       key: "lab-work", label: "Our Lab Work", icon: "DNA",
+       heading: "Follow the science.",
+       description: "Two connected records: experiments at the bench and computational enzyme engineering.",
+       children: [
+-        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation.", children: [
+-          { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab.html#notebook" }
+-        ] },
++        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
+         { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
+       ]
+     },
+@@ -125,8 +103,8 @@ window.SITE_DATA = {
+       cardsTitle: "The people behind Renata",
+       cardsLead: "Our team brings together students, mentors, collaborators, and community partners.",
+       cards: [
+-        { tag: "Members", title: "Core team", text: "Add names and roles." },
+-        { tag: "Support", title: "Mentors", text: "Add mentors and faculty." },
++        { tag: "Members", title: "Core team", text: "PLACEHOLDER: Add names and roles." },
++        { tag: "Support", title: "Mentors", text: "PLACEHOLDER: Add mentors and faculty." },
+         { tag: "Work", title: "Contributions", text: "Show who handled what." },
+         { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
+       ],
+@@ -255,11 +233,11 @@ window.SITE_DATA = {
+       title: "Description",
+       lead: "Use this page for the full project story.",
+       cardsTitle: "Main sections",
+-      cardsLead: "Keep the structure simple.",
++      cardsLead: "PLACEHOLDER: Keep the structure simple.",
+       cards: [
+         { tag: "Background", title: "Context", text: "Write the broader context." },
+         { tag: "Gap", title: "Current limitation", text: "Show what is missing now." },
+-        { tag: "Concept", title: "Renata idea", text: "Explain the concept clearly." }
++        { tag: "Concept", title: "Renata idea", text: "PLACEHOLDER: Explain the concept clearly." }
+       ],
+       ctaTitle: "Next page",
+       ctaText: "The project description brings together the methodology, engineering decisions, and results.",
+@@ -273,8 +251,8 @@ window.SITE_DATA = {
+       cardsTitle: "Wet lab at a glance",
+       cardsLead: "See the experimental objective, the main assays, and how the bench work supports the full project.",
+       cards: [
+-        { tag: "Goal", title: "Objective", text: "State what the wet lab needed to show." },
+-        { tag: "Work", title: "Assays", text: "Summarize the main experiments." },
++        { tag: "Goal", title: "Objective", text: "PLACEHOLDER: State what the wet lab needed to show." },
++        { tag: "Work", title: "Assays", text: "PLACEHOLDER: Summarize the main experiments." },
+         { tag: "Link", title: "Connection", text: "Show how it supports the project." }
+       ],
+       ctaTitle: "Route into the wet-lab details",
+@@ -287,9 +265,9 @@ window.SITE_DATA = {
+       title: "<span class='accent-gradient'>Lab Work</span>",
+       lead: "Use this page for the main assay structure, logic, and experimental record.",
+       cardsTitle: "Main blocks",
+-      cardsLead: "Keep the question, control, output, and experiment timeline clear.",
++      cardsLead: "PLACEHOLDER: Keep the question, control, output, and experiment timeline clear.",
+       cards: [
+-        { tag: "Question", title: "Assay goal", text: "State what each experiment tested." },
++        { tag: "Question", title: "Assay goal", text: "PLACEHOLDER: State what each experiment tested." },
+         { tag: "Control", title: "Comparison", text: "Show controls and validation." },
+         { tag: "Output", title: "Readout", text: "Show what was measured." },
+         { tag: "Record", title: "Experiment notebook", text: "Trace the chronology, what each experiment answered, how the results were interpreted, and how the project continued." }
+@@ -306,8 +284,8 @@ window.SITE_DATA = {
+       cardsTitle: "Dry lab at a glance",
+       cardsLead: "See the computational goal, what the team built, and how those tools changed the project.",
+       cards: [
+-        { tag: "Goal", title: "Purpose", text: "State what the dry lab was meant to answer." },
+-        { tag: "Tools", title: "What was built", text: "Summarize the model or computational workflow." },
++        { tag: "Goal", title: "Purpose", text: "PLACEHOLDER: State what the dry lab was meant to answer." },
++        { tag: "Tools", title: "What was built", text: "PLACEHOLDER: Summarize the model or computational workflow." },
+         { tag: "Impact", title: "Project effect", text: "Show how it changed the project." }
+       ],
+       ctaTitle: "Route into the dry-lab details",
+@@ -323,7 +301,7 @@ window.SITE_DATA = {
+       cardsLead: "See who shaped the work, what the team learned, and how that input influenced the project.",
+       cards: [
+         { tag: "People", title: "Who matters", text: "Show relevant groups and stakeholders." },
+-        { tag: "Input", title: "What you learned", text: "Summarize the main insights." },
++        { tag: "Input", title: "What you learned", text: "PLACEHOLDER: Summarize the main insights." },
+         { tag: "Effect", title: "What changed", text: "Show how engagement affected the project." }
+       ],
+       ctaTitle: "Use engagement to strengthen the project",
+@@ -334,7 +312,7 @@ window.SITE_DATA = {
+       group: "engagement",
+       kicker: "Stakeholders / Decisions / Integration",
+       title: "<span class='accent-gradient'>Human Practices</span>",
+-      lead: "Document the stakeholders, methods, evidence, interpretation, and project decisions that shaped Renata.",
++      lead: "PLACEHOLDER: Document the stakeholders, methods, evidence, interpretation, and project decisions that shaped Renata.",
+       buttons: [],
+       cards: [],
+     }),
+@@ -354,10 +332,10 @@ window.SITE_DATA = {
+       title: "<span class='accent-gradient'>Partnerships</span>",
+       lead: "Use this page for partner teams and external collaboration.",
+       cardsTitle: "Partnership blocks",
+-      cardsLead: "Keep the value of the collaboration visible.",
++      cardsLead: "PLACEHOLDER: Keep the value of the collaboration visible.",
+       cards: [
+-        { tag: "Who", title: "Partner", text: "Add the collaborator and context." },
+-        { tag: "Work", title: "Shared contribution", text: "Describe what was done together." },
++        { tag: "Who", title: "Partner", text: "PLACEHOLDER: Add the collaborator and context." },
++        { tag: "Work", title: "Shared contribution", text: "PLACEHOLDER: Describe what was done together." },
+         { tag: "Impact", title: "Project effect", text: "Show why it mattered." }
+       ],
+       ctaTitle: "Show mutual value",
+@@ -370,11 +348,11 @@ window.SITE_DATA = {
+       title: "Get in <span class='accent-gradient'>contact</span>",
+       lead: "Use this page for the team email, institution, sponsors, and public contact info.",
+       cardsTitle: "Contact blocks",
+-      cardsLead: "Keep this page short and usable.",
++      cardsLead: "PLACEHOLDER: Keep this page short and usable.",
+       cards: [
+-        { tag: "Email", title: "Primary contact", text: "Add the best team email here." },
+-        { tag: "School", title: "Institution", text: "Add school or organization details." },
+-        { tag: "Support", title: "Sponsors", text: "Add sponsor or advisor acknowledgments." }
++        { tag: "Email", title: "Primary contact", text: "PLACEHOLDER: Add the best team email here." },
++        { tag: "School", title: "Institution", text: "PLACEHOLDER: Add school or organization details." },
++        { tag: "Support", title: "Sponsors", text: "PLACEHOLDER: Add sponsor or advisor acknowledgments." }
+       ],
+       ctaTitle: "Make the contact path obvious",
+       ctaText: "Outside visitors should know exactly how to reach the team.",
+@@ -386,7 +364,7 @@ window.SITE_DATA.experimentRoutes = [
+   {
+     number: "01",
+     title: "Assembly and verification",
+-    summary: "Document the hierarchical Golden Gate/JUMP build, screening, and sequence verification record.",
++    summary: "PLACEHOLDER: Document the hierarchical Golden Gate/JUMP build, screening, and sequence verification record.",
+     href: "experiment-assembly.html",
+     status: "Planned record"
+   },
+@@ -416,23 +394,23 @@ window.SITE_DATA.educationEventRoutes = [
+   {
+     number: "01",
+     title: "Education event 01",
+-    summary: "Add the event name, date, audience, format, and central learning objective.",
++    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+     href: "education-event-01.html",
+-    status: "Event record placeholder"
++    status: "PLACEHOLDER: Event record"
+   },
+   {
+     number: "02",
+     title: "Education event 02",
+-    summary: "Add the event name, date, audience, format, and central learning objective.",
++    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+     href: "education-event-02.html",
+-    status: "Event record placeholder"
++    status: "PLACEHOLDER: Event record"
+   },
+   {
+     number: "03",
+     title: "Education event 03",
+-    summary: "Add the event name, date, audience, format, and central learning objective.",
++    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+     href: "education-event-03.html",
+-    status: "Event record placeholder"
++    status: "PLACEHOLDER: Event record"
+   }
+ ];
+ 
+@@ -440,27 +418,27 @@ const makeEducationEvent = (number) => makePage({
+   group: "engagement",
+   kicker: `Education Event ${number} / Event Record`,
+   title: `Education <span class='accent-gradient'>event ${number}</span>`,
+-  lead: "Replace this placeholder with the event's verified name, date, location, audience, and learning objective.",
++  lead: "PLACEHOLDER: Replace this placeholder with the event's verified name, date, location, audience, and learning objective.",
+   buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+   cardsTitle: "Event record",
+-  cardsLead: "Document what the team planned, delivered, observed, and learned from this specific event.",
++  cardsLead: "PLACEHOLDER: Document what the team planned, delivered, observed, and learned from this specific event.",
+   cards: [
+-    { tag: "Context", title: "Audience and objective", text: "Identify the participants, their prior knowledge, and the learning objective chosen for them." },
+-    { tag: "Activity", title: "What happened", text: "Describe the format, materials, facilitation, and event chronology." },
+-    { tag: "Evidence", title: "What was observed", text: "Add attendance, feedback, participant work, survey responses, or other direct evidence." },
+-    { tag: "Effect", title: "What changed", text: "Explain the team's interpretation and how this event shaped later education or project decisions." }
++    { tag: "Context", title: "Audience and objective", text: "PLACEHOLDER: Identify the participants, their prior knowledge, and the learning objective chosen for them." },
++    { tag: "Activity", title: "What happened", text: "PLACEHOLDER: Describe the format, materials, facilitation, and event chronology." },
++    { tag: "Evidence", title: "What was observed", text: "PLACEHOLDER: Add attendance, feedback, participant work, survey responses, or other direct evidence." },
++    { tag: "Effect", title: "What changed", text: "PLACEHOLDER: Explain the team's interpretation and how this event shaped later education or project decisions." }
+   ],
+   details: [
+     {
+       eyebrow: "Event chronology",
+       title: "Plan, delivery, and follow-up",
+-      text: "Keep the sequence and evidence for this event together so readers can trace what the team did and why.",
++      text: "PLACEHOLDER: Keep the sequence and evidence for this event together so readers can trace what the team did and why.",
+       steps: [
+-        { label: "Before", text: "Record the audience need, learning objective, preparation, and planned method of evaluation." },
+-        { label: "During", text: "Document the activity sequence, participation, questions, adaptations, and materials used." },
+-        { label: "After", text: "Report the direct evidence, limitations, interpretation, and next decision." }
++        { label: "Before", text: "PLACEHOLDER: Record the audience need, learning objective, preparation, and planned method of evaluation." },
++        { label: "During", text: "PLACEHOLDER: Document the activity sequence, participation, questions, adaptations, and materials used." },
++        { label: "After", text: "PLACEHOLDER: Report the direct evidence, limitations, interpretation, and next decision." }
+       ],
+-      note: "This page is a structural placeholder. Replace prompts with verified event records and avoid claiming outcomes that the collected evidence cannot support."
++      note: "PLACEHOLDER: This page is a structural placeholder. Replace prompts with verified event records and avoid claiming outcomes that the collected evidence cannot support."
+     }
+   ]
+ });
+@@ -476,24 +454,24 @@ window.SITE_DATA.pages["experiment-assembly"] = makePage({
+   lead: "A dedicated record for the hierarchical Golden Gate/JUMP build and the evidence used to confirm each assembly stage.",
+   buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+   cardsTitle: "Experiment record",
+-  cardsLead: "Replace each working prompt with the dated methods, observations, and files from the completed experiment.",
++  cardsLead: "PLACEHOLDER: Replace each working prompt with the dated methods, observations, and files from the completed experiment.",
+   cards: [
+     { tag: "Question", title: "What was tested?", text: "Whether the selected Level 0 parts assemble into the intended transcriptional units and higher-level construct." },
+-    { tag: "Method", title: "How was it tested?", text: "Record reaction composition, cycling conditions, transformation, colony screening, and sequence verification." },
+-    { tag: "Controls", title: "What was compared?", text: "Document negative controls, positive controls, expected fragment sizes, and acceptance criteria." },
+-    { tag: "Readout", title: "What was measured?", text: "Add colony counts, screening results, gel images, sequencing traces, and final construct maps." }
++    { tag: "Method", title: "How was it tested?", text: "PLACEHOLDER: Record reaction composition, cycling conditions, transformation, colony screening, and sequence verification." },
++    { tag: "Controls", title: "What was compared?", text: "PLACEHOLDER: Document negative controls, positive controls, expected fragment sizes, and acceptance criteria." },
++    { tag: "Readout", title: "What was measured?", text: "PLACEHOLDER: Add colony counts, screening results, gel images, sequencing traces, and final construct maps." }
+   ],
+   details: [
+     {
+       eyebrow: "Method and reproducibility",
+       title: "From kit parts to an assembly-ready map",
+-      text: "Keep the materials, setup, procedure, experimental conditions, and deviations alongside the experiment they support.",
++      text: "PLACEHOLDER: Keep the materials, setup, procedure, experimental conditions, and deviations alongside the experiment they support.",
+       steps: [
+         { label: "1", text: "Select the destination backbone and confirm assembly level, antibiotic marker, and recipient role." },
+         { label: "2", text: "Choose one bacterial promoter and RBS per cassette, balancing expression against host burden." },
+         { label: "3", text: "Confirm each CDS identity, orientation, completeness, codon optimization, and internal Type IIS sites." },
+-        { label: "4", text: "Add double terminators and verify insulation between the two transcriptional units." },
+-        { label: "5", text: "Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
++        { label: "4", text: "PLACEHOLDER: Add double terminators and verify insulation between the two transcriptional units." },
++        { label: "5", text: "PLACEHOLDER: Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
+         { label: "6", text: "Build and validate the hierarchical assembly in Benchling, then export the annotated map for wet-lab review." }
+       ],
+       note: "This is a design checklist rather than a bench-ready method. Add reaction volumes, cycling conditions, controls, transformation, screening, and sequence verification before execution."
+@@ -501,10 +479,10 @@ window.SITE_DATA.pages["experiment-assembly"] = makePage({
+     {
+       eyebrow: "Interpretation and continuation",
+       title: "Connect the build result to the next decision",
+-      text: "State what the evidence directly confirms, identify failed or ambiguous junctions, and explain which construct advanced to characterization.",
++      text: "PLACEHOLDER: State what the evidence directly confirms, identify failed or ambiguous junctions, and explain which construct advanced to characterization.",
+       steps: [
+-        { label: "Chronology", text: "Add the experiment date and its place in the build sequence." },
+-        { label: "Interpretation", text: "Explain what the screening and sequencing evidence supports." },
++        { label: "Chronology", text: "PLACEHOLDER: Add the experiment date and its place in the build sequence." },
++        { label: "Interpretation", text: "PLACEHOLDER: Explain what the screening and sequencing evidence supports." },
+         { label: "Continuation", text: "Link the accepted construct or redesign to the next experiment." }
+       ],
+       note: "Current evidence boundary: the repository contains an assembly strategy, while completed assembly and verification results have not yet been reported."
+@@ -529,12 +507,12 @@ window.SITE_DATA.pages["experiment-reporter"] = makePage({
+   details: [{
+     eyebrow: "Experiment record",
+     title: "Question, readout, and interpretation",
+-    text: "Record normalized sfGFP fluorescence and growth for every condition, then connect the observed differences to the next regulatory design decision.",
++    text: "PLACEHOLDER: Record normalized sfGFP fluorescence and growth for every condition, then connect the observed differences to the next regulatory design decision.",
+     steps: [
+-      { label: "Chronology", text: "Add the date, replicate structure, and order of experimental events." },
+-      { label: "Answers", text: "State which comparisons directly answer the operator and transcription-factor questions." },
++      { label: "Chronology", text: "PLACEHOLDER: Add the date, replicate structure, and order of experimental events." },
++      { label: "Answers", text: "PLACEHOLDER: State which comparisons directly answer the operator and transcription-factor questions." },
+       { label: "Interpretation", text: "Separate supported conclusions from uncertainty and technical limitations." },
+-      { label: "Continuation", text: "Identify the regulatory configuration selected for follow-up work." }
++      { label: "Continuation", text: "PLACEHOLDER: Identify the regulatory configuration selected for follow-up work." }
+     ],
+     note: "Current evidence boundary: this reporter matrix is documented as an experimental plan; characterization data have not yet been reported."
+   }]
+@@ -550,18 +528,18 @@ window.SITE_DATA.pages["experiment-growth-response"] = makePage({
+   cardsLead: "Use the same structure for every concentration, replicate, and time point.",
+   cards: [
+     { tag: "Question", title: "What was tested?", text: "How bile-acid concentration affects host growth and reporter behavior within the selected experimental range." },
+-    { tag: "Method", title: "How was it tested?", text: "Add the concentration series, exposure timing, culture conditions, sampling schedule, and normalization method." },
+-    { tag: "Controls", title: "What was compared?", text: "Document vehicle, untreated, reporter, and growth controls with the replicate design." },
+-    { tag: "Readout", title: "What was measured?", text: "Add optical density, fluorescence, normalized response, uncertainty, and any exclusion criteria." }
++    { tag: "Method", title: "How was it tested?", text: "PLACEHOLDER: Add the concentration series, exposure timing, culture conditions, sampling schedule, and normalization method." },
++    { tag: "Controls", title: "What was compared?", text: "PLACEHOLDER: Document vehicle, untreated, reporter, and growth controls with the replicate design." },
++    { tag: "Readout", title: "What was measured?", text: "PLACEHOLDER: Add optical density, fluorescence, normalized response, uncertainty, and any exclusion criteria." }
+   ],
+   details: [{
+     eyebrow: "Interpretation and continuation",
+     title: "Separate response from growth burden",
+     text: "Interpret fluorescence together with growth so a stressed culture is not mistaken for a regulatory response.",
+     steps: [
+-      { label: "Chronology", text: "Add the date, time course, and relationship to reporter characterization." },
+-      { label: "Interpretation", text: "Identify the concentration range supported by both growth and reporter evidence." },
+-      { label: "Continuation", text: "Explain how the result changed the next assay or construct decision." }
++      { label: "Chronology", text: "PLACEHOLDER: Add the date, time course, and relationship to reporter characterization." },
++      { label: "Interpretation", text: "PLACEHOLDER: Identify the concentration range supported by both growth and reporter evidence." },
++      { label: "Continuation", text: "PLACEHOLDER: Explain how the result changed the next assay or construct decision." }
+     ],
+     note: "Current evidence boundary: the repository proposes a bile-acid concentration series; completed growth-response data have not yet been reported."
+   }]
+@@ -571,43 +549,43 @@ window.SITE_DATA.experimentRecordTabs = {
+   "experiment-assembly": {
+     notebookLead: "Record each assembly attempt in chronological order, including deviations, observations, verification evidence, interpretation, and the next build decision.",
+     notebook: [
+-      { label: "Entry 01", title: "Assembly setup", text: "Add the date, construct version, selected parts, reaction setup, operators, and any deviations from the planned workflow." },
+-      { label: "Entry 02", title: "Transformation and screening", text: "Add colony observations, plate controls, screening results, images, and links to the raw record." },
+-      { label: "Entry 03", title: "Verification and continuation", text: "Add gel or sequencing evidence, interpret accepted and failed junctions, and state which construct advanced or was redesigned." }
++      { label: "Entry 01", title: "Assembly setup", text: "PLACEHOLDER: Add the date, construct version, selected parts, reaction setup, operators, and any deviations from the planned workflow." },
++      { label: "Entry 02", title: "Transformation and screening", text: "PLACEHOLDER: Add colony observations, plate controls, screening results, images, and links to the raw record." },
++      { label: "Entry 03", title: "Verification and continuation", text: "PLACEHOLDER: Add gel or sequencing evidence, interpret accepted and failed junctions, and state which construct advanced or was redesigned." }
+     ],
+     protocolsLead: "Keep the assembly, transformation, screening, and verification procedures beside the experiment they support.",
+     protocols: [
+-      { label: "Protocol 01", title: "Golden Gate/JUMP assembly", text: "Add the validated reaction composition, part-to-vector ratios, enzyme system, cycling program, controls, and acceptance criteria." },
+-      { label: "Protocol 02", title: "Transformation and colony screening", text: "Add the competent-cell method, recovery, selection, plating, colony-screening procedure, and required controls." },
+-      { label: "Protocol 03", title: "Construct verification", text: "Add the digest, PCR, or sequencing workflow used to confirm identity, orientation, junctions, and complete construct sequence." }
++      { label: "Protocol 01", title: "Golden Gate/JUMP assembly", text: "PLACEHOLDER: Add the validated reaction composition, part-to-vector ratios, enzyme system, cycling program, controls, and acceptance criteria." },
++      { label: "Protocol 02", title: "Transformation and colony screening", text: "PLACEHOLDER: Add the competent-cell method, recovery, selection, plating, colony-screening procedure, and required controls." },
++      { label: "Protocol 03", title: "Construct verification", text: "PLACEHOLDER: Add the digest, PCR, or sequencing workflow used to confirm identity, orientation, junctions, and complete construct sequence." }
+     ]
+   },
+   "experiment-reporter": {
+     notebookLead: "Track every reporter run with its four experimental conditions, replicate structure, observations, normalized readouts, interpretation, and follow-up decision.",
+     notebook: [
+-      { label: "Entry 01", title: "Culture and condition setup", text: "Add the date, construct identities, culture conditions, replicate plan, instrument settings, and deviations." },
+-      { label: "Entry 02", title: "Reporter measurements", text: "Add growth and fluorescence observations for all four conditions with links to raw plate-reader files." },
+-      { label: "Entry 03", title: "Interpretation and continuation", text: "State which comparisons answer the operator and transcription-factor questions and which configuration advanced." }
++      { label: "Entry 01", title: "Culture and condition setup", text: "PLACEHOLDER: Add the date, construct identities, culture conditions, replicate plan, instrument settings, and deviations." },
++      { label: "Entry 02", title: "Reporter measurements", text: "PLACEHOLDER: Add growth and fluorescence observations for all four conditions with links to raw plate-reader files." },
++      { label: "Entry 03", title: "Interpretation and continuation", text: "PLACEHOLDER: State which comparisons answer the operator and transcription-factor questions and which configuration advanced." }
+     ],
+     protocolsLead: "Document the shared procedure used to compare promoter, operator, and transcription-factor effects across the reporter matrix.",
+     protocols: [
+-      { label: "Protocol 01", title: "Reporter culture preparation", text: "Add inoculation, growth, induction or exposure conditions, plate layout, timing, and biological and technical replicate requirements." },
+-      { label: "Protocol 02", title: "Growth and fluorescence measurement", text: "Add instrument settings, sampling schedule, blank correction, fluorescence normalization, and quality-control criteria." },
++      { label: "Protocol 01", title: "Reporter culture preparation", text: "PLACEHOLDER: Add inoculation, growth, induction or exposure conditions, plate layout, timing, and biological and technical replicate requirements." },
++      { label: "Protocol 02", title: "Growth and fluorescence measurement", text: "PLACEHOLDER: Add instrument settings, sampling schedule, blank correction, fluorescence normalization, and quality-control criteria." },
+       { label: "Protocol 03", title: "Four-condition comparison", text: "Define the planned contrasts, uncertainty reporting, exclusion rules, and criteria used to identify a supported regulatory effect." }
+     ]
+   },
+   "experiment-growth-response": {
+     notebookLead: "Record each bile-acid response run chronologically, keeping concentration preparation, growth behavior, reporter output, exclusions, and decisions together.",
+     notebook: [
+-      { label: "Entry 01", title: "Concentration-series setup", text: "Add the date, bile-acid identity, stock preparation, concentration range, plate map, controls, and replicate plan." },
+-      { label: "Entry 02", title: "Growth and reporter observations", text: "Add time-resolved optical density and fluorescence data, anomalies, exclusions, and links to raw files." },
+-      { label: "Entry 03", title: "Interpretation and continuation", text: "Identify the range supported by both growth and normalized reporter evidence, then record the next assay decision." }
++      { label: "Entry 01", title: "Concentration-series setup", text: "PLACEHOLDER: Add the date, bile-acid identity, stock preparation, concentration range, plate map, controls, and replicate plan." },
++      { label: "Entry 02", title: "Growth and reporter observations", text: "PLACEHOLDER: Add time-resolved optical density and fluorescence data, anomalies, exclusions, and links to raw files." },
++      { label: "Entry 03", title: "Interpretation and continuation", text: "PLACEHOLDER: Identify the range supported by both growth and normalized reporter evidence, then record the next assay decision." }
+     ],
+     protocolsLead: "Keep concentration preparation, exposure, measurement, and analysis procedures together for reproducible growth-response testing.",
+     protocols: [
+-      { label: "Protocol 01", title: "Bile-acid concentration preparation", text: "Add stock solvent, dilution sequence, final concentration range, vehicle matching, storage, and handling requirements." },
+-      { label: "Protocol 02", title: "Exposure and time-course measurement", text: "Add culture state, exposure timing, incubation conditions, plate layout, sampling intervals, and instrument settings." },
+-      { label: "Protocol 03", title: "Normalization and analysis", text: "Add blank correction, growth normalization, replicate aggregation, uncertainty reporting, exclusion criteria, and supported comparison tests." }
++      { label: "Protocol 01", title: "Bile-acid concentration preparation", text: "PLACEHOLDER: Add stock solvent, dilution sequence, final concentration range, vehicle matching, storage, and handling requirements." },
++      { label: "Protocol 02", title: "Exposure and time-course measurement", text: "PLACEHOLDER: Add culture state, exposure timing, incubation conditions, plate layout, sampling intervals, and instrument settings." },
++      { label: "Protocol 03", title: "Normalization and analysis", text: "PLACEHOLDER: Add blank correction, growth normalization, replicate aggregation, uncertainty reporting, exclusion criteria, and supported comparison tests." }
+     ]
+   }
+ };
+@@ -717,11 +695,11 @@ window.SITE_DATA.pages.experiments.details = [
+     id: "experiment-notebook",
+     eyebrow: "Experiment notebook",
+     title: "From question to next step",
+-    text: "Keep the experimental story chronological while showing what each experiment was meant to answer, how the team interpreted its results, and how that interpretation shaped the work that followed.",
++    text: "PLACEHOLDER: Keep the experimental story chronological while showing what each experiment was meant to answer, how the team interpreted its results, and how that interpretation shaped the work that followed.",
+     steps: [
+-      { label: "Chronology", text: "Record when the experiment occurred and place it in the sequence of the project." },
+-      { label: "Answers", text: "State the question the experiment addressed and what the result directly answered." },
+-      { label: "Interpretation", text: "Explain what the team concluded from the result, including uncertainty and limitations." },
++      { label: "Chronology", text: "PLACEHOLDER: Record when the experiment occurred and place it in the sequence of the project." },
++      { label: "Answers", text: "PLACEHOLDER: State the question the experiment addressed and what the result directly answered." },
++      { label: "Interpretation", text: "PLACEHOLDER: Explain what the team concluded from the result, including uncertainty and limitations." },
+       { label: "Continuation", text: "Show how that interpretation informed the next experiment, design decision, or project direction." }
+     ],
+     note: "Each dated entry should connect the experimental question, result, interpretation, and resulting next step, with links to its assay, method record, and raw data."
+diff --git a/js/site.js b/js/site.js
+index 2949fcf..1b3bb15 100644
+--- a/js/site.js
++++ b/js/site.js
+@@ -210,7 +210,7 @@
+             <figcaption>
+               <p class="detail-eyebrow">First view</p>
+               <strong>${projectModel.title || "Project model"}</strong>
+-              <p>${projectModel.text || "Add the final project model and its interpretation here."}</p>
++              <p>${projectModel.text || "PLACEHOLDER: Add the final project model and its interpretation here."}</p>
+             </figcaption>
+           </figure>
+ 
+@@ -271,7 +271,7 @@
+ 
+           <div class="experiment-evidence-note reveal">
+             <strong>Content status</strong>
+-            <p>These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
++            <p>PLACEHOLDER: These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
+           </div>
+         </div>
+       </section>
+@@ -338,7 +338,7 @@
+       <header class="experiment-record-panel-header reveal">
+         <p class="detail-eyebrow">Experiment record</p>
+         <h2>${title}</h2>
+-        <p>${lead || "Add the verified experiment record here."}</p>
++        <p>${lead || "PLACEHOLDER: Add the verified experiment record here."}</p>
+       </header>
+       <div class="experiment-record-entry-list">
+         ${entries.map((entry, index) => `
+@@ -374,20 +374,20 @@
+               <p class="project-paper-section-number">Summary</p>
+               <h2>Abstract</h2>
+               <p>
+-                Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
++                PLACEHOLDER: Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
+                 the methods used to collect input, the principal findings, and the project decisions
+                 that changed as a result. Keep claims proportional to the documented evidence.
+               </p>
+               <div class="project-paper-note">
+                 <strong>Abstract content note</strong>
+-                <p>Write this section last so it accurately reflects the completed Human Practices record.</p>
++                <p>PLACEHOLDER: Write this section last so it accurately reflects the completed Human Practices record.</p>
+               </div>
+               <figure class="project-paper-figure" id="hp-figure-stakeholders">
+                 <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the stakeholder map">
+                   <span aria-hidden="true">+</span>
+                   <small>Stakeholder map</small>
+                 </div>
+-                <figcaption><strong>Figure 1.</strong> Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
++                <figcaption><strong>Figure 1.</strong> PLACEHOLDER: Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
+               </figure>
+             </section>
+ 
+@@ -395,7 +395,7 @@
+               <p class="project-paper-section-number">01</p>
+               <h2>Introduction</h2>
+               <p>
+-                Establish the social, ethical, clinical, environmental, and implementation questions
++                PLACEHOLDER: Establish the social, ethical, clinical, environmental, and implementation questions
+                 that made stakeholder engagement necessary. Define the scope of the inquiry and explain
+                 how those questions connect to the proposed LCA-sulfation system.
+               </p>
+@@ -405,21 +405,21 @@
+               <p class="project-paper-section-number">02</p>
+               <h2>Methodology</h2>
+               <p>
+-                Report how stakeholders were selected, contacted, and consulted. For each interview,
++                PLACEHOLDER: Report how stakeholders were selected, contacted, and consulted. For each interview,
+                 survey, workshop, or review, record the date, participant role, guiding questions,
+                 consent process, documentation method, and approach used to interpret the response.
+               </p>
+               <div class="project-paper-subsections" aria-label="Human Practices methodology structure">
+-                <article><p>Selection</p><h3>Who participated</h3><p>Explain why each stakeholder perspective was relevant.</p></article>
+-                <article><p>Collection</p><h3>How input was gathered</h3><p>Describe the interview, survey, workshop, or review procedure.</p></article>
+-                <article><p>Analysis</p><h3>How input was interpreted</h3><p>State how themes, disagreements, and limitations were identified.</p></article>
++                <article><p>Selection</p><h3>Who participated</h3><p>PLACEHOLDER: Explain why each stakeholder perspective was relevant.</p></article>
++                <article><p>Collection</p><h3>How input was gathered</h3><p>PLACEHOLDER: Describe the interview, survey, workshop, or review procedure.</p></article>
++                <article><p>Analysis</p><h3>How input was interpreted</h3><p>PLACEHOLDER: State how themes, disagreements, and limitations were identified.</p></article>
+               </div>
+               <figure class="project-paper-figure" id="hp-figure-methods">
+                 <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the engagement methodology figure">
+                   <span aria-hidden="true">+</span>
+                   <small>Engagement methodology</small>
+                 </div>
+-                <figcaption><strong>Figure 2.</strong> Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
++                <figcaption><strong>Figure 2.</strong> PLACEHOLDER: Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
+               </figure>
+             </section>
+ 
+@@ -427,13 +427,13 @@
+               <p class="project-paper-section-number">03</p>
+               <h2>Findings</h2>
+               <p>
+-                Present the strongest documented insights by theme. Distinguish direct stakeholder input,
++                PLACEHOLDER: Present the strongest documented insights by theme. Distinguish direct stakeholder input,
+                 the team's interpretation, and questions that remain unresolved. Add attributed quotations
+                 only when permission and context are documented.
+               </p>
+               <div class="project-paper-note">
+                 <strong>Evidence boundary</strong>
+-                <p>Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
++                <p>PLACEHOLDER: Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
+               </div>
+             </section>
+ 
+@@ -441,7 +441,7 @@
+               <p class="project-paper-section-number">04</p>
+               <h2>Integration</h2>
+               <p>
+-                Trace each material insight to a concrete project response. Record what changed in the
++                PLACEHOLDER: Trace each material insight to a concrete project response. Record what changed in the
+                 design, experiments, safety planning, communication, implementation strategy, or decision
+                 criteria—and identify cases where the team retained its original approach with justification.
+               </p>
+@@ -450,7 +450,7 @@
+                   <span aria-hidden="true">+</span>
+                   <small>Insight-to-decision map</small>
+                 </div>
+-                <figcaption><strong>Figure 3.</strong> Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
++                <figcaption><strong>Figure 3.</strong> PLACEHOLDER: Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
+               </figure>
+             </section>
+ 
+@@ -458,7 +458,7 @@
+               <p class="project-paper-section-number">05</p>
+               <h2>Discussion</h2>
+               <p>
+-                Interpret where stakeholder perspectives converged or conflicted, assess how representative
++                PLACEHOLDER: Interpret where stakeholder perspectives converged or conflicted, assess how representative
+                 the engagement was, and identify methodological limits. Explain how uncertainty affects the
+                 project's responsible-development claims and future engagement priorities.
+               </p>
+@@ -468,52 +468,35 @@
+               <p class="project-paper-section-number">06</p>
+               <h2>Conclusion</h2>
+               <p>
+-                Summarize what the Human Practices evidence contributed to Renata and state which social,
++                PLACEHOLDER: Summarize what the Human Practices evidence contributed to Renata and state which social,
+                 ethical, or implementation questions still require further consultation.
+               </p>
+             </section>
+           </article>
+ 
+-          <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices navigation">
+-            <div class="project-paper-sidebar-inner">
+-              <h2>Explore this page</h2>
+-              <div class="project-sidebar-tabs" role="tablist" aria-label="Human Practices resources">
+-                <button type="button" class="project-sidebar-tab active" id="hp-tab-sections" role="tab" aria-selected="true" aria-controls="hp-panel-sections" data-project-panel="hp-panel-sections">Sections</button>
+-                <button type="button" class="project-sidebar-tab" id="hp-tab-figures" role="tab" aria-selected="false" aria-controls="hp-panel-figures" data-project-panel="hp-panel-figures">Figures</button>
+-                <button type="button" class="project-sidebar-tab" id="hp-tab-references" role="tab" aria-selected="false" aria-controls="hp-panel-references" data-project-panel="hp-panel-references">References</button>
+-              </div>
+-
+-              <div class="project-sidebar-panel active" id="hp-panel-sections" role="tabpanel" aria-labelledby="hp-tab-sections">
+-                <a href="#hp-abstract">Abstract</a>
+-                <a href="#hp-introduction">Introduction</a>
+-                <a href="#hp-methodology">Methodology</a>
+-                <a href="#hp-findings">Findings</a>
+-                <a href="#hp-integration">Integration</a>
+-                <a href="#hp-discussion">Discussion</a>
+-                <a href="#hp-conclusion">Conclusion</a>
+-              </div>
+-
+-              <div class="project-sidebar-panel" id="hp-panel-figures" role="tabpanel" aria-labelledby="hp-tab-figures" hidden>
+-                <a href="#hp-figure-stakeholders" class="project-sidebar-figure-link">
+-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 1"><span aria-hidden="true">+</span></span>
+-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 1</span><strong>Stakeholder map</strong></span>
+-                </a>
+-                <a href="#hp-figure-methods" class="project-sidebar-figure-link">
+-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 2"><span aria-hidden="true">+</span></span>
+-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 2</span><strong>Engagement methodology</strong></span>
+-                </a>
+-                <a href="#hp-figure-integration" class="project-sidebar-figure-link">
+-                  <span class="project-sidebar-figure-thumb" role="img" aria-label="Thumbnail space for Figure 3"><span aria-hidden="true">+</span></span>
+-                  <span class="project-sidebar-figure-copy"><span class="project-sidebar-figure-number">Figure 3</span><strong>Insight-to-decision map</strong></span>
+-                </a>
+-              </div>
+-
+-              <div class="project-sidebar-panel" id="hp-panel-references" role="tabpanel" aria-labelledby="hp-tab-references" hidden>
+-                <div class="project-sidebar-reference"><strong>Stakeholder records</strong><span>Add consented interview, survey, workshop, and meeting records.</span></div>
+-                <div class="project-sidebar-reference"><strong>Context literature</strong><span>Add credible sources supporting the social, clinical, ethical, and implementation context.</span></div>
+-                <div class="project-sidebar-reference"><strong>Decision evidence</strong><span>Link each integration claim to the record that supports it.</span></div>
+-              </div>
+-            </div>
++          <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices page outline">
++            <nav class="page-outline" aria-labelledby="hp-outline-title">
++              <p class="page-outline-title" id="hp-outline-title">On this page</p>
++              <ul>
++                <li>
++                  <a href="#hp-abstract">Abstract</a>
++                  <ul><li><a href="#hp-figure-stakeholders">Figure 1 — Stakeholder map</a></li></ul>
++                </li>
++                <li><a href="#hp-introduction">Introduction</a></li>
++                <li>
++                  <a href="#hp-methodology">Methodology</a>
++                  <ul><li><a href="#hp-figure-methods">Figure 2 — Engagement methodology</a></li></ul>
++                </li>
++                <li><a href="#hp-findings">Findings</a></li>
++                <li>
++                  <a href="#hp-integration">Integration</a>
++                  <ul><li><a href="#hp-figure-integration">Figure 3 — Insight-to-decision map</a></li></ul>
++                </li>
++                <li><a href="#hp-discussion">Discussion</a></li>
++                <li><a href="#hp-conclusion">Conclusion</a></li>
++              </ul>
++            </nav>
++            <a class="page-outline-related" href="education.html">Education records ↗</a>
+           </aside>
+         </div>
+       </section>
+@@ -744,6 +727,14 @@
+       </section>
+       <div class="container footer-inner">
+         <p>© 2026 iGEM Renata. All rights reserved.</p>
++        <section class="footer-statement" id="content-license" aria-labelledby="content-license-title">
++          <h3 id="content-license-title">Content license</h3>
++          <p>PLACEHOLDER: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
++        </section>
++        <section class="footer-statement" id="ai-use" aria-labelledby="ai-use-title">
++          <h3 id="ai-use-title">AI use disclosure</h3>
++          <p>PLACEHOLDER: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
++        </section>
+       </div>
+     `;
+   }
+diff --git a/js/team-deal.js b/js/team-deal.js
+index e8b6745..ad79c65 100644
+--- a/js/team-deal.js
++++ b/js/team-deal.js
+@@ -5,7 +5,9 @@
+   else api.init();
+ })(typeof window !== "undefined" ? window : this, function () {
+   "use strict";
+-  const DEAL_TIMING = Object.freeze({ flight: 850, stagger: 120, hand: 260, scrollSettle: 90 });
++  // Cards follow the scroll closely, so the flight is short and the gap between
++  // cards is small enough that a row lands almost together.
++  const DEAL_TIMING = Object.freeze({ flight: 420, stagger: 55, hand: 320, scrollSettle: 50 });
+   function dealFrames(origin, target, index) {
+     const x = origin.left + origin.width / 2 - target.left - target.width / 2;
+     const y = origin.top + origin.height / 2 - target.top - target.height / 2;
+@@ -20,7 +22,7 @@
+   }
+   function createDealController({ cards, dealer, deck, hand, replay, reduced, view, page }) {
+     const active = new Map();
+-    let timer = 0, generation = 0, enabled = false, handMotion;
++    let timer = 0, generation = 0, enabled = false, handMotion, handSlid = false;
+     function stopTimer() { view.clearTimeout(timer); timer = 0; }
+     function settle(card) {
+       const motions = active.get(card);
+@@ -83,21 +85,23 @@
+       const motion = card.animate(dealFrames(deck.getBoundingClientRect(), bounds, cards.indexOf(card)), {
+         duration: DEAL_TIMING.flight, easing: "cubic-bezier(.2,.65,.25,1)"
+       });
+-      const flip = card.querySelector(".team-card-inner").animate([
+-        { transform: "rotateY(-180deg)", offset: 0 },
+-        { transform: "rotateY(-180deg)", offset: .2 },
+-        { transform: "rotateY(0deg)", offset: .8 },
+-        { transform: "rotateY(0deg)", offset: 1 }
+-      ], { duration: DEAL_TIMING.flight, easing: "ease-out" });
+-      const motions = [motion, flip];
++      const motions = [motion];
+       active.set(card, motions);
+       // Canceled flights from a previous replay must never alter the new deal.
+       const finish = () => { if (active.get(card) === motions) settle(card); };
+       motion.finished.then(finish, finish);
+-      flip.finished.catch(() => {});
+-      if (handMotion) handMotion.cancel();
+-      handMotion = hand.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(-9deg) translate(-5px, 3px)" }, { transform: "rotate(0deg)" }], { duration: DEAL_TIMING.hand });
+-      handMotion.finished.catch(() => {});
++      // The hand makes one slide to push the cards out, rather than turning
++      // itself over again for every card that lands.
++      if (!handSlid) {
++        handSlid = true;
++        if (handMotion) handMotion.cancel();
++        handMotion = hand.animate([
++          { transform: "translate(0, 0)" },
++          { transform: "translate(-22px, 7px)" },
++          { transform: "translate(0, 0)" }
++        ], { duration: DEAL_TIMING.hand, easing: "ease-out" });
++        handMotion.finished.catch(() => {});
++      }
+       scheduleDeal(DEAL_TIMING.stagger);
+     }
+     function onScroll() {
+@@ -112,7 +116,8 @@
+     }
+     function begin() {
+       showAll();
+-      replay.disabled = reduced.matches;
++      handSlid = false;
++      if (replay) replay.disabled = reduced.matches;
+       if (reduced.matches || !cards.every(card => typeof card.animate === "function")) return;
+       enabled = true;
+       cards.forEach(card => card.classList.add("is-waiting"));
+@@ -149,12 +154,12 @@
+           <path d="M164 35 177 42 181 37 168 30Z" fill="#ff7180"/>
+         </g>
+       </svg>
+-      <div class="team-dealer-actions"><button type="button" data-deal-replay>Replay deal</button><button type="button" data-deal-show>Show all cards</button></div>`;
++      <div class="team-dealer-actions"><button type="button" data-deal-show>Show all cards</button></div>`;
+     roster.prepend(dealer);
+     groups.forEach((group, groupIndex) => {
+       group.querySelector(".detail-eyebrow").textContent = `0${groupIndex + 1} / ${group.querySelectorAll(".member-card").length} people`;
+       [...group.querySelectorAll(".member-card")].forEach((card, index) => {
+-        const inner = document.createElement("div"), front = document.createElement("div"), back = document.createElement("div");
++        const inner = document.createElement("div"), front = document.createElement("div");
+         inner.className = "team-card-inner";
+         front.className = "team-card-front";
+         front.dataset.cardLabel = `${group.id === "mentors" ? "M" : "S"}${String(index + 1).padStart(2, "0")}`;
+@@ -166,15 +171,12 @@
+           corner.setAttribute("aria-hidden", "true");
+           front.appendChild(corner);
+         }
+-        back.className = "team-card-back";
+-        back.setAttribute("aria-hidden", "true");
+-        back.innerHTML = "<span>R</span>";
+-        inner.append(front, back);
++        inner.append(front);
+         card.appendChild(inner);
+       });
+     });
+     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+-    const replay = dealer.querySelector("[data-deal-replay]");
++    const replay = null;
+     const deck = dealer.querySelector(".team-deck-source");
+     const hand = dealer.querySelector(".team-dealer-hand");
+     const controller = createDealController({ cards, dealer, deck, hand, replay, reduced, view: window, page: document });
+@@ -184,7 +186,6 @@
+       roster.style.setProperty("--dealer-height", `${dealer.getBoundingClientRect().height}px`);
+     }
+     dealer.querySelector("[data-deal-show]").addEventListener("click", controller.showAll);
+-    replay.addEventListener("click", controller.begin);
+     reduced.addEventListener("change", controller.begin);
+     roster.addEventListener("focusin", event => {
+       const card = event.target.closest(".member-card");
+diff --git a/js/team-space.js b/js/team-space.js
+index 3ca4a3a..c3505e3 100644
+--- a/js/team-space.js
++++ b/js/team-space.js
+@@ -43,9 +43,6 @@
+     setText(roster, ".team-dealer-copy > strong", "Meet the people on board.");
+     setText(roster, ".team-dealer-copy > p", "Mentors, then students. Select a card to meet a team member.");
+     setText(roster, ".team-dealer-art text", "S");
+-    roster.querySelectorAll(".team-card-back > span").forEach(label => {
+-      label.textContent = "SulFlux";
+-    });
+     return true;
+   }
+ 
+diff --git a/project-description.html b/project-description.html
+index 8fbe1ca..08cbf02 100644
+--- a/project-description.html
++++ b/project-description.html
+@@ -12,6 +12,7 @@
+   <link rel="stylesheet" href="css/navigation.css?v=20261019-shared-header1" />
+   <link rel="stylesheet" href="css/site-header.css?v=20261019-icon-bar1" />
+   <link rel="stylesheet" href="css/cosmic-theme.css?v=20261019-blue-footer1" />
++  <link rel="stylesheet" href="css/page-outline.css?v=20261019-outline1" />
+   <link rel="stylesheet" href="css/project-research.css?v=20261019-shared-header1" />
+ </head>
+ <body data-page="project-description" class="project-dbtl-page">
+diff --git a/tests/lab-hierarchy.test.js b/tests/lab-hierarchy.test.js
+index c4b2f45..176e9fd 100644
+--- a/tests/lab-hierarchy.test.js
++++ b/tests/lab-hierarchy.test.js
+@@ -12,13 +12,13 @@ const data = context.window.SITE_DATA, lab = context.window.RenataLab;
+ const pages = Object.fromEntries(["wet-lab", "model"].map(key => [key, lab.render(key)]));
+ const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+ 
+-test("top-level navigation matches the requested hierarchy with Notebook under Wetlab", () => {
+-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Homepage", "Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
+-  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, item => item.label), ["Abstract", "DBTL Cycle"]);
++test("top-level navigation matches the requested hierarchy with Wetlab and Model under Lab Work", () => {
++  assert.deepEqual(Array.from(data.nav, item => item.label), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
++  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
++  assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
+   const menu = data.nav.find(item => item.key === "lab-work").children;
+   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Model"]);
+-  assert.equal(menu[0].children[0].href, "wet-lab.html#notebook");
+-  assert.equal(menu[0].children[0].label, "Notebook");
++  assert.equal(menu[0].children, undefined, "the Notebook subpage is no longer in the menu");
+   assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
+ });
+ 
+diff --git a/tests/mission-home.test.js b/tests/mission-home.test.js
+index 9eeb909..8ad2260 100644
+--- a/tests/mission-home.test.js
++++ b/tests/mission-home.test.js
+@@ -101,7 +101,8 @@ test("the live homepage uses the new route, supplied assets, evidence status, an
+   assert.match(html, /Proposed design · not a validated treatment/);
+   assert.doesNotMatch(html, /Over 60 million|we have created a new version|is able to bind to and sulfonate/);
+   assert.match(html, /data-anatomy="after"/);
+-  assert.match(html, /id="design-progress" type="range"/);
++  assert.doesNotMatch(html, /design-progress|type="range"|mission-design-control|Explore the proposed fit/);
++  assert.match(html, /Character metaphor · molecules do not literally bite tissue\./);
+   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+   assert.equal(new Set(ids).size, ids.length, "SVG and page IDs remain unique");
+   for (const match of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(match[1]), match[1]);
+@@ -201,7 +202,6 @@ function fixture() {
+   gallery.querySelector = selector => selector.includes("svg") ? art : selector.includes("status") ? status : copy;
+   gallery.querySelectorAll = () => anatomyButtons;
+   ids.mission = element(); ids.mission.getBoundingClientRect = () => ({ top: launch.offsetHeight + 8000 - win.scrollY });
+-  ids["design-progress"] = element(); ids["design-progress"].value = "0";
+   const atmospheres = [element(), element()];
+   atmospheres[0].getBoundingClientRect = () => {
+     const top = Math.min(0, launch.offsetHeight - nodes[".mission-launch-stage"].offsetHeight - win.scrollY);
+@@ -256,8 +256,7 @@ test("the actual controller docks, animates scroll, and exposes the interactive
+   assert.equal(f.ids.gallbladder.classList.contains("is-after"), true);
+   assert.equal(f.anatomyButtons[1].attrs["aria-pressed"], "true");
+   assert.match(f.status.textContent, /directly from the liver/);
+-  f.ids["design-progress"].value = "65"; f.ids["design-progress"].events.input();
+-  assert.equal(f.ids["engineering-story"].style["--fit-progress"], .65);
++  assert.equal(f.ids["engineering-story"].style["--fit-progress"], 1, "the molecule docks without a slider");
+   f.scroll(0); f.settle();
+   assert.equal(f.nodes[".mission-craft"].style.transform, initial, "replaying returns to the bottle exactly");
+ });
+diff --git a/tests/navigation.test.js b/tests/navigation.test.js
+index edf2817..3a53d43 100644
+--- a/tests/navigation.test.js
++++ b/tests/navigation.test.js
+@@ -27,17 +27,22 @@ test("every content page loads the shared menu in order, including the flight ho
+     const navigation = scripts.indexOf("js/navigation.js");
+     assert.ok(navigation > scripts.indexOf("js/site-content.js"), file);
+     assert.ok(scripts.indexOf("js/site-content.js") >= 0, file);
+-    assert.match(html, /js\/site-content\.js\?v=20261019-project-top1/, file);
+     assert.ok(navigation >= 0, file);
+     const consumer = scripts.indexOf("js/site.js");
+     assert.ok(navigation < consumer, file);
+     assert.match(html, /css\/navigation.css/, file);
+     if (file === "index.html") assert.ok(consumer < scripts.indexOf("js/mission-home.js"));
+   }
+-  assert.match(render(data.nav, { pageKey: "home", orbit: true }), /href="index.html" aria-current="page"/);
+   assert.doesNotMatch(render(data.nav), /home-orbit\.html|href="experiments\.html"/);
+ });
+ 
++test("the homepage keeps no button of its own, leaving the brand as the only route home", () => {
++  assert.equal(data.nav.some(item => item.key === "home"), false);
++  assert.doesNotMatch(render(data.nav), /href="index\.html"/);
++  assert.match(header(data, { pageKey: "home", group: "home" }), /class="brand" aria-label="iGEM Renata, homepage"/);
++  assert.doesNotMatch(read("index.html"), /renata-nav-shortcut|>Homepage</);
++});
++
+ test("retired routes have explicit compatibility redirects and useful fallback links", () => {
+   for (const [file, target] of Object.entries(redirects)) {
+     const html = read(file);
+@@ -52,38 +57,62 @@ test("retired routes have explicit compatibility redirects and useful fallback l
+   }
+ });
+ 
+-test("every content page shows the shared logo, brand, labels, and icon shortcuts", () => {
++test("every content page shows the shared logo, brand, and labels with no icons in the bar", () => {
+   for (const file of fs.readdirSync(root).filter(file => file.endsWith(".html") && !(file in redirects))) {
+     const html = read(file);
+     assert.match(html, /<header class="[^"]*site-header[^\"]*" id="siteHeader"/, file);
+-    assert.match(html, /css\/site-header\.css\?v=20261019-icon-bar1/, file);
+-    assert.match(html, /js\/navigation\.js\?v=20261019-icon-bar1/, file);
+-    assert.ok(html.includes("js/site.js?v=20261019-shared-header1"), file);
+     const key = html.match(/data-page="([^"]+)"/)[1];
+     const markup = header(data, { pageKey: key, group: data.pages[key]?.group });
+     assert.match(markup, /aria-label="iGEM Renata, homepage"/);
+     assert.match(markup, /src="assets\/logo.png"/);
+     assert.match(markup, /class="brand-text">iGEM Renata<\/span>/);
+     assert.match(markup, /id="renata-nav-list">/);
+-    assert.doesNotMatch(markup, /renata-nav-toggle|Explore Renata/);
+-    assert.equal([...markup.matchAll(/class="renata-nav-shortcut(?: is-current)?"/g)].length, 8);
++    assert.doesNotMatch(markup, /renata-nav-shortcut|Explore this section|Explore Renata/, file);
+     assert.doesNotMatch(markup, /flight-brand|Begin journey|<span>Menu<\/span>|<h1/);
+   }
+   assert.match(read("js/site.js"), /RenataNavigation\.header\(data/);
+   assert.doesNotMatch(read("index.html"), /flight-brand|flight-header-actions|id="flightHeader"/);
+-  const css = read("css/site-header.css");
+-  assert.match(css, /#siteHeader \.header-inner\s*\{[^}]*align-items: center;[^}]*flex-wrap: nowrap;/);
+-  assert.match(css, /--header-blue: #173e84;/);
+-  assert.match(css, /--header-cream: #fff1bc;/);
+-  assert.match(css, /max-height: calc\(100dvh - var\(--nav-panel-top, 88px\) - 16px\)/);
+-  assert.match(css, /overflow-x: auto/);
+-  assert.match(css, /min-height: 44px/);
+ });
+ 
+-test("all five navigation badges use small transparent PNGs and links have real destinations", () => {
+-  const html = render(data.nav);
+-  const icons = new Set([...html.matchAll(/src="([^"]+)"/g)].map(match => match[1]));
+-  assert.equal(icons.size, 5);
++test("the collapsed menu is a three-bar toggle and panels open under their own trigger", () => {
++  const markup = render(data.nav);
++  assert.match(markup, /<button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu">/);
++  assert.match(markup, /class="renata-nav-bars"/);
++  const navigationCss = read("css/navigation.css");
++  assert.match(navigationCss, /\.renata-nav \.renata-nav-panel \{[^}]*left: var\(--nav-panel-left, auto\)/);
++  assert.match(navigationCss, /\.renata-nav\[data-nav-open="false"\] \.renata-nav-list \{ display: none; \}/);
++  assert.match(navigationCss, /\.renata-nav-bars::before \{ top: -6px; \}/);
++  const headerCss = read("css/site-header.css");
++  assert.match(headerCss, /#siteHeader \.renata-nav-panel \{[^}]*left: var\(--nav-panel-left, auto\); right: auto;/);
++  assert.match(headerCss, /@media \(max-width: 980px\)/);
++  assert.doesNotMatch(headerCss, /renata-nav-shortcut|renata-nav-row/);
++  assert.match(headerCss, /--header-blue: #173e84;/);
++  assert.match(headerCss, /--header-cream: #fff1bc;/);
++  assert.match(headerCss, /min-height: 44px/);
++});
++
++test("Team and Project are direct links while Lab Work and Engagement keep dropdowns", () => {
++  const flat = Array.from(data.nav).filter(item => !item.children);
++  assert.deepEqual(Array.from(flat, item => item.key), ["team", "project"]);
++  assert.deepEqual(Array.from(flat, item => item.href), ["team.html", "project-description.html"]);
++  assert.equal(flat.every(item => !item.icon), true, "direct labels carry no icon of their own");
++  const grouped = Array.from(data.nav).filter(item => item.children);
++  assert.deepEqual(Array.from(grouped, item => item.key), ["lab-work", "engagement"]);
++  const markup = render(data.nav);
++  assert.equal([...markup.matchAll(/class="renata-nav-panel"/g)].length, 2, "only the two grouped labels render a panel");
++  assert.match(markup, /<li><a class="renata-nav-trigger" href="team.html">Our Team<\/a><\/li>/);
++  assert.match(markup, /<li><a class="renata-nav-trigger" href="project-description.html">Our Project<\/a><\/li>/);
++});
++
++test("dropdown cards carry the section icons that used to sit in the menu bar", () => {
++  const markup = render(data.nav);
++  const lab = data.nav.find(item => item.key === "lab-work");
++  assert.deepEqual(Array.from(lab.children, child => child.icon), ["DNA", "Stomach"]);
++  for (const child of lab.children) {
++    assert.ok(markup.includes(`assets/nav-icons/${child.icon}.png`), child.icon);
++  }
++  const icons = new Set([...markup.matchAll(/src="([^"]+)"/g)].map(match => match[1]));
++  assert.equal(icons.size, 4, "only the four dropdown destinations render a badge");
+   let bytes = 0;
+   for (const icon of icons) {
+     const png = fs.readFileSync(path.join(root, icon));
+@@ -93,17 +122,23 @@ test("all five navigation badges use small transparent PNGs and links have real
+     bytes += png.length;
+   }
+   assert.ok(bytes < 100000, "all menu badges together stay below 100 KB");
+-  for (const match of html.matchAll(/href="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1].split("#")[0])), match[1]);
+-  assert.match(read("js/site.js"), /id="sponsors-partners"/);
+-  assert.ok(data.pages.team.teamGroups.some(group => group.key === "mentors"));
++  for (const match of markup.matchAll(/href="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1].split("#")[0])), match[1]);
++});
++
++test("the Notebook subpage is gone from the menu while the page anchor still exists", () => {
++  const lab = data.nav.find(item => item.key === "lab-work");
++  assert.deepEqual(Array.from(lab.children, item => item.key), ["wet-lab", "model"]);
++  assert.equal(lab.children.every(child => !child.children), true);
++  const markup = render(data.nav, { pageKey: "wet-lab-notebook", group: "lab-work" });
++  assert.doesNotMatch(markup, /renata-nav-subpages|wet-lab.html#notebook/);
++  assert.match(markup, /renata-nav-card is-section" href="wet-lab.html"/);
+ });
+ 
+-test("the sponsor navigation card is removed while the footer carousel data stays intact", () => {
+-  const team = data.nav.find(item => item.key === "team");
+-  assert.deepEqual(Array.from(team.children, item => item.key), ["team", "mentors"]);
++test("the sponsor navigation card stays out while the footer carousel data is intact", () => {
+   assert.doesNotMatch(render(data.nav), /Sponsors &amp; partners|The community supporting our work|sponsors-partners/);
+   assert.equal(data.sponsorsPartners.length, 3);
+   assert.match(read("js/site.js"), /id="sponsors-partners"/);
++  assert.ok(data.pages.team.teamGroups.some(group => group.key === "mentors"));
+ });
+ 
+ test("active pages and related records stay distinct, and labels are escaped", () => {
+@@ -148,7 +183,7 @@ function fixture(isMobile = false) {
+     focus() { const previous = doc.activeElement; doc.activeElement = this; previous?.emit("focusout"); this.emit("focus"); }
+   }
+   doc = new Element("document");
+-  const nav = new Element("nav", {}, doc);
++  const nav = new Element("nav", { class: "renata-nav" }, doc);
+   let parent = nav;
+   for (const match of render(data.nav).matchAll(/<(\/?)([a-z]+)([^>]*)>/g)) {
+     if (match[1]) { parent = parent.parent; continue; }
+@@ -175,11 +210,14 @@ function fixture(isMobile = false) {
+   const triggers = groups.map(group => group.querySelector("button"));
+   const panels = groups.map(group => group.querySelector(".renata-nav-panel"));
+   const list = nav.querySelector(".renata-nav-list");
+-  return { nav, doc, groups, triggers, panels, list, outside, mobile, tick };
++  const toggle = nav.querySelector(".renata-nav-toggle");
++  const links = nav.querySelectorAll(".renata-nav-trigger").filter(node => node.tag === "a");
++  return { nav, doc, groups, triggers, panels, list, toggle, links, outside, mobile, tick };
+ }
+ 
+ test("click toggles menus, opens only one, and outside clicks dismiss", () => {
+   const f = fixture();
++  assert.equal(f.triggers.length, 2, "only Lab Work and Engagement are dropdowns");
+   f.triggers[0].emit("click");
+   assert.equal(f.panels[0].hidden, false);
+   assert.equal(f.triggers[0].getAttribute("aria-expanded"), "true");
+@@ -195,65 +233,44 @@ test("click toggles menus, opens only one, and outside clicks dismiss", () => {
+ 
+ test("keyboard opens links, navigates, and Escape returns focus to its trigger", () => {
+   const f = fixture();
+-  f.triggers[2].focus();
+-  f.triggers[2].emit("keydown", { key: "ArrowDown" });
+-  const links = f.panels[2].querySelectorAll("a");
++  f.triggers[0].focus();
++  f.triggers[0].emit("keydown", { key: "ArrowDown" });
++  const links = f.panels[0].querySelectorAll("a");
+   assert.ok(links.length > 1, "Lab Work has multiple destinations to navigate");
+   assert.equal(f.doc.activeElement, links[0]);
+   links[0].emit("keydown", { key: "ArrowDown" });
+   assert.equal(f.doc.activeElement, links[1]);
+   links[1].emit("keydown", { key: "Escape" });
+-  assert.equal(f.doc.activeElement, f.triggers[2]);
+-  assert.equal(f.panels[2].hidden, true);
+-  f.triggers[2].emit("keydown", { key: "ArrowRight" });
+-  assert.equal(f.doc.activeElement, f.triggers[3]);
+-  f.triggers[3].emit("keydown", { key: "ArrowUp" });
+-  assert.equal(f.doc.activeElement, f.panels[3].querySelectorAll("a").at(-1));
++  assert.equal(f.doc.activeElement, f.triggers[0]);
++  assert.equal(f.panels[0].hidden, true);
++  f.triggers[1].emit("keydown", { key: "ArrowUp" });
++  assert.equal(f.doc.activeElement, f.panels[1].querySelectorAll("a").at(-1));
+   f.outside.focus(); f.tick();
+   assert.ok(f.panels.every(panel => panel.hidden));
+ });
+ 
+-test("both Project options open the combined page from the top with wrapping keyboard navigation", () => {
++test("arrow keys move across direct labels and dropdown triggers alike", () => {
+   const f = fixture();
+-  const projectIndex = f.triggers.findIndex(trigger => trigger.getAttribute("id") === "renata-nav-project-trigger");
+-  const trigger = f.triggers[projectIndex];
+-  trigger.focus(); trigger.emit("keydown", { key: "ArrowDown" });
+-  const links = f.panels[projectIndex].querySelectorAll("a");
+-  assert.deepEqual(links.map(link => link.getAttribute("href")), ["project-description.html", "project-description.html"]);
+-  const shortcuts = f.groups[projectIndex].querySelectorAll(".renata-nav-shortcut");
+-  assert.deepEqual(shortcuts.map(link => link.getAttribute("href")), ["project-description.html", "project-description.html"]);
+-  const footer = data.pages.home.linkColumns.find(column => column.title === "Our Project");
+-  assert.deepEqual(Array.from(footer.links, link => link.href), ["project-description.html", "project-description.html"]);
+-  assert.equal(f.doc.activeElement, links[0]);
+-  links[0].emit("keydown", { key: "ArrowDown" });
+-  assert.equal(f.doc.activeElement, links[1]);
+-  links[1].emit("keydown", { key: "ArrowDown" });
+-  assert.equal(f.doc.activeElement, links[0], "the last destination wraps to Abstract");
+-  links[0].emit("keydown", { key: "Escape" });
+-  assert.equal(f.doc.activeElement, trigger);
+-  assert.equal(f.panels[projectIndex].hidden, true);
++  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["team.html", "project-description.html"]);
++  f.links[0].emit("keydown", { key: "ArrowRight" });
++  assert.equal(f.doc.activeElement, f.links[1]);
++  f.links[1].emit("keydown", { key: "ArrowRight" });
++  assert.equal(f.doc.activeElement, f.triggers[0]);
++  f.links[0].emit("keydown", { key: "ArrowLeft" });
++  assert.equal(f.doc.activeElement, f.triggers[1], "focus wraps to the last trigger");
+ });
+ 
+-test("Wetlab owns the nested Notebook link while Model remains a sibling destination", () => {
+-  const lab = data.nav.find(item => item.key === "lab-work");
+-  assert.deepEqual(Array.from(lab.children, item => item.key), ["wet-lab", "model"]);
+-  assert.deepEqual(Array.from(lab.children[0].children, item => item.key), ["wet-lab-notebook"]);
+-  const current = render(data.nav, { pageKey: "wet-lab-notebook", group: "lab-work" });
+-  assert.match(current, /renata-nav-card is-section" href="wet-lab.html"/);
+-  assert.match(current, /class="renata-nav-subpages" aria-label="Wetlab pages"/);
+-  assert.match(current, /href="wet-lab.html#notebook" aria-current="page"/);
+-  assert.equal([...current.matchAll(/aria-current="page"/g)].length, 1);
++test("Lab Work lists Wetlab and Model only, each reachable by keyboard", () => {
+   const f = fixture();
+   const labIndex = f.triggers.findIndex(trigger => trigger.getAttribute("id") === "renata-nav-lab-work-trigger");
+   const trigger = f.triggers[labIndex];
+   trigger.focus(); trigger.emit("keydown", { key: "ArrowDown" });
+   const links = f.panels[labIndex].querySelectorAll("a");
+-  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "wet-lab.html#notebook", "model.html"]);
+-  links[0].emit("keydown", { key: "ArrowDown" });
+-  assert.equal(f.doc.activeElement, links[1], "Notebook participates in the same keyboard sequence");
+-  links[1].emit("keydown", { key: "End" });
+-  assert.equal(f.doc.activeElement, links[2]);
+-  links[2].emit("keydown", { key: "Home" });
++  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "model.html"]);
++  assert.equal(f.panels[labIndex].querySelectorAll("img").length, 2, "icons now live on the dropdown cards");
++  links[0].emit("keydown", { key: "End" });
++  assert.equal(f.doc.activeElement, links[1]);
++  links[1].emit("keydown", { key: "Home" });
+   assert.equal(f.doc.activeElement, links[0]);
+ });
+ 
+@@ -272,33 +289,48 @@ test("hover has intent delay, can be pinned by click, and never steals keyboard
+   f.triggers[0].emit("click");
+   f.triggers[1].focus(); f.triggers[1].emit("keydown", { key: "ArrowDown" });
+   const link = f.doc.activeElement;
+-  f.triggers[2].emit("pointerenter", { pointerType: "mouse" }); f.tick();
++  f.triggers[0].emit("pointerenter", { pointerType: "mouse" }); f.tick();
+   assert.equal(f.doc.activeElement, link);
+   assert.equal(f.panels[1].hidden, false);
+ });
+ 
+-test("mobile navigation stays visible through touch, anchor selection, and resize", () => {
++test("the three-bar toggle collapses and restores the menu on small screens", () => {
+   const f = fixture(true);
+-  assert.equal(f.list.hidden, false);
++  assert.ok(f.toggle, "a toggle is rendered");
++  assert.equal(f.nav.dataset.navOpen, "false", "the menu starts collapsed");
++  assert.equal(f.toggle.getAttribute("aria-expanded"), "false");
++  assert.equal(f.toggle.getAttribute("aria-controls"), "renata-nav-list");
++  assert.equal(f.list.getAttribute("id"), "renata-nav-list");
++  f.toggle.emit("click");
++  assert.equal(f.nav.dataset.navOpen, "true");
++  assert.equal(f.toggle.getAttribute("aria-expanded"), "true");
+   f.triggers[0].emit("pointerenter", { pointerType: "touch" }); f.tick();
+-  assert.equal(f.panels[0].hidden, true);
++  assert.equal(f.panels[0].hidden, true, "touch never hover-opens a section");
++  f.triggers[0].emit("click");
++  assert.equal(f.panels[0].hidden, false);
++  f.triggers[0].emit("keydown", { key: "Escape" });
++  assert.equal(f.nav.dataset.navOpen, "true", "Escape closes only the section");
++  f.triggers[0].emit("keydown", { key: "Escape" });
++  assert.equal(f.nav.dataset.navOpen, "false", "a second Escape closes the whole menu");
++});
++
++test("choosing a destination or tapping away closes the collapsed menu", () => {
++  const f = fixture(true);
++  f.toggle.emit("click");
+   f.triggers[0].emit("click");
+   const link = f.panels[0].querySelector("a");
+   link.focus(); link.emit("click");
+-  assert.equal(f.list.hidden, false);
+-  assert.equal(f.doc.activeElement, f.triggers[0]);
++  assert.equal(f.nav.dataset.navOpen, "false");
+   assert.equal(f.panels[0].hidden, true);
+-  f.triggers[0].emit("click");
+-  f.triggers[0].emit("keydown", { key: "Escape" });
+-  assert.equal(f.list.hidden, false, "Escape closes only the section");
+-  f.triggers[0].emit("keydown", { key: "Escape" });
+-  assert.equal(f.list.hidden, false, "navigation remains directly available");
++  f.toggle.emit("click");
++  f.outside.emit("pointerdown");
++  assert.equal(f.nav.dataset.navOpen, "false");
++  f.toggle.emit("click");
+   f.mobile.matches = false; f.mobile.change();
+-  assert.equal(f.list.hidden, false);
+-  assert.equal(f.doc.activeElement, f.triggers[0]);
++  assert.equal(f.nav.dataset.navOpen, "false", "widening the viewport resets the collapsed state");
+ });
+ 
+-test("desktop labels and icons remain visible while Escape and outside clicks close panels", () => {
++test("desktop labels remain visible while Escape and outside clicks close panels", () => {
+   const f = fixture();
+   assert.equal(f.list.hidden, false);
+   f.triggers[0].emit("keydown", { key: "ArrowDown" });
+@@ -311,28 +343,6 @@ test("desktop labels and icons remain visible while Escape and outside clicks cl
+   assert.equal(f.panels[0].hidden, true);
+   assert.equal(f.doc.activeElement, f.triggers[0]);
+   assert.equal(f.list.hidden, false);
+-});
+-
+-test("each label has direct named icon links outside its dropdown, including Wetlab and Model", () => {
+-  const f = fixture();
+-  f.groups.forEach((group, index) => {
+-    const links = group.querySelectorAll(".renata-nav-shortcut");
+-    const children = data.nav.filter(item => item.children)[index].children;
+-    assert.deepEqual(links.map(link => link.getAttribute("href")), Array.from(children, child => child.href));
+-    links.forEach((link, childIndex) => {
+-      assert.equal(link.getAttribute("aria-label").replaceAll("&amp;", "&"), children[childIndex].label);
+-      assert.equal(link.getAttribute("title").replaceAll("&amp;", "&"), children[childIndex].label);
+-      assert.equal(f.panels[index].contains(link), false);
+-    });
+-    assert.equal(f.panels[index].querySelectorAll("img").length, 0, "icons moved out of dropdowns");
+-  });
+-  const labIcons = f.groups[2].querySelectorAll(".renata-nav-shortcut");
+-  assert.deepEqual(labIcons.map(link => link.getAttribute("href")), ["wet-lab.html", "model.html"]);
+-  f.triggers[0].emit("click");
+-  labIcons[0].focus();
+-  assert.ok(f.panels.every(panel => panel.hidden));
+-  labIcons[0].emit("click");
+-  assert.equal(f.doc.activeElement, labIcons[0], "direct shortcuts keep their own focus");
+   f.triggers[0].emit("click");
+   f.list.emit("scroll");
+   assert.ok(f.panels.every(panel => panel.hidden));
+diff --git a/tests/orbit-pages.test.js b/tests/orbit-pages.test.js
+index 35f7397..593f47c 100644
+--- a/tests/orbit-pages.test.js
++++ b/tests/orbit-pages.test.js
+@@ -59,7 +59,7 @@ test("chapter destinations link directly to the consolidated Project DBTL sectio
+   const legacy = pageChapter("engineering", data.pages.engineering);
+   assert.equal(legacy.key, "project");
+   assert.doesNotMatch(read("js/orbit-pages.js"), /["']engineering\.html["']/);
+-  assert.ok(data.nav.find(item => item.key === "project").children.every(item => item.href === project.next.split("#")[0]));
++  assert.equal(data.nav.find(item => item.key === "project").href, project.next.split("#")[0]);
+ });
+ 
+ test("lab records retain their own titles and the crew keeps its dedicated renderer and animations", () => {
+diff --git a/tests/project-engineering.test.js b/tests/project-engineering.test.js
+index 8b2eede..bdc4a90 100644
+--- a/tests/project-engineering.test.js
++++ b/tests/project-engineering.test.js
+@@ -148,9 +148,12 @@ test("the project opens with Abstract and a Design–Build–Test–Learn cycle"
+   assert.match(project.main, /<h1 id="project-paper-title">Our Project<\/h1>/);
+   const stageIds = [...project.main.matchAll(/<section class="project-dbtl-stage" id="([^"]+)"/g)].map(match => match[1]);
+   assert.deepEqual(stageIds, ["design", "build", "test", "learn"]);
+-  const sidebar = project.main.match(/<div class="project-sidebar-panel active" id="project-panel-links"[\s\S]*?<\/div>/)?.[0];
+-  assert.ok(sidebar);
+-  assert.deepEqual([...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), [...sectionIds, ...stageIds]);
++  const sidebar = project.main.match(/<nav class="page-outline"[\s\S]*?<\/nav>/)?.[0];
++  assert.ok(sidebar, "the page carries a flat On this page outline");
++  assert.doesNotMatch(sidebar, /project-sidebar-tab|role="tablist"|Explore this page/);
++  // Abstract, then DBTL Cycle with its four stages indented beneath it.
++  assert.deepEqual([...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]).slice(0, 6), [...sectionIds, ...stageIds]);
++  assert.match(sidebar, /<li>\s*<a href="#engineering">DBTL Cycle<\/a>\s*<ul>/);
+   for (const [stage, title, recordIds] of [
+     ["design", "Expression Vector", ["system-integration-decisions", "enzyme-design-cycle"]],
+     ["build", "Transformation Experiments", ["assembly-design-cycle", "assembly-evidence-map"]],
+diff --git a/tests/team-deal.test.js b/tests/team-deal.test.js
+index 96364e6..9846c0f 100644
+--- a/tests/team-deal.test.js
++++ b/tests/team-deal.test.js
+@@ -105,16 +105,28 @@ function harness(tops = [300, 300, 300, 300, 300]) {
+   };
+ }
+ 
+-test("a five-card row glides into place in 1330ms with 120ms between cards", async () => {
++test("a five-card row lands in 640ms with 55ms between cards", async () => {
+   const h = harness(); h.controller.begin();
+-  await h.tick(119); assert.deepEqual(h.starts, [0]);
++  await h.tick(54); assert.deepEqual(h.starts, [0]);
+   await h.tick(1); assert.deepEqual(h.starts, [0, 1]);
+-  await h.tick(1210);
++  await h.tick(600);
+   assert.deepEqual(h.starts, [0, 1, 2, 3, 4]);
+-  assert.equal(DEAL_TIMING.flight, 850);
++  assert.equal(DEAL_TIMING.flight, 420);
++  assert.equal(DEAL_TIMING.stagger, 55);
+   assert.equal(h.waiting().length, 0); assert.equal(h.dealing().length, 0);
+ });
+ 
++test("cards no longer turn over, and the hand slides once for the whole deal", async () => {
++  const js = read("js/team-deal.js");
++  assert.doesNotMatch(js, /rotateY|team-card-back|backface/, "the flip and the card back are gone");
++  assert.doesNotMatch(js, /data-deal-replay/, "only Show all cards remains");
++  assert.match(js, /data-deal-show/);
++  assert.match(js, /if \(!handSlid\)/);
++  const slide = js.match(/handMotion = hand\.animate\(\[[\s\S]*?\]/)[0];
++  assert.match(slide, /translate\(/);
++  assert.doesNotMatch(slide, /rotate\(/, "the hand slides rather than turning");
++});
++
+ test("a fast jump prioritizes visible cards and defers interrupted and skipped rows", async () => {
+   const h = harness([320,320,1100,1100,1500,1500]);
+   h.controller.begin(); await h.tick(0);
+@@ -189,7 +201,7 @@ test("rapid wheel bursts wait for settled layout before starting another flight"
+     h.scrollTo(offset); await h.tick(16);
+     assert.equal(h.starts.length, 0);
+   }
+-  await h.tick(73); assert.equal(h.starts.length, 0);
++  await h.tick(33); assert.equal(h.starts.length, 0);
+   await h.tick(1); assert.deepEqual(h.starts, [0]);
+   assert.ok(h.cards[0].motions[0].frames[0].transform.includes("-400px"), "fresh scrolled target coordinates");
+   h.controller.showAll();
+diff --git a/tests/team-space.test.js b/tests/team-space.test.js
+index 2f5f8e8..e966e27 100644
+--- a/tests/team-space.test.js
++++ b/tests/team-space.test.js
+@@ -31,12 +31,11 @@ function fixture(page = "team") {
+ }
+ 
+ test("crew identity enhances the existing team page exactly once", () => {
+-  const { doc, roster, titles, backs, selectorMap } = fixture();
++  const { doc, roster, titles, selectorMap } = fixture();
+   assert.equal(init(doc), true);
+   assert.equal(roster.dataset.teamSpace, "true");
+   assert.equal(init(doc), false);
+   assert.deepEqual(titles.map(node => node.textContent), ["Our team.", "The SulFlux crew."]);
+-  assert.deepEqual(backs.map(node => node.textContent), ["SulFlux", "SulFlux"]);
+   assert.equal(selectorMap[".orbit-scene-center image"].attrs.href, "assets/orbit/bottle.svg");
+   assert.match(selectorMap[".team-dealer-copy > p"].textContent, /Mentors, then students/);
+ });

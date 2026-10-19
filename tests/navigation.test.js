@@ -27,15 +27,20 @@ test("every content page loads the shared menu in order, including the flight ho
     const navigation = scripts.indexOf("js/navigation.js");
     assert.ok(navigation > scripts.indexOf("js/site-content.js"), file);
     assert.ok(scripts.indexOf("js/site-content.js") >= 0, file);
-    assert.match(html, /js\/site-content\.js\?v=20261019-project-top1/, file);
     assert.ok(navigation >= 0, file);
     const consumer = scripts.indexOf("js/site.js");
     assert.ok(navigation < consumer, file);
     assert.match(html, /css\/navigation.css/, file);
     if (file === "index.html") assert.ok(consumer < scripts.indexOf("js/mission-home.js"));
   }
-  assert.match(render(data.nav, { pageKey: "home", orbit: true }), /href="index.html" aria-current="page"/);
   assert.doesNotMatch(render(data.nav), /home-orbit\.html|href="experiments\.html"/);
+});
+
+test("the homepage keeps no button of its own, leaving the brand as the only route home", () => {
+  assert.equal(data.nav.some(item => item.key === "home"), false);
+  assert.doesNotMatch(render(data.nav), /href="index\.html"/);
+  assert.match(header(data, { pageKey: "home", group: "home" }), /class="brand" aria-label="iGEM Renata, homepage"/);
+  assert.doesNotMatch(read("index.html"), /renata-nav-shortcut|>Homepage</);
 });
 
 test("retired routes have explicit compatibility redirects and useful fallback links", () => {
@@ -52,38 +57,62 @@ test("retired routes have explicit compatibility redirects and useful fallback l
   }
 });
 
-test("every content page shows the shared logo, brand, labels, and icon shortcuts", () => {
+test("every content page shows the shared logo, brand, and labels with no icons in the bar", () => {
   for (const file of fs.readdirSync(root).filter(file => file.endsWith(".html") && !(file in redirects))) {
     const html = read(file);
     assert.match(html, /<header class="[^"]*site-header[^\"]*" id="siteHeader"/, file);
-    assert.match(html, /css\/site-header\.css\?v=20261019-icon-bar1/, file);
-    assert.match(html, /js\/navigation\.js\?v=20261019-icon-bar1/, file);
-    assert.ok(html.includes("js/site.js?v=20261019-shared-header1"), file);
     const key = html.match(/data-page="([^"]+)"/)[1];
     const markup = header(data, { pageKey: key, group: data.pages[key]?.group });
     assert.match(markup, /aria-label="iGEM Renata, homepage"/);
     assert.match(markup, /src="assets\/logo.png"/);
     assert.match(markup, /class="brand-text">iGEM Renata<\/span>/);
     assert.match(markup, /id="renata-nav-list">/);
-    assert.doesNotMatch(markup, /renata-nav-toggle|Explore Renata/);
-    assert.equal([...markup.matchAll(/class="renata-nav-shortcut(?: is-current)?"/g)].length, 8);
+    assert.doesNotMatch(markup, /renata-nav-shortcut|Explore this section|Explore Renata/, file);
     assert.doesNotMatch(markup, /flight-brand|Begin journey|<span>Menu<\/span>|<h1/);
   }
   assert.match(read("js/site.js"), /RenataNavigation\.header\(data/);
   assert.doesNotMatch(read("index.html"), /flight-brand|flight-header-actions|id="flightHeader"/);
-  const css = read("css/site-header.css");
-  assert.match(css, /#siteHeader \.header-inner\s*\{[^}]*align-items: center;[^}]*flex-wrap: nowrap;/);
-  assert.match(css, /--header-blue: #173e84;/);
-  assert.match(css, /--header-cream: #fff1bc;/);
-  assert.match(css, /max-height: calc\(100dvh - var\(--nav-panel-top, 88px\) - 16px\)/);
-  assert.match(css, /overflow-x: auto/);
-  assert.match(css, /min-height: 44px/);
 });
 
-test("all five navigation badges use small transparent PNGs and links have real destinations", () => {
-  const html = render(data.nav);
-  const icons = new Set([...html.matchAll(/src="([^"]+)"/g)].map(match => match[1]));
-  assert.equal(icons.size, 5);
+test("the collapsed menu is a three-bar toggle and panels open under their own trigger", () => {
+  const markup = render(data.nav);
+  assert.match(markup, /<button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu">/);
+  assert.match(markup, /class="renata-nav-bars"/);
+  const navigationCss = read("css/navigation.css");
+  assert.match(navigationCss, /\.renata-nav \.renata-nav-panel \{[^}]*left: var\(--nav-panel-left, auto\)/);
+  assert.match(navigationCss, /\.renata-nav\[data-nav-open="false"\] \.renata-nav-list \{ display: none; \}/);
+  assert.match(navigationCss, /\.renata-nav-bars::before \{ top: -6px; \}/);
+  const headerCss = read("css/site-header.css");
+  assert.match(headerCss, /#siteHeader \.renata-nav-panel \{[^}]*left: var\(--nav-panel-left, auto\); right: auto;/);
+  assert.match(headerCss, /@media \(max-width: 980px\)/);
+  assert.doesNotMatch(headerCss, /renata-nav-shortcut|renata-nav-row/);
+  assert.match(headerCss, /--header-blue: #173e84;/);
+  assert.match(headerCss, /--header-cream: #fff1bc;/);
+  assert.match(headerCss, /min-height: 44px/);
+});
+
+test("Team and Project are direct links while Lab Work and Engagement keep dropdowns", () => {
+  const flat = Array.from(data.nav).filter(item => !item.children);
+  assert.deepEqual(Array.from(flat, item => item.key), ["team", "project"]);
+  assert.deepEqual(Array.from(flat, item => item.href), ["team.html", "project-description.html"]);
+  assert.equal(flat.every(item => !item.icon), true, "direct labels carry no icon of their own");
+  const grouped = Array.from(data.nav).filter(item => item.children);
+  assert.deepEqual(Array.from(grouped, item => item.key), ["lab-work", "engagement"]);
+  const markup = render(data.nav);
+  assert.equal([...markup.matchAll(/class="renata-nav-panel"/g)].length, 2, "only the two grouped labels render a panel");
+  assert.match(markup, /<li><a class="renata-nav-trigger" href="team.html">Our Team<\/a><\/li>/);
+  assert.match(markup, /<li><a class="renata-nav-trigger" href="project-description.html">Our Project<\/a><\/li>/);
+});
+
+test("dropdown cards carry the section icons that used to sit in the menu bar", () => {
+  const markup = render(data.nav);
+  const lab = data.nav.find(item => item.key === "lab-work");
+  assert.deepEqual(Array.from(lab.children, child => child.icon), ["DNA", "Stomach"]);
+  for (const child of lab.children) {
+    assert.ok(markup.includes(`assets/nav-icons/${child.icon}.png`), child.icon);
+  }
+  const icons = new Set([...markup.matchAll(/src="([^"]+)"/g)].map(match => match[1]));
+  assert.equal(icons.size, 4, "only the four dropdown destinations render a badge");
   let bytes = 0;
   for (const icon of icons) {
     const png = fs.readFileSync(path.join(root, icon));
@@ -93,17 +122,23 @@ test("all five navigation badges use small transparent PNGs and links have real 
     bytes += png.length;
   }
   assert.ok(bytes < 100000, "all menu badges together stay below 100 KB");
-  for (const match of html.matchAll(/href="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1].split("#")[0])), match[1]);
-  assert.match(read("js/site.js"), /id="sponsors-partners"/);
-  assert.ok(data.pages.team.teamGroups.some(group => group.key === "mentors"));
+  for (const match of markup.matchAll(/href="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1].split("#")[0])), match[1]);
 });
 
-test("the sponsor navigation card is removed while the footer carousel data stays intact", () => {
-  const team = data.nav.find(item => item.key === "team");
-  assert.deepEqual(Array.from(team.children, item => item.key), ["team", "mentors"]);
+test("the Notebook subpage is gone from the menu while the page anchor still exists", () => {
+  const lab = data.nav.find(item => item.key === "lab-work");
+  assert.deepEqual(Array.from(lab.children, item => item.key), ["wet-lab", "model"]);
+  assert.equal(lab.children.every(child => !child.children), true);
+  const markup = render(data.nav, { pageKey: "wet-lab-notebook", group: "lab-work" });
+  assert.doesNotMatch(markup, /renata-nav-subpages|wet-lab.html#notebook/);
+  assert.match(markup, /renata-nav-card is-section" href="wet-lab.html"/);
+});
+
+test("the sponsor navigation card stays out while the footer carousel data is intact", () => {
   assert.doesNotMatch(render(data.nav), /Sponsors &amp; partners|The community supporting our work|sponsors-partners/);
   assert.equal(data.sponsorsPartners.length, 3);
   assert.match(read("js/site.js"), /id="sponsors-partners"/);
+  assert.ok(data.pages.team.teamGroups.some(group => group.key === "mentors"));
 });
 
 test("active pages and related records stay distinct, and labels are escaped", () => {
@@ -148,7 +183,7 @@ function fixture(isMobile = false) {
     focus() { const previous = doc.activeElement; doc.activeElement = this; previous?.emit("focusout"); this.emit("focus"); }
   }
   doc = new Element("document");
-  const nav = new Element("nav", {}, doc);
+  const nav = new Element("nav", { class: "renata-nav" }, doc);
   let parent = nav;
   for (const match of render(data.nav).matchAll(/<(\/?)([a-z]+)([^>]*)>/g)) {
     if (match[1]) { parent = parent.parent; continue; }
@@ -175,11 +210,14 @@ function fixture(isMobile = false) {
   const triggers = groups.map(group => group.querySelector("button"));
   const panels = groups.map(group => group.querySelector(".renata-nav-panel"));
   const list = nav.querySelector(".renata-nav-list");
-  return { nav, doc, groups, triggers, panels, list, outside, mobile, tick };
+  const toggle = nav.querySelector(".renata-nav-toggle");
+  const links = nav.querySelectorAll(".renata-nav-trigger").filter(node => node.tag === "a");
+  return { nav, doc, groups, triggers, panels, list, toggle, links, outside, mobile, tick };
 }
 
 test("click toggles menus, opens only one, and outside clicks dismiss", () => {
   const f = fixture();
+  assert.equal(f.triggers.length, 2, "only Lab Work and Engagement are dropdowns");
   f.triggers[0].emit("click");
   assert.equal(f.panels[0].hidden, false);
   assert.equal(f.triggers[0].getAttribute("aria-expanded"), "true");
@@ -195,65 +233,44 @@ test("click toggles menus, opens only one, and outside clicks dismiss", () => {
 
 test("keyboard opens links, navigates, and Escape returns focus to its trigger", () => {
   const f = fixture();
-  f.triggers[2].focus();
-  f.triggers[2].emit("keydown", { key: "ArrowDown" });
-  const links = f.panels[2].querySelectorAll("a");
+  f.triggers[0].focus();
+  f.triggers[0].emit("keydown", { key: "ArrowDown" });
+  const links = f.panels[0].querySelectorAll("a");
   assert.ok(links.length > 1, "Lab Work has multiple destinations to navigate");
   assert.equal(f.doc.activeElement, links[0]);
   links[0].emit("keydown", { key: "ArrowDown" });
   assert.equal(f.doc.activeElement, links[1]);
   links[1].emit("keydown", { key: "Escape" });
-  assert.equal(f.doc.activeElement, f.triggers[2]);
-  assert.equal(f.panels[2].hidden, true);
-  f.triggers[2].emit("keydown", { key: "ArrowRight" });
-  assert.equal(f.doc.activeElement, f.triggers[3]);
-  f.triggers[3].emit("keydown", { key: "ArrowUp" });
-  assert.equal(f.doc.activeElement, f.panels[3].querySelectorAll("a").at(-1));
+  assert.equal(f.doc.activeElement, f.triggers[0]);
+  assert.equal(f.panels[0].hidden, true);
+  f.triggers[1].emit("keydown", { key: "ArrowUp" });
+  assert.equal(f.doc.activeElement, f.panels[1].querySelectorAll("a").at(-1));
   f.outside.focus(); f.tick();
   assert.ok(f.panels.every(panel => panel.hidden));
 });
 
-test("both Project options open the combined page from the top with wrapping keyboard navigation", () => {
+test("arrow keys move across direct labels and dropdown triggers alike", () => {
   const f = fixture();
-  const projectIndex = f.triggers.findIndex(trigger => trigger.getAttribute("id") === "renata-nav-project-trigger");
-  const trigger = f.triggers[projectIndex];
-  trigger.focus(); trigger.emit("keydown", { key: "ArrowDown" });
-  const links = f.panels[projectIndex].querySelectorAll("a");
-  assert.deepEqual(links.map(link => link.getAttribute("href")), ["project-description.html", "project-description.html"]);
-  const shortcuts = f.groups[projectIndex].querySelectorAll(".renata-nav-shortcut");
-  assert.deepEqual(shortcuts.map(link => link.getAttribute("href")), ["project-description.html", "project-description.html"]);
-  const footer = data.pages.home.linkColumns.find(column => column.title === "Our Project");
-  assert.deepEqual(Array.from(footer.links, link => link.href), ["project-description.html", "project-description.html"]);
-  assert.equal(f.doc.activeElement, links[0]);
-  links[0].emit("keydown", { key: "ArrowDown" });
-  assert.equal(f.doc.activeElement, links[1]);
-  links[1].emit("keydown", { key: "ArrowDown" });
-  assert.equal(f.doc.activeElement, links[0], "the last destination wraps to Abstract");
-  links[0].emit("keydown", { key: "Escape" });
-  assert.equal(f.doc.activeElement, trigger);
-  assert.equal(f.panels[projectIndex].hidden, true);
+  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["team.html", "project-description.html"]);
+  f.links[0].emit("keydown", { key: "ArrowRight" });
+  assert.equal(f.doc.activeElement, f.links[1]);
+  f.links[1].emit("keydown", { key: "ArrowRight" });
+  assert.equal(f.doc.activeElement, f.triggers[0]);
+  f.links[0].emit("keydown", { key: "ArrowLeft" });
+  assert.equal(f.doc.activeElement, f.triggers[1], "focus wraps to the last trigger");
 });
 
-test("Wetlab owns the nested Notebook link while Model remains a sibling destination", () => {
-  const lab = data.nav.find(item => item.key === "lab-work");
-  assert.deepEqual(Array.from(lab.children, item => item.key), ["wet-lab", "model"]);
-  assert.deepEqual(Array.from(lab.children[0].children, item => item.key), ["wet-lab-notebook"]);
-  const current = render(data.nav, { pageKey: "wet-lab-notebook", group: "lab-work" });
-  assert.match(current, /renata-nav-card is-section" href="wet-lab.html"/);
-  assert.match(current, /class="renata-nav-subpages" aria-label="Wetlab pages"/);
-  assert.match(current, /href="wet-lab.html#notebook" aria-current="page"/);
-  assert.equal([...current.matchAll(/aria-current="page"/g)].length, 1);
+test("Lab Work lists Wetlab and Model only, each reachable by keyboard", () => {
   const f = fixture();
   const labIndex = f.triggers.findIndex(trigger => trigger.getAttribute("id") === "renata-nav-lab-work-trigger");
   const trigger = f.triggers[labIndex];
   trigger.focus(); trigger.emit("keydown", { key: "ArrowDown" });
   const links = f.panels[labIndex].querySelectorAll("a");
-  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "wet-lab.html#notebook", "model.html"]);
-  links[0].emit("keydown", { key: "ArrowDown" });
-  assert.equal(f.doc.activeElement, links[1], "Notebook participates in the same keyboard sequence");
-  links[1].emit("keydown", { key: "End" });
-  assert.equal(f.doc.activeElement, links[2]);
-  links[2].emit("keydown", { key: "Home" });
+  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "model.html"]);
+  assert.equal(f.panels[labIndex].querySelectorAll("img").length, 2, "icons now live on the dropdown cards");
+  links[0].emit("keydown", { key: "End" });
+  assert.equal(f.doc.activeElement, links[1]);
+  links[1].emit("keydown", { key: "Home" });
   assert.equal(f.doc.activeElement, links[0]);
 });
 
@@ -272,33 +289,48 @@ test("hover has intent delay, can be pinned by click, and never steals keyboard 
   f.triggers[0].emit("click");
   f.triggers[1].focus(); f.triggers[1].emit("keydown", { key: "ArrowDown" });
   const link = f.doc.activeElement;
-  f.triggers[2].emit("pointerenter", { pointerType: "mouse" }); f.tick();
+  f.triggers[0].emit("pointerenter", { pointerType: "mouse" }); f.tick();
   assert.equal(f.doc.activeElement, link);
   assert.equal(f.panels[1].hidden, false);
 });
 
-test("mobile navigation stays visible through touch, anchor selection, and resize", () => {
+test("the three-bar toggle collapses and restores the menu on small screens", () => {
   const f = fixture(true);
-  assert.equal(f.list.hidden, false);
+  assert.ok(f.toggle, "a toggle is rendered");
+  assert.equal(f.nav.dataset.navOpen, "false", "the menu starts collapsed");
+  assert.equal(f.toggle.getAttribute("aria-expanded"), "false");
+  assert.equal(f.toggle.getAttribute("aria-controls"), "renata-nav-list");
+  assert.equal(f.list.getAttribute("id"), "renata-nav-list");
+  f.toggle.emit("click");
+  assert.equal(f.nav.dataset.navOpen, "true");
+  assert.equal(f.toggle.getAttribute("aria-expanded"), "true");
   f.triggers[0].emit("pointerenter", { pointerType: "touch" }); f.tick();
-  assert.equal(f.panels[0].hidden, true);
+  assert.equal(f.panels[0].hidden, true, "touch never hover-opens a section");
+  f.triggers[0].emit("click");
+  assert.equal(f.panels[0].hidden, false);
+  f.triggers[0].emit("keydown", { key: "Escape" });
+  assert.equal(f.nav.dataset.navOpen, "true", "Escape closes only the section");
+  f.triggers[0].emit("keydown", { key: "Escape" });
+  assert.equal(f.nav.dataset.navOpen, "false", "a second Escape closes the whole menu");
+});
+
+test("choosing a destination or tapping away closes the collapsed menu", () => {
+  const f = fixture(true);
+  f.toggle.emit("click");
   f.triggers[0].emit("click");
   const link = f.panels[0].querySelector("a");
   link.focus(); link.emit("click");
-  assert.equal(f.list.hidden, false);
-  assert.equal(f.doc.activeElement, f.triggers[0]);
+  assert.equal(f.nav.dataset.navOpen, "false");
   assert.equal(f.panels[0].hidden, true);
-  f.triggers[0].emit("click");
-  f.triggers[0].emit("keydown", { key: "Escape" });
-  assert.equal(f.list.hidden, false, "Escape closes only the section");
-  f.triggers[0].emit("keydown", { key: "Escape" });
-  assert.equal(f.list.hidden, false, "navigation remains directly available");
+  f.toggle.emit("click");
+  f.outside.emit("pointerdown");
+  assert.equal(f.nav.dataset.navOpen, "false");
+  f.toggle.emit("click");
   f.mobile.matches = false; f.mobile.change();
-  assert.equal(f.list.hidden, false);
-  assert.equal(f.doc.activeElement, f.triggers[0]);
+  assert.equal(f.nav.dataset.navOpen, "false", "widening the viewport resets the collapsed state");
 });
 
-test("desktop labels and icons remain visible while Escape and outside clicks close panels", () => {
+test("desktop labels remain visible while Escape and outside clicks close panels", () => {
   const f = fixture();
   assert.equal(f.list.hidden, false);
   f.triggers[0].emit("keydown", { key: "ArrowDown" });
@@ -311,28 +343,6 @@ test("desktop labels and icons remain visible while Escape and outside clicks cl
   assert.equal(f.panels[0].hidden, true);
   assert.equal(f.doc.activeElement, f.triggers[0]);
   assert.equal(f.list.hidden, false);
-});
-
-test("each label has direct named icon links outside its dropdown, including Wetlab and Model", () => {
-  const f = fixture();
-  f.groups.forEach((group, index) => {
-    const links = group.querySelectorAll(".renata-nav-shortcut");
-    const children = data.nav.filter(item => item.children)[index].children;
-    assert.deepEqual(links.map(link => link.getAttribute("href")), Array.from(children, child => child.href));
-    links.forEach((link, childIndex) => {
-      assert.equal(link.getAttribute("aria-label").replaceAll("&amp;", "&"), children[childIndex].label);
-      assert.equal(link.getAttribute("title").replaceAll("&amp;", "&"), children[childIndex].label);
-      assert.equal(f.panels[index].contains(link), false);
-    });
-    assert.equal(f.panels[index].querySelectorAll("img").length, 0, "icons moved out of dropdowns");
-  });
-  const labIcons = f.groups[2].querySelectorAll(".renata-nav-shortcut");
-  assert.deepEqual(labIcons.map(link => link.getAttribute("href")), ["wet-lab.html", "model.html"]);
-  f.triggers[0].emit("click");
-  labIcons[0].focus();
-  assert.ok(f.panels.every(panel => panel.hidden));
-  labIcons[0].emit("click");
-  assert.equal(f.doc.activeElement, labIcons[0], "direct shortcuts keep their own focus");
   f.triggers[0].emit("click");
   f.list.emit("scroll");
   assert.ok(f.panels.every(panel => panel.hidden));

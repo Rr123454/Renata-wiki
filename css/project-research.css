@@ -47,6 +47,10 @@ body.project-dbtl-page .project-paper :is(.project-paper-section, .project-dbtl-
 .project-cycle-nav a { display: flex; gap: .6rem; align-items: center; padding: .7rem 0; border-block: 1px solid var(--warm-beige); color: var(--deep-ink); text-decoration: none; font-weight: 700; }
 .project-cycle-nav span { font-size: .7rem; color: var(--muted-ink); }
 .project-dbtl-stage { padding: 2.5rem 0; border-top: 1px solid var(--warm-beige); }
+/* Stage prose sits one level below .project-paper-section, so it never picked
+   up that section's 74ch measure and ran the full column width. Give the four
+   steps their own, slightly tighter measure. Figures stay full width. */
+body.project-dbtl-page :is(.project-dbtl-stage, .project-record-body) > :is(p, ul, ol, .project-paper-note) { max-width: 65ch; }
 .project-stage-label { margin: 0 0 .6rem; color: var(--muted-ink); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 800; }
 .project-dbtl-stage > h3 { font-size: clamp(1.65rem, 3vw, 2.3rem); line-height: 1.15; margin: .5rem 0 1.2rem; }
 .project-stage-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 0; margin: 1.4rem 0; list-style: none; }
@@ -68,8 +72,6 @@ body.project-dbtl-page .project-engineering-record { padding: 0; margin: .8rem 0
 .project-engineering-record > summary { padding: 1rem 1.6rem 1rem 0; cursor: pointer; }
 .project-engineering-record > summary .project-record-title { display: inline; font-family: inherit; font-size: 1rem; line-height: 1.45; color: var(--deep-ink); }
 .project-engineering-record > summary .detail-eyebrow { display: block; margin: 0 0 .2rem; font-size: .65rem; }
-.project-record-prompt { display: block; color: var(--muted-ink); font-size: .75rem; margin-top: .3rem; }
-.project-engineering-record[open] .project-record-prompt { display: none; }
 .project-record-body { padding: 0 0 1.2rem; }
 .project-record-body > p { margin: 1rem 0; }
 .project-record-body .project-paper-note { margin-bottom: 1rem; }

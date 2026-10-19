@@ -1,0 +1,102 @@
+/* One shared "On this page" outline for the Project and Human Practices
+   articles. It matches the Wetlab and Model sidebars (.lab-sidebar) so every
+   reading page offers the same control: a rule, a label, and plain links.
+   Loaded last so it is not re-boxed by the page themes. */
+
+.page-outline {
+  max-height: calc(100svh - var(--site-header-height, 88px) - 3rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 3px solid #db8050;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.page-outline::-webkit-scrollbar { display: none; }
+
+.page-outline-title {
+  margin: 0 0 12px;
+  color: #52637b;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.page-outline ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-outline a {
+  display: block;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid #24305e22;
+  border-radius: 0;
+  background: none;
+  color: #254780;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.page-outline a:hover,
+.page-outline a:focus-visible {
+  background: none;
+  color: #9a4426;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.page-outline a[aria-current="location"] {
+  color: #9a4426;
+  font-weight: 750;
+}
+
+/* Sub-items sit under their parent rather than in a tab of their own. */
+.page-outline ul ul {
+  margin: 0 0 0 2px;
+  padding-left: 14px;
+  border-left: 1px solid #24305e22;
+}
+
+.page-outline ul ul a {
+  padding: 8px 0;
+  font-size: 0.8rem;
+}
+
+.page-outline li:last-child > a { border-bottom: 0; }
+
+.page-outline-related {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 0;
+  border: 0;
+  color: #254780;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.page-outline-related:hover { color: #9a4426; }
+
+@media (max-width: 900px) {
+  .page-outline {
+    max-height: none;
+    overflow: visible;
+    padding-top: 10px;
+  }
+  .page-outline ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+  }
+  .page-outline ul ul { grid-column: 1 / -1; display: block; }
+}

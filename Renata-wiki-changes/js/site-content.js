@@ -1,0 +1,723 @@
+const makePage = (config) => ({
+  group: "home",
+  kicker: "",
+  title: "",
+  lead: "",
+  buttons: [
+    { text: "Edit this page", href: "#", style: "primary" }
+  ],
+  stats: [],
+  cardsTitle: "",
+  cardsLead: "",
+  cards: [],
+  ctaTitle: "",
+  ctaText: "",
+  ...config
+});
+
+window.SITE_DATA = {
+  brand: {
+    title: "iGEM Renata",
+    subtitle: "Reborn through synthetic biology"
+  },
+
+  sponsorsPartners: [
+    { name: "The Seva Collective", logo: "assets/sponsors/seva-collective.png" },
+    { name: "University Lab Partners", logo: "assets/sponsors/university-lab-partners.png" },
+    { name: "Broadcom", logo: "assets/sponsors/broadcom.png" }
+  ],
+
+  nav: [
+    { key: "team", label: "Our Team", href: "team.html" },
+    { key: "project", label: "Our Project", href: "project-description.html" },
+    {
+      key: "lab-work", label: "Our Lab Work", icon: "DNA",
+      heading: "Follow the science.",
+      description: "Two connected records: experiments at the bench and computational enzyme engineering.",
+      children: [
+        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
+        { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
+      ]
+    },
+    {
+      key: "engagement",
+      label: "Education + HP",
+      href: "human-practices.html",
+      icon: "Mic",
+      heading: "Science grows through connection.",
+      description: "Listen, share, and explore how people shape our project.",
+      children: [
+        { key: "human-practices", label: "Human practices", href: "human-practices.html", icon: "Mic", description: "Stakeholder perspectives and project decisions." },
+        { key: "education", label: "Education", href: "education.html", icon: "Plant", description: "Learning, outreach, and shared curiosity." }
+      ]
+    }
+  ],
+
+  pages: {
+    home: makePage({
+      group: "home",
+      kicker: "Synthetic Biology / Rebirth / Impact",
+      title: "Home",
+      lead: "Explore the people, science, and impact behind our synthetic biology project.",
+      ctaTitle: "CONTACTS & IMPORTANT LINKS",
+      ctaText: "",
+      linkColumns: [
+        {
+          title: "Our Team",
+          links: [
+            { text: "Meet Our Team", href: "team.html" },
+            { text: "PIs & Mentors", href: "team.html#mentors" },
+            { text: "Students", href: "team.html#students" }
+          ]
+        },
+        {
+          title: "Our Project",
+          links: [
+            { text: "Abstract", href: "project-description.html" },
+            { text: "DBTL Cycle", href: "project-description.html" }
+          ]
+        },
+        {
+          title: "Our Lab Work",
+          links: [
+            { text: "Wetlab", href: "wet-lab.html" },
+            { text: "Notebook", href: "wet-lab.html#notebook" },
+            { text: "Model", href: "model.html" }
+          ]
+        },
+        {
+          title: "Education + HP",
+          links: [
+            { text: "Human Practices", href: "human-practices.html" },
+            { text: "Education", href: "education.html" }
+          ]
+        }
+      ]
+    }),
+
+    team: makePage({
+      group: "team",
+      kicker: "People / Roles / Collaboration",
+      title: "Meet <span class='accent-gradient'>Our Team</span>",
+      lead: "Meet the people behind Renata, see how each person contributed, and learn how to connect with us.",
+      cardsTitle: "The people behind Renata",
+      cardsLead: "Our team brings together students, mentors, collaborators, and community partners.",
+      cards: [
+        { tag: "Members", title: "Core team", text: "PLACEHOLDER: Add names and roles." },
+        { tag: "Support", title: "Mentors", text: "PLACEHOLDER: Add mentors and faculty." },
+        { tag: "Work", title: "Contributions", text: "Show who handled what." },
+        { tag: "Connect", title: "Contact & collaborate", text: "Find our team email, institution, sponsors, and collaboration details below." }
+      ],
+      teamGroups: [
+        {
+          key: "mentors",
+          title: "Mentors",
+          description: "Principal investigators, advisors, and community mentors guiding the project.",
+          layout: "wide",
+          members: [
+            { name: "Emma Zschunke", role: "Primary PI" },
+            { name: "Preya Shrivastava", role: "Secondary PI" },
+            { name: "Matt M.", role: "Advisor" },
+            { name: "Tasha B.", role: "Advisor" },
+            { name: "Sharan S.", role: "Community Mentor" }
+          ]
+        },
+        {
+          key: "students",
+          title: "Students",
+          description: "Student leaders and members contributing across the project.",
+          layout: "wide",
+          members: [
+            {
+              name: "Humza Shahzad", photo: "assets/Team Images/Humza Shahzad.jpeg", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              bio: "I'm a huge Don Toliver fan. I used to build custom keyboards, and I believe that we can rebuild the world with biotech someday."
+            },
+            {
+              name: "Karthik Sajeev", photo: "assets/Team Images/Karthik Sajeev.png", role: "Student Leader · Education & Human Practices", school: "Troy High School", classYear: "2027",
+              bio: "I'm a senior at Troy, and I love to spend my time meeting new people. I'm interested in biomedical engineering and biotechnology, and I lead the Education and Human Practices sub-teams within Renata. I love watching Unstable Universe and hanging out with my friends in my free time! A fun fact about me is that I have a playlist for virtually every mood I'm in!"
+            },
+            { name: "Kavi S.", photo: "assets/Team Images/Kavi S.jpg", role: "Student Leader", school: "Troy High School", classYear: "2027" ,
+              bio: ""
+            },
+            {
+              name: "Kyle Kao", photo: "assets/Team Images/Kyle Kao.png", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
+            },
+            { name: "Ritvin R.", role: "Student Leader", school: "Troy High School", classYear: "2027", 
+              bio: " " },
+            {
+              name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
+              bio: "I play tennis and enjoy gaming. A fun fact about me is that I can chug a plastic water bottle really fast."
+            },
+            { name: "Aiden R.", role: "Student" },
+            {
+              name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student · Dry Lab", school: "Chino Hills High School", classYear: "2027",
+              bio: "I love coding in my free time and watching movies. Fun fact: my favorite movie is Fight Club."
+            },
+            { name: "Ella Y.", photo: "assets/Team Images/ella.JPG", role: "Student" },
+            {
+              name: "Alex Fang", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "I am a man of many loves, from sports and music to the act of lying down. But what I love most is working with other people on research."
+            },
+            { name: "Faizaan M.", role: "Student" },
+            { name: "Hannah B.", photo: "assets/Team Images/Hannah.jpeg", role: "Student" },
+            {
+              name: "Hanyu Huang", photo: "assets/Team Images/Hanyu Huang.jpg", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "Pianist, swimmer, and competitive Pokémon player."
+            },
+            {
+              name: "Kylie Tien", photo: "assets/Team Images/Kylie T.jpg", role: "Student", school: "Troy High School", classYear: "2027",
+              bio: "In terms of hobbies and interests, I am an avid enjoyer of K-dramas, crochet, and photography! I joined iGEM Renata to dabble further in the world of biology and to meet new people. A fun fact about me is that I enjoy crocheting and handmaking flower crafts to gift to my friends."
+            },
+            {
+              name: "Margaret Lin", photo: "assets/Team Images/picture - Margaret Lin.png", role: "Student", school: "Troy High School", schoolStage: "Senior",
+              bio: "I'm interested in electrical and computer engineering, and I like solving aristocrat ciphers."
+            },
+            {
+              name: "Matthew She", photo: "assets/Team Images/Matthew She.jpeg", role: "Student", school: "Diamond Bar High School", schoolStage: "Sophomore", classYear: "2029",
+              bio: "I love playing piano, badminton, and listening to classical music. I joined iGEM to see how a synthetic biology team actually operated and to gain experience with their work in PCS. Fun fact: I love limes!"
+            },
+            {
+              name: "Ryan Jian", photo: "assets/Team Images/Ryan Jian.jpeg", role: "Student", school: "Troy High School", schoolStage: "Junior", classYear: "2028",
+              bio: "I like playing piano in my free time and working on AI projects. I am interested in iGEM Human Practices because it gives experience in logistical planning and the human practices side of projects. HP gives skills that can be applied beyond a synthetic biology competition. One fun fact is that I have two dogs."
+            },
+            {
+              name: "Tiger Liu", photo: "assets/Team Images/Liu Tiger - headshot in suit - Tiger Liu.jpg", role: "Student", school: "Troy High School", schoolStage: "Junior", classYear: "2028",
+              bio: "I have a strong passion for bioengineering. Fun fact: I have been playing chess for over six years!"
+            },
+            { name: "Toni D.", photo: "assets/Team Images/Toni Densmore.jpeg", role: "Student" },
+            {
+              name: "Vanessa Liang", photo: "assets/Team Images/Vanessa Liang.jpeg", role: "Student", school: "Claremont High School", classYear: "2029",
+              bio: "I enjoy tennis with friends, baking and trying new recipes, and trying new food places with friends. I play both piano and violin. Fun fact: I hate doing dishes; it is my least favorite chore."
+            },
+            {
+              name: "Yuqing Zhuo", photo: "assets/Team Images/skylar zhuo.jpg", role: "Student", school: "Troy High School", schoolStage: "Senior",
+              bio: "I am really passionate about helping others in my community. During my free time, I love to try out new restaurants with my family, journal, and listen to music. Through iGEM, I was able to meet and work with a lot of other students who are motivated and inspiring. In the future, I hope to go into law where I can continue to use my knowledge to help other people in need. A fun fact about me is that I can talk with my mouth open!"
+            },
+            {
+              name: "Deena Singh", photo: "assets/Team Images/Deena Singh.jpeg", role: "Student", school: "Arnold O. Beckman High School", schoolStage: "Junior", classYear: "2028",
+              bio: "Outside of school, I enjoy spending time with my friends, dancing, and baking. I'm especially interested in biology and medicine, which is what initially drew me to this iGEM team. I'm so glad to be part of such a great team and have enjoyed learning more about biotechnology and fundraising. It's been an incredibly valuable experience to be part of a project that has the potential to make a real-world impact. One fun fact about me is that I've traveled to every continent except Antarctica!"
+            },
+            {
+              name: "Noah Chu", photo: "assets/Team Images/Noah Chu.jpeg", role: "Student · Video Production", school: "Troy High School", classYear: "2027",
+              bio: "Hi! My name is Noah, and I'm a senior at Troy High School. In my free time, I enjoy cooking, keeping aquariums, making video projects, and practicing photography. I also play tennis and run cross country and track and field. Fun fact: I'm a real Canadian."
+            },
+            {
+              name: "Lakshya Gupta", photo: "assets/Team Images/Lakshya Gupta.jpg", role: "Student · Molecular Visualization", school: "Troy High School", classYear: "2027",
+              bio: "I make music and film and am interested in philosophy. I work on visualizing the molecules for the explanation video."
+            }
+          ]
+        }
+      ]
+    }),
+
+    project: makePage({
+      group: "project",
+      kicker: "Problem / System / Impact",
+      title: "The <span class='accent-gradient'>project</span> at a glance",
+      lead: "This overview introduces the problem, the proposed system, and the project goal.",
+      cardsTitle: "Project at a glance",
+      cardsLead: "These three ideas frame the project before visitors continue into the full description, engineering, and results.",
+      cards: [
+        { tag: "Problem", title: "What is the issue?", imageLabel: "Problem image", text: "Use this column to explain the real-world problem, its scale, and who it affects." },
+        { tag: "System", title: "What are we building?", imageLabel: "Project system image", text: "Use this column to introduce Renata's proposed biological system and how its major parts work together." },
+        { tag: "Impact", title: "Why does it matter?", imageLabel: "Project impact image", text: "Use this column to show the intended benefit, stakeholders, and broader significance of the project." }
+      ],
+      ctaTitle: "Use this page as the overview",
+      ctaText: "This should be the clean starting point for the deeper project pages.",
+    }),
+
+    "project-description": makePage({
+      group: "project",
+      kicker: "Background / Gap / Concept",
+      title: "Description",
+      lead: "Use this page for the full project story.",
+      cardsTitle: "Main sections",
+      cardsLead: "PLACEHOLDER: Keep the structure simple.",
+      cards: [
+        { tag: "Background", title: "Context", text: "Write the broader context." },
+        { tag: "Gap", title: "Current limitation", text: "Show what is missing now." },
+        { tag: "Concept", title: "Renata idea", text: "PLACEHOLDER: Explain the concept clearly." }
+      ],
+      ctaTitle: "Next page",
+      ctaText: "The project description brings together the methodology, engineering decisions, and results.",
+    }),
+
+    "wet-lab": makePage({
+      group: "wet-lab",
+      kicker: "Build / Assays / Validation",
+      title: "The <span class='accent-gradient'>wet lab</span> hub",
+      lead: "This overview frames the experimental work before the deeper wet-lab pages.",
+      cardsTitle: "Wet lab at a glance",
+      cardsLead: "See the experimental objective, the main assays, and how the bench work supports the full project.",
+      cards: [
+        { tag: "Goal", title: "Objective", text: "PLACEHOLDER: State what the wet lab needed to show." },
+        { tag: "Work", title: "Assays", text: "PLACEHOLDER: Summarize the main experiments." },
+        { tag: "Link", title: "Connection", text: "Show how it supports the project." }
+      ],
+      ctaTitle: "Route into the wet-lab details",
+      ctaText: "This page should send visitors to Experiments.",
+    }),
+
+    experiments: makePage({
+      group: "lab-work",
+      kicker: "Assays / Controls / Readouts",
+      title: "<span class='accent-gradient'>Lab Work</span>",
+      lead: "Use this page for the main assay structure, logic, and experimental record.",
+      cardsTitle: "Main blocks",
+      cardsLead: "PLACEHOLDER: Keep the question, control, output, and experiment timeline clear.",
+      cards: [
+        { tag: "Question", title: "Assay goal", text: "PLACEHOLDER: State what each experiment tested." },
+        { tag: "Control", title: "Comparison", text: "Show controls and validation." },
+        { tag: "Output", title: "Readout", text: "Show what was measured." },
+        { tag: "Record", title: "Experiment notebook", text: "Trace the chronology, what each experiment answered, how the results were interpreted, and how the project continued." }
+      ],
+      ctaTitle: "Keep the assays structured",
+      ctaText: "This page should make the experiment logic easy to follow.",
+    }),
+
+    "dry-lab": makePage({
+      group: "dry-lab",
+      kicker: "Modeling / Analysis / Workflow",
+      title: "The <span class='accent-gradient'>dry lab</span> hub",
+      lead: "This overview frames the modeling and computational analysis behind Renata.",
+      cardsTitle: "Dry lab at a glance",
+      cardsLead: "See the computational goal, what the team built, and how those tools changed the project.",
+      cards: [
+        { tag: "Goal", title: "Purpose", text: "PLACEHOLDER: State what the dry lab was meant to answer." },
+        { tag: "Tools", title: "What was built", text: "PLACEHOLDER: Summarize the model or computational workflow." },
+        { tag: "Impact", title: "Project effect", text: "Show how it changed the project." }
+      ],
+      ctaTitle: "Route into the dry-lab details",
+      ctaText: "This page should send visitors to the Model.",
+    }),
+
+    engagement: makePage({
+      group: "engagement",
+      kicker: "Stakeholders / Outreach / Context",
+      title: "<span class='accent-gradient'>Engagement</span>",
+      lead: "This overview brings together the people, outreach, and real-world context surrounding the project.",
+      cardsTitle: "Engagement at a glance",
+      cardsLead: "See who shaped the work, what the team learned, and how that input influenced the project.",
+      cards: [
+        { tag: "People", title: "Who matters", text: "Show relevant groups and stakeholders." },
+        { tag: "Input", title: "What you learned", text: "PLACEHOLDER: Summarize the main insights." },
+        { tag: "Effect", title: "What changed", text: "Show how engagement affected the project." }
+      ],
+      ctaTitle: "Use engagement to strengthen the project",
+      ctaText: "This page should show that the project exists in a real-world context.",
+    }),
+
+    "human-practices": makePage({
+      group: "engagement",
+      kicker: "Stakeholders / Decisions / Integration",
+      title: "<span class='accent-gradient'>Human Practices</span>",
+      lead: "PLACEHOLDER: Document the stakeholders, methods, evidence, interpretation, and project decisions that shaped Renata.",
+      buttons: [],
+      cards: [],
+    }),
+
+    education: makePage({
+      group: "engagement",
+      kicker: "Events / Audiences / Outcomes",
+      title: "Project <span class='accent-gradient'>education</span>",
+      lead: "Explore each education event as its own record, from the intended audience and activity to the evidence, reflection, and resulting project effect.",
+      buttons: [],
+      cards: [],
+    }),
+
+    partnerships: makePage({
+      group: "engagement",
+      kicker: "Collaboration / Shared work / Impact",
+      title: "<span class='accent-gradient'>Partnerships</span>",
+      lead: "Use this page for partner teams and external collaboration.",
+      cardsTitle: "Partnership blocks",
+      cardsLead: "PLACEHOLDER: Keep the value of the collaboration visible.",
+      cards: [
+        { tag: "Who", title: "Partner", text: "PLACEHOLDER: Add the collaborator and context." },
+        { tag: "Work", title: "Shared contribution", text: "PLACEHOLDER: Describe what was done together." },
+        { tag: "Impact", title: "Project effect", text: "Show why it mattered." }
+      ],
+      ctaTitle: "Show mutual value",
+      ctaText: "The best partnership pages make the shared benefit obvious.",
+    }),
+
+    contact: makePage({
+      group: "contact",
+      kicker: "Email / Sponsors / Advisors",
+      title: "Get in <span class='accent-gradient'>contact</span>",
+      lead: "Use this page for the team email, institution, sponsors, and public contact info.",
+      cardsTitle: "Contact blocks",
+      cardsLead: "PLACEHOLDER: Keep this page short and usable.",
+      cards: [
+        { tag: "Email", title: "Primary contact", text: "PLACEHOLDER: Add the best team email here." },
+        { tag: "School", title: "Institution", text: "PLACEHOLDER: Add school or organization details." },
+        { tag: "Support", title: "Sponsors", text: "PLACEHOLDER: Add sponsor or advisor acknowledgments." }
+      ],
+      ctaTitle: "Make the contact path obvious",
+      ctaText: "Outside visitors should know exactly how to reach the team.",
+    })
+  }
+};
+
+window.SITE_DATA.experimentRoutes = [
+  {
+    number: "01",
+    title: "Assembly and verification",
+    summary: "PLACEHOLDER: Document the hierarchical Golden Gate/JUMP build, screening, and sequence verification record.",
+    href: "experiment-assembly.html",
+    status: "Planned record"
+  },
+  {
+    number: "02",
+    title: "Reporter characterization",
+    summary: "Compare the four sfGFP constructs to separate promoter, operator, and transcription-factor effects.",
+    href: "experiment-reporter.html",
+    status: "Planned record"
+  },
+  {
+    number: "03",
+    title: "Bile-acid growth response",
+    summary: "Track growth and normalized fluorescence across a concentration series within tolerated conditions.",
+    href: "experiment-growth-response.html",
+    status: "Planned record"
+  }
+];
+
+window.SITE_DATA.labWorkModel = {
+  title: "Project model",
+  imageLabel: "Project model image",
+  text: "Place the final model figure here. Its caption should state the model assumptions, variables, principal predictions, and the specific laboratory decisions those predictions informed."
+};
+
+window.SITE_DATA.educationEventRoutes = [
+  {
+    number: "01",
+    title: "Education event 01",
+    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-01.html",
+    status: "PLACEHOLDER: Event record"
+  },
+  {
+    number: "02",
+    title: "Education event 02",
+    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-02.html",
+    status: "PLACEHOLDER: Event record"
+  },
+  {
+    number: "03",
+    title: "Education event 03",
+    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    href: "education-event-03.html",
+    status: "PLACEHOLDER: Event record"
+  }
+];
+
+const makeEducationEvent = (number) => makePage({
+  group: "engagement",
+  kicker: `Education Event ${number} / Event Record`,
+  title: `Education <span class='accent-gradient'>event ${number}</span>`,
+  lead: "PLACEHOLDER: Replace this placeholder with the event's verified name, date, location, audience, and learning objective.",
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Event record",
+  cardsLead: "PLACEHOLDER: Document what the team planned, delivered, observed, and learned from this specific event.",
+  cards: [
+    { tag: "Context", title: "Audience and objective", text: "PLACEHOLDER: Identify the participants, their prior knowledge, and the learning objective chosen for them." },
+    { tag: "Activity", title: "What happened", text: "PLACEHOLDER: Describe the format, materials, facilitation, and event chronology." },
+    { tag: "Evidence", title: "What was observed", text: "PLACEHOLDER: Add attendance, feedback, participant work, survey responses, or other direct evidence." },
+    { tag: "Effect", title: "What changed", text: "PLACEHOLDER: Explain the team's interpretation and how this event shaped later education or project decisions." }
+  ],
+  details: [
+    {
+      eyebrow: "Event chronology",
+      title: "Plan, delivery, and follow-up",
+      text: "PLACEHOLDER: Keep the sequence and evidence for this event together so readers can trace what the team did and why.",
+      steps: [
+        { label: "Before", text: "PLACEHOLDER: Record the audience need, learning objective, preparation, and planned method of evaluation." },
+        { label: "During", text: "PLACEHOLDER: Document the activity sequence, participation, questions, adaptations, and materials used." },
+        { label: "After", text: "PLACEHOLDER: Report the direct evidence, limitations, interpretation, and next decision." }
+      ],
+      note: "PLACEHOLDER: This page is a structural placeholder. Replace prompts with verified event records and avoid claiming outcomes that the collected evidence cannot support."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-event-01"] = makeEducationEvent("01");
+window.SITE_DATA.pages["education-event-02"] = makeEducationEvent("02");
+window.SITE_DATA.pages["education-event-03"] = makeEducationEvent("03");
+
+window.SITE_DATA.pages["experiment-assembly"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 01 / Assembly",
+  title: "Assembly and <span class='accent-gradient'>verification</span>",
+  lead: "A dedicated record for the hierarchical Golden Gate/JUMP build and the evidence used to confirm each assembly stage.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Experiment record",
+  cardsLead: "PLACEHOLDER: Replace each working prompt with the dated methods, observations, and files from the completed experiment.",
+  cards: [
+    { tag: "Question", title: "What was tested?", text: "Whether the selected Level 0 parts assemble into the intended transcriptional units and higher-level construct." },
+    { tag: "Method", title: "How was it tested?", text: "PLACEHOLDER: Record reaction composition, cycling conditions, transformation, colony screening, and sequence verification." },
+    { tag: "Controls", title: "What was compared?", text: "PLACEHOLDER: Document negative controls, positive controls, expected fragment sizes, and acceptance criteria." },
+    { tag: "Readout", title: "What was measured?", text: "PLACEHOLDER: Add colony counts, screening results, gel images, sequencing traces, and final construct maps." }
+  ],
+  details: [
+    {
+      eyebrow: "Method and reproducibility",
+      title: "From kit parts to an assembly-ready map",
+      text: "PLACEHOLDER: Keep the materials, setup, procedure, experimental conditions, and deviations alongside the experiment they support.",
+      steps: [
+        { label: "1", text: "Select the destination backbone and confirm assembly level, antibiotic marker, and recipient role." },
+        { label: "2", text: "Choose one bacterial promoter and RBS per cassette, balancing expression against host burden." },
+        { label: "3", text: "Confirm each CDS identity, orientation, completeness, codon optimization, and internal Type IIS sites." },
+        { label: "4", text: "PLACEHOLDER: Add double terminators and verify insulation between the two transcriptional units." },
+        { label: "5", text: "PLACEHOLDER: Record part IDs, well locations, flanking enzymes, and 5-prime/3-prime fusion overhangs." },
+        { label: "6", text: "Build and validate the hierarchical assembly in Benchling, then export the annotated map for wet-lab review." }
+      ],
+      note: "This is a design checklist rather than a bench-ready method. Add reaction volumes, cycling conditions, controls, transformation, screening, and sequence verification before execution."
+    },
+    {
+      eyebrow: "Interpretation and continuation",
+      title: "Connect the build result to the next decision",
+      text: "PLACEHOLDER: State what the evidence directly confirms, identify failed or ambiguous junctions, and explain which construct advanced to characterization.",
+      steps: [
+        { label: "Chronology", text: "PLACEHOLDER: Add the experiment date and its place in the build sequence." },
+        { label: "Interpretation", text: "PLACEHOLDER: Explain what the screening and sequencing evidence supports." },
+        { label: "Continuation", text: "Link the accepted construct or redesign to the next experiment." }
+      ],
+      note: "Current evidence boundary: the repository contains an assembly strategy, while completed assembly and verification results have not yet been reported."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["experiment-reporter"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 02 / Regulation",
+  title: "Reporter <span class='accent-gradient'>characterization</span>",
+  lead: "A four-condition sfGFP comparison designed to separate promoter, operator, and transcription-factor effects.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Four-condition design",
+  cardsLead: "Each condition isolates a specific regulatory comparison within the same reporter framework.",
+  cards: [
+    { tag: "A", title: "Promoter + sfGFP", text: "Constitutive reference without an operator or separate transcription factor." },
+    { tag: "B", title: "Operator + promoter + sfGFP", text: "Measures the effect of adding the candidate operator sequence." },
+    { tag: "A + C", title: "Promoter + sfGFP, plus TF", text: "Tests whether the transcription factor changes the operator-free reporter." },
+    { tag: "B + C", title: "Operator + promoter + sfGFP, plus TF", text: "Tests regulation when the operator and transcription factor are both present." }
+  ],
+  details: [{
+    eyebrow: "Experiment record",
+    title: "Question, readout, and interpretation",
+    text: "PLACEHOLDER: Record normalized sfGFP fluorescence and growth for every condition, then connect the observed differences to the next regulatory design decision.",
+    steps: [
+      { label: "Chronology", text: "PLACEHOLDER: Add the date, replicate structure, and order of experimental events." },
+      { label: "Answers", text: "PLACEHOLDER: State which comparisons directly answer the operator and transcription-factor questions." },
+      { label: "Interpretation", text: "Separate supported conclusions from uncertainty and technical limitations." },
+      { label: "Continuation", text: "PLACEHOLDER: Identify the regulatory configuration selected for follow-up work." }
+    ],
+    note: "Current evidence boundary: this reporter matrix is documented as an experimental plan; characterization data have not yet been reported."
+  }]
+});
+
+window.SITE_DATA.pages["experiment-growth-response"] = makePage({
+  group: "lab-work",
+  kicker: "Experiment 03 / Response",
+  title: "Bile-acid <span class='accent-gradient'>growth response</span>",
+  lead: "A concentration-series record for interpreting growth tolerance alongside normalized reporter output.",
+  buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+  cardsTitle: "Experiment record",
+  cardsLead: "Use the same structure for every concentration, replicate, and time point.",
+  cards: [
+    { tag: "Question", title: "What was tested?", text: "How bile-acid concentration affects host growth and reporter behavior within the selected experimental range." },
+    { tag: "Method", title: "How was it tested?", text: "PLACEHOLDER: Add the concentration series, exposure timing, culture conditions, sampling schedule, and normalization method." },
+    { tag: "Controls", title: "What was compared?", text: "PLACEHOLDER: Document vehicle, untreated, reporter, and growth controls with the replicate design." },
+    { tag: "Readout", title: "What was measured?", text: "PLACEHOLDER: Add optical density, fluorescence, normalized response, uncertainty, and any exclusion criteria." }
+  ],
+  details: [{
+    eyebrow: "Interpretation and continuation",
+    title: "Separate response from growth burden",
+    text: "Interpret fluorescence together with growth so a stressed culture is not mistaken for a regulatory response.",
+    steps: [
+      { label: "Chronology", text: "PLACEHOLDER: Add the date, time course, and relationship to reporter characterization." },
+      { label: "Interpretation", text: "PLACEHOLDER: Identify the concentration range supported by both growth and reporter evidence." },
+      { label: "Continuation", text: "PLACEHOLDER: Explain how the result changed the next assay or construct decision." }
+    ],
+    note: "Current evidence boundary: the repository proposes a bile-acid concentration series; completed growth-response data have not yet been reported."
+  }]
+});
+
+window.SITE_DATA.experimentRecordTabs = {
+  "experiment-assembly": {
+    notebookLead: "Record each assembly attempt in chronological order, including deviations, observations, verification evidence, interpretation, and the next build decision.",
+    notebook: [
+      { label: "Entry 01", title: "Assembly setup", text: "PLACEHOLDER: Add the date, construct version, selected parts, reaction setup, operators, and any deviations from the planned workflow." },
+      { label: "Entry 02", title: "Transformation and screening", text: "PLACEHOLDER: Add colony observations, plate controls, screening results, images, and links to the raw record." },
+      { label: "Entry 03", title: "Verification and continuation", text: "PLACEHOLDER: Add gel or sequencing evidence, interpret accepted and failed junctions, and state which construct advanced or was redesigned." }
+    ],
+    protocolsLead: "Keep the assembly, transformation, screening, and verification procedures beside the experiment they support.",
+    protocols: [
+      { label: "Protocol 01", title: "Golden Gate/JUMP assembly", text: "PLACEHOLDER: Add the validated reaction composition, part-to-vector ratios, enzyme system, cycling program, controls, and acceptance criteria." },
+      { label: "Protocol 02", title: "Transformation and colony screening", text: "PLACEHOLDER: Add the competent-cell method, recovery, selection, plating, colony-screening procedure, and required controls." },
+      { label: "Protocol 03", title: "Construct verification", text: "PLACEHOLDER: Add the digest, PCR, or sequencing workflow used to confirm identity, orientation, junctions, and complete construct sequence." }
+    ]
+  },
+  "experiment-reporter": {
+    notebookLead: "Track every reporter run with its four experimental conditions, replicate structure, observations, normalized readouts, interpretation, and follow-up decision.",
+    notebook: [
+      { label: "Entry 01", title: "Culture and condition setup", text: "PLACEHOLDER: Add the date, construct identities, culture conditions, replicate plan, instrument settings, and deviations." },
+      { label: "Entry 02", title: "Reporter measurements", text: "PLACEHOLDER: Add growth and fluorescence observations for all four conditions with links to raw plate-reader files." },
+      { label: "Entry 03", title: "Interpretation and continuation", text: "PLACEHOLDER: State which comparisons answer the operator and transcription-factor questions and which configuration advanced." }
+    ],
+    protocolsLead: "Document the shared procedure used to compare promoter, operator, and transcription-factor effects across the reporter matrix.",
+    protocols: [
+      { label: "Protocol 01", title: "Reporter culture preparation", text: "PLACEHOLDER: Add inoculation, growth, induction or exposure conditions, plate layout, timing, and biological and technical replicate requirements." },
+      { label: "Protocol 02", title: "Growth and fluorescence measurement", text: "PLACEHOLDER: Add instrument settings, sampling schedule, blank correction, fluorescence normalization, and quality-control criteria." },
+      { label: "Protocol 03", title: "Four-condition comparison", text: "Define the planned contrasts, uncertainty reporting, exclusion rules, and criteria used to identify a supported regulatory effect." }
+    ]
+  },
+  "experiment-growth-response": {
+    notebookLead: "Record each bile-acid response run chronologically, keeping concentration preparation, growth behavior, reporter output, exclusions, and decisions together.",
+    notebook: [
+      { label: "Entry 01", title: "Concentration-series setup", text: "PLACEHOLDER: Add the date, bile-acid identity, stock preparation, concentration range, plate map, controls, and replicate plan." },
+      { label: "Entry 02", title: "Growth and reporter observations", text: "PLACEHOLDER: Add time-resolved optical density and fluorescence data, anomalies, exclusions, and links to raw files." },
+      { label: "Entry 03", title: "Interpretation and continuation", text: "PLACEHOLDER: Identify the range supported by both growth and normalized reporter evidence, then record the next assay decision." }
+    ],
+    protocolsLead: "Keep concentration preparation, exposure, measurement, and analysis procedures together for reproducible growth-response testing.",
+    protocols: [
+      { label: "Protocol 01", title: "Bile-acid concentration preparation", text: "PLACEHOLDER: Add stock solvent, dilution sequence, final concentration range, vehicle matching, storage, and handling requirements." },
+      { label: "Protocol 02", title: "Exposure and time-course measurement", text: "PLACEHOLDER: Add culture state, exposure timing, incubation conditions, plate layout, sampling intervals, and instrument settings." },
+      { label: "Protocol 03", title: "Normalization and analysis", text: "PLACEHOLDER: Add blank correction, growth normalization, replicate aggregation, uncertainty reporting, exclusion criteria, and supported comparison tests." }
+    ]
+  }
+};
+
+const registerExperimentResourcePages = (recordKey, experimentTitle) => {
+  window.SITE_DATA.pages[recordKey].recordKey = recordKey;
+  window.SITE_DATA.pages[recordKey].recordView = "overview";
+
+  window.SITE_DATA.pages[`${recordKey}-notebook`] = makePage({
+    group: "lab-work",
+    recordKey,
+    recordView: "notebook",
+    kicker: `${experimentTitle} / Notebook`,
+    title: `${experimentTitle} <span class='accent-gradient'>notebook</span>`,
+    lead: "A dedicated chronological record for this experiment's setup, observations, interpretation, and continuation decisions.",
+    buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+    cards: []
+  });
+
+  window.SITE_DATA.pages[`${recordKey}-protocols`] = makePage({
+    group: "lab-work",
+    recordKey,
+    recordView: "protocols",
+    kicker: `${experimentTitle} / Protocols`,
+    title: `${experimentTitle} <span class='accent-gradient'>protocols</span>`,
+    lead: "A dedicated procedure record for this experiment's preparation, controls, measurements, and validation criteria.",
+    buttons: [{ text: "Back to experiments", href: "experiments.html", style: "secondary" }],
+    cards: []
+  });
+};
+
+registerExperimentResourcePages("experiment-assembly", "Assembly and verification");
+registerExperimentResourcePages("experiment-reporter", "Reporter characterization");
+registerExperimentResourcePages("experiment-growth-response", "Bile-acid growth response");
+
+window.SITE_DATA.pages["project-description"].details = [
+  {
+    eyebrow: "Biological rationale",
+    title: "A two-cassette route to LCA sulfation",
+    text: "Renata's proposed construct pairs the BtSULT sulfotransferase with a dedicated PAPS-supply module. BtSULT is intended to convert lithocholic acid (LCA) to sulfated LCA, while KIATPSL and PcAPSK support production of PAPS, the required sulfate donor.",
+    items: [
+      "Cassette 1: Anderson promoter - RBS - BtSULT CDS - double terminator",
+      "Cassette 2: Anderson promoter - RBS - KIATPSL + PcAPSK CDS - double terminator",
+      "Both transcriptional units are intended for a compatible JUMP destination backbone"
+    ],
+    note: "Design status: proposed architecture. Final part IDs, promoter strengths, junctions, and host optimization still require confirmation."
+  }
+];
+
+window.SITE_DATA.pages["project-description"].engineering = { details: [
+  {
+    id: "assembly-design-cycle",
+    eyebrow: "DBTL cycle 2",
+    title: "Design, build, test, learn",
+    text: "This cycle moves from a modular pathway concept to a characterization plan that can distinguish constitutive expression from operator- and transcription-factor-dependent behavior.",
+    steps: [
+      { label: "Design", text: "Define two pathway cassettes and a four-condition sfGFP reporter matrix." },
+      { label: "Build", text: "Assemble Level 0 parts into Level 1 transcriptional units with Type IIS cloning and JUMP-compatible vectors." },
+      { label: "Test", text: "Measure sfGFP across promoter/operator and transcription-factor conditions, then vary bile-acid concentration within growth-tolerant ranges." },
+      { label: "Learn", text: "Use expression and growth data to select regulatory logic before committing it to the full BtSULT/PAPS circuit." }
+    ],
+    note: "This cycle records an experimental plan; characterization data have not yet been reported."
+  },
+  {
+    id: "assembly-evidence-map",
+    eyebrow: "DBTL 2 evidence map",
+    title: "What this cycle establishes",
+    items: [
+      "A biologically motivated two-cassette BtSULT/PAPS pathway architecture",
+      "A hierarchical Golden Gate/JUMP assembly strategy",
+      "A four-condition reporter experiment for separating operator and transcription-factor effects",
+      "A documented set of part-selection and compatibility checks",
+      "Explicit unresolved decisions to carry into the next design review"
+    ],
+    note: "Evidence boundary: this cycle documents research and experimental design. It does not yet establish successful assembly, expression, LCA sulfation, or bile-responsive regulation."
+  }
+] };
+
+window.SITE_DATA.pages["wet-lab"].details = [
+  {
+    eyebrow: "Assembly architecture",
+    title: "Hierarchical Golden Gate with JUMP",
+    text: "Type IIS restriction enzymes cut outside their recognition sites, creating designed overhangs that order multiple parts in a single reaction. The working plan uses BsaI for basic-part assembly into transcriptional units, followed by a higher-level assembly route for the multi-cassette construct.",
+    steps: [
+      { label: "Level 0", text: "Promoters, RBSs, coding sequences, operators, and terminators are prepared as standardized basic parts." },
+      { label: "Level 1", text: "Basic parts are assembled into complete promoter-RBS-CDS-terminator transcriptional units." },
+      { label: "Level 2", text: "The BtSULT and PAPS-supply transcriptional units are combined in a compatible destination backbone." }
+    ],
+    note: "Candidate backbone noted in the working document: pJUMP29-1A(sfGFP). Backbone level, antibiotic selection, fusion sites, and capacity must be verified before assembly."
+  }
+];
+
+window.SITE_DATA.pages.experiments.details = [
+  {
+    eyebrow: "Reporter characterization",
+    title: "Four constructs isolate regulatory effects",
+    text: "sfGFP serves as the reporter for comparing basal promoter activity, operator effects, and transcription-factor-dependent regulation.",
+    constructs: [
+      { id: "A", title: "Promoter + sfGFP", text: "Constitutive reference without operator or separate transcription factor." },
+      { id: "B", title: "Operator + promoter + sfGFP", text: "Measures the effect of adding the candidate operator sequence." },
+      { id: "A + C", title: "Promoter + sfGFP, plus TF", text: "Tests whether the transcription factor changes the operator-free reporter." },
+      { id: "B + C", title: "Operator + promoter + sfGFP, plus TF", text: "Tests regulation when both the operator and transcription factor are present." }
+    ],
+    note: "Suggested readouts: normalized sfGFP fluorescence and growth across a bile-acid concentration series, with appropriate positive and negative controls."
+  },
+  {
+    id: "experiment-notebook",
+    eyebrow: "Experiment notebook",
+    title: "From question to next step",
+    text: "PLACEHOLDER: Keep the experimental story chronological while showing what each experiment was meant to answer, how the team interpreted its results, and how that interpretation shaped the work that followed.",
+    steps: [
+      { label: "Chronology", text: "PLACEHOLDER: Record when the experiment occurred and place it in the sequence of the project." },
+      { label: "Answers", text: "PLACEHOLDER: State the question the experiment addressed and what the result directly answered." },
+      { label: "Interpretation", text: "PLACEHOLDER: Explain what the team concluded from the result, including uncertainty and limitations." },
+      { label: "Continuation", text: "Show how that interpretation informed the next experiment, design decision, or project direction." }
+    ],
+    note: "Each dated entry should connect the experimental question, result, interpretation, and resulting next step, with links to its assay, method record, and raw data."
+  }
+];
+
+window.SITE_DATA.pages["dry-lab"].details = [
+  {
+    eyebrow: "In-silico design",
+    title: "Benchling assembly and compatibility checks",
+    text: "The dry-lab workflow converts the biological design into an auditable hierarchical build before DNA is ordered or assembled.",
+    items: [
+      "Annotate every Level 0 part and its exact sequence source",
+      "Check internal BsaI/BsmBI/SapI sites and assign compatible fusion overhangs",
+      "Simulate Level 0-to-Level 1 and Level 1-to-Level 2 assemblies",
+      "Confirm reading frames, orientations, junction scars, terminators, and antibiotic markers",
+      "Export final maps, sequences, and an assembly manifest for the wet-lab team"
+    ],
+    note: "Open question from DBTL 2: whether a reduced two-transcription-unit route can save time without sacrificing modularity or reliable expression."
+  }
+];

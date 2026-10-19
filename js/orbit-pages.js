@@ -64,7 +64,7 @@
       </div>
       <svg class="orbit-page-horizon" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q240 0 500 50T1000 45T1440 22V100H0Z" fill="#ef9a7d"/><path d="M0 87Q350 28 610 73T1150 65T1440 80V100H0Z" fill="#fff4e3"/></svg>
     </section>
-    ${links.length ? `<nav class="orbit-chapter-nav" aria-label="On this page"><span>In this chapter</span>${links.slice(0, 6).map((link, index) => `<a href="#${escape(link.id)}"><span>${String(index + 1).padStart(2, "0")}</span>${escape(link.label)}</a>`).join("")}</nav>` : ""}`;
+    <div class="orbit-chapter-nav" aria-hidden="true"></div>`;
   }
 
   function orbitPoint(theta) {
@@ -209,7 +209,7 @@
     meter.setAttribute("aria-valuemin", "0"); meter.setAttribute("aria-valuemax", "100");
     meter.innerHTML = '<span></span>';
     doc.getElementById("siteHeader").appendChild(meter);
-    const chapterLinks = [...main.querySelectorAll(".orbit-chapter-nav a")];
+    const chapterLinks = [...main.querySelectorAll(".page-outline a")];
     let frame = 0;
     function update() {
       frame = 0;

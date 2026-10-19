@@ -7,26 +7,27 @@
   const badge = (name, size) => `<img class="renata-nav-icon" src="assets/nav-icons/${escape(name)}.png" width="${size}" height="${size}" alt="" decoding="async" />`;
 
   function render(items, { pageKey = "home", group = "home" } = {}) {
-    return `<ul class="renata-nav-list" id="renata-nav-list">${items.map((item, index) => {
+    return `<button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu"><span class="renata-nav-bars" aria-hidden="true"></span></button>
+      <ul class="renata-nav-list" id="renata-nav-list">${items.map((item, index) => {
         const active = item.key === group || item.key === pageKey;
-        if (!item.children) return `<li><a class="renata-nav-trigger${active ? " is-active" : ""}" href="${escape(item.href)}"${item.key === pageKey ? ' aria-current="page"' : ""}>${escape(item.label)}</a></li>`;
+        // A childless label is itself the destination, so it carries the
+        // current-page marker whenever this page belongs to its section.
+        if (!item.children) return `<li><a class="renata-nav-trigger${active ? " is-active" : ""}" href="${escape(item.href)}"${active ? ' aria-current="page"' : ""}>${escape(item.label)}</a></li>`;
         const panelId = `renata-nav-${item.key}`;
         return `<li class="renata-nav-group">
-          <div class="renata-nav-row">
           <button class="renata-nav-trigger${active ? " is-active" : ""}" type="button" aria-expanded="false" aria-controls="${escape(panelId)}" id="${escape(panelId)}-trigger">${escape(item.label)}<span class="renata-nav-chevron" aria-hidden="true"></span></button>
-          <span class="renata-nav-shortcuts">${item.children.map(child => `<a class="renata-nav-shortcut${child.key === pageKey ? " is-current" : ""}" href="${escape(child.href)}" aria-label="${escape(child.label)}" title="${escape(child.label)}">${badge(child.icon, 32)}</a>`).join("")}</span>
-          </div>
           <div class="renata-nav-panel" id="${escape(panelId)}" aria-labelledby="${escape(panelId)}-trigger" hidden>
             <div class="renata-nav-intro">
-              <span class="renata-nav-eyebrow">0${index} / ${escape(item.label)}</span>
+              <span class="renata-nav-eyebrow">0${index + 1} / ${escape(item.label)}</span>
               <p class="renata-nav-heading">${escape(item.heading)}</p>
               <p class="renata-nav-description">${escape(item.description)}</p>
             </div>
-            <div class="renata-nav-pages"><span class="renata-nav-eyebrow">Explore this section</span>
+            <div class="renata-nav-pages">
               <ul>${item.children.map(child => {
                 const current = child.key === pageKey;
                 const inSection = !current && (pageKey.startsWith(`${child.key}-`) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
                 return `<li><a class="renata-nav-card${inSection ? " is-section" : ""}" href="${escape(child.href)}"${current ? ' aria-current="page"' : ""}>
+                  ${badge(child.icon, 48)}
                   <span class="renata-nav-copy"><strong>${escape(child.label)}</strong><small>${escape(child.description)}</small></span>
                   <span class="renata-nav-arrow" aria-hidden="true">${current ? "●" : "↗"}</span>
                 </a>${child.children?.length ? `<ul class="renata-nav-subpages" aria-label="${escape(child.label)} pages">${child.children.map(sub => `<li><a href="${escape(sub.href)}"${sub.key === pageKey ? ' aria-current="page"' : ""}>${escape(sub.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>` : ""}</li>`;
@@ -54,6 +55,7 @@
     const mobile = win.matchMedia("(max-width: 980px)");
     const hover = win.matchMedia("(hover: hover) and (pointer: fine)");
     const list = nav.querySelector(".renata-nav-list");
+    const toggle = nav.querySelector(".renata-nav-toggle");
     const triggers = [...nav.querySelectorAll(".renata-nav-trigger")];
     const entries = [...nav.querySelectorAll(".renata-nav-group")].map(group => ({
       group, trigger: group.querySelector(".renata-nav-trigger"), panel: group.querySelector(".renata-nav-panel")
@@ -68,6 +70,21 @@
       const box = siteHeader.getBoundingClientRect();
       nav.style.setProperty("--nav-panel-top", `${box.bottom}px`);
       doc.documentElement.style.setProperty("--site-header-height", `${box.height}px`);
+    }
+
+    // Desktop panels are taken out of flow, so they are placed under their own
+    // trigger instead of pinning to the header's right edge. The panel is kept
+    // inside the viewport when a trigger sits close to the right-hand gutter.
+    function placePanel(entry) {
+      const panel = entry.panel;
+      if (!panel.style) return;
+      panel.style.removeProperty("--nav-panel-left");
+      if (mobile.matches || typeof entry.trigger.getBoundingClientRect !== "function") return;
+      const gutter = 16;
+      const trigger = entry.trigger.getBoundingClientRect();
+      const width = panel.offsetWidth;
+      const rightmost = Math.max(gutter, win.innerWidth - width - gutter);
+      panel.style.setProperty("--nav-panel-left", `${Math.round(Math.min(Math.max(gutter, trigger.left), rightmost))}px`);
     }
 
     function close(restoreFocus = false) {
@@ -88,6 +105,13 @@
       opened = entry;
       entry.trigger.setAttribute("aria-expanded", "true");
       entry.panel.hidden = false;
+      placePanel(entry);
+    }
+
+    function setMenu(open) {
+      nav.dataset.navOpen = open ? "true" : "false";
+      toggle?.setAttribute("aria-expanded", open ? "true" : "false");
+      if (!open) close();
     }
 
     entries.forEach(entry => {
@@ -116,9 +140,8 @@
         links[next].focus();
       });
     });
-    nav.querySelectorAll(".renata-nav-shortcut").forEach(link => {
-      link.addEventListener("focus", () => close());
-    });
+    setMenu(false);
+    toggle?.addEventListener("click", () => setMenu(nav.dataset.navOpen !== "true"));
     triggers.forEach((trigger, index) => {
       trigger.addEventListener("focus", () => {
         if (opened && opened.trigger !== trigger) close();
@@ -139,13 +162,19 @@
     });
     doc.addEventListener("keydown", event => {
       if (event.key !== "Escape") return;
-      if (!opened) return;
-      event.preventDefault();
-      close(true);
+      if (opened) {
+        event.preventDefault();
+        close(true);
+      } else if (nav.dataset.navOpen === "true") {
+        event.preventDefault();
+        setMenu(false);
+        toggle?.focus();
+      }
     });
     doc.addEventListener("pointerdown", event => {
       if (nav.contains(event.target)) return;
       close(opened?.panel.contains(doc.activeElement));
+      setMenu(false);
     });
     nav.addEventListener("focusout", () => {
       win.setTimeout(() => {
@@ -156,14 +185,19 @@
       if (event.target.closest("a")) {
         // Keep same-page anchor navigation from leaving focus in a hidden panel.
         close(opened?.panel.contains(event.target));
+        setMenu(false);
       }
     });
     mobile.addEventListener("change", () => {
       close(opened?.panel.contains(doc.activeElement));
+      setMenu(false);
       measureHeader();
     });
     list.addEventListener("scroll", () => close(opened?.panel.contains(doc.activeElement)), { passive: true });
-    win.addEventListener?.("resize", measureHeader);
+    win.addEventListener?.("resize", () => {
+      measureHeader();
+      if (opened) placePanel(opened);
+    });
     if (win.ResizeObserver) new win.ResizeObserver(measureHeader).observe(nav);
     measureHeader();
   }

@@ -2274,6 +2274,26 @@ a {
   flex-wrap: wrap;
 }
 
+/* iGEM requires a content-license statement and an AI-use disclosure. */
+.footer-statement {
+  flex: 1 1 320px;
+  min-width: 0;
+  max-width: 62ch;
+}
+
+.footer-statement h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-statement p {
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
 .footer-inner p {
   color: var(--muted-2);
   font-size: 0.95rem;

@@ -59,7 +59,7 @@ test("chapter destinations link directly to the consolidated Project DBTL sectio
   const legacy = pageChapter("engineering", data.pages.engineering);
   assert.equal(legacy.key, "project");
   assert.doesNotMatch(read("js/orbit-pages.js"), /["']engineering\.html["']/);
-  assert.ok(data.nav.find(item => item.key === "project").children.every(item => item.href === project.next.split("#")[0]));
+  assert.equal(data.nav.find(item => item.key === "project").href, project.next.split("#")[0]);
 });
 
 test("lab records retain their own titles and the crew keeps its dedicated renderer and animations", () => {

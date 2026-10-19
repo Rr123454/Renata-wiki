@@ -10,8 +10,20 @@
 .renata-nav .renata-nav-chevron { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
 .renata-nav [aria-expanded="true"] .renata-nav-chevron { transform: translateY(2px) rotate(225deg); }
 .renata-nav .renata-nav-toggle { display: none; }
-.site-header .renata-nav .renata-nav-panel { right: var(--page-gutter, 16px); }
-.renata-nav .renata-nav-panel { position: absolute; z-index: 5000; top: 100%; right: 0; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - 140px); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: 235px minmax(0, 1fr); padding: 9px; border: 1px solid var(--nav-line); border-top: 3px solid #aebbff; border-radius: 0 0 22px 22px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 22px 60px #18265a26; animation: renata-menu-in .2s ease-out both; text-align: left; }
+.renata-nav .renata-nav-bars { position: relative; }
+.renata-nav .renata-nav-bars,
+.renata-nav .renata-nav-bars::before,
+.renata-nav .renata-nav-bars::after { display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor; }
+.renata-nav .renata-nav-bars::before,
+.renata-nav .renata-nav-bars::after { content: ""; position: absolute; left: 0; transition: transform .18s, top .18s; }
+.renata-nav .renata-nav-bars::before { top: -6px; }
+.renata-nav .renata-nav-bars::after { top: 6px; }
+.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars { background: transparent; }
+.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars::before { top: 0; transform: rotate(45deg); }
+.renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-bars::after { top: 0; transform: rotate(-45deg); }
+/* Panels are fixed so they clear the header's own overflow, and JS writes
+   --nav-panel-left from the trigger's box so each one opens under its button. */
+.renata-nav .renata-nav-panel { position: fixed; z-index: 5000; top: var(--nav-panel-top, 88px); left: var(--nav-panel-left, auto); right: auto; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - var(--nav-panel-top, 88px) - 16px); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: 235px minmax(0, 1fr); padding: 9px; border: 1px solid var(--nav-line); border-top: 3px solid #aebbff; border-radius: 0 0 22px 22px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 22px 60px #18265a26; animation: renata-menu-in .2s ease-out both; text-align: left; }
 .renata-nav .renata-nav-intro { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding: 24px 22px; border-radius: 12px; background: #e7eaff; background-image: radial-gradient(#24305e18 .8px, transparent .8px); background-size: 12px 12px; }
 .renata-nav .renata-nav-eyebrow { display: block; color: #536080; font-size: .63rem; font-weight: 800; line-height: 1.5; letter-spacing: .13em; text-transform: uppercase; }
 .renata-nav .renata-nav-icon { flex: none; object-fit: contain; image-rendering: pixelated; }
@@ -42,7 +54,6 @@ body[data-page] .renata-nav :is(a, button):focus-visible { outline: 3px solid #2
 .flight-header > .renata-nav { margin: 0; padding-top: 0; color: #fff1bc; }
 .flight-header .renata-nav-trigger { padding-inline: 11px; font-size: .8rem; border-radius: 24px; }
 .flight-header .renata-nav-trigger:is(:hover, .is-active, [aria-expanded="true"]) { background: #fff1bc17; border-color: #fff1bc70; }
-.flight-header .renata-nav-panel { right: 6vw; }
 body[data-home-variant="orbit"] .renata-nav :is(.renata-nav-trigger, .renata-nav-toggle):focus-visible { outline-color: #fff1bc; }
 
 @keyframes renata-menu-in { from { opacity: 0; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
@@ -55,9 +66,8 @@ body[data-home-variant="orbit"] .renata-nav :is(.renata-nav-trigger, .renata-nav
 @media (max-width: 980px) {
   .site-header .header-inner { flex-wrap: nowrap; min-height: 72px; }
   .renata-nav { margin-left: auto; }
-  .renata-nav .renata-nav-toggle { display: inline-flex; border-color: currentColor; min-height: 44px; font-size: .78rem; }
-  .renata-nav .renata-nav-toggle-symbol { font-size: 1.2rem; line-height: 1; transition: transform .2s; }
-  .renata-nav .renata-nav-toggle[aria-expanded="true"] .renata-nav-toggle-symbol { transform: rotate(45deg); }
+  .renata-nav .renata-nav-toggle { display: inline-flex; width: 48px; min-height: 44px; padding: 0; border-color: currentColor; }
+  .renata-nav[data-nav-open="false"] .renata-nav-list { display: none; }
   .renata-nav .renata-nav-list { position: absolute; top: 100%; right: 0; width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 150px); overflow-y: auto; overscroll-behavior: contain; display: block; padding: 12px; border: 1px solid var(--nav-line); border-radius: 0 0 18px 18px; background: var(--nav-paper); color: var(--nav-ink); box-shadow: 0 20px 40px #18265a26; }
   .renata-nav .renata-nav-list > li + li { border-top: 1px solid var(--nav-line); }
   .site-header .renata-nav-list { right: 12px; }

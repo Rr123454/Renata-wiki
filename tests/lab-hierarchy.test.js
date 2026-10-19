@@ -12,13 +12,13 @@ const data = context.window.SITE_DATA, lab = context.window.RenataLab;
 const pages = Object.fromEntries(["wet-lab", "model"].map(key => [key, lab.render(key)]));
 const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 
-test("top-level navigation matches the requested hierarchy with Notebook under Wetlab", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Homepage", "Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
-  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, item => item.label), ["Abstract", "DBTL Cycle"]);
+test("top-level navigation matches the requested hierarchy with Wetlab and Model under Lab Work", () => {
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
+  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
+  assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Model"]);
-  assert.equal(menu[0].children[0].href, "wet-lab.html#notebook");
-  assert.equal(menu[0].children[0].label, "Notebook");
+  assert.equal(menu[0].children, undefined, "the Notebook subpage is no longer in the menu");
   assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
 });
 

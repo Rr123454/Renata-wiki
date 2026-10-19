@@ -98,11 +98,7 @@ body.mission-page :is(.flight-footer, .mission-controls) :is(a, button):focus-vi
 .mission-enzyme-comparison figcaption > strong { font-size: 1.15rem; }
 .mission-design-arrow { text-align: center; font-size: 2.5rem; }
 .mission-design-arrow span { display: block; font-size: .55rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; line-height: 1.7; }
-.mission-design-control { max-width: 600px; text-align: center; margin: 0 auto 30px; }
-.mission-design-control label { display: block; font-size: .8rem; font-weight: 800; }
-.mission-design-control input { width: 100%; accent-color: #735097; height: 44px; margin-top: 5px; cursor: pointer; }
-.mission-design-control p { font-size: .75rem; line-height: 1.65; }
-.mission-fit-molecule { transform: translate(calc((1 - var(--fit-progress, 0)) * 65px), calc((1 - var(--fit-progress, 0)) * -105px)) rotate(calc((1 - var(--fit-progress, 0)) * 16deg)); transform-origin: 350px 320px; }
+.mission-fit-molecule { transition: transform 1.05s cubic-bezier(.2,.7,.2,1); transform: translate(calc((1 - var(--fit-progress, 0)) * 65px), calc((1 - var(--fit-progress, 0)) * -105px)) rotate(calc((1 - var(--fit-progress, 0)) * 16deg)); transform-origin: 350px 320px; }
 .mission-engineering > .mission-button { display: flex; width: max-content; max-width: 100%; margin-inline: auto; background: #4b356e; color: #fff1bc; border-color: #4b356e; }
 .mission-scene--proposal { background: #173e84; color: #e0e9f6; border-color: #10295d; }
 .mission-scene--proposal .mission-eyebrow { color: #ffcf78; }
@@ -192,7 +188,6 @@ body.mission-page :is(.flight-footer, .mission-controls) :is(a, button):focus-vi
   .mission-enzyme-comparison :is(img, svg) { height: 280px; }
   .mission-design-arrow { font-size: 2rem; transform: rotate(90deg); padding: 0; }
   .mission-design-arrow span { display: none; }
-  .mission-design-control p { font-size: .68rem; }
   .mission-craft { width: clamp(190px, 52vw, 270px); }
   .mission-controls { gap: 4px; bottom: 12px; padding-inline: 7px; }
   .mission-checkpoints { gap: 2px; }
