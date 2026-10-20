@@ -731,14 +731,11 @@
         </div>
       </section>
       <div class="container footer-inner">
-        <p>© 2026 iGEM Renata.${window.IGEM_CONFIG ? ' <a href="attributions.html">Attributions</a>' : ""}</p>
-        <section class="footer-statement" id="content-license" aria-labelledby="content-license-title">
-          <h3 id="content-license-title">Content license</h3>
-          <p>Except where otherwise credited, this wiki is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-          ${window.IGEM_CONFIG?.repository ? `<p><a href="${escapeHtml(window.IGEM_CONFIG.repository)}">Wiki source on iGEM GitLab</a></p>` : ""}
+        <p>© 2026 iGEM Renata.</p>
+        <section class="footer-statement" id="content-license" aria-label="Content license">
+          <p>Except where otherwise credited, this wiki is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.${window.IGEM_CONFIG?.repository ? ` <a href="${escapeHtml(window.IGEM_CONFIG.repository)}">Wiki source on iGEM GitLab</a>.` : ""}</p>
         </section>
-        <section class="footer-statement" id="ai-use" aria-labelledby="ai-use-title">
-          <h3 id="ai-use-title">AI use disclosure</h3>
+        <section class="footer-statement" id="ai-use" aria-label="AI use disclosure">
           <p>OpenAI Codex assisted with website code, layout, animations, automated checks, and transcription of the supplied Model writeup into HTML. The team is responsible for reviewing the published content and scientific claims.</p>
         </section>
       </div>

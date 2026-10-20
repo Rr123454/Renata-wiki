@@ -6,12 +6,12 @@
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
   const plain = value => String(value || "").replace(/<[^>]*>/g, "");
   const chapters = {
-    team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
-    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
-    lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "human-practices.html", nextLabel: "Human Practices", nextIcon: "Mic" },
-    engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "education.html", nextLabel: "Education", nextIcon: "Plant" },
-    education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },
-    community: { number: "07", label: "Our community", icon: "Eiffel_tower", satellite: "Phoenix", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" }
+    team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["Our team."], lead: "", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
+    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Our project."], lead: "", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
+    lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Lab work."], lead: "", next: "human-practices.html", nextLabel: "Human Practices", nextIcon: "Mic" },
+    engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Human practices."], lead: "", next: "education.html", nextLabel: "Education", nextIcon: "Plant" },
+    education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Education."], lead: "", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },
+    community: { number: "07", label: "Our community", icon: "Eiffel_tower", satellite: "Phoenix", title: ["Our community."], lead: "", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" }
   };
 
   function pageChapter(pageKey, pageData) {
@@ -26,7 +26,7 @@
       chapter.nextLabel = pageKey.startsWith("experiment-") ? "Wetlab work & analysis" : "Explore education";
       chapter.nextIcon = chapter.icon;
     }
-    if (pageKey === "contact") { chapter.title = ["Lorem", "Ipsum."]; chapter.icon = "Mic"; }
+    if (pageKey === "contact") { chapter.title = ["Contact."]; chapter.icon = "Mic"; }
     return chapter;
   }
 
@@ -58,10 +58,10 @@
           <nav class="orbit-page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Homepage</a><span aria-hidden="true">/</span><span>${escape(pageTitle)}</span></nav>
           <p class="orbit-page-kicker">${chapter.number} <span aria-hidden="true">—</span> ${escape(chapter.label)}</p>
           <h1 id="${escape(titleId)}">${chapter.title.map((line, index) => `<span class="orbit-title-line"><span style="--line:${index}">${escape(line)}</span></span>`).join("")}</h1>
-          <p class="orbit-page-lead">${escape(chapter.lead)}</p>
+          ${chapter.lead ? `<p class="orbit-page-lead">${escape(chapter.lead)}</p>` : ""}
           <a class="orbit-page-cta" href="#page-content">${chapter.key === "team" ? "Meet the crew" : "Explore this chapter"}<span aria-hidden="true">↓</span></a>
         </div>
-        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>Lorem Ipsum.</span></div></div>
+        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>${escape(chapter.label)}</span></div></div>
       </div>
       <svg class="orbit-page-horizon" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q240 0 500 50T1000 45T1440 22V100H0Z" fill="#ef9a7d"/><path d="M0 87Q350 28 610 73T1150 65T1440 80V100H0Z" fill="#fff4e3"/></svg>
     </section>
@@ -252,7 +252,7 @@
     });
     const content = main.innerHTML;
     main.innerHTML = `${heroMarkup(chapter, titleId, pageTitle, links)}<div class="orbit-page-content" id="page-content" tabindex="-1">${content}</div>
-      <section class="orbit-next" aria-label="Continue exploring"><div class="container"><div class="orbit-next-copy"><p>Lorem Ipsum</p><h2>Lorem<br>Ipsum.</h2></div><a href="${chapter.next}"><img src="${assetUrl(`assets/nav-icons/${chapter.nextIcon}.png`)}" width="80" height="80" alt=""/><span>${chapter.nextLabel}</span><span aria-hidden="true">↗</span></a></div></section>`;
+      <section class="orbit-next" aria-label="Continue exploring"><div class="container"><div class="orbit-next-copy"><h2>Keep exploring.</h2></div><a href="${chapter.next}"><img src="${assetUrl(`assets/nav-icons/${chapter.nextIcon}.png`)}" width="80" height="80" alt=""/><span>${chapter.nextLabel}</span><span aria-hidden="true">↗</span></a></div></section>`;
     doc.body.dataset.orbitSection = chapter.key;
     doc.body.classList.add("orbit-pages");
     enhanceScene(main.querySelector(".orbit-page-hero"), win, doc);

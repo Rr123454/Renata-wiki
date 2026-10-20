@@ -64,7 +64,7 @@
   function notebookViewer() {
     return `<aside class="lab-notebook-panel" id="notebook" aria-labelledby="lab-notebook-title">
       ${notebookDocument.sections.map(section => `<span class="lab-notebook-anchor" id="notebook-${section.id}" data-notebook-page="${section.page}"></span>`).join("")}<span class="lab-notebook-anchor" id="assay-notebook" data-notebook-page="5"></span>
-      <header class="lab-column-heading"><h2 id="lab-notebook-title">Notebook</h2><p>Undated prompts · PDF · 5 pages</p></header>
+      <header class="lab-column-heading"><h2 id="lab-notebook-title">Notebook</h2></header>
       <div class="lab-notebook-toolbar"><label for="notebook-section">Go to</label><select id="notebook-section" data-notebook-select><option value="1">Overview &amp; evidence status</option>${notebookDocument.sections.map(section => `<option value="${section.page}">${esc(section.title)}</option>`).join("")}</select><a href="${notebookPdf}" target="_blank" rel="noopener">Open PDF ↗</a><a href="${notebookPdf}" download>Download</a></div>
       <iframe class="lab-notebook-pdf" data-notebook-frame src="${notebookPdf}#page=1&amp;view=FitH&amp;navpanes=0" title="Wetlab notebook PDF: undated entry prompts" loading="lazy"></iframe>
       <p class="lab-notebook-help">Current entry prompts; completed bench records are still pending. If the PDF does not display, use Open PDF or the text version below.</p>

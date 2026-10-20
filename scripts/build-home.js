@@ -50,7 +50,7 @@ const html = `<!DOCTYPE html>
         <div class="mission-zoom-copy"><span class="mission-eyebrow">PCS</span>${paragraph('pcs')}</div>
         <div class="mission-vessel" aria-hidden="true"><div class="mission-exterior">${ship}</div><div class="mission-interior">${inside('cockpit-cut')}</div><span class="mission-window-glow"></span></div>
         <div class="mission-hub" role="group" aria-labelledby="mission-hub-title">
-          <div class="mission-hub-heading"><p class="mission-eyebrow">SulFlux / Explore</p><h2 id="mission-hub-title" tabindex="-1">Lorem<br>Ipsum.</h2><p>Select a planet to explore.</p></div>
+          <div class="mission-hub-heading"><p class="mission-eyebrow">SulFlux / Explore</p><h2 id="mission-hub-title" tabindex="-1">Explore.</h2><p>Select a planet to explore.</p></div>
           <nav class="mission-planets" aria-label="Explore the three planets">${planet(1,'gallbladder','Gallbladder','Bile flow')}${planet(2,'sulfation','SULT2A1','Sulfonation')}${planet(3,'bile-acids','LCA &amp; DCA','Bile acids')}</nav>
           <a class="mission-continue" href="#engineering-story">Continue to BtSULT &amp; SulFlux <span aria-hidden="true">↓</span></a>
         </div>
@@ -77,7 +77,7 @@ const html = `<!DOCTYPE html>
       <div class="mission-scene-copy">${back}<p class="mission-eyebrow">SulFlux</p><h2 id="sulflux-title"><em>Escherichia coli</em></h2>${paragraph('probiotic')}<a class="mission-button" href="project-description.html">Explore the project <span aria-hidden="true">↗</span></a></div>
       <figure class="mission-scene-art mission-person-art">${person}</figure>
     </section>
-    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Lorem Ipsum.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
+    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
   <script src="js/site-content.js?v=20261020-nav-labels"></script>

@@ -32,8 +32,8 @@ window.SITE_DATA = {
     { key: "project", label: "Engineering", href: "project-description.html" },
     {
       key: "lab-work", label: "Lab Work", icon: "DNA",
-      heading: "Lorem Ipsum",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      heading: "Lab work.",
+      description: "",
       children: [
         { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
         { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab-notebook.html", icon: "DNA", description: "Bench notebook, PDF reader, and text entries." },
@@ -45,8 +45,8 @@ window.SITE_DATA = {
       label: "Education + HP",
       href: "human-practices.html",
       icon: "Mic",
-      heading: "Lorem Ipsum",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      heading: "Education and human practices.",
+      description: "",
       children: [
         { key: "human-practices", label: "Human practices", href: "human-practices.html", icon: "Mic", description: "Stakeholder perspectives and project decisions." },
         { key: "education", label: "Education", href: "education.html", icon: "Plant", description: "Learning, outreach, and shared curiosity." }

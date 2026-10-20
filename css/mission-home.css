@@ -93,7 +93,7 @@ body.mission-page .flight-header { position:sticky; padding:0; background:#173e8
 .mission-scene--engineering { color:#4b356e; background:#dfccec; border-color:#725390; }
 .mission-illustration-sheet { border:3px solid #315888; background:#fff; padding:20px; border-radius:35px; box-shadow:8px 10px 0 #173e8420; }
 .mission-scene--proposal { background:#173e84; border-color:#10295d; }
-.mission-person-art { max-width:560px; justify-self:center; }
+.mission-person-art { width:100%; max-width:350px; justify-self:center; }
 .mission-scene--proposal .mission-eyebrow { color:#ffcf78; }
 .mission-finale { padding:85px 7vw; text-align:center; background:#10295d; }
 .mission-finale h2 { font-size:clamp(2.7rem,5vw,5rem); color:#fff1bc; margin:20px 0 40px; }

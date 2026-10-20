@@ -22,7 +22,7 @@ function fixture(page = "team") {
     ".orbit-page-lead", ".orbit-scene-caption > span", ".orbit-scene-center text", ".orbit-scene-center image",
     ".team-dealer-copy > span", ".team-dealer-copy > strong", ".team-dealer-copy > p", ".team-dealer-art text"
   ].map(selector => [selector, node()]));
-  const titles = [node("Existing title"), node("Existing subtitle")];
+  const titles = [node("Existing title")];
   const backs = [node("R"), node("R")];
   const roster = { dataset: {}, querySelector: selector => selectorMap[selector], querySelectorAll: () => backs };
   const hero = { querySelector: selector => selectorMap[selector], querySelectorAll: () => titles };
@@ -35,7 +35,7 @@ test("crew identity enhances the existing team page exactly once", () => {
   assert.equal(init(doc), true);
   assert.equal(roster.dataset.teamSpace, "true");
   assert.equal(init(doc), false);
-  assert.deepEqual(titles.map(node => node.textContent), ["Lorem", "Ipsum."]);
+  assert.deepEqual(titles.map(node => node.textContent), ["Our team."]);
   assert.equal(selectorMap[".orbit-scene-center image"].attrs.href, "assets/orbit/bottle.svg");
   assert.match(selectorMap[".team-dealer-copy > p"].textContent, /Mentors, then students/);
 });

@@ -2278,28 +2278,29 @@ a {
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-/* iGEM requires a content-license statement and an AI-use disclosure. */
+/* The licence statement takes the rest of the bar so it sets on one or two
+   lines instead of stacking into a narrow column. */
 .footer-statement {
-  flex: 1 1 320px;
+  flex: 1 1 340px;
   min-width: 0;
-  max-width: 62ch;
-}
-
-.footer-statement h3 {
-  margin: 0 0 0.35rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  /* Clear the fixed back-to-top button in the bottom-right corner. */
+  padding-right: 72px;
 }
 
 .footer-statement p {
-  font-size: 0.78rem;
-  line-height: 1.65;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.footer-statement a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-inner p {
