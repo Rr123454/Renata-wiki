@@ -295,7 +295,7 @@ test("Project Description loads the merged data before rendering with refreshed 
   const version = scripts.find(src => src.startsWith("js/site.js?"))?.split("?v=")[1];
   assert.ok(version);
   const required = ["js/site-content.js", "js/project-description-content.js", "js/engineering-content.js", "js/project-paper.js", "js/site.js"];
-  const positions = required.map(file => scripts.indexOf(`${file}?v=${file === "js/site-content.js" ? "20261020-nav-labels" : file === "js/project-paper.js" ? "20261019-expand1" : version}`));
+  const positions = required.map(file => scripts.indexOf(`${file}?v=${file === "js/site-content.js" ? "20261020-merged-team1" : file === "js/project-paper.js" ? "20261019-expand1" : version}`));
   assert.ok(positions.every(position => position >= 0));
   assert.ok(positions.every((position, index) => index === 0 || position > positions[index - 1]));
   assert.ok(html.includes(`css/project-research.css?v=${version}`));
