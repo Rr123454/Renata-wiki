@@ -116,11 +116,11 @@ window.SITE_DATA = {
           description: "Principal investigators, advisors, and community mentors guiding the project.",
           layout: "wide",
           members: [
-            { name: "Emma Zschunke", role: "Primary PI" },
+            { name: "Emma Zschunke", photo: "assets/Team Images/Emma Zschunke.png", role: "Primary PI" },
             { name: "Preya Shrivastava", role: "Secondary PI" },
-            { name: "Matt M.", role: "Advisor" },
-            { name: "Tasha B.", role: "Advisor" },
-            { name: "Sharan S.", role: "Community Mentor" }
+            { name: "Matt M.", photo: "assets/Team Images/Matt M.png", role: "Advisor" },
+            { name: "Tasha B.", photo: "assets/Team Images/Tasha B.png", role: "Advisor" },
+            { name: "Sharan S.", photo: "assets/Team Images/Sharan.png", role: "Community Mentor" }
           ]
         },
         {
@@ -144,7 +144,7 @@ window.SITE_DATA = {
               name: "Kyle Kao", photo: "assets/Team Images/Kyle Kao.png", role: "Student Leader", school: "Troy High School", classYear: "2027",
               bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
             },
-            { name: "Ritvin R.", role: "Student Leader", school: "Troy High School", classYear: "2027", 
+            { name: "Ritvin R.", photo: "assets/Team Images/ritvin.png", role: "Student Leader", school: "Troy High School", classYear: "2027", 
               bio: " " },
             {
               name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
@@ -157,7 +157,7 @@ window.SITE_DATA = {
             },
             { name: "Ella Y.", photo: "assets/Team Images/ella.jpg", role: "Student" },
             {
-              name: "Alex Fang", role: "Student", school: "Troy High School", classYear: "2027",
+              name: "Alex Fang", photo: "assets/Team Images/Alex.png", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I am a man of many loves, from sports and music to the act of lying down. But what I love most is working with other people on research."
             },
             { name: "Faizaan M.", role: "Student" },
