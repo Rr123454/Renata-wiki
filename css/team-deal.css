@@ -25,14 +25,15 @@
 .team-dealer-copy > strong { display: block; font-family: var(--font-display, Georgia, serif); font-size: clamp(1.3rem, 2vw, 2rem); line-height: 1.15; }
 .team-dealer-copy > p { margin: 6px 0 0; font-size: .8rem; }
 .team-dealer-art { width: 230px; height: 138px; overflow: visible; }
-.team-dealer-hand { transform-origin: 245px 110px; }
-.team-dealer-finger { transform-origin: var(--finger-pivot); }
+.team-dealer-machine { transform-origin: 150px 155px; }
 .team-dealer-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 #siteMain .team-dealer-actions button { background: transparent; border: 1px solid var(--deep-ink); color: var(--deep-ink); padding: 9px 14px; font: inherit; font-size: .8rem; cursor: pointer; border-radius: 3px; }
 #siteMain .team-dealer-actions button:hover { background: var(--soft-periwinkle); }
 #siteMain .team-dealer-actions button:focus-visible { outline: 2px solid var(--deep-ink); outline-offset: 3px; }
 #siteMain .team-dealer-actions button:disabled { opacity: .5; cursor: default; }
-#siteMain .team-card-table .team-group-section { padding: 44px 0 20px; border: 0; background: transparent; scroll-margin-top: calc(var(--dealer-top) + var(--dealer-height) + 20px); }
+/* Let individual flying cards rise above the sticky dealer, without raising
+   their entire section (which would cover the machine while scrolling). */
+#siteMain .team-card-table .team-group-section { z-index: auto; padding: 44px 0 20px; border: 0; background: transparent; scroll-margin-top: calc(var(--dealer-top) + var(--dealer-height) + 20px); }
 #siteMain .team-card-table .team-group-section + .team-group-section { margin-top: 24px; }
 #siteMain .team-card-table .team-group-heading { align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--warm-beige); margin-bottom: 28px; }
 #siteMain .team-card-table .team-group-heading h2 { font-size: clamp(2rem, 3vw, 3.2rem); }
@@ -41,7 +42,7 @@
 #siteMain .team-card-table #mentors .member-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 #siteMain .team-card-table .member-card { position: relative; overflow: visible; background: transparent; border: 0; box-shadow: none; transform-origin: center; }
 #siteMain .team-card-table .member-card.is-waiting { opacity: 0; }
-#siteMain .team-card-table .member-card.is-dealing { z-index: 30; }
+#siteMain .team-card-table .member-card.is-dealing { z-index: 40; pointer-events: none; will-change: transform; }
 .team-card-inner { position: relative; height: 100%; }
 #siteMain .team-card-table .team-card-front { border: 1px solid var(--deep-ink); border-radius: 10px; }
 #siteMain .team-card-table .team-card-front { position: relative; height: 100%; padding: 28px 12px 18px; background: var(--light-cream, #fffaf2); box-shadow: 3px 4px 0 var(--warm-beige); }

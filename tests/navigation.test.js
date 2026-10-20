@@ -35,11 +35,12 @@ test("every content page loads the shared menu in order, including the flight ho
   assert.doesNotMatch(render(data.nav), /home-orbit\.html|href="experiments\.html"/);
 });
 
-test("the homepage keeps no button of its own, leaving the brand as the only route home", () => {
-  assert.equal(data.nav.some(item => item.key === "home"), false);
-  assert.doesNotMatch(render(data.nav), /href="index\.html"/);
+test("Home is the first shared navigation link and marks the current homepage", () => {
+  assert.equal(data.nav[0].key, "home");
+  assert.match(render(data.nav), /href="index\.html" aria-current="page">Home<\/a>/);
+  assert.match(render(data.nav, {pageKey:"team", group:"team"}), /href="index\.html">Home<\/a>/);
   assert.match(header(data, { pageKey: "home", group: "home" }), /class="brand" aria-label="iGEM Renata, homepage"/);
-  assert.doesNotMatch(read("index.html"), /renata-nav-shortcut|>Homepage</);
+  assert.match(read("index.html"), /href="index\.html" aria-current="page">Home<\/a>/);
 });
 
 test("retired routes have explicit compatibility redirects and useful fallback links", () => {
@@ -92,8 +93,8 @@ test("the collapsed menu is a three-bar toggle and panels open under their own t
 
 test("Team and Project are direct links while Lab Work and Engagement keep dropdowns", () => {
   const flat = Array.from(data.nav).filter(item => !item.children);
-  assert.deepEqual(Array.from(flat, item => item.key), ["team", "project"]);
-  assert.deepEqual(Array.from(flat, item => item.href), ["team.html", "project-description.html"]);
+  assert.deepEqual(Array.from(flat, item => item.key), ["home", "team", "project"]);
+  assert.deepEqual(Array.from(flat, item => item.href), ["index.html", "team.html", "project-description.html"]);
   assert.equal(flat.every(item => !item.icon), true, "direct labels carry no icon of their own");
   const grouped = Array.from(data.nav).filter(item => item.children);
   assert.deepEqual(Array.from(grouped, item => item.key), ["lab-work", "engagement"]);
@@ -250,10 +251,12 @@ test("keyboard opens links, navigates, and Escape returns focus to its trigger",
 
 test("arrow keys move across direct labels and dropdown triggers alike", () => {
   const f = fixture();
-  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["team.html", "project-description.html"]);
+  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["index.html", "team.html", "project-description.html"]);
   f.links[0].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.links[1]);
   f.links[1].emit("keydown", { key: "ArrowRight" });
+  assert.equal(f.doc.activeElement, f.links[2]);
+  f.links[2].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.triggers[0]);
   f.links[0].emit("keydown", { key: "ArrowLeft" });
   assert.equal(f.doc.activeElement, f.triggers[1], "focus wraps to the last trigger");

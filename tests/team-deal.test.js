@@ -14,7 +14,28 @@ test("cards start at the deck and settle in their exact grid position", () => {
     assert.ok(frames[0].transform.includes(`translate(${435-left-width/2}px, ${120-top-140}px)`));
     assert.equal(frames.at(-1).transform, "translate(0, 0) rotate(0deg) scale(1)");
     assert.equal(frames.at(-1).opacity, 1);
+    assert.equal(frames[0].opacity, 1, "cards are visible immediately at the slot");
+    assert.ok(frames[1].transform.includes(`translate(${435-left-width/2}px, ${152-top-140}px)`), "feed straight down before fanning outward");
   }
+});
+
+test("individual cards use distinct intermediate flight paths and share an exact landing", () => {
+  const origin = { left: 400, top: 80, width: 70, height: 18 };
+  const target = { left: 40, top: 420, width: 180, height: 280 };
+  const flights = [0, 1, 2].map(index => dealFrames(origin, target, index));
+  assert.equal(new Set(flights.map(frames => JSON.stringify(frames.slice(1, -1)))).size, 3);
+  for (const frames of flights) {
+    assert.deepEqual(frames.at(-1), flights[0].at(-1));
+    assert.equal(frames.at(-1).opacity, 1);
+  }
+});
+
+test("flying cards can pass above the machine without an ancestor stacking trap", () => {
+  const css = read("css/team-deal.css");
+  assert.match(css, /#siteMain \.team-card-table \.team-group-section\s*\{[^}]*z-index:\s*auto/);
+  const dealerZ = Number(css.match(/#siteMain \.team-dealer\s*\{[^}]*z-index:\s*(\d+)/)[1]);
+  const cardZ = Number(css.match(/\.member-card\.is-dealing\s*\{[^}]*z-index:\s*(\d+)/)[1]);
+  assert.ok(cardZ > dealerZ, "each flying card clears the opaque dealer band");
 });
 
 test("the enhancement is team-only and does not select or replace the photo", () => {
@@ -37,7 +58,7 @@ test("dealing preserves roster order and offers an immediate complete roster", (
   assert.match(js, /if \(reduced.matches \|\| !cards.every/);
   assert.match(js, /data-deal-show/);
   assert.match(js, /window.addEventListener\("scroll", controller.onScroll, \{ passive: true \}\)/);
-  assert.match(read("team.html"), /js\/team-deal.js\?v=20261019-grip2/);
+  assert.match(read("team.html"), /js\/team-deal.js\?v=20261020-individual-flight1/);
 });
 
 // Exercise the real controller with a deterministic clock and scrollable layout.
@@ -110,28 +131,60 @@ function harness(tops = [300, 300, 300, 300, 300]) {
   };
 }
 
-test("a five-card row lands in 640ms with 55ms between cards", async () => {
+test("a five-card row launches individually and lands in 1320ms", async () => {
   const h = harness(); h.controller.begin();
-  await h.tick(54); assert.deepEqual(h.starts, [0]);
+  await h.tick(159); assert.deepEqual(h.starts, [0]);
   await h.tick(1); assert.deepEqual(h.starts, [0, 1]);
-  await h.tick(600);
+  await h.tick(1159);
   assert.deepEqual(h.starts, [0, 1, 2, 3, 4]);
-  assert.equal(DEAL_TIMING.flight, 420);
-  assert.equal(DEAL_TIMING.stagger, 55);
+  assert.equal(DEAL_TIMING.flight, 680);
+  assert.equal(DEAL_TIMING.stagger, 160);
+  assert.equal(h.dealing().length, 1, "the last card is still finishing its own flight");
+  await h.tick(1);
   assert.equal(h.waiting().length, 0); assert.equal(h.dealing().length, 0);
+  assert.ok(h.cards.every(card => card.motions.length === 1), "each roster card has one individual animation");
 });
 
-test("cards keep their faces while the five-finger hand makes one sweep per visible batch", async () => {
+test("the loading overlay cannot consume the initial card flights", async () => {
+  const h = harness([300, 300]);
+  let loading = true;
+  h.page.querySelector = selector => selector === ".site-loader" && loading ? {} : null;
+  h.controller.begin();
+  await h.tick(700);
+  assert.deepEqual(h.starts, []);
+  assert.equal(h.waiting().length, 2);
+  loading = false;
+  await h.tick(100);
+  assert.deepEqual(h.starts, [0]);
+  await h.tick(840);
+  assert.deepEqual(h.starts, [0, 1]);
+  assert.equal(h.waiting().length, 0);
+  assert.equal(h.dealing().length, 0);
+});
+
+test("Show all remains immediate while the loading overlay is present", async () => {
+  const h = harness();
+  h.page.querySelector = selector => selector === ".site-loader" ? {} : null;
+  h.controller.begin();
+  await h.tick(100);
+  h.controller.showAll();
+  await h.tick(1000);
+  assert.deepEqual(h.starts, []);
+  assert.equal(h.waiting().length, 0);
+});
+
+test("cards keep their faces while the machine pulses for each individual launch", async () => {
   const js = read("js/team-deal.js");
   assert.doesNotMatch(js, /rotateY|team-card-back|backface/, "the flip and the card back are gone");
   assert.doesNotMatch(js, /data-deal-replay/, "only Show all cards remains");
   assert.match(js, /data-deal-show/);
-  assert.match(js, /if \(!handSlid\)/);
+  assert.match(js, /duration: DEAL_TIMING.stagger/);
   const slide = js.match(/handMotion = hand\.animate\(\[[\s\S]*?\]/)[0];
-  assert.match(slide, /translate\(/);
-  assert.match(slide, /rotate\(-3deg\)/, "a small wrist flick accompanies the release");
-  const fingers = [...dealerArt().matchAll(/data-finger="([^"]+)"/g)].map(match => match[1]);
-  assert.deepEqual(fingers, ["little", "ring", "middle", "index", "thumb"]);
+  assert.match(slide, /translateY\(/);
+  assert.match(slide, /scaleY\(\.97\)/, "a short feed pulse accompanies dispensing");
+  assert.match(dealerArt(), /assets\/story\/dealer-machine.png/);
+  assert.ok(fs.existsSync(path.join(__dirname, "../assets/story/dealer-machine.png")));
+  assert.doesNotMatch(dealerArt(), /team-dealer-hand|data-finger/);
   assert.match(dealerArt(), /team-deck-source/);
 });
 
@@ -247,21 +300,28 @@ test("leaving the browser tab settles active cards and resumes the queue on retu
   const h = harness(); h.controller.begin(); await h.tick(0);
   h.page.hidden = true; h.controller.onVisibilityChange(); await h.tick(1000);
   assert.equal(h.dealing().length, 0); assert.deepEqual(h.starts, [0]);
-  h.page.hidden = false; h.controller.onVisibilityChange(); await h.tick(1000);
+  h.page.hidden = false; h.controller.onVisibilityChange(); await h.tick(1500);
   assert.deepEqual(h.starts, [0,1,2,3,4]); assert.equal(h.waiting().length, 0);
 });
 
 
-test("the wrist and five fingers release together and settle safely when motion is stopped", async () => {
+test("each card triggers machine recoil", async () => {
+  const h = harness(); h.controller.begin(); await h.tick(640);
+  assert.equal(h.starts.length, 5);
+  assert.equal(h.handMotions.length, 5);
+  assert.ok(h.handMotions.every(m => m.options.duration === DEAL_TIMING.stagger));
+  h.controller.showAll();
+});
+
+test("the machine feed pulse settles safely when motion is stopped", async () => {
   const h = harness(); h.controller.begin(); await h.tick(0);
-  assert.equal(h.handMotions.length, 6);
-  assert.deepEqual(h.handMotions.slice(1).map(m => m.finger), ["little", "ring", "middle", "index", "thumb"]);
-  assert.equal(h.handMotions.at(-1).frames[1].transform, "rotate(-7deg)");
+  assert.equal(h.handMotions.length, 1);
+  assert.equal(h.handMotions[0].frames[1].transform, "translateY(-3px) scaleY(.97)");
   h.scrollTo(20);
   assert.ok(h.handMotions.every(m => !m.canceled), "small scrolls preserve the release gesture");
   h.controller.showAll();
   assert.ok(h.handMotions.every(m => m.canceled));
   assert.equal(h.dealing().length, 0);
   await h.tick(1000);
-  assert.equal(h.handMotions.length, 6, "stopped motion cannot restart itself");
+  assert.equal(h.handMotions.length, 1, "stopped motion cannot restart itself");
 });

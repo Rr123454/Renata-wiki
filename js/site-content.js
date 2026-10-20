@@ -28,6 +28,7 @@ window.SITE_DATA = {
   ],
 
   nav: [
+    { key: "home", label: "Home", href: "index.html" },
     { key: "team", label: "Our Team", href: "team.html" },
     { key: "project", label: "Engineering", href: "project-description.html" },
     {
@@ -130,21 +131,21 @@ window.SITE_DATA = {
           layout: "wide",
           members: [
             {
-              name: "Humza Shahzad", photo: "assets/Team Images/Humza Shahzad.jpeg", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              name: "Humza Shahzad", photo: "assets/Team Images/Humza Shahzad.jpeg", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I'm a huge Don Toliver fan. I used to build custom keyboards, and I believe that we can rebuild the world with biotech someday."
             },
             {
-              name: "Karthik Sajeev", photo: "assets/Team Images/Karthik Sajeev.png", role: "Student Leader · Education & Human Practices", school: "Troy High School", classYear: "2027",
+              name: "Karthik Sajeev", photo: "assets/Team Images/Karthik Sajeev.png", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I'm a senior at Troy, and I love to spend my time meeting new people. I'm interested in biomedical engineering and biotechnology, and I lead the Education and Human Practices sub-teams within Renata. I love watching Unstable Universe and hanging out with my friends in my free time! A fun fact about me is that I have a playlist for virtually every mood I'm in!"
             },
-            { name: "Kavi S.", photo: "assets/Team Images/Kavi S.jpg", role: "Student Leader", school: "Troy High School", classYear: "2027" ,
+            { name: "Kavi S.", photo: "assets/Team Images/Kavi S.jpg", role: "Student", school: "Troy High School", classYear: "2027" ,
               bio: ""
             },
             {
-              name: "Kyle Kao", photo: "assets/Team Images/Kyle Kao.png", role: "Student Leader", school: "Troy High School", classYear: "2027",
+              name: "Kyle Kao", photo: "assets/Team Images/Kyle Kao.png", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
             },
-            { name: "Ritvin R.", role: "Student Leader", school: "Troy High School", classYear: "2027", 
+            { name: "Ritvin R.", role: "Student", school: "Troy High School", classYear: "2027", 
               bio: " " },
             {
               name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
@@ -152,7 +153,7 @@ window.SITE_DATA = {
             },
             { name: "Aiden R.", role: "Student" },
             {
-              name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student · Dry Lab", school: "Chino Hills High School", classYear: "2027",
+              name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student", school: "Chino Hills High School", classYear: "2027",
               bio: "I love coding in my free time and watching movies. Fun fact: my favorite movie is Fight Club."
             },
             { name: "Ella Y.", photo: "assets/Team Images/ella.jpg", role: "Student" },
@@ -160,7 +161,6 @@ window.SITE_DATA = {
               name: "Alex Fang", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I am a man of many loves, from sports and music to the act of lying down. But what I love most is working with other people on research."
             },
-            { name: "Faizaan M.", role: "Student" },
             { name: "Hannah B.", photo: "assets/Team Images/Hannah.jpeg", role: "Student" },
             {
               name: "Hanyu Huang", photo: "assets/Team Images/Hanyu Huang.jpg", role: "Student", school: "Troy High School", classYear: "2027",
@@ -200,11 +200,11 @@ window.SITE_DATA = {
               bio: "Outside of school, I enjoy spending time with my friends, dancing, and baking. I'm especially interested in biology and medicine, which is what initially drew me to this iGEM team. I'm so glad to be part of such a great team and have enjoyed learning more about biotechnology and fundraising. It's been an incredibly valuable experience to be part of a project that has the potential to make a real-world impact. One fun fact about me is that I've traveled to every continent except Antarctica!"
             },
             {
-              name: "Noah Chu", photo: "assets/Team Images/Noah Chu.jpeg", role: "Student · Video Production", school: "Troy High School", classYear: "2027",
+              name: "Noah Chu", photo: "assets/Team Images/Noah Chu.jpeg", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "Hi! My name is Noah, and I'm a senior at Troy High School. In my free time, I enjoy cooking, keeping aquariums, making video projects, and practicing photography. I also play tennis and run cross country and track and field. Fun fact: I'm a real Canadian."
             },
             {
-              name: "Lakshya Gupta", photo: "assets/Team Images/Lakshya Gupta.jpg", role: "Student · Molecular Visualization", school: "Troy High School", classYear: "2027",
+              name: "Lakshya Gupta", photo: "assets/Team Images/Lakshya Gupta.jpg", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I make music and film and am interested in philosophy. I work on visualizing the molecules for the explanation video."
             }
           ]
