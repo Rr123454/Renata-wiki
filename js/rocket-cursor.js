@@ -32,8 +32,8 @@
     }
     function point(event) {
       if (!loaded || !fine.matches || contrast.matches || doc.hidden || event.pointerType !== 'mouse' || event.target?.closest?.(NATIVE)) { hide(); return; }
-      // No easing on position: the nose stays exactly on the actual click point.
-      sprite.style.transform = `translate3d(${event.clientX - 59}px,${event.clientY - 33}px,0)`;
+      // Mirror the whole craft and exhaust; its left-facing nose is 1px from the edge.
+      sprite.style.transform = `translate3d(${event.clientX - 1}px,${event.clientY - 33}px,0) scaleX(-1)`;
       sprite.hidden = false; html.classList.add('sulflux-cursor');
       win.clearTimeout(timer);
       sprite.classList.toggle('is-moving', !reduced.matches);
