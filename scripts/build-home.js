@@ -39,7 +39,7 @@ const html = `<!DOCTYPE html>
 <body data-page="home" data-home-variant="orbit" class="mission-page" data-home-brand="ULP-CA">
   <script src="js/loading-screen.js"></script>
   <a class="flight-skip" href="#observatory">Skip to the planets</a>
-  <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><ul class="renata-nav-list"><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li><a class="renata-nav-trigger" href="project-description.html">Engineering</a></li><li><a class="renata-nav-trigger" href="wet-lab.html">Lab Work</a></li><li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li></ul></nav></div></header>
+  <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><ul class="renata-nav-list"><li><a class="renata-nav-trigger is-active" href="index.html" aria-current="page">Home</a></li><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li><a class="renata-nav-trigger" href="project-description.html">Engineering</a></li><li><a class="renata-nav-trigger" href="wet-lab.html">Lab Work</a></li><li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li></ul></nav></div></header>
   <main class="mission-home" id="siteMain" data-static-content="true">
     <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/bottle-new.png assets/story/spaceship.png assets/story/spaceship-inside.png assets/story/planet-1.png assets/story/planet-2.png assets/story/planet-3.png">
       <div id="observatory" class="mission-observatory-anchor" aria-hidden="true"></div>
@@ -80,11 +80,19 @@ const html = `<!DOCTYPE html>
     <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
+<<<<<<< HEAD
   <script src="js/site-content.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/site.js"></script>
   <script src="js/mission-home.js"></script>
   <script src="js/rocket-cursor.js"></script>
+=======
+  <script src="js/site-content.js?v=20261020-merged-team1"></script>
+  <script src="js/navigation.js?v=20261019-notebook2"></script>
+  <script src="js/site.js?v=20261019-ulpca1"></script>
+  <script src="js/mission-home.js?v=20261020-alignment3"></script>
+  <script src="js/rocket-cursor.js?v=20261020-center1"></script>
+>>>>>>> d6c6ec967570a02b9fc9905f351444e63877e6ce
 </body>
 </html>
 `;

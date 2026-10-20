@@ -134,7 +134,7 @@ def build(root=ROOT, output=None, release=False, base_path=None):
     resolved = {}
     for key, p in assets.items():
         suffix = media_type(p)
-        target = str(Path(key).with_suffix(suffix)) if suffix != p.suffix.lower() else key
+        target = Path(key).with_suffix(suffix).as_posix() if suffix != p.suffix.lower() else key
         resolved[key] = urls.get(key) if release else quote(target, safe="/")
         if not release:
             dest = output / target

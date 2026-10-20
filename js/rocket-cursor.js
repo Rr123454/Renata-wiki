@@ -32,8 +32,8 @@
     }
     function point(event) {
       if (!loaded || !fine.matches || contrast.matches || doc.hidden || event.pointerType !== 'mouse' || event.target?.closest?.(NATIVE)) { hide(); return; }
-      // No easing on position: the nose stays exactly on the actual click point.
-      sprite.style.transform = `translate3d(${event.clientX - 59}px,${event.clientY - 33}px,0)`;
+      // Center the 60 × 45px craft on the click point, preserving its left-facing orientation.
+      sprite.style.transform = `translate3d(${event.clientX - 30}px,${event.clientY - 22.5}px,0) scaleX(-1)`;
       sprite.hidden = false; html.classList.add('sulflux-cursor');
       win.clearTimeout(timer);
       sprite.classList.toggle('is-moving', !reduced.matches);

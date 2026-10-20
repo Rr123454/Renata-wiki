@@ -21,16 +21,16 @@ function fixture({fine=true,reduced=false,contrast=false}={}) {
   expire(){const jobs=[...timers.values()];timers.clear();jobs.forEach(fn=>fn());}
  };
 }
-test('the full-resolution bird rocket uses its nose as the click point without resampling or lag',()=>{
+test('the full-resolution bird rocket uses its center as the click point without resampling or lag',()=>{
  const f=fixture();assert.equal(f.images[0].src,'assets/story/rocket-cutout.png');
  f.move();assert.equal(f.sprite.hidden,true);assert.equal(f.doc.documentElement.classList.contains('sulflux-cursor'),false);
  f.images[0].onload();f.move();
- assert.equal(f.sprite.hidden,false);assert.equal(f.sprite.style.transform,'translate3d(141px,117px,0)');
+ assert.equal(f.sprite.hidden,false);assert.equal(f.sprite.style.transform,'translate3d(170px,127.5px,0) scaleX(-1)');
  assert.ok(f.doc.documentElement.classList.contains('sulflux-cursor'));
  assert.ok(f.sprite.children.includes(f.images[0]),'render the large original directly');
  assert.equal(f.images[0].width,60);assert.equal(f.sprite['aria-hidden'],'true');
  init(f.win,f.doc);assert.equal(f.images.length,1);
- f.move({clientX:410,clientY:300});assert.equal(f.sprite.style.transform,'translate3d(351px,267px,0)');
+ f.move({clientX:410,clientY:300});assert.equal(f.sprite.style.transform,'translate3d(380px,277.5px,0) scaleX(-1)');
 });
 test('a tiny thruster trail runs only during movement and settles without a permanent animation loop',()=>{
  const f=fixture();f.images[0].onload();f.move();

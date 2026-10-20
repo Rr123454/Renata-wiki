@@ -13,7 +13,7 @@ const pages = Object.fromEntries(["wet-lab", "wet-lab-notebook", "model"].map(ke
 const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 
 test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Engineering", "Lab Work", "Education + HP"]);
   assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Engineering is a direct link");
   assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
   const menu = data.nav.find(item => item.key === "lab-work").children;

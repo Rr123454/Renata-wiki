@@ -21,21 +21,20 @@ test("all 17 supplied bios map to unique students; Noah has one consolidated ent
     assert.ok(matches[0].school, name);
     assert.doesNotMatch(matches[0].bio, /&#x20;|whoever reading|choose what to add/);
   }
-  assert.equal(students.length, 24);
+  assert.equal(students.length, 23);
+  assert.ok(students.every(member => !/faizaan/i.test(member.name)));
   assert.equal(students.filter(member => member.bio?.trim()).length, 17);
-  assert.match(students.find(member => member.name === "Noah Chu").role, /Video Production/);
+  assert.ok(students.every(member => member.role === "Student"));
   assert.match(students.find(member => member.name === "Noah Chu").bio, /aquariums/);
-  assert.match(students.find(member => member.name === "Brandon Trinh").role, /Dry Lab/);
-  assert.match(students.find(member => member.name === "Karthik Sajeev").role, /Education & Human Practices/);
 });
 
 test("mentors and members with no supplied biography are preserved", () => {
   assert.deepEqual(Array.from(groups[0].members, member => member.name), ["Emma Zschunke", "Preya Shrivastava", "Matt M.", "Tasha B.", "Sharan S."]);
-  for (const name of ["Kavi S.", "Ritvin R.", "Aiden R.", "Ella Y.", "Faizaan M.", "Hannah B.", "Toni D."]) {
+  for (const name of ["Kavi S.", "Ritvin R.", "Aiden R.", "Ella Y.", "Hannah B.", "Toni D."]) {
     const member = students.find(item => item.name === name);
     assert.ok(member, name); assert.equal(member.bio?.trim() || "", "", name);
   }
-  assert.deepEqual(Array.from(students.slice(0,5), member => member.role.startsWith("Student Leader")), [true,true,true,true,true]);
+  assert.deepEqual(Array.from(groups[0].members, member => member.role), ["Primary PI", "Secondary PI", "Advisor", "Advisor", "Community Mentor"]);
 });
 
 test("all supplied student and mentor portraits retain their member assignments", () => {
@@ -58,7 +57,7 @@ test("all supplied student and mentor portraits retain their member assignments"
 
 test("profile keys match card positions and school labels use supplied facts only", () => {
   const profiles = profileMap(groups);
-  assert.equal(profiles.size, 29);
+  assert.equal(profiles.size, 28);
   for (const group of groups) group.members.forEach((member, index) => assert.equal(profiles.get(`${group.key}:${index}`), member));
   assert.equal(schoolLine(students.find(member => member.name === "Alex Fang")), "Troy High School · Class of 2027");
   assert.equal(schoolLine(students.find(member => member.name === "Margaret Lin")), "Troy High School · Senior");
