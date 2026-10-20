@@ -25,6 +25,11 @@ function renderPage(file) {
   const pageKey = read(file).match(/data-page="([^"]+)"/)?.[1];
   assert.ok(pageKey, `Page key for ${file}`);
   const nodes = Object.fromEntries(["siteMain", "siteHeader", "siteFooter"].map(id => [id, element()]));
+  const staticMain = read(file).match(/<main\b[^>]*data-static-content="true"[^>]*>([\s\S]*?)<\/main>/);
+  if (staticMain) {
+    nodes.siteMain.dataset.staticContent = "true";
+    nodes.siteMain.innerHTML = staticMain[1];
+  }
   const context = vm.createContext({
     document: {
       body: { dataset: { page: pageKey } },
@@ -149,11 +154,13 @@ test("the project opens with Abstract and a Design–Build–Test–Learn cycle"
   const stageIds = [...project.main.matchAll(/<section class="project-dbtl-stage" id="([^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(stageIds, ["design", "build", "test", "learn"]);
   const sidebar = project.main.match(/<nav class="page-outline"[\s\S]*?<\/nav>/)?.[0];
-  assert.ok(sidebar, "the page carries a flat On this page outline");
+  assert.ok(sidebar, "the page carries a hierarchical On this page outline");
   assert.doesNotMatch(sidebar, /project-sidebar-tab|role="tablist"|Explore this page/);
   // Abstract, then DBTL Cycle with its four stages indented beneath it.
-  assert.deepEqual([...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]).slice(0, 6), [...sectionIds, ...stageIds]);
-  assert.match(sidebar, /<li>\s*<a href="#engineering">DBTL Cycle<\/a>\s*<ul>/);
+  const destinations = [...sidebar.matchAll(/href="#([^"]+)"/g)].map(match => match[1]);
+  assert.deepEqual(destinations.filter(id => [...sectionIds, ...stageIds].includes(id)), [...sectionIds, ...stageIds]);
+  assert.match(sidebar, /data-outline-branch="engineering"/);
+  for (const record of engineering.details) assert.ok(destinations.includes(record.id), record.id);
   for (const [stage, title, recordIds] of [
     ["design", "Expression Vector", ["system-integration-decisions", "enzyme-design-cycle"]],
     ["build", "Transformation Experiments", ["assembly-design-cycle", "assembly-evidence-map"]],
@@ -185,12 +192,13 @@ test("the expression-vector figure is explicitly labelled as a proposed schemati
   assert.deepEqual(Array.from(figure.architecture), ["T7 promoter", "RBS", "His6", "SUMO", "ULP1 cleavage site", "BtSULT variant", "Stop / terminators"]);
 });
 
-test("shared navigation and footer expose Project Description without a standalone Engineering route", () => {
+test("Engineering navigation uses the existing project page without a duplicate route", () => {
   const flatten = items => items.flatMap(item => [item, ...flatten(item.children || [])]);
   assert.ok(!Object.hasOwn(project.data.pages, "engineering"));
   assert.ok(flatten(project.data.nav).every(item => item.key !== "engineering"));
   assert.doesNotMatch(project.header + project.footer, /href="engineering\.html(?:[?#][^"]*)?"/);
-  assert.doesNotMatch(project.header + project.footer, />\s*Engineering\s*</);
+  assert.match(project.header + project.footer, />\s*Engineering\s*</);
+  assert.doesNotMatch(project.header + project.footer, />\s*Our (?:Project|Lab Work)\s*</);
   assert.match(project.header, /href="project-description\.html"/);
   assert.match(project.footer, /href="project-description\.html"/);
   assert.doesNotMatch(project.header + project.footer, /href="project-description\.html#(?:abstract|dbtl-cycle)"/);
@@ -287,7 +295,7 @@ test("Project Description loads the merged data before rendering with refreshed 
   const version = scripts.find(src => src.startsWith("js/site.js?"))?.split("?v=")[1];
   assert.ok(version);
   const required = ["js/site-content.js", "js/project-description-content.js", "js/engineering-content.js", "js/project-paper.js", "js/site.js"];
-  const positions = required.map(file => scripts.indexOf(`${file}?v=${file === "js/site-content.js" ? "20261019-project-top1" : version}`));
+  const positions = required.map(file => scripts.indexOf(`${file}?v=${file === "js/site-content.js" ? "20261020-nav-labels" : file === "js/project-paper.js" ? "20261019-expand1" : version}`));
   assert.ok(positions.every(position => position >= 0));
   assert.ok(positions.every((position, index) => index === 0 || position > positions[index - 1]));
   assert.ok(html.includes(`css/project-research.css?v=${version}`));
@@ -295,7 +303,7 @@ test("Project Description loads the merged data before rendering with refreshed 
   assert.doesNotMatch(project.main, /<video\b|home-scroll|home-orbit/);
   assert.equal(scripts.filter(src => src.startsWith("js/engineering-content.js?")).length, 1);
   const styles = [...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(match => match[1].split("?")[0]);
-  assert.equal(styles.at(-1), "css/project-research.css");
+  assert.equal(styles.at(-1), "css/project-outline.css");
 });
 
 test("rendered IDs are unique and local page links, section anchors, and assets resolve", () => {

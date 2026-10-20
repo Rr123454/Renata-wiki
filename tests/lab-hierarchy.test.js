@@ -9,17 +9,17 @@ const read = file => fs.readFileSync(path.join(root, file), "utf8");
 const context = vm.createContext({ window: {} });
 for (const file of ["site-content", "dry-lab-content", "lab-content"]) vm.runInContext(read(`js/${file}.js`), context);
 const data = context.window.SITE_DATA, lab = context.window.RenataLab;
-const pages = Object.fromEntries(["wet-lab", "model"].map(key => [key, lab.render(key)]));
+const pages = Object.fromEntries(["wet-lab", "wet-lab-notebook", "model"].map(key => [key, lab.render(key)]));
 const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 
-test("top-level navigation matches the requested hierarchy with Wetlab and Model under Lab Work", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
-  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
+test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
+  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Engineering is a direct link");
   assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
   const menu = data.nav.find(item => item.key === "lab-work").children;
-  assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Model"]);
-  assert.equal(menu[0].children, undefined, "the Notebook subpage is no longer in the menu");
-  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Our Project", "Our Lab Work", "Education + HP"]);
+  assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
+  assert.equal(menu[0].children, undefined, "all Lab Work destinations are siblings");
+  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
 });
 
 test("Wetlab includes all bench questions, existing detail records, procedure prompts and analysis", () => {
@@ -33,7 +33,7 @@ test("Wetlab includes all bench questions, existing detail records, procedure pr
     for (const entry of notebook.protocols) assert.ok(pages["wet-lab"].includes(entry.text));
     assert.ok(pages["wet-lab"].includes(record.interpretation));
     assert.ok(pages["wet-lab"].includes(record.decision));
-    for (const entry of notebook.notebook) assert.ok(pages["wet-lab"].includes(entry.text));
+    for (const entry of notebook.notebook) assert.ok(pages["wet-lab-notebook"].includes(entry.text));
   }
   for (const id of lab.wetIds) {
     assert.ok(ids(pages["wet-lab"]).includes(id), id);
@@ -87,18 +87,17 @@ test("new research pages have unique anchors, working local section links, and r
   }
 });
 
-test("Notebook shares the work page in a 60/40 workspace with a PDF and accessible transcript", () => {
-  assert.match(pages["wet-lab"], /class="lab-workspace"/);
-  assert.match(pages["wet-lab"], /<iframe[^>]*data-notebook-frame/);
-  assert.match(pages["wet-lab"], /assets\/documents\/wet-lab-notebook\.pdf/);
-  assert.match(pages["wet-lab"], /Read notebook as text/);
-  assert.doesNotMatch(pages["wet-lab"], /lab-tabs|href="wet-lab-notebook\.html"/);
-  assert.match(pages["wet-lab"], /Undated \/ awaiting bench record/);
-  assert.equal(lab.render("wet-lab-notebook"), pages["wet-lab"], "Legacy renderer stays compatible");
-  const css = read("css/lab-work.css");
-  assert.match(css, /grid-template-columns:\s*minmax\(0,\s*3fr\) minmax\(0,\s*2fr\)/);
-  assert.match(css, /\.lab-notebook-panel\s*\{[^}]*position:\s*sticky/);
-  assert.match(css, /@media\s*\(max-width:\s*900px\)/);
+test("Notebook has its own full-width PDF reader and accessible transcript", () => {
+  const notebook = pages["wet-lab-notebook"];
+  assert.doesNotMatch(pages["wet-lab"], /<iframe|lab-workspace|Read notebook as text/);
+  assert.match(pages["wet-lab"], /href="wet-lab-notebook.html"/);
+  assert.match(notebook, /<iframe[^>]*data-notebook-frame/);
+  assert.match(notebook, /assets\/documents\/wet-lab-notebook\.pdf/);
+  assert.match(notebook, /Read notebook as text/);
+  assert.match(notebook, /Undated \/ awaiting bench record/);
+  assert.match(notebook, /href="wet-lab.html"/);
+  assert.match(read("wet-lab-notebook.html"), /data-page="wet-lab-notebook"/);
+  assert.doesNotMatch(read("wet-lab-notebook.html"), /window.location.replace/);
   assert.match(pages["wet-lab"], /Completed transformation, enzyme-activity, and growth datasets have not been supplied/);
   assert.match(pages.model, /biochemical performance still needs experimental measurement/);
 });
@@ -111,12 +110,6 @@ test("retired lab routes preserve queries and route old fragments to the correct
     ["experiment-enzyme-design-protocols.html", "", "model.html#methods"],
     ["experiment-enzyme-design-protocols.html", "#expression-plan", "wet-lab.html#expression-plan"],
     ["experiment-enzyme-design-protocols.html", "#assay-plan", "wet-lab.html#assay-plan"],
-    ["wet-lab-notebook.html", "", "wet-lab.html#notebook"],
-    ["wet-lab-notebook.html", "#assembly", "wet-lab.html#notebook-assembly"],
-    ["wet-lab-notebook.html", "#reporter", "wet-lab.html#notebook-reporter"],
-    ["wet-lab-notebook.html", "#growth-response", "wet-lab.html#notebook-growth-response"],
-    ["wet-lab-notebook.html", "#assay-notebook", "wet-lab.html#notebook-assay"],
-    ["wet-lab-notebook.html", "#notebook-assay", "wet-lab.html#notebook-assay"]
   ]) {
     const url = new URL(`http://localhost:8080/${file}?preview=latest${hash}`);
     let actual;

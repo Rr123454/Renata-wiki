@@ -22,10 +22,10 @@
     if (hero) {
       const lines = hero.querySelectorAll(".orbit-title-line > span");
       if (lines.length === 2) {
-        lines[0].textContent = "Our team.";
-        lines[1].textContent = "The SulFlux crew.";
+        lines[0].textContent = "Lorem";
+        lines[1].textContent = "Ipsum.";
       }
-      setText(hero, ".orbit-page-lead", "Meet the mentors and students behind Renata. Open a crew card to discover the people shaping SulFlux.");
+      setText(hero, ".orbit-page-lead", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
       setText(hero, ".orbit-scene-caption > span", "RENATA / SULFLUX CREW");
       setText(hero, ".orbit-scene-center text", "SULFLUX / CREW");
       const bottle = hero.querySelector(".orbit-scene-center image");
@@ -40,7 +40,7 @@
     }
 
     setText(roster, ".team-dealer-copy > span", "Renata / SulFlux crew");
-    setText(roster, ".team-dealer-copy > strong", "Meet the people on board.");
+    setText(roster, ".team-dealer-copy > strong", "Lorem Ipsum.");
     setText(roster, ".team-dealer-copy > p", "Mentors, then students. Select a card to meet a team member.");
     setText(roster, ".team-dealer-art text", "S");
     return true;

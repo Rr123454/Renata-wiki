@@ -44,8 +44,7 @@ body[data-page="team"].orbit-pages #siteMain .team-dealer {
 body[data-page="team"].orbit-pages .team-dealer-copy > span { color: #ffc797; }
 body[data-page="team"].orbit-pages .team-dealer-copy > strong { color: var(--crew-cream); font-size: clamp(1.1rem, 1.8vw, 1.8rem); }
 body[data-page="team"].orbit-pages .team-dealer-copy > p { color: var(--crew-muted); line-height: 1.5; }
-body[data-page="team"].orbit-pages .team-dealer-art > g:first-child { fill: var(--crew-orange); stroke: var(--crew-night); }
-body[data-page="team"].orbit-pages .team-dealer-art .team-dealer-hand path:last-child { fill: var(--crew-orange); }
+body[data-page="team"].orbit-pages .team-dealer-art .team-dealer-cuff { fill: var(--crew-orange); }
 body[data-page="team"].orbit-pages #siteMain .team-dealer-actions button {
   background: var(--crew-cream);
   border: 1px solid var(--crew-cream);

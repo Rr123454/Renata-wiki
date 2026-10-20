@@ -29,13 +29,14 @@ window.SITE_DATA = {
 
   nav: [
     { key: "team", label: "Our Team", href: "team.html" },
-    { key: "project", label: "Our Project", href: "project-description.html" },
+    { key: "project", label: "Engineering", href: "project-description.html" },
     {
-      key: "lab-work", label: "Our Lab Work", icon: "DNA",
-      heading: "Follow the science.",
-      description: "Two connected records: experiments at the bench and computational enzyme engineering.",
+      key: "lab-work", label: "Lab Work", icon: "DNA",
+      heading: "Lorem Ipsum",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       children: [
         { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
+        { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab-notebook.html", icon: "DNA", description: "Bench notebook, PDF reader, and text entries." },
         { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
       ]
     },
@@ -44,8 +45,8 @@ window.SITE_DATA = {
       label: "Education + HP",
       href: "human-practices.html",
       icon: "Mic",
-      heading: "Science grows through connection.",
-      description: "Listen, share, and explore how people shape our project.",
+      heading: "Lorem Ipsum",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       children: [
         { key: "human-practices", label: "Human practices", href: "human-practices.html", icon: "Mic", description: "Stakeholder perspectives and project decisions." },
         { key: "education", label: "Education", href: "education.html", icon: "Plant", description: "Learning, outreach, and shared curiosity." }
@@ -71,17 +72,17 @@ window.SITE_DATA = {
           ]
         },
         {
-          title: "Our Project",
+          title: "Engineering",
           links: [
             { text: "Abstract", href: "project-description.html" },
             { text: "DBTL Cycle", href: "project-description.html" }
           ]
         },
         {
-          title: "Our Lab Work",
+          title: "Lab Work",
           links: [
             { text: "Wetlab", href: "wet-lab.html" },
-            { text: "Notebook", href: "wet-lab.html#notebook" },
+            { text: "Notebook", href: "wet-lab-notebook.html" },
             { text: "Model", href: "model.html" }
           ]
         },
@@ -154,7 +155,7 @@ window.SITE_DATA = {
               name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student · Dry Lab", school: "Chino Hills High School", classYear: "2027",
               bio: "I love coding in my free time and watching movies. Fun fact: my favorite movie is Fight Club."
             },
-            { name: "Ella Y.", photo: "assets/Team Images/ella.JPG", role: "Student" },
+            { name: "Ella Y.", photo: "assets/Team Images/ella.jpg", role: "Student" },
             {
               name: "Alex Fang", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I am a man of many loves, from sports and music to the act of lying down. But what I love most is working with other people on research."

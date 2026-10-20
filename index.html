@@ -3,177 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore SulFlux: Renata’s proposed approach to bile-acid sulfation, from the gallbladder to an engineered enzyme." />
-  <title>SulFlux — a universe of possibility | iGEM Renata</title>
+  <meta name="description" content="Explore the SulFlux project with ULP-CA: a journey from bottle to spaceship, through three interactive worlds." />
+  <title>ULP-CA · SulFlux</title>
   <link rel="canonical" href="index.html" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/loading-screen.css?v=20261018" />
+  <link rel="stylesheet" href="css/rocket-cursor.css?v=20261019-cursor2" />
   <link rel="stylesheet" href="css/site.css?v=20260912-white-footer2" />
   <link rel="stylesheet" href="css/orbit-home.css?v=20261018-flight2" />
   <link rel="stylesheet" href="css/navigation.css?v=20261019-shared-header1" />
   <link rel="stylesheet" href="css/site-header.css?v=20261019-icon-bar1" />
   <link rel="stylesheet" href="css/cosmic-theme.css?v=20261019-blue-footer1" />
-  <link rel="stylesheet" href="css/mission-home.css?v=20261019-rocket-cutout1" />
+  <link rel="stylesheet" href="css/mission-home.css?v=20261020-alignment3" />
 </head>
-<body data-page="home" data-home-variant="orbit" class="mission-page">
-  <script src="js/loading-screen.js?v=20261018"></script>
-  <a class="flight-skip" href="#gallbladder">Skip the launch</a>
-  <header class="site-header flight-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="iGEM Renata, homepage">
-        <span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span>
-        <span class="brand-text">iGEM Renata</span>
-      </a>
-      <nav class="renata-nav" aria-label="Main navigation">
-        <ul class="renata-nav-list">
-          <li><a class="renata-nav-trigger" href="team.html">Our Team</a></li>
-          <li><a class="renata-nav-trigger" href="project-description.html">Our Project</a></li>
-          <li><a class="renata-nav-trigger" href="wet-lab.html">Our Lab Work</a></li>
-          <li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body data-page="home" data-home-variant="orbit" class="mission-page" data-home-brand="ULP-CA">
+  <script src="js/loading-screen.js?v=20261019-ulpca1"></script>
+  <a class="flight-skip" href="#observatory">Skip to the planets</a>
+  <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><ul class="renata-nav-list"><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li><a class="renata-nav-trigger" href="project-description.html">Engineering</a></li><li><a class="renata-nav-trigger" href="wet-lab.html">Lab Work</a></li><li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li></ul></nav></div></header>
   <main class="mission-home" id="siteMain" data-static-content="true">
-    <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/sulflux-bottle.png assets/story/rocket-cutout.png">
+    <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/bottle-new.png assets/story/spaceship.png assets/story/spaceship-inside.png assets/story/planet-1.png assets/story/planet-2.png assets/story/planet-3.png">
+      <div id="observatory" class="mission-observatory-anchor" aria-hidden="true"></div>
       <div class="mission-launch-stage">
-        <div class="mission-atmosphere" data-mission-atmosphere aria-hidden="true">
-          <div class="mission-stars mission-stars--near"></div>
-          <div class="mission-stars mission-stars--far"></div>
-          <span class="mission-star" style="--star-x:7%;--star-y:19%;--star-size:2px;--star-period:6s;--star-delay:-1s"></span>
-          <span class="mission-star" style="--star-x:16%;--star-y:59%;--star-size:3px;--star-period:7s;--star-delay:-4s"></span>
-          <span class="mission-star" style="--star-x:26%;--star-y:11%;--star-size:3px;--star-period:5s;--star-delay:-2s"></span>
-          <span class="mission-star" style="--star-x:35%;--star-y:32%;--star-size:2px;--star-period:8s;--star-delay:-6s"></span>
-          <span class="mission-star" style="--star-x:44%;--star-y:76%;--star-size:3px;--star-period:6s;--star-delay:-3s"></span>
-          <span class="mission-star" style="--star-x:53%;--star-y:14%;--star-size:2px;--star-period:7s;--star-delay:-1s"></span>
-          <span class="mission-star" style="--star-x:63%;--star-y:62%;--star-size:3px;--star-period:8s;--star-delay:-4s"></span>
-          <span class="mission-star" style="--star-x:72%;--star-y:29%;--star-size:2px;--star-period:5s;--star-delay:-2s"></span>
-          <span class="mission-star" style="--star-x:82%;--star-y:77%;--star-size:3px;--star-period:7s;--star-delay:-5s"></span>
-          <span class="mission-star" style="--star-x:89%;--star-y:11%;--star-size:3px;--star-period:6s;--star-delay:-3s"></span>
-          <span class="mission-star" style="--star-x:94%;--star-y:47%;--star-size:2px;--star-period:8s;--star-delay:-1s"></span>
-          <span class="mission-star" style="--star-x:42%;--star-y:51%;--star-size:2px;--star-period:7s;--star-delay:-6s"></span>
-          <span class="mission-comet"></span><span class="mission-comet mission-comet--distant"></span>
+        <div class="mission-atmosphere" aria-hidden="true"><div class="mission-stars"></div><div class="mission-star-dust"></div><div class="mission-nebula"></div><svg class="mission-flight-lines" viewBox="0 0 1440 900" preserveAspectRatio="none"><ellipse cx="720" cy="460" rx="650" ry="280"/><ellipse cx="720" cy="460" rx="470" ry="350"/></svg></div>
+        <div class="mission-intro"><p class="mission-eyebrow">iGEM 2026 / SulFlux</p><h1 class="mission-title" id="mission-title"><span>ULP</span><span>-CA</span></h1><a class="mission-button" href="#observatory">Explore the planets <span aria-hidden="true">↗</span></a></div>
+        <div class="mission-bottle"><svg viewBox="700 470 490 750" role="img" aria-label="SulFlux bottle with an orange spaceship emblem" class="mission-framed-art"><defs><clipPath id="new-bottle-cut"><path d="M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z"/></clipPath></defs><image href="assets/story/bottle-new.png" width="1936" height="1452" clip-path="url(#new-bottle-cut)"/></svg></div>
+        <div class="mission-zoom-copy"><span class="mission-eyebrow">PCS</span><p data-science-copy="pcs">Over 60 million patients across the entire world experience post-cholecystectomy syndrome, commonly abbreviated PCS. This is the umbrella term for symptoms associated with gallbladder removal.</p></div>
+        <div class="mission-vessel" aria-hidden="true"><div class="mission-exterior"><svg viewBox="868 985 175 107" role="img" aria-label="Detailed blue and orange SulFlux spaceship" class="mission-framed-art"><defs><clipPath id="new-ship-cut"><rect x="30" y="350" width="550" height="630"/></clipPath></defs><g transform="matrix(0.13882855552941725 0.19744043069884631 -0.19826772485822422 0.13824927792270397 1043.0714971846276 881.9474442686019)"><image href="assets/story/spaceship.png" width="1936" height="1452" clip-path="url(#new-ship-cut)"/></g></svg></div><div class="mission-interior"><svg viewBox="810 315 960 985" role="img" aria-label="The spaceship interior, with its pilot seat, controls, and observation window" class="mission-framed-art"><defs><clipPath id="cockpit-cut"><path d="M833 999Q810 943 855 871Q893 807 974 765Q981 598 1105 470Q1205 340 1287 337Q1350 343 1440 460Q1553 586 1606 765Q1673 796 1734 878Q1765 956 1738 1038Q1695 1051 1595 980Q1577 1063 1439 1092L1398 1135Q1453 1218 1364 1273Q1321 1303 1267 1267Q1180 1236 1180 1178L1201 1133Q1170 1135 1140 1096Q1033 1084 997 977Q924 1016 863 1037Z"/></clipPath></defs><image href="assets/story/spaceship-inside.png" width="1936" height="1452" clip-path="url(#cockpit-cut)"/></svg></div><span class="mission-window-glow"></span></div>
+        <div class="mission-hub" role="group" aria-labelledby="mission-hub-title">
+          <div class="mission-hub-heading"><p class="mission-eyebrow">SulFlux / Explore</p><h2 id="mission-hub-title" tabindex="-1">Lorem<br>Ipsum.</h2><p>Select a planet to explore.</p></div>
+          <nav class="mission-planets" aria-label="Explore the three planets"><a class="mission-planet-link mission-planet-link--1" href="#gallbladder" data-planet="gallbladder"><span class="mission-planet-image"><img src="assets/story/planet-1.png" width="386" height="365" alt=""/><span class="mission-planet-orbit" aria-hidden="true"></span></span><span class="mission-planet-label"><small>01 / Bile flow</small><strong>Gallbladder <span aria-hidden="true">↗</span></strong></span></a><a class="mission-planet-link mission-planet-link--2" href="#sulfation" data-planet="sulfation"><span class="mission-planet-image"><img src="assets/story/planet-2.png" width="386" height="365" alt=""/><span class="mission-planet-orbit" aria-hidden="true"></span></span><span class="mission-planet-label"><small>02 / Sulfonation</small><strong>SULT2A1 <span aria-hidden="true">↗</span></strong></span></a><a class="mission-planet-link mission-planet-link--3" href="#bile-acids" data-planet="bile-acids"><span class="mission-planet-image"><img src="assets/story/planet-3.png" width="386" height="365" alt=""/><span class="mission-planet-orbit" aria-hidden="true"></span></span><span class="mission-planet-label"><small>03 / Bile acids</small><strong>LCA &amp; DCA <span aria-hidden="true">↗</span></strong></span></a></nav>
+          <a class="mission-continue" href="#engineering-story">Continue to BtSULT &amp; SulFlux <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="mission-planet" aria-hidden="true"><i></i></div>
-        <div class="mission-horizon" aria-hidden="true"></div>
-        <div class="mission-intro">
-          <p class="mission-eyebrow">iGEM 2026 · Reborn through synthetic biology</p>
-          <h1 class="mission-title" id="mission-title" aria-label="Renata"><span aria-hidden="true">R</span><span aria-hidden="true">E</span><span aria-hidden="true">N</span><span aria-hidden="true">A</span><span aria-hidden="true">T</span><span aria-hidden="true">A</span></h1>
-          <p>Small biology.<br>A universe of possibility.</p>
-          <a class="mission-button" href="#gallbladder">Discover SulFlux <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="mission-bottle"><svg viewBox="700 470 490 750" class="mission-bottle-art" role="img" aria-label="The team’s SulFlux bottle illustration, with a solid orange spacecraft emblem on its label"><defs><clipPath id="mission-bottle-cut"><path d="M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z"/></clipPath></defs><image href="assets/story/sulflux-bottle.png" width="1936" height="1452" clip-path="url(#mission-bottle-cut)"/><rect x="961" y="1022" width="186" height="138" rx="34" fill="#ffe9d6"/><g class="mission-bottle-emblem" transform="translate(974 1030) scale(.17)"><svg viewBox="0 0 1000 750" width="1000" height="750" class="mission-rocket-art" aria-hidden="true" focusable="false"><defs><mask id="bottle-emblem-alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="750" style="mask-type:alpha"><image href="assets/story/rocket-cutout.png" width="1000" height="750"/></mask></defs>
-      <rect class="mission-rocket-silhouette" width="1000" height="750" fill="#DB8050" mask="url(#bottle-emblem-alpha)"/>
-      <image class="mission-rocket-details" href="assets/story/rocket-cutout.png" width="1000" height="750"/>
-    </svg></g></svg></div>
-        <div class="mission-zoom-copy">
-          <p class="mission-eyebrow">01 / A question worth exploring</p>
-          <h2>Life after<br>gallbladder surgery.</h2>
-          <p>For some people, symptoms continue after gallbladder removal. This broad group of symptoms is known as <strong>post-cholecystectomy syndrome (PCS)</strong>.</p>
-          <p>Our story begins with one part of that picture: how bile acids move through the body.</p>
-          <a class="mission-source" href="#story-sources">Read the background <span aria-hidden="true">↗</span></a>
-        </div>
-        <span class="mission-scroll-cue"><span aria-hidden="true">↓</span> Scroll to look closer</span>
-        <span class="mission-launch-label" aria-hidden="true">SULFLUX / A SMALL IDEA TAKES FLIGHT</span>
+        <div class="mission-launch-caption" aria-hidden="true"><span data-launch-phase>01 / The bottle</span><span class="mission-launch-track"><i></i></span><span>Scroll to explore ↓</span></div>
       </div>
     </section>
-
-    <section class="mission-transit" id="space" aria-labelledby="space-title">
-      <div class="mission-atmosphere" data-mission-atmosphere aria-hidden="true">
-        <div class="mission-stars mission-stars--near"></div>
-        <div class="mission-stars mission-stars--far"></div>
-        <span class="mission-star" style="--star-x:7%;--star-y:19%;--star-size:2px;--star-period:6s;--star-delay:-1s"></span>
-        <span class="mission-star" style="--star-x:16%;--star-y:59%;--star-size:3px;--star-period:7s;--star-delay:-4s"></span>
-        <span class="mission-star" style="--star-x:26%;--star-y:11%;--star-size:3px;--star-period:5s;--star-delay:-2s"></span>
-        <span class="mission-star" style="--star-x:35%;--star-y:32%;--star-size:2px;--star-period:8s;--star-delay:-6s"></span>
-        <span class="mission-star" style="--star-x:44%;--star-y:76%;--star-size:3px;--star-period:6s;--star-delay:-3s"></span>
-        <span class="mission-star" style="--star-x:53%;--star-y:14%;--star-size:2px;--star-period:7s;--star-delay:-1s"></span>
-        <span class="mission-star" style="--star-x:63%;--star-y:62%;--star-size:3px;--star-period:8s;--star-delay:-4s"></span>
-        <span class="mission-star" style="--star-x:72%;--star-y:29%;--star-size:2px;--star-period:5s;--star-delay:-2s"></span>
-        <span class="mission-star" style="--star-x:82%;--star-y:77%;--star-size:3px;--star-period:7s;--star-delay:-5s"></span>
-        <span class="mission-star" style="--star-x:89%;--star-y:11%;--star-size:3px;--star-period:6s;--star-delay:-3s"></span>
-        <span class="mission-star" style="--star-x:94%;--star-y:47%;--star-size:2px;--star-period:8s;--star-delay:-1s"></span>
-        <span class="mission-star" style="--star-x:42%;--star-y:51%;--star-size:2px;--star-period:7s;--star-delay:-6s"></span>
-        <span class="mission-comet"></span><span class="mission-comet mission-comet--distant"></span>
-      </div>
-      <div class="mission-transit-orbit" aria-hidden="true"></div>
-      <div class="mission-transit-copy"><p class="mission-eyebrow">Destination / The gallbladder</p><h2 id="space-title">A small organ.<br>A big role.</h2><p>Follow our spacecraft straight through a universe of ideas to the place where this story begins.</p><small>An illustrated journey, not a biological delivery route.</small></div>
-      <div class="mission-distant-organ" aria-hidden="true"><svg viewBox="0 0 700 650" role="img" aria-label="Schematic liver above the gallbladder, with bile ducts leading toward the intestine">
-      <path d="M245 55Q350 12 455 55L476 116 584 171Q627 230 606 328L570 566Q463 626 350 622Q230 625 129 566L94 327Q76 226 120 171L224 116Z" fill="#fce2b9" stroke="#653355" stroke-width="6"/>
-      <path d="M176 203Q284 151 370 185Q443 147 516 194Q560 236 523 273Q474 306 370 274Q283 330 168 294Q117 271 176 203Z" fill="#b45767" stroke="#653355" stroke-width="6"/>
-      <path d="M370 188Q388 225 370 274" fill="none" stroke="#653355" stroke-width="5"/>
-      <path d="M354 261V327Q356 365 414 383V430" fill="none" stroke="#5d855f" stroke-width="14" stroke-linecap="round"/>
-      <path class="mission-gallbladder" d="M300 291Q300 322 278 347Q254 378 283 400Q323 420 335 379L334 323Q334 301 354 287" fill="#91b967" stroke="#456e51" stroke-width="5"/>
-      <path d="M242 448Q194 429 192 468Q190 504 237 504H462Q506 506 500 544Q497 572 458 571H246Q210 572 212 542Q215 518 249 521H452" fill="none" stroke="#d27981" stroke-width="28" stroke-linecap="round"/>
-      <path class="mission-bile-flow" d="M355 278V328Q357 362 414 385V432" fill="none" stroke="#f5d15d" stroke-width="6" stroke-linecap="round" stroke-dasharray="9 18"/>
-      <g fill="none" stroke="#653355" stroke-width="2"><path d="M522 215H642"/><path d="M278 360H66"/><path d="M430 412H638"/></g>
-      <g fill="#653355" font-family="Trebuchet MS,Arial" font-size="18" font-weight="700"><text x="555" y="202">Liver</text><text x="25" y="345">Gallbladder</text><text x="535" y="400">Bile flow</text></g>
-    </svg></div>
+    <section class="mission-scene mission-scene--gallbladder" id="gallbladder" aria-labelledby="gallbladder-title">
+      <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">Planet 01</p><h2 id="gallbladder-title">The gallbladder</h2><div id="symptoms"><p data-science-copy="pcs">Over 60 million patients across the entire world experience post-cholecystectomy syndrome, commonly abbreviated PCS. This is the umbrella term for symptoms associated with gallbladder removal.</p></div><p data-science-copy="gallbladder">The gallbladder, located right beneath the liver, stores and regulates bile. Some common reasons for gallbladder removal include the presence of gallstones, inflammation, and cancer risk. When this organ is removed, bile acids, which originally played a large role in digestion, become de-regulated, leading to side effects such as diarrhea, vomiting, and increased risk of colon cancer.</p><a class="mission-next" href="#sulfation">Next: SULT2A1 <span aria-hidden="true">→</span></a></div>
+      <figure class="mission-scene-art mission-liver-art"><span class="mission-art-ring" aria-hidden="true"></span><svg viewBox="130 65 1370 1355" role="img" aria-label="Liver and surrounding digestive anatomy, with the gallbladder region indicated" class="mission-framed-art"><defs><clipPath id="liver-cut"><path d="M180 390Q340 203 677 241L832 247 831 139Q859 81 925 83L959 143 954 236Q1102 215 1215 245Q1415 267 1470 325Q1481 362 1453 407L1370 517Q1376 581 1412 669Q1473 909 1355 1095Q1286 1203 1105 1247L844 1246Q838 1317 775 1380Q683 1396 621 1364L529 1342 467 1272Q385 1268 384 1186L391 1087 357 1197Q322 1210 288 1164Q223 1075 213 944L189 832Q165 684 172 549Z"/></clipPath></defs><image href="assets/story/liver.png" width="1936" height="1452" clip-path="url(#liver-cut)"/></svg></figure>
     </section>
-
-    <section class="mission-scene mission-scene--gallbladder" id="gallbladder" aria-labelledby="gallbladder-title" data-chapter="Gallbladder">
-      <div class="mission-scene-copy"><p class="mission-eyebrow">02 / The starting point</p><h2 id="gallbladder-title">A reservoir.<br>A rhythm.</h2><p>The liver makes bile. The gallbladder, tucked beneath it, stores bile and releases it to help digest food.</p><p>After removal, bile travels from the liver directly to the small intestine. The storage step is gone; the pattern of bile flow changes.</p><a class="mission-source" href="https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/treatment">Background: NIDDK ↗</a>
-      <div class="mission-anatomy-controls" role="group" aria-label="Compare bile flow"><button type="button" data-anatomy="before" aria-pressed="true">Before removal</button><button type="button" data-anatomy="after" aria-pressed="false">After removal</button></div><p class="mission-diagram-status" role="status">The gallbladder stores bile between meals.</p></div>
-      <figure class="mission-scene-art mission-anatomy"><svg viewBox="0 0 700 650" role="img" aria-label="Schematic liver above the gallbladder, with bile ducts leading toward the intestine">
-      <path d="M245 55Q350 12 455 55L476 116 584 171Q627 230 606 328L570 566Q463 626 350 622Q230 625 129 566L94 327Q76 226 120 171L224 116Z" fill="#fce2b9" stroke="#653355" stroke-width="6"/>
-      <path d="M176 203Q284 151 370 185Q443 147 516 194Q560 236 523 273Q474 306 370 274Q283 330 168 294Q117 271 176 203Z" fill="#b45767" stroke="#653355" stroke-width="6"/>
-      <path d="M370 188Q388 225 370 274" fill="none" stroke="#653355" stroke-width="5"/>
-      <path d="M354 261V327Q356 365 414 383V430" fill="none" stroke="#5d855f" stroke-width="14" stroke-linecap="round"/>
-      <path class="mission-gallbladder" d="M300 291Q300 322 278 347Q254 378 283 400Q323 420 335 379L334 323Q334 301 354 287" fill="#91b967" stroke="#456e51" stroke-width="5"/>
-      <path d="M242 448Q194 429 192 468Q190 504 237 504H462Q506 506 500 544Q497 572 458 571H246Q210 572 212 542Q215 518 249 521H452" fill="none" stroke="#d27981" stroke-width="28" stroke-linecap="round"/>
-      <path class="mission-bile-flow" d="M355 278V328Q357 362 414 385V432" fill="none" stroke="#f5d15d" stroke-width="6" stroke-linecap="round" stroke-dasharray="9 18"/>
-      <g fill="none" stroke="#653355" stroke-width="2"><path d="M522 215H642"/><path d="M278 360H66"/><path d="M430 412H638"/></g>
-      <g fill="#653355" font-family="Trebuchet MS,Arial" font-size="18" font-weight="700"><text x="555" y="202">Liver</text><text x="25" y="345">Gallbladder</text><text x="535" y="400">Bile flow</text></g>
-    </svg><figcaption>Schematic anatomy · compare the two states</figcaption></figure>
+    <section class="mission-scene mission-scene--defense" id="sulfation" aria-labelledby="sulfation-title">
+      <figure class="mission-scene-art mission-illustration-sheet"><img src="assets/story/sult2a1.png" width="2416" height="1370" alt="SULT2A1 with LCA and PAPS, and a sulfated LCA product" loading="lazy"/></figure>
+      <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">Planet 02</p><h2 id="sulfation-title">SULT2A1</h2><p data-science-copy="sult2a1">In a healthy human body, the liver serves as the detoxifier for metabolites that go through the digestive system. Within the liver, SULT2A1, a key mammal protein that sulfonates bile acids, is produced. Sulfonation is the process of a sulfate group to the bile acid structure. By sulfonating bile acids, it leads to reduced cytotoxicity and increased water solubility, lessening damage to surrounding cells.</p><a class="mission-next" href="#bile-acids">Next: LCA &amp; DCA <span aria-hidden="true">→</span></a></div>
     </section>
-
-    <section class="mission-scene mission-scene--symptoms" id="symptoms" aria-labelledby="symptoms-title" data-chapter="The challenge">
-      <figure class="mission-scene-art"><svg viewBox="0 0 650 600" role="img" aria-label="Illustration of a person holding their abdomen to represent discomfort"><circle cx="332" cy="118" r="72" fill="#e7a77e" stroke="#653355" stroke-width="6"/><path d="M259 115Q245 26 340 35Q420 35 409 120L386 91Q331 111 291 82Z" fill="#2b3565"/><path d="M268 205Q324 179 387 209L436 416 406 533H246L215 416Z" fill="#94ccdf" stroke="#653355" stroke-width="6"/><path d="M276 208Q225 233 205 326Q196 365 270 382L335 363M381 212Q423 238 444 327Q450 361 377 383L318 363" fill="#e7a77e" stroke="#653355" stroke-width="26" stroke-linecap="round"/><path d="M302 131l15 3m40-3-15 3M320 163Q331 155 344 163" fill="none" stroke="#653355" stroke-width="5" stroke-linecap="round"/><path d="m331 294-13 27 24 8-14 24" fill="none" stroke="#d25458" stroke-width="8" stroke-linecap="round"/><path d="m166 273-24-13m19 42-29 2m350-21 26-14m-22 43 28 3" fill="none" stroke="#df885c" stroke-width="6" stroke-linecap="round"/><path d="M252 532L239 578M398 532 414 578" stroke="#2b3565" stroke-width="45" stroke-linecap="round"/></svg><figcaption>People are the reason behind the research.</figcaption></figure>
-      <div class="mission-scene-copy"><p class="mission-eyebrow">03 / The human side</p><h2 id="symptoms-title">When symptoms<br>stay behind.</h2><p>Most people can live normally without a gallbladder. Some experience ongoing abdominal discomfort, digestive symptoms, or diarrhea.</p><p>PCS has several possible causes. Renata focuses on a research question about bile-acid chemistry—not a single explanation for every patient’s symptoms.</p><a class="mission-source" href="https://pubmed.ncbi.nlm.nih.gov/29730174/">Research on the causes of PCS ↗</a></div>
+    <section class="mission-scene mission-scene--challenge" id="bile-acids" aria-labelledby="bile-acids-title">
+      <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">Planet 03</p><h2 id="bile-acids-title">LCA &amp; DCA</h2><p data-science-copy="bileAcids">In post-cholecystectomy syndrome, secondary bile acids are overproduced in patients. Two of the most common secondary bile acids are lithocholic acid (LCA) and deoxycholic acid (DCA). When left un-sulfonated, these two secondary bile acids are toxic in large quantities. Although sulfonation detoxifies these secondary bile acids, the baseline activity already present in humans is not enough for the unregulated bile acid flow as a result of gallbladder removal.</p><a class="mission-next" href="#engineering-story">Next: BtSULT <span aria-hidden="true">→</span></a></div>
+      <figure class="mission-scene-art"><svg viewBox="510 455 740 255" role="img" aria-label="LCA and DCA characters interacting with the intestinal lining" class="mission-framed-art"><image href="assets/story/lca-dca.webp" width="1936" height="1452"/></svg></figure>
     </section>
-
-    <section class="mission-scene mission-scene--defense" id="sulfation" aria-labelledby="sulfation-title" data-chapter="Sulfation">
-      <div class="mission-scene-copy"><p class="mission-eyebrow">04 / A molecular helping hand</p><h2 id="sulfation-title">A small addition.<br>A different molecule.</h2><p>The human enzyme <strong>SULT2A1</strong> helps sulfate bile acids such as lithocholic acid (LCA).</p><p>Using the sulfate donor <strong>PAPS</strong>, the enzyme adds a sulfate group. This can increase water solubility and support elimination—a route involved in bile-acid detoxification.</p><a class="mission-source" href="https://pubmed.ncbi.nlm.nih.gov/26773894/">Human liver LCA sulfation ↗</a></div>
-      <figure class="mission-scene-art mission-illustration-sheet"><span class="mission-sheet-label">The body’s chemistry / SULT2A1</span><img src="assets/story/sult2a1.png" width="2416" height="1370" alt="Team illustration showing SULT2A1 using PAPS to convert LCA to sulfated LCA" loading="lazy" decoding="async"/><figcaption>Team illustration · simplified reaction</figcaption><div class="mission-reaction"><span>LCA</span><b aria-hidden="true">+</b><span>PAPS</span><b aria-hidden="true">→</b><span>Sulfated LCA</span></div></figure>
+    <section class="mission-scene mission-scene--engineering" id="engineering-story" aria-labelledby="engineering-title">
+      <figure class="mission-scene-art mission-illustration-sheet"><img src="assets/story/btsult.png" width="1660" height="1370" alt="BtSULT enzyme and the LCA molecule" loading="lazy"/></figure>
+      <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">BtSULT / SulFlux</p><h2 id="engineering-title">BtSULT</h2><p data-science-copy="btsult">As such, Renata has turned to BtSULT, a bacterial homolog of the SULT2A1 enzyme that was found in <em>Bacteroides thetaiotaomicron</em>. Since bacteria are able to produce the enzyme in higher quantities than humans naturally can, we believe that we can harness this enzyme in order to ease PCS patients’ symptoms and risks associated with the disease. However, one issue remains standing: BtSULT is not naturally able to bind to lithocholic acid due to severe differences in active site geometry.</p><h3>SulFlux</h3><p data-science-copy="sulflux">To alleviate this obstacle, we have turned to re-engineering the BtSULT enzyme. Through protein engineering, we have created a new version of BtSULT, titled <em>SulFlux</em>, which is able to bind to and sulfonate lithocholic acid.</p><a class="mission-next" href="#sulflux">Continue <span aria-hidden="true">→</span></a></div>
     </section>
-
-    <section class="mission-scene mission-scene--challenge" id="bile-acids" aria-labelledby="bile-acids-title" data-chapter="Bile acids">
-      <figure class="mission-scene-art"><svg viewBox="0 0 700 540" role="img" aria-label="Cartoon LCA and DCA characters above an intestinal lining; a metaphor for the effects of excessive bile-acid exposure"><path d="M30 431Q97 384 156 422T292 425T434 423T573 423T678 415V528H30Z" fill="#d98391" stroke="#713657" stroke-width="6"/><path d="M32 469Q97 426 160 464T295 467T436 465T575 466T676 459" fill="none" stroke="#f7b5a9" stroke-width="16"/><g class="mission-acid mission-acid--lca" transform="translate(115 207) rotate(-12)"><path d="m0 35 34-30 42 8 30-21 40 27 42-7 36 38-18 51-46 16-35-14-38 18-35-28-34 5Z" fill="#f8d26b" stroke="#8f543b" stroke-width="5"/><circle cx="74" cy="47" r="7" fill="#4e3156"/><circle cx="132" cy="47" r="7" fill="#4e3156"/><path class="mission-acid-mouth" d="M75 72Q104 106 135 72Z" fill="#713657" stroke="#713657" stroke-width="4"/><path d="m83 76 8 12 8-9 8 13 8-12 10 8 6-12" fill="white"/><text x="103" y="133" text-anchor="middle" fill="#713657" font-family="Trebuchet MS" font-weight="800" font-size="22">LCA</text></g><g class="mission-acid mission-acid--dca" transform="translate(365 214) rotate(13)"><path d="m0 35 34-30 42 8 30-21 40 27 42-7 36 38-18 51-46 16-35-14-38 18-35-28-34 5Z" fill="#f8d26b" stroke="#8f543b" stroke-width="5"/><circle cx="74" cy="47" r="7" fill="#4e3156"/><circle cx="132" cy="47" r="7" fill="#4e3156"/><path class="mission-acid-mouth" d="M75 72Q104 106 135 72Z" fill="#713657" stroke="#713657" stroke-width="4"/><path d="m83 76 8 12 8-9 8 13 8-12 10 8 6-12" fill="white"/><text x="103" y="133" text-anchor="middle" fill="#713657" font-family="Trebuchet MS" font-weight="800" font-size="22">DCA</text></g><g fill="#f7c674"><circle cx="82" cy="191" r="13"/><circle cx="352" cy="119" r="10"/><circle cx="607" cy="191" r="17"/></g><text x="350" y="505" text-anchor="middle" fill="#713657" font-family="Trebuchet MS" font-size="17" font-weight="700">Intestinal lining · schematic</text></svg><figcaption>Character metaphor · molecules do not literally bite tissue.</figcaption></figure>
-      <div class="mission-scene-copy"><p class="mission-eyebrow">05 / A question of balance</p><h2 id="bile-acids-title">Useful chemistry.<br>Too much exposure.</h2><p><strong>LCA</strong> and <strong>DCA</strong> are secondary bile acids formed through microbial metabolism. At excessive concentrations, these hydrophobic molecules can damage cells.</p><p>Changing bile-acid exposure motivates our question: could an engineered bacterial enzyme help transform LCA into its sulfated form?</p><p class="mission-caption">We are investigating that possibility. Clinical benefit in PCS has not been established.</p></div>
+    <section class="mission-scene mission-scene--proposal" id="sulflux" aria-labelledby="sulflux-title">
+      <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">SulFlux</p><h2 id="sulflux-title"><em>Escherichia coli</em></h2><p data-science-copy="probiotic">Utilizing <em>Escherichia coli</em> as an expression chassis for SulFlux production, which is then consumed in the form of a probiotic, allows for direct delivery of bacterial sulfonation enzymes to assist in secondary bile acid detoxification.</p><a class="mission-button" href="project-description.html">Explore the project <span aria-hidden="true">↗</span></a></div>
+      <figure class="mission-scene-art mission-person-art"><svg viewBox="0 190 1030 1240" role="img" aria-label="A person drinking from a SulFlux bottle" class="mission-framed-art"><defs><clipPath id="person-cut"><path d="M20 1390V840L36 654 55 612 55 468Q69 408 141 398L204 378Q256 378 306 426L350 463Q347 383 408 306Q302 300 269 327Q264 272 360 263L405 262Q479 197 578 204Q704 214 734 360L731 460 751 611 748 667Q817 721 908 835L1007 985 1020 1035Q1005 1152 947 1262L874 1379Q768 1407 706 1424L615 1387 580 1353Q432 1353 295 1334L270 1315 197 1297Q198 1211 225 1157L276 992Q169 998 66 970Q13 924 20 845Z"/></clipPath></defs><image href="assets/story/person-drinking.png" width="1052" height="1578" clip-path="url(#person-cut)"/></svg></figure>
     </section>
-
-    <section class="mission-engineering" id="engineering-story" aria-labelledby="engineering-story-title" data-chapter="Engineering">
-      <div class="mission-engineering-intro"><p class="mission-eyebrow">06 / Reimagine the fit</p><h2 id="engineering-story-title">Meet BtSULT.<br>Imagine SulFlux.</h2><p>BtSULT is a sulfotransferase from <em>Bacteroides thetaiotaomicron</em>. Its substrate preferences make it an interesting starting point, but native BtSULT is not an established route for efficient LCA sulfation.</p><p>Renata is exploring changes to the enzyme’s binding pocket. <strong>SulFlux</strong> is the name of our proposed engineered design.</p></div>
-      <div class="mission-enzyme-comparison">
-        <figure class="mission-illustration-sheet"><span class="mission-sheet-label">01 / The starting point</span><img src="assets/story/btsult.png" width="1660" height="1370" alt="Team illustration of native BtSULT with an LCA molecule that does not fit its pocket well" loading="lazy" decoding="async"/><figcaption><strong>Native BtSULT</strong><span>Substrate geometry limits the fit.</span></figcaption></figure>
-        <div class="mission-design-arrow" aria-hidden="true"><span>Design · test · learn</span>→</div>
-        <figure class="mission-illustration-sheet mission-engineered-sheet"><span class="mission-sheet-label">02 / The design goal</span><svg viewBox="0 0 700 610" role="img" aria-label="Concept illustration of an engineered SulFlux pocket accommodating LCA; a design goal, not a demonstrated result"><path d="M123 204Q62 147 130 100Q176 57 244 92Q295 33 354 85Q436 36 478 113Q560 92 580 167Q654 198 608 272Q656 343 594 393Q600 484 518 496Q458 567 387 527Q313 589 248 527Q157 559 133 477Q53 453 86 376Q28 293 123 204Z" fill="#9ed9d5" stroke="#437b97" stroke-width="10"/><path d="M181 278Q209 194 290 230Q347 180 410 235Q490 204 525 282Q563 379 478 415Q387 479 303 427Q193 462 166 365Z" fill="#3c7da7"/>
-      <g class="mission-fit-molecule"><path d="m237 302 38-24 37 19 34-26 39 18 35-26 42 25 10 43-37 25-41-19-35 26-40-17-36 20-38-23Z" fill="#ffdd79" stroke="#a47743" stroke-width="5"/><circle cx="330" cy="316" r="6" fill="#534065"/><circle cx="366" cy="316" r="6" fill="#534065"/><path d="M336 335Q350 350 364 335" fill="none" stroke="#534065" stroke-width="5" stroke-linecap="round"/></g>
-      <path d="m456 198 12 23 26 4-19 19 5 26-24-12-23 12 4-26-18-19 25-4Z" fill="#fff1bc"/>
-      <g fill="#263b76" font-family="Trebuchet MS,Arial" text-anchor="middle"><text x="350" y="150" font-size="36" font-weight="800">SulFlux</text><text x="350" y="185" font-size="18">Proposed engineered pocket</text><text x="350" y="490" font-size="17">LCA + PAPS → sulfated LCA</text></g></svg><figcaption><strong>SulFlux · proposed</strong><span>An engineered pocket to investigate LCA sulfation.</span></figcaption></figure>
-      </div>
-      <a class="mission-button" href="model.html">Read the computational record <span aria-hidden="true">↗</span></a>
-    </section>
-
-    <section class="mission-scene mission-scene--proposal" id="sulflux" aria-labelledby="sulflux-title" data-chapter="SulFlux">
-      <div class="mission-scene-copy"><p class="mission-eyebrow">07 / From blueprint to possibility</p><h2 id="sulflux-title">A living system.<br>A research vision.</h2><p>Our proposed system would place the enzyme’s genetic blueprint in an <em>E. coli</em> chassis, alongside the machinery needed for sulfate donation.</p><p>A future probiotic concept motivates the work. Establishing expression, LCA conversion, safety, and benefit remains part of the research ahead.</p><span class="mission-research-tag">Proposed design · not a validated treatment</span><a class="mission-button" href="project-description.html">Explore the full project <span aria-hidden="true">↗</span></a></div>
-      <figure class="mission-scene-art"><svg viewBox="0 0 700 530" role="img" aria-label="Research concept: a plasmid encodes the proposed enzyme in a bacterial chassis"><g fill="none" stroke="#fff1bc" stroke-width="6"><circle cx="148" cy="249" r="83"/><path d="M148 166A83 83 0 0 1 231 249" stroke="#ef9a7d" stroke-width="15"/><path d="M270 249H359m-20-17 20 17-20 17" stroke-linecap="round"/></g><g class="mission-bacterium" transform="rotate(-15 501 249)"><rect x="398" y="170" width="220" height="140" rx="70" fill="#a8dfd5" stroke="#132d64" stroke-width="7"/><path d="M420 250q25-70 53 0t54 0 53 0" fill="none" stroke="#497eae" stroke-width="6"/><circle cx="563" cy="207" r="6" fill="#132d64"/><circle cx="585" cy="207" r="6" fill="#132d64"/><path d="M569 226q8 9 17-1" fill="none" stroke="#132d64" stroke-width="4"/></g><g font-family="Trebuchet MS,Arial" fill="#fff1bc" text-anchor="middle"><text x="148" y="379" font-size="23" font-weight="800">The blueprint</text><text x="148" y="412" font-size="17">A plasmid encoding SulFlux</text><text x="501" y="379" font-size="23" font-weight="800">The proposed chassis</text><text x="501" y="412" font-size="17">Engineered E. coli</text></g></svg><figcaption>Concept illustration · the bottle represents the project vision.</figcaption></figure>
-    </section>
-
-    <section class="mission-finale" id="mission" aria-labelledby="mission-finale-title"><p class="mission-eyebrow">Curiosity is only the beginning</p><h2 id="mission-finale-title">Follow the work.<br>Meet the people.</h2><div class="mission-next-links"><a href="project-description.html">Project description <span aria-hidden="true">↗</span></a><a href="project-description.html">DBTL cycle <span aria-hidden="true">↗</span></a><a href="wet-lab.html">Wet lab <span aria-hidden="true">↗</span></a><a href="model.html">Model <span aria-hidden="true">↗</span></a><a href="team.html">Our team <span aria-hidden="true">↗</span></a><a href="education.html">Education <span aria-hidden="true">↗</span></a><a href="human-practices.html">Human practices <span aria-hidden="true">↗</span></a></div>
-      <details id="story-sources"><summary>Story sources & research status</summary><p>This illustrated story separates established background from Renata’s proposed design. SulFlux binding, LCA sulfation, probiotic delivery, and patient benefit are not presented as demonstrated results.</p><ol><li><a href="https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/treatment">NIDDK — gallbladder removal and bile flow</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/29730174/">Systematic review — causes and management of PCS</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/26773894/">Bansal & Lau — human liver LCA sulfation</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/508777/">Solution properties of sulfated bile salts</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10327491/">A biosynthetic pathway for selective steroid sulfonation by gut bacteria</a></li><li><a href="model.html">Renata’s computational working record</a></li></ol></details>
-      <a class="mission-return" href="#launch"><img src="assets/story/rocket-cutout.png" width="1452" height="1083" alt="Sulflux’s pilot in the left-facing rocket" loading="lazy"/>Back to the beginning <span aria-hidden="true">↖</span></a>
-    </section>
-    <div class="mission-craft-layer" aria-hidden="true"><div class="mission-craft"><span class="mission-exhaust"></span><svg viewBox="0 0 1000 750" width="1000" height="750" class="mission-rocket-art" aria-hidden="true" focusable="false"><defs><mask id="flying-rocket-alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="750" style="mask-type:alpha"><image href="assets/story/rocket-cutout.png" width="1000" height="750"/></mask></defs>
-      <rect class="mission-rocket-silhouette" width="1000" height="750" fill="#DB8050" mask="url(#flying-rocket-alpha)"/>
-      <image class="mission-rocket-details" href="assets/story/rocket-cutout.png" width="1000" height="750"/>
-    </svg></div></div>
+    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Lorem Ipsum.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div><a class="mission-back" href="#observatory">← Back to the planets</a></section>
   </main>
-  <div class="mission-controls"><nav class="mission-checkpoints" aria-label="Story chapters"><a href="#launch" aria-label="Launch" aria-current="step"><i></i></a><a href="#gallbladder" aria-label="The gallbladder"><i></i></a><a href="#symptoms" aria-label="The challenge"><i></i></a><a href="#sulfation" aria-label="Sulfation"><i></i></a><a href="#bile-acids" aria-label="Bile acids"><i></i></a><a href="#engineering-story" aria-label="Engineering"><i></i></a><a href="#sulflux" aria-label="SulFlux"><i></i></a></nav></div>
   <footer class="site-footer" id="siteFooter"></footer>
-  <script src="js/site-content.js?v=20261019-project-top1"></script>
-  <script src="js/navigation.js?v=20261019-icon-bar1"></script>
-  <script src="js/site.js?v=20261019-shared-header1"></script>
-  <script src="js/mission-home.js?v=20261019-autoplay1"></script>
+  <script src="js/site-content.js?v=20261020-nav-labels"></script>
+  <script src="js/navigation.js?v=20261019-notebook2"></script>
+  <script src="js/site.js?v=20261019-ulpca1"></script>
+  <script src="js/mission-home.js?v=20261020-alignment3"></script>
+  <script src="js/rocket-cursor.js?v=20261019-cursor2"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 (function () {
+  const escapeHtml = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const data = window.SITE_DATA;
   const pageKey = document.body.dataset.page;
   const pageData = data.pages[pageKey];
@@ -10,7 +11,7 @@
   }
 
   const orbitalHome = pageKey === "home" && document.body.dataset.homeVariant === "orbit";
-  document.title = `${orbitalHome ? "SulFlux" : stripHtml(pageData.title)} | iGEM Renata`;
+  document.title = orbitalHome ? "ULP-CA · SulFlux" : `${stripHtml(pageData.title)} | iGEM Renata`;
 
   renderHeader();
   window.RenataNavigation.init(document.querySelector(".renata-nav"));
@@ -61,6 +62,10 @@
     if (!header) return;
 
     header.innerHTML = window.RenataNavigation.header(data, { pageKey, group: pageData.group });
+    if (pageKey === "home" && document.body.dataset.homeBrand) {
+      header.querySelector(".brand-text").textContent = document.body.dataset.homeBrand;
+      header.querySelector(".brand").setAttribute("aria-label", `${document.body.dataset.homeBrand}, homepage`);
+    }
   }
 
   function initProjectSidebar() {
@@ -726,14 +731,15 @@
         </div>
       </section>
       <div class="container footer-inner">
-        <p>© 2026 iGEM Renata. All rights reserved.</p>
+        <p>© 2026 iGEM Renata.${window.IGEM_CONFIG ? ' <a href="attributions.html">Attributions</a>' : ""}</p>
         <section class="footer-statement" id="content-license" aria-labelledby="content-license-title">
           <h3 id="content-license-title">Content license</h3>
-          <p>PLACEHOLDER: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Except where otherwise credited, this wiki is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          ${window.IGEM_CONFIG?.repository ? `<p><a href="${escapeHtml(window.IGEM_CONFIG.repository)}">Wiki source on iGEM GitLab</a></p>` : ""}
         </section>
         <section class="footer-statement" id="ai-use" aria-labelledby="ai-use-title">
           <h3 id="ai-use-title">AI use disclosure</h3>
-          <p>PLACEHOLDER: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>OpenAI Codex assisted with website code, layout, animations, automated checks, and transcription of the supplied Model writeup into HTML. The team is responsible for reviewing the published content and scientific claims.</p>
         </section>
       </div>
     `;

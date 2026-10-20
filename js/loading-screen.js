@@ -6,6 +6,7 @@
   const loader = document.createElement("div");
   loader.className = "site-loader";
   loader.innerHTML = '<div class="site-loader-art" aria-hidden="true"><img src="assets/nav-icons/Phoenix.png" width="62" height="62" alt="" /></div><strong>Renata</strong><p role="status">Preparing your next chapter…</p><div class="site-loader-track" aria-hidden="true"><span></span></div><button type="button">Skip intro</button>';
+  if (document.body.dataset?.homeBrand) loader.querySelector("strong").textContent = document.body.dataset.homeBrand;
   document.body.appendChild(loader);
   let dismissed = false;
   function dismiss() {

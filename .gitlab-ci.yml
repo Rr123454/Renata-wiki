@@ -1,0 +1,46 @@
+image: node:22-bookworm
+
+stages:
+  - test
+  - build
+  - deploy
+
+verify:
+  stage: test
+  script:
+    - python3 scripts/build-model.py --check
+    - node scripts/build-home.js
+    - node --test tests/*.test.js
+    - python3 -m unittest discover -s tests -p 'test_*.py'
+    - python3 scripts/build-wiki.py --output build/preview
+  artifacts:
+    when: always
+    paths:
+      - build/wiki-audit.json
+      - build/preview/
+
+preview:
+  stage: build
+  script:
+    - python3 scripts/build-model.py
+    - node scripts/build-home.js
+    - python3 scripts/build-wiki.py --output public
+  artifacts:
+    paths:
+      - public/
+      - build/wiki-audit.json
+
+# Deliberately manual: a source commit must not publish draft research automatically.
+# The release builder still fails if identity, media URLs or content review are missing.
+pages:
+  stage: deploy
+  script:
+    - python3 scripts/build-model.py
+    - node scripts/build-home.js
+    - python3 scripts/build-wiki.py --release --output public
+  artifacts:
+    paths:
+      - public/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual

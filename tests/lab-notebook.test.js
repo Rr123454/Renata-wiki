@@ -81,3 +81,17 @@ test("the reader initializes once and safely skips pages without a notebook", ()
   assert.equal(init({}, { getElementById: () => null }), undefined);
   assert.equal(f.panel.dataset.readerReady, "true");
 });
+
+test("old notebook aliases select the same record on the separate page", () => {
+  assert.equal(pageFromHash("#assembly", anchors), 2);
+  assert.equal(pageFromHash("#reporter", anchors), 3);
+  assert.equal(pageFromHash("#growth-response", anchors), 4);
+});
+test("bookmarks into the former combined Wetlab reader redirect with their query and record intact", () => {
+  for (const hash of ["#notebook", "#notebook-reporter", "#notebook-assay", "#assay-notebook", "#assembly"]) {
+    let actual;
+    const win = {location:{href:`http://localhost:8080/wet-lab.html?preview=1${hash}`,search:'?preview=1',hash,replace(url){actual=url;}},addEventListener(){}};
+    init(win,{body:{dataset:{page:'wet-lab'}}});
+    assert.equal(actual,hash==='#assembly'?undefined:`http://localhost:8080/wet-lab-notebook.html?preview=1${hash}`);
+  }
+});

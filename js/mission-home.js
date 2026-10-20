@@ -1,237 +1,148 @@
 (function (root) {
   "use strict";
-  const clamp = value => Math.max(0, Math.min(1, value));
-  const mix = (a, b, t) => a + (b - a) * t;
-  const ease = value => { const t = clamp(value); return clamp(t * t * t * (t * (t * 6 - 15) + 10)); };
-  const damp = (a, b, dt) => mix(a, b, 1 - Math.exp(-Math.max(0, dt) / 125));
-  const bezier = (a, b, c, d, t) => (1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t * t * c + t ** 3 * d;
-  // These coordinates match the solid emblem in the supplied bottle composition.
-  const DOCK = Object.freeze({ x: (1059 - 700) / 490, y: (1093.75 - 470) / 750, width: 170 / 490 });
-
-  function flightState(scroll, geometry) {
-    const { width, height, bottleWidth, craftWidth, launchDistance, gallbladderTop, arrivalX, arrivalY, mobile } = geometry;
-    const launch = clamp(scroll / Math.max(1, launchDistance));
-    const zoom = ease((launch - .08) / .6);
-    const scale = mix(1, mobile ? 4.2 : 4.8, zoom);
-    const bottleHeight = bottleWidth * 750 / 490;
-    const aimX = width * (mobile ? .58 : .71);
-    const aimY = height * (mobile ? .71 : .57);
-    const initialX = width * (mobile ? .32 : .23);
-    const initialY = height * (mobile ? .72 : .59);
-    const bottleX = mix(initialX, aimX - (DOCK.x - .5) * bottleWidth * scale, zoom);
-    const bottleY = mix(initialY, aimY - (DOCK.y - .5) * bottleHeight * scale, zoom);
-    const dockX = bottleX + (DOCK.x - .5) * bottleWidth * scale;
-    const dockY = bottleY + (DOCK.y - .5) * bottleHeight * scale + (geometry.stageTop || 0);
-    const dockScale = DOCK.width * bottleWidth * scale / craftWidth;
-    const detach = ease((launch - .72) / .27);
-    const exitX = width * (mobile ? .64 : .67), exitY = height * (mobile ? .68 : .53);
-    const state = {
-      launch, bottleX, bottleY, bottleScale: scale,
-      bottleOpacity: 1 - ease((launch - .77) / .2),
-      introX: width * 1.35 * ease(launch / .23),
-      copy: ease((launch - .17) / .12) * (1 - ease((launch - .61) / .12)),
-      copyX: -70 * (1 - ease((launch - .17) / .12)),
-      detail: ease((launch - .37) / .33), detach,
-      dockX, dockY, dockScale,
-      craftX: bezier(dockX, dockX + width * .12, exitX + width * .04, exitX, detach),
-      craftY: bezier(dockY, dockY - height * .1, exitY - height * .08, exitY, detach),
-      craftScale: mix(dockScale, .9, detach),
-      craftAngle: -18 * Math.sin(detach * Math.PI / 2),
-      craftOpacity: 1,
-      exhaust: ease((launch - .75) / .23),
-      travel: 0
+  const clamp = n => Math.max(0, Math.min(1, n));
+  const mix = (a,b,t) => a+(b-a)*t;
+  const ease = n => { const t=clamp(n); return clamp(t*t*t*(t*(6*t-15)+10)); };
+  const phase = (p,a,b) => ease((p-a)/(b-a));
+  const damp = (a,b,dt) => mix(a,b,1-Math.exp(-Math.max(0,dt)/115));
+  // Register the source artwork (naturally tilted -55 degrees) to the bottle emblem.
+  // The SVG and motion controller share this coordinate system.
+  const radians=55*Math.PI/180, sx=.2420402002784682, sy=.24103026059126886;
+  const ROCKET_ART = Object.freeze({
+    frame:{x:868,y:985,width:175,height:107},
+    matrix:[sx*Math.cos(radians),sy*Math.sin(radians),-sx*Math.sin(radians),sy*Math.cos(radians),
+      871+sx*710.9211485805196,988-sy*439.9968513133648],
+    window:{x:378,y:578,diameter:190},
+    interior:{x:.5,y:(716-315)/960,diameter:580/960,aspect:985/960}
+  });
+  const f=ROCKET_ART.frame;
+  const DOCK = Object.freeze({x:(f.x+f.width/2-700)/490,y:(f.y+f.height/2-470)/750,width:f.width/490});
+  function windowOffset(angle) {
+    const [a,b,c,d,e,g]=ROCKET_ART.matrix,w=ROCKET_ART.window;
+    const x=(a*w.x+c*w.y+e-f.x-f.width/2)/f.width;
+    const y=(b*w.x+d*w.y+g-f.y-f.height/2)/f.width;
+    const r=angle*Math.PI/180;
+    return {x:x*Math.cos(r)-y*Math.sin(r),y:x*Math.sin(r)+y*Math.cos(r)};
+  }
+  function flightState(progress, { width, height, bottleWidth, mobile }) {
+    const p=clamp(progress), zoom=phase(p,.06,.44), depart=phase(p,.48,.62), cabin=phase(p,.66,.75);
+    const bottleScale=mix(1,mobile?4.1:5.1,zoom);
+    const bottleX=mix(width*(mobile?.5:.23),width*.53-(DOCK.x-.5)*bottleWidth*bottleScale,zoom);
+    const bottleY=mix(height*(mobile?.7:.59),height*.59-(DOCK.y-.5)*bottleWidth*750/490*bottleScale,zoom);
+    const dockX=bottleX+(DOCK.x-.5)*bottleWidth*bottleScale;
+    const dockY=bottleY+(DOCK.y-.5)*bottleWidth*750/490*bottleScale;
+    const dockWidth=DOCK.width*bottleWidth*bottleScale;
+    const finalWidth=Math.min(width*(mobile?.58:.36),height*.55,540);
+    const shipWidth=mix(dockWidth,finalWidth,depart),shipAngle=mix(0,-90,depart);
+    const exteriorDiameter=ROCKET_ART.window.diameter*(sx+sy)/2/f.width;
+    const inside=ROCKET_ART.interior,port=windowOffset(shipAngle);
+    const exteriorScale=mix(1,inside.diameter/exteriorDiameter,cabin);
+    const exteriorX=(mix(port.x,inside.x-.5,cabin)-port.x*exteriorScale)*shipWidth;
+    const exteriorY=(mix(port.y,inside.y-inside.aspect/2,cabin)-port.y*exteriorScale)*shipWidth;
+    return { p,bottleX,bottleY,bottleScale,dockX,dockY,dockWidth,
+      bottleOpacity:1-phase(p,.36,.48),
+      introX:width*1.4*phase(p,0,.19), introOpacity:1-phase(p,.12,.21),
+      copyOpacity:phase(p,.13,.22)*(1-phase(p,.34,.43)), copyX:-45*(1-phase(p,.13,.22)),
+      shipX:mix(dockX,width*.5,depart), shipY:mix(dockY,height*(mobile?.60:.57),depart),
+      shipWidth,shipAngle,exteriorScale,exteriorX,exteriorY,
+      exteriorOpacity:phase(p,.27,.42)*(1-phase(p,.75,.80)),
+      insideOpacity:phase(p,.75,.81), insideScale:1, insideReveal:mix(29,85,phase(p,.75,.84)),
+      hubOpacity:phase(p,.84,.95), planetOffset:45*(1-phase(p,.84,.95)),
+      captionOpacity:1-phase(p,.8,.88), ringScale:mix(1.3,1,phase(p,.72,1)),
+      starsX:-p*65, starsY:-p*110
     };
-    if (scroll > launchDistance) {
-      const arrivalAt = Math.max(launchDistance + 1, gallbladderTop - height * .1);
-      const travel = clamp((scroll - launchDistance) / (arrivalAt - launchDistance));
-      const t = ease(travel);
-      const endY = arrivalY - arrivalAt;
-      state.travel = travel;
-      state.craftX = bezier(exitX, width * .94, width * .87, arrivalX, t);
-      state.craftY = bezier(exitY, height * .31, height * .24, endY, t) - Math.max(0, scroll - arrivalAt);
-      state.craftAngle = mix(-18, 12, t) + Math.sin(t * Math.PI * 2) * 8;
-      state.craftScale = mix(.9, mobile ? .43 : .52, t);
-      state.craftOpacity = 1 - ease((scroll - arrivalAt) / (height * .48));
-      state.exhaust = 1 - ease((travel - .75) / .25);
-    }
-    return state;
   }
-
-  function revealState(scroll, top, viewport, index, fromRight) {
-    const amount = ease((scroll + viewport * .88 - top - index * 24) / (viewport * .32));
-    return { opacity: amount, x: (fromRight ? 1 : -1) * 85 * (1 - amount), y: 14 * (1 - amount) };
+  function revealState(scroll,top,viewport,index,fromRight) {
+    const amount=phase(scroll+viewport*.91-top-index*18,0,viewport*.25);
+    return { opacity:amount, x:(fromRight?1:-1)*65*(1-amount) };
   }
-
-  // The illustrated molecule used to be dragged into place on a range input.
-  // It now docks by itself the first time the scene is scrolled into view, so
-  // the scene reads as an illustration rather than a control.
-  function dockOnView(scene, win, reduced) {
-    if (!scene) return;
-    const dock = () => scene.style.setProperty("--fit-progress", 1);
-    if (reduced.matches || typeof win.IntersectionObserver !== "function") { dock(); return; }
-    const observer = new win.IntersectionObserver(entries => {
-      if (!entries.some(entry => entry.isIntersecting)) return;
-      observer.disconnect();
-      dock();
-    }, { threshold: .45 });
-    observer.observe(scene);
-    reduced.addEventListener("change", () => { if (reduced.matches) { observer.disconnect(); dock(); } });
-  }
-
-  function init(win, doc) {
-    const launch = doc.querySelector(".mission-launch");
-    if (!launch) return;
-    const stage = doc.querySelector(".mission-launch-stage");
-    const bottle = doc.querySelector(".mission-bottle");
-    const intro = doc.querySelector(".mission-intro");
-    const zoomCopy = doc.querySelector(".mission-zoom-copy");
-    const layer = doc.querySelector(".mission-craft-layer");
-    const craft = doc.querySelector(".mission-craft");
-    const gallery = doc.getElementById("gallbladder");
-    const header = doc.querySelector(".flight-header");
-    const controls = doc.querySelector(".mission-controls");
-    const reduced = win.matchMedia("(prefers-reduced-motion: reduce)");
-    const compact = win.matchMedia("(max-width: 760px)");
-    const checkpoints = [...doc.querySelectorAll(".mission-checkpoints a")];
-    const atmospheres = [...doc.querySelectorAll("[data-mission-atmosphere]")];
-    const sections = [launch, ...doc.querySelectorAll(".mission-transit, .mission-scene, .mission-engineering")];
-    const scenes = sections.slice(1).map((section, index) => {
-      const copy = section.querySelector(".mission-scene-copy, .mission-transit-copy, .mission-engineering-intro");
-      return { section, index, copy, parts: copy ? [...copy.children] : [], top: 0, copyTop: 0, height: 1 };
-    });
-    let geometry = {}, current = win.scrollY, target = current, frame = 0, lastTime = null, enabled = false;
-    let finaleTop = Infinity;
-
+  function init(win,doc) {
+    const launch=doc.querySelector('.mission-launch'); if(!launch) return;
+    const stage=doc.querySelector('.mission-launch-stage'), bottle=doc.querySelector('.mission-bottle');
+    const intro=doc.querySelector('.mission-intro'), copy=doc.querySelector('.mission-zoom-copy'), hub=doc.querySelector('.mission-hub');
+    const heading=doc.getElementById('mission-hub-title'), label=doc.querySelector('[data-launch-phase]');
+    const header=doc.getElementById('siteHeader'), reduced=win.matchMedia('(prefers-reduced-motion: reduce)');
+    const compact=win.matchMedia('(max-width: 760px)');
+    const sections=[...doc.querySelectorAll('.mission-scene')];
+    const scenes=sections.map((node,index)=>({node,index,parts:[...node.querySelector('.mission-scene-copy').children],top:0,height:0}));
+    let enabled=false, geometry={}, start=0, distance=1, current=win.scrollY, target=current, frame=0, last=null;
     function measure() {
-      doc.body.style.setProperty("--mission-header-height", `${header.offsetHeight}px`);
-      const art = gallery.querySelector(".mission-anatomy > svg").getBoundingClientRect();
-      geometry = { width: stage.clientWidth || win.innerWidth, height: win.innerHeight, bottleWidth: bottle.offsetWidth,
-        craftWidth: craft.offsetWidth || (compact.matches ? 220 : 360), mobile: compact.matches,
-        launchDistance: Math.max(1, launch.offsetHeight - stage.offsetHeight),
-        gallbladderTop: gallery.getBoundingClientRect().top + win.scrollY,
-        arrivalX: art.left + art.width * .44, arrivalY: art.top + win.scrollY + art.height * .55, stageTop: 0 };
-      scenes.forEach(scene => {
-        scene.top = scene.section.getBoundingClientRect().top + win.scrollY;
-        scene.copyTop = scene.copy.getBoundingClientRect().top + win.scrollY;
-        scene.height = scene.section.offsetHeight;
-      });
-      finaleTop = doc.getElementById("mission").getBoundingClientRect().top + win.scrollY;
-      target = Math.max(0, win.scrollY);
-    }
-    function updateAtmosphere() {
-      // CSS owns the ambient loops. Only visible sky layers run; no idle RAF work.
-      for (const atmosphere of atmospheres) {
-        const bounds = atmosphere.getBoundingClientRect();
-        const visible = bounds.bottom > 0 && bounds.top < win.innerHeight;
-        atmosphere.classList.toggle("is-atmosphere-active", enabled && !doc.hidden && visible);
-      }
-    }
-    function ui() {
-      updateAtmosphere();
-      header.classList.toggle("is-reading", target > 30);
-      let active = 0;
-      checkpoints.forEach((link, index) => {
-        const section = doc.querySelector(link.getAttribute("href"));
-        if (section.getBoundingClientRect().top <= geometry.height * .5) active = index;
-      });
-      checkpoints.forEach((link, index) => {
-        if (index === active) link.setAttribute("aria-current", "step");
-        else link.removeAttribute("aria-current");
-      });
-      const finished = target + geometry.height * .55 >= finaleTop;
-      controls.classList.toggle("is-finished", finished); controls.inert = finished;
+      doc.body.style.setProperty('--mission-header-height',`${header.offsetHeight}px`);
+      start=launch.getBoundingClientRect().top+win.scrollY;
+      distance=Math.max(1,launch.offsetHeight-stage.offsetHeight);
+      geometry={width:stage.clientWidth||win.innerWidth,height:stage.offsetHeight,bottleWidth:bottle.offsetWidth,mobile:compact.matches};
+      scenes.forEach(scene=>{scene.top=scene.node.getBoundingClientRect().top+win.scrollY;scene.height=scene.node.offsetHeight;});
+      target=Math.max(0,win.scrollY);
     }
     function draw() {
-      geometry.stageTop = Math.min(0, geometry.launchDistance - target);
-      const state = flightState(current, geometry);
-      const set = (name, value) => stage.style.setProperty(name, value);
-      set("--bottle-x", `${state.bottleX}px`); set("--bottle-y", `${state.bottleY}px`);
-      set("--bottle-scale", state.bottleScale); set("--bottle-opacity", state.bottleOpacity);
-      set("--intro-x", `${state.introX}px`); set("--zoom-copy", state.copy); set("--zoom-copy-x", `${state.copyX}px`);
-      set("--stars-y", `${-state.launch * 90}px`); set("--stars-x", `${-state.launch * 75}px`);
-      set("--planet-y", `${-state.launch * 170}px`); set("--ground-y", `${state.launch * 300}px`);
-      set("--scroll-cue", 1 - ease(state.launch / .12));
-      set("--launch-label", ease((state.launch - .24) / .15) * (1 - ease((state.launch - .75) / .15)));
-      const introHidden = state.launch > .25;
-      intro.style.visibility = introHidden ? "hidden" : "visible"; intro.inert = introHidden;
-      zoomCopy.style.visibility = state.copy < .01 ? "hidden" : "visible"; zoomCopy.inert = state.copy < .01;
-      craft.style.transform = `translate3d(${state.craftX}px, ${state.craftY}px, 0) translate(-50%, -50%) rotate(${state.craftAngle}deg) scale(${state.craftScale})`;
-      craft.style.opacity = state.craftOpacity;
-      craft.style.setProperty("--ship-detail", state.detail);
-      craft.style.setProperty("--exhaust", state.exhaust);
-      layer.style.visibility = state.craftOpacity > .001 ? "visible" : "hidden";
-      for (const scene of scenes) {
-        scene.parts.forEach((part, index) => {
-          const reveal = revealState(current, scene.copyTop, geometry.height, index, scene.index % 2 === 1);
-          part.style.setProperty("--reveal-opacity", reveal.opacity);
-          part.style.setProperty("--reveal-x", `${reveal.x}px`);
-          part.style.setProperty("--reveal-y", `${reveal.y}px`);
+      if(!enabled) return;
+      const state=flightState((current-start)/distance,geometry);
+      const values={'bottle-x':`${state.bottleX}px`,'bottle-y':`${state.bottleY}px`,'bottle-scale':state.bottleScale,'bottle-opacity':state.bottleOpacity,
+        'intro-x':`${state.introX}px`,'intro-opacity':state.introOpacity,'copy-opacity':state.copyOpacity,'copy-x':`${state.copyX}px`,
+        'ship-x':`${state.shipX}px`,'ship-y':`${state.shipY}px`,'ship-width':`${state.shipWidth}px`,'ship-angle':`${state.shipAngle}deg`,
+        'exterior-opacity':state.exteriorOpacity,'exterior-scale':state.exteriorScale,'inside-opacity':state.insideOpacity,
+        'exterior-x':`${state.exteriorX}px`,'exterior-y':`${state.exteriorY}px`,
+        'inside-scale':state.insideScale,'inside-reveal':`${state.insideReveal}%`,'hub-opacity':state.hubOpacity,
+        'planet-offset':`${state.planetOffset}px`,'caption-opacity':state.captionOpacity,'ring-scale':state.ringScale,
+        'stars-x':`${state.starsX}px`,'stars-y':`${state.starsY}px`,'launch-progress':state.p};
+      Object.entries(values).forEach(([key,value])=>stage.style.setProperty(`--${key}`,value));
+      intro.inert=state.introOpacity<.1; intro.style.visibility=intro.inert?'hidden':'';
+      copy.style.visibility=state.copyOpacity<.01?'hidden':'';
+      hub.inert=state.hubOpacity<.98; hub.style.visibility=state.hubOpacity<.01?'hidden':'';
+      label.textContent=state.p<.27?'01 / The bottle':state.p<.62?'02 / The spacecraft':state.p<.84?'03 / Inside SulFlux':'04 / Choose a planet';
+      scenes.forEach(scene=>{
+        scene.parts.forEach((part,index)=>{
+          const reveal=revealState(current,scene.top+80,geometry.height,index,scene.index%2===1);
+          part.style.setProperty('--reveal-opacity',reveal.opacity);part.style.setProperty('--reveal-x',`${reveal.x}px`);
         });
-        const progress = clamp((current + geometry.height - scene.top) / (scene.height + geometry.height));
-        scene.section.style.setProperty("--art-y", `${(progress - .5) * -35}px`);
-        scene.section.style.setProperty("--art-turn", `${Math.sin((progress - .5) * Math.PI) * 1.5}deg`);
-        scene.section.style.setProperty("--acid-y", `${Math.sin(progress * Math.PI * 4) * 13}px`);
-        scene.section.style.setProperty("--destination-scale", .7 + progress * .5);
-        scene.section.classList.toggle("is-scene-visible", scene.top < target + geometry.height && scene.top + scene.height > target);
-      }
+        const t=clamp((current+geometry.height-scene.top)/(scene.height+geometry.height));
+        scene.node.style.setProperty('--art-y',`${(t-.5)*-25}px`);
+        scene.node.style.setProperty('--art-turn',`${Math.sin(t*Math.PI)*1.2}deg`);
+      });
     }
     function tick(time) {
-      frame = 0;
-      if (doc.hidden) { lastTime = null; return; }
-      const dt = lastTime === null ? 16 : Math.min(64, Math.max(0, time - lastTime));
-      lastTime = time;
-      if (enabled) {
-        current = damp(current, target, dt);
-        if (Math.abs(current - target) < .05) current = target;
-        draw();
-      }
-      ui();
-      if (enabled && current !== target) schedule();
-      else lastTime = null;
+      frame=0; if(doc.hidden) {last=null;return;}
+      current=enabled?damp(current,target,last===null?16:Math.min(64,time-last)):target;last=time;
+      if(Math.abs(current-target)<.05) current=target;
+      draw();
+      if(enabled&&current!==target) schedule();else last=null;
     }
-    function schedule() { if (!frame && !doc.hidden) frame = win.requestAnimationFrame(tick); }
-    function configure(preservePosition = false) {
-      const nextEnabled = !reduced.matches && win.innerHeight >= 640;
-      let anchor, fraction = 0;
-      if (preservePosition && enabled !== nextEnabled) {
-        anchor = [...sections].reverse().find(section => section.getBoundingClientRect().top <= win.innerHeight * .3) || launch;
-        fraction = clamp(-anchor.getBoundingClientRect().top / Math.max(1, anchor.offsetHeight));
+    function schedule() { if(!frame&&!doc.hidden) frame=win.requestAnimationFrame(tick); }
+    function configure(preserve=false) {
+      const next=!reduced.matches&&win.innerHeight>=680;
+      let anchor,fraction=0;
+      if(preserve&&next!==enabled) {
+        anchor=[launch,...sections].reverse().find(node=>node.getBoundingClientRect().top<=win.innerHeight*.3)||launch;
+        fraction=clamp(-anchor.getBoundingClientRect().top/Math.max(1,anchor.offsetHeight));
       }
-      enabled = nextEnabled;
-      doc.body.classList.toggle("mission-enhanced", enabled);
-      if (!enabled) {
-        stage.removeAttribute("style"); intro.style.visibility = ""; intro.inert = false;
-        zoomCopy.style.visibility = ""; zoomCopy.inert = false; layer.style.visibility = "hidden";
-        scenes.forEach(scene => scene.section.classList.remove("is-scene-visible"));
-      }
-      if (anchor) win.scrollTo({ top: anchor.getBoundingClientRect().top + win.scrollY + fraction * anchor.offsetHeight, behavior: "instant" });
-      measure(); current = target;
-      updateAtmosphere();
-      if (enabled) draw();
-      schedule();
+      enabled=next;doc.body.classList.toggle('mission-enhanced',enabled);
+      if(!enabled) {stage.removeAttribute('style');intro.inert=false;intro.style.visibility='';hub.inert=false;hub.style.visibility='';copy.style.visibility='';}
+      if(anchor) win.scrollTo({top:anchor.getBoundingClientRect().top+win.scrollY+fraction*anchor.offsetHeight,behavior:'instant'});
+      measure();current=target;draw();schedule();
     }
-    win.addEventListener("scroll", () => { target = Math.max(0, win.scrollY); schedule(); }, { passive: true });
-    win.addEventListener("resize", () => configure(true));
-    win.addEventListener("load", () => { measure(); schedule(); });
-    doc.addEventListener("visibilitychange", () => {
-      if (doc.hidden) { if (frame) win.cancelAnimationFrame(frame); frame = 0; lastTime = null; }
-      else { measure(); current = target; schedule(); }
-      updateAtmosphere();
+    function visitHub(focus=true) {
+      const top=enabled?start+distance:hub.getBoundingClientRect().top+win.scrollY-header.offsetHeight-20;
+      win.scrollTo({top,behavior:'instant'});target=current=Math.max(0,top);draw();
+      if(focus) heading.focus({preventScroll:true});
+    }
+    doc.querySelectorAll('a[href="#observatory"]').forEach(link=>link.addEventListener('click',event=>{
+      event.preventDefault();win.history.pushState(null,'','#observatory');visitHub();
+    }));
+    doc.querySelectorAll('[data-planet]').forEach(link=>link.addEventListener('click',()=>link.classList.add('is-visited')));
+    win.addEventListener('scroll',()=>{target=Math.max(0,win.scrollY);schedule();},{passive:true});
+    win.addEventListener('resize',()=>configure(true));
+    win.addEventListener('load',()=>{measure();current=target;draw();if(win.location.hash==='#observatory') visitHub(false);});
+    win.addEventListener('hashchange',()=>{if(win.location.hash==='#observatory') visitHub();});
+    doc.addEventListener('visibilitychange',()=>{
+      if(doc.hidden){if(frame)win.cancelAnimationFrame(frame);frame=0;last=null;}
+      else {measure();current=target;draw();schedule();}
     });
-    reduced.addEventListener("change", () => configure(true));
-    doc.querySelectorAll(".mission-anatomy-controls button").forEach(button => {
-      button.addEventListener("click", () => {
-        const after = button.dataset.anatomy === "after";
-        gallery.classList.toggle("is-after", after);
-        gallery.querySelectorAll(".mission-anatomy-controls button").forEach(control => control.setAttribute("aria-pressed", String(control === button)));
-        gallery.querySelector(".mission-diagram-status").textContent = after ? "Without the storage step, bile flows directly from the liver to the small intestine." : "The gallbladder stores bile between meals.";
-      });
-    });
-    dockOnView(doc.getElementById("engineering-story"), win, reduced);
+    reduced.addEventListener('change',()=>configure(true));
     configure();
-    return { configure, measure };
+    if(win.location.hash==='#observatory') visitHub(false);
+    return {configure,visitHub,measure};
   }
-  const api = { DOCK, flightState, revealState, damp, init };
-  if (typeof module !== "undefined" && module.exports) module.exports = api;
-  else init(root, root.document);
-})(typeof window === "undefined" ? globalThis : window);
+  const api={DOCK,ROCKET_ART,windowOffset,flightState,revealState,damp,init};
+  if(typeof module!=='undefined'&&module.exports) module.exports=api;
+  else init(root,root.document);
+})(typeof window==='undefined'?globalThis:window);

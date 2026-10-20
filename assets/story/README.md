@@ -1,17 +1,23 @@
 # Supplied story artwork
 
-These are unchanged copies of the team’s supplied PNG files:
+The active homepage uses unchanged copies of these supplied image files:
 
 | Repository file | Original filename |
 | --- | --- |
-| `rocket-left.png` | `rocket_l.png` |
-| `rocket-right.png` | `rocket_r.png` |
+| `bottle-new.png` | `New Sulfluxbottle.png` |
+| `spaceship.png` | `New Spaceship.png` |
+| `spaceship-inside.png` | `spaceship_inside.png` |
+| `liver.png` | `liver.png` |
+| `planet-1.png` | `Planet 1.png` |
+| `planet-2.png` | `Planet 2.png` |
+| `planet-3.png` | `Planet 3.png` |
+| `person-drinking.png` | `person_drinking_yakult.png` |
 | `sult2a1.png` | `Sult2A1.png` |
-| `sulflux-bottle.png` | `sulflux bottle.png` |
 | `btsult.png` | `Btsult.png` |
+| `lca-dca.webp` | `LCA_DCA.png` |
 
-`rocket-cutout.png` is the transparent cutout selected in chat on 18 October 2026. It is an unchanged copy of that generated output; the source `rocket-left.png` and `rocket-right.png` files remain available. The cutout is used for the homepage flight, return link, and chapter orbits.
+The SVG compositions are included directly in `index.html`. View boxes and clip paths frame the supplied artwork without modifying its pixels. Adjust those frames in `scripts/build-home.js`, then regenerate the page with Node. The LCA/DCA file is actually WebP despite its supplied `.png` name; its repository copy has the correct extension. The export also corrects the extensions of earlier mislabeled files while retaining originals.
 
-The homepage uses an SVG clip path for the bottle and the cutout's alpha channel for its orange spacecraft emblem. Both the emblem and detailed ship share the same image geometry, so the ship can develop on the bottle before departure. No image-generation service or external image host is needed at runtime.
+The exterior rocket's registration matrix in `js/mission-home.js` maps the supplied tilted artwork onto the bottle emblem. That shared matrix drives both the SVG frame and animation. The rocket stays attached until the bottle disappears, turns upright, then zooms toward its window before the interior is revealed.
 
-The other story illustrations are editable SVG compositions authored in `js/mission-art.js` and included directly in `index.html`, the sole homepage. The SulFlux fit illustration represents a proposed design, not a confirmed experimental result.
+`home-copy.json` preserves the seven supplied science paragraphs. Rebuild after editing this file. Earlier bottle and rocket illustrations remain in this directory for reference but do not drive the current homepage.

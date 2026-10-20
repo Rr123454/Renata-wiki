@@ -5,9 +5,21 @@
     let id;
     try { id = decodeURIComponent(hash.replace(/^#/, "")); } catch { return null; }
     if (id === "notebook") return 1;
-    return anchors[id] || null;
+    return anchors[id] || anchors[`notebook-${id}`] || null;
   }
   function init(win, doc) {
+    // Preserve links made while the PDF lived beside the Wetlab article.
+    if (doc.body?.dataset.page === "wet-lab") {
+      const redirect = () => {
+        if (!/^#(?:notebook(?:-(?:assembly|reporter|growth-response|assay))?|assay-notebook)$/.test(win.location.hash)) return;
+        const destination = new URL("wet-lab-notebook.html", win.location.href);
+        destination.search = win.location.search;
+        destination.hash = win.location.hash;
+        win.location.replace(destination.href);
+      };
+      win.addEventListener("hashchange", redirect);
+      redirect(); return;
+    }
     const panel = doc.getElementById("notebook");
     if (!panel || panel.dataset.readerReady) return;
     panel.dataset.readerReady = "true";

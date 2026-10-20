@@ -2,3 +2,9 @@
 /tmp/pdf-tools/
 /tmp/pdfs/
 /output/pdf/
+/public/
+/build/
+__pycache__/
+*.pyc
+.DS_Store
+debug.log

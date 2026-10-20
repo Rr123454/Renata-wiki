@@ -33,6 +33,13 @@
     </figure>`;
   }
 
+  function outlineBranch(id, label, children) {
+    return `<li class="project-outline-branch" data-outline-branch="${escape(id)}">
+      <div class="project-outline-row"><a href="#${escape(id)}">${escape(label)}</a><button type="button" data-outline-toggle aria-expanded="true" aria-controls="outline-${escape(id)}" aria-label="Toggle ${escape(label)} subsections" hidden><span aria-hidden="true">⌄</span></button></div>
+      <ul id="outline-${escape(id)}" class="project-outline-children">${children}</ul>
+    </li>`;
+  }
+
   function render(pageData) {
     const paper = pageData.paper || {};
     const engineering = pageData.engineering || {};
@@ -40,6 +47,21 @@
     const records = new Map((engineering.details || []).map(record => [record.id, record]));
     return `<section class="project-paper-page project-dbtl-paper" id="project-description">
       <div class="container project-paper-layout">
+        <aside class="project-paper-sidebar" aria-label="Project page outline">
+          <nav class="page-outline" data-project-outline aria-labelledby="project-outline-title">
+            <div class="project-outline-heading"><p class="page-outline-title" id="project-outline-title">On this page</p><button type="button" data-outline-collapse aria-expanded="true" aria-controls="project-outline-list" aria-label="Toggle page contents" hidden><span aria-hidden="true">⌄</span></button></div>
+            <ul id="project-outline-list">
+              <li><a href="#abstract">Abstract</a></li>
+              ${outlineBranch("engineering", "DBTL Cycle", stages.map(stage => outlineBranch(stage.id, `${stage.label} — ${stage.title}`, `
+                ${stage.id === "design" ? '<li><a href="#figure-expression-vector">Figure 1 — Expression vector</a></li>' : ""}
+                ${stage.records.map(id => records.get(id)).filter(Boolean).map(record => `<li><a href="#${escape(record.id)}">${escape(record.title)}</a></li>`).join("")}
+              `)).join(""))}
+              ${outlineBranch("engineering-sources", "References", (paper.references || []).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join(""))}
+            </ul>
+          </nav>
+          <a class="page-outline-related" href="model.html">Molecular figures and model analysis ↗</a>
+          <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
+        </aside>
         <article class="project-paper" aria-labelledby="project-paper-title">
           <header class="project-paper-header"><p class="project-paper-type">Research / Design / Evidence</p><h1 id="project-paper-title">Our Project</h1></header>
           <section class="project-paper-section" id="abstract" aria-labelledby="abstract-title">
@@ -66,30 +88,6 @@
             <p id="engineering-sources">${engineering.sourceNote || ""}</p>
           </section>
         </article>
-        <aside class="project-paper-sidebar" aria-label="Project page outline">
-          <nav class="page-outline" aria-labelledby="project-outline-title">
-            <p class="page-outline-title" id="project-outline-title">On this page</p>
-            <ul>
-              <li><a href="#abstract">Abstract</a></li>
-              <li>
-                <a href="#engineering">DBTL Cycle</a>
-                <ul>${stages.map(stage => `<li><a href="#${escape(stage.id)}">${escape(stage.label)}</a></li>`).join("")}</ul>
-              </li>
-              <li>
-                <a href="#figure-expression-vector">Figures</a>
-                <ul>
-                  <li><a href="#figure-expression-vector">Figure 1 — Expression vector</a></li>
-                  <li><a href="model.html">Molecular figures and model analysis</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#engineering-sources">References</a>
-                <ul>${(paper.references || []).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join("")}</ul>
-              </li>
-            </ul>
-          </nav>
-          <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
-        </aside>
       </div>
     </section>`;
   }

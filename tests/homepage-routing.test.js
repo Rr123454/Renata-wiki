@@ -42,7 +42,7 @@ test("index is the only homepage and keeps a complete static story", () => {
 test("all page scripts and styles resolve after removing the old homepage", () => {
   for (const file of htmlFiles) {
     if (read(file).includes('src="js/site.js?')) {
-      assert.match(read(file), /src="js\/site\.js\?v=20261019-shared-header1"/, `${file} reloads the shared renderer`);
+      assert.match(read(file), /src="js\/site\.js\?v=20261019-(?:shared-header1|ulpca1)"/, `${file} reloads the shared renderer`);
     }
     for (const match of read(file).matchAll(/<(?:script|link)\b[^>]*\b(?:src|href)="([^"]+)"/g)) {
       const resource = match[1].split(/[?#]/)[0];

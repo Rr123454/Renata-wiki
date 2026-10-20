@@ -40,7 +40,7 @@
 
       <h3>ODE modelling and parameter estimation</h3>
       <p>The MATLAB plan separates expression, enzyme kinetics, and PAPS supply. Proposed sfGFP/OD600 time courses and normalized protein measurements inform expression; substrate and cofactor scans inform kinetic parameters. The model will require calibrated rate data and uncertainty estimates. A fitted model and complete experimental dataset have yet to be supplied. ${cite(1)}</p>
-      <p><a href="model.html#ode-plan">ODE measurement requirements</a></p>`,
+      <p><a href="model.html#wet-lab-candidates">Wet-lab candidate selection</a></p>`,
     results: `
       <p>The working document reports computational observations from several distinct rounds. These findings guide candidate selection and the design of activity measurements. ${cite(1)}</p>
       <h3>Variant comparison</h3>
@@ -84,7 +84,7 @@
           id: "test", label: "Test", title: "Enzyme Characterization Assay",
           text: `<p>The planned comparison asks whether WT and candidate variants express, form the intended sulfated product, and differ in measured reaction rate. Expression and solubility records, protein normalization, substrate/cofactor series, blanks, and inactive-enzyme controls are needed to interpret the assay. ${cite(1)}</p><p>A PAP-specific phosphatase-coupled readout can support turnover measurements after its response and background are validated. Product identity requires appropriate product-specific evidence. ${cite(3)}</p>`,
           status: "Current data status: the record supplies computational observations and assay plans. Completed product-identification and enzyme-kinetics datasets have yet to be supplied.",
-          links: [{ href: "wet-lab.html#assay-plan", label: "Assay logic and controls" }, { href: "model.html#ode-plan", label: "How measurements inform the model" }],
+          links: [{ href: "wet-lab.html#assay-plan", label: "Assay logic and controls" }, { href: "model.html#wet-lab-candidates", label: "Model candidates for experimental testing" }],
           records: ["measurements-to-model"]
         },
         {

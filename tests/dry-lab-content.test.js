@@ -114,8 +114,8 @@ test("section navigation follows the article's reading order", () => {
   }
 });
 
-test("entry points load cache-refreshed dry-lab content before the renderer", () => {
-  for (const file of ["wet-lab.html", "model.html"]) {
+test("Wetlab entry points load their shared bench data before the renderer", () => {
+  for (const file of ["wet-lab.html", "wet-lab-notebook.html"]) {
     const html = read(file);
     assert.match(html, /dry-lab-content\.js\?v=20261019-structure1/);
     assert.ok(html.indexOf("js/dry-lab-content.js") < html.indexOf("js/lab-content.js"), file);

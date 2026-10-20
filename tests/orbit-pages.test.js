@@ -12,7 +12,7 @@ vm.runInNewContext(read("js/site-content.js"), context);
 vm.runInNewContext(read("js/dry-lab-content.js"), context);
 vm.runInNewContext(read("js/lab-content.js"), context);
 const data = context.window.SITE_DATA;
-const redirects = new Set(["engineering.html", "home-orbit.html", "experiments.html", "wet-lab-notebook.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"]);
+const redirects = new Set(["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"]);
 const researchPages = new Set(["project-description", "wet-lab", "wet-lab-notebook", "model"]);
 
 test("illustrated chapters load their renderer while research papers and redirects stay separate", () => {
@@ -47,7 +47,7 @@ test("illustrated chapters load their renderer while research papers and redirec
     assert.equal([...rendered.matchAll(/<h1\b/g)].length, 1);
     assert.match(rendered, /aria-labelledby="page-title"/);
     assert.doesNotMatch(rendered, /orbit-scene-toggle|Pause scene|Resume scene/);
-    assert.match(html, /js\/orbit-pages\.js\?v=20261019-rocket-cutout1/);
+    assert.match(html, /js\/orbit-pages\.js\?v=20261019-draft2/);
   }
 });
 

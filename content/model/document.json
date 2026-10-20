@@ -1,0 +1,1371 @@
+{
+  "title": "Model",
+  "pdf": "assets/model/dry-lab-documentation.pdf",
+  "sources": [
+    {
+      "path": "assets/model/Fig1.png",
+      "original_name": "Fig1.png",
+      "sha256": "21aab795279f06aeaa563618635bf566d058ab2577cae3a2f8af16cefbbbc54d"
+    },
+    {
+      "path": "assets/model/Fig10.png",
+      "original_name": "Fig10.png",
+      "sha256": "3360d706dbde652a53aa85123f2be5210f447a4a2eb89d8c02d0623edd25bbb4"
+    },
+    {
+      "path": "assets/model/Fig2.png",
+      "original_name": "Fig2.png",
+      "sha256": "8c66668bb1ea8165500932d0092938ce1de3cdba8a6d2ea8c3a1c15b44a95953"
+    },
+    {
+      "path": "assets/model/Fig3.png",
+      "original_name": "Fig3.png",
+      "sha256": "3e3ba88d8f0948ed1222338d4aaaf82da78d91081f6c5e0ad57fe4717e864c5a"
+    },
+    {
+      "path": "assets/model/Fig4.png",
+      "original_name": "Fig4.png",
+      "sha256": "1e1bfd46500a2baac9f6216815ab47f2d160f0fcee0e8c3060ab3808c4519956"
+    },
+    {
+      "path": "assets/model/Fig5.png",
+      "original_name": "Fig5.png",
+      "sha256": "88f4e006eea5409182445dab7e013e9ea36f411095fcbf9c3083dc89888c0a70"
+    },
+    {
+      "path": "assets/model/Fig6.png",
+      "original_name": "Fig6.png",
+      "sha256": "eb0f83781dfdbd5925fa6d0d51234021cc8eaa037b49a764f5a2ab2922e044a9"
+    },
+    {
+      "path": "assets/model/Fig7.png",
+      "original_name": "Fig7.png",
+      "sha256": "31db644cafecaab6bbef6a917ba009fa8b47c71d4ce709678288aff4010651ee"
+    },
+    {
+      "path": "assets/model/Fig8.png",
+      "original_name": "Fig8.png",
+      "sha256": "bc6d24777096bdf867efb72e2434b06caa71948323d7eff3f333f957536dac83"
+    },
+    {
+      "path": "assets/model/Fig9.png",
+      "original_name": "Fig9.png",
+      "sha256": "98ced1fcb45cd6f2354c52bf3e392190085c8881a051062072c149d21423a8c0"
+    },
+    {
+      "path": "assets/model/dry-lab-documentation.pdf",
+      "original_name": "Dry Lab Documentation (1).pdf",
+      "sha256": "f24c7f6255cfb65589a661677d36a034f8953b7656e203502a346f8753cdd422"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "pages": [
+        1
+      ],
+      "text": "Model",
+      "source": "Model",
+      "id": "lab-page-title",
+      "level": 1,
+      "key": "b001"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        1
+      ],
+      "text": "Modeling is an important aspect of synthetic biology, where scientists and researchers test and engineer the viable aspect of their final product prior to stepping foot into a laboratory. Our modelling workflow primarily deals with the reengineering of the BtSULT enzyme for 5β steroid specificity.",
+      "source": "Modeling is an important aspect of synthetic biology, where scientists and\nresearchers test and engineer the viable aspect of their final product prior to\nstepping foot into a laboratory. Our modelling workflow primarily deals with the\nreengineering of the BtSULT enzyme for 5 steroid specificity.",
+      "key": "b002"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        1
+      ],
+      "text": "Enzyme Engineering",
+      "source": "Enzyme Engineering",
+      "id": "overview",
+      "level": 2,
+      "key": "b003"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        1
+      ],
+      "text": "Wild type(WT) BtSULT is a sulfotransferase derived from Bacteroides thetaiotamicron that solubilizes steroid molecules such as DHEA. BtSULT was selected after its biochemical characterization by Yao et. al (2022), demonstrating sulfotransferase activity on bile acids. However, the substrate selectivity profile of BtSULT reveals its inability to accept 5β steroid molecules due to a flat A/B fusion ring, such as 5β-LCA. This fact necessitates an engineering process to redesign the WT BtSULT active site to sulfonate 5β-LCA for PCS treatment",
+      "source": "Wild type(WT) BtSULT is a sulfotransferase derived from Bacteroides\nthetaiotamicron that solubilizes steroid molecules such as DHEA. BtSULT was\nselected after its biochemical characterization by Yao et. al (2022), demonstrating\nsulfotransferase activity on bile acids. However, the substrate selectivity profile of\nBtSULT reveals its inability to accept 5 steroid molecules due to a flat A/B\nfusion ring, such as 5 -LCA. This fact necessitates an engineering process to\nredesign the WT BtSULT active site to sulfonate 5 -LCA for PCS treatment",
+      "key": "b004"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        1
+      ],
+      "text": "BtSULT was selected as the main engineering scaffold instead of its mammalian homolog, SULT2A1, considering BL21 expression bottlenecks. SULT2A1 crystal structures were utilized from UniProt as a structural template for active-site redesign.",
+      "source": "BtSULT was selected as the main engineering scaffold instead of its mammalian\nhomolog, SULT2A1, considering BL21 expression bottlenecks. SULT2A1 crystal\nstructures were utilized from UniProt as a structural template for active-site\nredesign.",
+      "key": "b005"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        1
+      ],
+      "text": "The ideal reaction mechanism that indicates a working BtSULT mutant for wet-lab validation prioritizes sulfur-group transfer from PAPS to LCA 3-OH for production of sulfolithocholic acid, or sulfo-LCA.",
+      "source": "The ideal reaction mechanism that indicates a working BtSULT mutant for wet-lab\nvalidation prioritizes sulfur-group transfer from PAPS to LCA 3-OH for production\nof sulfolithocholic acid, or sulfo-LCA.",
+      "key": "b006"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        1
+      ],
+      "text": "According to Kakuta et. al (1998), their study of human estrogen sulfotransferase activity asserts sulfuryl transfer is only possible if the catalytic base contacts the substrate OH at hydrogen bond range, 2.7 to 3.1 Å. This is to be considered in our engineering process.",
+      "source": "According to Kakuta et. al (1998), their study of human estrogen sulfotransferase\nactivity asserts sulfuryl transfer is only possible if the catalytic base contacts the\nsubstrate OH at hydrogen bond range, 2.7 to 3.1 Å. This is to be considered in our\nengineering process.",
+      "key": "b007"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        2
+      ],
+      "text": "1. Structural Study of BtSULT",
+      "source": "1. Structural Study of BtSULT",
+      "id": "structural-study",
+      "level": 2,
+      "key": "b008"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        2
+      ],
+      "text": "Although human SULT2A1 is well-studied and documented, BtSULT is not, requiring a study to identify candidates for a proposed catalytic base. Our early studies assumed BtSULT used histidine as a catalytic base, similar to His99 in human SULT2A1 (PDB: 1J99). Clustal Omega homology alignment tentatively suggested His215 as the closest histidine (Fig. 1). Extrapolating from the conserved PAPS binding motif, we also elect E136 as a catalytic base candidate. However, homology alignments were later disproved to be completely viable, partly due to the 15.2% sequence identity according to a Foldseek structural alignment (see below).",
+      "source": "Although human SULT2A1 is well-studied and documented, BtSULT is not,\nrequiring a study to identify candidates for a proposed catalytic base. Our early\nstudies assumed BtSULT used histidine as a catalytic base, similar to His99 in\nhuman SULT2A1 (PDB: 1J99). Clustal Omega homology alignment tentatively\nsuggested His215 as the closest histidine (Fig. 1). Extrapolating from the\nconserved PAPS binding motif, we also elect E136 as a catalytic base candidate.\nHowever, homology alignments were later disproved to be completely viable,\npartly due to the 15.2% sequence identity according to a Foldseek structural\nalignment (see below).",
+      "key": "b009"
+    },
+    {
+      "type": "table",
+      "id": "table-metrics",
+      "pages": [
+        2
+      ],
+      "text": "Foldseek Alignment Metrics",
+      "headers": [
+        "Metric",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Query",
+          "BtSULT WT (AlphaFold model)"
+        ],
+        [
+          "Target",
+          "hSULT2A1 (PDB 1J99, DHEA-bound)"
+        ],
+        [
+          "TM-score",
+          "0.4634"
+        ],
+        [
+          "Sequence identity",
+          "15.2%"
+        ],
+        [
+          "Alignment length",
+          "341 residues (BtSULT 58–365, SULT2A1 20–266)"
+        ],
+        [
+          "lDDT",
+          "0.3757"
+        ],
+        [
+          "E-value",
+          "8.33 × 10⁻⁴"
+        ],
+        [
+          "Bit score",
+          "78"
+        ]
+      ],
+      "key": "b010"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        3
+      ],
+      "text": "Figure 1. Clustal Omega Vs. Foldseek Alignment of BtSULT and SULT2A1",
+      "source": "Figure 1. Clustal Omega Vs. Foldseek Alignment of BtSULT and SULT2A1",
+      "id": "figure-1",
+      "src": "assets/model/Fig1.png",
+      "width": 2048,
+      "height": 1484,
+      "key": "b011"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        3
+      ],
+      "text": "However, Boltz-2 co-folding poses, where BtSULT was complexed with PAPS and LCA, suggested E144 as the closest deprotonating residue to LCA 3-OH. Although E144 contacted the substrate OH outside of H-bond distance, E144 was still selected to account for co-folding overcompensating for the stability of the output pose, something that is not completely representative of an enzyme’s tendency to change shape in its active site.",
+      "source": "However, Boltz-2 co-folding poses, where BtSULT was complexed with PAPS and\nLCA, suggested E144 as the closest deprotonating residue to LCA 3-OH. Although\nE144 contacted the substrate OH outside of H-bond distance, E144 was still\nselected to account for co-folding overcompensating for the stability of the output\npose, something that is not completely representative of an enzyme’s tendency to\nchange shape in its active site.",
+      "key": "b012"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        4
+      ],
+      "text": "Figure 2. Boltz-2 LCA+PAPS Interaction Map",
+      "source": "Figure 2. Boltz-2 LCA+PAPS Interaction Map",
+      "id": "figure-2",
+      "src": "assets/model/Fig2.png",
+      "width": 2048,
+      "height": 1704,
+      "key": "b013"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "Additional candidates for the catalytic base were nominated from literature, on the condition that residues were within 5 Å of either LCA or PAPS. The candidates are summarized by Table 1.",
+      "source": "Additional candidates for the catalytic base were nominated from literature, on the\ncondition that residues were within 5 Å of either LCA or PAPS. The candidates\nare summarized by Table 1.",
+      "key": "b014"
+    },
+    {
+      "type": "table",
+      "id": "table-1",
+      "pages": [
+        4,
+        5
+      ],
+      "text": "Table 1: Catalytic base candidates",
+      "headers": [
+        "Candidate",
+        "Route",
+        "Origin of Method"
+      ],
+      "rows": [
+        [
+          "His215",
+          "Homology + Sequence Alignment",
+          "SULT catalytic-His homology"
+        ],
+        [
+          "Glu136",
+          "Sequence alignment",
+          "Clustal mapping of His99"
+        ],
+        [
+          "Lys211",
+          "Literature",
+          "Tibbs catalytic-residue mapping (Tibbs et al.)"
+        ],
+        [
+          "Gln143",
+          "Steric Clash",
+          "Measured for completeness of study from Boltz-2 contact map"
+        ],
+        [
+          "Tyr158",
+          "Literature",
+          "AKR1D1 Tyr58 dyad (Chen et al.)"
+        ],
+        [
+          "Glu144",
+          "Contact map",
+          "Boltz-2 contact analysis (closest protein contact to substrate OH)"
+        ]
+      ],
+      "key": "b015"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        5
+      ],
+      "text": "2. Catalytic Distance Identification",
+      "source": "2. Catalytic Distance Identification",
+      "id": "catalytic-distance",
+      "level": 2,
+      "key": "b016"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        5
+      ],
+      "text": "In order to establish a baseline catalytic distance for which to discriminate between successfully and unsuccessfully engineered mutants, we are prompted to determine the optimal bond distance in SULT2A1-like enzymes.",
+      "source": "In order to establish a baseline catalytic distance for which to discriminate between\nsuccessfully and unsuccessfully engineered mutants, we are prompted to determine\nthe optimal bond distance in SULT2A1-like enzymes.",
+      "key": "b017"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        5
+      ],
+      "text": "The crystal structures of native SULT enzymes were analyzed for sulfuryl transfer and catalytic base distance, listed below. On average, sulfuryl transfer occurs at a distance of ~5 Å and catalytic bases are ~3 Å from the substrate OH (ref. Table 2).",
+      "source": "The crystal structures of native SULT enzymes were analyzed for sulfuryl transfer\nand catalytic base distance, listed below. On average, sulfuryl transfer occurs at a\ndistance of ~5 Å and catalytic bases are ~3 Å from the substrate OH (ref. Table\n2).",
+      "key": "b018"
+    },
+    {
+      "type": "table",
+      "id": "table-2",
+      "pages": [
+        5
+      ],
+      "text": "Table 2: Catalytic Distance Inference from SULT Crystal Structures",
+      "headers": [
+        "Construct/PDB",
+        "Ligand(s) bound",
+        "Catalytic distance measured",
+        "Value"
+      ],
+      "rows": [
+        [
+          "1J99",
+          "PAP + DHEA",
+          "His99 NE2 → substrate OH",
+          "3.15 Å"
+        ],
+        [
+          "3F3Y",
+          "LCA + PAP",
+          "His99 → substrate OH",
+          "2.91 Å"
+        ],
+        [
+          "3F3Y",
+          "LCA + PAP",
+          "substrate OH → PAPS sulfur",
+          "5.44 Å"
+        ]
+      ],
+      "key": "b019"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "Additionally, in order to identify residues blocking 5β-LCA binding, LCA was posed onto wild-type(WT) BtSULT using SULT2A1-DHEA(1J99) as a template. After superimposing BtSULT onto 1J99, the DHEA pose was transferred to dock LCA with emphasis on the anchored 3-OH position. Residue-substrate distances were measured to the LCA pose and a selectivity filter for steric clashes was applied to residues using MolProbity, with an overlap of >0.4 Å classified as a steric clash. The main pocket residues are displayed in Fig. 3",
+      "source": "Additionally, in order to identify residues blocking 5β-LCA binding, LCA was\nposed onto wild-type(WT) BtSULT using SULT2A1-DHEA(1J99) as a template.\nAfter superimposing BtSULT onto 1J99, the DHEA pose was transferred to dock\nLCA with emphasis on the anchored 3-OH position. Residue-substrate distances\nwere measured to the LCA pose and a selectivity filter for steric clashes was\napplied to residues using MolProbity, with an overlap of >0.4 Å classified as a\nsteric clash. The main pocket residues are displayed in Fig. 3",
+      "key": "b020"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        6
+      ],
+      "text": "Figure 3. BtSULT MolProbity Absolute Clash Map",
+      "source": "Figure 3. BtSULT MolProbity Absolute Clash Map",
+      "id": "figure-3",
+      "src": "assets/model/Fig3.png",
+      "width": 2048,
+      "height": 1425,
+      "key": "b021"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "Although the greatest absolute clashes lie at Y158 and S150, studies of bile acid synthesis assert the importance of tyrosine in hydride transfer and brief analysis of the serine r-group dismissed it as an engineering focus due to a short, unpolar sidechain (Mindrich et al.). This shifted the focus to F147 as the principal steric clash, especially when considered as a selectivity market for 5β steroids in human carbonic anhydrases (Brynda et al.).",
+      "source": "Although the greatest absolute clashes lie at Y158 and S150, studies of bile acid\nsynthesis assert the importance of tyrosine in hydride transfer and brief analysis of\nthe serine r-group dismissed it as an engineering focus due to a short, unpolar\nsidechain (Mindrich et al.). This shifted the focus to F147 as the principal steric\nclash, especially when considered as a selectivity market for 5β steroids in human\ncarbonic anhydrases (Brynda et al.).",
+      "key": "b022"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        7
+      ],
+      "text": "3. Mutagenesis Screens (break this into more subtabs wiki ppl)",
+      "source": "3. Mutagenesis Screens (break this into more subtabs wiki\nppl)",
+      "id": "notebook",
+      "level": 2,
+      "key": "b023"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "Round 0 of mutagenesis screening for the proposed enzyme prioritized a 6x-alanine scan, geared towards validating expression bottlenecks in-vitro prior to the final variant being reengineered. Steric clashes were changed to alanine as a proxy for catalytic activity in order to prioritize enzyme binding energy. This work was done prior to further structural studies, where Boltz-2 structural distances and review of literature confirmed the presence of mediating residues such as lysine, tyrosine, and glutamate as a divergent catalytic base to histidine in human AK1RD1. The mutations are as follows: E144A, W161A, K211A, F248A, F249A, T252A",
+      "source": "Round 0 of mutagenesis screening for the proposed enzyme prioritized a\n6x-alanine scan, geared towards validating expression bottlenecks in-vitro prior to\nthe final variant being reengineered. Steric clashes were changed to alanine as a\nproxy for catalytic activity in order to prioritize enzyme binding energy. This work\nwas done prior to further structural studies, where Boltz-2 structural distances and\nreview of literature confirmed the presence of mediating residues such as lysine,\ntyrosine, and glutamate as a divergent catalytic base to histidine in human\nAK1RD1. The mutations are as follows: E144A, W161A, K211A, F248A, F249A,\nT252A",
+      "key": "b024"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        7
+      ],
+      "text": "3.1 Point Mutation Panel",
+      "source": "3.1 Point Mutation Panel",
+      "id": "point-mutations",
+      "level": 3,
+      "key": "b025"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "The first technique draws from our structural studies by introducing point mutations into the active site of BtSULT. The proposed catalytic base of E144 was mutated to aspartate due to its similar yet shorter sidechain, with hopes to relieve a steric clash. Additionally, F147 was mutated to serine as a nonfunctional sidechain, testing if F147 was a selectivity marker for 5β steroids as it was in human carbonic anhydrases (Brynda et al.).",
+      "source": "The first technique draws from our structural studies by introducing point\nmutations into the active site of BtSULT. The proposed catalytic base of E144 was\nmutated to aspartate due to its similar yet shorter sidechain, with hopes to relieve a\nsteric clash. Additionally, F147 was mutated to serine as a nonfunctional sidechain,\ntesting if F147 was a selectivity marker for 5β steroids as it was in human carbonic\nanhydrases (Brynda et al.).",
+      "key": "b026"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "In order to finalize F147’s mutation to serine, a saturation mutagenesis study was conducted, prioritizing transfer distance between the substrate and PAPS and base distance as a proxy for bond formation after mutating F147. The results are displayed in Table 3.",
+      "source": "In order to finalize F147’s mutation to serine, a saturation mutagenesis study was\nconducted, prioritizing transfer distance between the substrate and PAPS and base\ndistance as a proxy for bond formation after mutating F147. The results are\ndisplayed in Table 3.",
+      "key": "b027"
+    },
+    {
+      "type": "table",
+      "id": "table-3",
+      "pages": [
+        8
+      ],
+      "text": "Table 3: Saturation Mutagenesis of F147",
+      "headers": [
+        "Residue at 147",
+        "Transfer distance (Å)",
+        "Base distance (Å)"
+      ],
+      "rows": [
+        [
+          "Ser",
+          "4.26",
+          "2.46"
+        ],
+        [
+          "Ile",
+          "4.70",
+          "2.70"
+        ],
+        [
+          "Thr",
+          "4.95",
+          "2.50"
+        ],
+        [
+          "Ala",
+          "4.70",
+          "3.05"
+        ],
+        [
+          "Phe (WT)",
+          "4.90",
+          "3.20"
+        ],
+        [
+          "Leu",
+          "5.50",
+          "3.40"
+        ],
+        [
+          "Val (literature choice)",
+          "6.20",
+          "2.90"
+        ],
+        [
+          "Gly",
+          "6.40",
+          "3.00"
+        ]
+      ],
+      "key": "b028"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        8
+      ],
+      "text": "Serine prioritized the lowest transfer distance and had the smallest base distance, suggesting the formation of an h-bond, now acting as a stabilizing residue to position the substrate more tightly into the catalytic pocket (Fig. 4).",
+      "source": "Serine prioritized the lowest transfer distance and had the smallest base distance,\nsuggesting the formation of an h-bond, now acting as a stabilizing residue to\nposition the substrate more tightly into the catalytic pocket (Fig. 4).",
+      "key": "b029"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        8
+      ],
+      "text": "The first round of point mutations specifically searched for a switch between DHEA, the native substrate, and LCA selectivity in WT and mutated BtSULT. Such was done by mutating, in addition to mutations E144D and F147S, two PAPS motif residues R236 and T252 into R236K and T252S, probing the PAPS side geometry with a shorter reach and introducing a charge conserving residue, respectfully. His215 from then on was disproved as a catalytic base and mutations F147S seemed to decrease specificity for DHEA when the WT catalytic base was above the measured 2.91 Å OH distance in PDB 3F3Y.",
+      "source": "The first round of point mutations specifically searched for a switch between\nDHEA, the native substrate, and LCA selectivity in WT and mutated BtSULT.\nSuch was done by mutating, in addition to mutations E144D and F147S, two PAPS\nmotif residues R236 and T252 into R236K and T252S, probing the PAPS side\ngeometry with a shorter reach and introducing a charge conserving residue,\nrespectfully. His215 from then on was disproved as a catalytic base and mutations\nF147S seemed to decrease specificity for DHEA when the WT catalytic base was\nabove the measured 2.91 Å OH distance in PDB 3F3Y .",
+      "key": "b030"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        9
+      ],
+      "text": "Figure 4. Round 1 point mutation distance to substrate hydroxyl",
+      "source": "Figure 4. Round 1 point mutation distance to substrate hydroxyl",
+      "id": "figure-4",
+      "src": "assets/model/Fig4.png",
+      "width": 2048,
+      "height": 1168,
+      "key": "b031"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        9
+      ],
+      "text": "The testing strategy was strengthened, introducing new sets of mutations in Boltz-2 poses only against complexes of LCA and PAPS, considering OH distance, sulfuryl transfer, and Y158 mediation of sulfuryl transfer. Additional candidates mutated E144 to histidine, utilizing SULT2A1’s catalytic histidine as a replacement to the proposed E144 catalytic base. T13’s earlier steric clash was relieved in further testing. These variants are shown in Table 4 and in Figure 4.",
+      "source": "The testing strategy was strengthened, introducing new sets of mutations in Boltz-2\nposes only against complexes of LCA and PAPS, considering OH distance, sulfuryl\ntransfer, and Y158 mediation of sulfuryl transfer. Additional candidates mutated\nE144 to histidine, utilizing SULT2A1’s catalytic histidine as a replacement to the\nproposed E144 catalytic base. T13’s earlier steric clash was relieved in further\ntesting. These variants are shown in Table 4 and in Figure 4.",
+      "key": "b032"
+    },
+    {
+      "type": "table",
+      "id": "table-4",
+      "pages": [
+        9
+      ],
+      "text": "Table 4: Point Mutation Panel",
+      "headers": [
+        "Variant",
+        "Mutations",
+        "Base → LCA 3-OH (Å)",
+        "LCA 3-OH → PAPS S (Å)",
+        "Y158-OH → LCA (Å)",
+        "ipTM"
+      ],
+      "rows": [
+        [
+          "6-Ala",
+          "6x Ala pocket scan",
+          "4.1",
+          "3.4",
+          "4.2",
+          "0.53"
+        ],
+        [
+          "F1",
+          "E144H",
+          "3.5",
+          "4.4",
+          "7.0",
+          "0.55"
+        ],
+        [
+          "F2",
+          "E144D",
+          "2.6",
+          "3.9",
+          "4.2",
+          "0.52"
+        ],
+        [
+          "F3",
+          "F147A + E144H",
+          "3.7",
+          "7.9",
+          "3.9",
+          "0.48"
+        ],
+        [
+          "F4",
+          "F147A + E144D + T13S",
+          "2.0",
+          "4.9",
+          "3.8",
+          "0.50"
+        ]
+      ],
+      "key": "b033"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        10
+      ],
+      "text": "Figure 5. Boltz-2 substrate selectivity measurements",
+      "source": "Figure 5. Boltz-2 substrate selectivity measurements",
+      "id": "figure-5",
+      "src": "assets/model/Fig5.png",
+      "width": 2048,
+      "height": 1621,
+      "key": "b034"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        10
+      ],
+      "text": "Fig. 5 confirms that F147S is a selectivity switch from DHEA to LCA for BtSULT in the 3/3 Boltz-2 ensemble testing, placing LCA within catalytic distance from 0/3 to 3/3 across each Boltz-2 ensemble.",
+      "source": "Fig. 5 confirms that F147S is a selectivity switch from DHEA to LCA for BtSULT\nin the 3/3 Boltz-2 ensemble testing, placing LCA within catalytic distance from 0/3\nto 3/3 across each Boltz-2 ensemble.",
+      "key": "b035"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        11
+      ],
+      "text": "3.2 Catalytic Loop Redesign + Grafting",
+      "source": "3.2 Catalytic Loop Redesign + Grafting",
+      "id": "loop-grafting",
+      "level": 3,
+      "key": "b036"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        11
+      ],
+      "text": "Figure 6. BtSULT Vs. SULT2A1 Catalytic Loop Analogies A: BtSULT + LCA + PAPS with specific insertion in red. B: Closeup of A. C: Donor chain on SULT2A1(blue) (Tibbs et al. 2015).",
+      "source": "Figure 6. BtSULT Vs. SULT2A1 Catalytic Loop Analogies A: BtSULT + LCA + PAPS with specific\ninsertion in red. B: Closeup of A. C: Donor chain on SULT2A1(blue) (Tibbs et al. 2015).",
+      "id": "figure-6",
+      "src": "assets/model/Fig6.png",
+      "width": 2048,
+      "height": 853,
+      "key": "b037"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "Round one of mutagenesis screening considered conserving catalytic geometry of BtSULT. However, round two considered redesigning the catalytic loop through a series of grafting experiments, utilizing a donor chain from SULT2A1, namely loop 3 (Fig. 6).",
+      "source": "Round one of mutagenesis screening considered conserving catalytic geometry of\nBtSULT. However, round two considered redesigning the catalytic loop through a\nseries of grafting experiments, utilizing a donor chain from SULT2A1, namely\nloop 3 (Fig. 6).",
+      "key": "b038"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        11
+      ],
+      "text": "Figure 7. Graft design methodology, V0-V10. Top: SULT2A1 loop three divided into its three functional segments. Bottom: BtSULT regions as graft sites",
+      "source": "Figure 7. Graft design methodology, V0-V10. Top: SULT2A1 loop three divided into its three functional\nsegments. Bottom: BtSULT regions as graft sites",
+      "id": "figure-7",
+      "src": "assets/model/Fig7.png",
+      "width": 2048,
+      "height": 1063,
+      "key": "b039"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        12
+      ],
+      "text": "SULT2A1 loop 3 was split into its three functional segments for candidate design: its substrate binding region, the loop’s hinge region, and the PAPS binding motif. These three segments were interchanged across 10 variants along two segments of BtSULT plus additional flanking residues. Residues 153-190 hosted a BtSULT specific insertion, revealed by the initial ClustalOmega alignment and its proximity to the proposed E144 catalytic region. The substrate-binding region of SULT2A1 was grafted to this region. The C-terminus of BtSULT, aligning with SULT2A1’s catalytic loop, hosted either a grafted substrate-binding motif, a PAPS-binding motif, or both (Fig. 7).",
+      "source": "SULT2A1 loop 3 was split into its three functional segments for candidate design:\nits substrate binding region, the loop’s hinge region, and the PAPS binding motif.\nThese three segments were interchanged across 10 variants along two segments of\nBtSULT plus additional flanking residues. Residues 153-190 hosted a BtSULT\nspecific insertion, revealed by the initial ClustalOmega alignment and its proximity\nto the proposed E144 catalytic region. The substrate-binding region of SULT2A1\nwas grafted to this region. The C-terminus of BtSULT, aligning with SULT2A1’s\ncatalytic loop, hosted either a grafted substrate-binding motif, a PAPS-binding\nmotif, or both (Fig. 7).",
+      "key": "b040"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        12
+      ],
+      "text": "Additionally, a 3X alanine background was added to each variant, following clash analysis of the 6X alanine background from Round 0 and Round 1. Glu144 and Lys211 had been assigned as key pocket residues and were therefore not mutated. Similarly, Trp161 was left unchanged due to its location in the 153-190 BtSULT insertion. This controlled our analysis of variants with grafts in the 153-190 region instead of adding a confounding variable (Fig. 8).",
+      "source": "Additionally, a 3X alanine background was added to each variant, following clash\nanalysis of the 6X alanine background from Round 0 and Round 1. Glu144 and\nLys211 had been assigned as key pocket residues and were therefore not mutated.\nSimilarly, Trp161 was left unchanged due to its location in the 153-190 BtSULT\ninsertion. This controlled our analysis of variants with grafts in the 153-190 region\ninstead of adding a confounding variable (Fig. 8).",
+      "key": "b041"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        13
+      ],
+      "text": "Figure 8. 3X Alanine Selection",
+      "source": "Figure 8. 3X Alanine Selection",
+      "id": "figure-8",
+      "src": "assets/model/Fig8.png",
+      "width": 2048,
+      "height": 1488,
+      "key": "b042"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        13
+      ],
+      "text": "The variants are summarized and analyzed in Table 5.",
+      "source": "The variants are summarized and analyzed in Table 5.",
+      "key": "b043"
+    },
+    {
+      "type": "table",
+      "id": "table-5",
+      "pages": [
+        13,
+        14,
+        15
+      ],
+      "text": "Table 5: Loop Graft Summary",
+      "headers": [
+        "Variant",
+        "Design",
+        "Hypothesis",
+        "Catbase (Å)",
+        "Transfer (Å)",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "V0",
+          "No graft (E144D + 3×Ala background)",
+          "Baseline control",
+          "3.70",
+          "3.81",
+          "–"
+        ],
+        [
+          "V1",
+          "Substrate-half + hinge → 338/339",
+          "The substrate-contacting piece is enough",
+          "4.25",
+          "3.66",
+          "Junction accepts inserts"
+        ],
+        [
+          "V2",
+          "Substrate-half only → 338/339",
+          "Is the hinge needed?",
+          "2.92",
+          "4.19",
+          "Hinge assists but isn't significant"
+        ],
+        [
+          "V3",
+          "+ Met N-flank",
+          "A flanking residue eases the junction scar",
+          "3.92",
+          "3.54",
+          "Best junction insert"
+        ],
+        [
+          "V4",
+          "Full Loop 3 (49 aa) replaces 330–357",
+          "Utilize the whole lid",
+          "3.32",
+          "3.83",
+          "Full loop works at the C-terminal site"
+        ],
+        [
+          "V5",
+          "Substrate-half + hinge replaces 153–190",
+          "Place the lid in the insertion region",
+          "9.78",
+          "11.61",
+          "FAIL"
+        ],
+        [
+          "V6",
+          "Substrate-half only replaces 153–190",
+          "Same site, shorter lid length",
+          "2.71",
+          "3.67",
+          "Lid-length may be the issue, learned from V5"
+        ],
+        [
+          "V7",
+          "Lid at 153–190 + substrate-half at 338",
+          "Utilize both sites",
+          "9.22",
+          "11.53",
+          "FAIL"
+        ],
+        [
+          "V8",
+          "Delete 153–190 + substrate-half+hinge at 338",
+          "Increase SULT2A1 homology, insert SULT2A1 components",
+          "2.21",
+          "4.08",
+          "Structure is deletion tolerant"
+        ],
+        [
+          "V9",
+          "+ Ser-Met N-flank",
+          "Is more flanking better?",
+          "3.48",
+          "4.44",
+          "More is not better"
+        ],
+        [
+          "V10",
+          "+ Arg C-flank",
+          "Opposite flank",
+          "4.01",
+          "4.05",
+          "Junction tolerates either side"
+        ],
+        [
+          "graft_Asp144",
+          "V5 without alanines. Base is replaced with Asp144",
+          "Re-test the lid without alanine background",
+          "2.46",
+          "4.54",
+          "Alanine background failed V5."
+        ],
+        [
+          "graft_Glu144",
+          "V4 without alanine background. Same catalytic base",
+          "Re-test the lid without alanine background.",
+          "2.87",
+          "5.74",
+          "The original catbase doesn’t allow transfer in graft. Is grafting still viable?"
+        ]
+      ],
+      "key": "b044"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        15
+      ],
+      "text": "Figure 9. Full Graft Screen Summary",
+      "source": "Figure 9. Full Graft Screen Summary",
+      "id": "figure-9",
+      "src": "assets/model/Fig9.png",
+      "width": 2048,
+      "height": 1026,
+      "key": "b045"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        15
+      ],
+      "text": "With exception of V5 and V7, which were retried without the 3X-Ala background, all variants maintained transfer distance to PAPS sulfur. Standout variants included V2, V6, V8, and graft_Asp144. However, considering the diversity of the employed grafting techniques and a lack of variability between variants may render the grafting method ineffective at producing unique results (Fig. 9).",
+      "source": "With exception of V5 and V7, which were retried without the 3X-Ala background,\nall variants maintained transfer distance to PAPS sulfur. Standout variants included\nV2, V6, V8, and graft\n_\nAsp144. However, considering the diversity of the\nemployed grafting techniques and a lack of variability between variants may render\nthe grafting method ineffective at producing unique results (Fig. 9).",
+      "key": "b046"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        15
+      ],
+      "text": "3.3 ProteinMPNN Redesign + Chimeras",
+      "source": "3.3 ProteinMPNN Redesign + Chimeras",
+      "id": "proteinmpnn",
+      "level": 3,
+      "key": "b047"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        15,
+        16
+      ],
+      "text": "Round 3 of mutagenesis introduced the use of ProteinMPNN as a bulk method of introducing mutations intended to improve the viability of the enzyme in-vitro and catalytic activity with LCA. 10 trials were run, applying 20-27 mutations based on their ProteinMPNN score. Table 6 summarizes the ProteinMPNN runs with added baselines from Rounds 1 and 2 for reference.",
+      "source": "Round 3 of mutagenesis introduced the use of ProteinMPNN as a bulk method of\nintroducing mutations intended to improve the viability of the enzyme in-vitro and\ncatalytic activity with LCA. 10 trials were run, applying 20-27 mutations based on\ntheir ProteinMPNN score. Table 6 summarizes the ProteinMPNN runs with added\nbaselines from Rounds 1 and 2 for reference.",
+      "key": "b048"
+    },
+    {
+      "type": "table",
+      "id": "table-6",
+      "pages": [
+        16,
+        17
+      ],
+      "text": "Table 6: ProteinMPNN Summary Table",
+      "headers": [
+        "Design",
+        "Background",
+        "Mutations",
+        "Base → LCA (Å)",
+        "LCA → PAPS (Å)",
+        "ipTM",
+        "P/F"
+      ],
+      "rows": [
+        [
+          "F2_E144D baseline",
+          "—",
+          "1",
+          "2.61",
+          "3.91",
+          "0.962",
+          "Reference"
+        ],
+        [
+          "graft_Asp144",
+          "F2_E144D",
+          "lid graft + E144D",
+          "2.65",
+          "5.14",
+          "0.961",
+          "Reference"
+        ],
+        [
+          "graft_Glu144",
+          "WT",
+          "lid graft",
+          "2.83",
+          "5.61",
+          "0.960",
+          "Reference"
+        ],
+        [
+          "MPNN_F2_2",
+          "F2_E144D",
+          "26",
+          "2.04",
+          "5.85",
+          "0.944",
+          "Pass?"
+        ],
+        [
+          "MPNN_F2_4",
+          "F2_E144D",
+          "26",
+          "5.82",
+          "11.96",
+          "0.926",
+          "Fail"
+        ],
+        [
+          "MPNN_F2_1",
+          "F2_E144D",
+          "27",
+          "12.59",
+          "14.16",
+          "0.937",
+          "Fail (substrate detached)"
+        ],
+        [
+          "MPNN_F2_7",
+          "F2_E144D",
+          "25",
+          "12.09",
+          "18.24",
+          "0.911",
+          "Fail"
+        ],
+        [
+          "MPNN_F2_8",
+          "F2_E144D",
+          "27",
+          "12.34",
+          "16.78",
+          "0.908",
+          "Fail"
+        ],
+        [
+          "MPNN_F2_3",
+          "F2_E144D",
+          "26",
+          "13.82",
+          "17.07",
+          "0.931",
+          "Fail"
+        ],
+        [
+          "MPNN_F2_6",
+          "F2_E144D",
+          "25",
+          "14.03",
+          "18.37",
+          "0.920",
+          "Fail"
+        ],
+        [
+          "MPNN_WT_3",
+          "WT",
+          "22",
+          "13.20",
+          "17.13",
+          "0.947",
+          "Fail"
+        ],
+        [
+          "MPNN_WT_2",
+          "WT",
+          "23",
+          "13.87",
+          "18.00",
+          "0.959",
+          "Fail"
+        ],
+        [
+          "MPNN_WT_4",
+          "WT",
+          "21",
+          "14.23",
+          "17.48",
+          "0.955",
+          "Fail"
+        ],
+        [
+          "MPNN_WT_1",
+          "WT",
+          "21",
+          "15.37",
+          "19.39",
+          "0.952",
+          "Fail"
+        ]
+      ],
+      "key": "b049"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        17
+      ],
+      "text": "Only MPNN_F2_2 showed an initial pass for catalytic geometry. However, a Boltz-2 ensemble was run to confirm its viability as a candidate (Table 7).",
+      "source": "Only MPNN\nF2\n_\n_\n2 showed an initial pass for catalytic geometry. However, a\nBoltz-2 ensemble was run to confirm its viability as a candidate (Table 7).",
+      "key": "b050"
+    },
+    {
+      "type": "table",
+      "id": "table-7",
+      "pages": [
+        17
+      ],
+      "text": "Table 7: 3-seed Boltz-2 Run of MPNN_F2_2",
+      "headers": [
+        "Seed",
+        "Base → LCA (Å)",
+        "LCA → PAPS (Å)"
+      ],
+      "rows": [
+        [
+          "1",
+          "2.04",
+          "5.85"
+        ],
+        [
+          "2",
+          "11.74",
+          "13.78"
+        ],
+        [
+          "3",
+          "13.26",
+          "16.65"
+        ]
+      ],
+      "key": "b051"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        17
+      ],
+      "text": "Only 1 of the three seeds displayed catalytic geometry. Therefore, the ProteinMPNN design method can be ruled out as viable.",
+      "source": "Only 1 of the three seeds displayed catalytic geometry. Therefore, the\nProteinMPNN design method can be ruled out as viable.",
+      "key": "b052"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        17
+      ],
+      "text": "An alternate path of AI-guided design was utilized through generation of a chimera between BtSULT and SULT2A1 using RFdiffusion. 50 backbones were generated from 0-49. In order to sample diversity of the backbone design, 0, 25, and 49 (Table 8).",
+      "source": "An alternate path of AI-guided design was utilized through generation of a chimera\nbetween BtSULT and SULT2A1 using RFdiffusion. 50 backbones were generated\nfrom 0-49. In order to sample diversity of the backbone design, 0, 25, and 49\n(Table 8).",
+      "key": "b053"
+    },
+    {
+      "type": "table",
+      "id": "table-8",
+      "pages": [
+        17
+      ],
+      "text": "Table 8: Chimera Summary Table",
+      "headers": [
+        "Construct",
+        "Base → LCA (Å)",
+        "LCA → PAPS (Å)"
+      ],
+      "rows": [
+        [
+          "chimera_25 (best chimera)",
+          "3.4",
+          "9.33"
+        ],
+        [
+          "chimera_0",
+          "13.7",
+          "17.35"
+        ],
+        [
+          "chimera_49",
+          "15.9",
+          "18.38"
+        ]
+      ],
+      "key": "b054"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        18
+      ],
+      "text": "Review of the generated chimeras clearly indicates that chimera generation is not a competitive method for mutagenesis. Although OpenMM MD was considered, a conversation with a mentor pushed us to conclude our enzyme engineering process in order to ship out a wet-lab deliverable.",
+      "source": "Review of the generated chimeras clearly indicates that chimera generation is not a\ncompetitive method for mutagenesis. Although OpenMM MD was considered, a\nconversation with a mentor pushed us to conclude our enzyme engineering process\nin order to ship out a wet-lab deliverable.",
+      "key": "b055"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        18
+      ],
+      "text": "4. Summary and Wet-Lab Candidates",
+      "source": "4. Summary and Wet-Lab Candidates",
+      "id": "wet-lab-candidates",
+      "level": 2,
+      "key": "b056"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        18
+      ],
+      "text": "Figure 10. Best Candidates Full Substrate Ensemble",
+      "source": "Figure 10. Best Candidates Full Substrate Ensemble",
+      "id": "figure-10",
+      "src": "assets/model/Fig10.png",
+      "width": 2048,
+      "height": 1427,
+      "key": "b057"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        18
+      ],
+      "text": "The best candidates were elected from each round: F147S, F147S_E144D, and both V5 graft redesigns from Round 2. Structures were run in a 3-seed Boltz-2 ensemble against DHEA, the native WT substrate, LCA, DCA, and isoLCA (Yao et al. 2022).",
+      "source": "The best candidates were elected from each round: F147S, F147S\nE144D, and\n_\nboth V5 graft redesigns from Round 2. Structures were run in a 3-seed Boltz-2\nensemble against DHEA, the native WT substrate, LCA, DCA, and isoLCA (Yao\net al. 2022).",
+      "key": "b058"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        18,
+        19
+      ],
+      "text": "Although graft_Asp144 demonstrated the highest specificity for LCA in terms of maintaining catalytic distances for sulfuryl transfer, the substitution of the proposed catalytic base, Glu144, deemed this technique too experimental for a limited wet lab pipeline. Furthermore, F147S demonstrated the strongest specificity towards LCA. Although above the threshold for DCA catalysis, the F147S variant preserves Glu144. In addition to F147S, F147S_E144D was also chosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an alternative catalytic base (Fig. 10).",
+      "source": "Although graft\n_\nAsp144 demonstrated the highest specificity for LCA in terms of\nmaintaining catalytic distances for sulfuryl transfer, the substitution of the\nproposed catalytic base, Glu144, deemed this technique too experimental for a\nlimited wet lab pipeline. Furthermore, F147S demonstrated the strongest\nspecificity towards LCA. Although above the threshold for DCA catalysis, the\nF147S variant preserves Glu144. In addition to F147S, F147S\nE144D was also\n_\nchosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an\nalternative catalytic base (Fig. 10).",
+      "key": "b059"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        19
+      ],
+      "text": "References:",
+      "source": "References:",
+      "id": "sources",
+      "level": 2,
+      "key": "b060"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        19
+      ],
+      "text": "Scientific references",
+      "source": "Scientific references",
+      "id": "scientific-references",
+      "level": 3,
+      "key": "b061"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the selective sulfonation of steroidal metabolites by human gut bacteria. Nature Microbiology (2022). DOI: 10.1038/s41564-022-01176-y",
+      "source": "1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the\nselective sulfonation of steroidal metabolites by human gut bacteria. Nature\nMicrobiology (2022). DOI: 10.1038/s41564-022-01176-y",
+      "id": "source-1",
+      "key": "b062"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "2. Kakuta Y, Petrotchenko EV, Pedersen LC, Negishi M. The sulfuryl transfer mechanism. Crystal structure of a vanadate complex of estrogen sulfotransferase and mutational analyses. Journal of Biological Chemistry 273: 27325–27330 (1998). DOI: 10.1074/jbc.273.42.27325",
+      "source": "2. Kakuta Y , Petrotchenko EV , Pedersen LC, Negishi M. The sulfuryl transfer\nmechanism. Crystal structure of a vanadate complex of estrogen\nsulfotransferase and mutational analyses. Journal of Biological Chemistry\n273: 27325–27330 (1998). DOI: 10.1074/jbc.273.42.27325",
+      "id": "source-2",
+      "key": "b063"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L. Guidry, Charles N. Falany. Structural plasticity in the human cytosolic sulfotransferase dimer and its role in substrate selectivity and catalysis. Drug Metabolism and Pharmacokinetics (2015). DOI: 10.1016/j.dmpk.2014.10.004",
+      "source": "3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L.\nGuidry, Charles N. Falany. Structural plasticity in the human cytosolic\nsulfotransferase dimer and its role in substrate selectivity and catalysis. Drug\nMetabolism and Pharmacokinetics (2015). DOI:\n10.1016/j.dmpk.2014.10.004",
+      "id": "source-3",
+      "key": "b064"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "4. In addition to F147S, F147S_E144D was also chosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an alternative catalytic base (Fig. 10). References: Scientific references 1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the selective sulfonation of steroidal metabolites by human gut bacteria. Nature Microbiology (2022). DOI: 10.1038/s41564-022-01176-y 2. Kakuta Y, Petrotchenko EV, Pedersen LC, Negishi M. The sulfuryl transfer mechanism. Crystal structure of a vanadate complex of estrogen sulfotransferase and mutational analyses. Journal of Biological Chemistry 273: 27325–27330 (1998). DOI: 10.1074/jbc.273.42.27325 3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L. Guidry, Charles N. Falany. Structural plasticity in the human cytosolic sulfotransferase dimer and its role in substrate selectivity and catalysis. Drug Metabolism and Pharmacokinetics (2015). DOI: 10.1016/j.dmpk.2014.10.004 4. Chen M, Drury JE, Christianson DW, Penning TM. Conversion of human steroid 5β-reductase (AKR1D1) into 3β-hydroxysteroid dehydrogenase by single point mutation E120H. Journal of Biological Chemistry (2012). DOI: 10.1074/jbc.m111.338780",
+      "source": "4. In addition to F147S, F147S\nE144D was also\n_\nchosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an\nalternative catalytic base (Fig. 10).\nReferences:\nScientific references\n1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the\nselective sulfonation of steroidal metabolites by human gut bacteria. Nature\nMicrobiology (2022). DOI: 10.1038/s41564-022-01176-y\n2. Kakuta Y , Petrotchenko EV , Pedersen LC, Negishi M. The sulfuryl transfer\nmechanism. Crystal structure of a vanadate complex of estrogen\nsulfotransferase and mutational analyses. Journal of Biological Chemistry\n273: 27325–27330 (1998). DOI: 10.1074/jbc.273.42.27325\n3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L.\nGuidry, Charles N. Falany. Structural plasticity in the human cytosolic\nsulfotransferase dimer and its role in substrate selectivity and catalysis. Drug\nMetabolism and Pharmacokinetics (2015). DOI:\n10.1016/j.dmpk.2014.10.004\n4. Chen M, Drury JE, Christianson DW, Penning TM. Conversion of human\nsteroid 5β-reductase (AKR1D1) into 3β-hydroxysteroid dehydrogenase by\nsingle point mutation E120H. Journal of Biological Chemistry (2012). DOI:\n10.1074/jbc.m111.338780",
+      "id": "source-4",
+      "key": "b065"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "5. Di Costanzo L, Drury JE, Penning TM, Christianson DW. Crystal structure of human liver Δ4-3-ketosteroid 5β-reductase (AKR1D1) and implications for substrate binding and catalysis. Journal of Biological Chemistry (2008). DOI: 10.1074/jbc.m801778200",
+      "source": "5. Di Costanzo L, Drury JE, Penning TM, Christianson DW. Crystal structure\nof human liver Δ4-3-ketosteroid 5β-reductase (AKR1D1) and implications\nfor substrate binding and catalysis. Journal of Biological Chemistry (2008).\nDOI: 10.1074/jbc.m801778200",
+      "id": "source-5",
+      "key": "b066"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "6. Brynda J, Kiss A, Pospíšilová K, et al. Steroidal A/B-ring fusion as a strategy for isoform-selective inhibition of human carbonic anhydrases. RSC Advances 16: 9743–9755 (2026). DOI: 10.1039/d5ra06507k",
+      "source": "6. Brynda J, Kiss A, Pospíšilová K, et al. Steroidal A/B-ring fusion as a\nstrategy for isoform-selective inhibition of human carbonic anhydrases. RSC\nAdvances 16: 9743–9755 (2026). DOI: 10.1039/d5ra06507k",
+      "id": "source-6",
+      "key": "b067"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        19
+      ],
+      "text": "7. PDB 1J99 — human SULT2A1 in complex with DHEA. https://www.rcsb.org/structure/1J99",
+      "source": "7. PDB 1J99 — human SULT2A1 in complex with DHEA.\nhttps://www.rcsb.org/structure/1J99",
+      "id": "source-7",
+      "key": "b068"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "8. PDB 3F3Y — human SULT2A1 in complex with PAP and lithocholic acid. https://www.rcsb.org/structure/3F3Y",
+      "source": "8. PDB 3F3Y — human SULT2A1 in complex with PAP and lithocholic acid.\nhttps://www.rcsb.org/structure/3F3Y",
+      "id": "source-8",
+      "key": "b069"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "9. UniProt Q06520 — human SULT2A1. https://www.uniprot.org/uniprotkb/Q06520",
+      "source": "9. UniProt Q06520 — human SULT2A1.\nhttps://www.uniprot.org/uniprotkb/Q06520",
+      "id": "source-9",
+      "key": "b070"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "10. UniProt Q8AAP8 — Bacteroides thetaiotaomicron BT0416 sulfotransferase (BtSULT). https://www.uniprot.org/uniprotkb/Q8AAP8",
+      "source": "10. UniProt Q8AAP8 — Bacteroides thetaiotaomicron BT0416 sulfotransferase\n(BtSULT). https://www.uniprot.org/uniprotkb/Q8AAP8",
+      "id": "source-10",
+      "key": "b071"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        20
+      ],
+      "text": "AI models",
+      "source": "AI models",
+      "id": "ai-models",
+      "level": 3,
+      "key": "b072"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "11. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction. bioRxiv (2025). DOI: 10.1101/2025.06.14.659707",
+      "source": "11. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and\nEfficient Binding Affinity Prediction. bioRxiv (2025). DOI:\n10.1101/2025.06.14.659707",
+      "id": "source-11",
+      "key": "b073"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "12. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure prediction with AlphaFold. Nature 596: 583–589 (2021). DOI: 10.1038/s41586-021-03819-2",
+      "source": "12. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure\nprediction with AlphaFold. Nature 596: 583–589 (2021). DOI:\n10.1038/s41586-021-03819-2",
+      "id": "source-12",
+      "key": "b074"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "13. Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning-based protein sequence design using ProteinMPNN. Science 378: 49–56 (2022). DOI: 10.1126/science.add2187",
+      "source": "13. Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning-based\nprotein sequence design using ProteinMPNN. Science 378: 49–56 (2022).\nDOI: 10.1126/science.add2187",
+      "id": "source-13",
+      "key": "b075"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "14. Watson JL, Juergens D, Bennett NR, et al. De novo design of protein structure and function with RFdiffusion. Nature 620: 1089–1100 (2023). DOI: 10.1038/s41586-023-06415-8",
+      "source": "14. Watson JL, Juergens D, Bennett NR, et al. De novo design of protein\nstructure and function with RFdiffusion. Nature 620: 1089–1100 (2023).\nDOI: 10.1038/s41586-023-06415-8",
+      "id": "source-14",
+      "key": "b076"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        20
+      ],
+      "text": "Analysis tools",
+      "source": "Analysis tools",
+      "id": "analysis-tools",
+      "level": 3,
+      "key": "b077"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "15. van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein structure search with Foldseek. Nature Biotechnology (2023). DOI: 10.1038/s41587-023-01773-0",
+      "source": "15. van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein\nstructure search with Foldseek. Nature Biotechnology (2023). DOI:\n10.1038/s41587-023-01773-0",
+      "id": "source-15",
+      "key": "b078"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "16. Sievers F, Wilm A, Dineen D, et al. Fast, scalable generation of high-quality protein multiple sequence alignments using Clustal Omega. Molecular Systems Biology 7: 539 (2011). DOI: 10.1038/msb.2011.75",
+      "source": "16. Sievers F, Wilm A, Dineen D, et al. Fast, scalable generation of high-quality\nprotein multiple sequence alignments using Clustal Omega. Molecular\nSystems Biology 7: 539 (2011). DOI: 10.1038/msb.2011.75",
+      "id": "source-16",
+      "key": "b079"
+    },
+    {
+      "type": "reference",
+      "pages": [
+        20
+      ],
+      "text": "17. Davis IW, Leaver-Fay A, Chen VB, et al. MolProbity: all-atom contacts and structure validation for proteins and nucleic acids. Nucleic Acids Research 35: W375–W383 (2007). DOI: 10.1093/nar/gkm216",
+      "source": "17. Davis IW, Leaver-Fay A, Chen VB, et al. MolProbity: all-atom contacts and\nstructure validation for proteins and nucleic acids. Nucleic Acids Research\n35: W375–W383 (2007). DOI: 10.1093/nar/gkm216",
+      "id": "source-17",
+      "key": "b080"
+    }
+  ],
+  "notes": [
+    "Four missing page-1 glyphs restored to β with explicit user approval.",
+    "Line wraps and extraction artifacts (split underscores and spacing before punctuation) repaired against PDF rendering.",
+    "Table cells transcribed from the PDF, with continuation rows joined and repeated column headings omitted.",
+    "All wording and source inconsistencies retained, including the editorial parenthetical in section 3."
+  ]
+}

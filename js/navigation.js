@@ -1,10 +1,11 @@
 /* Shared navigation for the SulFlux homepage and research pages. */
 (function (root) {
   "use strict";
+  const assetUrl = path => root.IGEM_ASSET_URL ? root.IGEM_ASSET_URL(path) : path;
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[char]);
-  const badge = (name, size) => `<img class="renata-nav-icon" src="assets/nav-icons/${escape(name)}.png" width="${size}" height="${size}" alt="" decoding="async" />`;
+  const badge = (name, size) => `<img class="renata-nav-icon" src="${assetUrl(`assets/nav-icons/${escape(name)}.png`)}" width="${size}" height="${size}" alt="" decoding="async" />`;
 
   function render(items, { pageKey = "home", group = "home" } = {}) {
     return `<button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu"><span class="renata-nav-bars" aria-hidden="true"></span></button>
@@ -25,7 +26,7 @@
             <div class="renata-nav-pages">
               <ul>${item.children.map(child => {
                 const current = child.key === pageKey;
-                const inSection = !current && (pageKey.startsWith(`${child.key}-`) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
+                const inSection = !current && ((pageKey.startsWith(`${child.key}-`) && !item.children.some(peer => peer.key === pageKey)) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
                 return `<li><a class="renata-nav-card${inSection ? " is-section" : ""}" href="${escape(child.href)}"${current ? ' aria-current="page"' : ""}>
                   ${badge(child.icon, 48)}
                   <span class="renata-nav-copy"><strong>${escape(child.label)}</strong><small>${escape(child.description)}</small></span>

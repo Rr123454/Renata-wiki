@@ -1,0 +1,24 @@
+{
+  "year": 2026,
+  "teamSlug": "",
+  "teamId": "",
+  "attributionsUrl": "",
+  "attributionsEmbedUrl": "",
+  "repository": "",
+  "routes": {
+    "description": "project-description.html",
+    "engineering": "project-description.html",
+    "model": "model.html",
+    "human-practices": "human-practices.html",
+    "education": "education.html"
+  },
+  "review": {
+    "dashboardRequirementsChecked": false,
+    "scienceAndCitationsVerified": false,
+    "contributionComplete": false,
+    "attributionsFormComplete": false,
+    "assetCreditsAndPermissionsComplete": false,
+    "aiDisclosureComplete": false,
+    "selectedAwardPagesComplete": false
+  }
+}

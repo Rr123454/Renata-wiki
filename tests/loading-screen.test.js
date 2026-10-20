@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const source = fs.readFileSync(path.join(__dirname, "../js/loading-screen.js"), "utf8");
-const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "wet-lab-notebook.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
+const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
 
 function fixture({ reduced = false, marked = ["bottle.png rocket.png"], fallback = [] } = {}) {
   let now = 0, count = 0;

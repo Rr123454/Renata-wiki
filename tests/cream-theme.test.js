@@ -8,7 +8,7 @@ const root = path.join(__dirname, "..");
 const css = fs.readFileSync(path.join(root, "css/cosmic-theme.css"), "utf8");
 const marker = "/* Reading pages share the bottle's warm cream";
 const innerTheme = css.slice(css.indexOf(marker));
-const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "wet-lab-notebook.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
+const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
 
 test("the reading palette uses the requested color values", () => {
   for (const [name, value] of Object.entries({
@@ -51,10 +51,11 @@ test("entry points retain the base theme and load their final page theme last", 
     const last = ({
       "index.html": "css/mission-home.css",
       "team.html": "css/team-space.css",
-      "project-description.html": "css/project-research.css",
-      "wet-lab.html": "css/lab-work.css",
+      "project-description.html": "css/project-outline.css",
+      "wet-lab.html": "css/project-outline.css",
       "wet-lab-notebook.html": "css/lab-work.css",
-      "model.html": "css/lab-work.css"
+      "model.html": "css/project-outline.css",
+      "human-practices.html": "css/project-outline.css"
     })[file] || "css/orbit-pages.css";
     assert.equal(sheets.at(-1), last, file);
   }
@@ -105,7 +106,7 @@ test("every footer surface shares the reference dark blue on Home and reading pa
 
 test("all content pages mount the shared sponsor, links, and copyright footer", () => {
   const files = fs.readdirSync(root).filter(file => file.endsWith(".html") && !redirects.includes(file));
-  assert.equal(files.length, 21);
+  assert.equal(files.length, 22);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     assert.equal((html.match(/id="siteFooter"/g) || []).length, 1, file);
@@ -115,5 +116,7 @@ test("all content pages mount the shared sponsor, links, and copyright footer", 
   const renderer = fs.readFileSync(path.join(root, "js/site.js"), "utf8");
   assert.match(renderer, /renderFooter\(\);/);
   for (const marker of ['id="sponsors-partners"', 'id="important-links"', 'class="container footer-inner"']) assert.ok(renderer.includes(marker), marker);
-  assert.match(renderer, /© 2026 iGEM Renata\. All rights reserved\./);
+  assert.match(renderer, /© 2026 iGEM Renata\./);
+  assert.match(renderer, /creativecommons\.org\/licenses\/by\/4\.0/);
+  assert.doesNotMatch(renderer, /All rights reserved/);
 });

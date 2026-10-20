@@ -1,0 +1,5596 @@
+[
+  {
+    "lines" : [
+      {
+        "h" : 33.222656099999995,
+        "text" : "Model",
+        "w" : 78.325195500000007,
+        "x" : 72,
+        "y" : 685.50292994999995
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Modeling is an important aspect of synthetic biology, where scientists and",
+        "w" : 414.50144669999997,
+        "x" : 72,
+        "y" : 613.97900387815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "researchers test and engineer the viable aspect of their final product prior to",
+        "w" : 422.70050369999996,
+        "x" : 72,
+        "y" : 595.46557585315429
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "stepping foot into a laboratory. Our modelling workflow primarily deals with the",
+        "w" : 452.1938322180763,
+        "x" : 72,
+        "y" : 576.95215135315425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "reengineering of the BtSULT enzyme for 5 steroid specificity.",
+        "w" : 357.21824760000004,
+        "x" : 72,
+        "y" : 558.43872385315422
+      },
+      {
+        "h" : 28.792969727421848,
+        "text" : "Enzyme Engineering",
+        "w" : 218.69111662500001,
+        "x" : 72,
+        "y" : 507.61303968869134
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Wild type(WT) BtSULT is a sulfotransferase derived from Bacteroides",
+        "w" : 396.8048713704199,
+        "x" : 72,
+        "y" : 462.51635687815428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "thetaiotamicron that solubilizes steroid molecules such as DHEA. BtSULT was",
+        "w" : 443.2704462954199,
+        "x" : 72,
+        "y" : 444.00292885315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "selected after its biochemical characterization by Yao et. al (2022), demonstrating",
+        "w" : 457.04481749999991,
+        "x" : 72,
+        "y" : 425.48950435315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "sulfotransferase activity on bile acids. However, the substrate selectivity profile of",
+        "w" : 460.25506542349603,
+        "x" : 72,
+        "y" : 406.97607685315427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "BtSULT reveals its inability to accept 5 steroid molecules due to a flat A\/B",
+        "w" : 430.43505782650391,
+        "x" : 72,
+        "y" : 388.46264860315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "fusion ring, such as 5 -LCA. This fact necessitates an engineering process to",
+        "w" : 434.81384369999995,
+        "x" : 72,
+        "y" : 369.94922110315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "redesign the WT BtSULT active site to sulfonate 5 -LCA for PCS treatment",
+        "w" : 431.2177086060841,
+        "x" : 72,
+        "y" : 351.43579360315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "BtSULT was selected as the main engineering scaffold instead of its mammalian",
+        "w" : 450.36292935000006,
+        "x" : 72,
+        "y" : 311.40893687815429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "homolog, SULT2A1, considering BL21 expression bottlenecks. SULT2A1 crystal",
+        "w" : 458.3337066810841,
+        "x" : 72,
+        "y" : 292.8955088531543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "structures were utilized from UniProt as a structural template for active-site",
+        "w" : 422.72739834307617,
+        "x" : 72,
+        "y" : 274.38208435315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "redesign.",
+        "w" : 50.901267825000005,
+        "x" : 72,
+        "y" : 255.86865685315428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The ideal reaction mechanism that indicates a working BtSULT mutant for wet-lab",
+        "w" : 463.81550572500009,
+        "x" : 72,
+        "y" : 218.84179687815427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "validation prioritizes sulfur-group transfer from PAPS to LCA 3-OH for production",
+        "w" : 467.09474272500006,
+        "x" : 72,
+        "y" : 200.32836885315427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "of sulfolithocholic acid, or sulfo-LCA.",
+        "w" : 216.06100762499989,
+        "x" : 72,
+        "y" : 181.81494435315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "According to Kakuta et. al (1998), their study of human estrogen sulfotransferase",
+        "w" : 455.00235204307614,
+        "x" : 72,
+        "y" : 144.78808687815425
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "activity asserts sulfuryl transfer is only possible if the catalytic base contacts the",
+        "w" : 448.40249971807611,
+        "x" : 72,
+        "y" : 126.27465885315426
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "substrate OH at hydrogen bond range, 2.7 to 3.1 Å. This is to be considered in our",
+        "w" : 463.47149667349606,
+        "x" : 72,
+        "y" : 107.76123435315426
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "engineering process.",
+        "w" : 115.007076375,
+        "x" : 72,
+        "y" : 89.247806853154273
+      }
+    ],
+    "page" : 1,
+    "text" : "Model\nModeling is an important aspect of synthetic biology, where scientists and\nresearchers test and engineer the viable aspect of their final product prior to\nstepping foot into a laboratory. Our modelling workflow primarily deals with the\nreengineering of the BtSULT enzyme for 5 steroid specificity.\nEnzyme Engineering\nWild type(WT) BtSULT is a sulfotransferase derived from Bacteroides\nthetaiotamicron that solubilizes steroid molecules such as DHEA. BtSULT was\nselected after its biochemical characterization by Yao et. al (2022), demonstrating\nsulfotransferase activity on bile acids. However, the substrate selectivity profile of\nBtSULT reveals its inability to accept 5 steroid molecules due to a flat A\/B\nfusion ring, such as 5 -LCA. This fact necessitates an engineering process to\nredesign the WT BtSULT active site to sulfonate 5 -LCA for PCS treatment\nBtSULT was selected as the main engineering scaffold instead of its mammalian\nhomolog, SULT2A1, considering BL21 expression bottlenecks. SULT2A1 crystal\nstructures were utilized from UniProt as a structural template for active-site\nredesign.\nThe ideal reaction mechanism that indicates a working BtSULT mutant for wet-lab\nvalidation prioritizes sulfur-group transfer from PAPS to LCA 3-OH for production\nof sulfolithocholic acid, or sulfo-LCA.\nAccording to Kakuta et. al (1998), their study of human estrogen sulfotransferase\nactivity asserts sulfuryl transfer is only possible if the catalytic base contacts the\nsubstrate OH at hydrogen bond range, 2.7 to 3.1 Å. This is to be considered in our\nengineering process."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 22.148436846289087,
+        "text" : "1. Structural Study of BtSULT",
+        "w" : 244.17622559458005,
+        "x" : 72,
+        "y" : 697.00195250065428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Although human SULT2A1 is well-studied and documented, BtSULT is not,",
+        "w" : 428.42924632500001,
+        "x" : 72,
+        "y" : 671.45361287815422
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "requiring a study to identify candidates for a proposed catalytic base. Our early",
+        "w" : 442.54780822500015,
+        "x" : 72,
+        "y" : 652.94018485315428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "studies assumed BtSULT used histidine as a catalytic base, similar to His99 in",
+        "w" : 437.46397619999999,
+        "x" : 72,
+        "y" : 634.42676035315424
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "human SULT2A1 (PDB: 1J99). Clustal Omega homology alignment tentatively",
+        "w" : 446.03148060000012,
+        "x" : 72,
+        "y" : 615.91333285315432
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "suggested His215 as the closest histidine (Fig. 1). Extrapolating from the",
+        "w" : 408.04517971807616,
+        "x" : 72,
+        "y" : 597.39990460315425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "conserved PAPS binding motif, we also elect E136 as a catalytic base candidate.",
+        "w" : 449.44558507500005,
+        "x" : 72,
+        "y" : 578.88647710315422
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "However, homology alignments were later disproved to be completely viable,",
+        "w" : 435.01655242500004,
+        "x" : 72,
+        "y" : 560.37304960315419
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "partly due to the 15.2% sequence identity according to a Foldseek structural",
+        "w" : 425.08317675608407,
+        "x" : 72,
+        "y" : 541.85962285315418
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "alignment (see below).",
+        "w" : 127.83097072500001,
+        "x" : 72,
+        "y" : 523.34619535315426
+      },
+      {
+        "h" : 18.826171236289042,
+        "text" : "Foldseek Alignment Metrics",
+        "w" : 194.44244825041994,
+        "x" : 72,
+        "y" : 466.86962932815425
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Metric ",
+        "w" : 34.634765759999993,
+        "x" : 78,
+        "y" : 437.63855191999994
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Value",
+        "w" : 28.898437484999988,
+        "x" : 220.5,
+        "y" : 437.63855191999994
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Query ",
+        "w" : 32.660156279999995,
+        "x" : 78,
+        "y" : 403.51990191999994
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "BtSULT WT (AlphaFold model)",
+        "w" : 157.21289060999999,
+        "x" : 220.5,
+        "y" : 403.51990191999994
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Target ",
+        "w" : 33.550781310000005,
+        "x" : 78,
+        "y" : 369.40124191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "hSULT2A1 (PDB 1J99, DHEA-bound)",
+        "w" : 188.89453119000001,
+        "x" : 220.5,
+        "y" : 369.40124191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "TM-score ",
+        "w" : 49.757812919999992,
+        "x" : 78,
+        "y" : 335.28259191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "0.4634",
+        "w" : 33,
+        "x" : 220.5,
+        "y" : 335.28259191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Sequence identity ",
+        "w" : 90.333984240000007,
+        "x" : 78,
+        "y" : 301.16394191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "15.2%",
+        "w" : 30.996093720000005,
+        "x" : 220.5,
+        "y" : 301.16394191999996
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Alignment length ",
+        "w" : 89.003906159999985,
+        "x" : 78,
+        "y" : 267.04529191999995
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "341 residues (BtSULT 58–365, SULT2A1 20–266)",
+        "w" : 245.11523622000004,
+        "x" : 220.5,
+        "y" : 267.04529191999995
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "lDDT ",
+        "w" : 28.669921920000007,
+        "x" : 78,
+        "y" : 232.92663192000001
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "0.3757",
+        "w" : 33,
+        "x" : 220.5,
+        "y" : 232.92663192000001
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "E-value ",
+        "w" : 39.333984360000002,
+        "x" : 78,
+        "y" : 198.80798192
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "8.33 × 10⁻⁴",
+        "w" : 52.470703500000013,
+        "x" : 220.5,
+        "y" : 198.80798192
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Bit score ",
+        "w" : 44.765625419999992,
+        "x" : 78,
+        "y" : 164.68933192
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "78",
+        "w" : 12,
+        "x" : 220.5,
+        "y" : 164.68933192
+      }
+    ],
+    "page" : 2,
+    "text" : "1. Structural Study of BtSULT\nAlthough human SULT2A1 is well-studied and documented, BtSULT is not,\nrequiring a study to identify candidates for a proposed catalytic base. Our early\nstudies assumed BtSULT used histidine as a catalytic base, similar to His99 in\nhuman SULT2A1 (PDB: 1J99). Clustal Omega homology alignment tentatively\nsuggested His215 as the closest histidine (Fig. 1). Extrapolating from the\nconserved PAPS binding motif, we also elect E136 as a catalytic base candidate.\nHowever, homology alignments were later disproved to be completely viable,\npartly due to the 15.2% sequence identity according to a Foldseek structural\nalignment (see below).\nFoldseek Alignment Metrics\nMetric Value\nQuery BtSULT WT (AlphaFold model)\nTarget hSULT2A1 (PDB 1J99, DHEA-bound)\nTM-score 0.4634\nSequence identity 15.2%\nAlignment length 341 residues (BtSULT 58–365, SULT2A1 20–266)\nlDDT 0.3757\nE-value 8.33 × 10⁻⁴\nBit score 78"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 1. Clustal Omega Vs. Foldseek Alignment of BtSULT and SULT2A1",
+        "w" : 336.27323137499997,
+        "x" : 137.86533750000001,
+        "y" : 378.27807444092281
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "However, Boltz-2 co-folding poses, where BtSULT was complexed with PAPS and",
+        "w" : 465.53614920000007,
+        "x" : 72,
+        "y" : 325.76855687815424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "LCA, suggested E144 as the closest deprotonating residue to LCA 3-OH. Although",
+        "w" : 466.72669619999988,
+        "x" : 72,
+        "y" : 307.25512885315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "E144 contacted the substrate OH outside of H-bond distance, E144 was still",
+        "w" : 425.11736880608396,
+        "x" : 72,
+        "y" : 288.7417043531542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "selected to account for co-folding overcompensating for the stability of the output",
+        "w" : 458.10963473108404,
+        "x" : 72,
+        "y" : 270.22827685315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "pose, something that is not completely representative of an enzyme’s tendency to",
+        "w" : 453.84087869999996,
+        "x" : 72,
+        "y" : 251.71484860315422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "change shape in its active site.",
+        "w" : 169.40443957500003,
+        "x" : 72,
+        "y" : 233.20142110315422
+      }
+    ],
+    "page" : 3,
+    "text" : "Figure 1. Clustal Omega Vs. Foldseek Alignment of BtSULT and SULT2A1\nHowever, Boltz-2 co-folding poses, where BtSULT was complexed with PAPS and\nLCA, suggested E144 as the closest deprotonating residue to LCA 3-OH. Although\nE144 contacted the substrate OH outside of H-bond distance, E144 was still\nselected to account for co-folding overcompensating for the stability of the output\npose, something that is not completely representative of an enzyme’s tendency to\nchange shape in its active site."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 2. Boltz-2 LCA+PAPS Interaction Map",
+        "w" : 204.86685697499999,
+        "x" : 203.56852499999999,
+        "y" : 337.40795444092282
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Additional candidates for the catalytic base were nominated from literature, on the",
+        "w" : 461.56800721807622,
+        "x" : 72,
+        "y" : 303.41210687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "condition that residues were within 5 Å of either LCA or PAPS. The candidates",
+        "w" : 448.96667799542001,
+        "x" : 72,
+        "y" : 284.89843585315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "are summarized by Table 1.",
+        "w" : 154.81730362500002,
+        "x" : 72,
+        "y" : 266.38525435315421
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Table 1: Catalytic base candidates",
+        "w" : 149.40070325729008,
+        "x" : 231.3011625,
+        "y" : 232.80810444092276
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Candidate ",
+        "w" : 62.203113468076168,
+        "x" : 77.25,
+        "y" : 208.81200687815422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Route ",
+        "w" : 35.755966068076134,
+        "x" : 233.25,
+        "y" : 208.81200687815422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Origin of Method",
+        "w" : 104.93891923192382,
+        "x" : 389.25,
+        "y" : 208.81200687815422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "His215 ",
+        "w" : 40.429576650000001,
+        "x" : 77.25,
+        "y" : 179.04858687815423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Homology + Sequence",
+        "w" : 128.35855846807613,
+        "x" : 233.25,
+        "y" : 179.04858687815423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Alignment",
+        "w" : 59.851566081084002,
+        "x" : 233.25,
+        "y" : 160.53515687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "SULT catalytic-His",
+        "w" : 108.68089659541994,
+        "x" : 389.25,
+        "y" : 179.04858687815423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "homology",
+        "w" : 56.751517949999936,
+        "x" : 389.25,
+        "y" : 160.53515687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Glu136 ",
+        "w" : 41.980468500000001,
+        "x" : 77.25,
+        "y" : 130.77172687815417
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Sequence alignment ",
+        "w" : 113.06697053108405,
+        "x" : 233.25,
+        "y" : 130.77172687815417
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Clustal mapping of His99",
+        "w" : 144.19585815000005,
+        "x" : 389.25,
+        "y" : 130.77172687815417
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "Lys211 ",
+        "w" : 40.688476350000002,
+        "x" : 77.25,
+        "y" : 101.00829687815421
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "Literature ",
+        "w" : 55.159194618076185,
+        "x" : 233.25,
+        "y" : 101.00829687815421
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "Tibbs catalytic-residue",
+        "w" : 127.33346491807617,
+        "x" : 389.25,
+        "y" : 101.00829687815421
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "mapping (Tibbs et al.)",
+        "w" : 123.85504924849613,
+        "x" : 389.25,
+        "y" : 82.494876878154216
+      }
+    ],
+    "page" : 4,
+    "text" : "Figure 2. Boltz-2 LCA+PAPS Interaction Map\nAdditional candidates for the catalytic base were nominated from literature, on the\ncondition that residues were within 5 Å of either LCA or PAPS. The candidates\nare summarized by Table 1.\nTable 1: Catalytic base candidates\nCandidate Route Origin of Method\nHis215 Homology + Sequence\nAlignment\nSULT catalytic-His\nhomology\nGlu136 Sequence alignment Clustal mapping of His99\nLys211 Literature Tibbs catalytic-residue\nmapping (Tibbs et al.)"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "Candidate ",
+        "w" : 62.203113468076168,
+        "x" : 77.25,
+        "y" : 697.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Route ",
+        "w" : 35.755966068076134,
+        "x" : 233.25,
+        "y" : 697.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Origin of Method",
+        "w" : 104.93891923192382,
+        "x" : 389.25,
+        "y" : 697.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Gln143 ",
+        "w" : 41.980468500000001,
+        "x" : 77.25,
+        "y" : 668.13793887815427
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Steric Clash ",
+        "w" : 68.010856349999983,
+        "x" : 233.25,
+        "y" : 668.13793887815427
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Measured for",
+        "w" : 74.985148923496126,
+        "x" : 389.25,
+        "y" : 668.13793887815427
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "completeness of study",
+        "w" : 124.35537299999999,
+        "x" : 389.25,
+        "y" : 649.62451187815429
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "from Boltz-2 contact map",
+        "w" : 144.15486495000005,
+        "x" : 389.25,
+        "y" : 631.1110838781542
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Tyr158 ",
+        "w" : 40.217231475000006,
+        "x" : 77.25,
+        "y" : 601.34765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Literature ",
+        "w" : 55.159194618076185,
+        "x" : 233.25,
+        "y" : 601.34765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "AKR1D1 Tyr58 dyad",
+        "w" : 121.05490859999998,
+        "x" : 389.25,
+        "y" : 601.34765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "(Chen et al.)",
+        "w" : 69.546779748496078,
+        "x" : 389.25,
+        "y" : 582.83422687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Glu144 ",
+        "w" : 41.980468500000001,
+        "x" : 77.25,
+        "y" : 553.07079687815417
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Contact map ",
+        "w" : 71.112640199999987,
+        "x" : 233.25,
+        "y" : 553.07079687815417
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Boltz-2 contact analysis",
+        "w" : 134.44555284542002,
+        "x" : 389.25,
+        "y" : 553.07079687815417
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "(closest protein contact to",
+        "w" : 144.15486510000005,
+        "x" : 389.25,
+        "y" : 534.55737687815417
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "substrate OH)",
+        "w" : 78.107429223496069,
+        "x" : 389.25,
+        "y" : 516.0439468781542
+      },
+      {
+        "h" : 22.148436846289087,
+        "text" : "2. Catalytic Distance Identification",
+        "w" : 279.79691205000006,
+        "x" : 72,
+        "y" : 450.08471343315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "In order to establish a baseline catalytic distance for which to discriminate between",
+        "w" : 465.46276635000015,
+        "x" : 72,
+        "y" : 424.53661687815429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "successfully and unsuccessfully engineered mutants, we are prompted to determine",
+        "w" : 465.48285039307621,
+        "x" : 72,
+        "y" : 406.02318885315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "the optimal bond distance in SULT2A1-like enzymes.",
+        "w" : 301.42766084999994,
+        "x" : 72,
+        "y" : 387.50976435315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The crystal structures of native SULT enzymes were analyzed for sulfuryl transfer",
+        "w" : 459.89256244849594,
+        "x" : 72,
+        "y" : 350.48290687815427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "and catalytic base distance, listed below. On average, sulfuryl transfer occurs at a",
+        "w" : 454.0453470180762,
+        "x" : 72,
+        "y" : 331.96947885315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "distance of ~5 Å and catalytic bases are ~3 Å from the substrate OH (ref. Table",
+        "w" : 451.38400389307617,
+        "x" : 72,
+        "y" : 313.45605435315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "2).",
+        "w" : 15.155601375000003,
+        "x" : 72,
+        "y" : 294.94262685315425
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Table 2: Catalytic Distance Inference from SULT Crystal Structures",
+        "w" : 298.57812193229017,
+        "x" : 156.71245199999998,
+        "y" : 261.36547444092287
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Construct\/PDB ",
+        "w" : 72.060932431748085,
+        "x" : 77.25,
+        "y" : 240.81933444092283
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Ligand(s) bound ",
+        "w" : 77.905033179038128,
+        "x" : 194.25,
+        "y" : 240.81933444092283
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Catalytic distance",
+        "w" : 83.958446720961888,
+        "x" : 311.25,
+        "y" : 240.81933444092283
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "measured",
+        "w" : 45.599243229038052,
+        "x" : 311.25,
+        "y" : 226.27294444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Value",
+        "w" : 26.474166995961923,
+        "x" : 428.25,
+        "y" : 240.81933444092283
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "1J99 ",
+        "w" : 20.769908999999998,
+        "x" : 77.25,
+        "y" : 200.47656444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "PAP + DHEA ",
+        "w" : 61.385124175542018,
+        "x" : 194.25,
+        "y" : 200.47656444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "His99 NE2 → substrate",
+        "w" : 104.72444942096183,
+        "x" : 311.25,
+        "y" : 200.47656444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "OH",
+        "w" : 15.882053575541931,
+        "x" : 311.25,
+        "y" : 185.93042444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.15 Å",
+        "w" : 29.928222850541999,
+        "x" : 428.25,
+        "y" : 200.47656444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3F3Y ",
+        "w" : 25.049366200542011,
+        "x" : 77.25,
+        "y" : 160.13427444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "LCA + PAP ",
+        "w" : 55.587165729038077,
+        "x" : 194.25,
+        "y" : 160.13427444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "His99 → substrate OH ",
+        "w" : 100.45426982554199,
+        "x" : 311.25,
+        "y" : 160.13427444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "2.91 Å",
+        "w" : 29.928222850541999,
+        "x" : 428.25,
+        "y" : 160.13427444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3F3Y ",
+        "w" : 25.049366200542011,
+        "x" : 77.25,
+        "y" : 134.33789444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "LCA + PAP ",
+        "w" : 55.587165729038077,
+        "x" : 194.25,
+        "y" : 134.33789444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "substrate OH → PAPS",
+        "w" : 99.459305079038018,
+        "x" : 311.25,
+        "y" : 134.33789444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "sulfur",
+        "w" : 25.647460993252025,
+        "x" : 311.25,
+        "y" : 119.79150444092285
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "5.44 Å",
+        "w" : 29.928222850541999,
+        "x" : 428.25,
+        "y" : 134.33789444092281
+      }
+    ],
+    "page" : 5,
+    "text" : "Candidate Route Origin of Method\nGln143 Steric Clash Measured for\ncompleteness of study\nfrom Boltz-2 contact map\nTyr158 Literature AKR1D1 Tyr58 dyad\n(Chen et al.)\nGlu144 Contact map Boltz-2 contact analysis\n(closest protein contact to\nsubstrate OH)\n2. Catalytic Distance Identification\nIn order to establish a baseline catalytic distance for which to discriminate between\nsuccessfully and unsuccessfully engineered mutants, we are prompted to determine\nthe optimal bond distance in SULT2A1-like enzymes.\nThe crystal structures of native SULT enzymes were analyzed for sulfuryl transfer\nand catalytic base distance, listed below. On average, sulfuryl transfer occurs at a\ndistance of ~5 Å and catalytic bases are ~3 Å from the substrate OH (ref. Table\n2).\nTable 2: Catalytic Distance Inference from SULT Crystal Structures\nConstruct\/PDB Ligand(s) bound Catalytic distance\nmeasured\nValue\n1J99 PAP + DHEA His99 NE2 → substrate\nOH\n3.15 Å\n3F3Y LCA + PAP His99 → substrate OH 2.91 Å\n3F3Y LCA + PAP substrate OH → PAPS\nsulfur\n5.44 Å"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "Additionally, in order to identify residues blocking 5β-LCA binding, LCA was",
+        "w" : 440.68811379542001,
+        "x" : 72,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "posed onto wild-type(WT) BtSULT using SULT2A1-DHEA(1J99) as a template.",
+        "w" : 454.04290927500006,
+        "x" : 72,
+        "y" : 685.38793885315431
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "After superimposing BtSULT onto 1J99, the DHEA pose was transferred to dock",
+        "w" : 454.16168295000011,
+        "x" : 72,
+        "y" : 666.87451435315427
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "LCA with emphasis on the anchored 3-OH position. Residue-substrate distances",
+        "w" : 450.00085397041994,
+        "x" : 72,
+        "y" : 648.36132685315431
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "were measured to the LCA pose and a selectivity filter for steric clashes was",
+        "w" : 427.77592629541999,
+        "x" : 72,
+        "y" : 629.84765860315429
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "applied to residues using MolProbity, with an overlap of >0.4 Å classified as a",
+        "w" : 446.36425951807621,
+        "x" : 72,
+        "y" : 611.33397910315421
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "steric clash. The main pocket residues are displayed in Fig. 3",
+        "w" : 341.15912474999999,
+        "x" : 72,
+        "y" : 592.82080360315422
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 3. BtSULT MolProbity Absolute Clash Map",
+        "w" : 225.86365447499998,
+        "x" : 193.07012550000002,
+        "y" : 284.55078444092283
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "Although the greatest absolute clashes lie at Y158 and S150, studies of bile acid",
+        "w" : 448.43030085000009,
+        "x" : 72,
+        "y" : 252.0082968781542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "synthesis assert the importance of tyrosine in hydride transfer and brief analysis of",
+        "w" : 461.61498792349607,
+        "x" : 72,
+        "y" : 233.49511260315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "the serine r-group dismissed it as an engineering focus due to a short, unpolar",
+        "w" : 433.37079132349618,
+        "x" : 72,
+        "y" : 214.98144435315419
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "sidechain (Mindrich et al.). This shifted the focus to F147 as the principal steric",
+        "w" : 445.69701991807631,
+        "x" : 72,
+        "y" : 196.4682568531542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "clash, especially when considered as a selectivity market for 5β steroids in human",
+        "w" : 458.22754065000004,
+        "x" : 72,
+        "y" : 177.95458860315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "carbonic anhydrases (Brynda et al.).",
+        "w" : 202.02782445000008,
+        "x" : 72,
+        "y" : 159.44140110315419
+      }
+    ],
+    "page" : 6,
+    "text" : "Additionally, in order to identify residues blocking 5β-LCA binding, LCA was\nposed onto wild-type(WT) BtSULT using SULT2A1-DHEA(1J99) as a template.\nAfter superimposing BtSULT onto 1J99, the DHEA pose was transferred to dock\nLCA with emphasis on the anchored 3-OH position. Residue-substrate distances\nwere measured to the LCA pose and a selectivity filter for steric clashes was\napplied to residues using MolProbity, with an overlap of >0.4 Å classified as a\nsteric clash. The main pocket residues are displayed in Fig. 3\nFigure 3. BtSULT MolProbity Absolute Clash Map\nAlthough the greatest absolute clashes lie at Y158 and S150, studies of bile acid\nsynthesis assert the importance of tyrosine in hydride transfer and brief analysis of\nthe serine r-group dismissed it as an engineering focus due to a short, unpolar\nsidechain (Mindrich et al.). This shifted the focus to F147 as the principal steric\nclash, especially when considered as a selectivity market for 5β steroids in human\ncarbonic anhydrases (Brynda et al.)."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 22.148436846289087,
+        "text" : "3. Mutagenesis Screens (break this into more subtabs wiki",
+        "w" : 465.84551906108413,
+        "x" : 72,
+        "y" : 697.00195250065428
+      },
+      {
+        "h" : 22.148436846289087,
+        "text" : "ppl)",
+        "w" : 32.206813608496077,
+        "x" : 72,
+        "y" : 670.55419925065428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Round 0 of mutagenesis screening for the proposed enzyme prioritized a",
+        "w" : 406.4327970180762,
+        "x" : 72,
+        "y" : 626.49218687815426
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "6x-alanine scan, geared towards validating expression bottlenecks in-vitro prior to",
+        "w" : 460.05172620000008,
+        "x" : 72,
+        "y" : 607.9790026031543
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "the final variant being reengineered. Steric clashes were changed to alanine as a",
+        "w" : 446.38018951807624,
+        "x" : 72,
+        "y" : 589.4658203531543
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "proxy for catalytic activity in order to prioritize enzyme binding energy. This work",
+        "w" : 463.15971442500006,
+        "x" : 72,
+        "y" : 570.95214685315432
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "was done prior to further structural studies, where Boltz-2 structural distances and",
+        "w" : 459.27966420000007,
+        "x" : 72,
+        "y" : 552.43847860315429
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "review of literature confirmed the presence of mediating residues such as lysine,",
+        "w" : 449.91772215000015,
+        "x" : 72,
+        "y" : 533.92529110315422
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "tyrosine, and glutamate as a divergent catalytic base to histidine in human",
+        "w" : 413.17636065000005,
+        "x" : 72,
+        "y" : 515.41211560315423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "AK1RD1. The mutations are as follows: E144A, W161A, K211A, F248A, F249A,",
+        "w" : 467.01821572499989,
+        "x" : 72,
+        "y" : 496.89843685315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "T252A",
+        "w" : 39.645618068916008,
+        "x" : 72,
+        "y" : 478.3847693531543
+      },
+      {
+        "h" : 18.826171236289042,
+        "text" : "3.1 Point Mutation Panel",
+        "w" : 169.92404574608398,
+        "x" : 72,
+        "y" : 438.42187132815423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The first technique draws from our structural studies by introducing point",
+        "w" : 411.90402098108393,
+        "x" : 72,
+        "y" : 394.8774368781543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "mutations into the active site of BtSULT. The proposed catalytic base of E144 was",
+        "w" : 461.64146379542012,
+        "x" : 72,
+        "y" : 376.36425260315428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "mutated to aspartate due to its similar yet shorter sidechain, with hopes to relieve a",
+        "w" : 462.77728201807622,
+        "x" : 72,
+        "y" : 357.85058435315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "steric clash. Additionally, F147 was mutated to serine as a nonfunctional sidechain,",
+        "w" : 466.16403555000011,
+        "x" : 72,
+        "y" : 339.33739685315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "testing if F147 was a selectivity marker for 5β steroids as it was in human carbonic",
+        "w" : 464.47851924307611,
+        "x" : 72,
+        "y" : 320.82372860315428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "anhydrases (Brynda et al.).",
+        "w" : 150.36330945,
+        "x" : 72,
+        "y" : 302.31054110315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "In order to finalize F147’s mutation to serine, a saturation mutagenesis study was",
+        "w" : 454.26359379542009,
+        "x" : 72,
+        "y" : 265.28368687815424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "conducted, prioritizing transfer distance between the substrate and PAPS and base",
+        "w" : 458.38348689307622,
+        "x" : 72,
+        "y" : 246.77001585315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "distance as a proxy for bond formation after mutating F147. The results are",
+        "w" : 420.81441084307619,
+        "x" : 72,
+        "y" : 228.2568343531542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "displayed in Table 3.",
+        "w" : 116.37295162499998,
+        "x" : 72,
+        "y" : 209.74315485315424
+      }
+    ],
+    "page" : 7,
+    "text" : "3. Mutagenesis Screens (break this into more subtabs wiki\nppl)\nRound 0 of mutagenesis screening for the proposed enzyme prioritized a\n6x-alanine scan, geared towards validating expression bottlenecks in-vitro prior to\nthe final variant being reengineered. Steric clashes were changed to alanine as a\nproxy for catalytic activity in order to prioritize enzyme binding energy. This work\nwas done prior to further structural studies, where Boltz-2 structural distances and\nreview of literature confirmed the presence of mediating residues such as lysine,\ntyrosine, and glutamate as a divergent catalytic base to histidine in human\nAK1RD1. The mutations are as follows: E144A, W161A, K211A, F248A, F249A,\nT252A\n3.1 Point Mutation Panel\nThe first technique draws from our structural studies by introducing point\nmutations into the active site of BtSULT. The proposed catalytic base of E144 was\nmutated to aspartate due to its similar yet shorter sidechain, with hopes to relieve a\nsteric clash. Additionally, F147 was mutated to serine as a nonfunctional sidechain,\ntesting if F147 was a selectivity marker for 5β steroids as it was in human carbonic\nanhydrases (Brynda et al.).\nIn order to finalize F147’s mutation to serine, a saturation mutagenesis study was\nconducted, prioritizing transfer distance between the substrate and PAPS and base\ndistance as a proxy for bond formation after mutating F147. The results are\ndisplayed in Table 3."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.18164084685543,
+        "text" : "Table 3: Saturation Mutagenesis of F147",
+        "w" : 179.05041847499996,
+        "x" : 216.47673750000001,
+        "y" : 707.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Residue at 147 ",
+        "w" : 68.399143124999966,
+        "x" : 77.25,
+        "y" : 686.80468744092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Transfer distance (Å) ",
+        "w" : 99.930019318251937,
+        "x" : 233.25,
+        "y" : 686.80468744092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Base distance (Å)",
+        "w" : 81.214901068252004,
+        "x" : 389.25,
+        "y" : 686.80468744092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Ser ",
+        "w" : 15.874511870961911,
+        "x" : 77.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4.26 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.46",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Ile ",
+        "w" : 11.596790495961912,
+        "x" : 77.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4.70 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.70",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Thr ",
+        "w" : 15.873645868251955,
+        "x" : 77.25,
+        "y" : 609.41601444092282
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4.95 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 609.41601444092282
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.50",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 609.41601444092282
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Ala ",
+        "w" : 15.874511870961911,
+        "x" : 77.25,
+        "y" : 583.61962444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4.70 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 583.61962444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.05",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 583.61962444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Phe (WT) ",
+        "w" : 43.649315368251948,
+        "x" : 77.25,
+        "y" : 557.82373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4.90 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 557.82373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.20",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 557.82373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Leu ",
+        "w" : 17.093322900000004,
+        "x" : 77.25,
+        "y" : 532.02734444092277
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "5.50 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 532.02734444092277
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.40",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 532.02734444092277
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Val (literature choice) ",
+        "w" : 95.823764968251936,
+        "x" : 77.25,
+        "y" : 506.2309544409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "6.20 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 506.2309544409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.90",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 506.2309544409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Gly ",
+        "w" : 16.492187625,
+        "x" : 77.25,
+        "y" : 480.4345744409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "6.40 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 480.4345744409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "3.00",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 480.4345744409228
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Serine prioritized the lowest transfer distance and had the smallest base distance,",
+        "w" : 452.26119930000004,
+        "x" : 72,
+        "y" : 437.92529687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "suggesting the formation of an h-bond, now acting as a stabilizing residue to",
+        "w" : 427.83825869999993,
+        "x" : 72,
+        "y" : 419.41211260315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "position the substrate more tightly into the catalytic pocket (Fig. 4).",
+        "w" : 377.71587637499999,
+        "x" : 72,
+        "y" : 400.89844435315422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The first round of point mutations specifically searched for a switch between",
+        "w" : 430.12702635000011,
+        "x" : 72,
+        "y" : 363.87157687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "DHEA, the native substrate, and LCA selectivity in WT and mutated BtSULT.",
+        "w" : 438.33598095000008,
+        "x" : 72,
+        "y" : 345.35839260315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Such was done by mutating, in addition to mutations E144D and F147S, two PAPS",
+        "w" : 465.5171198819238,
+        "x" : 72,
+        "y" : 326.84472435315422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "motif residues R236 and T252 into R236K and T252S, probing the PAPS side",
+        "w" : 436.73941089307618,
+        "x" : 72,
+        "y" : 308.33104485315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "geometry with a shorter reach and introducing a charge conserving residue,",
+        "w" : 421.29783915000013,
+        "x" : 72,
+        "y" : 289.81786860315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "respectfully. His215 from then on was disproved as a catalytic base and mutations",
+        "w" : 458.77275429541987,
+        "x" : 72,
+        "y" : 271.30468110315422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "F147S seemed to decrease specificity for DHEA when the WT catalytic base was",
+        "w" : 456.14289879542002,
+        "x" : 72,
+        "y" : 252.79101360315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "above the measured 2.91 Å OH distance in PDB 3F3Y .",
+        "w" : 312.06317985000004,
+        "x" : 72,
+        "y" : 234.27734685315423
+      }
+    ],
+    "page" : 8,
+    "text" : "Table 3: Saturation Mutagenesis of F147\nResidue at 147 Transfer distance (Å) Base distance (Å)\nSer 4.26 2.46\nIle 4.70 2.70\nThr 4.95 2.50\nAla 4.70 3.05\nPhe (WT) 4.90 3.20\nLeu 5.50 3.40\nVal (literature choice) 6.20 2.90\nGly 6.40 3.00\nSerine prioritized the lowest transfer distance and had the smallest base distance,\nsuggesting the formation of an h-bond, now acting as a stabilizing residue to\nposition the substrate more tightly into the catalytic pocket (Fig. 4).\nThe first round of point mutations specifically searched for a switch between\nDHEA, the native substrate, and LCA selectivity in WT and mutated BtSULT.\nSuch was done by mutating, in addition to mutations E144D and F147S, two PAPS\nmotif residues R236 and T252 into R236K and T252S, probing the PAPS side\ngeometry with a shorter reach and introducing a charge conserving residue,\nrespectfully. His215 from then on was disproved as a catalytic base and mutations\nF147S seemed to decrease specificity for DHEA when the WT catalytic base was\nabove the measured 2.91 Å OH distance in PDB 3F3Y ."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.18164084685543,
+        "text" : "Figure 4. Round 1 point mutation distance to substrate hydroxyl",
+        "w" : 281.49449674945805,
+        "x" : 165.25384124999999,
+        "y" : 515.90771444092286
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The testing strategy was strengthened, introducing new sets of mutations in Boltz-2",
+        "w" : 467.09566035000012,
+        "x" : 72,
+        "y" : 463.39892687815427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "poses only against complexes of LCA and PAPS, considering OH distance, sulfuryl",
+        "w" : 467.78323440608392,
+        "x" : 72,
+        "y" : 444.88476685315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "transfer, and Y158 mediation of sulfuryl transfer. Additional candidates mutated",
+        "w" : 452.50833375000002,
+        "x" : 72,
+        "y" : 426.37207435315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "E144 to histidine, utilizing SULT2A1’s catalytic histidine as a replacement to the",
+        "w" : 454.14033721807618,
+        "x" : 72,
+        "y" : 407.85791410315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "proposed E144 catalytic base. T13’s earlier steric clash was relieved in further",
+        "w" : 437.47665432349618,
+        "x" : 72,
+        "y" : 389.34521860315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "testing. These variants are shown in Table 4 and in Figure 4.",
+        "w" : 337.47411862499996,
+        "x" : 72,
+        "y" : 370.83105835315422
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Table 4: Point Mutation Panel",
+        "w" : 131.73611854945807,
+        "x" : 240.13302750000003,
+        "y" : 341.22119444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Variant ",
+        "w" : 35.629879018251955,
+        "x" : 77.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Mutations ",
+        "w" : 48.249511932290034,
+        "x" : 155.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Base → LCA",
+        "w" : 61.686412975541998,
+        "x" : 233.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "3-OH (Å)",
+        "w" : 44.266552318251911,
+        "x" : 233.25,
+        "y" : 306.12890444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "LCA 3-OH →",
+        "w" : 65.960937749999971,
+        "x" : 311.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "PAPS S (Å)",
+        "w" : 53.535259318251974,
+        "x" : 311.25,
+        "y" : 306.12890444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Y158-OH →",
+        "w" : 58.935169500000029,
+        "x" : 389.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "LCA (Å)",
+        "w" : 41.217937318251984,
+        "x" : 389.25,
+        "y" : 306.12890444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "ipTM",
+        "w" : 26.881340270961914,
+        "x" : 467.25,
+        "y" : 320.6748044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "6-Ala ",
+        "w" : 25.031089970961915,
+        "x" : 77.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "6x Ala pocket",
+        "w" : 61.66147219945799,
+        "x" : 155.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "scan",
+        "w" : 19.535434800000019,
+        "x" : 155.25,
+        "y" : 265.78662444092276
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "4.1 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "3.4 ",
+        "w" : 13.744140749999985,
+        "x" : 311.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "4.2 ",
+        "w" : 13.744140749999985,
+        "x" : 389.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.53",
+        "w" : 19.240234500000042,
+        "x" : 467.25,
+        "y" : 280.33300444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F1 ",
+        "w" : 11.613330974999997,
+        "x" : 77.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "E144H ",
+        "w" : 31.146595225542001,
+        "x" : 155.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.5 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.4 ",
+        "w" : 13.744140749999985,
+        "x" : 311.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "7.0 ",
+        "w" : 13.744140749999985,
+        "x" : 389.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.55",
+        "w" : 19.240234500000042,
+        "x" : 467.25,
+        "y" : 239.98974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F2 ",
+        "w" : 11.613330974999997,
+        "x" : 77.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 155.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "2.6 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.9 ",
+        "w" : 13.744140749999985,
+        "x" : 311.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.2 ",
+        "w" : 13.744140749999985,
+        "x" : 389.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.52",
+        "w" : 19.240234500000042,
+        "x" : 467.25,
+        "y" : 214.19384444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F3 ",
+        "w" : 11.613330974999997,
+        "x" : 77.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F147A +",
+        "w" : 39.491478380991225,
+        "x" : 155.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "E144H",
+        "w" : 31.146595225542001,
+        "x" : 155.25,
+        "y" : 173.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.7 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "7.9 ",
+        "w" : 13.744140749999985,
+        "x" : 311.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.9 ",
+        "w" : 13.744140749999985,
+        "x" : 389.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.48",
+        "w" : 19.240234500000042,
+        "x" : 467.25,
+        "y" : 188.39794444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F4 ",
+        "w" : 11.613330974999997,
+        "x" : 77.25,
+        "y" : 148.05468444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F147A +",
+        "w" : 39.491478380991225,
+        "x" : 155.25,
+        "y" : 148.05468444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "E144D + T13S",
+        "w" : 66.660583254038045,
+        "x" : 155.25,
+        "y" : 133.5087844409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "2.0 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 148.05468444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.9 ",
+        "w" : 13.744140749999985,
+        "x" : 311.25,
+        "y" : 148.05468444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.8 ",
+        "w" : 13.744140749999985,
+        "x" : 389.25,
+        "y" : 148.05468444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.50",
+        "w" : 19.240234500000042,
+        "x" : 467.25,
+        "y" : 148.05468444092276
+      }
+    ],
+    "page" : 9,
+    "text" : "Figure 4. Round 1 point mutation distance to substrate hydroxyl\nThe testing strategy was strengthened, introducing new sets of mutations in Boltz-2\nposes only against complexes of LCA and PAPS, considering OH distance, sulfuryl\ntransfer, and Y158 mediation of sulfuryl transfer. Additional candidates mutated\nE144 to histidine, utilizing SULT2A1’s catalytic histidine as a replacement to the\nproposed E144 catalytic base. T13’s earlier steric clash was relieved in further\ntesting. These variants are shown in Table 4 and in Figure 4.\nTable 4: Point Mutation Panel\nVariant Mutations Base → LCA\n3-OH (Å)\nLCA 3-OH →\nPAPS S (Å)\nY158-OH →\nLCA (Å)\nipTM\n6-Ala 6x Ala pocket\nscan\n4.1 3.4 4.2 0.53\nF1 E144H 3.5 4.4 7.0 0.55\nF2 E144D 2.6 3.9 4.2 0.52\nF3 F147A +\nE144H\n3.7 7.9 3.9 0.48\nF4 F147A +\nE144D + T13S\n2.0 4.9 3.8 0.50"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 5. Boltz-2 substrate selectivity measurements",
+        "w" : 230.78529560729015,
+        "x" : 190.60886775,
+        "y" : 341.3247044409228
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Fig. 5 confirms that F147S is a selectivity switch from DHEA to LCA for BtSULT",
+        "w" : 463.14678920458005,
+        "x" : 72,
+        "y" : 307.32861687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "in the 3\/3 Boltz-2 ensemble testing, placing LCA within catalytic distance from 0\/3",
+        "w" : 466.69255245000011,
+        "x" : 72,
+        "y" : 288.81543260315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "to 3\/3 across each Boltz-2 ensemble.",
+        "w" : 205.15694010000004,
+        "x" : 72,
+        "y" : 270.30176435315423
+      }
+    ],
+    "page" : 10,
+    "text" : "Figure 5. Boltz-2 substrate selectivity measurements\nFig. 5 confirms that F147S is a selectivity switch from DHEA to LCA for BtSULT\nin the 3\/3 Boltz-2 ensemble testing, placing LCA within catalytic distance from 0\/3\nto 3\/3 across each Boltz-2 ensemble."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 18.826171236289042,
+        "text" : "3.2 Catalytic Loop Redesign + Grafting",
+        "w" : 270.07844992500009,
+        "x" : 72,
+        "y" : 700.45166018065424
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Figure 6. BtSULT Vs. SULT2A1 Catalytic Loop Analogies A: BtSULT + LCA + PAPS with specific",
+        "w" : 444.06244217096196,
+        "x" : 83.970525749999993,
+        "y" : 503.17724444092289
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "insertion in red. B: Closeup of A. C: Donor chain on SULT2A1(blue) (Tibbs et al. 2015).",
+        "w" : 392.12362121249998,
+        "x" : 109.939161,
+        "y" : 488.63036901592289
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Round one of mutagenesis screening considered conserving catalytic geometry of",
+        "w" : 457.32441792349596,
+        "x" : 72,
+        "y" : 454.63476687815427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "BtSULT. However, round two considered redesigning the catalytic loop through a",
+        "w" : 457.19384701807621,
+        "x" : 72,
+        "y" : 436.12207160315427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "series of grafting experiments, utilizing a donor chain from SULT2A1, namely",
+        "w" : 440.1353898000001,
+        "x" : 72,
+        "y" : 417.60840035315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "loop 3 (Fig. 6).",
+        "w" : 84.344509124999973,
+        "x" : 72,
+        "y" : 399.09472685315427
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Figure 7. Graft design methodology, V0-V10. Top: SULT2A1 loop three divided into its three functional",
+        "w" : 460.01919889945793,
+        "x" : 75.991510425000001,
+        "y" : 144.9907244409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "segments. Bottom: BtSULT regions as graft sites",
+        "w" : 214.8491240822901,
+        "x" : 198.57695992500001,
+        "y" : 130.44482476592282
+      }
+    ],
+    "page" : 11,
+    "text" : "3.2 Catalytic Loop Redesign + Grafting\nFigure 6. BtSULT Vs. SULT2A1 Catalytic Loop Analogies A: BtSULT + LCA + PAPS with specific\ninsertion in red. B: Closeup of A. C: Donor chain on SULT2A1(blue) (Tibbs et al. 2015).\nRound one of mutagenesis screening considered conserving catalytic geometry of\nBtSULT. However, round two considered redesigning the catalytic loop through a\nseries of grafting experiments, utilizing a donor chain from SULT2A1, namely\nloop 3 (Fig. 6).\nFigure 7. Graft design methodology, V0-V10. Top: SULT2A1 loop three divided into its three functional\nsegments. Bottom: BtSULT regions as graft sites"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "SULT2A1 loop 3 was split into its three functional segments for candidate design:",
+        "w" : 459.59837535608403,
+        "x" : 72,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "its substrate binding region, the loop’s hinge region, and the PAPS binding motif.",
+        "w" : 454.59656984999992,
+        "x" : 72,
+        "y" : 685.38769585315424
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "These three segments were interchanged across 10 variants along two segments of",
+        "w" : 460.42617792349597,
+        "x" : 72,
+        "y" : 648.36132787815427
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "BtSULT plus additional flanking residues. Residues 153-190 hosted a BtSULT",
+        "w" : 440.47709420458011,
+        "x" : 72,
+        "y" : 629.84765685315426
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "specific insertion, revealed by the initial ClustalOmega alignment and its proximity",
+        "w" : 466.68572692500004,
+        "x" : 72,
+        "y" : 611.33398335315428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "to the proposed E144 catalytic region. The substrate-binding region of SULT2A1",
+        "w" : 454.52382172500006,
+        "x" : 72,
+        "y" : 592.82128785315433
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "was grafted to this region. The C-terminus of BtSULT, aligning with SULT2A1’s",
+        "w" : 453.80386232041974,
+        "x" : 72,
+        "y" : 574.30761960315431
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "catalytic loop, hosted either a grafted substrate-binding motif, a PAPS-binding",
+        "w" : 438.21552997499987,
+        "x" : 72,
+        "y" : 555.79394010315423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "motif, or both (Fig. 7).",
+        "w" : 126.314239125,
+        "x" : 72,
+        "y" : 537.28027185315432
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Additionally, a 3X alanine background was added to each variant, following clash",
+        "w" : 458.75314627500018,
+        "x" : 72,
+        "y" : 500.25390687815428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "analysis of the 6X alanine background from Round 0 and Round 1. Glu144 and",
+        "w" : 444.56329170000004,
+        "x" : 72,
+        "y" : 481.74023585315427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Lys211 had been assigned as key pocket residues and were therefore not mutated.",
+        "w" : 456.79695262500013,
+        "x" : 72,
+        "y" : 463.22656235315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Similarly, Trp161 was left unchanged due to its location in the 153-190 BtSULT",
+        "w" : 449.27000420458012,
+        "x" : 72,
+        "y" : 444.71386685315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "insertion. This controlled our analysis of variants with grafts in the 153-190 region",
+        "w" : 462.81872752499999,
+        "x" : 72,
+        "y" : 426.20019860315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "instead of adding a confounding variable (Fig. 8).",
+        "w" : 277.83023887500002,
+        "x" : 72,
+        "y" : 407.68651910315424
+      }
+    ],
+    "page" : 12,
+    "text" : "SULT2A1 loop 3 was split into its three functional segments for candidate design:\nits substrate binding region, the loop’s hinge region, and the PAPS binding motif.\nThese three segments were interchanged across 10 variants along two segments of\nBtSULT plus additional flanking residues. Residues 153-190 hosted a BtSULT\nspecific insertion, revealed by the initial ClustalOmega alignment and its proximity\nto the proposed E144 catalytic region. The substrate-binding region of SULT2A1\nwas grafted to this region. The C-terminus of BtSULT, aligning with SULT2A1’s\ncatalytic loop, hosted either a grafted substrate-binding motif, a PAPS-binding\nmotif, or both (Fig. 7).\nAdditionally, a 3X alanine background was added to each variant, following clash\nanalysis of the 6X alanine background from Round 0 and Round 1. Glu144 and\nLys211 had been assigned as key pocket residues and were therefore not mutated.\nSimilarly, Trp161 was left unchanged due to its location in the 153-190 BtSULT\ninsertion. This controlled our analysis of variants with grafts in the 153-190 region\ninstead of adding a confounding variable (Fig. 8)."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 8. 3X Alanine Selection",
+        "w" : 137.07347850000008,
+        "x" : 237.46521749999999,
+        "y" : 386.1577144409228
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "The variants are summarized and analyzed in Table 5.",
+        "w" : 301.66695112499997,
+        "x" : 72,
+        "y" : 352.16113687815425
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Table 5: Loop Graft Summary",
+        "w" : 132.94012477499999,
+        "x" : 239.53188750000001,
+        "y" : 300.07177444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Variant ",
+        "w" : 35.629879018251955,
+        "x" : 77.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Design ",
+        "w" : 31.762535154038062,
+        "x" : 155.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Hypothesis ",
+        "w" : 51.920730732290053,
+        "x" : 233.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Catbase (Å) ",
+        "w" : 55.870609318251979,
+        "x" : 311.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "V0 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 253.72802444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "No graft",
+        "w" : 36.93441799945802,
+        "x" : 155.25,
+        "y" : 253.72802444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "(E144D +",
+        "w" : 43.753097630991221,
+        "x" : 155.25,
+        "y" : 239.18310444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3×Ala",
+        "w" : 27.569812895961917,
+        "x" : 155.25,
+        "y" : 224.63623444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "background)",
+        "w" : 55.553939893251936,
+        "x" : 155.25,
+        "y" : 210.09033444092279
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Baseline",
+        "w" : 37.853519495961905,
+        "x" : 233.25,
+        "y" : 253.72802444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "control",
+        "w" : 31.137756424457962,
+        "x" : 233.25,
+        "y" : 239.18310444092276
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.70 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 253.72802444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "V1 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Substrate-half",
+        "w" : 61.66190344325193,
+        "x" : 155.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "+ hinge →",
+        "w" : 47.116421250000002,
+        "x" : 155.25,
+        "y" : 169.74755444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "338\/339",
+        "w" : 36.034450649999997,
+        "x" : 155.25,
+        "y" : 155.20166444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "The",
+        "w" : 17.092884245961926,
+        "x" : 233.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "substrate-conta",
+        "w" : 66.541626095961874,
+        "x" : 233.25,
+        "y" : 169.74755444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "cting piece is",
+        "w" : 57.996490632290033,
+        "x" : 233.25,
+        "y" : 155.20166444092274
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "enough",
+        "w" : 32.363231775000031,
+        "x" : 233.25,
+        "y" : 140.65478444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.25 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "V2 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Substrate-half",
+        "w" : 61.66190344325193,
+        "x" : 155.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "only →",
+        "w" : 33.290310000000005,
+        "x" : 155.25,
+        "y" : 100.31201444092279
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "338\/339",
+        "w" : 36.034450649999997,
+        "x" : 155.25,
+        "y" : 85.767094440922747
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Is the hinge",
+        "w" : 51.287818895961891,
+        "x" : 233.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "needed?",
+        "w" : 36.007175570961863,
+        "x" : 233.25,
+        "y" : 100.31201444092279
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "2.92 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Transfer (Å) ",
+        "w" : 58.70931656825195,
+        "x" : 389.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Comments",
+        "w" : 50.680889382290047,
+        "x" : 467.25,
+        "y" : 279.5249044409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.81 –",
+        "w" : 83.500000124999985,
+        "x" : 389.25,
+        "y" : 253.72802444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.66 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Junction",
+        "w" : 37.252822949999995,
+        "x" : 467.25,
+        "y" : 184.2934544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "accepts inserts",
+        "w" : 63.793152282290066,
+        "x" : 467.25,
+        "y" : 169.74755444092284
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "4.19 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Hinge assists",
+        "w" : 57.712024932289978,
+        "x" : 467.25,
+        "y" : 114.85888444092281
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "but isn't",
+        "w" : 34.658691274457965,
+        "x" : 467.25,
+        "y" : 100.31201444092279
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "significant",
+        "w" : 46.402297999458028,
+        "x" : 467.25,
+        "y" : 85.767094440922747
+      }
+    ],
+    "page" : 13,
+    "text" : "Figure 8. 3X Alanine Selection\nThe variants are summarized and analyzed in Table 5.\nTable 5: Loop Graft Summary\nVariant Design Hypothesis Catbase (Å) V0 No graft\n(E144D +\n3×Ala\nbackground)\nBaseline\ncontrol\n3.70 V1 Substrate-half\n+ hinge →\n338\/339\nThe\nsubstrate-conta\ncting piece is\nenough\n4.25 V2 Substrate-half\nonly →\n338\/339\nIs the hinge\nneeded?\n2.92 Transfer (Å) Comments\n3.81 –\n3.66 Junction\naccepts inserts\n4.19 Hinge assists\nbut isn't\nsignificant"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.18164084685543,
+        "text" : "Variant ",
+        "w" : 35.629879018251955,
+        "x" : 77.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Design ",
+        "w" : 31.762535154038062,
+        "x" : 155.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "V3 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "+ Met N-flank ",
+        "w" : 63.590061224999999,
+        "x" : 155.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "V4 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Full Loop 3",
+        "w" : 51.916229624999971,
+        "x" : 155.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "(49 aa)",
+        "w" : 30.821517793251957,
+        "x" : 155.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "replaces",
+        "w" : 36.006748332290044,
+        "x" : 155.25,
+        "y" : 577.02685444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "330–357",
+        "w" : 38.476562624999985,
+        "x" : 155.25,
+        "y" : 562.4809544409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "V5 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Substrate-half",
+        "w" : 61.66190344325193,
+        "x" : 155.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "+ hinge",
+        "w" : 33.371841545961928,
+        "x" : 155.25,
+        "y" : 522.13818444092283
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "replaces",
+        "w" : 36.006748332290044,
+        "x" : 155.25,
+        "y" : 507.59130444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "153–190",
+        "w" : 38.476562624999985,
+        "x" : 155.25,
+        "y" : 493.04638444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "V6 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Substrate-half",
+        "w" : 61.66190344325193,
+        "x" : 155.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "only replaces",
+        "w" : 58.29705808229005,
+        "x" : 155.25,
+        "y" : 452.70361444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "153–190",
+        "w" : 38.476562624999985,
+        "x" : 155.25,
+        "y" : 438.15673444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "V7 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Lid at 153–190",
+        "w" : 67.170036374999995,
+        "x" : 155.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "+",
+        "w" : 6.2036133809912144,
+        "x" : 155.25,
+        "y" : 383.26806444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "substrate-half",
+        "w" : 59.826293968251917,
+        "x" : 155.25,
+        "y" : 368.72216444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "at 338",
+        "w" : 27.173072924999985,
+        "x" : 155.25,
+        "y" : 354.17529444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "V8 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Delete",
+        "w" : 28.686206945961914,
+        "x" : 155.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "153–190 +",
+        "w" : 47.424316880991228,
+        "x" : 155.25,
+        "y" : 313.83349444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "substrate-half+",
+        "w" : 66.027305705991211,
+        "x" : 155.25,
+        "y" : 299.28662444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "hinge at 338",
+        "w" : 54.342239624999991,
+        "x" : 155.25,
+        "y" : 284.7407244409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "V9 ",
+        "w" : 13.438205850000003,
+        "x" : 77.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "+ Ser-Met",
+        "w" : 44.749015849458004,
+        "x" : 155.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "N-flank",
+        "w" : 34.188106725000011,
+        "x" : 155.25,
+        "y" : 215.3061544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "V10 ",
+        "w" : 18.934299600000003,
+        "x" : 77.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "+ Arg C-flank ",
+        "w" : 62.17296239999996,
+        "x" : 155.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "graft",
+        "w" : 23.194614493251962,
+        "x" : 77.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 100.44201285,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Asp144 ",
+        "w" : 34.821445575000013,
+        "x" : 105.9381066,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "V5 without",
+        "w" : 49.772949424458005,
+        "x" : 155.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "alanines. Base",
+        "w" : 62.881142045961923,
+        "x" : 155.25,
+        "y" : 105.5278344409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Hypothesis ",
+        "w" : 51.920730732290053,
+        "x" : 233.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "A flanking",
+        "w" : 47.321838524999976,
+        "x" : 233.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "residue eases",
+        "w" : 57.685188432290033,
+        "x" : 233.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "the junction",
+        "w" : 52.206062100000054,
+        "x" : 233.25,
+        "y" : 646.4624024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "scar",
+        "w" : 17.698520668251945,
+        "x" : 233.25,
+        "y" : 631.9155274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Utilize the",
+        "w" : 46.092292895961918,
+        "x" : 233.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "whole lid",
+        "w" : 41.219242425000004,
+        "x" : 233.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Place the lid in",
+        "w" : 65.634994649999953,
+        "x" : 233.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "the insertion",
+        "w" : 54.648174075000043,
+        "x" : 233.25,
+        "y" : 522.13818444092283
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "region",
+        "w" : 28.085510399999976,
+        "x" : 233.25,
+        "y" : 507.59130444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Same site,",
+        "w" : 45.183707887499963,
+        "x" : 233.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "shorter lid",
+        "w" : 44.879726174999973,
+        "x" : 233.25,
+        "y" : 452.70361444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "length",
+        "w" : 27.479007824999997,
+        "x" : 233.25,
+        "y" : 438.15673444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Utilize both",
+        "w" : 52.206062400000008,
+        "x" : 233.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "sites",
+        "w" : 19.545303432290041,
+        "x" : 233.25,
+        "y" : 383.26806444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Increase",
+        "w" : 36.613678145961899,
+        "x" : 233.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "SULT2A1",
+        "w" : 45.404998949999936,
+        "x" : 233.25,
+        "y" : 313.83349444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "homology,",
+        "w" : 46.616268187499998,
+        "x" : 233.25,
+        "y" : 299.28662444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "insert",
+        "w" : 24.423290299458017,
+        "x" : 233.25,
+        "y" : 284.7407244409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "SULT2A1",
+        "w" : 45.404998949999936,
+        "x" : 233.25,
+        "y" : 270.19482444092279
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "components",
+        "w" : 53.123001207290031,
+        "x" : 233.25,
+        "y" : 255.64794444092288
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Is more",
+        "w" : 33.27523059596183,
+        "x" : 233.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "flanking",
+        "w" : 36.635585924999987,
+        "x" : 233.25,
+        "y" : 215.3061544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "better?",
+        "w" : 29.904579320961886,
+        "x" : 233.25,
+        "y" : 200.75927444092281
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Opposite flank ",
+        "w" : 65.028492150000034,
+        "x" : 233.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Re-test the lid",
+        "w" : 61.668575174999944,
+        "x" : 233.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "without",
+        "w" : 33.59060292445804,
+        "x" : 233.25,
+        "y" : 105.5278344409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Catbase (Å) ",
+        "w" : 55.870609318251979,
+        "x" : 311.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Transfer (Å) ",
+        "w" : 58.70931656825195,
+        "x" : 389.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Comments",
+        "w" : 50.680889382290047,
+        "x" : 467.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.92 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.54 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Best junction",
+        "w" : 58.31939310000007,
+        "x" : 467.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "insert",
+        "w" : 24.423290299458017,
+        "x" : 467.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.32 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.83 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Full loop",
+        "w" : 40.011604649999981,
+        "x" : 467.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "works at the",
+        "w" : 53.729931395961898,
+        "x" : 467.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "C-terminal site",
+        "w" : 65.634556295961829,
+        "x" : 467.25,
+        "y" : 577.02685444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "9.78 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "11.61 ",
+        "w" : 24.328128975000027,
+        "x" : 389.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "FAIL",
+        "w" : 23.614849217710002,
+        "x" : 467.25,
+        "y" : 536.68505444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "2.71 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "3.67 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Lid-length",
+        "w" : 46.404033825000056,
+        "x" : 467.25,
+        "y" : 467.24951444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "may be the",
+        "w" : 48.228469895961894,
+        "x" : 467.25,
+        "y" : 452.70361444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "issue, learned",
+        "w" : 59.827598699999953,
+        "x" : 467.25,
+        "y" : 438.15673444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "from V5",
+        "w" : 37.553390849999914,
+        "x" : 467.25,
+        "y" : 423.61084444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "9.22 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "11.53 ",
+        "w" : 24.328128975000027,
+        "x" : 389.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "FAIL",
+        "w" : 23.614849217710002,
+        "x" : 467.25,
+        "y" : 397.81494444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "2.21 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "4.08 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Structure is",
+        "w" : 50.374954632289928,
+        "x" : 467.25,
+        "y" : 328.38037444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "deletion",
+        "w" : 35.411846250000053,
+        "x" : 467.25,
+        "y" : 313.83349444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "tolerant",
+        "w" : 33.574501099457962,
+        "x" : 467.25,
+        "y" : 299.28662444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.48 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.44 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "More is not",
+        "w" : 50.685386899457967,
+        "x" : 467.25,
+        "y" : 229.85107444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "better",
+        "w" : 25.024856593251968,
+        "x" : 467.25,
+        "y" : 215.3061544409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.01 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "4.05 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Junction",
+        "w" : 37.252822949999995,
+        "x" : 467.25,
+        "y" : 174.96337444092285
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "tolerates either",
+        "w" : 65.005718593251913,
+        "x" : 467.25,
+        "y" : 160.41650444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "side",
+        "w" : 17.710121270961849,
+        "x" : 467.25,
+        "y" : 145.87060444092276
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "2.46 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "4.54 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "Alanine",
+        "w" : 34.799537795961896,
+        "x" : 467.25,
+        "y" : 120.07470444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "background",
+        "w" : 51.894760275000067,
+        "x" : 467.25,
+        "y" : 105.5278344409228
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "failed V5.",
+        "w" : 43.954601287500054,
+        "x" : 467.25,
+        "y" : 90.981934440922842
+      }
+    ],
+    "page" : 14,
+    "text" : "Variant Design V3 + Met N-flank V4 Full Loop 3\n(49 aa)\nreplaces\n330–357\nV5 Substrate-half\n+ hinge\nreplaces\n153–190\nV6 Substrate-half\nonly replaces\n153–190\nV7 Lid at 153–190\n+\nsubstrate-half\nat 338\nV8 Delete\n153–190 +\nsubstrate-half+\nhinge at 338\nV9 + Ser-Met\nN-flank\nV10 + Arg C-flank graft\n_\nAsp144 V5 without\nalanines. Base\nHypothesis A flanking\nresidue eases\nthe junction\nscar\nUtilize the\nwhole lid\nPlace the lid in\nthe insertion\nregion\nSame site,\nshorter lid\nlength\nUtilize both\nsites\nIncrease\nSULT2A1\nhomology,\ninsert\nSULT2A1\ncomponents\nIs more\nflanking\nbetter?\nOpposite flank Re-test the lid\nwithout\nCatbase (Å) Transfer (Å) Comments\n3.92 3.54 Best junction\ninsert\n3.32 3.83 Full loop\nworks at the\nC-terminal site\n9.78 11.61 FAIL\n2.71 3.67 Lid-length\nmay be the\nissue, learned\nfrom V5\n9.22 11.53 FAIL\n2.21 4.08 Structure is\ndeletion\ntolerant\n3.48 4.44 More is not\nbetter\n4.01 4.05 Junction\ntolerates either\nside\n2.46 4.54 Alanine\nbackground\nfailed V5."
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.18164084685543,
+        "text" : "Variant ",
+        "w" : 35.629879018251955,
+        "x" : 77.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Design ",
+        "w" : 31.762535154038062,
+        "x" : 155.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Hypothesis ",
+        "w" : 51.920730732290053,
+        "x" : 233.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Catbase (Å) ",
+        "w" : 55.870609318251979,
+        "x" : 311.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Transfer (Å) ",
+        "w" : 58.70931656825195,
+        "x" : 389.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Comments",
+        "w" : 50.680889382290047,
+        "x" : 467.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "is replaced",
+        "w" : 47.305736625000009,
+        "x" : 155.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "with Asp144",
+        "w" : 56.494518224999979,
+        "x" : 155.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "alanine",
+        "w" : 31.740188720961896,
+        "x" : 233.25,
+        "y" : 675.55517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "background",
+        "w" : 51.89476027500001,
+        "x" : 233.25,
+        "y" : 661.00830144092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "graft",
+        "w" : 23.194614493251962,
+        "x" : 77.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Glu144 ",
+        "w" : 34.20957577499999,
+        "x" : 105.9381066,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 100.44201285,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "V4 without",
+        "w" : 49.772949424458005,
+        "x" : 155.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "alanine",
+        "w" : 31.740188720961925,
+        "x" : 155.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "background.",
+        "w" : 54.640853962499989,
+        "x" : 155.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Same catalytic",
+        "w" : 64.400081420961953,
+        "x" : 155.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "base",
+        "w" : 19.534996145961912,
+        "x" : 155.25,
+        "y" : 577.02685444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Re-test the lid",
+        "w" : 61.668575174999944,
+        "x" : 233.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "without",
+        "w" : 33.59060292445804,
+        "x" : 233.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "alanine",
+        "w" : 31.740188720961896,
+        "x" : 233.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "background.",
+        "w" : 54.640853962500046,
+        "x" : 233.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.87 ",
+        "w" : 19.240234500000042,
+        "x" : 311.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "5.74 ",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "The original",
+        "w" : 54.029201449458014,
+        "x" : 467.25,
+        "y" : 635.2124024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "catbase doesn’t",
+        "w" : 67.254040099458052,
+        "x" : 467.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "allow transfer",
+        "w" : 60.738731143251925,
+        "x" : 467.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "in graft. Is",
+        "w" : 45.485363457290077,
+        "x" : 467.25,
+        "y" : 591.57373444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "grafting still",
+        "w" : 54.039936349458003,
+        "x" : 467.25,
+        "y" : 577.02685444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "viable?",
+        "w" : 31.740188720961896,
+        "x" : 467.25,
+        "y" : 562.4809544409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 9. Full Graft Screen Summary",
+        "w" : 164.24801302500001,
+        "x" : 223.87795500000001,
+        "y" : 306.71435444092282
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "With exception of V5 and V7, which were retried without the 3X-Ala background,",
+        "w" : 462.59782065000013,
+        "x" : 72,
+        "y" : 272.71874687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "all variants maintained transfer distance to PAPS sulfur. Standout variants included",
+        "w" : 464.6417710500001,
+        "x" : 72,
+        "y" : 254.20507585315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "V2, V6, V8, and graft",
+        "w" : 122.40648263108395,
+        "x" : 72,
+        "y" : 235.69238035315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "_",
+        "w" : 6.9999997500000006,
+        "x" : 194.40431219999996,
+        "y" : 235.69238035315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Asp144. However, considering the diversity of the",
+        "w" : 282.33379876807624,
+        "x" : 201.40040594999996,
+        "y" : 235.69238035315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "employed grafting techniques and a lack of variability between variants may render",
+        "w" : 467.39494369849615,
+        "x" : 72,
+        "y" : 217.17870685315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "the grafting method ineffective at producing unique results (Fig. 9).",
+        "w" : 377.82505387500004,
+        "x" : 72,
+        "y" : 198.66503860315424
+      },
+      {
+        "h" : 18.826171236289071,
+        "text" : "3.3 ProteinMPNN Redesign + Chimeras",
+        "w" : 274.3671408504199,
+        "x" : 72,
+        "y" : 158.7016613281543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Round 3 of mutagenesis introduced the use of ProteinMPNN as a bulk method of",
+        "w" : 455.06979042349599,
+        "x" : 72,
+        "y" : 133.6708968781542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "introducing mutations intended to improve the viability of the enzyme in-vitro and",
+        "w" : 462.03301920000013,
+        "x" : 72,
+        "y" : 115.15722585315422
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "catalytic activity with LCA. 10 trials were run, applying 20-27 mutations based on",
+        "w" : 461.64359850000005,
+        "x" : 72,
+        "y" : 96.644530353154224
+      }
+    ],
+    "page" : 15,
+    "text" : "Variant Design Hypothesis Catbase (Å) Transfer (Å) Comments\nis replaced\nwith Asp144\nalanine\nbackground\ngraft\nGlu144 _\nV4 without\nalanine\nbackground.\nSame catalytic\nbase\nRe-test the lid\nwithout\nalanine\nbackground.\n2.87 5.74 The original\ncatbase doesn’t\nallow transfer\nin graft. Is\ngrafting still\nviable?\nFigure 9. Full Graft Screen Summary\nWith exception of V5 and V7, which were retried without the 3X-Ala background,\nall variants maintained transfer distance to PAPS sulfur. Standout variants included\nV2, V6, V8, and graft\n_\nAsp144. However, considering the diversity of the\nemployed grafting techniques and a lack of variability between variants may render\nthe grafting method ineffective at producing unique results (Fig. 9).\n3.3 ProteinMPNN Redesign + Chimeras\nRound 3 of mutagenesis introduced the use of ProteinMPNN as a bulk method of\nintroducing mutations intended to improve the viability of the enzyme in-vitro and\ncatalytic activity with LCA. 10 trials were run, applying 20-27 mutations based on"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "their ProteinMPNN score. Table 6 summarizes the ProteinMPNN runs with added",
+        "w" : 459.52511940000011,
+        "x" : 72,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "baselines from Rounds 1 and 2 for reference.",
+        "w" : 251.77251899999993,
+        "x" : 72,
+        "y" : 685.38769585315424
+      },
+      {
+        "h" : 13.289062439999952,
+        "text" : "Table 6: ProteinMPNN Summary Table",
+        "w" : 190.29492570000002,
+        "x" : 210.85254000000003,
+        "y" : 650.66113292
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Design ",
+        "w" : 31.76253515403809,
+        "x" : 77.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Backgroun",
+        "w" : 51.723308604038095,
+        "x" : 143.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "d",
+        "w" : 6.1176758790380745,
+        "x" : 143.25,
+        "y" : 615.39599644092289
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Mutations ",
+        "w" : 48.249511932290034,
+        "x" : 209.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Base →",
+        "w" : 35.732422499999984,
+        "x" : 275.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "LCA (Å)",
+        "w" : 41.217937318251984,
+        "x" : 275.25,
+        "y" : 615.39599644092289
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "LCA →",
+        "w" : 36.956161500000007,
+        "x" : 341.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "PAPS (Å)",
+        "w" : 44.673881818251971,
+        "x" : 341.25,
+        "y" : 615.39599644092289
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "ipTM ",
+        "w" : 26.881340270961914,
+        "x" : 407.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "P\/F",
+        "w" : 16.487686292710009,
+        "x" : 473.25,
+        "y" : 629.94189444092285
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 77.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "E144D",
+        "w" : 31.146595225542015,
+        "x" : 94.355518349999997,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 88.859424599999997,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "baseline",
+        "w" : 36.017910095961895,
+        "x" : 77.25,
+        "y" : 575.05419444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "— 1 ",
+        "w" : 71.500000124999985,
+        "x" : 143.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.61 ",
+        "w" : 19.240234500000042,
+        "x" : 275.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "3.91 ",
+        "w" : 19.240234500000042,
+        "x" : 341.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "0.962 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Reference",
+        "w" : 44.546516570961899,
+        "x" : 473.25,
+        "y" : 589.59912444092276
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "graft",
+        "w" : 20.752071499458012,
+        "x" : 77.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 97.999900874999994,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Asp14",
+        "w" : 28.708114725000016,
+        "x" : 103.49599462499999,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 534.71044444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "lid graft +",
+        "w" : 44.05366538099122,
+        "x" : 209.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "E144D",
+        "w" : 31.146595225542001,
+        "x" : 209.25,
+        "y" : 534.71044444092286
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.65 ",
+        "w" : 19.240234500000042,
+        "x" : 275.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "5.14 ",
+        "w" : 19.240234500000042,
+        "x" : 341.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "0.961 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Reference",
+        "w" : 44.546516570961899,
+        "x" : 473.25,
+        "y" : 549.25732444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "graft",
+        "w" : 20.752071499458012,
+        "x" : 77.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 97.999900874999994,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "4",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 494.3686544409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Glu14",
+        "w" : 27.484375125,
+        "x" : 103.49599462499999,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "WT ",
+        "w" : 17.094188792709986,
+        "x" : 143.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "lid graft ",
+        "w" : 35.104175749457994,
+        "x" : 209.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "2.83 ",
+        "w" : 19.240234500000042,
+        "x" : 275.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "5.61 ",
+        "w" : 19.240234500000042,
+        "x" : 341.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "0.960 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Reference",
+        "w" : 44.546516570961899,
+        "x" : 473.25,
+        "y" : 508.91455444092287
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "2",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 454.0249044409228
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "26 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "2.04 ",
+        "w" : 19.240234500000042,
+        "x" : 275.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "5.85 ",
+        "w" : 19.240234500000042,
+        "x" : 341.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.944 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Pass?",
+        "w" : 24.429954620961894,
+        "x" : 473.25,
+        "y" : 468.57275444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "4",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 413.68310444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "26 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "5.82 ",
+        "w" : 19.240234500000042,
+        "x" : 275.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "11.96 ",
+        "w" : 24.328128975000027,
+        "x" : 341.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.926 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 428.22998444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "1",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 373.34033444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "27 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "12.59 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "14.16 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.937 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 387.88623444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "(substrate",
+        "w" : 42.737743520961885,
+        "x" : 473.25,
+        "y" : 373.34033444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "detached)",
+        "w" : 42.720775618251878,
+        "x" : 473.25,
+        "y" : 358.79443444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "7",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 318.45263444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "25 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "12.09 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "18.24 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.911 ",
+        "w" : 24.32812897499997,
+        "x" : 407.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 332.99853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "8",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 278.10888444092279
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "27 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "12.34 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "16.78 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.908 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 292.65576444092278
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 237.76611444092282
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "26 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "13.82 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "17.07 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "0.931 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 252.31396444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 114.509651175,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 126.119075775,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "6",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 197.42431444092279
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "F2",
+        "w" : 11.613330974999997,
+        "x" : 143.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "E144D ",
+        "w" : 31.146595225542001,
+        "x" : 160.35551835000001,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999855,
+        "x" : 154.85942460000001,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "25 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "14.03 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "18.37 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.920 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 211.97021444092275
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "WT",
+        "w" : 17.094188792709971,
+        "x" : 114.509651175,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3",
+        "w" : 5.5000001249999997,
+        "x" : 82.74609375,
+        "y" : 157.08252444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 157.08252444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "WT ",
+        "w" : 17.094188792709986,
+        "x" : 143.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "22 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "13.20 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "17.13 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.947 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 171.62841444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "WT",
+        "w" : 17.094188792709971,
+        "x" : 114.509651175,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "2",
+        "w" : 5.5000001249999997,
+        "x" : 82.74609375,
+        "y" : 116.73974444092279
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 116.73974444092279
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "WT ",
+        "w" : 17.094188792709986,
+        "x" : 143.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "23 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "13.87 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "18.00 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0.959 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 131.28466444092282
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 131.28466444092282
+      }
+    ],
+    "page" : 16,
+    "text" : "their ProteinMPNN score. Table 6 summarizes the ProteinMPNN runs with added\nbaselines from Rounds 1 and 2 for reference.\nTable 6: ProteinMPNN Summary Table\nDesign Backgroun\nd\nMutations Base →\nLCA (Å)\nLCA →\nPAPS (Å)\nipTM P\/F\nF2\nE144D\n_\nbaseline\n— 1 2.61 3.91 0.962 Reference\ngraft\n_\nAsp14\n4\nF2\n_\nE144D lid graft +\nE144D\n2.65 5.14 0.961 Reference\ngraft\n_\n4\nGlu14\nWT lid graft 2.83 5.61 0.960 Reference\nMPNN\nF2\n_\n_\n2\nF2\nE144D _\n26 2.04 5.85 0.944 Pass?\nMPNN\nF2\n_\n_\n4\nF2\nE144D _\n26 5.82 11.96 0.926 Fail\nMPNN\nF2\n_\n_\n1\nF2\nE144D _\n27 12.59 14.16 0.937 Fail\n(substrate\ndetached)\nMPNN\nF2\n_\n_\n7\nF2\nE144D _\n25 12.09 18.24 0.911 Fail\nMPNN\nF2\n_\n_\n8\nF2\nE144D _\n27 12.34 16.78 0.908 Fail\nMPNN\nF2\n_\n_\n3\nF2\nE144D _\n26 13.82 17.07 0.931 Fail\nMPNN\nF2\n_\n_\n6\nF2\nE144D _\n25 14.03 18.37 0.920 Fail\nMPNN\nWT\n_\n3\n_\nWT 22 13.20 17.13 0.947 Fail\nMPNN\nWT\n_\n2\n_\nWT 23 13.87 18.00 0.959 Fail"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 12.18164084685543,
+        "text" : "Design ",
+        "w" : 31.76253515403809,
+        "x" : 77.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Backgroun",
+        "w" : 51.723308604038095,
+        "x" : 143.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "d",
+        "w" : 6.1176758790380745,
+        "x" : 143.25,
+        "y" : 686.80517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Mutations ",
+        "w" : 48.249511932290034,
+        "x" : 209.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Base →",
+        "w" : 35.732422499999984,
+        "x" : 275.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "LCA (Å)",
+        "w" : 41.217937318251984,
+        "x" : 275.25,
+        "y" : 686.80517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "LCA →",
+        "w" : 36.956161500000007,
+        "x" : 341.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "PAPS (Å)",
+        "w" : 44.673881818251971,
+        "x" : 341.25,
+        "y" : 686.80517644092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "ipTM ",
+        "w" : 26.881340270961914,
+        "x" : 407.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "P\/F",
+        "w" : 16.487686292710009,
+        "x" : 473.25,
+        "y" : 701.35107444092284
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "WT",
+        "w" : 17.094188792709971,
+        "x" : 114.509651175,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "4",
+        "w" : 5.5000001249999997,
+        "x" : 82.74609375,
+        "y" : 646.4624024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 646.4624024409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "WT ",
+        "w" : 17.094188792709986,
+        "x" : 143.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "21 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "14.23 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "17.48 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "0.955 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 661.0092774409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "MPNN",
+        "w" : 31.769199550541998,
+        "x" : 77.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "WT",
+        "w" : 17.094188792709971,
+        "x" : 114.509651175,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 109.013557425,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "1",
+        "w" : 5.5000001249999997,
+        "x" : 82.74609375,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 77.25,
+        "y" : 606.12060444092288
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "WT ",
+        "w" : 17.094188792709986,
+        "x" : 143.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "21 ",
+        "w" : 10.996093874999985,
+        "x" : 209.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "15.37 ",
+        "w" : 24.736328250000042,
+        "x" : 275.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "19.39 ",
+        "w" : 24.736328250000042,
+        "x" : 341.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "0.952 ",
+        "w" : 24.736328249999985,
+        "x" : 407.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 12.18164084685543,
+        "text" : "Fail",
+        "w" : 17.10232167445804,
+        "x" : 473.25,
+        "y" : 620.6655274409228
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Only MPNN",
+        "w" : 71.920566668915995,
+        "x" : 72,
+        "y" : 545.09765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "F2",
+        "w" : 14.781787650000012,
+        "x" : 150.91101885,
+        "y" : 545.09765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "_",
+        "w" : 6.9999997500000006,
+        "x" : 143.9149251,
+        "y" : 545.09765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "_",
+        "w" : 6.9999997500000006,
+        "x" : 165.68890049999999,
+        "y" : 545.09765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "2 showed an initial pass for catalytic geometry. However, a",
+        "w" : 330.7388677680762,
+        "x" : 172.68499424999999,
+        "y" : 545.09765687815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Boltz-2 ensemble was run to confirm its viability as a candidate (Table 7).",
+        "w" : 414.3901335000001,
+        "x" : 72,
+        "y" : 526.58300710315427
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Table 7: 3-seed Boltz-2 Run of MPNN_F2_2",
+        "w" : 216.47460935999999,
+        "x" : 197.76269550000001,
+        "y" : 491.85644191999995
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Seed ",
+        "w" : 21.988720029038092,
+        "x" : 77.25,
+        "y" : 471.13818444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Base → LCA (Å) ",
+        "w" : 79.690593568251984,
+        "x" : 233.25,
+        "y" : 471.13818444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "LCA → PAPS (Å)",
+        "w" : 84.370277818251964,
+        "x" : 389.25,
+        "y" : 471.13818444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "1 2.04 ",
+        "w" : 175.24023449999999,
+        "x" : 77.25,
+        "y" : 445.34130444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "5.85",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 445.34130444092284
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "2 11.74 ",
+        "w" : 180.32812897499997,
+        "x" : 77.25,
+        "y" : 419.54443444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "13.78",
+        "w" : 24.736328250000042,
+        "x" : 389.25,
+        "y" : 419.54443444092283
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "3 13.26 ",
+        "w" : 180.73632824999999,
+        "x" : 77.25,
+        "y" : 393.74853444092281
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "16.65",
+        "w" : 24.736328250000042,
+        "x" : 389.25,
+        "y" : 393.74853444092281
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Only 1 of the three seeds displayed catalytic geometry. Therefore, the",
+        "w" : 389.16750721807625,
+        "x" : 72,
+        "y" : 353.75292612315423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "ProteinMPNN design method can be ruled out as viable.",
+        "w" : 315.93297742500005,
+        "x" : 72,
+        "y" : 335.23925509815422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "An alternate path of AI-guided design was utilized through generation of a chimera",
+        "w" : 466.24805019307632,
+        "x" : 72,
+        "y" : 294.21191687815428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "between BtSULT and SULT2A1 using RFdiffusion. 50 backbones were generated",
+        "w" : 458.82720787500023,
+        "x" : 72,
+        "y" : 275.70019735315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "from 0-49. In order to sample diversity of the backbone design, 0, 25, and 49",
+        "w" : 430.55060099999992,
+        "x" : 72,
+        "y" : 257.18555035315427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "(Table 8).",
+        "w" : 54.186969375000004,
+        "x" : 72,
+        "y" : 238.67284960315428
+      },
+      {
+        "h" : 13.289062440000009,
+        "text" : "Table 8: Chimera Summary Table",
+        "w" : 162.27539070000003,
+        "x" : 224.86230750000001,
+        "y" : 206.45898254499997
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Construct ",
+        "w" : 47.01996619325196,
+        "x" : 77.25,
+        "y" : 181.73974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "Base → LCA (Å) ",
+        "w" : 79.690593568251984,
+        "x" : 233.25,
+        "y" : 181.73974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "LCA → PAPS (Å)",
+        "w" : 84.370277818251964,
+        "x" : 389.25,
+        "y" : 181.73974444092278
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "chimera",
+        "w" : 35.400673070961915,
+        "x" : 77.25,
+        "y" : 155.94482444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 112.64720534999999,
+        "y" : 155.94482444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "25 (best chimera) ",
+        "w" : 76.915710493251922,
+        "x" : 118.14329909999999,
+        "y" : 155.94482444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "3.4 ",
+        "w" : 13.744140749999985,
+        "x" : 233.25,
+        "y" : 155.94482444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "9.33",
+        "w" : 19.240234500000042,
+        "x" : 389.25,
+        "y" : 155.94482444092284
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "chimera",
+        "w" : 35.400673070961915,
+        "x" : 77.25,
+        "y" : 130.1469744409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "0 13.7 ",
+        "w" : 134.34693540000001,
+        "x" : 118.14329909999999,
+        "y" : 130.1469744409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 112.64720534999999,
+        "y" : 130.1469744409228
+      },
+      {
+        "h" : 12.181640846855458,
+        "text" : "17.35",
+        "w" : 24.736328250000042,
+        "x" : 389.25,
+        "y" : 130.1469744409228
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "chimera",
+        "w" : 35.400673070961915,
+        "x" : 77.25,
+        "y" : 104.35107444092286
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "49 ",
+        "w" : 10.996093875,
+        "x" : 118.14329909999999,
+        "y" : 104.35107444092286
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "_",
+        "w" : 5.5000001249999997,
+        "x" : 112.64720534999999,
+        "y" : 104.35107444092286
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "15.9 ",
+        "w" : 19.240234499999985,
+        "x" : 233.25,
+        "y" : 104.35107444092286
+      },
+      {
+        "h" : 12.181640846855473,
+        "text" : "18.38",
+        "w" : 24.736328250000042,
+        "x" : 389.25,
+        "y" : 104.35107444092286
+      }
+    ],
+    "page" : 17,
+    "text" : "Design Backgroun\nd\nMutations Base →\nLCA (Å)\nLCA →\nPAPS (Å)\nipTM P\/F\nMPNN\nWT\n_\n4\n_\nWT 21 14.23 17.48 0.955 Fail\nMPNN\nWT\n_\n1\n_\nWT 21 15.37 19.39 0.952 Fail\nOnly MPNN\nF2\n_\n_\n2 showed an initial pass for catalytic geometry. However, a\nBoltz-2 ensemble was run to confirm its viability as a candidate (Table 7).\nTable 7: 3-seed Boltz-2 Run of MPNN_F2_2\nSeed Base → LCA (Å) LCA → PAPS (Å)\n1 2.04 5.85\n2 11.74 13.78\n3 13.26 16.65\nOnly 1 of the three seeds displayed catalytic geometry. Therefore, the\nProteinMPNN design method can be ruled out as viable.\nAn alternate path of AI-guided design was utilized through generation of a chimera\nbetween BtSULT and SULT2A1 using RFdiffusion. 50 backbones were generated\nfrom 0-49. In order to sample diversity of the backbone design, 0, 25, and 49\n(Table 8).\nTable 8: Chimera Summary Table\nConstruct Base → LCA (Å) LCA → PAPS (Å)\nchimera\n_\n25 (best chimera) 3.4 9.33\nchimera\n0 13.7 _\n17.35\nchimera\n49 _\n15.9 18.38"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "Review of the generated chimeras clearly indicates that chimera generation is not a",
+        "w" : 464.65612951807611,
+        "x" : 72,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "competitive method for mutagenesis. Although OpenMM MD was considered, a",
+        "w" : 451.16272201807624,
+        "x" : 72,
+        "y" : 685.38867160315431
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "conversation with a mentor pushed us to conclude our enzyme engineering process",
+        "w" : 464.32775949541997,
+        "x" : 72,
+        "y" : 666.87402235315426
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "in order to ship out a wet-lab deliverable.",
+        "w" : 230.79787957500002,
+        "x" : 72,
+        "y" : 648.36035410315435
+      },
+      {
+        "h" : 22.148436846289087,
+        "text" : "4. Summary and Wet-Lab Candidates",
+        "w" : 299.86572488041998,
+        "x" : 72,
+        "y" : 602.94824230815425
+      },
+      {
+        "h" : 12.181640846855487,
+        "text" : "Figure 10. Best Candidates Full Substrate Ensemble",
+        "w" : 229.28826339596199,
+        "x" : 191.35759725,
+        "y" : 285.15673444092278
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "The best candidates were elected from each round: F147S, F147S",
+        "w" : 367.58622553192384,
+        "x" : 72,
+        "y" : 251.16113687815428
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "E144D, and",
+        "w" : 66.842550975000051,
+        "x" : 446.57796322500002,
+        "y" : 251.16113687815428
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "_",
+        "w" : 6.9999997499999722,
+        "x" : 439.58186947500002,
+        "y" : 251.16113687815428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "both V5 graft redesigns from Round 2. Structures were run in a 3-seed Boltz-2",
+        "w" : 439.87648035000001,
+        "x" : 72,
+        "y" : 232.6464871031543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "ensemble against DHEA, the native WT substrate, LCA, DCA, and isoLCA (Yao",
+        "w" : 455.19329947500012,
+        "x" : 72,
+        "y" : 214.13379235315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "et al. 2022).",
+        "w" : 66.83377837499998,
+        "x" : 72,
+        "y" : 195.6201241031543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Although graft",
+        "w" : 82.773337881083989,
+        "x" : 72,
+        "y" : 158.59277687815418
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "_",
+        "w" : 6.9999997500000006,
+        "x" : 154.77116745000001,
+        "y" : 158.59277687815418
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Asp144 demonstrated the highest specificity for LCA in terms of",
+        "w" : 364.1137642234961,
+        "x" : 161.76726120000001,
+        "y" : 158.59277687815418
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "maintaining catalytic distances for sulfuryl transfer, the substitution of the",
+        "w" : 413.66084221807614,
+        "x" : 72,
+        "y" : 140.08008160315418
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "proposed catalytic base, Glu144, deemed this technique too experimental for a",
+        "w" : 439.05615451807614,
+        "x" : 72,
+        "y" : 121.56543235315421
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "limited wet lab pipeline. Furthermore, F147S demonstrated the strongest",
+        "w" : 406.47934140608407,
+        "x" : 72,
+        "y" : 103.05370960315422
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "specificity towards LCA. Although above the threshold for DCA catalysis, the",
+        "w" : 439.11080971807621,
+        "x" : 72,
+        "y" : 84.539068603154206
+      }
+    ],
+    "page" : 18,
+    "text" : "Review of the generated chimeras clearly indicates that chimera generation is not a\ncompetitive method for mutagenesis. Although OpenMM MD was considered, a\nconversation with a mentor pushed us to conclude our enzyme engineering process\nin order to ship out a wet-lab deliverable.\n4. Summary and Wet-Lab Candidates\nFigure 10. Best Candidates Full Substrate Ensemble\nThe best candidates were elected from each round: F147S, F147S\nE144D, and\n_\nboth V5 graft redesigns from Round 2. Structures were run in a 3-seed Boltz-2\nensemble against DHEA, the native WT substrate, LCA, DCA, and isoLCA (Yao\net al. 2022).\nAlthough graft\n_\nAsp144 demonstrated the highest specificity for LCA in terms of\nmaintaining catalytic distances for sulfuryl transfer, the substitution of the\nproposed catalytic base, Glu144, deemed this technique too experimental for a\nlimited wet lab pipeline. Furthermore, F147S demonstrated the strongest\nspecificity towards LCA. Although above the threshold for DCA catalysis, the"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "F147S variant preserves Glu144. In addition to F147S, F147S",
+        "w" : 346.69357265692389,
+        "x" : 72,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "E144D was also",
+        "w" : 90.939479850000112,
+        "x" : 425.68533322500002,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "_",
+        "w" : 6.9999997499999722,
+        "x" : 418.68923947500002,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "chosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an",
+        "w" : 431.34312045000001,
+        "x" : 72,
+        "y" : 685.38867160315431
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "alternative catalytic base (Fig. 10).",
+        "w" : 194.25970012500005,
+        "x" : 72,
+        "y" : 666.87402235315426
+      },
+      {
+        "h" : 22.148436846289087,
+        "text" : "References:",
+        "w" : 94.350066636084023,
+        "x" : 72,
+        "y" : 602.94824230815425
+      },
+      {
+        "h" : 18.826171236289042,
+        "text" : "Scientific references",
+        "w" : 139.15976382541993,
+        "x" : 72,
+        "y" : 561.95068132815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the",
+        "w" : 446.19232471807618,
+        "x" : 90,
+        "y" : 536.9189468781542
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "selective sulfonation of steroidal metabolites by human gut bacteria. Nature",
+        "w" : 423.79975801807609,
+        "x" : 108,
+        "y" : 518.40527585315419
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Microbiology (2022). DOI: 10.1038\/s41564-022-01176-y",
+        "w" : 321.91246597499992,
+        "x" : 108,
+        "y" : 499.89257687815422
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "2. Kakuta Y , Petrotchenko EV , Pedersen LC, Negishi M. The sulfuryl transfer",
+        "w" : 438.72273244849612,
+        "x" : 90,
+        "y" : 481.37792687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "mechanism. Crystal structure of a vanadate complex of estrogen",
+        "w" : 359.40089152500002,
+        "x" : 108,
+        "y" : 462.86620735315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "sulfotransferase and mutational analyses. Journal of Biological Chemistry",
+        "w" : 414.23510964307616,
+        "x" : 108,
+        "y" : 444.35156035315424
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "273: 27325–27330 (1998). DOI: 10.1074\/jbc.273.42.27325",
+        "w" : 332.29786004999994,
+        "x" : 108,
+        "y" : 425.83886687815431
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L.",
+        "w" : 423.95959694999999,
+        "x" : 90,
+        "y" : 407.32519687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Guidry, Charles N. Falany. Structural plasticity in the human cytosolic",
+        "w" : 393.7787023680761,
+        "x" : 108,
+        "y" : 388.81152585315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "sulfotransferase dimer and its role in substrate selectivity and catalysis. Drug",
+        "w" : 430.92637747499998,
+        "x" : 108,
+        "y" : 370.29785235315421
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Metabolism and Pharmacokinetics (2015). DOI:",
+        "w" : 271.6337002560839,
+        "x" : 108,
+        "y" : 351.78515685315426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "10.1016\/j.dmpk.2014.10.004",
+        "w" : 162.08235517499998,
+        "x" : 108,
+        "y" : 333.27050687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "4. Chen M, Drury JE, Christianson DW, Penning TM. Conversion of human",
+        "w" : 430.23300389999997,
+        "x" : 90,
+        "y" : 314.7587868781543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "steroid 5β-reductase (AKR1D1) into 3β-hydroxysteroid dehydrogenase by",
+        "w" : 416.80441350000001,
+        "x" : 108,
+        "y" : 296.24413710315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "single point mutation E120H. Journal of Biological Chemistry (2012). DOI:",
+        "w" : 426.33346275608392,
+        "x" : 108,
+        "y" : 277.73144235315431
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "10.1074\/jbc.m111.338780",
+        "w" : 146.26541872500002,
+        "x" : 108,
+        "y" : 259.21777687815421
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "5. Di Costanzo L, Drury JE, Penning TM, Christianson DW. Crystal structure",
+        "w" : 437.98700229307633,
+        "x" : 90,
+        "y" : 240.70409687815427
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "of human liver Δ4-3-ketosteroid 5β-reductase (AKR1D1) and implications",
+        "w" : 418.28607077041988,
+        "x" : 108,
+        "y" : 222.1904258531543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "for substrate binding and catalysis. Journal of Biological Chemistry (2008).",
+        "w" : 423.19728037499999,
+        "x" : 108,
+        "y" : 203.67773035315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "DOI: 10.1074\/jbc.m801778200",
+        "w" : 176.06087865000001,
+        "x" : 108,
+        "y" : 185.16308687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "6. Brynda J, Kiss A, Pospíšilová K, et al. Steroidal A\/B-ring fusion as a",
+        "w" : 404.31216451807614,
+        "x" : 90,
+        "y" : 166.65136687815428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "strategy for isoform-selective inhibition of human carbonic anhydrases. RSC",
+        "w" : 428.59109365150402,
+        "x" : 108,
+        "y" : 148.1367171031543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Advances 16: 9743–9755 (2026). DOI: 10.1039\/d5ra06507k",
+        "w" : 337.70889307499988,
+        "x" : 108,
+        "y" : 129.62402687815418
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "7. PDB 1J99 — human SULT2A1 in complex with DHEA.",
+        "w" : 335.80424684999991,
+        "x" : 90,
+        "y" : 111.11034687815429
+      },
+      {
+        "h" : 15.503905626289068,
+        "text" : "https:\/\/www.rcsb.org\/structure\/1J99",
+        "w" : 200.15031397499996,
+        "x" : 108,
+        "y" : 92.596676878154241
+      }
+    ],
+    "page" : 19,
+    "text" : "F147S variant preserves Glu144. In addition to F147S, F147S\nE144D was also\n_\nchosen for in-vitro testing in order to validate the Glu→Asp hypothesis as an\nalternative catalytic base (Fig. 10).\nReferences:\nScientific references\n1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the\nselective sulfonation of steroidal metabolites by human gut bacteria. Nature\nMicrobiology (2022). DOI: 10.1038\/s41564-022-01176-y\n2. Kakuta Y , Petrotchenko EV , Pedersen LC, Negishi M. The sulfuryl transfer\nmechanism. Crystal structure of a vanadate complex of estrogen\nsulfotransferase and mutational analyses. Journal of Biological Chemistry\n273: 27325–27330 (1998). DOI: 10.1074\/jbc.273.42.27325\n3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L.\nGuidry, Charles N. Falany. Structural plasticity in the human cytosolic\nsulfotransferase dimer and its role in substrate selectivity and catalysis. Drug\nMetabolism and Pharmacokinetics (2015). DOI:\n10.1016\/j.dmpk.2014.10.004\n4. Chen M, Drury JE, Christianson DW, Penning TM. Conversion of human\nsteroid 5β-reductase (AKR1D1) into 3β-hydroxysteroid dehydrogenase by\nsingle point mutation E120H. Journal of Biological Chemistry (2012). DOI:\n10.1074\/jbc.m111.338780\n5. Di Costanzo L, Drury JE, Penning TM, Christianson DW. Crystal structure\nof human liver Δ4-3-ketosteroid 5β-reductase (AKR1D1) and implications\nfor substrate binding and catalysis. Journal of Biological Chemistry (2008).\nDOI: 10.1074\/jbc.m801778200\n6. Brynda J, Kiss A, Pospíšilová K, et al. Steroidal A\/B-ring fusion as a\nstrategy for isoform-selective inhibition of human carbonic anhydrases. RSC\nAdvances 16: 9743–9755 (2026). DOI: 10.1039\/d5ra06507k\n7. PDB 1J99 — human SULT2A1 in complex with DHEA.\nhttps:\/\/www.rcsb.org\/structure\/1J99"
+  },
+  {
+    "lines" : [
+      {
+        "h" : 15.503905626289111,
+        "text" : "8. PDB 3F3Y — human SULT2A1 in complex with PAP and lithocholic acid.",
+        "w" : 440.61514222500023,
+        "x" : 90,
+        "y" : 703.90136687815425
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "https:\/\/www.rcsb.org\/structure\/3F3Y",
+        "w" : 205.59722849391602,
+        "x" : 108,
+        "y" : 685.38867187815424
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "9. UniProt Q06520 — human SULT2A1.",
+        "w" : 234.75717465000002,
+        "x" : 90,
+        "y" : 666.87402287815428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "https:\/\/www.uniprot.org\/uniprotkb\/Q06520",
+        "w" : 241.36849934999987,
+        "x" : 108,
+        "y" : 648.36035087815424
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "10. UniProt Q8AAP8 — Bacteroides thetaiotaomicron BT0416 sulfotransferase",
+        "w" : 444.67638991807598,
+        "x" : 90,
+        "y" : 629.84765587815423
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "(BtSULT). https:\/\/www.uniprot.org\/uniprotkb\/Q8AAP8",
+        "w" : 311.60203499999977,
+        "x" : 108,
+        "y" : 611.33496087815422
+      },
+      {
+        "h" : 18.826171236289042,
+        "text" : "AI models",
+        "w" : 71.265686150419924,
+        "x" : 72,
+        "y" : 571.37158132815432
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "11. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and",
+        "w" : 414.98320170000005,
+        "x" : 90,
+        "y" : 546.33984687815428
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "Efficient Binding Affinity Prediction. bioRxiv (2025). DOI:",
+        "w" : 332.90390025608394,
+        "x" : 108,
+        "y" : 527.82715160315433
+      },
+      {
+        "h" : 15.503905626289111,
+        "text" : "10.1101\/2025.06.14.659707",
+        "w" : 157.28591894999994,
+        "x" : 108,
+        "y" : 509.31347687815423
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "12. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure",
+        "w" : 401.51101479307624,
+        "x" : 90,
+        "y" : 490.7998068781543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "prediction with AlphaFold. Nature 596: 583–589 (2021). DOI:",
+        "w" : 351.20032275608401,
+        "x" : 108,
+        "y" : 472.28613585315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "10.1038\/s41586-021-03819-2",
+        "w" : 166.73503087499995,
+        "x" : 108,
+        "y" : 453.77343687815426
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "13. Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning-based",
+        "w" : 425.99777250000011,
+        "x" : 90,
+        "y" : 435.2587868781543
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "protein sequence design using ProteinMPNN. Science 378: 49–56 (2022).",
+        "w" : 413.47520287499992,
+        "x" : 108,
+        "y" : 416.74706735315425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "DOI: 10.1126\/science.add2187",
+        "w" : 173.95629869999993,
+        "x" : 108,
+        "y" : 398.23241687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "14. Watson JL, Juergens D, Bennett NR, et al. De novo design of protein",
+        "w" : 403.669616475,
+        "x" : 90,
+        "y" : 379.71972687815429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "structure and function with RFdiffusion. Nature 620: 1089–1100 (2023).",
+        "w" : 406.00015537499996,
+        "x" : 108,
+        "y" : 361.20605585315428
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "DOI: 10.1038\/s41586-023-06415-8",
+        "w" : 198.98948287499996,
+        "x" : 108,
+        "y" : 342.69238687815425
+      },
+      {
+        "h" : 18.826171236289042,
+        "text" : "Analysis tools",
+        "w" : 96.770561525419964,
+        "x" : 72,
+        "y" : 302.72900132815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "15. van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein",
+        "w" : 418.52317934999996,
+        "x" : 90,
+        "y" : 277.69921687815429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "structure search with Foldseek. Nature Biotechnology (2023). DOI:",
+        "w" : 376.79345775608397,
+        "x" : 108,
+        "y" : 259.18456710315428
+      },
+      {
+        "h" : 15.503905626289082,
+        "text" : "10.1038\/s41587-023-01773-0",
+        "w" : 166.73503087499995,
+        "x" : 108,
+        "y" : 240.6708968781542
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "16. Sievers F, Wilm A, Dineen D, et al. Fast, scalable generation of high-quality",
+        "w" : 444.92181600000004,
+        "x" : 90,
+        "y" : 222.15820687815429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "protein multiple sequence alignments using Clustal Omega. Molecular",
+        "w" : 395.58978234541996,
+        "x" : 108,
+        "y" : 203.64551160315429
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "Systems Biology 7: 539 (2011). DOI: 10.1038\/msb.2011.75",
+        "w" : 330.86255932499989,
+        "x" : 108,
+        "y" : 185.13183687815425
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "17. Davis IW, Leaver-Fay A, Chen VB, et al. MolProbity: all-atom contacts and",
+        "w" : 444.25915170000007,
+        "x" : 90,
+        "y" : 166.61718687815417
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "structure validation for proteins and nucleic acids. Nucleic Acids Research",
+        "w" : 415.99792335000006,
+        "x" : 108,
+        "y" : 148.10449160315417
+      },
+      {
+        "h" : 15.503905626289054,
+        "text" : "35: W375–W383 (2007). DOI: 10.1093\/nar\/gkm216",
+        "w" : 293.79884752499993,
+        "x" : 108,
+        "y" : 129.59179687815427
+      }
+    ],
+    "page" : 20,
+    "text" : "8. PDB 3F3Y — human SULT2A1 in complex with PAP and lithocholic acid.\nhttps:\/\/www.rcsb.org\/structure\/3F3Y\n9. UniProt Q06520 — human SULT2A1.\nhttps:\/\/www.uniprot.org\/uniprotkb\/Q06520\n10. UniProt Q8AAP8 — Bacteroides thetaiotaomicron BT0416 sulfotransferase\n(BtSULT). https:\/\/www.uniprot.org\/uniprotkb\/Q8AAP8\nAI models\n11. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and\nEfficient Binding Affinity Prediction. bioRxiv (2025). DOI:\n10.1101\/2025.06.14.659707\n12. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure\nprediction with AlphaFold. Nature 596: 583–589 (2021). DOI:\n10.1038\/s41586-021-03819-2\n13. Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning-based\nprotein sequence design using ProteinMPNN. Science 378: 49–56 (2022).\nDOI: 10.1126\/science.add2187\n14. Watson JL, Juergens D, Bennett NR, et al. De novo design of protein\nstructure and function with RFdiffusion. Nature 620: 1089–1100 (2023).\nDOI: 10.1038\/s41586-023-06415-8\nAnalysis tools\n15. van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein\nstructure search with Foldseek. Nature Biotechnology (2023). DOI:\n10.1038\/s41587-023-01773-0\n16. Sievers F, Wilm A, Dineen D, et al. Fast, scalable generation of high-quality\nprotein multiple sequence alignments using Clustal Omega. Molecular\nSystems Biology 7: 539 (2011). DOI: 10.1038\/msb.2011.75\n17. Davis IW, Leaver-Fay A, Chen VB, et al. MolProbity: all-atom contacts and\nstructure validation for proteins and nucleic acids. Nucleic Acids Research\n35: W375–W383 (2007). DOI: 10.1093\/nar\/gkm216"
+  },
+  {
+    "lines" : [
+
+    ],
+    "page" : 21,
+    "text" : ""
+  }
+]

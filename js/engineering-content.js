@@ -7,7 +7,6 @@
   const reference = page.paper.references[0];
   const source = `<a class="project-paper-citation" href="${reference.href}" target="_blank" rel="noopener noreferrer" aria-label="Source 1: Dry Lab Documentation">[1]</a>`;
   const notebook = "model.html";
-  const protocols = "model.html";
 
   engineering.intro = "Assembly, enzyme design, and experimental integration address different questions within the same proposed system. These records trace how sequence comparisons, predicted structures, and experimental planning changed Renata’s design decisions.";
   engineering.decisions = [
@@ -81,7 +80,7 @@
         { label: "PAPS supply", text: "Define the selected cofactor module and fit it to measured data. Evaluate model predictions with independent observations before using them to prioritize another build." }
       ],
       note: "The supplied record contains a modelling plan. A completed kinetic dataset and fitted ODE model have yet to be reported.",
-      source: { href: `${protocols}#ode-plan`, label: "Read the modelling inputs and measurement plan" }
+      source: { href: "wet-lab.html#assay-plan", label: "Read the enzyme characterization plan" }
     }
   ];
 

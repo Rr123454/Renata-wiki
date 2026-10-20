@@ -2,6 +2,7 @@
    this module displays records and never runs computational or laboratory jobs. */
 (function () {
   "use strict";
+  const assetUrl = path => window.IGEM_ASSET_URL ? window.IGEM_ASSET_URL(path) : path;
   const data = window.SITE_DATA;
   const key = "experiment-enzyme-design";
   const escape = (text) => String(text).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -12,7 +13,7 @@
   const note = (title, text) => `<aside class="dry-lab-status"><strong>${title}</strong><p>${text}</p></aside>`;
   const code = (text) => `<pre><code>${escape(text)}</code></pre>`;
   const toc = (items) => `<nav class="dry-lab-toc" aria-label="Sections in this record">${items.map(([id, label]) => `<a href="#${id}">${label}</a>`).join("")}</nav>`;
-  const figure = (file, alt, caption) => `<figure class="dry-lab-figure"><a href="assets/dry-lab/${file}.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure: ${escape(alt)}"><img src="assets/dry-lab/${file}.png" alt="${escape(alt)}" loading="lazy" width="1116" height="854" /></a><figcaption>${caption}</figcaption></figure>`;
+  const figure = (file, alt, caption) => `<figure class="dry-lab-figure"><a href="${assetUrl(`assets/dry-lab/${file}.png`)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure: ${escape(alt)}"><img src="${assetUrl(`assets/dry-lab/${file}.png`)}" alt="${escape(alt)}" loading="lazy" width="1116" height="854" /></a><figcaption>${caption}</figcaption></figure>`;
   const documentUrl = "https://docs.google.com/document/d/1hq1qmFW4YEaZQYAjRaq6p3PTumQB0m1oRSfn-F4U6K4/edit";
   const documentTab = (id, label) => link(`${documentUrl}?tab=${id}`, label);
   const workingDocument = `<p class="dry-lab-document-link">${link(`${documentUrl}?tab=t.0`, "Read the team's working document")} · Content reviewed 6 Oct. 2026. ${cite(1)}</p>`;

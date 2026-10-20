@@ -35,7 +35,7 @@ test("crew identity enhances the existing team page exactly once", () => {
   assert.equal(init(doc), true);
   assert.equal(roster.dataset.teamSpace, "true");
   assert.equal(init(doc), false);
-  assert.deepEqual(titles.map(node => node.textContent), ["Our team.", "The SulFlux crew."]);
+  assert.deepEqual(titles.map(node => node.textContent), ["Lorem", "Ipsum."]);
   assert.equal(selectorMap[".orbit-scene-center image"].attrs.href, "assets/orbit/bottle.svg");
   assert.match(selectorMap[".team-dealer-copy > p"].textContent, /Mentors, then students/);
 });

@@ -1,16 +1,17 @@
 /* Illustrated chapter pages. The team dealing controller owns all roster motion. */
 (function (root) {
   "use strict";
+  const assetUrl = path => root.IGEM_ASSET_URL ? root.IGEM_ASSET_URL(path) : path;
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
   const plain = value => String(value || "").replace(/<[^>]*>/g, "");
   const chapters = {
-    team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["The people.", "The possibility."], lead: "Meet the students and mentors bringing Renata to life. Every perspective adds something to the story.", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
-    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Small biology.", "A bigger question."], lead: "Explore the thinking behind Sulflux: a proposed synthetic biology approach to lithocholic acid sulfation.", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
-    lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Big questions.", "Small beginnings."], lead: "From experimental plans to computational observations, explore the records behind the research.", next: "human-practices.html", nextLabel: "Meet the perspectives", nextIcon: "Mic" },
-    engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Better science.", "Starts with listening."], lead: "Explore the people, perspectives, and conversations that inform our project decisions.", next: "education.html", nextLabel: "Share the curiosity", nextIcon: "Plant" },
-    education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Curiosity.", "Pass it on."], lead: "A place for our learning activities, outreach records, and reflections on sharing synthetic biology.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },
-    community: { number: "07", label: "Our community", icon: "Eiffel_tower", satellite: "Phoenix", title: ["Ideas grow.", "Together."], lead: "Explore the connections and support around Renata.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" }
+    team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
+    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
+    lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "human-practices.html", nextLabel: "Human Practices", nextIcon: "Mic" },
+    engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "education.html", nextLabel: "Education", nextIcon: "Plant" },
+    education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },
+    community: { number: "07", label: "Our community", icon: "Eiffel_tower", satellite: "Phoenix", title: ["Lorem", "Ipsum."], lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" }
   };
 
   function pageChapter(pageKey, pageData) {
@@ -25,7 +26,7 @@
       chapter.nextLabel = pageKey.startsWith("experiment-") ? "Wetlab work & analysis" : "Explore education";
       chapter.nextIcon = chapter.icon;
     }
-    if (pageKey === "contact") { chapter.title = ["Keep in touch.", "Keep exploring."]; chapter.icon = "Mic"; }
+    if (pageKey === "contact") { chapter.title = ["Lorem", "Ipsum."]; chapter.icon = "Mic"; }
     return chapter;
   }
 
@@ -40,11 +41,11 @@
         <path d="M190 214 Q300 148 404 213M183 276Q305 214 416 271M213 333Q307 285 387 322" fill="none" stroke="#b16d9c" stroke-width="15" stroke-linecap="round"/>
         ${chapter.key === "team" ? '<rect x="211" y="154" width="180" height="218" rx="18" fill="#f49c7c" stroke="#122b60" stroke-width="5" transform="rotate(-17 300 250)"/><rect x="211" y="150" width="180" height="218" rx="18" fill="#7ccfda" stroke="#122b60" stroke-width="5" transform="rotate(13 300 250)"/>' : ""}
         <rect x="211" y="142" width="178" height="216" rx="22" fill="#fff1bc" stroke="#122b60" stroke-width="5" transform="rotate(-5 300 250)"/>
-        <image href="assets/nav-icons/${chapter.icon}.png" x="234" y="174" width="132" height="132" class="orbit-scene-badge"/>
+        <image href="${assetUrl(`assets/nav-icons/${chapter.icon}.png`)}" x="234" y="174" width="132" height="132" class="orbit-scene-badge"/>
         <text x="300" y="335" fill="#173e84" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="3">RENATA / ${chapter.number}</text>
       </g>
       <g class="orbit-scene-moon"><circle cx="475" cy="140" r="43" fill="#ffda77" stroke="#122b60" stroke-width="5"/><ellipse cx="475" cy="140" rx="64" ry="16" fill="none" stroke="#f2a57c" stroke-width="10" transform="rotate(-25 475 140)"/></g>
-      <g class="orbit-scene-satellite"><rect x="69" y="285" width="89" height="89" rx="23" fill="#b2e4e4" stroke="#122b60" stroke-width="4" transform="rotate(10 113 330)"/><image href="assets/nav-icons/${chapter.satellite}.png" x="84" y="300" width="60" height="60" class="orbit-scene-badge"/></g>
+      <g class="orbit-scene-satellite"><rect x="69" y="285" width="89" height="89" rx="23" fill="#b2e4e4" stroke="#122b60" stroke-width="4" transform="rotate(10 113 330)"/><image href="${assetUrl(`assets/nav-icons/${chapter.satellite}.png`)}" x="84" y="300" width="60" height="60" class="orbit-scene-badge"/></g>
       <g class="orbit-scene-craft" transform="translate(${start.x} ${start.y}) rotate(${start.angle})"><path d="M-7 -26Q0 -68 7 -26" fill="#f9a17e"/><path d="M-3 -26Q0 -50 3 -26" fill="#fff1bc"/><image href="assets/story/rocket-cutout.png" x="-34" y="-25.5" width="68" height="51" transform="rotate(72)"/></g>
     </svg>`;
   }
@@ -60,7 +61,7 @@
           <p class="orbit-page-lead">${escape(chapter.lead)}</p>
           <a class="orbit-page-cta" href="#page-content">${chapter.key === "team" ? "Meet the crew" : "Explore this chapter"}<span aria-hidden="true">↓</span></a>
         </div>
-        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>One project. Many perspectives.</span></div></div>
+        <div class="orbit-page-art">${illustration(chapter)}<div class="orbit-scene-caption"><span>Lorem Ipsum.</span></div></div>
       </div>
       <svg class="orbit-page-horizon" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q240 0 500 50T1000 45T1440 22V100H0Z" fill="#ef9a7d"/><path d="M0 87Q350 28 610 73T1150 65T1440 80V100H0Z" fill="#fff4e3"/></svg>
     </section>
@@ -209,7 +210,8 @@
     meter.setAttribute("aria-valuemin", "0"); meter.setAttribute("aria-valuemax", "100");
     meter.innerHTML = '<span></span>';
     doc.getElementById("siteHeader").appendChild(meter);
-    const chapterLinks = [...main.querySelectorAll(".page-outline a")];
+    // Human Practices now delegates its contents state to the shared outline.
+    const chapterLinks = doc.body.dataset.page === "human-practices" ? [] : [...main.querySelectorAll(".page-outline a")];
     let frame = 0;
     function update() {
       frame = 0;
@@ -250,7 +252,7 @@
     });
     const content = main.innerHTML;
     main.innerHTML = `${heroMarkup(chapter, titleId, pageTitle, links)}<div class="orbit-page-content" id="page-content" tabindex="-1">${content}</div>
-      <section class="orbit-next" aria-label="Continue exploring"><div class="container"><div class="orbit-next-copy"><p>There’s more to the story</p><h2>Keep your<br>curiosity moving.</h2></div><a href="${chapter.next}"><img src="assets/nav-icons/${chapter.nextIcon}.png" width="80" height="80" alt=""/><span>${chapter.nextLabel}</span><span aria-hidden="true">↗</span></a></div></section>`;
+      <section class="orbit-next" aria-label="Continue exploring"><div class="container"><div class="orbit-next-copy"><p>Lorem Ipsum</p><h2>Lorem<br>Ipsum.</h2></div><a href="${chapter.next}"><img src="${assetUrl(`assets/nav-icons/${chapter.nextIcon}.png`)}" width="80" height="80" alt=""/><span>${chapter.nextLabel}</span><span aria-hidden="true">↗</span></a></div></section>`;
     doc.body.dataset.orbitSection = chapter.key;
     doc.body.classList.add("orbit-pages");
     enhanceScene(main.querySelector(".orbit-page-hero"), win, doc);

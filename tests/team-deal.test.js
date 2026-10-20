@@ -3,7 +3,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-const { DEAL_TIMING, dealFrames, createDealController } = require("../js/team-deal.js");
+const { DEAL_TIMING, dealFrames, dealerArt, createDealController } = require("../js/team-deal.js");
 const read = file => fs.readFileSync(path.join(__dirname, "..", file), "utf8");
 
 test("cards start at the deck and settle in their exact grid position", () => {
@@ -37,13 +37,13 @@ test("dealing preserves roster order and offers an immediate complete roster", (
   assert.match(js, /if \(reduced.matches \|\| !cards.every/);
   assert.match(js, /data-deal-show/);
   assert.match(js, /window.addEventListener\("scroll", controller.onScroll, \{ passive: true \}\)/);
-  assert.match(read("team.html"), /js\/team-deal.js\?v=20261018-deal5/);
+  assert.match(read("team.html"), /js\/team-deal.js\?v=20261019-grip2/);
 });
 
 // Exercise the real controller with a deterministic clock and scrollable layout.
 function harness(tops = [300, 300, 300, 300, 300]) {
   let now = 0, nextId = 0, scroll = 0;
-  const jobs = new Map(), starts = [];
+  const jobs = new Map(), starts = [], handMotions = [];
   const view = {
     innerHeight: 800, innerWidth: 1920,
     setTimeout(fn, delay) { const id = ++nextId; jobs.set(id, { fn, at: now + delay }); return id; },
@@ -85,7 +85,12 @@ function harness(tops = [300, 300, 300, 300, 300]) {
     cards, view, page, reduced, replay,
     dealer: { getBoundingClientRect: () => ({ bottom: 200 }) },
     deck: { getBoundingClientRect: () => ({ top: 80, left: 400, width: 70, height: 80 }) },
-    hand: { animate }
+    hand: {
+      animate(frames, options) { const motion = animate(frames, options); handMotions.push(motion); return motion; },
+      querySelectorAll: () => ["little", "ring", "middle", "index", "thumb"].map(finger => ({ dataset: { finger },
+        animate(frames, options) { const motion = animate(frames, options); motion.finger = finger; handMotions.push(motion); return motion; }
+      }))
+    }
   });
   async function tick(ms) {
     const end = now + ms;
@@ -98,7 +103,7 @@ function harness(tops = [300, 300, 300, 300, 300]) {
     now = end;
     await Promise.resolve();
   }
-  return { cards, starts, page, reduced, replay, controller, tick,
+  return { cards, starts, handMotions, page, reduced, replay, controller, tick,
     scrollTo(value) { scroll = value; controller.onScroll(); },
     waiting: () => cards.filter(card => card.classList.contains("is-waiting")),
     dealing: () => cards.filter(card => card.classList.contains("is-dealing"))
@@ -116,7 +121,7 @@ test("a five-card row lands in 640ms with 55ms between cards", async () => {
   assert.equal(h.waiting().length, 0); assert.equal(h.dealing().length, 0);
 });
 
-test("cards no longer turn over, and the hand slides once for the whole deal", async () => {
+test("cards keep their faces while the five-finger hand makes one sweep per visible batch", async () => {
   const js = read("js/team-deal.js");
   assert.doesNotMatch(js, /rotateY|team-card-back|backface/, "the flip and the card back are gone");
   assert.doesNotMatch(js, /data-deal-replay/, "only Show all cards remains");
@@ -124,7 +129,10 @@ test("cards no longer turn over, and the hand slides once for the whole deal", a
   assert.match(js, /if \(!handSlid\)/);
   const slide = js.match(/handMotion = hand\.animate\(\[[\s\S]*?\]/)[0];
   assert.match(slide, /translate\(/);
-  assert.doesNotMatch(slide, /rotate\(/, "the hand slides rather than turning");
+  assert.match(slide, /rotate\(-3deg\)/, "a small wrist flick accompanies the release");
+  const fingers = [...dealerArt().matchAll(/data-finger="([^"]+)"/g)].map(match => match[1]);
+  assert.deepEqual(fingers, ["little", "ring", "middle", "index", "thumb"]);
+  assert.match(dealerArt(), /team-deck-source/);
 });
 
 test("a fast jump prioritizes visible cards and defers interrupted and skipped rows", async () => {
@@ -241,4 +249,19 @@ test("leaving the browser tab settles active cards and resumes the queue on retu
   assert.equal(h.dealing().length, 0); assert.deepEqual(h.starts, [0]);
   h.page.hidden = false; h.controller.onVisibilityChange(); await h.tick(1000);
   assert.deepEqual(h.starts, [0,1,2,3,4]); assert.equal(h.waiting().length, 0);
+});
+
+
+test("the wrist and five fingers release together and settle safely when motion is stopped", async () => {
+  const h = harness(); h.controller.begin(); await h.tick(0);
+  assert.equal(h.handMotions.length, 6);
+  assert.deepEqual(h.handMotions.slice(1).map(m => m.finger), ["little", "ring", "middle", "index", "thumb"]);
+  assert.equal(h.handMotions.at(-1).frames[1].transform, "rotate(-7deg)");
+  h.scrollTo(20);
+  assert.ok(h.handMotions.every(m => !m.canceled), "small scrolls preserve the release gesture");
+  h.controller.showAll();
+  assert.ok(h.handMotions.every(m => m.canceled));
+  assert.equal(h.dealing().length, 0);
+  await h.tick(1000);
+  assert.equal(h.handMotions.length, 6, "stopped motion cannot restart itself");
 });
