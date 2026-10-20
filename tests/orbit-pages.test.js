@@ -47,7 +47,8 @@ test("illustrated chapters load their renderer while research papers and redirec
     assert.equal([...rendered.matchAll(/<h1\b/g)].length, 1);
     assert.match(rendered, /aria-labelledby="page-title"/);
     assert.doesNotMatch(rendered, /orbit-scene-toggle|Pause scene|Resume scene/);
-    assert.match(html, /js\/orbit-pages\.js\?v=20261019-draft2/);
+    assert.doesNotMatch(rendered, /lorem|ipsum/i);
+    assert.match(html, /js\/orbit-pages\.js\?v=[a-f0-9]{12}/);
   }
 });
 

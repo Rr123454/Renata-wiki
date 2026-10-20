@@ -110,7 +110,7 @@ test("all content pages mount the shared sponsor, links, and copyright footer", 
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     assert.equal((html.match(/id="siteFooter"/g) || []).length, 1, file);
-    assert.match(html, /css\/cosmic-theme\.css\?v=20261019-blue-footer1/, file);
+    assert.match(html, /css\/cosmic-theme\.css\?v=[a-f0-9]{12}/, file);
     assert.match(html, /src="js\/site\.js/, file);
   }
   const renderer = fs.readFileSync(path.join(root, "js/site.js"), "utf8");

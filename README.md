@@ -7,10 +7,10 @@ Static HTML, CSS and JavaScript. No application server, database, package instal
 Open this folder in VS Code and run **Serve website**, or:
 
 ```sh
-python3 -m http.server 8080 --bind 127.0.0.1
+python3 scripts/serve-wiki.py
 ```
 
-Visit `http://localhost:8080/`. The homepage is `index.html`; regenerate it after editing its template or science copy:
+Visit `http://localhost:8080/`. This preview disables browser caching so edits are visible on reload. If an older **Serve website** task is still running, stop and restart it once to use this server. The homepage is `index.html`; regenerate it after editing its template or science copy:
 
 ```sh
 node scripts/build-home.js
@@ -20,6 +20,8 @@ python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
 The authoring/build commands use Node 22+ and Python 3.10+. No npm dependencies are needed.
+
+Every HTML entry point uses a content hash for its local scripts and stylesheets. After editing JS or CSS, run `node scripts/version-assets.js` to refresh the URLs across all pages. `node scripts/build-home.js` also does this automatically. The tests reject stale asset versions; exported previews and releases receive their own hashes after URL rewriting. This prevents a content update from continuing to request an older cached script.
 
 ## Manual transfer to GitLab
 
@@ -31,7 +33,7 @@ python3 scripts/package-wiki.py
 ```
 
 - `build/renata-wiki-source.zip`: unpack into the destination repository's root. Include hidden `.gitlab-ci.yml` and `.gitignore`; preserve the destination's `.git` folder and any official repository settings. Review differences with the official template before committing. Do not create an extra enclosing folder.
-- `public/`: standalone preview output. Serve with `python3 -m http.server 8081 --directory public` and open `http://localhost:8081/`.
+- `public/`: standalone preview output. Serve with `python3 scripts/serve-wiki.py --port 8081 --directory public` and open `http://localhost:8081/`.
 - `build/wiki-audit.json`: asset upload inventory, file hashes and findings.
 - `.gitlab-ci.yml`: test/preview jobs plus a manual Pages release job. Source commits do not automatically publish draft material.
 

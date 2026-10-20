@@ -27,17 +27,17 @@ const html = `<!DOCTYPE html>
   <title>ULP-CA · SulFlux</title>
   <link rel="canonical" href="index.html" />
   <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/loading-screen.css?v=20261018" />
-  <link rel="stylesheet" href="css/rocket-cursor.css?v=20261019-cursor2" />
-  <link rel="stylesheet" href="css/site.css?v=20260912-white-footer2" />
-  <link rel="stylesheet" href="css/orbit-home.css?v=20261018-flight2" />
-  <link rel="stylesheet" href="css/navigation.css?v=20261019-shared-header1" />
-  <link rel="stylesheet" href="css/site-header.css?v=20261019-icon-bar1" />
-  <link rel="stylesheet" href="css/cosmic-theme.css?v=20261019-blue-footer1" />
-  <link rel="stylesheet" href="css/mission-home.css?v=20261020-alignment3" />
+  <link rel="stylesheet" href="css/loading-screen.css" />
+  <link rel="stylesheet" href="css/rocket-cursor.css" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/orbit-home.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/site-header.css" />
+  <link rel="stylesheet" href="css/cosmic-theme.css" />
+  <link rel="stylesheet" href="css/mission-home.css" />
 </head>
 <body data-page="home" data-home-variant="orbit" class="mission-page" data-home-brand="ULP-CA">
-  <script src="js/loading-screen.js?v=20261019-ulpca1"></script>
+  <script src="js/loading-screen.js"></script>
   <a class="flight-skip" href="#observatory">Skip to the planets</a>
   <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><ul class="renata-nav-list"><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li><a class="renata-nav-trigger" href="project-description.html">Engineering</a></li><li><a class="renata-nav-trigger" href="wet-lab.html">Lab Work</a></li><li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li></ul></nav></div></header>
   <main class="mission-home" id="siteMain" data-static-content="true">
@@ -80,12 +80,13 @@ const html = `<!DOCTYPE html>
     <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
-  <script src="js/site-content.js?v=20261020-team-photos"></script>
-  <script src="js/navigation.js?v=20261019-notebook2"></script>
-  <script src="js/site.js?v=20261019-ulpca1"></script>
-  <script src="js/mission-home.js?v=20261020-alignment3"></script>
-  <script src="js/rocket-cursor.js?v=20261019-cursor2"></script>
+  <script src="js/site-content.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/mission-home.js"></script>
+  <script src="js/rocket-cursor.js"></script>
 </body>
 </html>
 `;
 fs.writeFileSync(path.join(root,'index.html'),html);
+require('./version-assets.js').refreshAll();

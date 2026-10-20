@@ -145,7 +145,7 @@ test("backdrop closes the dialog; clicking inside preserves it; missing bios are
 
 test("team entry point loads profile assets and mobile profiles can scroll", () => {
   const html = read("team.html"), css = read("css/team-profiles.css"), js = read("js/team-profiles.js");
-  assert.match(html, /css\/team-profiles.css\?v=20261001-profiles1/);
+  assert.match(html, /css\/team-profiles.css\?v=[a-f0-9]{12}/);
   assert.ok(html.indexOf("js/team-profiles.js") > html.indexOf("js/team-deal.js"));
   assert.match(css, /max-height: calc\(100dvh - 24px\)/);
   assert.match(css, /overflow: auto/);

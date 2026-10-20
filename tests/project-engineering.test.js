@@ -295,10 +295,10 @@ test("Project Description loads the merged data before rendering with refreshed 
   const version = scripts.find(src => src.startsWith("js/site.js?"))?.split("?v=")[1];
   assert.ok(version);
   const required = ["js/site-content.js", "js/project-description-content.js", "js/engineering-content.js", "js/project-paper.js", "js/site.js"];
-  const positions = required.map(file => scripts.indexOf(`${file}?v=${file === "js/site-content.js" ? "20261020-team-photos" : file === "js/project-paper.js" ? "20261019-expand1" : version}`));
+  const positions = required.map(file => scripts.findIndex(src => src.split("?")[0] === file));
   assert.ok(positions.every(position => position >= 0));
   assert.ok(positions.every((position, index) => index === 0 || position > positions[index - 1]));
-  assert.ok(html.includes(`css/project-research.css?v=${version}`));
+  assert.match(html, /css\/project-research\.css\?v=[a-f0-9]{12}/);
   assert.doesNotMatch(html, /(?:home-animations|immersive-home|orbit-pages)\.(?:js|css)/);
   assert.doesNotMatch(project.main, /<video\b|home-scroll|home-orbit/);
   assert.equal(scripts.filter(src => src.startsWith("js/engineering-content.js?")).length, 1);
