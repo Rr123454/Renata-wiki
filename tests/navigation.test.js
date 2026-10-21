@@ -39,7 +39,7 @@ test("Home is the first shared navigation link and marks the current homepage", 
   assert.equal(data.nav[0].key, "home");
   assert.match(render(data.nav), /href="index\.html" aria-current="page">Home<\/a>/);
   assert.match(render(data.nav, {pageKey:"team", group:"team"}), /href="index\.html">Home<\/a>/);
-  assert.match(header(data, { pageKey: "home", group: "home" }), /class="brand" aria-label="iGEM Renata, homepage"/);
+  assert.match(header(data, { pageKey: "home", group: "home" }), /class="brand" aria-label="ULP-CA, homepage"/);
   assert.match(read("index.html"), /href="index\.html" aria-current="page">Home<\/a>/);
 });
 
@@ -63,9 +63,9 @@ test("every content page shows the shared logo, brand, and labels with no icons 
     assert.match(html, /<header class="[^"]*site-header[^\"]*" id="siteHeader"/, file);
     const key = html.match(/data-page="([^"]+)"/)[1];
     const markup = header(data, { pageKey: key, group: data.pages[key]?.group });
-    assert.match(markup, /aria-label="iGEM Renata, homepage"/);
+    assert.match(markup, /aria-label="ULP-CA, homepage"/);
     assert.match(markup, /src="assets\/logo.png"/);
-    assert.match(markup, /class="brand-text">iGEM Renata<\/span>/);
+    assert.match(markup, /class="brand-text">ULP-CA<\/span>/);
     assert.match(markup, /id="renata-nav-list">/);
     assert.doesNotMatch(markup, /renata-nav-shortcut|Explore this section|Explore Renata/, file);
     assert.doesNotMatch(markup, /flight-brand|Begin journey|<span>Menu<\/span>|<h1/);

@@ -17,7 +17,7 @@ const makePage = (config) => ({
 
 window.SITE_DATA = {
   brand: {
-    title: "iGEM Renata",
+    title: "ULP-CA",
     subtitle: "Reborn through synthetic biology"
   },
 

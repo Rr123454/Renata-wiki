@@ -55,11 +55,13 @@ body.mission-page .flight-header { position:sticky; padding:0; background:#173e8
 .mission-observatory-anchor { position:absolute; top:calc(100% - 850px); width:1px; height:1px; scroll-margin-top:100px; }
 .mission-launch-caption { display:none; }
 /* The large camera scene is only enabled after the controller has measured it. */
-.mission-enhanced .mission-launch { height:460svh; }
-.mission-enhanced .mission-launch-stage { position:sticky; top:0; height:100svh; min-height:680px; padding:0; }
+/* Includes 100svh of extra sticky travel after the Explore images settle. */
+.mission-enhanced .mission-launch { height:560svh; }
+.mission-enhanced .mission-launch-stage { position:sticky; top:0; height:100svh; min-height:640px; padding:0; }
 .mission-enhanced .mission-intro { position:absolute; top:28%; left:38%; width:59%; margin:0; min-height:0; transform:translate3d(var(--intro-x,0px),0,0); opacity:var(--intro-opacity,1); }
 .mission-enhanced .mission-bottle { top:var(--bottle-y,59%); left:var(--bottle-x,23%); transform:translate(-50%,-50%) scale(var(--bottle-scale,1)); opacity:var(--bottle-opacity,1); }
-.mission-enhanced .mission-zoom-copy { position:absolute; top:31%; left:5%; width:32%; max-width:460px; margin:0; opacity:var(--copy-opacity,0); transform:translateX(var(--copy-x,-30px)); }
+/* PCS settles on the same horizontal centerline as the outgoing ULP-CA title. */
+.mission-enhanced .mission-zoom-copy { position:absolute; top:28%; left:67.5%; width:46%; max-width:600px; margin:0; opacity:var(--copy-opacity,0); transform:translate3d(calc(-50% + var(--copy-x,85vw)),0,0); }
 .mission-enhanced .mission-vessel { left:var(--ship-x,50%); top:var(--ship-y,55%); bottom:auto; width:var(--ship-width,420px); transform:translate(-50%,-50%); }
 .mission-enhanced .mission-exterior { opacity:var(--exterior-opacity,0); transform:translate3d(var(--exterior-x,0px),var(--exterior-y,0px),0) rotate(var(--ship-angle,0deg)) scale(var(--exterior-scale,1)); }
 .mission-enhanced .mission-interior { opacity:var(--inside-opacity,0); transform:scale(var(--inside-scale,1)); clip-path:circle(var(--inside-reveal,29%) at 50% 40.7%); }
@@ -69,7 +71,7 @@ body.mission-page .flight-header { position:sticky; padding:0; background:#173e8
 .mission-enhanced .mission-planet-link--2 { top:43%; }
 .mission-enhanced .mission-planet-link--3 { top:76%; }
 .mission-enhanced .mission-planet-link { translate:0 var(--planet-offset,0px); }
-.mission-enhanced .mission-observatory-anchor { top:calc(100% - 100svh); }
+.mission-enhanced .mission-observatory-anchor { top:calc(100% - 200svh); }
 .mission-enhanced .mission-launch-caption { position:absolute; bottom:5%; left:6%; right:6%; display:flex; align-items:center; gap:24px; color:#fff1bc; font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:var(--caption-opacity,1); }
 .mission-launch-track { display:block; width:180px; height:2px; background:#fff1bc44; overflow:hidden; }
 .mission-launch-track > i { display:block; height:100%; background:#ffcf78; transform:scaleX(var(--launch-progress,0)); transform-origin:left; }
@@ -128,9 +130,9 @@ body.mission-page .flight-header { position:sticky; padding:0; background:#173e8
  .mission-planet-label strong > span { margin-left:2px; }
  .mission-continue { left:50%; right:auto; bottom:8%; translate:-50% 0; width:max-content; font-size:.65rem; }
  .mission-observatory-anchor { top:calc(100% - 760px); }
- .mission-enhanced .mission-launch { height:440svh; }
+ .mission-enhanced .mission-launch { height:540svh; }
  .mission-enhanced .mission-intro { left:5%; top:22%; width:90%; }
- .mission-enhanced .mission-zoom-copy { top:17%; left:6%; width:88%; padding:18px; }
+ .mission-enhanced .mission-zoom-copy { top:22%; left:50%; width:88%; padding:18px; }
  .mission-enhanced .mission-bottle { width:180px; }
  .mission-enhanced .mission-hub-heading { top:calc(var(--mission-header-height,80px) + 20px); }
  .mission-enhanced .mission-planet-link--1 { top:35%; }

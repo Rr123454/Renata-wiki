@@ -30,6 +30,21 @@ test('the title exits right, exterior detail precedes the cockpit, and planets a
  assert.equal(hub.hubOpacity,1);assert.equal(hub.insideScale,1);assert.equal(hub.planetOffset,0);
 });
 
+test('PCS slides in from the right and replaces the title in its right-hand reading area',()=>{
+ for(const mobile of [false,true]) {
+  const g=geometry(mobile),before=flightState(.14,g),entering=flightState(.195,g),settled=flightState(.25,g);
+  assert.equal(before.copyOpacity,0);assert.ok(before.copyX>g.width*.8);
+  assert.ok(entering.copyX<before.copyX&&entering.copyX>0);
+  near(entering.copyOpacity,.5);assert.ok(entering.introOpacity<.05);
+  near(settled.copyX,0);assert.equal(settled.copyOpacity,1);assert.equal(settled.introOpacity,0);
+  assert.equal(flightState(.34,g).copyOpacity,1);assert.equal(flightState(.43,g).copyOpacity,0);
+ }
+ const css=read('css/mission-home.css');
+ assert.match(css,/\.mission-enhanced \.mission-zoom-copy \{[^}]*top:28%; left:67\.5%; width:46%; max-width:600px/);
+ assert.match(css,/transform:translate3d\(calc\(-50% \+ var\(--copy-x,85vw\)\),0,0\)/);
+ assert.match(css,/@media \(max-width:760px\)[\s\S]*\.mission-enhanced \.mission-zoom-copy \{ top:22%; left:50%; width:88%/);
+});
+
 test('both zoom transitions are continuous, bounded, and reversible at phone and desktop sizes',()=>{
  for(const mobile of [true,false]) {
   const g=geometry(mobile),samples=[];let previous;
@@ -81,12 +96,12 @@ function fixture({reducedMotion=false,height=900}={}) {
  const keys=['.mission-launch','.mission-launch-stage','.mission-bottle','.mission-intro','.mission-zoom-copy','.mission-hub','[data-launch-phase]'];
  const nodes=Object.fromEntries(keys.map(key=>[key,el()]));
  const header=el();header.offsetHeight=80;const heading=el();
- Object.defineProperty(nodes['.mission-launch'],'offsetHeight',{get:()=>body.classList.contains('mission-enhanced')?4140:1800});
+ Object.defineProperty(nodes['.mission-launch'],'offsetHeight',{get:()=>body.classList.contains('mission-enhanced')?5040:1800});
  nodes['.mission-launch'].getBoundingClientRect=()=>({top:80-win.scrollY});
  nodes['.mission-launch-stage'].offsetHeight=900;
  nodes['.mission-hub'].getBoundingClientRect=()=>({top:1100-win.scrollY});
  const sections=[el(),el(),el()];sections.forEach((section,i)=>{
-  section.getBoundingClientRect=()=>({top:4300+i*1000-win.scrollY});section.offsetHeight=1000;
+  section.getBoundingClientRect=()=>({top:5200+i*1000-win.scrollY});section.offsetHeight=1000;
   section.copy=el();section.copy.children=[el(),el(),el()];section.querySelector=()=>section.copy;
  });
  const hubLinks=[el(),el()],planets=[el(),el(),el()];
@@ -106,6 +121,39 @@ test('the actual controller exposes planets after zoom and back links restore th
  f.scroll(5200);f.hubLinks[0].events.click({preventDefault(){}});
  assert.equal(f.win.location.hash,'#observatory');assert.equal(f.win.scrollY,3320);assert.equal(f.doc.activeElement,f.heading);
  f.planets[0].events.click();assert.equal(f.planets[0].classList.contains('is-visited'),true);
+});
+
+test('a 675px-tall desktop keeps the PCS transition active and reverses cleanly on scroll up',()=>{
+ const f=fixture({height:675});f.frames(2);
+ assert.equal(f.body.classList.contains('mission-enhanced'),true);
+ f.scroll(80+3240*.28);
+ assert.equal(f.nodes['.mission-launch-stage'].style['--copy-opacity'],1);
+ assert.equal(f.nodes['.mission-launch-stage'].style['--copy-x'],'0px');
+ assert.equal(f.nodes['.mission-intro'].style.visibility,'hidden');
+ f.scroll(0);
+ assert.equal(f.nodes['.mission-zoom-copy'].style.visibility,'hidden');
+ assert.equal(f.nodes['.mission-intro'].style.visibility,'');
+});
+
+test('Explore holds for an extra screen of scroll without stretching the earlier animation',()=>{
+ const f=fixture(),stage=f.nodes['.mission-launch-stage'];
+ const animationEnd=80+3240,holdEnd=80+5040-stage.offsetHeight;
+ near(holdEnd-animationEnd,stage.offsetHeight);
+ f.scroll(80+3240*.5);near(stage.style['--launch-progress'],.5);
+ f.hubLinks[0].events.click({preventDefault(){}});
+ assert.equal(f.win.scrollY,animationEnd);
+ for(const position of [animationEnd,animationEnd+450,holdEnd]) {
+  f.scroll(position);
+  assert.equal(stage.style['--launch-progress'],1);
+  assert.equal(stage.style['--hub-opacity'],1);
+  assert.equal(stage.style['--planet-offset'],'0px');
+  assert.equal(f.nodes['.mission-hub'].inert,false);
+ }
+ f.scroll(80+3240*.5);near(stage.style['--launch-progress'],.5);
+ const css=read('css/mission-home.css');
+ assert.match(css,/\.mission-enhanced \.mission-launch \{ height:560svh; \}/);
+ assert.match(css,/@media \(max-width:760px\)[\s\S]*\.mission-enhanced \.mission-launch \{ height:540svh; \}/);
+ assert.match(css,/\.mission-enhanced \.mission-observatory-anchor \{ top:calc\(100% - 200svh\); \}/);
 });
 
 test('hidden tabs sleep and reduced-motion or short screens retain readable static planets and text',()=>{

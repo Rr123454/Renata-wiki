@@ -26,6 +26,8 @@
   }
   function flightState(progress, { width, height, bottleWidth, mobile }) {
     const p=clamp(progress), zoom=phase(p,.06,.44), depart=phase(p,.48,.62), cabin=phase(p,.66,.75);
+    // Bring PCS in from the right into the title's right-hand reading area.
+    const copyArrival=phase(p,.14,.25);
     const bottleScale=mix(1,mobile?4.1:5.1,zoom);
     const bottleX=mix(width*(mobile?.5:.23),width*.53-(DOCK.x-.5)*bottleWidth*bottleScale,zoom);
     const bottleY=mix(height*(mobile?.7:.59),height*.59-(DOCK.y-.5)*bottleWidth*750/490*bottleScale,zoom);
@@ -42,7 +44,7 @@
     return { p,bottleX,bottleY,bottleScale,dockX,dockY,dockWidth,
       bottleOpacity:1-phase(p,.36,.48),
       introX:width*1.4*phase(p,0,.19), introOpacity:1-phase(p,.12,.21),
-      copyOpacity:phase(p,.13,.22)*(1-phase(p,.34,.43)), copyX:-45*(1-phase(p,.13,.22)),
+      copyOpacity:copyArrival*(1-phase(p,.34,.43)), copyX:width*.85*(1-copyArrival),
       shipX:mix(dockX,width*.5,depart), shipY:mix(dockY,height*(mobile?.60:.57),depart),
       shipWidth,shipAngle,exteriorScale,exteriorX,exteriorY,
       exteriorOpacity:phase(p,.27,.42)*(1-phase(p,.75,.80)),
@@ -69,7 +71,9 @@
     function measure() {
       doc.body.style.setProperty('--mission-header-height',`${header.offsetHeight}px`);
       start=launch.getBoundingClientRect().top+win.scrollY;
-      distance=Math.max(1,launch.offsetHeight-stage.offsetHeight);
+      // Reserve the final screen of sticky travel for the fully revealed Explore hub.
+      // Excluding that hold keeps the bottle, PCS, and spacecraft timing unchanged.
+      distance=Math.max(1,launch.offsetHeight-2*stage.offsetHeight);
       geometry={width:stage.clientWidth||win.innerWidth,height:stage.offsetHeight,bottleWidth:bottle.offsetWidth,mobile:compact.matches};
       scenes.forEach(scene=>{scene.top=scene.node.getBoundingClientRect().top+win.scrollY;scene.height=scene.node.offsetHeight;});
       target=Math.max(0,win.scrollY);
@@ -109,7 +113,7 @@
     }
     function schedule() { if(!frame&&!doc.hidden) frame=win.requestAnimationFrame(tick); }
     function configure(preserve=false) {
-      const next=!reduced.matches&&win.innerHeight>=680;
+      const next=!reduced.matches&&win.innerHeight>=640;
       let anchor,fraction=0;
       if(preserve&&next!==enabled) {
         anchor=[launch,...sections].reverse().find(node=>node.getBoundingClientRect().top<=win.innerHeight*.3)||launch;

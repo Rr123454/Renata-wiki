@@ -41,7 +41,7 @@
 
   function header(data, options) {
     return `<div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="iGEM Renata, homepage">
+      <a href="index.html" class="brand" aria-label="${escape(data.brand.title)}, homepage">
         <span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span>
         <span class="brand-text">${escape(data.brand.title)}</span>
       </a>
