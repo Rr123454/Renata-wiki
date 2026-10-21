@@ -42,6 +42,8 @@ def build(root=ROOT, output=None, release=False, base_path=None):
     root = Path(root)
     if (root / "content/model/document.json").exists():
         runpy.run_path(str(ROOT / "scripts/build-model.py"))["build"](root, check=True)
+    if (root / "content/wetlab/document.json").exists():
+        runpy.run_path(str(ROOT / "scripts/build-wetlab.py"))["build"](root, check=True)
     output = Path(output or root / "public").resolve()
     config = json.loads((root / "config/igem.json").read_text())
     urls = json.loads((root / "config/asset-urls.json").read_text())

@@ -4,31 +4,506 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wetlab | iGEM Renata</title>
-  <link rel="stylesheet" href="css/reset.css?v=c89e3ea1a622" />
-  <link rel="stylesheet" href="css/loading-screen.css?v=c53e43d4c21a" />
-  <link rel="stylesheet" href="css/rocket-cursor.css?v=54dde86b33d9" />
-  <link rel="stylesheet" href="css/site.css?v=be5efd1ad4de" />
-  <link rel="stylesheet" href="css/editorial-theme.css?v=df5c0b1b0488" />
-  <link rel="stylesheet" href="css/dry-lab.css?v=7aa31635393c" />
-  <link rel="stylesheet" href="css/navigation.css?v=9e7f097573b3" />
-  <link rel="stylesheet" href="css/site-header.css?v=945d59804f6c" />
+  <link rel="stylesheet" href="css/reset.css?v=fe1d4817e0e9" />
+  <link rel="stylesheet" href="css/loading-screen.css?v=6f7f1f824799" />
+  <link rel="stylesheet" href="css/rocket-cursor.css?v=af6bbbc8970e" />
+  <link rel="stylesheet" href="css/site.css?v=d0e41e0c1660" />
+  <link rel="stylesheet" href="css/editorial-theme.css?v=d7ba74cafbff" />
+  <link rel="stylesheet" href="css/dry-lab.css?v=6fa962cd2940" />
+  <link rel="stylesheet" href="css/navigation.css?v=9b6bd9c8075a" />
+  <link rel="stylesheet" href="css/site-header.css?v=9946c4cb26e4" />
   <link rel="stylesheet" href="css/cosmic-theme.css?v=2786ed3c9533" />
   <link rel="stylesheet" href="css/lab-work.css?v=b4d66ad5be7d" />
-  <link rel="stylesheet" href="css/project-outline.css?v=d58c9bc1da85" />
+  <link rel="stylesheet" href="css/project-outline.css?v=7b7a6a5b4dc7" />
+  <link rel="stylesheet" href="css/model-document.css?v=dcb0c1f54eb4" />
+  <link rel="stylesheet" href="css/wetlab-document.css?v=293cacf384d3" />
 </head>
 <body data-page="wet-lab">
-  <script src="js/loading-screen.js?v=4bc284f2f712"></script>
+  <script src="js/loading-screen.js?v=f61b3178c1b9"></script>
   <header class="site-header" id="siteHeader"></header>
-  <main class="page-main" id="siteMain"></main>
+  <main class="page-main" id="siteMain" data-static-content="true">
+<!-- wetlab-document:start -->
+<section class="lab-page container model-document wetlab-document"><div class="model-download"><a href="assets/wetlab/process-background.pdf" download>Process/Background PDF</a><a href="assets/wetlab/model-wetlab.pdf" download>Model Wetlab PDF</a><a href="wet-lab-notebook.html">Notebook PDF ↗</a></div><div class="lab-layout"><aside class="lab-sidebar"><nav aria-label="On this page" data-outline-auto><p>On this page</p><a href="#process-background">Process/Background</a><a href="#model-wetlab">Model Wetlab</a><a href="#experimentation-protocols">Experimentation/Protocols</a></nav></aside><article class="lab-article" aria-labelledby="lab-page-title"><h1 id="lab-page-title">Wetlab</h1><nav class="wetlab-subtabs" aria-label="Wetlab subtabs"><a class="wetlab-subtab" href="#process-background"><strong>Process/Background</strong></a><a class="wetlab-subtab" href="#model-wetlab"><strong>Model Wetlab</strong></a><a class="wetlab-subtab" href="#experimentation-protocols"><strong>Experimentation/Protocols</strong></a></nav><section class="model-section" aria-labelledby="process-background"><h2 id="process-background">Process/Background</h2><p class="source-paragraph" style="--source-indent:0" data-source-block="background-001" data-source-pages="1">Our project aims to engineer BtSULT to catalyze the sulfonation of lithocholic acid (LCA), potentially improving bile acid metabolism in individuals experiencing debilitating post-cholecystectomy syndrome (PCS). The goal of our in vitro trials was to express, quantify, purify, and evaluate the structural and functional properties of our target sulfotransferase enzyme.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-002" data-source-pages="1">The experimental workflow encompassed plasmid transformation, colony screening, protein expression, purification, and biochemical evaluation. Plasmid constructs were transformed into competent Escherichia coli (<em>E.Coli</em>) BL21 cells and screened using <strong>Colony Polymerase Chain Reaction (PCR) </strong>to identify colonies containing the desired construct. Positive colonies were subsequently cultured to establish larger-scale expression cultures:</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-003" data-source-pages="1"><em>Plasmid Vector and Insert Details: pET_28(+), Kan. R, T7 Primer, lacI operon</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-004" data-source-pages="1">Protein concentration was quantified using the <strong>Bicinchoninic Acid (BCA) Assay</strong>, while protein composition and apparent molecular weight were evaluated using Coomassie Brilliant Blue staining following sodium dodecyl sulfate– <strong>Polyacrylamide Gel Electrophoresis (SDS-PAGE)</strong>.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-005" data-source-pages="1"><em>Avg. Purified Sample Concentration (under non-conflicting growth conditions): 238.759µg/mL (σ = 32.558µg/mL) (Std. Curve R</em><sup><em>2</em></sup><em> </em>≅<em> 0.95)</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-006" data-source-pages="1">Protein expression was induced using isopropyl β-D-1-thiogalactopyranoside (IPTG). Skim milk was also investigated as an alternative or supplementary expression-induction strategy deriving from necessity. Following expression, crude intracellular materials were harvested and lysed to recover the protein-containing fraction. The target protein was then isolated through His-tag affinity purification.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="background-007" data-source-pages="1"><em>Cell lysis via B-PER™ Reagent(Non-ionic 20 mM Tris•HCl buffer at pH 7.5), Protein Purification via His-Spin Protein Miniprep Nickel-charged His-Affinity Gel [IMAC] (Zymo P2002)</em></p></section><section class="model-section" aria-labelledby="model-wetlab">
+<h2 id="model-wetlab" data-source-block="model-wetlab-001" data-source-pages="1"><strong>Wet Lab</strong></h2>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-002" data-source-pages="1">Laboratory experimentation is an essential pillar in synthetic biology for testing the real-world behavior of designed biological parts and systems. Our wet lab workflow primarily involves completing robust assays to quantify LCA sulfation activity of the reengineered BtSULT enzyme.</p>
+<section class="model-section" aria-labelledby="host-expression">
+<span class="lab-anchor" id="handoff"></span>
+<h3 id="host-expression" data-source-block="model-wetlab-003" data-source-pages="1"><strong>Bacterial Transformation and Host Expression</strong></h3>
+<section class="model-section" aria-labelledby="transforming-bl21">
+<h4 id="transforming-bl21" data-source-block="model-wetlab-004" data-source-pages="1"><strong><em>Transforming BL21 Cells</em></strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-005" data-source-pages="1">BL21 E. coli cells acted as the host for re-engineered BtSULT transformation. We elected the pET_28a(+) backbone as a vector to hold our gene insert for convenience of the T7 promoter region. This promoter region is highly transcribed by abundant T7 RNA polymerase in BL21 cells, focusing the cells&#x27; resources on creating an abundance of recombinant protein. We also used the selective antibiotic <em>kanamycin </em>to limit streaked bacterial cultures and other contaminants from growing without the included resistance gene (Kan. R).</p>
+<figure class="model-figure" id="model-wetlab-006"><a href="assets/wetlab/figure-p01-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p01-1.png" width="1212" height="924" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 1, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-007" data-source-pages="1"><strong><em>pET-28a(+) Plasmid Map from AddGene; </em></strong><em>including: 6xHis, T7 Promoter, lacI promoter, and KanR</em></figcaption></figure>
+</section>
+<section class="model-section" aria-labelledby="bacterial-transformation">
+<span class="lab-anchor" id="assembly"></span>
+<h4 id="bacterial-transformation" data-source-block="model-wetlab-008" data-source-pages="2"><strong>Bacterial Transformation</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-009" data-source-pages="2">Bacterial transformation is a process in which foreign DNA is introduced into bacterial cells, leading to new genetic traits being expressed by the bacteria host. By having E-coli BL21 bacterial cells uptake plasmid DNA, we were able to produce our desired protein.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-010" data-source-pages="2">A. Materials</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-011" data-source-pages="2">● BtSULT Plasmid DNA</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-012" data-source-pages="2">● SulFlux Plasmid DNA</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-013" data-source-pages="2">● BL21 culture tubes</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-014" data-source-pages="2">● 37°C Bacterial shaker, at 200 xg</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-015" data-source-pages="2">● 42°C Water bath</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-016" data-source-pages="2">● Microplate reader</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-017" data-source-pages="2">● Super Optimal with Catabolite repression Broth (SOC)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-018" data-source-pages="2">● Microfuge tubes</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-019" data-source-pages="2">● LB agar plates treated with Kanamycin</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-020" data-source-pages="2">● 96-well plate (transparent) B. Procedure</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-021" data-source-pages="2">1. Thaw the BL-21 competent E. coli cells on wet ice</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-022" data-source-pages="2">2. Pipette 100 uL of bacterial culture (at OD of ≥5) into a labelled microfuge tube (initials, BL21 + BtSULT, date)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-023" data-source-pages="2">3. Add 100 ng of plasmid DNA to each microfuge tube, and mix by gently flicking the tube. Do not resuspend or vortex, as it will lyse the cells.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-024" data-source-pages="2">4. Incubate the microfuge tubes of bacteria and plasmid on ice for at least 30 minutes.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-025" data-source-pages="2">5. Heat-shock the microfuge tube in a water bath at 42°C for 45 seconds, then immediately place the tube on ice for 2 minutes.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-026" data-source-pages="2">6. Add the cells to a bacteria culture tube with 900 uL of room temperature LB broth, closing the cap lightly to allow airflow (1:10 dilution)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-027" data-source-pages="2">7. Put the culture into the bacterial shaker, set to 200 XG, 37°C for 30-60 minutes.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-028" data-source-pages="2">8. Add 200 uL of the recovered cells to the LB agar plate treated with kanamycin.</p>
+<p class="source-list-item" style="--source-indent:4" data-source-block="model-wetlab-029" data-source-pages="3">i. 1,000 uL culture = 5 plates, containing 200 uL each</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-030" data-source-pages="3">9. Use a sterile L-spreader to distribute the bacterial cells evenly.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-031" data-source-pages="3">10. Put the plate into the 37°C bacterial incubator for 24-48 hours.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-032" data-source-pages="3">11. Using a sterile loop, pick one large, well-isolated colony from each plate, and streak it onto a fresh plate</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-033" data-source-pages="3">12. Put the fresh plate into the 37°C bacterial incubator for 24-48 hours</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-034" data-source-pages="3">13. Using a sterile loop, pick up one large, well-isolated colony from the fresh plate and place it in a 15 mL conical tube. Then add 5 mL of LB broth + kanamycin.</p>
+<figure class="model-figure" id="model-wetlab-035"><a href="assets/wetlab/figure-p03-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p03-1.png" width="1029" height="702" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 3, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-036" data-source-pages="3"><em>Credit Khan Academy, “Steps of bacterial transformation and selection”</em></figcaption></figure>
+</section>
+</section>
+<section class="model-section" aria-labelledby="colony-pcr">
+<h3 id="colony-pcr" data-source-block="model-wetlab-037" data-source-pages="3"><strong>Colony PCR</strong></h3>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-038" data-source-pages="3">Grown cultures were then further screened for containing gene inserts by Colony PCR. Primers for the T7 promoter were used to identify the presence of the gene. Colonies were evaluated using band size relative to a 1kB ladder, since primers that sit in the vector backbone produce a baseline-sized DNA band if the gene insert is missing, and a larger band that includes the insert if cloning succeeded.</p>
+<figure class="model-figure" id="model-wetlab-039"><a href="assets/wetlab/figure-p04-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p04-1.png" width="1185" height="1065" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 4, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-040" data-source-pages="4"><strong><em>Colony PCR Gel Electrophoresis: </em></strong><em>Sample labels denoted with a “1” contain genes for modification F147S_E144D, “2” encoding for modification F147S, and “3” encoding for WT BT0416. Letters are intermediates that act as labels for colonies or plates within the lab and are not indicative of the gene. Each experimental sample gene and control gene had at least one positive colony at 2kB. This is the expected result, representing the presence of both the Gene and MCS at the correct base pair amount.</em></figcaption></figure>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-041" data-source-pages="4"><strong>Purpose: </strong>Polymerase Chain Reaction replicating DNA samples from transformed BL21 colonies using temperature to separate DNA and control Taq polymerase activity. Includes denaturing DNA into two single strands, primer annealing, and taq DNA extension.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-042" data-source-pages="4"><strong>Materials</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-043" data-source-pages="4">● DreamTaq 2X Master Mix</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-044" data-source-pages="4">● T7 Primers</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-045" data-source-pages="4">● nuclease-free water</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-046" data-source-pages="5">● bacterial plates with colonies</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-047" data-source-pages="5">● sterile pipette tips</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-048" data-source-pages="5"><strong>Procedure:</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-049" data-source-pages="5">1. Add 25 uL of DreamTaq 2X Master Mix solution to two 2 mL microfuge tubes each</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-050" data-source-pages="5">2. Designate one microfuge tube as BtSULT and one as SULTFLUX</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-051" data-source-pages="5">3. Add 2 uL of SulFlux T7 primers and reverse primers to each tube</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-052" data-source-pages="5">4. Add enough nuclease-free water to each tube to bring the total volume to 40 uL (should be 11 uL).</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-053" data-source-pages="5">5. Split each sample tube in half.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-054" data-source-pages="5">6. Using a sterile pipette tip or toothpick, pick up one well-isolated colony from the desired plate</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-055" data-source-pages="5">7. Swirl the tip with bacteria into each respective PCR tube</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-056" data-source-pages="5">a. Optionally, streak a fresh plate using the same tip to create a replica culture.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-057" data-source-pages="5">8. Cycling temperatures should be at:</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-058" data-source-pages="5">a. 95C - 3 min, 1 cycle</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-059" data-source-pages="5">b. 95C - 30 sec, 32 cycle</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-060" data-source-pages="5">c. 55C - 30 sec, 32 cycle</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-061" data-source-pages="5">d. 72C - 1 min, 32 cycle</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-062" data-source-pages="5">e. 72C - 5 min, 1 cycle</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-063" data-source-pages="5">f. 12C - infinite, 1 cycle</p>
+<figure class="model-figure" id="model-wetlab-064"><a href="assets/wetlab/figure-p05-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p05-1.png" width="1221" height="612" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 5, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-065" data-source-pages="5"><em>Credit Biorender, “Colony PCR Protocol”</em></figcaption></figure>
+<section class="model-section" aria-labelledby="gel-electrophoresis">
+<h4 id="gel-electrophoresis" data-source-block="model-wetlab-066" data-source-pages="5"><strong>Gel Electrophoresis</strong></h4>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-067" data-source-pages="6">1. Making Agarose Gel Purpose: creating gel mold for DNA samples from colony PCR to quantify DNA fragment size.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-068" data-source-pages="6">Procedure:</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-069" data-source-pages="6">1) Determine powder amount for 1% (100 mL, 1g Agarose powder)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-070" data-source-pages="6">2) Tare the erlenmeyer &amp; weight 1g powder</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-071" data-source-pages="6">3) Using a graduated cylinder, measure out 100mL 1X TAE buffer, and pour into the erlenmeyer.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-072" data-source-pages="6">4) Swirl the flask and stop the opening with paper towels.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-073" data-source-pages="6">5) Microwave the flask in 30 sec increments, swirling with a heat-glove in between each</p>
+<p class="source-list-item" style="--source-indent:1" data-source-block="model-wetlab-074" data-source-pages="6">increment. Continue until the solution is clear.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-075" data-source-pages="6">6) Allow solution to cool (not solidify), assemble gel mold and stoppers</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-076" data-source-pages="6">7) Once cool to touch, add 10 uL (for 100 mL) SYBR safe-DNA dye</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-077" data-source-pages="6">8) Pour into agarose mold, wait until completely firm</p>
+<p class="source-list-item" style="--source-indent:1" data-source-block="model-wetlab-078" data-source-pages="6">2. Running Gel Electrophoresis Purpose: quantify colony PCR DNA fragment samples’ size.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-079" data-source-pages="6">Procedure:</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-080" data-source-pages="6">1) Pour TAE buffer into the gel mold before removing stoppers and comb</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-081" data-source-pages="6">2) Gently slide the gel into the tank, with wells facing the negative cathode.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-082" data-source-pages="6">3) Add just enough 1X TAE buffer to cover the gel</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-083" data-source-pages="6">4) Mix samples of DNA with the 6X loading dye, diluting it to 1X (sample volume/6X)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-084" data-source-pages="6">5) Slowly load 10ul sample mixture into the slots of the submerged gel</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-085" data-source-pages="6">6) Close the lid and attach electrical leads to corresponding cathodes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-086" data-source-pages="6">7) Apply a constant voltage of 50-120 V (used 80V, raised to 120V) for 10-40 minutes (ran for approx. 30 min).</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-087" data-source-pages="6">8) Continue gel until bands migrate about 50-70% through the gel.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-088" data-source-pages="6">9) Slide gel onto visualizing bluegel transilluminator to visualize bands.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-089" data-source-pages="6"><strong>Gel Results (in order A,B,C)</strong></p>
+<figure class="model-figure" id="model-wetlab-090"><a href="assets/wetlab/figure-p07-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p07-1.png" width="1344" height="765" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 7, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-091" data-source-pages="7"><strong>Colony PCR of DBTL 1 Samples: </strong>Sulflux is our experimental plasmid, and BT0416 is the control. This PCR gel samples also account for recent and previously plated colonies: “su” colonies being the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag.</figcaption></figure>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-092" data-source-pages="7"><strong>Chart of Samples:</strong></p>
+<div class="model-table-scroll" role="region" tabindex="0" aria-label="GEL A"><table data-source-block="model-wetlab-093" data-source-pages="7,8"><caption>GEL A</caption><thead><tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th></tr></thead><tbody><tr><td>DNA LADDER</td><td>B1</td><td>B2</td><td>B3</td><td>B4</td><td>B5</td><td>B6</td><td>B7</td></tr><tr><td>DNA LADDER</td><td>S1</td><td>S2</td><td>S3</td><td>S4</td><td>S5</td><td>S6</td><td>S7</td></tr></tbody></table></div>
+<div class="model-table-scroll" role="region" tabindex="0" aria-label="Gel B"><table data-source-block="model-wetlab-094" data-source-pages="8"><caption>Gel B</caption><thead><tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th></tr></thead><tbody><tr><td>DNA Ladder</td><td>B8</td><td>B9</td><td>B10</td><td>b1</td><td>b2</td><td>b3</td><td>b4</td></tr><tr><td>DNA ladder</td><td>S8</td><td>S9</td><td>S10</td><td>Su1</td><td>Su2</td><td>su3</td><td>Su4</td></tr></tbody></table></div>
+<div class="model-table-scroll" role="region" tabindex="0" aria-label="Gel C"><table data-source-block="model-wetlab-095" data-source-pages="8,9"><caption>Gel C</caption><thead><tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th></tr></thead><tbody><tr><td>DNA Ladder</td><td>b5</td><td>b6</td><td>b7</td><td>b8</td><td>su5</td><td>su6</td><td>su7</td></tr><tr><td>DNA Ladder</td><td>su8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+</section>
+</section>
+<section class="model-section" aria-labelledby="growth-induction">
+<span class="lab-anchor" id="growth-response"></span>
+<span class="lab-anchor" id="expression-plan"></span>
+<h3 id="growth-induction" data-source-block="model-wetlab-096" data-source-pages="9"><strong>Bacterial Growth and Induction</strong></h3>
+<section class="model-section" aria-labelledby="growth-conditions">
+<h4 id="growth-conditions" data-source-block="model-wetlab-097" data-source-pages="9"><em>Growth Conditions and IPTG/Allolactase</em></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-098" data-source-pages="9">Gene-positive cultures of streaked bacteria were inoculated overnight at 350 rpm and 37°C, reaching an OD600 of 1.0 (cultures that overgrew were diluted to reach the density). These inoculations were spiked into larger liquid cultures at a ratio of 1:100 (v/v) and shaken at 150-200 rpm and 37°C, till cultures reached an OD600 of 0.4–0.8, indicating logarithmic phases of growth (usually within 2- 4 hours). At this phase, 0.7 mM isopropyl β-D-1-thiogalactopyranoside (IPTG) or 1% nonfat dry milk powder (cost-effective and resourceful allolactase supplement for insufficient IPTG) was added to disburden the lacI repressor and shift cell metabolism from growth to protein</p>
+<p class="source-list-item" style="--source-indent:1" data-source-block="model-wetlab-099" data-source-pages="9">production. Flasks were shaken for 16-18 hours at 150 rpm at 15–20°C (it was frequently the case that external lab temperatures prevented the shaker from cooling below 25°C). Cultures were then centrifuged at 15,000 × g for 10 minutes, decanted, and frozen as naked pellets at –80°C.</p>
+</section>
+<section class="model-section" aria-labelledby="od600">
+<h4 id="od600" data-source-block="model-wetlab-100" data-source-pages="9"><strong>OD600</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-101" data-source-pages="9">OD600 measures the optical density and provides information on the growth of a liquid culture.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-102" data-source-pages="9"><strong>Materials</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-103" data-source-pages="9">● Cell density measuring device (OD600)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-104" data-source-pages="9">● Bacteria sample</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-105" data-source-pages="9">● Polystyrene cuvettes</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-106" data-source-pages="9"><strong>Procedure</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-107" data-source-pages="10">1. In a standard culture of 1:100 bacteria, it takes around 2-3 hours for optical density at 600nm (OD600) to reach between 0.4-0.8. Given that during the log-growth phase, doubling takes ~30 minutes, we will take time tags every 30 minutes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-108" data-source-pages="10">2. NanoDrop2000C accommodates a minimum of 500μl for a cuvette reading.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-109" data-source-pages="10">3. Once your culture is in the designated broth, begin to take readings every 30 minutes starting ~2 hours.</p>
+<figure class="model-figure" id="model-wetlab-110"><a href="assets/wetlab/figure-p10-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p10-1.png" width="1200" height="807" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 10, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-111" data-source-pages="10"><strong><em>Growth curve of Wild Type BT0416 Transformed Cells using absorbance from OD600, DBTL1. </em></strong><em>Colored zones represent expected growth patterns across literature, with an expected value of 0.4-0.8 from 2-3 hours, 0.4-0.9 from 4-5 hours, and 1.5-3 fold if overnight. We adjusted the RPM for the SulFlux culture using the 1:75 ratio and an OD600 of 0.56 was achieved in 3 hours.</em></figcaption></figure>
+</section>
+<section class="model-section" aria-labelledby="culture-concentrations">
+<h4 id="culture-concentrations" data-source-block="model-wetlab-112" data-source-pages="10"><strong>Transformed Bacterial Culture Concentrations</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-113" data-source-pages="10"><strong>Purpose: </strong>Culturing BL21 cells with wildtype BT0416 plasmid DNA and transformed BL21 cells with SulFLUX plasmid DNA in TB broth for later IPTG stimulation.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-114" data-source-pages="10"><strong>Procedure:</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-115" data-source-pages="10">1) Proceeding after bacterial transformation procedure. 3 ml of bacterial culture (wildtype and transformed), at 1-1.9 OD value.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-116" data-source-pages="11">2) Aliquot into three separate beakers at 1:100, 1:75, and 1:125 concentrations of culture to broth</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-117" data-source-pages="11">a) 1 mL culture: 75 mL broth 1:75</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-118" data-source-pages="11">b) 400 uL culture: 40 mL TB broth 1:100</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-119" data-source-pages="11">c) 1.6 mL culture: 125 mL broth 1:125</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-120" data-source-pages="11">3) Repeat these concentrations for other 3ml sample tube of bacteria (wt/sf)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-121" data-source-pages="11">4) Set beakers in the shaker at 37C for 15 min, at 400 rpm.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-122" data-source-pages="11">5) Place in a 4C freezer afterwards.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-123" data-source-pages="11">6) OD at various 30 minute intervals until cells reach optimal logarithmic growth (OD value of 0.6+), continue to IPTG stimulation.</p>
+</section>
+<section class="model-section" aria-labelledby="iptg-stock">
+<h4 id="iptg-stock" data-source-block="model-wetlab-124" data-source-pages="11"><strong>IPTG Stock Preparation</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-125" data-source-pages="11"><strong>Purpose: </strong>preparation of IPTG stock to use in IPTG spike stimulation of bacterial cells (sf/wt).</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-126" data-source-pages="11"><strong>Procedure:</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-127" data-source-pages="11">1) Add 0.2383g IPTG stock powder to 10 mL of distilled water in a 15 mL conical tube (this is considered the stock soln)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-128" data-source-pages="11">2) Pipette 50 uL of stock solution into one of the 10 mL cultures.</p>
+</section>
+<section class="model-section" aria-labelledby="iptg-spike">
+<h4 id="iptg-spike" data-source-block="model-wetlab-129" data-source-pages="11"><strong>IPTG Spike</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-130" data-source-pages="11"><strong>Purpose: </strong>Spiking bacterial cells transformed with engineered plasmid with IPTG. IPTG acts as the lab-standard equivalent for chemical allolactose, which binds to lac repressor lacI to allow for production of T7 RNA polymerase, transcribing the target gene artificially at a high rate.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-131" data-source-pages="11"><strong>Procedure:</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-132" data-source-pages="11">1) Transfer bacterial culture into 50 mL conicals</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-133" data-source-pages="11">2) Keep IPTG stock tube on ice, waiting until it thaws to room temperature.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-134" data-source-pages="11">3) Add IPTG at calculated amounts to each sample conical.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-135" data-source-pages="11">4) Incubate at room temp with slight oxygen allowance</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-136" data-source-pages="11">5) After overnight incubation, spin down, drain supernatant, and freeze to use later.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-137" data-source-pages="11"><strong>IPTG STIMULATION CONCENTRATIONS</strong>:</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-138" data-source-pages="11">- 1:100 40 mL total</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-139" data-source-pages="11">- 12.5 mL sample, control</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-140" data-source-pages="11">- 12.5 mL sample, 0.3 mM = 3.75 uL stock IPTG</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-141" data-source-pages="11">- 12.5 mL sample, 0.7mM = 87.5 uL stock IPTG</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-142" data-source-pages="11">- 1:75 75 mL total</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-143" data-source-pages="12">- 23 mL sample, control</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-144" data-source-pages="12">- 23 mL sample, 0.3 mM = 69 uL stock IPTG</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-145" data-source-pages="12">- 23 mL sample, 0.7 mM = 161 uL stock IPTG</p>
+</section>
+</section>
+<section class="model-section" aria-labelledby="sample-purification">
+<h3 id="sample-purification" data-source-block="model-wetlab-146" data-source-pages="12"><strong>Sample Purification</strong></h3>
+<section class="model-section" aria-labelledby="cell-lysis">
+<h4 id="cell-lysis" data-source-block="model-wetlab-147" data-source-pages="12"><em>Cell Lysis and His-Tag Purification</em></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-148" data-source-pages="12">Cell lysis was performed on pelleted and thawed bacterial cells using non-ionic 20 mM Tris•HCl buffer at pH 7.5 (B-PER™ Bacterial Protein Extraction Reagent from Thermo Fisher #90084), including lysozyme, protease inhibitor tablets, and DNase. Lysed bacteria were then purified using Nickel-charged His-Affinity Gel [IMAC] (His-Spin Protein Miniprep Zymo Cat #P2002) and eluted using supplied elution buffer (8M urea, 250 mM imidazole, 0.1 M sodium phosphate monobasic, 0.01 M Tris, pH 4.5).</p>
+</section>
+<section class="model-section" aria-labelledby="his-pulldown">
+<h4 id="his-pulldown" data-source-block="model-wetlab-149" data-source-pages="12"><strong>His-Pulldown</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-150" data-source-pages="12">His-tag pulldown is a purification step utilizing the built in his-tag which is a short, negatively charged amino acid sequence that lets us pull our desired protein out of the cell, due to its attraction to a positively charged filter that separates it from other cellular proteins.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-151" data-source-pages="12">A. Materials</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-152" data-source-pages="12">● Tagged Bacterial Cells w/ Recombinant Protein</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-153" data-source-pages="12">● B-PER® Bacterial Protein Extraction Reagent</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-154" data-source-pages="12">● Lysozyme 50mg/mL</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-155" data-source-pages="12">● DNase I, 2500U/mL</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-156" data-source-pages="12">● Buffer Table Prepared B. Procedure</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-157" data-source-pages="12,13"><strong>Loading Buffer Requirements: </strong>The pH value of the loaded sample should be between 7.5 and 8.0. The sample should not contain higher concentrations of imidazole or histidine (OK up to 10 mM) and should be completely devoid of metal-chelating agents, such as EDTA or EGTA, and strong reducing agents such as DTT. If you are not sure what is in your sample, you can dilute the starting material with one volume of the His-Binding Buffer before proceeding with the purification process.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-158" data-source-pages="13">a. Use cold buffers and work on ice for sensitive proteins.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-159" data-source-pages="13">b. Centrifugal steps are at 15,000xg</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-160" data-source-pages="13">1. Use your P1000 tip to transfer 250 μl of yellow His-Affinity Gel to the Zymo-Spin P1 column and place the column into a collection tube.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-161" data-source-pages="13">2. Spin down for 5-10 seconds and ensure that the His-Affinity Gel is completely drained.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-162" data-source-pages="13">3. Add 150-300 μl of protein sample and resuspend the gel by shaking or tapping the</p>
+<p class="source-list-item" style="--source-indent:1" data-source-block="model-wetlab-163" data-source-pages="13">column. Resuspend the gel a few more times during a two-minute incubation period.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-164" data-source-pages="13">a. If adding over 200 μl, incubate for 2 additional minutes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-165" data-source-pages="13">4. Centrifuge the column/collection tube for 5-10 seconds. Discard the flow-through and place the column back in the collection tube.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-166" data-source-pages="13">5. Add 250 μl of His-Wash Buffer and resuspend the gel.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-167" data-source-pages="13">6. Centrifuge for 5-10 seconds. Do NOT discard flow-through.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-168" data-source-pages="13">7. Repeat steps 5 &amp; 6, then discard the collection tube.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-169" data-source-pages="13">8. Place the Zymo-Spin P1 column into a standard microcentrifuge tube. Add 150 μl of His-Elution Buffer to the column and resuspend.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-170" data-source-pages="13">9. Centrifuge for 5-10 seconds to elute the purified protein</p>
+<figure class="model-figure" id="model-wetlab-171"><a href="assets/wetlab/figure-p13-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p13-1.png" width="1416" height="321" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 13, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-172" data-source-pages="13"><em>Histagged proteins, or the desired proteins, adhere to a positively charged filter, allowing us to isolate our desired protein.</em></figcaption></figure>
+</section>
+</section>
+<section class="model-section" aria-labelledby="protein-quantification">
+<h3 id="protein-quantification" data-source-block="model-wetlab-173" data-source-pages="13"><strong>Protein Quantification and Characterization</strong></h3>
+<section class="model-section" aria-labelledby="bca-assay">
+<h4 id="bca-assay" data-source-block="model-wetlab-174" data-source-pages="14"><strong><em>Bicinchoninic Acid Assay Quantification</em></strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-175" data-source-pages="14">Eluted protein and crude lysate samples were both quantified using BCA Quantification in a 96-well plate and read at 595 nm. Dilution curve wells were made with Bovine Serum Albumin (BSA), with 8 dilution-standardized samples ranging from 2000ug/mL to 15.625ug/mL of BSA. Standard wells were made in the buffers for each sample: elution buffer and lysis buffer, respectively. A working reagent containing Cu<sup>2+</sup> ions is added to the samples, so that peptide bonds in the protein undergo chelation and form Cu<sup>+</sup> in the alkaline environment. These ions react with bicinchoninic acid (BCA) to form a purple-colored complex that absorbs light around 562 nm and provides a means of quantification.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-176" data-source-pages="14">Samples were run in duplicate, where the absorbance was plotted against a standard curve of absorbance versus concentration (R<sup>2</sup> = 0.95) to determine sample concentration (ug/mL).</p>
+<figure class="model-figure" id="model-wetlab-177"><a href="assets/wetlab/figure-p14-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p14-1.png" width="1245" height="762" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 14, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-178" data-source-pages="14"><em>Plotted standard curve of dilutions for the BCA we used to quantify samples used in the SDS-PAGE trials.</em></figcaption></figure>
+</section>
+<section class="model-section" aria-labelledby="bca-quantification">
+<h4 id="bca-quantification" data-source-block="model-wetlab-179" data-source-pages="14"><strong>BCA Quantification</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-180" data-source-pages="14,15">Bicinchoninic quantification is a colorimetric method used to measure protein concentration, where the binding of bicinchoninic acid to the electrons exposed by denatured proteins produces a color change quantified with a spectrophotometer.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-181" data-source-pages="15"><strong>Materials</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-182" data-source-pages="15">● Microplate reader @480nm</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-183" data-source-pages="15">● 96 well-plate microplate (transparent)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-184" data-source-pages="15">● Piece BCA Protein Assay Kit</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-185" data-source-pages="15">○ Working Reagent A</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-186" data-source-pages="15">○ Working Reagent B</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-187" data-source-pages="15">● Bovine Serum Albumin (BSA) powder</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-188" data-source-pages="15">● Protease inhibitor tablet</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-189" data-source-pages="15">● B-PER solution</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-190" data-source-pages="15">● PBS</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-191" data-source-pages="15">● DNase</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-192" data-source-pages="15">● Lysozyme</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-193" data-source-pages="15">● Protein sample</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-194" data-source-pages="15"><strong>Procedure</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-195" data-source-pages="15">1. Make CBLB</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-196" data-source-pages="15">a. In 50 mL of B-PER solution</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-197" data-source-pages="15">b. Combine 2uL DNase, 2uL lysozyme, B-PER, protease inhibitor tablet</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-198" data-source-pages="15">c. 50mL B-PER 100 µL DNase and Lysozyme 1 PI Tablet</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-199" data-source-pages="15">2. Create BBB</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-200" data-source-pages="15">a. In a 15mL conical combine 1mL of PBS and 1mL of CBLB</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-201" data-source-pages="15">3. Make stock solution of BSA (40mg/mL)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-202" data-source-pages="15">a. In a 15mL conical tubes, combine 0.5g of BSA powder and 12.5mL of PBS</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-203" data-source-pages="15">4. Make working solution of BSA (2mg/mL)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-204" data-source-pages="15">a. In a 2mL tube combined 50uL of BSA stock and 1mL CBLB</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-205" data-source-pages="15">5. Get eight 2mL tubes and label them A-H</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-206" data-source-pages="15">6. Create standards</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-207" data-source-pages="15">a. Add 200uL of BSA working solution into tube A</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-208" data-source-pages="15">b. Add 100uL of BBB to tubes B-H</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-209" data-source-pages="16">c. Take 100uL from tube A and add to tube B. Mix thoroughly.</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-210" data-source-pages="16">d. Take 100uL from tube B and add to tube C. Mix thoroughly. Continue serial dilutions until all standards are made (until tube H)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-211" data-source-pages="16">7. Map out plate layout on 96 well sheet paper</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-212" data-source-pages="16">8. Load triplicates of every standard and sample into plate reader</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-213" data-source-pages="16">9. Add 20uL of each standard to 3 wells in microplate</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-214" data-source-pages="16">10. Add 20uL of each sample to 3 wells in microplate</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-215" data-source-pages="16">11. Make Working Reagent (WR) within 15-30 minutes of use (due to light sensitivity and reactiveness)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-216" data-source-pages="16">a. Use 50mL conical tube covered in foil or tube rack covered in foil to block out light</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-217" data-source-pages="16">b. 1:50 ratio of Reagent A to Reagent B, vortex to dissolve blue precipitate</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-218" data-source-pages="16">c. Cover plate with tinfoil to shield plate from light while working</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-219" data-source-pages="16">12. Add 200uL of WR to every standard and sample well (not blank background wells)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-220" data-source-pages="16">13. Add 220uL of BBB buffer to 3 wells</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-221" data-source-pages="16">14. Remove tinfoil and incubate plate at room temperature for 5 minutes. Read plate within 30 minutes</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-222" data-source-pages="16">15. Measure the absorbance at 480nm on a plater reader.</p>
+<figure class="model-figure" id="model-wetlab-223"><a href="assets/wetlab/figure-p16-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p16-1.png" width="1416" height="474" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 16, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-224" data-source-pages="16"><em>Credit University Lab Partners, “BCA Quantification”</em></figcaption></figure>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-225" data-source-pages="17"><strong>BCA RESULTS: 8/6</strong></p>
+<figure class="model-figure" id="model-wetlab-226"><a href="assets/wetlab/figure-p17-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p17-1.png" width="1041" height="765" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 17, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-227" data-source-pages="17"><strong>(Above: Protein Quantification vs BCA Assay) </strong><em>Crude protein lysate of a large grown-up culture of our first cycle of DBTL proteins.</em></figcaption></figure>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-228" data-source-pages="17"><strong>Comparative Protein Sample Concentrations: 8/6</strong></p>
+<figure class="model-figure" id="model-wetlab-229"><a href="assets/wetlab/figure-p17-2.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p17-2.png" width="1008" height="705" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 17, figure 2" /></a>
+<figcaption data-source-block="model-wetlab-230" data-source-pages="17">(<strong>Above: His-Tagged Protein Concentrations ug/mL) </strong><em>Crude protein lysate concentration compared to purified protein concentrations shows that in the first DBTL cycle, purified proteins comprised 15- 20% of the mass of total cellular proteins.</em></figcaption></figure>
+</section>
+</section>
+<section class="model-section" aria-labelledby="sds-page">
+<h3 id="sds-page" data-source-block="model-wetlab-231" data-source-pages="18"><strong>SDS-PAGE (Sodium Dodecyl Sulfate–Polyacrylamide Gel Electrophoresis)</strong></h3>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-232" data-source-pages="18"><em>Sodium Dodecyl Sulfate–Polyacrylamide Gel Electrophoresis (SDS-PAGE)</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-233" data-source-pages="18">We used SDS-PAGE to compare a protein&#x27;s migration distance against a known molecular weight ladder from 250 kilodaltons (kDa) to 10 kilodaltons (kDa).</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-234" data-source-pages="18">Used to separate proteins primarily by molecular weight. When combined with Coomassie Blue staining, it allows visualization of protein bands to evaluate protein expression, estimate molecular weight, and assess relative purity before and after His-tag purification.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-235" data-source-pages="18"><strong>Materials</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-236" data-source-pages="18">● Protein Samples</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-237" data-source-pages="18">● Reducing Agent (β-mercaptoethanol, Dithiothreitol, Bolt)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-238" data-source-pages="18">● Chilled 1× Tris-Glycine-SDS Running Buffer</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-239" data-source-pages="18">● mPAGE Precast SDS-PAGE Gel</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-240" data-source-pages="18">● Laemmli Sample Loading Buffer (LDS Bolt)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-241" data-source-pages="18">● Unstained Protein Ladder</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-242" data-source-pages="18">● Mini Gel Tank and Power Supply (BioRad)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-243" data-source-pages="18">● Coomassie Brilliant Blue R-250 Aqueous</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-244" data-source-pages="18">● Coomassie Destaining Solution</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-245" data-source-pages="18">● Deionized Water</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-246" data-source-pages="18">● Microcentrifuge Tubes</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-247" data-source-pages="18">● Micropipettes and Gel-Loading Tips</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-248" data-source-pages="18">● Heat Block set @95<sup>o</sup> C</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-249" data-source-pages="18">● Ice Bucket</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-250" data-source-pages="18">● Gel Staining Container</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-251" data-source-pages="18">● Orbital Shaker</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-252" data-source-pages="18"><strong>2. Procedure</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-253" data-source-pages="18">1. Record the identity and order of every sample loaded into the gel.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-254" data-source-pages="18">2. Use the appropriate PPE when handling chemicals.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-255" data-source-pages="18">3. Follow the manufacturer&#x27;s instructions for the precast gel and electrophoresis equipment.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-256" data-source-pages="18"><strong>Part I: Sample Preparation</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-257" data-source-pages="19">Calculate 50-100ng of protein samples per well.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-258" data-source-pages="19">1. (**For 100ng) Add 10 µL of reducing agent and 25 µL of Laemmli sample loading buffer to a microcentrifuge tube.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-259" data-source-pages="19">2. Add estimated µL’s of protein per sample tube.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-260" data-source-pages="19">3. Close the tube securely and heat the sample at 95°C for 5 minutes.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-261" data-source-pages="19"><strong>Part II: Gel Preparation</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-262" data-source-pages="19">5. Open the precast gel packaging and remove the comb carefully. Make sure to remove straight out.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-263" data-source-pages="19">6. Remove the green tape and protective sealing tape from the bottom of the gel cassette.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-264" data-source-pages="19">7. Open the gel holder by pulling the green handles apart.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-265" data-source-pages="19">8. Insert the gel cassette into the holder, ensuring that the wells face inward.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-266" data-source-pages="19">9. If running a single gel, install the appropriate buffer dam on the opposite side. If running two gels, install the second gel cassette.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-267" data-source-pages="19">10. Place the assembled holder into the mini gel tank.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-268" data-source-pages="19">11. Add 1× Running Buffer to the inner chamber until the wells are covered. Ensure there’s no leakage. Then fill the outer chamber appropriately.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-269" data-source-pages="19">12. Gently flush the wells with running buffer using a micropipette to remove residual storage solution and debris.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-270" data-source-pages="19"><strong>Part III: Sample Loading</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-271" data-source-pages="19">14. Using a P10 micropipette with gel-loading tips, withdraw the prepared protein sample.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-272" data-source-pages="19">15. Carefully guide the tip into the appropriate well without puncturing the gel.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-273" data-source-pages="19">16. Slowly dispense the sample into the well.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-274" data-source-pages="19">17. Repeat for all samples, using the recorded loading order.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-275" data-source-pages="19">18. Load 50 µL of unstained protein ladder into the designated well.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-276" data-source-pages="19">19. Record the identity of each sample, control, and ladder position before running the gel.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-277" data-source-pages="19"><strong>RENATA Sample Layout:</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-278" data-source-pages="19"><strong>HT - Hit-tag Purified Samples</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-279" data-source-pages="19"><strong>W - Whole Protein</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-280" data-source-pages="19">● Gel 1 — 10/17</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-281" data-source-pages="19">1. Protein Ladder</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-282" data-source-pages="19">2. SF3 HT (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-283" data-source-pages="19">3. SF3 W (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-284" data-source-pages="19">4. SF3 W (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-285" data-source-pages="19">5. SF3 HT (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-286" data-source-pages="19">6. SF2 W (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-287" data-source-pages="19">7. SF2 HT (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-288" data-source-pages="20">8. SF2 W (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-289" data-source-pages="20">9. SF HT (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-290" data-source-pages="20">● Gel 2 — 10/17</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-291" data-source-pages="20">1. Protein Ladder</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-292" data-source-pages="20">2. BtSult HT (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-293" data-source-pages="20">3. BtSult W (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-294" data-source-pages="20">4. BtSult W (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-295" data-source-pages="20">5. BtSult HT (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-296" data-source-pages="20">● Gel 3 — 10/19 **NEW HT Purified Samples**</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-297" data-source-pages="20">1. Protein Ladder</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-298" data-source-pages="20">2. 1AB (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-299" data-source-pages="20">3. 1AB (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-300" data-source-pages="20">4. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-301" data-source-pages="20">5. 2AE (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-302" data-source-pages="20">6. 2AE (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-303" data-source-pages="20">7. 3BE (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-304" data-source-pages="20">8. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-305" data-source-pages="20">9. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-306" data-source-pages="20">10. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-307" data-source-pages="20">● Gel 4 — 10/19 **OLD HT Purified Samples**</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-308" data-source-pages="20">1. Protein Ladder</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-309" data-source-pages="20">2. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-310" data-source-pages="20">3. 1AB (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-311" data-source-pages="20">4. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-312" data-source-pages="20">5. 2AE (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-313" data-source-pages="20">6. 2AE (Milk Stim.)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-314" data-source-pages="20">7. 3BE (IPTG+)</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-315" data-source-pages="20">8. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-316" data-source-pages="20">9. — LDS Blank</p>
+<p class="source-list-item" style="--source-indent:2" data-source-block="model-wetlab-317" data-source-pages="20">10. — LDS Blank</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-318" data-source-pages="20"><em>(Confirm that these sample identities and induction conditions match the samples actually prepared.)</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-319" data-source-pages="20"><strong>Part IV: Running the Gel</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-320" data-source-pages="20">20. Close the electrophoresis tank and connect it to the power supply.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-321" data-source-pages="20">21. Set the voltage, current, power, and duration according to the validated settings for the specific gel system.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-322" data-source-pages="20">22. Start the electrophoresis run.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-323" data-source-pages="20">23. Confirm that the system is operating and that bubbles are visible near the electrodes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-324" data-source-pages="20">24. Monitor the migration of the tracking dye and stop the run when the dye has migrated sufficiently toward the bottom of the gel.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-325" data-source-pages="21"><strong>Original settings: </strong>300 V, 75 mA, 25 W, and 30 minutes.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-326" data-source-pages="21"><strong>Slower settings: </strong>100 V, 75 mA, 25 W, and 1-1.5 hours.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-327" data-source-pages="21"><strong>Part V: Coomassie Blue Staining</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-328" data-source-pages="21">25. Carefully remove the gel from its cassette and transfer it into a suitable staining container.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-329" data-source-pages="21">26. Add approximately 55 mL of deionized water, or enough to cover the gel.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-330" data-source-pages="21">27. Gently agitate at approximately 40–50 rpm, then discard the rinse water.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-331" data-source-pages="21">28. Repeat the water rinse three times.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-332" data-source-pages="21">29. To prepare the staining solution, add 0.10 g of Brilliant Blue R-250 powder to a glass beaker containing 45 mL of methanol.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-333" data-source-pages="21">30. Stir until the powder has dissolved and no visible clumps remain.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-334" data-source-pages="21">31. Add 10 mL of glacial acetic acid, followed by 45 mL of deionized water, and stir for 1–2 minutes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-335" data-source-pages="21">32. Filter the solution through Whatman No. 1 filter paper into a suitable, labeled storage bottle.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-336" data-source-pages="21">33. Add approximately 50–60 mL of staining solution to cover the gel completely.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-337" data-source-pages="21">34. Agitate gently and allow the gel to stain for 1–2 hours or overnight, as needed.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-338" data-source-pages="21"><em>(Handle methanol and glacial acetic acid according to laboratory safety procedures and the relevant safety data sheets. Prepare and use the staining solution with appropriate ventilation and protective equipment.)</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-339" data-source-pages="21"><strong>Part VI: Destaining</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-340" data-source-pages="21"><strong>Destaining Solution: Methanol 200mL, Deionized Water 160 mL, Acetic Acid 40 mL</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-341" data-source-pages="21">35. Transfer the stained gel into the appropriate destaining solution.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-342" data-source-pages="21">36. Agitate the gel at approximately 40–50 rpm for 30 minutes.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-343" data-source-pages="21">37. Replace the destaining solution as needed and continue destaining until the background becomes sufficiently clear to distinguish the protein bands.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-344" data-source-pages="21">38. Document the final gel image for analysis. (e.g. Odyssey CLx/White light)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-345" data-source-pages="21"><strong>3. Reading and Interpreting the Gel</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-346" data-source-pages="21">1. Compare the migration distance of the sample bands with the protein ladder to estimate their molecular weights.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-347" data-source-pages="21">2. Identify bands near the expected molecular weight of the target protein.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-348" data-source-pages="21">3. Compare induced and uninduced samples to evaluate whether IPTG induction is associated with increased target-protein expression.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-349" data-source-pages="21">4. Examine the number and intensity of bands to assess the sample&#x27;s apparent purity and relative protein abundance.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-350" data-source-pages="22">5. Look for smearing or unexpected bands that may indicate sample degradation, overloading, or the presence of additional proteins.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-351" data-source-pages="22">6. Save the gel image and document the observations for each sample.</p>
+</section>
+<section class="model-section" aria-labelledby="tlc">
+<span class="lab-anchor" id="assay-plan"></span>
+<h3 id="tlc" data-source-block="model-wetlab-352" data-source-pages="22"><strong>Thin Layer Chromatography (TLC)</strong></h3>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-353" data-source-pages="22">Thin-layer chromatography (TLC) is a fast, low-cost analytical technique used to separate non-volatile mixtures. It relies on a thin stationary phase (such as silica gel coated on a glass or plastic plate) and a liquid mobile phase (solvent) that travels up the plate via capillary action.</p>
+<section class="model-section" aria-labelledby="tlc-protocol">
+<h4 id="tlc-protocol" data-source-block="model-wetlab-354" data-source-pages="22"><strong>Thin-Layer Chromatography (TLC) Protocol</strong></h4>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-355" data-source-pages="22"><strong>Materials</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-356" data-source-pages="22">Lithocholic Acid (LCA) (1 mM), Thermo Fisher, Catalog No. 11-102-2967</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-357" data-source-pages="22">PAPS, Thermo Fisher, Catalog No. 78243</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-358" data-source-pages="22">HEPES (50 mM) reaction buffer</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-359" data-source-pages="22">Silica TLC-Gypsum plates, MilliporeSigma, Catalog No. 1003900001</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-360" data-source-pages="22">Phosphomolybdic acid (PMA) ***SUBSTITUTED FOR ACETIC ACID/UV VISUALIZATION***</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-361" data-source-pages="22">SulFlux Protein Sample</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-362" data-source-pages="22">BtSULT Protein Sample</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-363" data-source-pages="22">Magnesium chloride (MgCl₂)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-364" data-source-pages="22">1× PBS (10mM)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-365" data-source-pages="22">Chloroform</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-366" data-source-pages="22">Methanol</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-367" data-source-pages="22">Acetic acid</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-368" data-source-pages="22">Deionized Water</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-369" data-source-pages="22">Ethanol</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-370" data-source-pages="22">Beakers, Micropipettes and pipette tips, Pencil and ruler</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-371" data-source-pages="22">Microfuge tubes</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-372" data-source-pages="22"><strong>Part I: Preparation of Enzyme Reactions</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-373" data-source-pages="22">Label the enzyme reaction tubes according to the reaction conditions.</p>
+<figure class="model-figure" id="model-wetlab-374"><a href="assets/wetlab/figure-p22-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p22-1.png" width="1680" height="366" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 22, figure 1" /></a>
+<figcaption data-source-block="model-wetlab-375" data-source-pages="22"><strong>Practical Sample Setup for TLC: </strong>This table shows the setup of the reactions we used for each respective protein to maintain an appropriate amount of protein-to-substrate and buffer ratio.</figcaption></figure>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-376" data-source-pages="23">Prepare the enzyme reaction mixtures using the appropriate combinations of enzyme, LCA, buffer (1× PBS or HEPES), MgCl₂, and PAPS, as indicated in the original protocol.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-377" data-source-pages="23"><strong>Part II: Solvent Preparation</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-378" data-source-pages="23">Prepare the chloroform and methanol solvent mixture.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-379" data-source-pages="23">1. Add 115 mL’s of chloroform (3.25 mL)</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-380" data-source-pages="23">2. Add 42.5 mL’s of methanol.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-381" data-source-pages="23">3. Add 26.5 mL of acetic acid to 16 mL of water and swirl.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-382" data-source-pages="23">4. Pour solvent in beaker to less than 1 cm in height-- must be shorter than pencil drawn line.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-383" data-source-pages="23">Pour the prepared developing solvent into a beaker to a depth of less than 1 cm, ensuring that the solvent level remains below the pencil line used for spotting the TLC plate.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-384" data-source-pages="23"><strong>Part III: Spotting the TLC Plate</strong></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-385" data-source-pages="23">Draw a pencil line approximately 1 cm from the bottom of the silica TLC plate. Label each lane sequentially to keep track of the samples.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-386" data-source-pages="23">1. Spot with a micropipette 2uL’s of each sample reaction onto the pencil line.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-387" data-source-pages="23">2. Allow each spot to dry completely.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-388" data-source-pages="23">3. Repeat the spotting process as needed to concentrate each sample, allowing the spots to dry between applications.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-389" data-source-pages="23"><strong>Part IV: Developing the TLC Plate</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-390" data-source-pages="23">1. Place the spotted TLC plate into the developing chamber containing the solvent.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-391" data-source-pages="23">2. Ensure that the solvent level is below the pencil baseline and the sample spots.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-392" data-source-pages="23">3. Allow the solvent front to travel up most of the plate.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-393" data-source-pages="23">4. Remove the plate from the chamber and allow it to <em>dry completely.</em></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-394" data-source-pages="23"><strong>Part V: Staining and Quantifying Results</strong></p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-395" data-source-pages="23">1. Prepare the phosphomolybdic acid (PMA) staining solution using PMA and ethanol, bringing the solution to the required final volume.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-396" data-source-pages="23">2. Briefly dip or spray the TLC plate with the staining solution.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-397" data-source-pages="23">3. Allow the plate to dry completely.</p>
+<p class="source-list-item" style="--source-indent:0" data-source-block="model-wetlab-398" data-source-pages="23">4. Examine the stained plate and quantify the results based on the observed spots.</p>
+<figure class="model-figure" id="model-wetlab-399"><a href="assets/wetlab/figure-p24-1.png" aria-label="Open figure at full resolution"><img src="assets/wetlab/figure-p24-1.png" width="1404" height="495" loading="lazy" decoding="async" alt="Original Wet Lab writeup, page 24, figure 1" /></a>
+</figure>
+</section>
+</section>
+<section class="model-section" aria-labelledby="wetlab-references">
+<span class="lab-anchor" id="sources"></span>
+<h3 id="wetlab-references" data-source-block="model-wetlab-400" data-source-pages="24"><strong>References</strong></h3>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-401" data-source-pages="24">Adrianza, R. (2026). <em>Education | University Lab Partners</em>. University Lab Partners.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-402" data-source-pages="24"><a href="https://www.universitylabpartners.org/educationUtilizedproceduresfromULPIMPOWERSlaboratorymanuals:MolecularBiology1andMolecularBiology2">https://www.universitylabpartners.org/educationUtilizedproceduresfromULPIMPOWERSlaboratorymanuals:MolecularBiology1andMolecularBiology2</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-403" data-source-pages="24"><em>B-PER</em><sup><em>TM</em></sup><em> bacterial protein extraction reagent</em>. (2026). Thermofisher.Com.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-404" data-source-pages="24"><a href="https://www.thermofisher.com/order/catalog/product/90084">https://www.thermofisher.com/order/catalog/product/90084</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-405" data-source-pages="24">Cass, O.W, Cowen, A.E, Hofmann, A.F, &amp; Coffin, S.B. (1975). Thin-layer chromatographic separation of sulfated and nonsulfated lithocholic acids and their glycine and taurine conjugates. <em>Journal of Lipid Research</em>, <em>16 </em>(2), 159–160.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-406" data-source-pages="24"><a href="https://doi.org/10.1016/S0022-2275(20)36743-2">https://doi.org/10.1016/S0022-2275(20)36743-2</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-407" data-source-pages="24">GSL Biotech LLC. (2023). <em>pET-28a(+) sequence and map</em>. SnapGene.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-408" data-source-pages="24"><a href="https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-28a(%2B)">https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-28a(%2B)</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-409" data-source-pages="24"><em>His-Spin Protein Miniprep</em>. (n.d.). Zymo Research.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-410" data-source-pages="25"><a href="https://www.zymoresearch.com/products/his-spin-protein-miniprep?srsltid=AU7gw4Um7__JHS7xZIZ9W_qgeMnm-ctZUkOm-A3Q_pEpMtA2YC2tZo1w">https://www.zymoresearch.com/products/his-spin-protein-miniprep?srsltid=AU7gw4Um7__JHS7xZIZ9W_qgeMnm-ctZUkOm-A3Q_pEpMtA2YC2tZo1w</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-411" data-source-pages="25">Shenekji, J. (2024). <em>Using skimmed milk as a low-cost alternative to IPTG in plasmid expression induction (LacZ promoter) V1</em>.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-412" data-source-pages="25"><a href="https://doi.org/10.17504/protocols.io.j8nlk81z6l5r/v1">https://doi.org/10.17504/protocols.io.j8nlk81z6l5r/v1</a></p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-413" data-source-pages="25">Zhao, X., Liu, Z., Sun, F., Yao, L., Yang, G., &amp; Wang, K. (2022). Bile acid detection techniques and bile acid-related diseases. <em>Frontiers in Physiology</em>, <em>13</em>.</p>
+<p class="source-paragraph" style="--source-indent:0" data-source-block="model-wetlab-414" data-source-pages="25"><a href="https://doi.org/10.3389/fphys.2022.826740">https://doi.org/10.3389/fphys.2022.826740</a></p>
+</section>
+</section><span class="lab-anchor" id="work-analysis"></span><span class="lab-anchor" id="experiments-list"></span><span class="lab-anchor" id="reporter"></span><span class="lab-anchor" id="master-plan"></span><span class="lab-anchor" id="six-week-plan"></span><section class="model-section" aria-labelledby="experimentation-protocols"><h2 id="experimentation-protocols">Experimentation/Protocols</h2><ul><li><a href="#bacterial-transformation">Bacterial Transformation</a></li><li><a href="#colony-pcr">Colony PCR</a></li><li><a href="#gel-electrophoresis">Gel Electrophoresis</a></li><li><a href="#od600">OD600</a></li><li><a href="#culture-concentrations">Transformed Bacterial Culture Concentrations</a></li><li><a href="#iptg-stock">IPTG Stock Preparation</a></li><li><a href="#iptg-spike">IPTG Spike</a></li><li><a href="#his-pulldown">His-Pulldown</a></li><li><a href="#bca-quantification">BCA Quantification</a></li><li><a href="#sds-page">SDS-PAGE (Sodium Dodecyl Sulfate–Polyacrylamide Gel Electrophoresis)</a></li><li><a href="#tlc-protocol">Thin-Layer Chromatography (TLC) Protocol</a></li></ul></section></article></div></section>
+<!-- wetlab-document:end -->
+</main>
   <footer class="site-footer" id="siteFooter"></footer>
   <script src="js/site-content.js?v=52f76dbff1f7"></script>
-  <script src="js/dry-lab-content.js?v=5c3426933fed"></script>
-  <script src="js/lab-content.js?v=22940ab2dfda"></script>
-  <script src="js/navigation.js?v=dd7380e8e1fa"></script>
-  <script src="js/site.js?v=5b8ca1952bbd"></script>
-  <script src="js/lab-notebook.js?v=a829e2d175a5"></script>
-  <script src="js/project-outline.js?v=d76bc2fc9315"></script>
-  <script src="js/editorial-ui.js?v=83d70d4b8ff7"></script>
-  <script src="js/rocket-cursor.js?v=15bae7dec998"></script>
+  <script src="js/wetlab-document.js?v=6d90e0004e2a"></script>
+  <script src="js/navigation.js?v=5dd6445b7ad5"></script>
+  <script src="js/site.js?v=01ff2ef68537"></script>
+  <script src="js/lab-notebook.js?v=83491a1d97a5"></script>
+  <script src="js/project-outline.js?v=470a92a4b346"></script>
+  <script src="js/editorial-ui.js?v=7d2678653203"></script>
+  <script src="js/rocket-cursor.js?v=803a707d6702"></script>
 </body>
 </html>

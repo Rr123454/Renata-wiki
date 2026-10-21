@@ -26,19 +26,16 @@ function fixture(hash = "") {
   return { frame, select, panel, doc, win, controller: init(win, doc) };
 }
 
-test("the shipped PDF is generated from the current notebook data", () => {
-  const context = vm.createContext({ window: {} });
-  for (const file of ["site-content", "dry-lab-content", "lab-content"]) {
-    vm.runInContext(fs.readFileSync(path.join(root, "js", `${file}.js`), "utf8"), context);
-  }
-  const data = context.window.RenataLab.notebookDocument;
-  const digest = createHash("sha256").update(JSON.stringify(data)).digest("hex");
-  const pdf = fs.readFileSync(path.join(root, "assets/documents/wet-lab-notebook.pdf"));
+test("the reader uses the unchanged supplied 19-page notebook without generated prompts", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(root, "content/wetlab/document.json"), "utf8")).notebook;
+  const pdf = fs.readFileSync(path.join(root, data.source.path));
   assert.ok(pdf.subarray(0, 5).equals(Buffer.from("%PDF-")));
-  assert.ok(pdf.includes(Buffer.from(`source-sha256:${digest}`)), "Rebuild the PDF when notebook data changes");
-  assert.match(pdf.toString("latin1"), /\/Count 5\b/);
-  assert.equal(data.sections.length, 4);
-  assert.match(data.notice, /No experiment dates or completed measurements/);
+  assert.equal(createHash("sha256").update(pdf).digest("hex"), data.source.sha256);
+  assert.equal(data.pageCount, 19);
+  const page = fs.readFileSync(path.join(root, "wet-lab-notebook.html"), "utf8");
+  assert.equal([...page.matchAll(/<option value=/g)].length, 19);
+  assert.ok(page.includes(data.source.path));
+  assert.doesNotMatch(page, /undated entry prompts|Read notebook as text|No experiment dates/);
 });
 
 test("notebook anchors resolve to the correct PDF page and malformed hashes are safe", () => {

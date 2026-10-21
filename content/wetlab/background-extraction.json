@@ -1,0 +1,574 @@
+[
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      74.6484375,
+      501.7252197265625,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " Our project aims to engineer BtSULT to catalyze the sulfonation of lithocholic acid (LCA), "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " potentially improving bile acid metabolism in individuals experiencing debilitating "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " post-cholecystectomy syndrome (PCS). The goal of our in vitro trials was to express, quantify, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " purify, and evaluate the structural and functional properties of our target sulfotransferase "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " enzyme. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      96.62109375,
+      471.2796936035156,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " potentially improving bile acid metabolism in individuals experiencing debilitating "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      118.59375,
+      525.1045532226562,
+      130.59375
+    ],
+    "runs": [
+      {
+        "text": " post-cholecystectomy syndrome (PCS). The goal of our in vitro trials was to express, quantify, "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      140.56640625,
+      510.2315368652344,
+      152.56640625
+    ],
+    "runs": [
+      {
+        "text": " purify, and evaluate the structural and functional properties of our target sulfotransferase "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      162.5390625,
+      115.64615631103516,
+      174.5390625
+    ],
+    "runs": [
+      {
+        "text": " enzyme. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      196.51171875,
+      523.0426635742188,
+      208.51171875
+    ],
+    "runs": [
+      {
+        "text": " The experimental workflow encompassed plasmid transformation, colony screening, protein "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " expression, purification, and biochemical evaluation. Plasmid constructs were transformed into "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " competent Escherichia coli ( "
+      },
+      {
+        "text": "E.Coli ",
+        "italic": true
+      },
+      {
+        "text": ") BL21 cells and screened using "
+      },
+      {
+        "text": " Colony Polymerase Chain ",
+        "bold": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Reaction (PCR) ",
+        "bold": true
+      },
+      {
+        "text": " to identify colonies containing the desired construct. Positive colonies were "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " subsequently cultured to establish larger-scale expression cultures: "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      218.484375,
+      536.5906372070312,
+      230.484375
+    ],
+    "runs": [
+      {
+        "text": " expression, purification, and biochemical evaluation. Plasmid constructs were transformed into "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      240.45703125,
+      516.5457763671875,
+      252.45703125
+    ],
+    "runs": [
+      {
+        "text": " competent Escherichia coli ( "
+      },
+      {
+        "text": "E.Coli ",
+        "italic": true
+      },
+      {
+        "text": ") BL21 cells and screened using "
+      },
+      {
+        "text": " Colony Polymerase Chain ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      262.4296875,
+      516.90673828125,
+      274.4296875
+    ],
+    "runs": [
+      {
+        "text": " Reaction (PCR) ",
+        "bold": true
+      },
+      {
+        "text": " to identify colonies containing the desired construct. Positive colonies were "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      284.40234375,
+      399.9397888183594,
+      296.40234375
+    ],
+    "runs": [
+      {
+        "text": " subsequently cultured to establish larger-scale expression cultures: "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      318.375,
+      473.5152893066406,
+      330.375
+    ],
+    "runs": [
+      {
+        "text": " Plasmid Vector and Insert Details: pET_28(+), Kan. R, T7 Primer, lacI operon ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      352.34765625,
+      527.1618041992188,
+      364.34765625
+    ],
+    "runs": [
+      {
+        "text": " Protein concentration was quantified using the "
+      },
+      {
+        "text": " Bicinchoninic Acid (BCA) Assay ",
+        "bold": true
+      },
+      {
+        "text": ", while protein "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " composition and apparent molecular weight were evaluated using Coomassie Brilliant Blue "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " staining following sodium dodecyl sulfate– "
+      },
+      {
+        "text": "Polyacrylamide Gel Electrophoresis (SDS-PAGE) ",
+        "bold": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      374.3203125,
+      516.2987670898438,
+      386.3203125
+    ],
+    "runs": [
+      {
+        "text": " composition and apparent molecular weight were evaluated using Coomassie Brilliant Blue "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      396.29296875,
+      517.8394775390625,
+      408.29296875
+    ],
+    "runs": [
+      {
+        "text": " staining following sodium dodecyl sulfate– "
+      },
+      {
+        "text": "Polyacrylamide Gel Electrophoresis (SDS-PAGE) ",
+        "bold": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      430.265625,
+      489.3414001464844,
+      442.265625
+    ],
+    "runs": [
+      {
+        "text": " Avg. Purified Sample Concentration (under non-conflicting growth conditions): ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 238.759µg/mL (",
+        "italic": true
+      },
+      {
+        "text": "σ",
+        "italic": true
+      },
+      {
+        "text": " = 32.558µg/mL) (Std. Curve R ",
+        "italic": true
+      },
+      {
+        "text": "2",
+        "italic": true,
+        "sup": true
+      },
+      {
+        "text": " ",
+        "italic": true
+      },
+      {
+        "text": "≅"
+      },
+      {
+        "text": " ",
+        "italic": true
+      },
+      {
+        "text": "0.95) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      453.1229553222656,
+      379.58984375,
+      469.1204833984375
+    ],
+    "runs": [
+      {
+        "text": " 238.759µg/mL (",
+        "italic": true
+      },
+      {
+        "text": "σ",
+        "italic": true
+      },
+      {
+        "text": " = 32.558µg/mL) (Std. Curve R ",
+        "italic": true
+      },
+      {
+        "text": "2",
+        "italic": true,
+        "sup": true
+      },
+      {
+        "text": " ",
+        "italic": true
+      },
+      {
+        "text": "≅"
+      },
+      {
+        "text": " ",
+        "italic": true
+      },
+      {
+        "text": "0.95) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      493.53515625,
+      530.718017578125,
+      505.53515625
+    ],
+    "runs": [
+      {
+        "text": " Protein expression was induced using isopropyl "
+      },
+      {
+        "text": "β"
+      },
+      {
+        "text": "-D-1-thiogalactopyranoside (IPTG). Skim milk "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " was also investigated as an alternative or supplementary expression-induction strategy deriving "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " from necessity. Following expression, crude intracellular materials were harvested and lysed to "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " recover the protein-containing fraction. The target protein was then isolated through His-tag "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " affinity purification. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      515.5078125,
+      538.1853637695312,
+      527.5078125
+    ],
+    "runs": [
+      {
+        "text": " was also investigated as an alternative or supplementary expression-induction strategy deriving "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      537.48046875,
+      534.7390747070312,
+      549.48046875
+    ],
+    "runs": [
+      {
+        "text": " from necessity. Following expression, crude intracellular materials were harvested and lysed to "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      559.453125,
+      523.8776245117188,
+      571.453125
+    ],
+    "runs": [
+      {
+        "text": " recover the protein-containing fraction. The target protein was then isolated through His-tag "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      581.42578125,
+      170.5635528564453,
+      593.42578125
+    ],
+    "runs": [
+      {
+        "text": " affinity purification. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      615.3984375,
+      507.406982421875,
+      627.3984375
+    ],
+    "runs": [
+      {
+        "text": " Cell lysis via B-PER",
+        "italic": true
+      },
+      {
+        "text": "™",
+        "italic": true
+      },
+      {
+        "text": " Reagent(Non-ionic ",
+        "italic": true
+      },
+      {
+        "text": " 20 mM Tris•HCl buffer at pH 7.5), Protein ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Purification via His-Spin Protein Miniprep Nickel-charged His-Affinity Gel [IMAC] (Zymo ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " P2002) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      637.37109375,
+      529.2942504882812,
+      649.37109375
+    ],
+    "runs": [
+      {
+        "text": " Purification via His-Spin Protein Miniprep Nickel-charged His-Affinity Gel [IMAC] (Zymo ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      659.34375,
+      144.8880157470703,
+      671.34375
+    ],
+    "runs": [
+      {
+        "text": " P2002) ",
+        "italic": true
+      }
+    ]
+  }
+]

@@ -52,8 +52,8 @@ test("entry points retain the base theme and load their final page theme last", 
       "index.html": "css/mission-home.css",
       "team.html": "css/team-space.css",
       "project-description.html": "css/project-outline.css",
-      "wet-lab.html": "css/project-outline.css",
-      "wet-lab-notebook.html": "css/lab-work.css",
+      "wet-lab.html": "css/wetlab-document.css",
+      "wet-lab-notebook.html": "css/wetlab-document.css",
       "model.html": "css/project-outline.css",
       "human-practices.html": "css/project-outline.css"
     })[file] || "css/orbit-pages.css";
