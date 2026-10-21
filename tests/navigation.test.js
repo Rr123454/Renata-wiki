@@ -91,17 +91,19 @@ test("the collapsed menu is a three-bar toggle and panels open under their own t
   assert.match(headerCss, /min-height: 44px/);
 });
 
-test("Team and Project are direct links while Lab Work and Engagement keep dropdowns", () => {
+test("Team is a direct link while Project, Lab Work, and Engagement have dropdowns", () => {
   const flat = Array.from(data.nav).filter(item => !item.children);
-  assert.deepEqual(Array.from(flat, item => item.key), ["home", "team", "project"]);
-  assert.deepEqual(Array.from(flat, item => item.href), ["index.html", "team.html", "project-description.html"]);
+  assert.deepEqual(Array.from(flat, item => item.key), ["home", "team"]);
+  assert.deepEqual(Array.from(flat, item => item.href), ["index.html", "team.html"]);
   assert.equal(flat.every(item => !item.icon), true, "direct labels carry no icon of their own");
   const grouped = Array.from(data.nav).filter(item => item.children);
-  assert.deepEqual(Array.from(grouped, item => item.key), ["lab-work", "engagement"]);
+  assert.deepEqual(Array.from(grouped, item => item.key), ["project", "lab-work", "engagement"]);
   const markup = render(data.nav);
-  assert.equal([...markup.matchAll(/class="renata-nav-panel"/g)].length, 2, "only the two grouped labels render a panel");
+  assert.equal([...markup.matchAll(/class="renata-nav-panel"/g)].length, 3, "all three grouped labels render a panel");
   assert.match(markup, /<li><a class="renata-nav-trigger" href="team.html">Our Team<\/a><\/li>/);
-  assert.match(markup, /<li><a class="renata-nav-trigger" href="project-description.html">Engineering<\/a><\/li>/);
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, child => [child.label, child.href]), [
+    ["Engineering", "project-description.html#engineering"], ["The Problem", "project-description.html#abstract"]
+  ]);
 });
 
 test("dropdown cards carry the section icons that used to sit in the menu bar", () => {
@@ -148,7 +150,7 @@ test("active pages and related records stay distinct, and labels are escaped", (
   assert.doesNotMatch(html, /aria-current="page"/);
   const current = render(data.nav, { pageKey: "project-description", group: "project" });
   assert.equal([...current.matchAll(/aria-current="page"/g)].length, 1);
-  assert.match(current, /href="project-description.html" aria-current="page"/);
+  assert.match(current, /href="project-description.html#engineering" aria-current="page"/);
   assert.doesNotMatch(current, /href="engineering\.html(?:[?#][^"]*)?"/);
   assert.match(render([{ key: "home", href: "index.html", label: '<script>"&' }]), /&lt;script&gt;&quot;&amp;/);
 });
@@ -217,7 +219,7 @@ function fixture(isMobile = false) {
 
 test("click toggles menus, opens only one, and outside clicks dismiss", () => {
   const f = fixture();
-  assert.equal(f.triggers.length, 2, "only Lab Work and Engagement are dropdowns");
+  assert.equal(f.triggers.length, 3, "Project, Lab Work, and Engagement are dropdowns");
   f.triggers[0].emit("click");
   assert.equal(f.panels[0].hidden, false);
   assert.equal(f.triggers[0].getAttribute("aria-expanded"), "true");
@@ -236,7 +238,7 @@ test("keyboard opens links, navigates, and Escape returns focus to its trigger",
   f.triggers[0].focus();
   f.triggers[0].emit("keydown", { key: "ArrowDown" });
   const links = f.panels[0].querySelectorAll("a");
-  assert.ok(links.length > 1, "Lab Work has multiple destinations to navigate");
+  assert.ok(links.length > 1, "Project has multiple destinations to navigate");
   assert.equal(f.doc.activeElement, links[0]);
   links[0].emit("keydown", { key: "ArrowDown" });
   assert.equal(f.doc.activeElement, links[1]);
@@ -251,15 +253,13 @@ test("keyboard opens links, navigates, and Escape returns focus to its trigger",
 
 test("arrow keys move across direct labels and dropdown triggers alike", () => {
   const f = fixture();
-  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["index.html", "team.html", "project-description.html"]);
+  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["index.html", "team.html"]);
   f.links[0].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.links[1]);
   f.links[1].emit("keydown", { key: "ArrowRight" });
-  assert.equal(f.doc.activeElement, f.links[2]);
-  f.links[2].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.triggers[0]);
   f.links[0].emit("keydown", { key: "ArrowLeft" });
-  assert.equal(f.doc.activeElement, f.triggers[1], "focus wraps to the last trigger");
+  assert.equal(f.doc.activeElement, f.triggers[2], "focus wraps to the last trigger");
 });
 
 test("Lab Work lists Wetlab, Notebook, and Model, each reachable by keyboard", () => {

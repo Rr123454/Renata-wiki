@@ -19,7 +19,72 @@
 <body data-page="home" data-home-variant="orbit" class="mission-page" data-home-brand="ULP-CA">
   <script src="js/loading-screen.js?v=f61b3178c1b9"></script>
   <a class="flight-skip" href="#observatory">Skip to the planets</a>
-  <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><ul class="renata-nav-list"><li><a class="renata-nav-trigger is-active" href="index.html" aria-current="page">Home</a></li><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li><a class="renata-nav-trigger" href="project-description.html">Engineering</a></li><li><a class="renata-nav-trigger" href="wet-lab.html">Lab Work</a></li><li><a class="renata-nav-trigger" href="human-practices.html">Education + HP</a></li></ul></nav></div></header>
+  <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu"><span class="renata-nav-bars" aria-hidden="true"></span></button>
+      <ul class="renata-nav-list" id="renata-nav-list"><li><a class="renata-nav-trigger is-active" href="index.html" aria-current="page">Home</a></li><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li class="renata-nav-group">
+          <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-project" id="renata-nav-project-trigger">Project<span class="renata-nav-chevron" aria-hidden="true"></span></button>
+          <div class="renata-nav-panel" id="renata-nav-project" aria-labelledby="renata-nav-project-trigger" hidden>
+            <div class="renata-nav-intro">
+              <span class="renata-nav-eyebrow">03 / Project</span>
+              <p class="renata-nav-heading">Our project.</p>
+              <p class="renata-nav-description"></p>
+            </div>
+            <div class="renata-nav-pages">
+              <ul><li><a class="renata-nav-card" href="project-description.html#engineering">
+                  <img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Engineering</strong><small>Explore our design, build, test, and learn cycle.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li><li><a class="renata-nav-card" href="project-description.html#abstract">
+                  <img class="renata-nav-icon" src="assets/nav-icons/Stomach.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>The Problem</strong><small>The background and motivation for our project.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li></ul>
+            </div>
+          </div>
+        </li><li class="renata-nav-group">
+          <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-lab-work" id="renata-nav-lab-work-trigger">Lab Work<span class="renata-nav-chevron" aria-hidden="true"></span></button>
+          <div class="renata-nav-panel" id="renata-nav-lab-work" aria-labelledby="renata-nav-lab-work-trigger" hidden>
+            <div class="renata-nav-intro">
+              <span class="renata-nav-eyebrow">04 / Lab Work</span>
+              <p class="renata-nav-heading">Lab work.</p>
+              <p class="renata-nav-description"></p>
+            </div>
+            <div class="renata-nav-pages">
+              <ul><li><a class="renata-nav-card" href="wet-lab.html">
+                  <img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Wetlab</strong><small>All experimental work, its logic, and data interpretation.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li><li><a class="renata-nav-card" href="wet-lab-notebook.html">
+                  <img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Notebook</strong><small>Bench notebook, PDF reader, and text entries.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li><li><a class="renata-nav-card" href="model.html">
+                  <img class="renata-nav-icon" src="assets/nav-icons/Stomach.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Model</strong><small>Enzyme engineering, predictions, comparisons, and analysis.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li></ul>
+            </div>
+          </div>
+        </li><li class="renata-nav-group">
+          <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-engagement" id="renata-nav-engagement-trigger">Education + HP<span class="renata-nav-chevron" aria-hidden="true"></span></button>
+          <div class="renata-nav-panel" id="renata-nav-engagement" aria-labelledby="renata-nav-engagement-trigger" hidden>
+            <div class="renata-nav-intro">
+              <span class="renata-nav-eyebrow">05 / Education + HP</span>
+              <p class="renata-nav-heading">Education and human practices.</p>
+              <p class="renata-nav-description"></p>
+            </div>
+            <div class="renata-nav-pages">
+              <ul><li><a class="renata-nav-card" href="human-practices.html">
+                  <img class="renata-nav-icon" src="assets/nav-icons/Mic.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Human practices</strong><small>Stakeholder perspectives and project decisions.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li><li><a class="renata-nav-card" href="education.html">
+                  <img class="renata-nav-icon" src="assets/nav-icons/Plant.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Education</strong><small>Learning, outreach, and shared curiosity.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li></ul>
+            </div>
+          </div>
+        </li></ul></nav></div></header>
   <main class="mission-home" id="siteMain" data-static-content="true">
     <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/bottle-new.png assets/story/spaceship.png assets/story/spaceship-inside.png assets/story/planet-1.png assets/story/planet-2.png assets/story/planet-3.png">
       <div id="observatory" class="mission-observatory-anchor" aria-hidden="true"></div>
@@ -60,7 +125,7 @@
     <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div><a class="mission-back" href="#observatory">← Back to the planets</a></section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
-  <script src="js/site-content.js?v=c2629bf80dc0"></script>
+  <script src="js/site-content.js?v=30f50786b124"></script>
   <script src="js/navigation.js?v=714da556eb0a"></script>
   <script src="js/site.js?v=01ff2ef68537"></script>
   <script src="js/mission-home.js?v=e2d24ea65a46"></script>

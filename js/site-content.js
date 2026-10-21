@@ -30,7 +30,13 @@ window.SITE_DATA = {
   nav: [
     { key: "home", label: "Home", href: "index.html" },
     { key: "team", label: "Our Team", href: "team.html" },
-    { key: "project", label: "Engineering", href: "project-description.html" },
+    {
+      key: "project", label: "Project", heading: "Our project.", description: "",
+      children: [
+        { key: "project-description", label: "Engineering", href: "project-description.html#engineering", icon: "DNA", description: "Explore our design, build, test, and learn cycle." },
+        { key: "project-problem", label: "The Problem", href: "project-description.html#abstract", icon: "Stomach", description: "The background and motivation for our project." }
+      ]
+    },
     {
       key: "lab-work", label: "Lab Work", icon: "DNA",
       heading: "Lab work.",
