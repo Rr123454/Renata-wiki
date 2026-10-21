@@ -16,7 +16,7 @@
 
   function pageChapter(pageKey, pageData) {
     const group = pageData?.group;
-    const key = pageKey.startsWith("education") ? "education" : group === "lab-work" ? "lab" : ["contact", "partnerships"].includes(pageKey) ? "community" : group in chapters ? group : "project";
+    const key = pageData?.parentPage === "human-practices" ? "engagement" : pageKey.startsWith("education") ? "education" : group === "lab-work" ? "lab" : ["contact", "partnerships"].includes(pageKey) ? "community" : group in chapters ? group : "project";
     const chapter = { ...chapters[key], key };
     if (pageKey.startsWith("experiment-") || pageKey.startsWith("education-")) {
       chapter.title = [plain(pageData.title)];
@@ -26,13 +26,31 @@
       chapter.nextLabel = pageKey.startsWith("experiment-") ? "Wetlab work & analysis" : "Explore education";
       chapter.nextIcon = chapter.icon;
     }
+    if (pageData?.parentPage === "human-practices") {
+      chapter.parent = { label: "Human Practices", href: "human-practices.html" };
+      chapter.next = "human-practices.html";
+      chapter.nextLabel = "Explore Human Practices";
+    }
+    if (pageKey === "igem-kickstart") {
+      chapter.title = [plain(pageData.title)];
+      chapter.lead = plain(pageData.lead);
+      chapter.label = "Contribution";
+      chapter.parent = { label: "Contribution", href: "contribution.html" };
+      chapter.icon = "Plant";
+      chapter.record = true;
+      chapter.next = "contribution.html";
+      chapter.nextLabel = "Explore contributions";
+      chapter.nextIcon = "DNA";
+    }
     if (pageKey === "contribution") {
       chapter.title = [plain(pageData.title)];
       chapter.lead = plain(pageData.lead);
       chapter.record = true;
-      chapter.next = "team.html";
-      chapter.nextLabel = "Meet Our Team";
-      chapter.nextIcon = "Phoenix";
+      chapter.label = "Engagement";
+      chapter.icon = "DNA";
+      chapter.next = "education.html";
+      chapter.nextLabel = "Explore education";
+      chapter.nextIcon = "Plant";
     }
     if (pageKey === "contact") { chapter.title = ["Contact."]; chapter.icon = "Mic"; }
     return chapter;
@@ -63,7 +81,7 @@
       <div class="orbit-page-stars" aria-hidden="true"></div>
       <div class="container orbit-page-hero-grid">
         <div class="orbit-page-copy">
-          <nav class="orbit-page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Homepage</a><span aria-hidden="true">/</span><span>${escape(pageTitle)}</span></nav>
+          <nav class="orbit-page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Homepage</a><span aria-hidden="true">/</span>${chapter.parent ? `<a href="${escape(chapter.parent.href)}">${escape(chapter.parent.label)}</a><span aria-hidden="true">/</span>` : ""}<span>${escape(pageTitle)}</span></nav>
           <p class="orbit-page-kicker">${chapter.number} <span aria-hidden="true">—</span> ${escape(chapter.label)}</p>
           <h1 id="${escape(titleId)}">${chapter.title.map((line, index) => `<span class="orbit-title-line"><span style="--line:${index}">${escape(line)}</span></span>`).join("")}</h1>
           ${chapter.lead ? `<p class="orbit-page-lead">${escape(chapter.lead)}</p>` : ""}

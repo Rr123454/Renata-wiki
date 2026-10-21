@@ -116,6 +116,8 @@
       main.innerHTML = renderExperimentsPage();
     } else if (pageKey === "education") {
       main.innerHTML = renderEducationPage();
+    } else if (pageKey === "contribution") {
+      main.innerHTML = renderContributionPage();
     } else if (pageKey.startsWith("experiment-")) {
       main.innerHTML = renderExperimentRecordPage();
     } else {
@@ -248,6 +250,40 @@
     `;
   }
 
+  function renderContributionPage() {
+    return `
+      <section class="experiment-index-page education-event-index contribution-index" id="contribution-resources" aria-labelledby="contribution-title">
+        <div class="container experiment-index-container">
+          <header class="experiment-index-header reveal">
+            <p class="hero-kicker">Engagement / Contribution</p>
+            <h1 id="contribution-title">Contribution</h1>
+            <p>Resources and lessons from our team, shared with the iGEM community.</p>
+          </header>
+          <div class="contribution-features" aria-label="Contribution resources">
+            ${(data.contributionRoutes || []).map(resource => `
+              <a class="contribution-feature" href="${resource.href}" aria-labelledby="kickstart-feature-title">
+                <div class="contribution-feature-copy">
+                  <p class="contribution-feature-kicker">${resource.status}</p>
+                  <h2 id="kickstart-feature-title">${resource.title}</h2>
+                  <p class="contribution-feature-summary">${resource.summary}</p>
+                  <span class="contribution-feature-action">Read the guide <span aria-hidden="true">→</span></span>
+                </div>
+                <div class="contribution-guide-preview" aria-hidden="true">
+                  <span class="contribution-guide-brand">ULP-CA / iGEM Kickstart</span>
+                  <span class="contribution-guide-title">Research<br>Fundamentals</span>
+                  <img src="assets/kickstart/figure-1.png" width="1298" height="537" alt="" loading="lazy">
+                  <span class="contribution-guide-topics">Gene design · Plasmids<br>DNA assembly · DBTL</span>
+                  <span class="contribution-guide-author">By Humza Shahzad</span>
+                  <span class="contribution-guide-length">11 pages · A starting point for new teams</span>
+                </div>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
   function renderEducationPage() {
     const eventRoutes = data.educationEventRoutes || [];
     const overview = data.educationOverview;
@@ -258,7 +294,7 @@
           <header class="experiment-index-header reveal">
             <p class="hero-kicker">Events / Audiences / Outcomes</p>
             <h1 id="education-title">Education</h1>
-            <p>Explore our learning activities, interviews, community outreach, and professional exchanges.</p>
+            <p>Explore four initiatives introducing students to genetics, biotechnology, and synthetic biology research.</p>
           </header>
 
           ${overview ? `
@@ -290,7 +326,7 @@
 
           <div class="experiment-evidence-note reveal">
             <strong>Content status</strong>
-            <p>Each event page distinguishes the team’s documented participation and reflections from proposed follow-up work. Interview accounts reflect the perspectives shared with the team.</p>
+            <p>These accounts document our activities and educational intentions. Formal learning-assessment results have not been supplied.</p>
           </div>
         </div>
       </section>
@@ -390,131 +426,65 @@
             </header>
 
 
+            <section class="project-paper-section" id="hp-events">
+              <h2>Engagement records</h2>
+              <p>Our interviews, professional exchanges, and community service informed how we considered the people affected by our project.</p>
+              <div class="experiment-route-list" aria-label="Human Practices records">
+                ${(data.humanPracticesEventRoutes || []).map(event => `
+                  <a class="experiment-route-block education-event-route" href="${event.href}">
+                    <span class="experiment-route-number">${event.number}</span>
+                    <span class="experiment-route-copy"><span class="experiment-route-status">${event.status}</span><strong>${event.title}</strong><small>${event.summary}</small></span>
+                    <span class="experiment-route-arrow" aria-hidden="true">→</span>
+                  </a>
+                `).join("")}
+              </div>
+            </section>
             <section class="project-paper-section" id="hp-abstract">
-              <p class="project-paper-section-number">Summary</p>
               <h2>Abstract</h2>
-              <p>
-                PLACEHOLDER: Summarize the real-world context surrounding Renata, the stakeholder groups consulted,
-                the methods used to collect input, the principal findings, and the project decisions
-                that changed as a result. Keep claims proportional to the documented evidence.
-              </p>
-              <div class="project-paper-note">
-                <strong>Abstract content note</strong>
-                <p>PLACEHOLDER: Write this section last so it accurately reflects the completed Human Practices record.</p>
-              </div>
-              <figure class="project-paper-figure" id="hp-figure-stakeholders">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the stakeholder map">
-                  <span aria-hidden="true">+</span>
-                  <small>Stakeholder map</small>
-                </div>
-                <figcaption><strong>Figure 1.</strong> PLACEHOLDER: Map the groups affected by, contributing to, or responsible for decisions surrounding the project.</figcaption>
-              </figure>
-            </section>
+              <p>RENATA’s Human Practices work brought together perspectives from biotechnology and healthcare professionals, two patients, online patient communities, and community volunteers. Across six engagement records, the team considered the clinical relevance, practical delivery, accessibility, and development requirements of its proposed LCA-sulfation system. Patient and professional feedback helped the team prioritize convenience and tolerability and explore a prebiotic–probiotic delivery approach. These accounts describe stakeholder input and its influence on the team’s thinking; they do not establish clinical safety or therapeutic effectiveness.</p>
 
+            </section>
             <section class="project-paper-section" id="hp-introduction">
-              <p class="project-paper-section-number">01</p>
               <h2>Introduction</h2>
-              <p>
-                PLACEHOLDER: Establish the social, ethical, clinical, environmental, and implementation questions
-                that made stakeholder engagement necessary. Define the scope of the inquiry and explain
-                how those questions connect to the proposed LCA-sulfation system.
-              </p>
-            </section>
+              <p>Our proposed system aims to modify lithocholic acid (LCA) using the BtSULT enzyme. The engagement accounts ask what would be needed beyond demonstrating enzyme activity: whether the approach addresses patients’ needs, how it could be delivered, and what evidence would support further development. The May SABPA forum introduced commercial and clinical questions, while subsequent interviews and outreach brought everyday patient experiences into those considerations.</p>
 
+            </section>
             <section class="project-paper-section" id="hp-methodology">
-              <p class="project-paper-section-number">02</p>
-              <h2>Methodology</h2>
-              <p>
-                PLACEHOLDER: Report how stakeholders were selected, contacted, and consulted. For each interview,
-                survey, workshop, or review, record the date, participant role, guiding questions,
-                consent process, documentation method, and approach used to interpret the response.
-              </p>
-              <div class="project-paper-subsections" aria-label="Human Practices methodology structure">
-                <article><p>Selection</p><h3>Who participated</h3><p>PLACEHOLDER: Explain why each stakeholder perspective was relevant.</p></article>
-                <article><p>Collection</p><h3>How input was gathered</h3><p>PLACEHOLDER: Describe the interview, survey, workshop, or review procedure.</p></article>
-                <article><p>Analysis</p><h3>How input was interpreted</h3><p>PLACEHOLDER: State how themes, disagreements, and limitations were identified.</p></article>
-              </div>
-              <figure class="project-paper-figure" id="hp-figure-methods">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the engagement methodology figure">
-                  <span aria-hidden="true">+</span>
-                  <small>Engagement methodology</small>
-                </div>
-                <figcaption><strong>Figure 2.</strong> PLACEHOLDER: Show the path from stakeholder selection through evidence collection and interpretation.</figcaption>
-              </figure>
+              <h2>Engagement approach</h2>
+              <p>The supplied record describes professional discussions at the SABPA OC/LA Biomedical Forum and San Diego MedChem Symposium, an interview with gastroenterologist Dr. Singh, two individual patient interviews, outreach through Facebook communities, and conversations during SEVA Collective service. These were qualitative opportunities to gather perspectives. The write-up does not document a standardized interview protocol, formal coding method, or representative sampling strategy.</p>
+              <section id="hp-methodology-1"><h3>Professional perspectives</h3><p>Conversations addressed commercial feasibility, clinical relevance, existing treatment limitations, enzyme engineering, and the evidence needed for further development.</p></section>
+              <section id="hp-methodology-2"><h3>Patient and community perspectives</h3><p>Individual interviews and Facebook responses described varied experiences after gallbladder removal. Community service provided an opportunity to explain the project to people outside biotechnology and practice accessible science communication.</p></section>
             </section>
-
             <section class="project-paper-section" id="hp-findings">
-              <p class="project-paper-section-number">03</p>
-              <h2>Findings</h2>
-              <p>
-                PLACEHOLDER: Present the strongest documented insights by theme. Distinguish direct stakeholder input,
-                the team's interpretation, and questions that remain unresolved. Add attributed quotations
-                only when permission and context are documented.
-              </p>
-              <div class="project-paper-note">
-                <strong>Evidence boundary</strong>
-                <p>PLACEHOLDER: Do not describe expected opinions, hypothetical interviews, or planned engagement as completed findings.</p>
-              </div>
-            </section>
+              <h2>What we learned</h2>
+              <p>Dr. Singh encouraged the team to consider overlapping gastrointestinal symptoms, existing treatments, the size of the patient group with persistent complications, and the possible role of the gut microbiome. The patient accounts differed: one described persistent symptoms and dietary restrictions, while another reported substantial improvement after surgery with continuing difficulty tolerating fatty foods. Facebook responses also varied, highlighting unpredictable symptoms and concerns about access to medication.</p>
+              <p>Patients emphasized ease of use, clinical testing, and transparency about potential risks. Professional exchanges highlighted the distinction between enzyme activity and meaningful therapeutic benefit, along with manufacturing, cost, delivery, and scalability. At MedChem, discussion also addressed enzyme activity and substrate specificity in computational evaluation.</p>
 
+            </section>
             <section class="project-paper-section" id="hp-integration">
-              <p class="project-paper-section-number">04</p>
-              <h2>Integration</h2>
-              <p>
-                PLACEHOLDER: Trace each material insight to a concrete project response. Record what changed in the
-                design, experiments, safety planning, communication, implementation strategy, or decision
-                criteria—and identify cases where the team retained its original approach with justification.
-              </p>
-              <figure class="project-paper-figure" id="hp-figure-integration">
-                <div class="project-paper-figure-placeholder" role="img" aria-label="Placeholder for the Human Practices integration figure">
-                  <span aria-hidden="true">+</span>
-                  <small>Insight-to-decision map</small>
-                </div>
-                <figcaption><strong>Figure 3.</strong> PLACEHOLDER: Connect stakeholder evidence to specific project decisions and follow-up actions.</figcaption>
-              </figure>
-            </section>
+              <h2>How feedback shaped the project</h2>
+              <p>Patient and professional feedback helped establish convenience and tolerability as design priorities. The team reports moving toward a prebiotic–probiotic approach and considering how engineered bacteria might work alongside prebiotic components. These remain design goals whose performance requires testing.</p>
+              <p>The SABPA discussions helped separate the evidence required for a functioning laboratory system from the additional evidence needed for clinical translation and commercialization. At MedChem, the team shared its progress and received further feedback on enzyme engineering. The supplied account does not identify numerical scores, selection thresholds, or a specific final protein-design change.</p>
 
+            </section>
             <section class="project-paper-section" id="hp-discussion">
-              <p class="project-paper-section-number">05</p>
-              <h2>Discussion</h2>
-              <p>
-                PLACEHOLDER: Interpret where stakeholder perspectives converged or conflicted, assess how representative
-                the engagement was, and identify methodological limits. Explain how uncertainty affects the
-                project's responsible-development claims and future engagement priorities.
-              </p>
-            </section>
+              <h2>Evidence and limitations</h2>
+              <p>Two patient interviews and self-selected Facebook responses provide individual experiences rather than estimates of symptom prevalence or treatment effectiveness. The records contain differing perspectives and cannot establish that the proposed system will improve patient outcomes or reduce side effects. No clinical validation is reported here.</p>
+              <p>The document’s opening HP overview is unfinished. This overview synthesizes the six completed accounts that follow it; it adds no interview quotations, participant counts, consent claims, or experimental results beyond the supplied record.</p>
 
-            <section class="project-paper-section" id="hp-conclusion">
-              <p class="project-paper-section-number">06</p>
-              <h2>Conclusion</h2>
-              <p>
-                PLACEHOLDER: Summarize what the Human Practices evidence contributed to Renata and state which social,
-                ethical, or implementation questions still require further consultation.
-              </p>
             </section>
+            <section class="project-paper-section" id="hp-conclusion">
+              <h2>Conclusion</h2>
+              <p>Human Practices broadened RENATA’s evaluation of SultFlux to include practical use, patient concerns, scientific evidence, and development constraints. The accounts connect feedback to delivery considerations and research priorities while keeping laboratory feasibility, clinical benefit, and commercial viability as separate questions requiring different evidence.</p>
+
+            </section>
+            <p class="education-source">1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d., pp. 1–10. Overview synthesized from the six event accounts.</p>
           </article>
 
           <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices page outline">
             <nav class="page-outline" aria-labelledby="hp-outline-title">
               <p class="page-outline-title" id="hp-outline-title">On this page</p>
-              <ul>
-                <li>
-                  <a href="#hp-abstract">Abstract</a>
-                  <ul><li><a href="#hp-figure-stakeholders">Figure 1 — Stakeholder map</a></li></ul>
-                </li>
-                <li><a href="#hp-introduction">Introduction</a></li>
-                <li>
-                  <a href="#hp-methodology">Methodology</a>
-                  <ul><li><a href="#hp-figure-methods">Figure 2 — Engagement methodology</a></li></ul>
-                </li>
-                <li><a href="#hp-findings">Findings</a></li>
-                <li>
-                  <a href="#hp-integration">Integration</a>
-                  <ul><li><a href="#hp-figure-integration">Figure 3 — Insight-to-decision map</a></li></ul>
-                </li>
-                <li><a href="#hp-discussion">Discussion</a></li>
-                <li><a href="#hp-conclusion">Conclusion</a></li>
-              </ul>
+              <ul><li><a href="#hp-events">Engagement records</a></li><li><a href="#hp-abstract">Abstract</a></li><li><a href="#hp-introduction">Introduction</a></li><li><a href="#hp-methodology">Engagement approach</a></li><li><a href="#hp-findings">What we learned</a></li><li><a href="#hp-integration">How feedback shaped the project</a></li><li><a href="#hp-discussion">Evidence and limitations</a></li><li><a href="#hp-conclusion">Conclusion</a></li></ul>
             </nav>
             <a class="page-outline-related" href="education.html">Education records ↗</a>
           </aside>
@@ -536,7 +506,7 @@
         </div>
       </section>
 
-      <section class="page-section">
+      ${pageData.cards.length ? `<section class="page-section">
         <div class="container">
           <div class="section-intro">
             <h2 class="section-title">${pageData.cardsTitle}</h2>
@@ -549,6 +519,7 @@
         </div>
       </section>
 
+      ` : ""}
       ${renderDetailSections(pageData.details)}
 
     `;
@@ -627,6 +598,7 @@
             <h2>${section.title}</h2>
             ${section.text ? `<p class="detail-lead">${section.text}</p>` : ""}
             ${(section.paragraphs || []).map(paragraph => `<p class="detail-lead">${paragraph}</p>`).join("")}
+            ${section.images ? `<div class="engagement-gallery">${section.images.map(photo => `<figure><a href="${photo.src}" target="_blank" rel="noopener" aria-label="View full photo: ${photo.alt}"><img src="${photo.src}" alt="${photo.alt}" width="${photo.width}" height="${photo.height}" loading="lazy" /></a><figcaption>${photo.caption}</figcaption></figure>`).join("")}</div>` : ""}
             ${section.items ? `<ul class="detail-list">${section.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
             ${section.steps ? `<div class="detail-steps">${section.steps.map((step) => `
               <div class="detail-step"><span>${step.label}</span><p>${step.text}</p></div>
@@ -634,8 +606,10 @@
             ${section.constructs ? `<div class="construct-grid">${section.constructs.map((construct) => `
               <div class="construct-card"><span>${construct.id}</span><h3>${construct.title}</h3><p>${construct.text}</p></div>
             `).join("")}</div>` : ""}
+            ${section.document ? `<figure class="education-document-reader"><iframe src="${section.document.src}" title="${section.document.title}" loading="lazy"></iframe><figcaption><a href="${section.document.src}" target="_blank" rel="noopener">Open the PDF in a new tab</a> · <a href="${section.document.src}" download>Download the guide</a></figcaption></figure>` : ""}
             ${section.note ? `<div class="evidence-note"><strong>Working note</strong><p>${section.note}</p></div>` : ""}
             ${section.source ? `<a class="detail-source-link" href="${section.source.href}" target="_blank" rel="noopener">${section.source.label} <span aria-hidden="true">↗</span></a>` : ""}
+            ${section.citation ? `<p class="education-source">${section.citation}</p>` : ""}
           </article>
         </div>
       </section>

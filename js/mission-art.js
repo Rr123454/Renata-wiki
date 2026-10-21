@@ -10,7 +10,7 @@
     </svg>`;
   }
   function bottle() {
-    return `<svg viewBox="700 470 490 750" class="mission-bottle-art" role="img" aria-label="The team’s SulFlux bottle illustration, with a solid orange spacecraft emblem on its label"><defs><clipPath id="mission-bottle-cut"><path d="M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z"/></clipPath></defs><image href="assets/story/sulflux-bottle.png" width="1936" height="1452" clip-path="url(#mission-bottle-cut)"/><rect x="961" y="1022" width="186" height="138" rx="34" fill="#ffe9d6"/><g class="mission-bottle-emblem" transform="translate(974 1030) scale(.17)">${rocket("bottle-emblem")}</g></svg>`;
+    return `<svg viewBox="700 470 490 750" class="mission-bottle-art" role="img" aria-label="The team’s SulFlux bottle illustration, with a solid orange spacecraft emblem on its label"><defs><clipPath id="mission-bottle-cut"><path d="M700 470H1190V1220H700Z"/></clipPath></defs><image href="assets/story/sulflux-bottle.png?v=b8231ea2bea2" width="1936" height="1452" clip-path="url(#mission-bottle-cut)"/></svg>`;
   }
   function anatomy() {
     return `<svg viewBox="0 0 700 650" role="img" aria-label="Schematic liver above the gallbladder, with bile ducts leading toward the intestine">

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iGEM Kickstart: The Guide We Wish We Had | ULP-CA</title>
+  <meta name="description" content="ULP-CA's beginner research guide by Humza Shahzad, shared with the iGEM community through a collaboration with NBJF and DBHS-CA." />
+  <link rel="stylesheet" href="css/reset.css?v=c89e3ea1a622" />
+  <link rel="stylesheet" href="css/loading-screen.css?v=c53e43d4c21a" />
+  <link rel="stylesheet" href="css/rocket-cursor.css?v=54dde86b33d9" />
+  <link rel="stylesheet" href="css/site.css?v=be5efd1ad4de" />
+  <link rel="stylesheet" href="css/editorial-theme.css?v=df5c0b1b0488" />
+  <link rel="stylesheet" href="css/navigation.css?v=9e7f097573b3" />
+  <link rel="stylesheet" href="css/site-header.css?v=945d59804f6c" />
+  <link rel="stylesheet" href="css/cosmic-theme.css?v=2786ed3c9533" />
+  <link rel="stylesheet" href="css/page-outline.css?v=3d3e5b159681" />
+  <link rel="stylesheet" href="css/kickstart.css?v=f2fe1bb10c3b" />
+  <link rel="stylesheet" href="css/orbit-pages.css?v=3cf1aed94d58" />
+</head>
+<body data-page="igem-kickstart">
+  <script src="js/loading-screen.js?v=4bc284f2f712"></script>
+  <header class="site-header" id="siteHeader"></header>
+  <main class="page-main" id="siteMain" data-static-content="true">
+    <section class="page-hero"><h1>iGEM Kickstart: The Guide We Wish We Had</h1></section>
+    <div class="container kickstart-layout">
+      <article class="kickstart-article" aria-label="iGEM Kickstart article and complete guide">
+        <section id="shared-resource" class="detail-section">
+          <p class="detail-eyebrow">A shared resource for new teams</p>
+          <h2>From Our Experience to a Shared Resource</h2>
+          <p>When we established ULP-CA as a first-year iGEM team, one of our earliest challenges was developing the scientific knowledge necessary to design and conduct our own synthetic biology research. Understanding how to regulate gene expression, select appropriate plasmids, assemble genetic constructs, and establish experimental controls required extensive independent reading and discussions with our mentors. Much of this knowledge was scattered across scientific papers, technical manuals, and online resources, making it difficult to determine where to begin and how individual concepts fit together.</p>
+          <p>Recognizing that future teams would encounter many of the same difficulties, <strong>ULP-CA co-founder and student lead Humza Shahzad authored <em>Beginner's Guide to Highschool iGEM: Research Fundamentals</em></strong>, consolidating the foundational knowledge he wished he had when starting our team.</p>
+          <a class="kickstart-download" href="assets/kickstart/research-fundamentals.pdf" download>Download the complete guide <span>PDF · 11 pages</span></a>
+        </section>
+        <section id="what-we-contributed" class="detail-section">
+          <h2>What We Contributed</h2>
+          <p>Humza organized the guide around the progression from understanding biological systems to designing and constructing them. Beginning with DNA, proteins, and the Design–Build–Test–Learn (DBTL) cycle, the resource introduces the principles of genetic circuit design before examining the practical considerations involved in constructing engineered biological systems.</p>
+          <p>In particular, the guide covers:</p>
+          <ul>
+            <li><strong>Gene architecture and regulation:</strong> Promoters, ribosome binding sites, coding sequences, terminators, and inducible expression systems, including examples of commonly used regulatory components.</li>
+            <li><strong>Plasmid design and selection:</strong> The distinction between cloning and expression plasmids, with examples such as pET-28a and bacterial T7 expression systems.</li>
+            <li><strong>DNA assembly:</strong> Restriction enzyme mechanisms, single and double digests, and Golden Gate Assembly using Type IIS restriction enzymes.</li>
+            <li><strong>Experimental reasoning:</strong> The importance of controls, documenting engineering decisions, and using experimental results to inform successive DBTL iterations.</li>
+          </ul>
+          <p>Humza also incorporated explanatory diagrams and references to external resources, including New England Biolabs, JoVE, and OpenWetWare, allowing students to pursue individual topics in greater depth.</p>
+          <p>The result is a beginner-oriented introduction to the technical concepts that our team had to learn independently before we could meaningfully participate in experimental design.</p>
+        </section>
+        <section id="community-contribution" class="detail-section">
+          <h2>A Collaborative Contribution to the iGEM Community</h2>
+          <p>This guide forms <strong>ULP-CA's contribution to a broader open-source initiative developed in collaboration with teams NBJF and DBHS-CA</strong>, aimed at reducing the barriers to establishing competitive high school iGEM programs.</p>
+          <p>While the larger collaboration addresses the challenges of getting new teams started, our contribution focuses specifically on one of the most immediate obstacles: the gap between an interest in synthetic biology and the technical understanding required to begin research.</p>
+          <p>By documenting the knowledge we accumulated during our first year, we sought to provide future teams with a more organized starting point than the one available to us. Instead of independently assembling an introductory understanding from numerous disconnected resources, new participants can use the guide to establish a foundation before advancing to more specialized literature, laboratory protocols, and project-specific training.</p>
+          <p>Our goal is to make the first stages of iGEM research more approachable, so future teams can build upon the lessons we learned rather than having to rediscover them independently.</p>
+        </section>
+        <section id="complete-guide" class="detail-section kickstart-transcript" aria-labelledby="research-fundamentals">
+          <!-- kickstart-guide:start -->
+<header class="kickstart-guide-heading"><p class="detail-eyebrow">The complete guide · 11 source pages</p>
+<h2 id="research-fundamentals">Beginner’s Guide to Highschool iGEM: Research Fundamentals</h2>
+<p>Prepared By: Humza Shahzad, ULP-CA 2026 Co-Founder and Student Lead</p>
+<p>Transcribed from the supplied guide. Original wording, figures, and source links are retained. <a href="assets/kickstart/research-fundamentals.pdf">Read the original PDF</a> [1].</p></header>
+<h3 id="guide-foreword" data-source-pages="2">Foreword</h3>
+<p data-source-pages="2">Hello Everyone, my name is Humza Shahzad and I am the Co-Founder of the new ULP-CA iGEM team competing in iGEM 2026. I’m a high school student in Fullerton, CA with a burning curiosity for the possibilities that synthetic biology can bring us one day. I hope this guide finds people that too want to start their research journey with more knowledge than I first had, once requiring hundreds of hours of reading research papers and designing experiments with my team to understand the fundamentals of biotech research. I’ve condensed the basics into this document and hope that all that read it truly appreciate it, as this is a testament to the very beginnings of my biotech journey and hopefully the start of yours. Onwards padawans!</p>
+<h3 id="guide-the-basics" data-source-pages="2">The Basics:</h3>
+<p data-source-pages="2">DNA : Deoxyribose nucleic acid, a type of macromolecule (fancy talk for a BIG molecule, in which case DNA is pretty long). Uses ATCG to store the code for PROTEINS, one of the most important macromolecules in synbio!</p>
+<p data-source-pages="2">Proteins: A very large macromolecule; made up of subunits called amino acids. Each amino acid corresponds to a <strong>codon</strong>, a group of 3 base pairs that is read when RNA is built using DNA as a template for protein production(outside of the nucleus!)</p>
+<p data-source-pages="2">Protein Functions: Proteins are unique in that they serve the majority of active functions in the body. Proteins move muscle cells to contract, catalyze chemical reactions(these are enzymes!! ), embed in the cell membrane to act as receptors(immune cells anybody??), act as functional compounds (e.g. silk, hair, mucus, etc.), or serve regulatory functions (hemoglobin/myoglobin as oxygen transporters).</p>
+<h3 id="guide-synbio-starter-guide" data-source-pages="2">SynBio Starter Guide!</h3>
+<p data-source-pages="3">What makes Synbio so special? Synthetic biology essentially focuses on utilizing biology for certain functions. This is important in fields such as the pharmaceutical industry such as the development of a new drug, and using rigorous testing procedures in order to begin and pass clinical trials.</p>
+<p data-source-pages="3">DBTL, or Design, Build, Test, and Learn is the reason why bioengineering gets to be called an engineering discipline. Simply, like engineers, scientists of synthetic biology have an engineering goal and create an initial design of their system, construct it(typically through recombinant gene assembly methods), run tests/assays on it, and use the information from this cycle to LEARN, therefore starting the next cycle. A good synthetic biologist always documents their engineering decisions like a normal engineer would. Ample data collection is meant to be informative for a scientist to rule out problems within their design through thought-out experiments that maintain good positive and negative controls. This is what makes science DEFENSIBLE.</p>
+<p data-source-pages="3">Before we start, here is something very important that many people get wrong when they first start working with synbio. Biology is a heuristic system, not a binary one. By this I mean the following: heuristics is a concept in computer science that effectively means “good enough”. Biology is the product of millions upon millions of years of careful evolution, and we have acquired information about biology after very rigorous study. However, changing the delicate system of biology on the molecular level comes with its own implications, in the sense that nothing is a yes or a no. A mutation in a protein can make it semi-functional but not fully non-functional. A weak promoter could mean that less but not near none of a gene is transcribed. Introducing elements that are foreign into a bacterial genome could have implications that we won’t know how to rule out unless we have good experiments, because biology doesn’t necessarily follow all of the rules! Biological systems make mistakes, and that is the beauty of it. If they didn’t, then we wouldn’t have diseases and genetic defects now would we?</p>
+<h3 id="guide-gene-design-principles" data-source-pages="3">Gene Design Principles</h3>
+<p data-source-pages="4">In order to understand how to design a synthetic biology project, we must understand a few things about coding regions and sequences in DNA that don’t code for proteins.</p>
+<p data-source-pages="4">There are key parts to a gene besides the coding region, the sequence with all necessary codons for a protein. These parts come in the following order:</p>
+<ul class="kickstart-source-list">
+<li data-source-pages="4">1. Promoter: Determines how strongly a gene is expressed in terms of the amount of protein expressed and how rapidly. The standard unit for a promoter’s strength is Relative Promoter Units(RPU). Promoter sequences are the first sequence recognized by RNA Polymerase to start DNA transcription into an mRNA sequence.</li>
+<li data-source-pages="4">2. Ribosome Binding Site(RBS): A non-coding region included in the final mRNA sequence. It is where a ribosome will first bind to mRNA before RNA translation.</li>
+<li data-source-pages="4">3. Start Codon: The first codon of RNA that initiates protein production during RNA translation. The start codon ALWAYS corresponds to the methionine amino acid.</li>
+<li data-source-pages="4">4. Coding Region: Self-explanatory :)</li>
+<li data-source-pages="4">5. Stop Codon: Signals the ribosome to detach from the mRNA molecule.</li>
+<li data-source-pages="4">6. Terminator: Usually placed twice in the gene in synthetic biology experiments, as it ensures that RNA polymerase detaches from DNA during transcription completely.</li>
+</ul>
+<p data-source-pages="4">Key Tip: Thanks to the UC Berkeley iGEM team, we have a characterized library of promoters called Anderson Promoters, all which have varying strengths at relatively common levels used in experiments, such as 0.25, 0.5, 0.75, etc. I highly recommend considering the use of Anderson Promoters in your experiments because they are perfect for <em>tuning</em> of a system in terms of gene expression.</p>
+<p data-source-pages="5">Now, although this system for protein production <em>works</em>, there is a fatal flaw. If one were to follow the framework for a gene above, experiments would probably not go so well in terms of protein function. This is because the promoter is in a constitutive form, meaning that it is ALWAYS on. Usually, we are engineering bacteria, and we must not forget that bacteria have other stuff to care about besides our insignificant little gene. Making a gene constitutive means that it will not stop the protein production process, and that uses copious amounts of ATP and other cellular resources that cause metabolic stress, which can contribute to protein misfolding and ultimately the very death of our cells. So what do we use? We use the operon architecture, made up of an operator and a repressor.</p>
+<figure id="guide-figure-1" data-source-pages="5"><a href="assets/kickstart/figure-1.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-1.png" width="1298" height="537" loading="lazy" alt="Operon architecture showing a regulatory gene, promoter, operator, and structural genes."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=5">Source guide, p. 5</a></figcaption></figure>
+<p class="kickstart-source-caption" data-source-pages="5"><em>Fig. 1 Operon Architecture. Source(</em><a href="http://bio.libretexts.org"><em>bio.libretexts.org</em></a><em>)  </em></p>
+<p data-source-pages="5">With reference to Fig.1, an operon architecture is different from a normal gene architecture in that we observe the use of an operator and regulatory sequence(also known as the repressor). The regulatory sequence is a separately expressed gene that creates a repressor protein that binds to the operator sequence. By binding to the operator sequence, it acts as a roadblock for RNA polymerase, and the genes following the operator aren’t able to be transcribed. This is the “OFF” state for our genes. In order to switch our gene into the “ON” state, bacteria must first be grown to a certain density in a phase called log phase with an optical density at 600 nm, or OD<sub>600</sub>, between 0.4 and 0.6. Don’t worry about this for now, but it is very important once you step into the lab and your PI uses this term when teaching you bacterial culture. Now, where were we?</p>
+<p data-source-pages="6">After the bacteria have reached an optimal growth phase, we add a solution of an inducing molecule. Besides containing a site to bind to the operator, repressor proteins also have a site that binds to an inducer molecule, causing a change in the shape of the repressor that forces it to detach from the DNA. In some cases, the “inducer” molecule is actually a “corepressor” molecule, in the sense that when it binds to the repressor protein, it actually ENABLES it to bind to the operator. When the concentration of a corepressor molecule decreases, so does the amount of its operator-bound repressor proteins, therefore causing us to observe the “ON” state of our gene.</p>
+<p data-source-pages="6">TLDR: Inducer System: Inducer + Repressor = ON Corepressor System: Corepressor + Repressor = OFF Besides basic protein expression, it&#x27;s important to use operator and repressor systems because it gives us something valuable: CONTROL. If we create a genetic circuit, a network of genes expressed separately, operons allow us to control how the expression of one gene affects another. For example, one gene can create an enzyme that produces two byproducts, one of which contributes to a therapeutic and another which acts as the inducer molecule for another operon, and so on. An operon can also be used as an on/off switch to gene expression.</p>
+<h3 id="guide-gene-assembly-testing" data-source-pages="6">Gene Assembly + Testing</h3>
+<p data-source-pages="6">Alright so gene structure is great and all but what&#x27;s the point? How do we actually take a gene we have designed and test it in a cell? For the most part, high school iGEM teams tend to dabble only in bacteria and bacterial DNA. But why is that?</p>
+<p data-source-pages="6">Bacteria have their own genome as well as large, circular pieces of DNA called plasmids that they can <strong>take up</strong> from their environment, or in a solution if you utilize heat shock or electroporation methods. This is how bacteria pass genes from one to another in a process called <strong>horizontal</strong> <strong>gene transfer</strong>. Scientists have taken advantage of this inherent feature of bacteria and created bacterial plasmids that are optimized as templates for gene expression.</p>
+<p data-source-pages="6">There are two types of plasmids and they differ based on the way they replicate:</p>
+<h4 data-source-pages="7">❖1. Expression Plasmid:</h4>
+<ul class="kickstart-source-list">
+<li data-source-pages="7">➢These are plasmids that are optimized for protein expression. They contain a sequence called an <strong>origin of replication</strong>(<em>ori</em>) like any plasmid that gives them a low copy number. That is, fewer copies of the plasmid are made because copying a plasmid is a metabolically stressful process, especially when our main goal is to produce a protein.</li>
+<li data-source-pages="7">➢The pET series, namely pET-28(a), is the most common expression plasmid used. It has a T7 promoter, which is an incredibly strong promoter attached to the lac operon induced by the chemical IPTG.</li>
+<li data-source-pages="7">➢The recommended cell line for protein expression is BL21(DE3), especially when using a T7 promoter because only BL21(DE3) cells possess the correct T7 polymerase to recognize its corresponding promoter.</li>
+</ul>
+<h4 data-source-pages="7">❖Cloning Plasmid</h4>
+<ul class="kickstart-source-list">
+<li data-source-pages="7">➢These are plasmids optimized for cloning. Their <em>ori</em> is of a high copy number since the goal is to make more copies of the DNA. There is no template for gene architecture in a cloning plasmid, so don’t be alarmed since our goal is not to express a gene.</li>
+<li data-source-pages="7">➢Why do we need to make more though? Sometimes, when we order DNA sequences to be synthesized, we don’t have enough for our desired experiments. So, we insert our coding sequences into a cloning plasmid to produce more copies of our cloning sequence. Then, we use restriction enzymes to cut out our coding sequences and insert them into an expression plasmid.</li>
+</ul>
+<h3 id="guide-restriction-enzymes-when-dna-sequences-become-legos" data-source-pages="7">Restriction Enzymes: When DNA sequences become Legos.</h3>
+<p data-source-pages="7">When several DNA coding sequences are cloned in different plasmids and they need to be put into a singular plasmid, we must use restriction enzymes to cut out DNA at precise locations such that each cut strand is assembled into one plasmid by the hydrogen bonds made between base pairs. EcoRI is a common Type II restriction enzyme that cuts at an EcoRI site in DNA, highlighted in yellow in Fig. 2.</p>
+<figure id="guide-figure-2" data-source-pages="8"><a href="assets/kickstart/figure-2.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-2.png" width="2048" height="990" loading="lazy" alt="EcoRI recognition and cleavage sites with complementary sticky ends."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=8">Source guide, p. 8</a></figcaption></figure>
+<p class="kickstart-source-caption" data-source-pages="8">Fig. 2 Diagram of EcoRI Type II Restriction Enzyme</p>
+<p data-source-pages="8">If you observe the way that EcoRI cuts at its recognition site, you can see that it leaves an overhang of 4 DNA base pairs. These are called <strong>sticky ends </strong>such that they will “stick” to another complementary 4 base pair overhang in another plasmid. Using Type II restriction enzymes is useful for gene insertion when two enzymes are used, since using the same restriction enzyme for the forward and reverse strand would prevent us from knowing the orientation the DNA has aligned in, and the wrong protein would be expressed if the DNA was reversed. This is called a <strong>double digest</strong>. This may be tricky to visualize, so I recommend watching this video from the wonderful people at Waterloo iGEM <a href="https://www.youtube.com/watch?v=zXgZOblz-94">here</a>. You may also reference Fig. 3.</p>
+<figure id="guide-figure-3" data-source-pages="9"><a href="assets/kickstart/figure-3.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-3.png" width="1540" height="1200" loading="lazy" alt="Comparison of single and double restriction digests from SnapGene."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=9">Source guide, p. 9</a></figcaption></figure>
+<p class="kickstart-source-caption" data-source-pages="9"><em>Fig. 3 Single VS. Double Digests. Source: </em><a href="https://www.snapgene.com/guides/restriction-enzyme-cloning"><em>SnapGene</em></a><em> </em></p>
+<p data-source-pages="9">Well what if we have multiple fragments of DNA we need to assemble? What if we have multiple promoters, ribosome binding sites, coding sequences, and terminators that all need to be put into a specified order? That’s where my favorite kind of assembly method comes in: Golden Gate Assembly. Golden Gate Assembly is a DNA assembly method that uses a special Type IIS restriction enzyme to assemble multiple fragments of DNA into a plasmid using only one enzyme.</p>
+<p data-source-pages="9,10">The reason this works is due to the mechanism of a Type IIS restriction enzyme. Like any restriction enzyme, Type IIS restriction enzymes have recognition sites. However, instead of cutting DNA at the restriction site, Type IIS enzymes cut OUTSIDE of the recognition site, producing a very unique 4 base pair overhang. If you design your DNA fragments to have matching overhangs, you can theoretically assemble hundreds of DNA fragments at once without leaving a restriction “scar”, a nonfunctional sequence of DNA left behind from a restriction digest.</p>
+<figure id="guide-figure-4" data-source-pages="10"><a href="assets/kickstart/figure-4.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-4.png" width="1236" height="1312" loading="lazy" alt="Golden Gate Assembly diagram from New England Biolabs."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=10">Source guide, p. 10</a></figcaption></figure>
+<p class="kickstart-source-caption" data-source-pages="10"><em>Fig. 4 Golden Gate Assembly. Source: </em><a href="https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly"><em>NEB</em></a><em> </em></p>
+<h3 id="guide-the-lab-and-onwards" data-source-pages="10">The Lab and Onwards!</h3>
+<p data-source-pages="11">Everything I’ve explained and attempted to teach is all usable in theory. However, in order to properly execute experiments and protocols in a laboratory, it is up to you to decide what procedures you need to follow. Thankfully, processes like DNA purification, protein purification, DNA assembly, and running assays are all well-laid out on sites such as New England Biolabs, SnapGene, and even the old iGEM parts registry .Here are some useful links that will help you draft up your own protocols with your mentors:</p>
+<p data-source-pages="11">New England Biolabs Protocol Search: <a href="https://www.neb.com/en-us/tools-and-resources/search?type=Protocol">https://www.neb.com/en-us/tools-and-resources/search?type=Protocol</a></p>
+<p data-source-pages="11">Journey of Visualized Experiments: <a href="https://www.jove.com/">https://www.jove.com/</a></p>
+<p data-source-pages="11">OpenWetWare: <a href="https://openwetware.org/wiki/Main_Page">https://openwetware.org/wiki/Main_Page</a></p>
+<p data-source-pages="11">Best of luck with your research my fellow iGEMers. Now fly! ;)</p>
+<figure id="guide-figure-5" data-source-pages="11"><a href="assets/kickstart/figure-5.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-5.png" width="200" height="200" loading="lazy" alt="Author portrait included at the end of the guide."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=11">Source guide, p. 11</a></figcaption></figure>
+<p data-source-pages="11"><em>-</em> <em>Humza Shahzad, ULP-CA 2026 Co-Founder </em></p>
+<!-- kickstart-guide:end -->
+        </section>
+        <section id="kickstart-sources" class="detail-section">
+          <h2>Source &amp; further reading</h2>
+          <ol class="kickstart-references">
+            <li>Shahzad, Humza. <em>Beginner’s Guide to Highschool iGEM: Research Fundamentals.</em> ULP-CA, 2026. <a href="assets/kickstart/research-fundamentals.pdf">Original PDF</a>.</li>
+            <li>New England Biolabs. “Golden Gate Assembly.” <em>NEB</em>, <a href="https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly">DNA Assembly and Cloning</a>. Cited in the guide, p. 10.</li>
+            <li>SnapGene. “Restriction Enzyme Cloning.” <em>SnapGene</em>, <a href="https://www.snapgene.com/guides/restriction-enzyme-cloning">Restriction Enzyme Cloning Guide</a>. Cited in the guide, p. 9.</li>
+          </ol>
+          <p class="kickstart-source-note">The introductory account was supplied by ULP-CA. The guide is a student-authored learning resource; laboratory work requires mentor review, appropriate training, and approved protocols. External resource links from the PDF appear in their original sections.</p>
+        </section>
+      </article>
+      <aside class="kickstart-sidebar" aria-label="Explore this page">
+        <nav class="page-outline" aria-label="Sections">
+          <p class="page-outline-title">Explore this page</p>
+          <ul>
+            <li><a href="#shared-resource">From our experience</a></li>
+            <li><a href="#what-we-contributed">What we contributed</a></li>
+            <li><a href="#community-contribution">Our collaboration</a></li>
+            <li><a href="#complete-guide">The complete guide</a>
+              <ul>
+                <li><a href="#guide-foreword">Foreword</a></li>
+                <li><a href="#guide-the-basics">The basics</a></li>
+                <li><a href="#guide-synbio-starter-guide">SynBio &amp; DBTL</a></li>
+                <li><a href="#guide-gene-design-principles">Gene design</a></li>
+                <li><a href="#guide-gene-assembly-testing">Assembly &amp; testing</a></li>
+                <li><a href="#guide-restriction-enzymes-when-dna-sequences-become-legos">Restriction enzymes</a></li>
+                <li><a href="#guide-the-lab-and-onwards">The lab &amp; onwards</a></li>
+              </ul>
+            </li>
+            <li><a href="#kickstart-sources">Source &amp; further reading</a></li>
+          </ul>
+          <a class="page-outline-related" href="assets/kickstart/research-fundamentals.pdf">Open original PDF</a>
+        </nav>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer" id="siteFooter"></footer>
+  <script src="js/site-content.js?v=8a3716396a8e"></script>
+  <script src="js/navigation.js?v=95be8fc6aeaa"></script>
+  <script src="js/orbit-pages.js?v=9732fb7ed7ab"></script>
+  <script src="js/site.js?v=e49278024985"></script>
+  <script src="js/editorial-ui.js?v=83d70d4b8ff7"></script>
+  <script src="js/rocket-cursor.js?v=15bae7dec998"></script>
+</body>
+</html>

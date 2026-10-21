@@ -1,0 +1,41 @@
+[
+  {
+    "id": "hp-abstract",
+    "title": "Abstract",
+    "paragraphs": ["RENATA’s Human Practices work brought together perspectives from biotechnology and healthcare professionals, two patients, online patient communities, and community volunteers. Across six engagement records, the team considered the clinical relevance, practical delivery, accessibility, and development requirements of its proposed LCA-sulfation system. Patient and professional feedback helped the team prioritize convenience and tolerability and explore a prebiotic–probiotic delivery approach. These accounts describe stakeholder input and its influence on the team’s thinking; they do not establish clinical safety or therapeutic effectiveness."]
+  },
+  {
+    "id": "hp-introduction",
+    "title": "Introduction",
+    "paragraphs": ["Our proposed system aims to modify lithocholic acid (LCA) using the BtSULT enzyme. The engagement accounts ask what would be needed beyond demonstrating enzyme activity: whether the approach addresses patients’ needs, how it could be delivered, and what evidence would support further development. The May SABPA forum introduced commercial and clinical questions, while subsequent interviews and outreach brought everyday patient experiences into those considerations."]
+  },
+  {
+    "id": "hp-methodology",
+    "title": "Engagement approach",
+    "paragraphs": ["The supplied record describes professional discussions at the SABPA OC/LA Biomedical Forum and San Diego MedChem Symposium, an interview with gastroenterologist Dr. Singh, two individual patient interviews, outreach through Facebook communities, and conversations during SEVA Collective service. These were qualitative opportunities to gather perspectives. The write-up does not document a standardized interview protocol, formal coding method, or representative sampling strategy."],
+    "subsections": [
+      {"title": "Professional perspectives", "text": "Conversations addressed commercial feasibility, clinical relevance, existing treatment limitations, enzyme engineering, and the evidence needed for further development."},
+      {"title": "Patient and community perspectives", "text": "Individual interviews and Facebook responses described varied experiences after gallbladder removal. Community service provided an opportunity to explain the project to people outside biotechnology and practice accessible science communication."}
+    ]
+  },
+  {
+    "id": "hp-findings",
+    "title": "What we learned",
+    "paragraphs": ["Dr. Singh encouraged the team to consider overlapping gastrointestinal symptoms, existing treatments, the size of the patient group with persistent complications, and the possible role of the gut microbiome. The patient accounts differed: one described persistent symptoms and dietary restrictions, while another reported substantial improvement after surgery with continuing difficulty tolerating fatty foods. Facebook responses also varied, highlighting unpredictable symptoms and concerns about access to medication.", "Patients emphasized ease of use, clinical testing, and transparency about potential risks. Professional exchanges highlighted the distinction between enzyme activity and meaningful therapeutic benefit, along with manufacturing, cost, delivery, and scalability. At MedChem, discussion also addressed enzyme activity and substrate specificity in computational evaluation."]
+  },
+  {
+    "id": "hp-integration",
+    "title": "How feedback shaped the project",
+    "paragraphs": ["Patient and professional feedback helped establish convenience and tolerability as design priorities. The team reports moving toward a prebiotic–probiotic approach and considering how engineered bacteria might work alongside prebiotic components. These remain design goals whose performance requires testing.", "The SABPA discussions helped separate the evidence required for a functioning laboratory system from the additional evidence needed for clinical translation and commercialization. At MedChem, the team shared its progress and received further feedback on enzyme engineering. The supplied account does not identify numerical scores, selection thresholds, or a specific final protein-design change."]
+  },
+  {
+    "id": "hp-discussion",
+    "title": "Evidence and limitations",
+    "paragraphs": ["Two patient interviews and self-selected Facebook responses provide individual experiences rather than estimates of symptom prevalence or treatment effectiveness. The records contain differing perspectives and cannot establish that the proposed system will improve patient outcomes or reduce side effects. No clinical validation is reported here.", "The document’s opening HP overview is unfinished. This overview synthesizes the six completed accounts that follow it; it adds no interview quotations, participant counts, consent claims, or experimental results beyond the supplied record."]
+  },
+  {
+    "id": "hp-conclusion",
+    "title": "Conclusion",
+    "paragraphs": ["Human Practices broadened RENATA’s evaluation of SultFlux to include practical use, patient concerns, scientific evidence, and development constraints. The accounts connect feedback to delivery considerations and research priorities while keeping laboratory feasibility, clinical benefit, and commercial viability as separate questions requiring different evidence."]
+  }
+]

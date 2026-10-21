@@ -76,11 +76,23 @@ test('the homepage keeps every supplied science paragraph verbatim and all three
  for(const name of ['lca-dca.webp','sulflux-bottle.png','spaceship.png','spaceship-inside.png','liver.png','planet-1.png','planet-2.png','planet-3.png','person-drinking.png']) {
   assert.ok(html.includes(`assets/story/${name}`),name);assert.ok(fs.existsSync(path.join(__dirname,'../assets/story',name)));
  }
- assert.match(html, /<image href="assets\/story\/sulflux-bottle\.png\?v=2e5484d1"/);
- assert.match(html, /data-preload="assets\/story\/sulflux-bottle\.png\?v=2e5484d1 /);
+ assert.match(html, /<image href="assets\/story\/sulflux-bottle\.png\?v=b8231ea2bea2"/);
+ assert.match(html, /data-preload="assets\/story\/sulflux-bottle\.png\?v=b8231ea2bea2 /);
  assert.doesNotMatch(html, /bottle-new\.png/);
- assert.match(read('scripts/build-home.js'), /sulflux-bottle\.png\?v=2e5484d1/);
+ assert.match(read('scripts/build-home.js'), /sulflux-bottle\.png\?v=b8231ea2bea2/);
  assert.doesNotMatch(html,/mission-cabin-open|mission-cabin-dialog|Look inside|mission-craft-layer|mission-transit|Proposed design · not a validated treatment/);
+});
+
+test('the supplied Sulflux PNG stays unchanged and its bottle uses an unclipped outline',()=>{
+ const bytes=fs.readFileSync(path.join(__dirname,'../assets/story/sulflux-bottle.png'));
+ assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),'b8231ea2bea212b962edd7dd0917ab93fb500966e625c8cfdaad1f875c01e371');
+ assert.equal(bytes.readUInt32BE(16),6000);
+ assert.equal(bytes.readUInt32BE(20),4498);
+ const art=require('../js/mission-art.js').bottle();
+ assert.match(art,/sulflux-bottle\.png\?v=b8231ea2bea2/);
+ assert.match(art,/M700 470H1190V1220H700Z/);
+ assert.doesNotMatch(art,/mission-bottle-emblem|bottle-emblem-alpha/);
+ assert.match(read('index.html'),/M700 470H1190V1220H700Z/);
 });
 
 function fixture({reducedMotion=false,height=900}={}) {

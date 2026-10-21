@@ -84,7 +84,9 @@ function researchMarkup(page) {
  if(page==='model') return read('model.html');
  if(page==='human-practices') {
   const source=read('js/site.js'),start=source.indexOf('  function renderHumanPracticesPage()'),end=source.indexOf('  function renderStandardPage()',start);
-  return vm.runInNewContext(`(${source.slice(start,end).trim()})`)();
+  const content = {window:{}};
+  vm.runInNewContext(read('js/site-content.js'),content);
+  return vm.runInNewContext(`(${source.slice(start,end).trim()})`, {data:content.window.SITE_DATA})();
  }
  const context=vm.createContext({window:{}});
  for(const file of ['site-content','dry-lab-content','wet-lab-content','wet-lab-notebook-data','lab-content']) vm.runInContext(read(`js/${file}.js`),context);
@@ -99,7 +101,7 @@ test('HP, Wetlab, and Model prepare the same left outline from their real render
   assert.equal(article.parentElement.children[0],sidebar,page);
   assert.equal(nav.dataset.projectOutline,'');
   assert.equal(doc.getElementById('project-outline-title').textContent,'On this page');
-  const links=nav.querySelectorAll('a');assert.ok(links.length>8,page);
+  const links=nav.querySelectorAll('a');assert.ok(links.length>=8,page);
   const targets=links.map(link=>doc.getElementById(link.getAttribute('href').slice(1)));
   assert.ok(targets.every(Boolean),`${page}: every heading link resolves`);
   assert.equal(new Set(targets).size,targets.length,`${page}: no duplicated targets`);

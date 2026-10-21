@@ -106,7 +106,7 @@ test("every footer surface shares the reference dark blue on Home and reading pa
 
 test("all content pages mount the shared sponsor, links, and copyright footer", () => {
   const files = fs.readdirSync(root).filter(file => file.endsWith(".html") && !redirects.includes(file));
-  assert.equal(files.length, 28);
+  assert.equal(files.length, 31);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     assert.equal((html.match(/id="siteFooter"/g) || []).length, 1, file);

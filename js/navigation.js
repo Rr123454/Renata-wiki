@@ -26,7 +26,8 @@
             <div class="renata-nav-pages">
               <ul>${item.children.map(child => {
                 const current = child.key === pageKey;
-                const inSection = !current && ((pageKey.startsWith(`${child.key}-`) && !item.children.some(peer => peer.key === pageKey)) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
+                const humanPracticesRecord = /^education-event-0[1-6]$/.test(pageKey);
+                const inSection = !current && ((child.key === "human-practices" && humanPracticesRecord) || (!humanPracticesRecord && pageKey.startsWith(`${child.key}-`) && !item.children.some(peer => peer.key === pageKey)) || (child.key === "wet-lab" && pageKey.startsWith("experiment-") && !pageKey.startsWith("experiment-enzyme-design")) || (child.key === "model" && pageKey.startsWith("experiment-enzyme-design")));
                 return `<li><a class="renata-nav-card${inSection ? " is-section" : ""}" href="${escape(child.href)}"${current ? ' aria-current="page"' : ""}>
                   ${badge(child.icon, 48)}
                   <span class="renata-nav-copy"><strong>${escape(child.label)}</strong><small>${escape(child.description)}</small></span>

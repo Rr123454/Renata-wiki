@@ -11,7 +11,9 @@ const escape = value => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').repla
 const paragraph = key => `<p data-science-copy="${key}">${escape(copy[key]).replace('Bacteroides thetaiotaomicron', '<em>Bacteroides thetaiotaomicron</em>').replace('Escherichia coli', '<em>Escherichia coli</em>').replace('titled SulFlux,', 'titled <em>SulFlux</em>,')}</p>`;
 // Clip source PNGs in SVG, preserving the supplied files and their transparent pixels.
 const framed = (file, box, shape, label, id, width=1936, height=1452) => `<svg viewBox="${box}" role="img" aria-label="${label}" class="mission-framed-art"><defs><clipPath id="${id}"><path d="${shape}"/></clipPath></defs><image href="assets/story/${file}" width="${width}" height="${height}" clip-path="url(#${id})"/></svg>`;
-const bottle = framed('sulflux-bottle.png?v=2e5484d1', '700 470 490 750', 'M780 520Q780 480 943 478Q1109 478 1111 520L1111 599Q1115 642 1173 705L1173 813Q1137 842 1141 881L1176 920 1176 1102Q1117 1209 949 1212Q801 1206 735 1112L731 928Q733 902 758 868Q767 843 724 809L719 707Q777 650 779 597Z', 'SulFlux bottle with an orange spaceship emblem', 'new-bottle-cut');
+// The supplied 6000×4498 PNG is unchanged; scale into the established animation
+// coordinates and frame the bottle without cutting into its transparent outline.
+const bottle = framed('sulflux-bottle.png?v=b8231ea2bea2', '700 470 490 750', 'M700 470H1190V1220H700Z', 'SulFlux bottle with an orange spaceship emblem', 'new-bottle-cut');
 const shipFrame = ROCKET_ART.frame;
 const ship = `<svg viewBox="${shipFrame.x} ${shipFrame.y} ${shipFrame.width} ${shipFrame.height}" role="img" aria-label="Detailed blue and orange SulFlux spaceship" class="mission-framed-art"><defs><clipPath id="new-ship-cut"><rect x="30" y="350" width="550" height="630"/></clipPath></defs><g transform="matrix(${ROCKET_ART.matrix.join(' ')})"><image href="assets/story/spaceship.png" width="1936" height="1452" clip-path="url(#new-ship-cut)"/></g></svg>`;
 const bileAcids = `<svg viewBox="510 455 740 255" role="img" aria-label="LCA and DCA characters interacting with the intestinal lining" class="mission-framed-art"><image href="assets/story/lca-dca.webp" width="1936" height="1452"/></svg>`;
@@ -44,7 +46,7 @@ const html = `<!DOCTYPE html>
   <a class="flight-skip" href="#observatory">Skip to the planets</a>
   <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation">${homeNavigation}</nav></div></header>
   <main class="mission-home" id="siteMain" data-static-content="true">
-    <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/sulflux-bottle.png?v=2e5484d1 assets/story/spaceship.png assets/story/spaceship-inside.png assets/story/planet-1.png assets/story/planet-2.png assets/story/planet-3.png">
+    <section class="mission-launch" id="launch" aria-labelledby="mission-title" data-preload="assets/story/sulflux-bottle.png?v=b8231ea2bea2 assets/story/spaceship.png assets/story/spaceship-inside.png assets/story/planet-1.png assets/story/planet-2.png assets/story/planet-3.png">
       <div id="observatory" class="mission-observatory-anchor" aria-hidden="true"></div>
       <div class="mission-launch-stage">
         <div class="mission-atmosphere" aria-hidden="true"><div class="mission-stars"></div><div class="mission-star-dust"></div><div class="mission-nebula"></div><svg class="mission-flight-lines" viewBox="0 0 1440 900" preserveAspectRatio="none"><ellipse cx="720" cy="460" rx="650" ry="280"/><ellipse cx="720" cy="460" rx="470" ry="350"/></svg></div>

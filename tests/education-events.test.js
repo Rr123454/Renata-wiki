@@ -20,14 +20,14 @@ function renderer(name, next, globals = {}) {
 }
 
 test("the Education Event 1 card and page share the SABPA title and May record", () => {
-  const route = data.educationEventRoutes[0];
+  const route = data.humanPracticesEventRoutes[0];
   assert.equal(route.number, "01");
   assert.equal(route.title, "SABPA OC/LA Biochem Forum at UCI");
   assert.equal(event.title, route.title);
   assert.equal(event.lead, route.summary);
   assert.equal(route.href, "education-event-01.html");
   assert.equal(route.status, "May · Forum participation");
-  assert.equal(event.buttons[0].href, "education.html");
+  assert.equal(event.buttons[0].href, "human-practices.html");
   assert.doesNotMatch(JSON.stringify(event), /PLACEHOLDER|Edit this page|structural placeholder/);
   assert.match(read(route.href), /<title>SABPA OC\/LA Biochem Forum at UCI \| ULP-CA<\/title>/);
 });
@@ -49,15 +49,15 @@ test("the complete event account retains participants, both perspectives, and ev
 });
 
 test("the real shared renderers include the event summary and every full paragraph", () => {
-  const renderIndex = renderer("renderEducationPage", "renderExperimentRecordPage", { data });
+  const renderIndex = renderer("renderHumanPracticesPage", "renderStandardPage", { data });
   const index = renderIndex();
   assert.match(index, /href="education-event-01.html"/);
-  assert.ok(index.includes(data.educationEventRoutes[0].title));
-  assert.ok(index.includes(data.educationEventRoutes[0].summary));
+  assert.ok(index.includes(data.humanPracticesEventRoutes[0].title));
+  assert.ok(index.includes(data.humanPracticesEventRoutes[0].summary));
   assert.doesNotMatch(index, /These event pages are placeholders/);
   const renderDetails = renderer("renderDetailSections", "renderButtons");
   for (const number of ["01", "02", "03", "04", "05", "06"]) {
-    const route = data.educationEventRoutes.find(item => item.number === number);
+    const route = data.humanPracticesEventRoutes.find(item => item.number === number);
     assert.ok(index.includes(`href="${route.href}"`));
     assert.ok(index.includes(route.title));
     assert.ok(index.includes(route.summary));
@@ -72,14 +72,14 @@ test("the real shared renderers include the event summary and every full paragra
 });
 
 test("Education Event 2 links to the completed interview record", () => {
-  const route = data.educationEventRoutes[1];
+  const route = data.humanPracticesEventRoutes[1];
   const record = data.pages["education-event-02"];
   assert.equal(route.title, "Interview with Gastroenterologist and Team");
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.status, "Clinical interview");
   assert.equal(route.href, "education-event-02.html");
-  assert.equal(record.buttons[0].href, "education.html");
+  assert.equal(record.buttons[0].href, "human-practices.html");
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page|structural placeholder/);
   assert.match(read(route.href), /<title>Interview with Gastroenterologist and Team \| ULP-CA<\/title>/);
 });
@@ -95,14 +95,14 @@ test("the interview preserves clinical feedback and identifies the treatment as 
 });
 
 test("Education Event 3 links to the completed patient interview record", () => {
-  const route = data.educationEventRoutes[2];
+  const route = data.humanPracticesEventRoutes[2];
   const record = data.pages["education-event-03"];
   assert.equal(route.title, "Interview with Two Patients to Understand Personal Experiences");
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.status, "Patient interviews");
   assert.equal(route.href, "education-event-03.html");
-  assert.equal(record.buttons[0].href, "education.html");
+  assert.equal(record.buttons[0].href, "human-practices.html");
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page|structural placeholder/);
   assert.match(read(route.href), /<title>Interview with Two Patients to Understand Personal Experiences \| ULP-CA<\/title>/);
 });
@@ -121,14 +121,14 @@ test("patient accounts retain their differences, learning points, and evidence b
 });
 
 test("Education Event 4 links to the Facebook outreach record", () => {
-  const route = data.educationEventRoutes[3];
+  const route = data.humanPracticesEventRoutes[3];
   const record = data.pages["education-event-04"];
   assert.equal(route.title, "Facebook Patient Responses");
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.status, "Online patient outreach");
   assert.equal(route.href, "education-event-04.html");
-  assert.equal(record.buttons[0].href, "education.html");
+  assert.equal(record.buttons[0].href, "human-practices.html");
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page/);
   const html = read(route.href);
   assert.match(html, /<title>Facebook Patient Responses \| ULP-CA<\/title>/);
@@ -150,14 +150,14 @@ test("Facebook outreach preserves response themes and qualified design learning"
 });
 
 test("Education Event 5 links to the Seva Collective record", () => {
-  const route = data.educationEventRoutes[4];
+  const route = data.humanPracticesEventRoutes[4];
   const record = data.pages["education-event-05"];
   assert.equal(route.title, "Seva Collective Event");
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.status, "Community service");
   assert.equal(route.href, "education-event-05.html");
-  assert.equal(record.buttons[0].href, "education.html");
+  assert.equal(record.buttons[0].href, "human-practices.html");
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page/);
   const html = read(route.href);
   assert.match(html, /<title>Seva Collective Event \| ULP-CA<\/title>/);
@@ -175,14 +175,14 @@ test("Seva record preserves service, community conversations, and reflection", (
 });
 
 test("Education Event 6 links to the July MedChem symposium record", () => {
-  const route = data.educationEventRoutes[5];
+  const route = data.humanPracticesEventRoutes[5];
   const record = data.pages["education-event-06"];
   assert.equal(route.title, "27th Annual San Diego MedChem Symposium at UCSD");
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.status, "July · Symposium participation");
   assert.equal(route.href, "education-event-06.html");
-  assert.equal(record.buttons[0].href, "education.html");
+  assert.equal(record.buttons[0].href, "human-practices.html");
   const html = read(route.href);
   assert.match(html, /<title>27th Annual San Diego MedChem Symposium at UCSD \| ULP-CA<\/title>/);
   assert.match(html, /data-page="education-event-06"/);
@@ -190,31 +190,29 @@ test("Education Event 6 links to the July MedChem symposium record", () => {
 
 test("MedChem account preserves progress and marks missing design evidence explicitly", () => {
   const record = data.pages["education-event-06"];
-  assert.deepEqual(Array.from(record.details, section => section.id), ["medchem-participation", "medchem-project-progress", "medchem-engineering-feedback", "medchem-design-follow-up"]);
+  assert.deepEqual(Array.from(record.details, section => section.id), ["medchem-participation", "medchem-project-progress", "medchem-engineering-feedback"]);
   const text = record.details.map(section => section.text).join("\n");
   for (const phrase of ["UC San Diego in July", "Scripps Research", "Schrödinger", "Novartis", "Johnson &amp; Johnson", "Pfizer", "SABPA in May", "post-cholecystectomy syndrome (PCS)", "custom-engineered BtSULT", "goals of minimizing side effects", "substrate specificity", "simulation software"]) {
     assert.ok(text.includes(phrase), phrase);
   }
-  const pending = record.details[3];
-  assert.match(pending.eyebrow, /details pending/);
-  assert.match(pending.note, /No specific workflow revision, metric names, thresholds, score values, or final candidate selection was supplied/);
-  assert.deepEqual(Array.from(pending.steps, step => step.label), ["Workflow", "Metrics", "Evidence", "Validation"]);
+  assert.match(record.details[2].note, /no named simulation metrics, score values, thresholds/);
+  assert.doesNotMatch(JSON.stringify(record), /details pending|medchem-design-follow-up/);
   assert.match(record.details[2].note, /does not establish improved enzyme activity/);
   assert.doesNotMatch(text, /July \d|2026|TALK ABOUT/);
 });
 
-test("all eight Education event cards are populated", () => {
-  assert.equal(data.educationEventRoutes.length, 8);
+test("all four Education initiative cards are populated", () => {
+  assert.equal(data.educationEventRoutes.length, 4);
   assert.doesNotMatch(JSON.stringify(data.educationEventRoutes), /PLACEHOLDER/);
   const index = renderer("renderEducationPage", "renderExperimentRecordPage", { data })();
   assert.doesNotMatch(index, /Entries marked as placeholders/);
 });
 
-test("Education owns all eight event records and Human Practices retains its paper", () => {
+test("Education owns four initiatives and Human Practices owns six records alongside its paper", () => {
   const renderEvents = renderer("renderEducationPage", "renderExperimentRecordPage", { data });
-  const renderHP = renderer("renderHumanPracticesPage", "renderStandardPage", { renderEducationPage: renderEvents });
+  const renderHP = renderer("renderHumanPracticesPage", "renderStandardPage", { data });
   const hp = renderHP();
-  assert.doesNotMatch(hp, /id="hp-events"/);
+  assert.match(hp, /id="hp-events"/);
   const education = renderEvents();
   assert.match(education, /Education event pages/);
   for (const route of data.educationEventRoutes) {
@@ -229,13 +227,13 @@ test("Education owns all eight event records and Human Practices retains its pap
   }
   assert.doesNotMatch(education, /Content coming soon/);
   const navigation = require("../js/navigation.js").render(data.nav, { pageKey: "education-event-01", group: "engagement" });
-  assert.doesNotMatch(navigation, /class="renata-nav-card is-section" href="human-practices.html"/);
-  assert.match(navigation, /class="renata-nav-card is-section" href="education.html"/);
+  assert.match(navigation, /class="renata-nav-card is-section" href="human-practices.html"/);
+  assert.doesNotMatch(navigation, /class="renata-nav-card is-section" href="education.html"/);
 });
 
 test("ULP genetics event preserves all four sections and renders every paragraph", () => {
   const record = data.pages["education-ulp"];
-  assert.equal(record.title, data.educationEventRoutes[6].title);
+  assert.equal(record.title, data.educationEventRoutes[0].title);
   assert.deepEqual(Array.from(record.details, section => section.id), ["ulp-classroom", "ulp-lego-dna", "ulp-bead-traits", "ulp-synthetic-biology"]);
   const html = renderer("renderDetailSections", "renderButtons")(record.details);
   for (const section of record.details) {
@@ -264,11 +262,11 @@ test("the Education overview appears before event cards and preserves the suppli
 
 test("Troy Education Day and BYLD share a complete, linked event record", () => {
   const record = data.pages["education-troy"];
-  const route = data.educationEventRoutes[7];
+  const route = data.educationEventRoutes[2];
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.href, "education-troy.html");
-  assert.deepEqual(Array.from(record.details, section => section.id), ["troy-classroom", "troy-byld"]);
+  assert.deepEqual(Array.from(record.details, section => section.id), ["troy-classroom", "troy-microscopy", "troy-yeast", "troy-enzyme", "troy-takeaway", "troy-byld"]);
   const html = renderer("renderDetailSections", "renderButtons")(record.details);
   for (const section of record.details) assert.ok(html.includes(section.text));
   assert.match(html, /Karthik and Humza founded the Biotechnology Youth Literacy Directive/);
@@ -277,22 +275,68 @@ test("Troy Education Day and BYLD share a complete, linked event record", () => 
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page|Content coming soon/);
 });
 
-test("all 21 source paragraphs are preserved across overview, ULP, and Troy", () => {
-  const headings = new Set([
-    "Overview", "ULP Education Event: Introducing Children to Genetics",
-    "Bringing DNA into the Classroom", "Activity 1: Building DNA using LEGO Bricks",
-    "Activity 2: Exploring DNA Traits Through Beads",
-    "Educational Purpose and Synthetic Biology Connection",
-    "Troy Biotechnology Education Day", "Bringing Biotechnology into the High School Classroom",
-    "Biotech Youth Literacy Directive Club"
-  ]);
-  const sourceParagraphs = read("content/education/overview-and-initiatives.txt")
-    .split(/\r?\n/).map(line => line.trim()).filter(line => line && !headings.has(line));
-  const actual = [
-    ...data.educationOverview.paragraphs,
-    ...data.pages["education-ulp"].details.flatMap(section => [section.text, ...(section.paragraphs || [])]),
-    ...data.pages["education-troy"].details.flatMap(section => [section.text, ...(section.paragraphs || [])])
-  ];
-  assert.equal(sourceParagraphs.length, 21);
-  assert.deepEqual(Array.from(actual), sourceParagraphs);
+
+test("all 37 supplied Education paragraphs are preserved in order", () => {
+  const lines = read("content/education/complete-education.txt").split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+  const paragraphs = lines.filter(s => s.length > 150);
+  const actual = [...data.educationOverview.paragraphs, ...["education-ulp","education-butterfly","education-troy","education-kickstart"].flatMap(key => data.pages[key].details.flatMap(section=>[section.text,...(section.paragraphs||[])]).filter(Boolean))];
+  assert.equal(paragraphs.length, 37);
+  assert.deepEqual(Array.from(actual), paragraphs);
+});
+test("Human Practices records retain URLs, breadcrumbs, and full text", () => {
+  assert.equal(data.humanPracticesEventRoutes.length,6);
+  const hp = renderer("renderHumanPracticesPage","renderStandardPage",{data})();
+  const education = renderer("renderEducationPage","renderExperimentRecordPage",{data})();
+  for (const route of data.humanPracticesEventRoutes) {
+    assert.ok(hp.includes(route.href));
+    assert.ok(!education.includes(route.href));
+    const key=route.href.replace('.html','');
+    const page=data.pages[key];
+    assert.equal(page.parentPage,'human-practices');
+    const chapter=require('../js/orbit-pages.js').pageChapter(key,page);
+    assert.equal(chapter.parent.href,'human-practices.html');
+    assert.equal(chapter.next,'human-practices.html');
+  }
+});
+test("Butterfly presentation and Kickstart PDF are accessible from their pages", () => {
+  const render=renderer('renderDetailSections','renderButtons');
+  const butterfly=render(data.pages['education-butterfly'].details);
+  assert.match(butterfly,/Strawberry DNA/);
+  assert.match(butterfly,/docs.google.com\/presentation/);
+  const guide=render(data.pages['education-kickstart'].details);
+  assert.match(guide,/<iframe src="assets\/kickstart\/research-fundamentals.pdf" title="[^"]+"/);
+  assert.match(guide,/download>Download the guide/);
+  assert.match(guide,/href="igem-kickstart.html"/);
+  assert.ok(fs.existsSync(path.join(root,'assets/kickstart/research-fundamentals.pdf')));
+});
+
+test("all thirteen PDF photos appear once in their matching event records", () => {
+  const source=JSON.parse(read('content/engagement/source.json'));
+  assert.equal(source.pages.length,25);
+  assert.equal(source.images.length,13);
+  const records=[...data.educationEventRoutes,...data.humanPracticesEventRoutes].map(r=>data.pages[r.href.replace('.html','')]);
+  const photos=records.flatMap(p=>p.details.flatMap(s=>s.images||[]));
+  assert.equal(photos.length,13);
+  assert.equal(new Set(photos.map(p=>p.src)).size,13);
+  const html=records.map(p=>renderer('renderDetailSections','renderButtons')(p.details)).join('');
+  for(const photo of source.images) {
+    assert.ok(photos.some(p=>p.src===photo.src));
+    assert.ok(fs.existsSync(path.join(root,photo.src)));
+    assert.ok(html.includes(`src="${photo.src}"`));
+    assert.ok(html.includes(`p. ${photo.page}.`));
+  }
+});
+
+test("Education prose matches the new PDF and HP has a source-backed overview", () => {
+  const source=JSON.parse(read('content/engagement/source.json'));
+  const normalize=s=>s.replace(/\s|\u200b/g,'');
+  const pdf=normalize(source.pages.slice(10).map(p=>p.text).join(' '));
+  const paragraphs=[...data.educationOverview.paragraphs,...data.educationEventRoutes.flatMap(r=>data.pages[r.href.replace('.html','')].details.flatMap(s=>[s.text,...(s.paragraphs||[])].filter(Boolean)))];
+  for(const paragraph of paragraphs) assert.ok(pdf.includes(normalize(paragraph)),paragraph.slice(0,90));
+  const hp=renderer('renderHumanPracticesPage','renderStandardPage',{data})();
+  assert.doesNotMatch(hp,/PLACEHOLDER|At its roots, our Human Practices involvement comes from/);
+  assert.match(hp,/Overview synthesized from the six event accounts/);
+  assert.match(hp,/no interview quotations, participant counts, consent claims/);
+  assert.equal(data.educationEventRoutes.length,4);
+  assert.equal(data.humanPracticesEventRoutes.length,6);
 });

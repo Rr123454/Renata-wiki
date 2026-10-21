@@ -240,16 +240,16 @@ test("click toggles menus, opens only one, and outside clicks dismiss", () => {
 
 test("keyboard opens links, navigates, and Escape returns focus to its trigger", () => {
   const f = fixture();
-  f.triggers[0].focus();
-  f.triggers[0].emit("keydown", { key: "ArrowDown" });
-  const links = f.panels[0].querySelectorAll("a");
-  assert.ok(links.length > 1, "Our Team has multiple destinations to navigate");
+  f.triggers[2].focus();
+  f.triggers[2].emit("keydown", { key: "ArrowDown" });
+  const links = f.panels[2].querySelectorAll("a");
+  assert.ok(links.length > 1, "Engagement has multiple destinations to navigate");
   assert.equal(f.doc.activeElement, links[0]);
   links[0].emit("keydown", { key: "ArrowDown" });
   assert.equal(f.doc.activeElement, links[1]);
   links[1].emit("keydown", { key: "Escape" });
-  assert.equal(f.doc.activeElement, f.triggers[0]);
-  assert.equal(f.panels[0].hidden, true);
+  assert.equal(f.doc.activeElement, f.triggers[2]);
+  assert.equal(f.panels[2].hidden, true);
   f.triggers[1].emit("keydown", { key: "ArrowUp" });
   assert.equal(f.doc.activeElement, f.panels[1].querySelectorAll("a").at(-1));
   f.outside.focus(); f.tick();
@@ -269,15 +269,37 @@ test("arrow keys move across direct labels and dropdown triggers alike", () => {
   assert.equal(f.doc.activeElement, f.triggers[2], "focus wraps to the last trigger");
 });
 
-test("Contribution has a page and an active link under Our Team", () => {
+test("Contribution has exactly one dropdown link, under Engagement", () => {
   const page = data.pages.contribution;
-  assert.equal(page.group, "team");
+  assert.equal(page.group, "engagement");
   assert.equal(page.title, "Contribution");
-  assert.match(page.cardsTitle, /coming soon/i);
+  assert.doesNotMatch(page.cardsTitle, /coming soon/i);
   assert.match(read("contribution.html"), /data-page="contribution"/);
   assert.match(read("index.html"), /href="contribution.html"/);
-  assert.match(render(data.nav, { pageKey: "contribution", group: "team" }), /href="contribution.html" aria-current="page"/);
+  const markup = render(data.nav, { pageKey: "contribution", group: "engagement" });
+  assert.match(markup, /href="contribution.html" aria-current="page"/);
+  assert.equal((markup.match(/href="contribution.html"/g) || []).length, 1);
+  assert.ok(!data.nav.find(item => item.key === "team").children.some(item => item.key === "contribution"));
   assert.ok(data.pages.home.linkColumns[0].links.some(link => link.href === "contribution.html"));
+});
+
+test("Engagement replaces Education + HP and includes the existing Contribution page", () => {
+  const engagement = data.nav.find(item => item.key === "engagement");
+  assert.equal(engagement.label, "Engagement");
+  assert.equal(engagement.heading, "Engagement.");
+  assert.deepEqual(Array.from(engagement.children, item => [item.key, item.href]), [
+    ["human-practices", "human-practices.html"],
+    ["education", "education.html"],
+    ["contribution", "contribution.html"]
+  ]);
+  const markup = render([engagement], { pageKey: "contribution", group: "team" });
+  assert.match(markup, />Engagement<span/);
+  assert.match(markup, /href="contribution.html" aria-current="page"/);
+  assert.doesNotMatch(markup, /Education \+ HP/);
+  assert.match(read("index.html"), />Engagement<span/);
+  assert.doesNotMatch(read("index.html"), /Education \+ HP/);
+  const footer = data.pages.home.linkColumns.find(column => column.title === "Engagement");
+  assert.deepEqual(Array.from(footer.links, item => item.href), ["human-practices.html", "education.html", "contribution.html"]);
 });
 
 test("Our Project follows one direct link on desktop and mobile without opening a panel", () => {

@@ -1,0 +1,213 @@
+{
+  "source": "Writeup Education + HP.pdf",
+  "sha256": "fcfe495643cc3d270bfb8e271c975197776a1bb5b8eafd7b174d30c522eb36cf",
+  "pages": [
+    {
+      "page": 1,
+      "text": " \nOverview \nAt its roots, our Human Practices involvement comes from  \n \n1.​SABPA OC/LA Biochem Forum at UCI \n \nIn May, RENATA attended the 18th Annual SABPA OC/LA Biomedical Forum at the Beckman \nCenter in Irvine, where Ritvin and Karthik had the opportunity to introduce our early project \nideas to professionals in biotechnology, healthcare, entrepreneurship, and venture capital. \nNotable participants included Dr. Edward Kim of City of Hope Orange County, Dan Ross of \nBioPharma Capital, Han Li of Riviera Holdings VC, and Benjamin Albaum, co-founder and \nCEO of VIZQ Technologies. We used this opportunity to present RENATA’s preliminary \nprogress, pitch SultFlux, and seek perspectives on its potential development in the industry itself. \n \nWe wanted to understand what would be required to translate SultFlux, our proposed bacterial \nsystem for sulfating lithocholic acid (LCA), from an experimental concept into a potentially \nuseful healthcare technology. We focused on two dimensions of our project’s potential impact: \ncommercial viability and clinical applications. From an investment perspective, we wanted to \nunderstand what would make SultFlux a feasible biomedical product rather than simply a \nsuccessful laboratory experiment. This meant considering whether our engineered bacterial \nsystem could consistently sulfate sufficient quantities of lithocholic acid (LCA), whether its \nproduction and delivery could be scaled economically, and what experimental evidence would be \n \n",
+      "links": []
+    },
+    {
+      "page": 2,
+      "text": " \nneeded to justify further investment. These questions encouraged us to think about development \ncosts, manufacturing, and the practical limitations of bringing a synthetic biology-based product \nto market.  \n \nFrom a clinical perspective, we examined the distinction between demonstrating LCA sulfation \nand establishing a meaningful therapeutic benefit. Although our proposed system aims to modify \nLCA in the gastrointestinal tract, successful enzyme activity alone would not demonstrate that \nthe treatment improves patient outcomes. We therefore considered the challenges of safely \ndelivering engineered bacteria to the intestine, controlling their activity, evaluating possible \neffects on the broader gut environment, and determining whether the resulting changes in bile \nacid composition could benefit patients experiencing post-cholecystectomy symptoms. \n \nThe forum helped us recognize that SultFlux would need to satisfy different standards at each \nstage of development. Our immediate research could establish whether the engineered system \nfunctions as intended, but clinical translation would require additional evidence of safety and \ntherapeutic benefit, while commercialization would depend on scalability, cost, and a viable \ndelivery strategy. We incorporated these considerations into our broader evaluation of RENATA's \nfuture applications, distinguishing what our experiments could demonstrate from what would \nstill be required to develop an accessible biomedical treatment. \n \n2.​Interview with Gastroenterologist and Team \n \n \n",
+      "links": []
+    },
+    {
+      "page": 3,
+      "text": " \nTo better understand Post-Cholecystectomy Syndrome(PCS) from a professional’s perspective \nand for feedback on our project’s direction, we interviewed Dr. Singh about challenges he’s faced \naround diagnosing and treating patients with gastrointestinal complications following a \ngallbladder removal. One of the first things we discussed was how difficult PCS can be to \ndiagnose, due to the fact that symptoms such as diarrhea and bloating often overlap with other \ngastrointestinal conditions such as IBS(Irritable Bowel Syndrome). During our interview, he told \nRENATA that physicians have to consider many possible causes before determining whether a \npatient’s symptoms are related to bile acid metabolism. \n \nFollowing this, we started to discuss different existing treatments within the medical sphere, such \nas cholestyramine, which patients can take to bind bile acids in the digestive tract. While these \nmedications can help patients manage their current symptoms, Dr. Singh explained to us the \nlimitations and concerns that patients and physicians have alike when dealing with this treatment. \nCholestyramine has an unpleasant taste and can interfere with the absorption of other \nmedications, as well as how difficult it may be in order to take cholestyramine on a day-to-day \nbasis. To RENATA, this meant a lot, as our treatment uses the BtSULT enzyme in order to \nmodify secondary bile acids instead of simply binding to them. \n \nMoving on, when we introduced our project, Dr. Singh challenged us to consider whether our \napproach was practical on a realistic scale. He mentioned to us that although digestive symptoms \nmay be present after a gallbladder removal on a much wider patient scale, long-term \ncomplications have a smaller patient base, and many can be treated using existing medications. \nHe also encouraged our team to investigate the relationship between the gut microbiome and \n \n",
+      "links": []
+    },
+    {
+      "page": 4,
+      "text": " \nother gastrointestinal symptoms, and suggested that focusing only on bile acids may overlook \nother factors that contribute to the discomfort of patients. \n \nThis interview helped us think more critically about our project at hand, and made us rethink \nhow patients could benefit the most from our treatment and whether our approach could offer a \nmeaningful edge over existing medications. \n3.​Interview with Two Patients to Understand Personal \nExperiences \n \nIn addition to Dr. Singh and his personal feedback on what PCS entails and how he has seen it \nwithin the medical environment, we wanted to hear from patients who have experienced or are \ncurrently experiencing PCS and how that affects their everyday lives. To do this, we conducted \ntwo individual patient interviews, each revealing different challenges that surround gallbladder \nremoval and the possible long-term effects of doing so. \n \nOur first patient had a cholecystectomy in 2009 after having gastrointestinal problems, which \nincluded pancreatitis and gallbladder dysfunction. After surgery, her digestive symptoms \ncontinued, which left her with chronic diarrhea and dietary restrictions that she has dealt with for \nover 16 years. She described having to avoid fried food and other dietary triggers, only relying \non fiber supplements, digestive enzymes, exercise, and strict diet adjustments in order to make \nher symptoms more manageable. One personal account she had was not being able to have \nholiday meals or eat on special occasions, as that could disrupt her routine and worsen her \n \n",
+      "links": []
+    },
+    {
+      "page": 5,
+      "text": " \nalready-bad symptoms. She explained to us that current medications, including Prilosec, had \ndone little to help her. Prilosec is a proton pump inhibitor that stops stomach acid creation at it’s \norigin point. \n \nOur second patient was an elderly Chinese man who shared a different experience than our first. \nBefore undergoing his gallbladder removal surgery, he mentioned that he struggled with gas, \nsevere bloating, digestive discomfort, and the constant feeling that food was sitting in his chest \nwithout being digested. Due to this, his appetite and energy were heavily affected. We learned \nthat his gallbladder removal cleared up most of his discomfort, but he still struggles with oily and \nfatty foods, particularly those in Chinese cuisine. \n \nLearning Moment: \n \nWhen we discussed our possible treatment through RENATA, he emphasized to us that an ideal \nmedication should be simple to use, especially for older patients. He also expressed concerns \nabout long-term side effects from using a medication of this sort. Our first patient also put an \nemphasis on the importance of clinical testing and transparency regarding potential side effects \nor risks of using medication that is biotechnology-based. \n \n4.​Facebook Patient Responses \n \n \n",
+      "links": []
+    },
+    {
+      "page": 6,
+      "text": " \nWhile our two patient interviews provided valuable insights into patients and how they have \nbeen affected by gallbladder removals, we realized that our patient base could be significantly \nincreased. We realized that we could get insights into PCS from people outside our connections \nor outside of people we emailed or in Orange County.  \n \nThinking about this, we turned to technology. With Facebook communities, we could reach \npeople beyond our networks, in other countries and continents. We reached out to people and \ngroups in the United Kingdom, Australia, Canada, and all across the United States in order to \nhear about symptoms or issues post-gallbladder removal.  \n \nOne unique aspect of our research was the fact that responses varied very significantly. We found \npatients who had pretty seamless surgeries, whereas others had major digestive problems for \nyears or decades after surgery. We heard from a patient who experienced malabsorption issues \nfor almost 12 years, and another patient mentioned how unpredictable digestive symptoms led to \nthem having to organize their days around bathroom visits. One person also mentioned how \ndifficult it is to get cholestyramine and this was agreed upon by other responders in the same \nthread.  \n \nOverall, our experience with Facebook showed us how technology could contribute to our \nresearch. By reaching people outside of our community, state, country, and continent, we were \nable to learn about concerns that we might not have identified through our interviews or through \nliterature that we read.  \n \n \n",
+      "links": []
+    },
+    {
+      "page": 7,
+      "text": " \nLearning Moment: \nThese responses made us reconsider how patients would take our treatment. After receiving these \nFacebook responses and going through our research after interviewing patients and professionals \nwithin the field, we realized that developing an effective enzyme was only one part of the whole. \nFor patients, one of the most important part of medicine was how convenient it would be to take \ncertain medications to not introduce additional complications along with their already-difficult \nlifestyles.  \n \nWith this in mind, we moved towards developing a prebiotic-probiotic effect, with the goal of \nminimizing unwanted side effects that other existing medications already had. By shifting, we \nwere able to consider how our engineered probiotic would work alongside prebiotic components \nthat already existed, and through this we focused less on simply our BtSULT enzyme. The \npatient and professional feedback we received helped us establish convenience and tolerability as \nmajor factors in our design. \n \n5.​SEVA Collective Event \n \nAs a team, we participated in a community service event organized by SEVA Collective, where \nwe helped package and distribute food to individuals and families in need. The event brought \ntogether volunteers from across Orange County, including Santa Ana, Irvine, Tustin, and Costa \nMesa, which gave us the opportunity to work alongside people from other communities around \nus. All throughout the event, our members spoke to fellow volunteers and families about \n \n",
+      "links": []
+    },
+    {
+      "page": 8,
+      "text": " \nRENATA and explained our research into PCS and how our treatment could potentially help \npatients. This event was different from the scientific conferences we attended, as it allowed us to \ndiscuss our research with people outside of the biotechnology field, which helped us improve our \npresentation skills and make our project easier for people to understand. Outside of simply \nsharing our research, we wanted to put the meaning of “seva”, or selfless service, into practice by \ncontributing to the community around us. This also gave us an opportunity to help serve the \npeople in need right now, which gave us a reminder about the communities of which our research \nis ultimately going to help to benefit. \n \n \n6.​27th Annual San Diego MedChem Symposium at UCSD \n \n \n",
+      "links": []
+    },
+    {
+      "page": 9,
+      "text": " \nFollowing all our patient and professional interviews, RENATA travelled to UC San Diego in \nJuly to attend the 27th Annual San Diego MedChem Symposium. The event brought together \nresearchers and pharmaceutical professionals from organizations such as Scripps Research, \nSchrödinger, Novartis, Johnson & Johnson, and Pfizer. At our visit to SABPA in May, we were \nstill introducing our initial project ideas, but at this symposium we had the opportunity to \nshowcase how far RENATA had progressed throughout the season through multiple project \niteration points. \n \nBy this point we had narrowed our focus to Post-Cholecystectomy Syndrome(PCS) and \ndeveloped our proposed approach of using the custom-engineered BtSULT enzyme to modify \nsecondary bile acids. Our Human Practices research had also influenced considerations about \nhow patients would need to receive treatment, which is what led us towards opting for a \nprebiotic-probiotic delivery approach to minimize side effects and for ease of use. At UCSD, we \nwere able to share this progress with industry professionals and had the opportunity to explain \nhow feedback from patients and responses from people suffering from similar issues had shaped \nthe direction of our research. \n \nWe also took the pleasure in discussing enzyme engineering and the approach we had taken with \nscientists who were quite experienced in small molecule design and drug development, and \nreceived feedback on parts to consider during the process of creating a custom enzyme, \nspecifically enzymatic activity and substrate specificity scores from simulation software we were \nutilizing for our project. These conversations with professionals helped us identify grounds for \nfurther development and investigation as we continued to work and refine our project. Overall, \n \n",
+      "links": []
+    },
+    {
+      "page": 10,
+      "text": " \nthis symposium helped RENATA share progress we had made up to that date, allowing us to \nreceive industry feedback on the direction of our project, which also gave us the opportunity to \nrefine and rethink the way we were engineering our enzyme.  \n \n \n \n \n \n \n \n",
+      "links": []
+    },
+    {
+      "page": 11,
+      "text": " \nOverview \nWe started RENATA from the dream of two high schoolers wanting to bring synthetic biology \nand bioengineering to Orange County, and throughout our journey, we realized just how difficult \nit can be for students to enter the field. Throughout our process of creating this team, we spent \ncountless hours pouring over research papers and learned fundamentals of engineering, \nexperiencing firsthand how much background knowledge we needed to have before even starting \nto develop our project. \n \nWe wanted to change that for other students. After all, we believed that other students deserved \nthe same opportunities within science, regardless of how much experience they had with science. \nRENATA started as two high schoolers who shared an interest in biology and wanted to turn that \ncuriosity into something tangible and applicable for the people around them. \n \nWith this in mind, we developed a few educational initiatives aimed at different age groups and \nlevels of scientific understanding. Through our ULP education event, we introduced over 30 \nchildren to DNA and genetics using LEGO Blocks and beads. At Troy High School, we \norganized hands-on biotechnology experiments to demonstrate how microorganisms and \nenzymes work, connecting these concepts to our own research. Finally, we collaborated with \nother iGEM teams to develop an online educational resource for students interested in beginning \ntheir own journeys in synthetic biology. \n \n \n",
+      "links": []
+    },
+    {
+      "page": 12,
+      "text": " \nThrough these initiatives, we hoped to give students something we wished we had when starting \nRENATA: An introduction to synthetic biology that made the subject easier to understand and \ngave them somewhere to begin on their own journey. \n \n1. ULP Education Event: Introducing Children to Genetics \nBringing DNA into the Classroom \nFor our first education initiative, RENATA worked with ULP to introduce over 30 children ages \nnine and above to the fundamentals of DNA, genetics, and synthetic biology overall.  \n \nTo us, teaching synthetic biology presented us with quite an interesting question. How do you \nexplain a molecule that can’t be seen with the naked eye to a student who might never have \nstudied cells before? \n \nWe began to tackle this problem by introducing DNA as a set of instructions that organisms use \nin order to develop and function. Furthering this, we introduced the relationship between DNA \nand observable characteristics. Traits such as hair texture and certain inherited physical features \nsuch as height helped provide some familiar examples for how genetic information can influence \nand come to create an organism as a whole. Through this, our students were given something that \nthey already understood before we introduced more unfamiliar concepts \n \nFrom there, we explained the basic idea behind synthetic biology. Scientists can study genetic \ninformation, and through processes within genetic engineering, modify certain sequences to \n \n",
+      "links": []
+    },
+    {
+      "page": 13,
+      "text": " \nchange how an organism functions. This is a similar principle behind many iGEM projects, \nincluding RENATA’s work.  \n \nHowever, we wanted students not only to listen and see these ideas, but also experience them \ntangibly instead of simply relying on verbal explanations. With this in mind, we designed two \nactivities that turned genetic concepts into a tangible model that students could experience in \nfront of them. \n \nActivity 1: Building DNA using LEGO Bricks \n \nOur first activity used LEGO blocks to represent the four kinds of nucleotide bases that make up \nDNA. Each DNA base was represented by a different type of color of block, which allowed \nstudents to distinguish between adenine, thymine, cytosine, and guanine. Students could then \narrange the blocks into sequences, which created a simplified physical representation of genetic \ninformation. \n \n",
+      "links": []
+    },
+    {
+      "page": 14,
+      "text": " \n \n \nThe purpose of this activity was to explain why the order of DNA bases matters. Two sequences \ncan contain the same bases but result in unique genetic information being stored, as those bases \nare organized differently. By rearranging their LEGO bricks, students could see that the sequence \nitself was important even when the building materials were the same. \n \nWe connected this idea to the way genetic changes can influence an organism’s traits. In real \nbiological systems, certain sequences of DNA contain instructions for making proteins. Proteins \nperform many of the functions necessary for life, and changes to the sequences encoding them \ncan sometimes change their structure or activity. \n \n \n",
+      "links": []
+    },
+    {
+      "page": 15,
+      "text": " \nThis also gave us a way to introduce genetic engineering without beginning with unfamiliar \nlaboratory techniques. If genetic information is stored in sequences, scientists can modify \nbiological functions by changing those sequences to their liking. Although the LEGO model \nsimplified the actual complexity of DNA, it gave students a starting point for understanding how \ngenetic information can be modified. \n \nAll in all, this activity allowed students to experiment with different arrangements themselves, \nwhich allowed them to directly work with the model, compare their own sequences, and ask \nquestions about how those changes may affect a living organism on a long term scale. \n \nActivity 2: Exploring DNA Traits Through Beads \n \nOur second activity was centered around defining the relationship between genetics and physical \ncharacteristics that an organism has. We developed a trait chart that students could use to identify \nsome of their own physical characteristics. Different colored beads corresponded to different \nresponses on the chart, hence allowing students to create a physical representation of their \nselected traits. This gave a look into how inherited genetic information can relate to observable \nphysical characteristics, which is a little different from the LEGO activity we had done \npreviously.  \n \nStudents used their completed bead arrangements to compare traits that they had recorded down \nfrom their own personal perspectives. This also helped introduce the concept of variation \nbetween individuals and why members of the same species can have different physical \n \n",
+      "links": []
+    },
+    {
+      "page": 16,
+      "text": " \ncharacteristics. Additionally, this activity created opportunities to discuss inheritance and the \nrelationship between genes and traits. We introduced these ideas through simplified examples \nappropriate for the students' ages, since many physical characteristics are influenced by multiple \ngenes and environmental factors. \n \nWhen designing this activity, one of the main considerations that we put into picture was to make \nscience personal enough for students to understand. DNA is quite an abstract concept when \nunderstood as a double helix or sequence of nucleotides. However, when students are able to see \ntheir own characteristics, it gives students a familiar example of why genetic information \nmatters. \n \n \n \n \n",
+      "links": []
+    },
+    {
+      "page": 17,
+      "text": " \nEducational Purpose and Synthetic Biology Connection \nAfter introducing DNA sequences and inherited traits, we connected the two activities to the \nbasic principles of synthetic biology. The LEGO activity showed students how genetic \ninformation is organized, while the bead activity gave them examples of how biological \ncharacteristics can vary. Together, they provided a base for explaining to younger individuals \nhow scientists study genetic information and attempt to modify biological systems. \nOur ULP event was designed as an introduction to genetics for students who had limited \nexperience with molecular biology. We taught over 30 children through activities that allowed \nthem to build models, examine their own characteristics, and discuss the concepts behind their \nwork. The LEGO and bead activities were selected because they made different parts of genetics \neasier to visualize. One dealt with the information stored in DNA, while the other dealt with \nobservable characteristics influenced by genetics. These activities also gave us experience \nexplaining scientific concepts without relying on the terminology we normally use when \ndiscussing our project.  \n \n2. Butterfly Project Collaboration \n \nAs part of RENATA’s education initiatives, we collaborated with the Butterfly Project in order to \norganize an interactive workshop for students in grades 3-6. Our goal was to introduce the major \ntopic of DNA to younger students, while comparing it to other examples of how living organisms \nfunction. Since our project involves genetically engineering bacteria to produce an enzyme that \nmodifies bile acids, we wanted to help younger students understand the basic science that makes \n \n",
+      "links": []
+    },
+    {
+      "page": 18,
+      "text": " \nthis possible, to one day bring students closer to the sphere of synthetic biology. Rather than \nimmediately defining what DNA was, we compared DNA to a recipe book that contains \ninstructions that tell cells how to grow and function.  \n \nOne of the main activities was the hands-on strawberry DNA extraction experiment that the \nstudents partook in. Students worked in small groups to extract and observe DNA from \nstrawberries, which allowed them to see the genetic material we had discussed during the \npresentation. We also introduced a genetics interactive activity, in which students were able to \nuse randomly assigned characteristics to design a fictional person, which helped them understand \nhow genetic information can influence physical traits. These activities all helped students acquire \nfoundations of genetic engineering in a way that was accessible to elementary school students.  \n \nThis workshop also allowed us to connect our educational initiatives to RENATA’s main mission \nof making synthetic biology more accessible to kids all around Southern California. The same \nbasic principles that we introduced to the kids at Butterfly Project are central to our own project. \nEven though our project involves the use of much more complex genetic engineering techniques, \nwe wanted students to understand that biotechnology starts with the same concepts that they \nlearned in our workshops. By introducing these ideas at a younger age, we hoped to encourage \nstudents to pursue and explore biology and biotechnology for their futures. \n \nLink to Presentation: \n  \nStrawberry DNA\n \n \n",
+      "links": [
+        "https://docs.google.com/presentation/d/1ZaP8tsoNI2AWXiIO51uNXv36VdJprCPBiwy03zgKXto/edit?usp=sharing"
+      ]
+    },
+    {
+      "page": 19,
+      "text": " \n3. Troy Biotechnology Education Day \nBringing Biotechnology into the High School Classroom \nAfter our education event at ULP, we wanted to move towards a more complex and experimental \nside of explaining synthetic biology and our project. Our event at Troy High School gave the \nopportunity for students to see how living organisms function through hands-on experiments. \n \nOur event was comprised of three experimental stations, each of them focusing on a different \nbiological process involved in synthetic biology. Karthik prepared most of the experimental \nsetups, and Humza led a presentation that introduced concepts behind the activities that the \nparticipants would do. Our idea for the event was that students would move between the \npresentation and experiments, learning about a particular concept before visiting the \ncorresponding station. After each activity, we returned to the presentation to explain the \nsignificance and relevance to biotechnology and RENATA’s project goals. \n \nPart of our presentation was also an introduction to the research that RENATA partook in \nthroughout the season. Our presentation covered the role of bile acids in digestion, the BtSULT \nenzyme we were engineering to modify secondary bile acids, and our proposed use of probiotic \nbacteria as a delivery system. \n \n",
+      "links": []
+    },
+    {
+      "page": 20,
+      "text": " \n \nActivity 1: Observing Bacteria Under a Microscope \n \nOur first station introduced students to microorganisms through yogurt. We prepared samples of \nplain yogurt and milk for students to examine under microscopes, which allowed them to \ncompare the two and get a look into how bacteria affect and influence fermentation.  \n \nDuring this activity, we also discussed the importance of using controls within experiments. \nComparing the yogurt sample with milk gave students a reference point for interpreting what \nthey observed. We taught the lesson of needing evidence to see an observed difference, which is \nan important lesson when doing any sort of biological research. \n \nWe selected this experiment because bacteria are central to RENATA's proposed treatment. Our \nproject involves engineering probiotic bacteria, and yogurt provided students with a recognizable \nexample of microorganisms that performed useful biological functions. From there, we could \nexplain how synthetic biologists take advantage of these natural capabilities and engineer \n \n",
+      "links": []
+    },
+    {
+      "page": 21,
+      "text": " \nbacteria to perform additional functions, including those with potential medical applications, as \nexplained in the presentation. \n \nActivity 2: Yeast Balloon Experiment \n \nOur second activity gave a look into how microorganisms respond to different nutrients. We \nshowed this through a yeast fermentation experiment. After preparing containers with varying \ntypes and amounts of sugar, students were able to see how yeast produced carbon dioxide that \ninflated balloons attached to each container. By comparing balloons, students were able to see \nhow changes in nutrient availability affected fermentation.  \n \nWe connected this experiment to RENATA’s proposed probiotic treatment, and explained how \nengineered bacteria depend on their surrounding environment in order to function effectively. In \nthe same way that the yeast responded to different available nutrients, our engineered bacteria \nwould need to operate under the conditions of the gastrointestinal tract.  \n \nActivity 3: Investigating Enzyme Activity Through Foam \n \nOur final station focused on enzymes, which is the same biological component that most directly \nrelates to RENATA’s research. We tried to show the activity of catalase, and by capturing \nreleased oxygen in soap bubbles, we created a visible reaction that students could observe and \ncompare across multiple experimental conditions.  \n \n \n",
+      "links": []
+    },
+    {
+      "page": 22,
+      "text": " \nWe used varying amounts of hydrogen peroxide to demonstrate how the concentration of a \nsubstrate can influence enzyme activity. Students observed the foam produced by the reactions, \nand we discussed why increasing the amount of substrate can initially increase reaction activity \nbut eventually reaches a point where another factor becomes limiting. We also included a control \nto demonstrate the importance of having the correct substrate available for an enzyme to perform \nits function. \n \nThe catalase experiment gave students a way to understand these ideas through an observable \nreaction. They could see how changing experimental conditions affected the output of an \nenzyme, providing context for why RENATA needed to evaluate its own enzyme designs \ncarefully. The foam experiment used a different enzyme and reaction from our project, but the \nunderlying questions about enzyme activity were closely related to the work we were \nconducting. \n \nTakeaway and Connection: \n \nThrough our three experimental stations, we wanted students to understand how different \nbiological processes come together in synthetic biology research. The yogurt experiment \nexplained microorganisms and their useful functions, the yeast balloon experiment demonstrated \nhow environmental conditions can affect microbial activity, and the catalase experiment explored \nthe role of enzymes in chemical reactions. By alternating between presentation and the \nexperimental stations, students could observe the biological principles behind our research and \nunderstand how they apply to an actual biotechnology project. Through this event, we hoped to \n \n",
+      "links": []
+    },
+    {
+      "page": 23,
+      "text": " \nmake synthetic biology more accessible to our school's students and give them a firsthand look at \nthe scientific concepts and experimental reasoning involved in developing RENATA. \n \n \n",
+      "links": []
+    },
+    {
+      "page": 24,
+      "text": " \n4. Biotech Youth Literacy Directive Club \nKarthik and Humza founded the Biotechnology Youth Literacy Directive (BYLD), a student-led \nclub dedicated to introducing biotechnology and synthetic biology to students at our school. \nThrough multiple lectures on DNA analysis techniques and their applications in research, we \nhelped students explore concepts beyond their regular biology classes. BYLD also served as a \npathway into RENATA, encouraging students interested in biotechnology to get involved in \niGEM and participate in hands-on synthetic biology research. \n \n \n5. iGEM Guide Collaboration \n \n \n",
+      "links": []
+    },
+    {
+      "page": 25,
+      "text": " \nIn collaboration with iGEM teams NBJF and DBHS-CA, RENATA contributed to a larger \nopen-source education initiative designed to help new iGEMmers establish their own iGEM \nteams. Humza drew from the challenges we faced as a team in our first year and created the \nguide “Beginner's Guide to High School iGEM: Research Fundamentals”, compiling the \nscientific knowledge he wished he had when co-founding our team. \n \nThe guide introduces viewers to the fundamentals of synthetic biology, covering DNA, proteins, \nthe DBTL cycle, genetic circuit design, gene regulation, plasmids, and DNA assembly \ntechniques such as Golden Gate Assembly. Also, it provides diagrams and references to \nadditional research resources, which help students understand how these concepts apply to actual \nwork in the laboratory. We wanted this collaboration to be a way for us to help make the early \nstages of synthetic biology less overwhelming, which gives future iGEM teams an accessible \npoint to start their journey without requiring them to piece together hundreds of hours of \nfoundational knowledge that we had to learn independently! \n \nEMBED THE PDF FILE \n \n",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "page": 8,
+      "src": "assets/engagement/page-08-1.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 10,
+      "src": "assets/engagement/page-10-1.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 10,
+      "src": "assets/engagement/page-10-2.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 10,
+      "src": "assets/engagement/page-10-3.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 14,
+      "src": "assets/engagement/page-14-1.jpg",
+      "width": 1350,
+      "height": 1800
+    },
+    {
+      "page": 16,
+      "src": "assets/engagement/page-16-1.jpg",
+      "width": 1350,
+      "height": 1800
+    },
+    {
+      "page": 16,
+      "src": "assets/engagement/page-16-2.jpg",
+      "width": 1350,
+      "height": 1800
+    },
+    {
+      "page": 20,
+      "src": "assets/engagement/page-20-1.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 20,
+      "src": "assets/engagement/page-20-2.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 23,
+      "src": "assets/engagement/page-23-1.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 23,
+      "src": "assets/engagement/page-23-2.jpg",
+      "width": 1350,
+      "height": 1800
+    },
+    {
+      "page": 23,
+      "src": "assets/engagement/page-23-3.jpg",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "page": 24,
+      "src": "assets/engagement/page-24-1.jpg",
+      "width": 1800,
+      "height": 1350
+    }
+  ]
+}

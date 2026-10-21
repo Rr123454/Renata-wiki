@@ -15,13 +15,13 @@ const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])
 const text = html => String(html).replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
 
 test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Our Project", "Lab Work", "Education + HP"]);
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Our Project", "Lab Work", "Engagement"]);
   assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
-  assert.deepEqual(Array.from(data.nav.find(item => item.key === "team").children, item => item.label), ["Meet Our Team", "Contribution"]);
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "team").children, item => item.label), ["Meet Our Team"]);
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
   assert.deepEqual(Array.from(menu[0].children, item => [item.label, item.href]), [["Process/Background", "wet-lab.html#process-background"], ["Model Wetlab", "wet-lab.html#model-wetlab"], ["Experimentation/Protocols", "wet-lab.html#experimentation-protocols"]]);
-  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
+  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Engagement"]);
 });
 
 test("Wetlab renders each source-backed experiment with its evidence, interpretation and next decision", () => {
@@ -50,7 +50,9 @@ test("Wetlab renders each source-backed experiment with its evidence, interpreta
 
 test("Wetlab retains source provenance and separates assay measurements from functional claims", () => {
   const rendered = text(pages["wet-lab"]);
-  assert.match(rendered, /iGEM Renata Lab Documentation 2026/);
+  assert.match(source.citation, /iGEM Renata Lab Documentation 2026/);
+  assert.doesNotMatch(rendered, /Source record|This is a team primary record/);
+  assert.ok(!pages["wet-lab"].includes('href="#sources"'));
   assert.ok(pages["wet-lab"].includes(source.pdf), "Original source document remains available");
   assert.match(rendered, /(?:uncertain|unresolved|incomplete|pending|discrepan|conflict|ambig)/i);
   const assay = source.records.find(record => record.id === "assay-plan");

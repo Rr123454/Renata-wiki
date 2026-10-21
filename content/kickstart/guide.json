@@ -1,0 +1,486 @@
+{
+  "title": "Beginner’s Guide to Highschool iGEM: Research Fundamentals",
+  "byline": "Prepared By: Humza Shahzad, ULP-CA 2026 Co-Founder and Student Lead",
+  "source": "assets/kickstart/research-fundamentals.pdf",
+  "sha256": "e2c0ad31be09b9f6bbbae6c87180c9d080abaefd7718449beac7633f07cfab03",
+  "page_count": 11,
+  "raw_pages": [
+    " \n \nBeginner’s Guide to Highschool iGEM: \nResearch Fundamentals \n \nPrepared By: Humza Shahzad, ULP-CA 2026 Co-Founder and \nStudent Lead \n",
+    " \nForeword \n \nHello Everyone, my name is Humza Shahzad and I am the Co-Founder of the new \nULP-CA iGEM team competing in iGEM 2026. I’m a high school student in \nFullerton, CA with a burning curiosity for the possibilities that synthetic biology \ncan bring us one day. I hope this guide finds people that too want to start their \nresearch journey with more knowledge than I first had, once requiring hundreds of \nhours of reading research papers and designing experiments with my team to \nunderstand the fundamentals of biotech research. I’ve condensed the basics into \nthis document and hope that all that read it truly appreciate it, as this is a testament \nto the very beginnings of my biotech journey and hopefully the start of yours. \nOnwards padawans! \n \nThe Basics:  \n \nDNA : Deoxyribose nucleic acid, a type of macromolecule (fancy talk for a BIG \nmolecule, in which case DNA is pretty long). Uses ATCG to store the code for \nPROTEINS, one of the most important macromolecules in synbio! \n \nProteins: A very large macromolecule; made up of subunits called amino acids. \nEach amino acid corresponds to a codon, a group of 3 base pairs that is read when \nRNA is built using DNA as a template for protein production(outside of the \nnucleus!)  \n \nProtein Functions: Proteins are unique in that they serve the majority of active \nfunctions in the body. Proteins move muscle cells to contract, catalyze chemical \nreactions(these are enzymes!! ), embed in the cell membrane to act as \nreceptors(immune cells anybody??), act as functional compounds (e.g. silk, hair, \nmucus, etc.), or serve regulatory functions (hemoglobin/myoglobin as oxygen \ntransporters).  \n \nSynBio Starter Guide! \n \n",
+    " \nWhat makes Synbio so special? Synthetic biology essentially focuses on utilizing \nbiology for certain functions. This is important in fields such as the pharmaceutical \nindustry such as the development of a new drug, and using rigorous testing \nprocedures in order to begin and pass clinical trials.  \n \nDBTL, or Design, Build, Test, and Learn is the reason why bioengineering gets to \nbe called an engineering discipline. Simply, like engineers, scientists of synthetic \nbiology have an engineering goal and create an initial design of their system, \nconstruct it(typically through recombinant gene assembly methods), run \ntests/assays on it, and use the information from this cycle to LEARN, therefore \nstarting the next cycle. A good synthetic biologist always documents their \nengineering decisions like a normal engineer would. Ample data collection is \nmeant to be informative for a scientist to rule out problems within their design \nthrough thought-out experiments that maintain good positive and negative controls. \nThis is what makes science DEFENSIBLE.  \n \nBefore we start, here is something very important that many people get wrong \nwhen they first start working with synbio. Biology is a heuristic system, not a \nbinary one. By this I mean the following: heuristics is a concept in computer \nscience that effectively means “good enough”. Biology is the product of millions \nupon millions of years of careful evolution, and we have acquired information \nabout biology after very rigorous study. However, changing the delicate system of \nbiology on the molecular level comes with its own implications, in the sense that \nnothing is a yes or a no. A mutation in a protein can make it semi-functional but \nnot fully non-functional. A weak promoter could mean that less but not near none \nof a gene is transcribed. Introducing elements that are foreign into a bacterial \ngenome could have implications that we won’t know how to rule out unless we \nhave good experiments, because biology doesn’t necessarily follow all of the rules! \nBiological systems make mistakes, and that is the beauty of it. If they didn’t, then \nwe wouldn’t have diseases and genetic defects now would we?  \n \n \nGene Design Principles \n \n",
+    " \nIn order to understand how to design a synthetic biology project, we must \nunderstand a few things about coding regions and sequences in DNA that don’t \ncode for proteins.  \n \nThere are key parts to a gene besides the coding region, the sequence with all \nnecessary codons for a protein. These parts come in the following order:  \n \n1.​ Promoter: Determines how strongly a gene is expressed in terms of the \namount of protein expressed and how rapidly. The standard unit for a \npromoter’s strength is Relative Promoter Units(RPU). Promoter sequences \nare the first sequence recognized by RNA Polymerase to start DNA \ntranscription into an mRNA sequence.  \n \n2.​ Ribosome Binding Site(RBS): A non-coding region included in the final \nmRNA sequence. It is where a ribosome will first bind to mRNA before \nRNA translation.  \n \n3.​ Start Codon: The first codon of RNA that initiates protein production during \nRNA translation. The start codon ALWAYS corresponds to the methionine \namino acid.  \n \n4.​ Coding Region: Self-explanatory :) \n \n5.​ Stop Codon: Signals the ribosome to detach from the mRNA molecule.  \n \n6.​ Terminator: Usually placed twice in the gene in synthetic biology \nexperiments, as it ensures that RNA polymerase detaches from DNA during \ntranscription completely.  \n \nKey Tip: Thanks to the UC Berkeley iGEM team, we have a characterized library \nof promoters called Anderson Promoters, all which have varying strengths at \nrelatively common levels used in experiments, such as 0.25, 0.5, 0.75, etc. I highly \nrecommend considering the use of Anderson Promoters in your experiments \nbecause they are perfect for tuning of a system in terms of gene expression.  \n \n",
+    " \nNow, although this system for protein production works, there is a fatal flaw. If one \nwere to follow the framework for a gene above, experiments would probably not \ngo so well in terms of protein function. This is because the promoter is in a \nconstitutive form, meaning that it is ALWAYS on. Usually, we are engineering \nbacteria, and we must not forget that bacteria have other stuff to care about besides \nour insignificant little gene. Making a gene constitutive means that it will not stop \nthe protein production process, and that uses copious amounts of ATP and other \ncellular resources that cause metabolic stress, which can contribute to protein \nmisfolding and ultimately the very death of our cells. So what do we use? We use \nthe operon architecture, made up of an operator and a repressor.  \n \n \nFig. 1 Operon Architecture. Source(bio.libretexts.org)  \n \nWith reference to Fig.1, an operon architecture is different from a normal gene \narchitecture in that we observe the use of an operator and regulatory sequence(also \nknown as the repressor). The regulatory sequence is a separately expressed gene \nthat creates a repressor protein that binds to the operator sequence. By binding to \nthe operator sequence, it acts as a roadblock for RNA polymerase, and the genes \nfollowing the operator aren’t able to be transcribed. This is the “OFF” state for our \ngenes. In order to switch our gene into the “ON” state, bacteria must first be grown \nto a certain density in a phase called log phase with an optical density at 600 nm, or \nOD600, between 0.4 and 0.6. Don’t worry about this for now, but it is very \nimportant once you step into the lab and your PI uses this term when teaching you \nbacterial culture. Now, where were we?  \n \n",
+    " \nAfter the bacteria have reached an optimal growth phase, we add a solution of an \ninducing molecule. Besides containing a site to bind to the operator, repressor \nproteins also have a site that binds to an inducer molecule, causing a change in the \nshape of the repressor that forces it to detach from the DNA. In some cases, the \n“inducer” molecule is actually a “corepressor” molecule, in the sense that when it \nbinds to the repressor protein, it actually ENABLES it to bind to the operator. \nWhen the concentration of a corepressor molecule decreases, so does the amount \nof its operator-bound repressor proteins, therefore causing us to observe the “ON” \nstate of our gene.  \n \nTLDR:  \nInducer System: Inducer + Repressor = ON \nCorepressor System: Corepressor + Repressor = OFF \nBesides basic protein expression, it's important to use operator and repressor \nsystems because it gives us something valuable: CONTROL. If we create a genetic \ncircuit, a network of genes expressed separately, operons allow us to control how \nthe expression of one gene affects another. For example, one gene can create an \nenzyme that produces two byproducts, one of which contributes to a therapeutic \nand another which acts as the inducer molecule for another operon, and so on. An \noperon can also be used as an on/off switch to gene expression.  \n \nGene Assembly + Testing \n \nAlright so gene structure is great and all but what's the point? How do we actually \ntake a gene we have designed and test it in a cell? For the most part, high school \niGEM teams tend to dabble only in bacteria and bacterial DNA. But why is that? \n \nBacteria have their own genome as well as large, circular pieces of DNA called \nplasmids that they can take up from their environment, or in a solution if you \nutilize heat shock or electroporation methods. This is how bacteria pass genes from \none to another in a process called horizontal gene transfer. Scientists have taken \nadvantage of this inherent feature of bacteria and created bacterial plasmids that are \noptimized as templates for gene expression.  \n \nThere are two types of plasmids and they differ based on the way they replicate:  \n",
+    " \n \n❖​1. Expression Plasmid:  \n➢​These are plasmids that are optimized for protein expression. They \ncontain a sequence called an origin of replication(ori) like any \nplasmid that gives them a low copy number. That is, fewer copies of \nthe plasmid are made because copying a plasmid is a metabolically \nstressful process, especially when our main goal is to produce a \nprotein.  \n➢​The pET series, namely pET-28(a), is the most common expression \nplasmid used. It has a T7 promoter, which is an incredibly strong \npromoter attached to the lac operon induced by the chemical IPTG.  \n➢​The recommended cell line for protein expression is BL21(DE3), \nespecially when using a T7 promoter because only BL21(DE3) cells \npossess the correct T7 polymerase to recognize its corresponding \npromoter.  \n❖​Cloning Plasmid \n➢​These are plasmids optimized for cloning. Their ori is of a high copy \nnumber since the goal is to make more copies of the DNA. There is no \ntemplate for gene architecture in a cloning plasmid, so don’t be \nalarmed since our goal is not to express a gene.  \n➢​Why do we need to make more though? Sometimes, when we order \nDNA sequences to be synthesized, we don’t have enough for our \ndesired experiments. So, we insert our coding sequences into a \ncloning plasmid to produce more copies of our cloning sequence. \nThen, we use restriction enzymes to cut out our coding sequences and \ninsert them into an expression plasmid.  \n \nRestriction Enzymes: When DNA sequences become Legos.  \n \nWhen several DNA coding sequences are cloned in different plasmids and they \nneed to be put into a singular plasmid, we must use restriction enzymes to cut out \nDNA at precise locations such that each cut strand is assembled into one plasmid \nby the hydrogen bonds made between base pairs. EcoRI is a common Type II \nrestriction enzyme that cuts at an EcoRI site in DNA, highlighted in yellow in Fig. \n2.  \n",
+    " \n \n \n​\nFig. 2 Diagram of EcoRI Type II Restriction Enzyme \n \nIf you observe the way that EcoRI cuts at its recognition site, you can see that it \nleaves an overhang of 4 DNA base pairs. These are called sticky ends such that \nthey will “stick” to another complementary 4 base pair overhang in another \nplasmid. Using Type II restriction enzymes is useful for gene insertion when two \nenzymes are used, since using the same restriction enzyme for the forward and \nreverse strand would prevent us from knowing the orientation the DNA has aligned \nin, and the wrong protein would be expressed if the DNA was reversed. This is \ncalled a double digest. This may be tricky to visualize, so I recommend watching \nthis video from the wonderful people at Waterloo iGEM here. You may also \nreference Fig. 3.  \n \n",
+    " \n \nFig. 3 Single VS. Double Digests. Source: SnapGene \n \nWell what if we have multiple fragments of DNA we need to assemble? What if we \nhave multiple promoters, ribosome binding sites, coding sequences, and \nterminators that all need to be put into a specified order? That’s where my favorite \nkind of assembly method comes in: Golden Gate Assembly. Golden Gate \nAssembly is a DNA assembly method that uses a special Type IIS restriction \nenzyme to assemble multiple fragments of DNA into a plasmid using only one \nenzyme.  \n \nThe reason this works is due to the mechanism of a Type IIS restriction enzyme. \nLike any restriction enzyme, Type IIS restriction enzymes have recognition sites. \nHowever, instead of cutting DNA at the restriction site, Type IIS enzymes cut \nOUTSIDE of the recognition site, producing a very unique 4 base pair overhang. If \nyou design your DNA fragments to have matching overhangs, you can \n",
+    " \ntheoretically assemble hundreds of DNA fragments at once without leaving a \nrestriction “scar”, a nonfunctional sequence of DNA left behind from a restriction \ndigest.  \n \n \nFig. 4 Golden Gate Assembly. Source: NEB \n \nThe Lab and Onwards!  \n \n",
+    " \nEverything I’ve explained and attempted to teach is all usable in theory. However, \nin order to properly execute experiments and protocols in a laboratory, it is up to \nyou to decide what procedures you need to follow. Thankfully, processes like DNA \npurification, protein purification, DNA assembly, and running assays are all \nwell-laid out on sites such as New England Biolabs, SnapGene, and even the old \niGEM parts registry .Here are some useful links that will help you draft up your \nown protocols with your mentors:  \n \nNew England Biolabs Protocol Search: \nhttps://www.neb.com/en-us/tools-and-resources/search?type=Protocol \n \nJourney of Visualized Experiments:  \nhttps://www.jove.com/ \n \nOpenWetWare:  \nhttps://openwetware.org/wiki/Main_Page \n \nBest of luck with your research my fellow iGEMers. Now fly! ;) \n \n \n \n-​\nHumza Shahzad, ULP-CA 2026 Co-Founder \n \n"
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "pages": [
+        2
+      ],
+      "text": "Foreword",
+      "id": "guide-foreword"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        2
+      ],
+      "text": "Hello Everyone, my name is Humza Shahzad and I am the Co-Founder of the new ULP-CA iGEM team competing in iGEM 2026. I’m a high school student in Fullerton, CA with a burning curiosity for the possibilities that synthetic biology can bring us one day. I hope this guide finds people that too want to start their research journey with more knowledge than I first had, once requiring hundreds of hours of reading research papers and designing experiments with my team to understand the fundamentals of biotech research. I’ve condensed the basics into this document and hope that all that read it truly appreciate it, as this is a testament to the very beginnings of my biotech journey and hopefully the start of yours. Onwards padawans!",
+      "html": "Hello Everyone, my name is Humza Shahzad and I am the Co-Founder of the new ULP-CA iGEM team competing in iGEM 2026. I’m a high school student in Fullerton, CA with a burning curiosity for the possibilities that synthetic biology can bring us one day. I hope this guide finds people that too want to start their research journey with more knowledge than I first had, once requiring hundreds of hours of reading research papers and designing experiments with my team to understand the fundamentals of biotech research. I’ve condensed the basics into this document and hope that all that read it truly appreciate it, as this is a testament to the very beginnings of my biotech journey and hopefully the start of yours. Onwards padawans!"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        2
+      ],
+      "text": "The Basics:",
+      "id": "guide-the-basics"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        2
+      ],
+      "text": "DNA : Deoxyribose nucleic acid, a type of macromolecule (fancy talk for a BIG molecule, in which case DNA is pretty long). Uses ATCG to store the code for PROTEINS, one of the most important macromolecules in synbio!",
+      "html": "DNA : Deoxyribose nucleic acid, a type of macromolecule (fancy talk for a BIG molecule, in which case DNA is pretty long). Uses ATCG to store the code for PROTEINS, one of the most important macromolecules in synbio!"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        2
+      ],
+      "text": "Proteins: A very large macromolecule; made up of subunits called amino acids. Each amino acid corresponds to a codon, a group of 3 base pairs that is read when RNA is built using DNA as a template for protein production(outside of the nucleus!)",
+      "html": "Proteins: A very large macromolecule; made up of subunits called amino acids. Each amino acid corresponds to a <strong>codon</strong>, a group of 3 base pairs that is read when RNA is built using DNA as a template for protein production(outside of the nucleus!)"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        2
+      ],
+      "text": "Protein Functions: Proteins are unique in that they serve the majority of active functions in the body. Proteins move muscle cells to contract, catalyze chemical reactions(these are enzymes!! ), embed in the cell membrane to act as receptors(immune cells anybody??), act as functional compounds (e.g. silk, hair, mucus, etc.), or serve regulatory functions (hemoglobin/myoglobin as oxygen transporters).",
+      "html": "Protein Functions: Proteins are unique in that they serve the majority of active functions in the body. Proteins move muscle cells to contract, catalyze chemical reactions(these are enzymes!! ), embed in the cell membrane to act as receptors(immune cells anybody??), act as functional compounds (e.g. silk, hair, mucus, etc.), or serve regulatory functions (hemoglobin/myoglobin as oxygen transporters)."
+    },
+    {
+      "type": "heading",
+      "pages": [
+        2
+      ],
+      "text": "SynBio Starter Guide!",
+      "id": "guide-synbio-starter-guide"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        3
+      ],
+      "text": "What makes Synbio so special? Synthetic biology essentially focuses on utilizing biology for certain functions. This is important in fields such as the pharmaceutical industry such as the development of a new drug, and using rigorous testing procedures in order to begin and pass clinical trials.",
+      "html": "What makes Synbio so special? Synthetic biology essentially focuses on utilizing biology for certain functions. This is important in fields such as the pharmaceutical industry such as the development of a new drug, and using rigorous testing procedures in order to begin and pass clinical trials."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        3
+      ],
+      "text": "DBTL, or Design, Build, Test, and Learn is the reason why bioengineering gets to be called an engineering discipline. Simply, like engineers, scientists of synthetic biology have an engineering goal and create an initial design of their system, construct it(typically through recombinant gene assembly methods), run tests/assays on it, and use the information from this cycle to LEARN, therefore starting the next cycle. A good synthetic biologist always documents their engineering decisions like a normal engineer would. Ample data collection is meant to be informative for a scientist to rule out problems within their design through thought-out experiments that maintain good positive and negative controls. This is what makes science DEFENSIBLE.",
+      "html": "DBTL, or Design, Build, Test, and Learn is the reason why bioengineering gets to be called an engineering discipline. Simply, like engineers, scientists of synthetic biology have an engineering goal and create an initial design of their system, construct it(typically through recombinant gene assembly methods), run tests/assays on it, and use the information from this cycle to LEARN, therefore starting the next cycle. A good synthetic biologist always documents their engineering decisions like a normal engineer would. Ample data collection is meant to be informative for a scientist to rule out problems within their design through thought-out experiments that maintain good positive and negative controls. This is what makes science DEFENSIBLE."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        3
+      ],
+      "text": "Before we start, here is something very important that many people get wrong when they first start working with synbio. Biology is a heuristic system, not a binary one. By this I mean the following: heuristics is a concept in computer science that effectively means “good enough”. Biology is the product of millions upon millions of years of careful evolution, and we have acquired information about biology after very rigorous study. However, changing the delicate system of biology on the molecular level comes with its own implications, in the sense that nothing is a yes or a no. A mutation in a protein can make it semi-functional but not fully non-functional. A weak promoter could mean that less but not near none of a gene is transcribed. Introducing elements that are foreign into a bacterial genome could have implications that we won’t know how to rule out unless we have good experiments, because biology doesn’t necessarily follow all of the rules! Biological systems make mistakes, and that is the beauty of it. If they didn’t, then we wouldn’t have diseases and genetic defects now would we?",
+      "html": "Before we start, here is something very important that many people get wrong when they first start working with synbio. Biology is a heuristic system, not a binary one. By this I mean the following: heuristics is a concept in computer science that effectively means “good enough”. Biology is the product of millions upon millions of years of careful evolution, and we have acquired information about biology after very rigorous study. However, changing the delicate system of biology on the molecular level comes with its own implications, in the sense that nothing is a yes or a no. A mutation in a protein can make it semi-functional but not fully non-functional. A weak promoter could mean that less but not near none of a gene is transcribed. Introducing elements that are foreign into a bacterial genome could have implications that we won’t know how to rule out unless we have good experiments, because biology doesn’t necessarily follow all of the rules! Biological systems make mistakes, and that is the beauty of it. If they didn’t, then we wouldn’t have diseases and genetic defects now would we?"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        3
+      ],
+      "text": "Gene Design Principles",
+      "id": "guide-gene-design-principles"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "In order to understand how to design a synthetic biology project, we must understand a few things about coding regions and sequences in DNA that don’t code for proteins.",
+      "html": "In order to understand how to design a synthetic biology project, we must understand a few things about coding regions and sequences in DNA that don’t code for proteins."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "There are key parts to a gene besides the coding region, the sequence with all necessary codons for a protein. These parts come in the following order:",
+      "html": "There are key parts to a gene besides the coding region, the sequence with all necessary codons for a protein. These parts come in the following order:"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "1. Promoter: Determines how strongly a gene is expressed in terms of the amount of protein expressed and how rapidly. The standard unit for a promoter’s strength is Relative Promoter Units(RPU). Promoter sequences are the first sequence recognized by RNA Polymerase to start DNA transcription into an mRNA sequence.",
+      "html": "1. Promoter: Determines how strongly a gene is expressed in terms of the amount of protein expressed and how rapidly. The standard unit for a promoter’s strength is Relative Promoter Units(RPU). Promoter sequences are the first sequence recognized by RNA Polymerase to start DNA transcription into an mRNA sequence."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "2. Ribosome Binding Site(RBS): A non-coding region included in the final mRNA sequence. It is where a ribosome will first bind to mRNA before RNA translation.",
+      "html": "2. Ribosome Binding Site(RBS): A non-coding region included in the final mRNA sequence. It is where a ribosome will first bind to mRNA before RNA translation."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "3. Start Codon: The first codon of RNA that initiates protein production during RNA translation. The start codon ALWAYS corresponds to the methionine amino acid.",
+      "html": "3. Start Codon: The first codon of RNA that initiates protein production during RNA translation. The start codon ALWAYS corresponds to the methionine amino acid."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "4. Coding Region: Self-explanatory :)",
+      "html": "4. Coding Region: Self-explanatory :)"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "5. Stop Codon: Signals the ribosome to detach from the mRNA molecule.",
+      "html": "5. Stop Codon: Signals the ribosome to detach from the mRNA molecule."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "6. Terminator: Usually placed twice in the gene in synthetic biology experiments, as it ensures that RNA polymerase detaches from DNA during transcription completely.",
+      "html": "6. Terminator: Usually placed twice in the gene in synthetic biology experiments, as it ensures that RNA polymerase detaches from DNA during transcription completely."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        4
+      ],
+      "text": "Key Tip: Thanks to the UC Berkeley iGEM team, we have a characterized library of promoters called Anderson Promoters, all which have varying strengths at relatively common levels used in experiments, such as 0.25, 0.5, 0.75, etc. I highly recommend considering the use of Anderson Promoters in your experiments because they are perfect for tuning of a system in terms of gene expression.",
+      "html": "Key Tip: Thanks to the UC Berkeley iGEM team, we have a characterized library of promoters called Anderson Promoters, all which have varying strengths at relatively common levels used in experiments, such as 0.25, 0.5, 0.75, etc. I highly recommend considering the use of Anderson Promoters in your experiments because they are perfect for <em>tuning</em> of a system in terms of gene expression."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        5
+      ],
+      "text": "Now, although this system for protein production works, there is a fatal flaw. If one were to follow the framework for a gene above, experiments would probably not go so well in terms of protein function. This is because the promoter is in a constitutive form, meaning that it is ALWAYS on. Usually, we are engineering bacteria, and we must not forget that bacteria have other stuff to care about besides our insignificant little gene. Making a gene constitutive means that it will not stop the protein production process, and that uses copious amounts of ATP and other cellular resources that cause metabolic stress, which can contribute to protein misfolding and ultimately the very death of our cells. So what do we use? We use the operon architecture, made up of an operator and a repressor.",
+      "html": "Now, although this system for protein production <em>works</em>, there is a fatal flaw. If one were to follow the framework for a gene above, experiments would probably not go so well in terms of protein function. This is because the promoter is in a constitutive form, meaning that it is ALWAYS on. Usually, we are engineering bacteria, and we must not forget that bacteria have other stuff to care about besides our insignificant little gene. Making a gene constitutive means that it will not stop the protein production process, and that uses copious amounts of ATP and other cellular resources that cause metabolic stress, which can contribute to protein misfolding and ultimately the very death of our cells. So what do we use? We use the operon architecture, made up of an operator and a repressor."
+    },
+    {
+      "type": "figure",
+      "pages": [
+        5
+      ],
+      "source": "assets/kickstart/figure-1.png",
+      "width": 1298,
+      "height": 537,
+      "alt": "Operon architecture showing a regulatory gene, promoter, operator, and structural genes.",
+      "sha256": "4272380f16b2c4e918442fc1567132f4a32ceaf3d9b8716b84af218e3b3d3f1a"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        5
+      ],
+      "text": "Fig. 1 Operon Architecture. Source(bio.libretexts.org)",
+      "html": "<em>Fig. 1 Operon Architecture. Source(</em><a href=\"http://bio.libretexts.org\"><em>bio.libretexts.org</em></a><em>)  </em>"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        5
+      ],
+      "text": "With reference to Fig.1, an operon architecture is different from a normal gene architecture in that we observe the use of an operator and regulatory sequence(also known as the repressor). The regulatory sequence is a separately expressed gene that creates a repressor protein that binds to the operator sequence. By binding to the operator sequence, it acts as a roadblock for RNA polymerase, and the genes following the operator aren’t able to be transcribed. This is the “OFF” state for our genes. In order to switch our gene into the “ON” state, bacteria must first be grown to a certain density in a phase called log phase with an optical density at 600 nm, or OD600, between 0.4 and 0.6. Don’t worry about this for now, but it is very important once you step into the lab and your PI uses this term when teaching you bacterial culture. Now, where were we?",
+      "html": "With reference to Fig.1, an operon architecture is different from a normal gene architecture in that we observe the use of an operator and regulatory sequence(also known as the repressor). The regulatory sequence is a separately expressed gene that creates a repressor protein that binds to the operator sequence. By binding to the operator sequence, it acts as a roadblock for RNA polymerase, and the genes following the operator aren’t able to be transcribed. This is the “OFF” state for our genes. In order to switch our gene into the “ON” state, bacteria must first be grown to a certain density in a phase called log phase with an optical density at 600 nm, or OD<sub>600</sub>, between 0.4 and 0.6. Don’t worry about this for now, but it is very important once you step into the lab and your PI uses this term when teaching you bacterial culture. Now, where were we?"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "After the bacteria have reached an optimal growth phase, we add a solution of an inducing molecule. Besides containing a site to bind to the operator, repressor proteins also have a site that binds to an inducer molecule, causing a change in the shape of the repressor that forces it to detach from the DNA. In some cases, the “inducer” molecule is actually a “corepressor” molecule, in the sense that when it binds to the repressor protein, it actually ENABLES it to bind to the operator. When the concentration of a corepressor molecule decreases, so does the amount of its operator-bound repressor proteins, therefore causing us to observe the “ON” state of our gene.",
+      "html": "After the bacteria have reached an optimal growth phase, we add a solution of an inducing molecule. Besides containing a site to bind to the operator, repressor proteins also have a site that binds to an inducer molecule, causing a change in the shape of the repressor that forces it to detach from the DNA. In some cases, the “inducer” molecule is actually a “corepressor” molecule, in the sense that when it binds to the repressor protein, it actually ENABLES it to bind to the operator. When the concentration of a corepressor molecule decreases, so does the amount of its operator-bound repressor proteins, therefore causing us to observe the “ON” state of our gene."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "TLDR: Inducer System: Inducer + Repressor = ON Corepressor System: Corepressor + Repressor = OFF Besides basic protein expression, it's important to use operator and repressor systems because it gives us something valuable: CONTROL. If we create a genetic circuit, a network of genes expressed separately, operons allow us to control how the expression of one gene affects another. For example, one gene can create an enzyme that produces two byproducts, one of which contributes to a therapeutic and another which acts as the inducer molecule for another operon, and so on. An operon can also be used as an on/off switch to gene expression.",
+      "html": "TLDR: Inducer System: Inducer + Repressor = ON Corepressor System: Corepressor + Repressor = OFF Besides basic protein expression, it&#x27;s important to use operator and repressor systems because it gives us something valuable: CONTROL. If we create a genetic circuit, a network of genes expressed separately, operons allow us to control how the expression of one gene affects another. For example, one gene can create an enzyme that produces two byproducts, one of which contributes to a therapeutic and another which acts as the inducer molecule for another operon, and so on. An operon can also be used as an on/off switch to gene expression."
+    },
+    {
+      "type": "heading",
+      "pages": [
+        6
+      ],
+      "text": "Gene Assembly + Testing",
+      "id": "guide-gene-assembly-testing"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "Alright so gene structure is great and all but what's the point? How do we actually take a gene we have designed and test it in a cell? For the most part, high school iGEM teams tend to dabble only in bacteria and bacterial DNA. But why is that?",
+      "html": "Alright so gene structure is great and all but what&#x27;s the point? How do we actually take a gene we have designed and test it in a cell? For the most part, high school iGEM teams tend to dabble only in bacteria and bacterial DNA. But why is that?"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "Bacteria have their own genome as well as large, circular pieces of DNA called plasmids that they can take up from their environment, or in a solution if you utilize heat shock or electroporation methods. This is how bacteria pass genes from one to another in a process called horizontal gene transfer. Scientists have taken advantage of this inherent feature of bacteria and created bacterial plasmids that are optimized as templates for gene expression.",
+      "html": "Bacteria have their own genome as well as large, circular pieces of DNA called plasmids that they can <strong>take up</strong> from their environment, or in a solution if you utilize heat shock or electroporation methods. This is how bacteria pass genes from one to another in a process called <strong>horizontal</strong> <strong>gene transfer</strong>. Scientists have taken advantage of this inherent feature of bacteria and created bacterial plasmids that are optimized as templates for gene expression."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        6
+      ],
+      "text": "There are two types of plasmids and they differ based on the way they replicate:",
+      "html": "There are two types of plasmids and they differ based on the way they replicate:"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "❖1. Expression Plasmid:",
+      "html": "❖1. Expression Plasmid:"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "➢These are plasmids that are optimized for protein expression. They contain a sequence called an origin of replication(ori) like any plasmid that gives them a low copy number. That is, fewer copies of the plasmid are made because copying a plasmid is a metabolically stressful process, especially when our main goal is to produce a protein.",
+      "html": "➢These are plasmids that are optimized for protein expression. They contain a sequence called an <strong>origin of replication</strong>(<em>ori</em>) like any plasmid that gives them a low copy number. That is, fewer copies of the plasmid are made because copying a plasmid is a metabolically stressful process, especially when our main goal is to produce a protein."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "➢The pET series, namely pET-28(a), is the most common expression plasmid used. It has a T7 promoter, which is an incredibly strong promoter attached to the lac operon induced by the chemical IPTG.",
+      "html": "➢The pET series, namely pET-28(a), is the most common expression plasmid used. It has a T7 promoter, which is an incredibly strong promoter attached to the lac operon induced by the chemical IPTG."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "➢The recommended cell line for protein expression is BL21(DE3), especially when using a T7 promoter because only BL21(DE3) cells possess the correct T7 polymerase to recognize its corresponding promoter.",
+      "html": "➢The recommended cell line for protein expression is BL21(DE3), especially when using a T7 promoter because only BL21(DE3) cells possess the correct T7 polymerase to recognize its corresponding promoter."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "❖Cloning Plasmid",
+      "html": "❖Cloning Plasmid"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "➢These are plasmids optimized for cloning. Their ori is of a high copy number since the goal is to make more copies of the DNA. There is no template for gene architecture in a cloning plasmid, so don’t be alarmed since our goal is not to express a gene.",
+      "html": "➢These are plasmids optimized for cloning. Their <em>ori</em> is of a high copy number since the goal is to make more copies of the DNA. There is no template for gene architecture in a cloning plasmid, so don’t be alarmed since our goal is not to express a gene."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "➢Why do we need to make more though? Sometimes, when we order DNA sequences to be synthesized, we don’t have enough for our desired experiments. So, we insert our coding sequences into a cloning plasmid to produce more copies of our cloning sequence. Then, we use restriction enzymes to cut out our coding sequences and insert them into an expression plasmid.",
+      "html": "➢Why do we need to make more though? Sometimes, when we order DNA sequences to be synthesized, we don’t have enough for our desired experiments. So, we insert our coding sequences into a cloning plasmid to produce more copies of our cloning sequence. Then, we use restriction enzymes to cut out our coding sequences and insert them into an expression plasmid."
+    },
+    {
+      "type": "heading",
+      "pages": [
+        7
+      ],
+      "text": "Restriction Enzymes: When DNA sequences become Legos.",
+      "id": "guide-restriction-enzymes-when-dna-sequences-become-legos"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        7
+      ],
+      "text": "When several DNA coding sequences are cloned in different plasmids and they need to be put into a singular plasmid, we must use restriction enzymes to cut out DNA at precise locations such that each cut strand is assembled into one plasmid by the hydrogen bonds made between base pairs. EcoRI is a common Type II restriction enzyme that cuts at an EcoRI site in DNA, highlighted in yellow in Fig. 2.",
+      "html": "When several DNA coding sequences are cloned in different plasmids and they need to be put into a singular plasmid, we must use restriction enzymes to cut out DNA at precise locations such that each cut strand is assembled into one plasmid by the hydrogen bonds made between base pairs. EcoRI is a common Type II restriction enzyme that cuts at an EcoRI site in DNA, highlighted in yellow in Fig. 2."
+    },
+    {
+      "type": "figure",
+      "pages": [
+        8
+      ],
+      "source": "assets/kickstart/figure-2.png",
+      "width": 2048,
+      "height": 990,
+      "alt": "EcoRI recognition and cleavage sites with complementary sticky ends.",
+      "sha256": "f39614796c4daa09df84b5eabe1d62b8821327dc66648ee1261d59b7c9ed28e2"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        8
+      ],
+      "text": "Fig. 2 Diagram of EcoRI Type II Restriction Enzyme",
+      "html": "Fig. 2 Diagram of EcoRI Type II Restriction Enzyme"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        8
+      ],
+      "text": "If you observe the way that EcoRI cuts at its recognition site, you can see that it leaves an overhang of 4 DNA base pairs. These are called sticky ends such that they will “stick” to another complementary 4 base pair overhang in another plasmid. Using Type II restriction enzymes is useful for gene insertion when two enzymes are used, since using the same restriction enzyme for the forward and reverse strand would prevent us from knowing the orientation the DNA has aligned in, and the wrong protein would be expressed if the DNA was reversed. This is called a double digest. This may be tricky to visualize, so I recommend watching this video from the wonderful people at Waterloo iGEM here. You may also reference Fig. 3.",
+      "html": "If you observe the way that EcoRI cuts at its recognition site, you can see that it leaves an overhang of 4 DNA base pairs. These are called <strong>sticky ends </strong>such that they will “stick” to another complementary 4 base pair overhang in another plasmid. Using Type II restriction enzymes is useful for gene insertion when two enzymes are used, since using the same restriction enzyme for the forward and reverse strand would prevent us from knowing the orientation the DNA has aligned in, and the wrong protein would be expressed if the DNA was reversed. This is called a <strong>double digest</strong>. This may be tricky to visualize, so I recommend watching this video from the wonderful people at Waterloo iGEM <a href=\"https://www.youtube.com/watch?v=zXgZOblz-94\">here</a>. You may also reference Fig. 3."
+    },
+    {
+      "type": "figure",
+      "pages": [
+        9
+      ],
+      "source": "assets/kickstart/figure-3.png",
+      "width": 1540,
+      "height": 1200,
+      "alt": "Comparison of single and double restriction digests from SnapGene.",
+      "sha256": "31c195ad55a7cb85fd7f5b2236e4eb347e720bdf543de75a549b909002c1b4be"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        9
+      ],
+      "text": "Fig. 3 Single VS. Double Digests. Source: SnapGene",
+      "html": "<em>Fig. 3 Single VS. Double Digests. Source: </em><a href=\"https://www.snapgene.com/guides/restriction-enzyme-cloning\"><em>SnapGene</em></a><em> </em>"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        9
+      ],
+      "text": "Well what if we have multiple fragments of DNA we need to assemble? What if we have multiple promoters, ribosome binding sites, coding sequences, and terminators that all need to be put into a specified order? That’s where my favorite kind of assembly method comes in: Golden Gate Assembly. Golden Gate Assembly is a DNA assembly method that uses a special Type IIS restriction enzyme to assemble multiple fragments of DNA into a plasmid using only one enzyme.",
+      "html": "Well what if we have multiple fragments of DNA we need to assemble? What if we have multiple promoters, ribosome binding sites, coding sequences, and terminators that all need to be put into a specified order? That’s where my favorite kind of assembly method comes in: Golden Gate Assembly. Golden Gate Assembly is a DNA assembly method that uses a special Type IIS restriction enzyme to assemble multiple fragments of DNA into a plasmid using only one enzyme."
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        9,
+        10
+      ],
+      "text": "The reason this works is due to the mechanism of a Type IIS restriction enzyme. Like any restriction enzyme, Type IIS restriction enzymes have recognition sites. However, instead of cutting DNA at the restriction site, Type IIS enzymes cut OUTSIDE of the recognition site, producing a very unique 4 base pair overhang. If you design your DNA fragments to have matching overhangs, you can theoretically assemble hundreds of DNA fragments at once without leaving a restriction “scar”, a nonfunctional sequence of DNA left behind from a restriction digest.",
+      "html": "The reason this works is due to the mechanism of a Type IIS restriction enzyme. Like any restriction enzyme, Type IIS restriction enzymes have recognition sites. However, instead of cutting DNA at the restriction site, Type IIS enzymes cut OUTSIDE of the recognition site, producing a very unique 4 base pair overhang. If you design your DNA fragments to have matching overhangs, you can theoretically assemble hundreds of DNA fragments at once without leaving a restriction “scar”, a nonfunctional sequence of DNA left behind from a restriction digest."
+    },
+    {
+      "type": "figure",
+      "pages": [
+        10
+      ],
+      "source": "assets/kickstart/figure-4.png",
+      "width": 1236,
+      "height": 1312,
+      "alt": "Golden Gate Assembly diagram from New England Biolabs.",
+      "sha256": "4b181aba350c3c50a810c1ac78653a3d85c35761c6e0da03f91a1231bf52046f"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        10
+      ],
+      "text": "Fig. 4 Golden Gate Assembly. Source: NEB",
+      "html": "<em>Fig. 4 Golden Gate Assembly. Source: </em><a href=\"https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly\"><em>NEB</em></a><em> </em>"
+    },
+    {
+      "type": "heading",
+      "pages": [
+        10
+      ],
+      "text": "The Lab and Onwards!",
+      "id": "guide-the-lab-and-onwards"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "Everything I’ve explained and attempted to teach is all usable in theory. However, in order to properly execute experiments and protocols in a laboratory, it is up to you to decide what procedures you need to follow. Thankfully, processes like DNA purification, protein purification, DNA assembly, and running assays are all well-laid out on sites such as New England Biolabs, SnapGene, and even the old iGEM parts registry .Here are some useful links that will help you draft up your own protocols with your mentors:",
+      "html": "Everything I’ve explained and attempted to teach is all usable in theory. However, in order to properly execute experiments and protocols in a laboratory, it is up to you to decide what procedures you need to follow. Thankfully, processes like DNA purification, protein purification, DNA assembly, and running assays are all well-laid out on sites such as New England Biolabs, SnapGene, and even the old iGEM parts registry .Here are some useful links that will help you draft up your own protocols with your mentors:"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "New England Biolabs Protocol Search: https://www.neb.com/en-us/tools-and-resources/search?type=Protocol",
+      "html": "New England Biolabs Protocol Search: <a href=\"https://www.neb.com/en-us/tools-and-resources/search?type=Protocol\">https://www.neb.com/en-us/tools-and-resources/search?type=Protocol</a>"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "Journey of Visualized Experiments: https://www.jove.com/",
+      "html": "Journey of Visualized Experiments: <a href=\"https://www.jove.com/\">https://www.jove.com/</a>"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "OpenWetWare: https://openwetware.org/wiki/Main_Page",
+      "html": "OpenWetWare: <a href=\"https://openwetware.org/wiki/Main_Page\">https://openwetware.org/wiki/Main_Page</a>"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "Best of luck with your research my fellow iGEMers. Now fly! ;)",
+      "html": "Best of luck with your research my fellow iGEMers. Now fly! ;)"
+    },
+    {
+      "type": "figure",
+      "pages": [
+        11
+      ],
+      "source": "assets/kickstart/figure-5.png",
+      "width": 200,
+      "height": 200,
+      "alt": "Author portrait included at the end of the guide.",
+      "sha256": "a02b747f1724ed45b16fdfa5aea00f265f617a7dda6c333e5df2d9061c5e89e9"
+    },
+    {
+      "type": "paragraph",
+      "pages": [
+        11
+      ],
+      "text": "- Humza Shahzad, ULP-CA 2026 Co-Founder",
+      "html": "<em>-</em> <em>Humza Shahzad, ULP-CA 2026 Co-Founder </em>"
+    }
+  ]
+}
