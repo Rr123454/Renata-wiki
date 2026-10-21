@@ -1,6 +1,6 @@
 # Model source transfer
 
-The Model page follows the supplied `Dry Lab Documentation (1).pdf` in reading order, using the ten supplied `Fig1.png`–`Fig10.png` files at their original resolution. Original bytes are kept in `assets/model/`, and SHA-256 hashes are recorded in `content/model/document.json`. The PDF has 20 content pages and a final blank page.
+The downloadable Model source PDF is the supplied `Model.pdf` (21 pages). Its original bytes are kept at `assets/model/dry-lab-documentation.pdf`, and its SHA-256 hash is recorded in `content/model/document.json`. This replacement updates the downloadable PDF only; the existing HTML Model article and its ten `Fig1.png`–`Fig10.png` figures remain unchanged.
 
 The article contains the introduction, enzyme-engineering text, four numbered sections, three mutagenesis subsections, nine tables (eight numbered plus Foldseek Alignment Metrics), ten figure captions, and 17 references. The expanding left outline follows these headings. Figures link to their full-resolution originals; the original PDF is downloadable. Text and tables remain readable without JavaScript.
 
