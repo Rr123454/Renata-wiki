@@ -7,38 +7,57 @@ const vm = require("node:vm");
 const root = path.join(__dirname, "..");
 const read = file => fs.readFileSync(path.join(root, file), "utf8");
 const context = vm.createContext({ window: {} });
-for (const file of ["site-content", "dry-lab-content", "lab-content"]) vm.runInContext(read(`js/${file}.js`), context);
+for (const file of ["site-content", "dry-lab-content", "wet-lab-content", "wet-lab-notebook-data", "lab-content"]) vm.runInContext(read(`js/${file}.js`), context);
 const data = context.window.SITE_DATA, lab = context.window.RenataLab;
+const source = context.window.RENATA_WETLAB;
 const pages = Object.fromEntries(["wet-lab", "wet-lab-notebook", "model"].map(key => [key, lab.render(key)]));
 const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+const text = html => String(html).replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
 
 test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Engineering", "Lab Work", "Education + HP"]);
-  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Engineering is a direct link");
-  assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Our Project", "Lab Work", "Education + HP"]);
+  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "team").children, item => item.label), ["Meet Our Team", "Contribution"]);
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
   assert.equal(menu[0].children, undefined, "all Lab Work destinations are siblings");
   assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
 });
 
-test("Wetlab includes all bench questions, existing detail records, procedure prompts and analysis", () => {
-  for (const record of lab.records) {
-    const source = data.pages[record.key], notebook = data.experimentRecordTabs[record.key];
-    for (const card of source.cards) assert.ok(pages["wet-lab"].includes(card.text));
-    for (const detail of source.details) {
-      assert.ok(pages["wet-lab"].includes(detail.text));
-      assert.ok(pages["wet-lab"].includes(detail.note));
+test("Wetlab renders each source-backed experiment with its evidence, interpretation and next decision", () => {
+  const expected = ["assembly", "screening", "expression-plan", "purification", "quantification", "protein-gels", "assay-plan"];
+  assert.deepEqual(Array.from(source.records, record => record.id), expected);
+  const rendered = text(pages["wet-lab"]);
+  for (const record of source.records) {
+    assert.ok(ids(pages["wet-lab"]).includes(record.id), record.id);
+    for (const field of ["title", "question", "evidence", "interpretation", "next"]) {
+      assert.ok(record[field]?.trim(), `${record.id}: ${field} is populated`);
+      assert.ok(rendered.includes(text(record[field])), `${record.id}: ${field} is rendered`);
     }
-    for (const entry of notebook.protocols) assert.ok(pages["wet-lab"].includes(entry.text));
-    assert.ok(pages["wet-lab"].includes(record.interpretation));
-    assert.ok(pages["wet-lab"].includes(record.decision));
-    for (const entry of notebook.notebook) assert.ok(pages["wet-lab-notebook"].includes(entry.text));
+    for (const paragraph of record.paragraphs || []) {
+      assert.ok(rendered.includes(text(paragraph)), `${record.id}: source explanation is rendered`);
+    }
   }
   for (const id of lab.wetIds) {
     assert.ok(ids(pages["wet-lab"]).includes(id), id);
     assert.ok(!ids(pages.model).includes(id), `Bench section must be under Wetlab: ${id}`);
   }
+  for (const id of ["reporter", "growth-response", "master-plan", "handoff"]) {
+    assert.ok(ids(pages["wet-lab"]).includes(id), `Historical anchor retained: ${id}`);
+  }
+  assert.match(rendered, /(?:historical|archived|earlier)\s+(?:[^.]*\s)?plans?/i);
+});
+
+test("Wetlab retains source provenance and separates assay measurements from functional claims", () => {
+  const rendered = text(pages["wet-lab"]);
+  assert.match(rendered, /iGEM Renata Lab Documentation 2026/);
+  assert.ok(pages["wet-lab"].includes(source.pdf), "Original source document remains available");
+  assert.match(rendered, /(?:uncertain|unresolved|incomplete|pending|discrepan|conflict|ambig)/i);
+  const assay = source.records.find(record => record.id === "assay-plan");
+  const assayRecord = text([assay.evidence, assay.interpretation, assay.next, ...(assay.paragraphs || [])].join(" "));
+  assert.match(assayRecord, /(?:activity|sulfation|conversion|product)/i);
+  assert.match(assayRecord, /(?:not|cannot|unconfirmed|unresolved|pending|insufficient|requires|needs|remaining|remain|incomplete)/i, "Assay evidence includes its validation boundary");
+  assert.doesNotMatch(rendered, /Completed transformation, enzyme-activity, and growth datasets have not been supplied/);
 });
 
 test("Model retains every computational source section, figures, and detailed comparisons", () => {
@@ -82,7 +101,16 @@ test("new research pages have unique anchors, working local section links, and r
       if (hash && target) assert.ok(ids(target).includes(hash), `${key}: ${href}`);
     }
     const entry = read(`${key}.html`);
-    for (const file of ["site-content", "dry-lab-content", "lab-content", "navigation"]) assert.ok(entry.indexOf(`js/${file}.js`) < entry.indexOf("js/site.js"));
+    const dependencies = key === "model" ? ["site-content", "navigation"] : ["site-content", "dry-lab-content", "lab-content", "navigation"];
+    if (key === "model") assert.match(entry, /data-static-content="true"/, "Model keeps its generated source-backed article");
+    for (const file of dependencies) {
+      assert.ok(entry.indexOf(`js/${file}.js`) >= 0, `${key}: ${file} is present`);
+      assert.ok(entry.indexOf(`js/${file}.js`) < entry.indexOf("js/site.js"));
+    }
+    if (key !== "model") for (const file of ["wet-lab-content", "wet-lab-notebook-data"]) {
+      assert.ok(entry.indexOf(`js/${file}.js`) >= 0, `${key}: ${file} is present`);
+      assert.ok(entry.indexOf(`js/${file}.js`) < entry.indexOf("js/lab-content.js"), `${key}: source data loads before the renderer`);
+    }
     assert.doesNotMatch(entry, /js\/orbit-pages\.js/);
   }
 });
@@ -92,13 +120,13 @@ test("Notebook has its own full-width PDF reader and accessible transcript", () 
   assert.doesNotMatch(pages["wet-lab"], /<iframe|lab-workspace|Read notebook as text/);
   assert.match(pages["wet-lab"], /href="wet-lab-notebook.html"/);
   assert.match(notebook, /<iframe[^>]*data-notebook-frame/);
-  assert.match(notebook, /assets\/documents\/wet-lab-notebook\.pdf/);
+  assert.ok(notebook.includes(source.pdf));
   assert.match(notebook, /Read notebook as text/);
-  assert.match(notebook, /Undated \/ awaiting bench record/);
+  assert.doesNotMatch(notebook, /Undated \/ awaiting bench record|completed bench records are still pending|PDF: undated entry prompts/);
+  for (const month of ["June", "July", "August", "September", "October"]) assert.ok(notebook.includes(month), month);
   assert.match(notebook, /href="wet-lab.html"/);
   assert.match(read("wet-lab-notebook.html"), /data-page="wet-lab-notebook"/);
   assert.doesNotMatch(read("wet-lab-notebook.html"), /window.location.replace/);
-  assert.match(pages["wet-lab"], /Completed transformation, enzyme-activity, and growth datasets have not been supplied/);
   assert.match(pages.model, /biochemical performance still needs experimental measurement/);
 });
 

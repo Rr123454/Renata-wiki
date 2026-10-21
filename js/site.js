@@ -250,15 +250,29 @@
 
   function renderEducationPage() {
     const eventRoutes = data.educationEventRoutes || [];
+    const overview = data.educationOverview;
 
     return `
-      <section class="experiment-index-page education-event-index" aria-labelledby="education-title">
+      <section class="experiment-index-page education-event-index" id="education-events" aria-labelledby="education-title">
         <div class="container experiment-index-container">
           <header class="experiment-index-header reveal">
             <p class="hero-kicker">Events / Audiences / Outcomes</p>
-            <h1 id="education-title">Project education</h1>
-            <p>Each education event has its own record connecting the audience, activity, evidence, reflection, and effect on later work.</p>
+            <h1 id="education-title">Education</h1>
+            <p>Explore our learning activities, interviews, community outreach, and professional exchanges.</p>
           </header>
+
+          ${overview ? `
+            <section class="education-overview" id="education-overview" aria-labelledby="education-overview-title">
+              <div class="education-overview-heading">
+                <p class="hero-kicker">Why we teach</p>
+                <h2 id="education-overview-title">${overview.title}</h2>
+              </div>
+              <div class="education-overview-copy">
+                ${overview.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
+                <p class="education-source">${overview.source}</p>
+              </div>
+            </section>
+          ` : ""}
 
           <div class="experiment-route-list" aria-label="Education event pages">
             ${eventRoutes.map((event, index) => `
@@ -276,7 +290,7 @@
 
           <div class="experiment-evidence-note reveal">
             <strong>Content status</strong>
-            <p>PLACEHOLDER: These event pages are placeholders for verified records. Rename each block and add the real date, audience, materials, evidence, reflection, and project effect after the event information is available.</p>
+            <p>Each event page distinguishes the team’s documented participation and reflections from proposed follow-up work. Interview accounts reflect the perspectives shared with the team.</p>
           </div>
         </div>
       </section>
@@ -374,6 +388,7 @@
               <p class="project-paper-type">Human Practices</p>
               <h1 id="human-practices-paper-title">Human Practices</h1>
             </header>
+
 
             <section class="project-paper-section" id="hp-abstract">
               <p class="project-paper-section-number">Summary</p>
@@ -611,6 +626,7 @@
             ${section.eyebrow ? `<p class="detail-eyebrow">${section.eyebrow}</p>` : ""}
             <h2>${section.title}</h2>
             ${section.text ? `<p class="detail-lead">${section.text}</p>` : ""}
+            ${(section.paragraphs || []).map(paragraph => `<p class="detail-lead">${paragraph}</p>`).join("")}
             ${section.items ? `<ul class="detail-list">${section.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
             ${section.steps ? `<div class="detail-steps">${section.steps.map((step) => `
               <div class="detail-step"><span>${step.label}</span><p>${step.text}</p></div>

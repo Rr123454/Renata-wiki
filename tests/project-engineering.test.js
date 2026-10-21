@@ -50,7 +50,7 @@ function renderPage(file) {
   context.window.document = context.document;
   for (const script of [
     "js/site-content.js", "js/project-description-content.js", "js/engineering-content.js",
-    "js/project-paper.js", "js/dry-lab-content.js", "js/lab-content.js", "js/navigation.js", "js/site.js"
+    "js/project-paper.js", "js/dry-lab-content.js", "js/wet-lab-content.js", "js/wet-lab-notebook-data.js", "js/lab-content.js", "js/navigation.js", "js/site.js"
   ]) vm.runInContext(read(script), context, { filename: script });
   const result = {
     data: context.window.SITE_DATA,
@@ -97,7 +97,7 @@ function anchorHarness({ hash = "#engineering", pageKey = "project-description",
     cancelAnimationFrame() {}
   });
   context.window.document = context.document;
-  for (const script of ["js/site-content.js", "js/project-description-content.js", "js/engineering-content.js", "js/project-paper.js", "js/dry-lab-content.js", "js/lab-content.js", "js/navigation.js", "js/site.js"]) {
+  for (const script of ["js/site-content.js", "js/project-description-content.js", "js/engineering-content.js", "js/project-paper.js", "js/dry-lab-content.js", "js/wet-lab-content.js", "js/wet-lab-notebook-data.js", "js/lab-content.js", "js/navigation.js", "js/site.js"]) {
     vm.runInContext(read(script), context, { filename: script });
   }
   return {
@@ -192,13 +192,14 @@ test("the expression-vector figure is explicitly labelled as a proposed schemati
   assert.deepEqual(Array.from(figure.architecture), ["T7 promoter", "RBS", "His6", "SUMO", "ULP1 cleavage site", "BtSULT variant", "Stop / terminators"]);
 });
 
-test("Engineering navigation uses the existing project page without a duplicate route", () => {
+test("Our Project navigation uses the existing project page without a duplicate route", () => {
   const flatten = items => items.flatMap(item => [item, ...flatten(item.children || [])]);
   assert.ok(!Object.hasOwn(project.data.pages, "engineering"));
   assert.ok(flatten(project.data.nav).every(item => item.key !== "engineering"));
   assert.doesNotMatch(project.header + project.footer, /href="engineering\.html(?:[?#][^"]*)?"/);
   assert.match(project.header + project.footer, />\s*Engineering\s*</);
-  assert.doesNotMatch(project.header + project.footer, />\s*Our (?:Project|Lab Work)\s*</);
+  assert.match(project.header, />\s*Our Project\s*</);
+  assert.doesNotMatch(project.header, /renata-nav-project|>\s*Our Lab Work\s*</);
   assert.match(project.header, /href="project-description\.html"/);
   assert.match(project.footer, /href="project-description\.html"/);
   assert.doesNotMatch(project.header + project.footer, /href="project-description\.html#(?:abstract|dbtl-cycle)"/);

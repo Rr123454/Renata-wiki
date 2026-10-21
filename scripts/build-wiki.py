@@ -60,7 +60,7 @@ def build(root=ROOT, output=None, release=False, base_path=None):
         if not p.is_file() or p.suffix.lower() not in MEDIA:
             continue
         key = p.relative_to(root).as_posix()
-        dynamic = key.startswith(("assets/nav-icons/", "assets/dry-lab/"))
+        dynamic = key.startswith(("assets/nav-icons/", "assets/dry-lab/", "assets/wet-lab/"))
         if key in corpus or quote(key, safe="/") in corpus or dynamic:
             assets[key] = p
     errors = []

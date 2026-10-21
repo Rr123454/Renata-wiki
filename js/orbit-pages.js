@@ -18,13 +18,21 @@
     const group = pageData?.group;
     const key = pageKey.startsWith("education") ? "education" : group === "lab-work" ? "lab" : ["contact", "partnerships"].includes(pageKey) ? "community" : group in chapters ? group : "project";
     const chapter = { ...chapters[key], key };
-    if (pageKey.startsWith("experiment-") || pageKey.startsWith("education-event-")) {
+    if (pageKey.startsWith("experiment-") || pageKey.startsWith("education-")) {
       chapter.title = [plain(pageData.title)];
       chapter.lead = plain(pageData.lead);
       chapter.record = true;
       chapter.next = pageKey.startsWith("experiment-") ? "wet-lab.html" : "education.html";
       chapter.nextLabel = pageKey.startsWith("experiment-") ? "Wetlab work & analysis" : "Explore education";
       chapter.nextIcon = chapter.icon;
+    }
+    if (pageKey === "contribution") {
+      chapter.title = [plain(pageData.title)];
+      chapter.lead = plain(pageData.lead);
+      chapter.record = true;
+      chapter.next = "team.html";
+      chapter.nextLabel = "Meet Our Team";
+      chapter.nextIcon = "Phoenix";
     }
     if (pageKey === "contact") { chapter.title = ["Contact."]; chapter.icon = "Mic"; }
     return chapter;

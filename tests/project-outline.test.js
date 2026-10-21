@@ -87,7 +87,7 @@ function researchMarkup(page) {
   return vm.runInNewContext(`(${source.slice(start,end).trim()})`)();
  }
  const context=vm.createContext({window:{}});
- for(const file of ['site-content','dry-lab-content','lab-content']) vm.runInContext(read(`js/${file}.js`),context);
+ for(const file of ['site-content','dry-lab-content','wet-lab-content','wet-lab-notebook-data','lab-content']) vm.runInContext(read(`js/${file}.js`),context);
  return context.window.RenataLab.render(page);
 }
 test('HP, Wetlab, and Model prepare the same left outline from their real rendered articles',()=>{
@@ -113,7 +113,10 @@ test('HP, Wetlab, and Model prepare the same left outline from their real render
   }
   if(page==='wet-lab') {
    const assembly=doc.getElementById('outline-assembly');
-   assert.ok(assembly.querySelectorAll('a').some(link=>link.textContent.includes('Golden Gate/JUMP assembly')));
+   assert.ok(links.some(link=>link.getAttribute('href')==='#assembly'&&link.textContent.includes('Transformation')));
+   assert.ok(assembly.querySelectorAll('a').some(link=>link.textContent.includes('Methods & original record')));
+   const archived=doc.getElementById('outline-planned-assembly');
+   assert.ok(archived.querySelectorAll('a').some(link=>link.textContent.includes('Golden Gate/JUMP assembly')));
   }
   prepare(doc);assert.equal(nav.querySelectorAll('a').length,links.length,'idempotent preparation');
  }

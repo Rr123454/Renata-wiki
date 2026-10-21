@@ -82,3 +82,28 @@ body[data-page] .lab-page { padding-block: clamp(28px, 5vw, 68px); }
 .lab-page--notebook .lab-notebook-pdf { flex:none; height:76svh; min-height:420px; }
 .lab-page--notebook .lab-notebook-transcript { max-height:none; overflow:visible; }
 .lab-page--notebook [id] { scroll-margin-top:calc(var(--site-header-height,88px) + 20px); }
+
+/* Source evidence stays readable without turning every paragraph into a card. */
+.lab-table-wrap { max-width:100%; overflow-x:auto; margin-top:28px; }
+.lab-data-table { width:100%; border-collapse:collapse; font-size:.9rem; line-height:1.55; }
+.lab-data-table caption { text-align:left; font-weight:750; font-size:1rem; padding-bottom:12px; color:#24305e; }
+.lab-data-table :is(th,td) { text-align:left; vertical-align:top; padding:12px 16px; border-bottom:1px solid #24305e33; }
+.lab-data-table thead { background:#f4dec4; }
+.lab-data-table tbody th { font-weight:650; }
+.lab-data-table tbody tr:nth-child(even) { background:#fffaf2; }
+.lab-table-wrap:focus-visible { outline:3px solid #254780; outline-offset:3px; }
+.lab-figure-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px 24px; margin-block:30px; }
+.lab-figure-grid--single { grid-template-columns:minmax(0,1fr); }
+.lab-source-figure { min-width:0; margin:0; }
+.lab-source-figure > a { display:flex; justify-content:center; align-items:center; background:#fff; min-height:180px; padding:12px; }
+.lab-source-figure img { width:auto; height:auto; max-width:100%; max-height:540px; object-fit:contain; }
+.lab-source-figure figcaption { padding-top:14px; font-size:.85rem; line-height:1.65; color:#536080; }
+.lab-source-figure figcaption strong { color:#24305e; font-size:1rem; }
+.lab-source-figure figcaption p { margin-block:8px; }
+.lab-historical > summary { font-size:1.2rem; }
+.lab-historical[open] { padding-inline:20px; border-left:2px solid #b3bde0; }
+@media (max-width:600px) {
+  .lab-figure-grid { grid-template-columns:minmax(0,1fr); }
+  .lab-data-table :is(th,td) { padding:10px; min-width:95px; }
+  .lab-historical[open] { padding-inline:12px; }
+}

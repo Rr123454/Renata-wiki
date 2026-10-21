@@ -10,6 +10,8 @@ const read = file => fs.readFileSync(path.join(root, file), "utf8");
 const context = { window: {} };
 vm.runInNewContext(read("js/site-content.js"), context);
 vm.runInNewContext(read("js/dry-lab-content.js"), context);
+vm.runInNewContext(read("js/wet-lab-content.js"), context);
+vm.runInNewContext(read("js/wet-lab-notebook-data.js"), context);
 vm.runInNewContext(read("js/lab-content.js"), context);
 const data = context.window.SITE_DATA;
 const redirects = new Set(["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"]);

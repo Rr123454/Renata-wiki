@@ -1,6 +1,7 @@
 import hashlib
 import importlib.util
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -66,6 +67,25 @@ class WikiToolsTest(unittest.TestCase):
         self.save_urls({"assets/a.png": "https://static.igem.wiki/teams/1234/a.webp"})
         (self.root / "contribution.html").write_text("<html><head></head><body>Team-supplied contribution.</body></html>")
 
+    def wetlab_figure_urls(self, runtime=""):
+        """Exercise the real content helper against an optional exported runtime."""
+        program = (
+            "const fs=require('node:fs'),vm=require('node:vm');"
+            "const input=JSON.parse(fs.readFileSync(0,'utf8'));"
+            "const context={window:{}};"
+            "if(input.runtime)vm.runInNewContext(input.runtime,context);"
+            "vm.runInNewContext(input.source,context);"
+            "console.log(JSON.stringify(context.window.RENATA_WETLAB.records"
+            ".flatMap(record=>(record.figures||[]).map(figure=>figure.file))));"
+        )
+        result = subprocess.run(
+            ["node", "-e", program],
+            input=json.dumps({"runtime": runtime, "source": (ROOT / "js/wet-lab-content.js").read_text(encoding="utf-8")}),
+            text=True, capture_output=True, check=True,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+        )
+        return json.loads(result.stdout)
+
     def test_preview_is_portable_and_does_not_modify_original_media(self):
         original = (self.root / "assets/a.png").read_bytes()
         report = wiki.build(self.root, base_path="/preview/")
@@ -97,6 +117,52 @@ class WikiToolsTest(unittest.TestCase):
         self.assertIn('<base href="/example/"/>', (self.root / "public/index.html").read_text())
         self.assertIn("https://teams.igem.org/1234", (self.root / "public/attributions/index.html").read_text())
         self.assertNotIn("<iframe", (self.root / "public/attributions/index.html").read_text())
+
+    def test_wetlab_source_figures_exist_and_keep_local_paths_without_export_runtime(self):
+        figures = self.wetlab_figure_urls()
+        self.assertGreater(len(figures), 0)
+        for figure in figures:
+            with self.subTest(figure=figure):
+                self.assertTrue(figure.startswith("assets/wet-lab/"))
+                self.assertTrue((ROOT / figure).is_file())
+                self.assertGreater((ROOT / figure).stat().st_size, 0)
+
+    def test_wetlab_dynamic_figures_are_inventoried_and_use_export_runtime_urls(self):
+        directory = self.root / "assets/wet-lab"
+        directory.mkdir()
+        originals = {
+            "assets/wet-lab/colony-screening.png": b"\x89PNG\r\n\x1a\nfixture",
+            "assets/wet-lab/colony-gel-a.jpeg": b"\xff\xd8fixture",
+        }
+        for name, value in originals.items():
+            (self.root / name).write_bytes(value)
+        # No full filename occurs in the source corpus: the directory family
+        # must be inventoried despite a dynamically assembled asset path.
+        (self.root / "js/figures.js").write_text('const figure = file => `assets/wet-lab/${file}`;')
+        report = wiki.build(self.root)
+        inventory = {asset["source"] for asset in report["assets"]}
+        self.assertTrue(set(originals).issubset(inventory))
+        self.assertTrue(set(originals).issubset(report["missingUploadUrls"]))
+        self.assertEqual((self.root / "public/assets/wet-lab/colony-screening.png").read_bytes(), originals["assets/wet-lab/colony-screening.png"])
+        self.assertEqual((self.root / "public/assets/wet-lab/colony-gel-a.jpg").read_bytes(), originals["assets/wet-lab/colony-gel-a.jpeg"])
+        preview_figures = self.wetlab_figure_urls((self.root / "public/js/wiki-runtime.js").read_text())
+        self.assertIn("assets/wet-lab/colony-screening.png", preview_figures)
+        self.assertIn("assets/wet-lab/colony-gel-a.jpg", preview_figures)
+        self.assertNotIn("assets/wet-lab/colony-gel-a.jpeg", preview_figures)
+
+        self.release_ready()
+        with self.assertRaisesRegex(ValueError, "referenced media files still need iGEM upload URLs"):
+            wiki.build(self.root, release=True)
+        urls = {"assets/a.png": "https://static.igem.wiki/teams/1234/a.webp"}
+        urls.update({key: f"https://static.igem.wiki/teams/1234/{Path(key).stem}." + ("jpg" if key.endswith(".jpeg") else "png") for key in originals})
+        self.save_urls(urls)
+        wiki.build(self.root, release=True)
+        exported_figures = self.wetlab_figure_urls((self.root / "public/js/wiki-runtime.js").read_text())
+        for key in originals:
+            self.assertIn(urls[key], exported_figures)
+            self.assertNotIn(key, exported_figures)
+            self.assertEqual((self.root / key).read_bytes(), originals[key])
+        self.assertFalse((self.root / "public/assets").exists())
 
     def test_missing_case_sensitive_media_and_external_embeds_are_rejected(self):
         page = self.root / "index.html"

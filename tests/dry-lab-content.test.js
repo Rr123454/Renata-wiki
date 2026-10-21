@@ -10,6 +10,8 @@ const context = vm.createContext({ window: {} });
 vm.runInContext(read("js/site-content.js"), context);
 const originalRecords = Object.keys(context.window.SITE_DATA.experimentRecordTabs);
 vm.runInContext(read("js/dry-lab-content.js"), context);
+vm.runInContext(read("js/wet-lab-content.js"), context);
+vm.runInContext(read("js/wet-lab-notebook-data.js"), context);
 vm.runInContext(read("js/lab-content.js"), context);
 vm.runInContext(read("js/project-description-content.js"), context);
 vm.runInContext(read("js/engineering-content.js"), context);

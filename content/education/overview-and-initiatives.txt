@@ -1,0 +1,56 @@
+Overview
+We started RENATA from the dream of two high schoolers wanting to bring synthetic biology and bioengineering to Orange County, and throughout our journey, we realized just how difficult it can be for students to enter the field. Throughout our process of creating this team, we spent countless hours pouring over research papers and learned fundamentals of engineering, experiencing firsthand how much background knowledge we needed to have before even starting to develop our project.
+
+We wanted to change that for other students. After all, we believed that other students deserved the same opportunities within science, regardless of how much experience they had with science. RENATA started as two high schoolers who shared an interest in biology and wanted to turn that curiosity into something tangible and applicable for the people around them.
+
+With this in mind, we developed a few educational initiatives aimed at different age groups and levels of scientific understanding. Through our ULP education event, we introduced over 30 children to DNA and genetics using LEGO Blocks and beads. At Troy High School, we organized hands-on biotechnology experiments to demonstrate how microorganisms and enzymes work, connecting these concepts to our own research. Finally, we collaborated with other iGEM teams to develop an online educational resource for students interested in beginning their own journeys in synthetic biology.
+
+Through these initiatives, we hoped to give students something we wished we had when starting RENATA: An introduction to synthetic biology that made the subject easier to understand and gave them somewhere to begin on their own journey.
+
+ULP Education Event: Introducing Children to Genetics
+Bringing DNA into the Classroom
+For our first education initiative, RENATA worked with ULP to introduce over 30 children ages nine and above to the fundamentals of DNA, genetics, and synthetic biology overall. 
+
+To us, teaching synthetic biology presented us with quite an interesting question. How do you explain a molecule that can’t be seen with the naked eye to a student who might never have studied cells before?
+
+We began to tackle this problem by introducing DNA as a set of instructions that organisms use in order to develop and function. Furthering this, we introduced the relationship between DNA and observable characteristics. Traits such as hair texture and certain inherited physical features such as height helped provide some familiar examples for how genetic information can influence and come to create an organism as a whole. Through this, our students were given something that they already understood before we introduced more unfamiliar concepts
+
+From there, we explained the basic idea behind synthetic biology. Scientists can study genetic information, and through processes within genetic engineering, modify certain sequences to change how an organism functions. This is a similar principle behind many iGEM projects, including RENATA’s work. 
+
+However, we wanted students not only to listen and see these ideas, but also experience them tangibly instead of simply relying on verbal explanations. With this in mind, we designed two activities that turned genetic concepts into a tangible model that students could experience in front of them.
+
+Activity 1: Building DNA using LEGO Bricks
+
+Our first activity used LEGO blocks to represent the four kinds of nucleotide bases that make up DNA. Each DNA base was represented by a different type of color of block, which allowed students to distinguish between adenine, thymine, cytosine, and guanine. Students could then arrange the blocks into sequences, which created a simplified physical representation of genetic information.
+
+
+The purpose of this activity was to explain why the order of DNA bases matters. Two sequences can contain the same bases but result in unique genetic information being stored, as those bases are organized differently. By rearranging their LEGO bricks, students could see that the sequence itself was important even when the building materials were the same.
+
+We connected this idea to the way genetic changes can influence an organism’s traits. In real biological systems, certain sequences of DNA contain instructions for making proteins. Proteins perform many of the functions necessary for life, and changes to the sequences encoding them can sometimes change their structure or activity.
+
+This also gave us a way to introduce genetic engineering without beginning with unfamiliar laboratory techniques. If genetic information is stored in sequences, scientists can modify biological functions by changing those sequences to their liking. Although the LEGO model simplified the actual complexity of DNA, it gave students a starting point for understanding how genetic information can be modified.
+
+All in all, this activity allowed students to experiment with different arrangements themselves, which allowed them to directly work with the model, compare their own sequences, and ask questions about how those changes may affect a living organism on a long term scale.
+
+Activity 2: Exploring DNA Traits Through Beads
+
+Our second activity was centered around defining the relationship between genetics and physical characteristics that an organism has. We developed a trait chart that students could use to identify some of their own physical characteristics. Different colored beads corresponded to different responses on the chart, hence allowing students to create a physical representation of their selected traits. This gave a look into how inherited genetic information can relate to observable physical characteristics, which is a little different from the LEGO activity we had done previously. 
+
+Students used their completed bead arrangements to compare traits that they had recorded down from their own personal perspectives. This also helped introduce the concept of variation between individuals and why members of the same species can have different physical characteristics. Additionally, this activity created opportunities to discuss inheritance and the relationship between genes and traits. We introduced these ideas through simplified examples appropriate for the students' ages, since many physical characteristics are influenced by multiple genes and environmental factors.
+
+When designing this activity, one of the main considerations that we put into picture was to make science personal enough for students to understand. DNA is quite an abstract concept when understood as a double helix or sequence of nucleotides. However, when students are able to see their own characteristics, it gives students a familiar example of why genetic information matters.
+
+
+
+Educational Purpose and Synthetic Biology Connection
+
+After introducing DNA sequences and inherited traits, we connected the two activities to the basic principles of synthetic biology. The LEGO activity showed students how genetic information is organized, while the bead activity gave them examples of how biological characteristics can vary. Together, they provided a base for explaining to younger individuals how scientists study genetic information and attempt to modify biological systems.
+Our ULP event was designed as an introduction to genetics for students who had limited experience with molecular biology. We taught over 30 children through activities that allowed them to build models, examine their own characteristics, and discuss the concepts behind their work. The LEGO and bead activities were selected because they made different parts of genetics easier to visualize. One dealt with the information stored in DNA, while the other dealt with observable characteristics influenced by genetics. These activities also gave us experience explaining scientific concepts without relying on the terminology we normally use when discussing our project. 
+
+Troy Biotechnology Education Day
+Bringing Biotechnology into the High School Classroom
+
+After our education event at ULP, we wanted to move towards a more complex and experimental side of explaining synthetic biology and our project. Our event at Troy High School gave the opportunity for students to see how living organisms function through hands-on experiments.
+
+Biotech Youth Literacy Directive Club
+Karthik and Humza founded the Biotechnology Youth Literacy Directive (BYLD), a student-led club dedicated to introducing biotechnology and synthetic biology to students at our school. Through multiple lectures on DNA analysis techniques and their applications in research, we helped students explore concepts beyond their regular biology classes. BYLD also served as a pathway into RENATA, encouraging students interested in biotechnology to get involved in iGEM and participate in hands-on synthetic biology research.

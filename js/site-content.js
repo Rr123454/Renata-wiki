@@ -29,14 +29,14 @@ window.SITE_DATA = {
 
   nav: [
     { key: "home", label: "Home", href: "index.html" },
-    { key: "team", label: "Our Team", href: "team.html" },
     {
-      key: "project", label: "Project", heading: "Our project.", description: "",
+      key: "team", label: "Our Team", heading: "Our team.", description: "",
       children: [
-        { key: "project-description", label: "Engineering", href: "project-description.html#engineering", icon: "DNA", description: "Explore our design, build, test, and learn cycle." },
-        { key: "project-problem", label: "The Problem", href: "project-description.html#abstract", icon: "Stomach", description: "The background and motivation for our project." }
+        { key: "team", label: "Meet Our Team", href: "team.html", icon: "Phoenix", description: "Meet the students and mentors behind RENATA." },
+        { key: "contribution", label: "Contribution", href: "contribution.html", icon: "DNA", description: "Explore our team’s contribution." }
       ]
     },
+    { key: "project", label: "Our Project", href: "project-description.html" },
     {
       key: "lab-work", label: "Lab Work", icon: "DNA",
       heading: "Lab work.",
@@ -75,7 +75,8 @@ window.SITE_DATA = {
           links: [
             { text: "Meet Our Team", href: "team.html" },
             { text: "PIs & Mentors", href: "team.html#mentors" },
-            { text: "Students", href: "team.html#students" }
+            { text: "Students", href: "team.html#students" },
+            { text: "Contribution", href: "contribution.html" }
           ]
         },
         {
@@ -101,6 +102,16 @@ window.SITE_DATA = {
           ]
         }
       ]
+    }),
+
+    contribution: makePage({
+      group: "team",
+      kicker: "Our Team / Contribution",
+      title: "Contribution",
+      lead: "Our team’s contribution to the iGEM community.",
+      buttons: [{ text: "Meet Our Team", href: "team.html", style: "secondary" }],
+      cardsTitle: "Content coming soon",
+      cardsLead: "The contribution write-up and supporting resources will be added here."
     }),
 
     team: makePage({
@@ -332,16 +343,16 @@ window.SITE_DATA = {
       group: "engagement",
       kicker: "Stakeholders / Decisions / Integration",
       title: "<span class='accent-gradient'>Human Practices</span>",
-      lead: "PLACEHOLDER: Document the stakeholders, methods, evidence, interpretation, and project decisions that shaped Renata.",
+      lead: "Explore the stakeholder interviews, community outreach, and professional feedback that shaped RENATA’s project decisions.",
       buttons: [],
       cards: [],
     }),
 
     education: makePage({
       group: "engagement",
-      kicker: "Events / Audiences / Outcomes",
+      kicker: "Education",
       title: "Project <span class='accent-gradient'>education</span>",
-      lead: "Explore each education event as its own record, from the intended audience and activity to the evidence, reflection, and resulting project effect.",
+      lead: "Explore our learning activities, interviews, community outreach, and professional exchanges.",
       buttons: [],
       cards: [],
     }),
@@ -410,27 +421,73 @@ window.SITE_DATA.labWorkModel = {
   text: "Place the final model figure here. Its caption should state the model assumptions, variables, principal predictions, and the specific laboratory decisions those predictions informed."
 };
 
+window.SITE_DATA.educationOverview = {
+  "title": "Overview",
+  "paragraphs": [
+    "We started RENATA from the dream of two high schoolers wanting to bring synthetic biology and bioengineering to Orange County, and throughout our journey, we realized just how difficult it can be for students to enter the field. Throughout our process of creating this team, we spent countless hours pouring over research papers and learned fundamentals of engineering, experiencing firsthand how much background knowledge we needed to have before even starting to develop our project.",
+    "We wanted to change that for other students. After all, we believed that other students deserved the same opportunities within science, regardless of how much experience they had with science. RENATA started as two high schoolers who shared an interest in biology and wanted to turn that curiosity into something tangible and applicable for the people around them.",
+    "With this in mind, we developed a few educational initiatives aimed at different age groups and levels of scientific understanding. Through our ULP education event, we introduced over 30 children to DNA and genetics using LEGO Blocks and beads. At Troy High School, we organized hands-on biotechnology experiments to demonstrate how microorganisms and enzymes work, connecting these concepts to our own research. Finally, we collaborated with other iGEM teams to develop an online educational resource for students interested in beginning their own journeys in synthetic biology.",
+    "Through these initiatives, we hoped to give students something we wished we had when starting RENATA: An introduction to synthetic biology that made the subject easier to understand and gave them somewhere to begin on their own journey."
+  ],
+  "source": "1. RENATA. “Overview and Education Initiatives.” User-supplied write-up, n.d."
+};
+
 window.SITE_DATA.educationEventRoutes = [
   {
     number: "01",
-    title: "Education event 01",
-    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    title: "SABPA OC/LA Biochem Forum at UCI",
+    summary: "Ritvin and Karthik presented RENATA’s early project ideas and explored the commercial and clinical considerations for developing SultFlux.",
     href: "education-event-01.html",
-    status: "PLACEHOLDER: Event record"
+    status: "May · Forum participation"
   },
   {
     number: "02",
-    title: "Education event 02",
-    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    title: "Interview with Gastroenterologist and Team",
+    summary: "Dr. Singh discussed PCS diagnosis, existing treatment limitations, and the practical questions shaping RENATA’s proposed approach.",
     href: "education-event-02.html",
-    status: "PLACEHOLDER: Event record"
+    status: "Clinical interview"
   },
   {
     number: "03",
-    title: "Education event 03",
-    summary: "PLACEHOLDER: Add the event name, date, audience, format, and central learning objective.",
+    title: "Interview with Two Patients to Understand Personal Experiences",
+    summary: "Two patient interviews explored daily life after gallbladder removal and highlighted ease of use, clinical testing, and transparency about potential risks.",
     href: "education-event-03.html",
-    status: "PLACEHOLDER: Event record"
+    status: "Patient interviews"
+  },
+  {
+    number: "04",
+    title: "Facebook Patient Responses",
+    summary: "International Facebook outreach revealed varied experiences after gallbladder removal and helped prioritize convenience and tolerability in RENATA’s design.",
+    href: "education-event-04.html",
+    status: "Online patient outreach"
+  },
+  {
+    number: "05",
+    title: "Seva Collective Event",
+    summary: "RENATA helped package and distribute food while sharing its PCS research with volunteers and families from communities across Orange County.",
+    href: "education-event-05.html",
+    status: "Community service"
+  },
+  {
+    number: "06",
+    title: "27th Annual San Diego MedChem Symposium at UCSD",
+    summary: "RENATA shared its progress in July and discussed enzyme engineering, simulation-based evaluation, and patient-informed design with industry professionals.",
+    href: "education-event-06.html",
+    status: "July · Symposium participation"
+  },
+  {
+    number: "07",
+    title: "ULP Education Event: Introducing Children to Genetics",
+    summary: "RENATA worked with ULP to introduce over 30 children ages nine and above to DNA, genetics, and synthetic biology through LEGO and bead activities.",
+    href: "education-ulp.html",
+    status: "Hands-on genetics education"
+  },
+  {
+    number: "08",
+    title: "Troy Biotechnology Education Day",
+    summary: "Hands-on biotechnology activities at Troy High School and the student-led BYLD club introduced students to biotechnology and pathways into RENATA.",
+    href: "education-troy.html",
+    status: "High-school biotechnology education"
   }
 ];
 
@@ -463,9 +520,402 @@ const makeEducationEvent = (number) => makePage({
   ]
 });
 
-window.SITE_DATA.pages["education-event-01"] = makeEducationEvent("01");
-window.SITE_DATA.pages["education-event-02"] = makeEducationEvent("02");
-window.SITE_DATA.pages["education-event-03"] = makeEducationEvent("03");
+window.SITE_DATA.pages["education-event-01"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 01 / May",
+  title: "SABPA OC/LA Biochem Forum at UCI",
+  lead: window.SITE_DATA.educationEventRoutes[0].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Forum at a glance",
+  cardsLead: "RENATA’s participation in the 18th Annual SABPA OC/LA Biomedical Forum.",
+  cards: [
+    { tag: "When", title: "May", text: "18th Annual SABPA OC/LA Biomedical Forum." },
+    { tag: "Where", title: "Beckman Center", text: "Irvine, California." },
+    { tag: "Team", title: "Ritvin and Karthik", text: "Sharing RENATA’s preliminary progress and early project ideas." },
+    { tag: "Focus", title: "Commercial and clinical potential", text: "Exploring the evidence, scalability, cost, safety, and delivery considerations for SultFlux." }
+  ],
+  details: [
+    {
+      id: "forum-participation",
+      eyebrow: "01 / Participation",
+      title: "Introducing RENATA at the forum",
+      text: "In May, RENATA attended the 18th Annual SABPA OC/LA Biomedical Forum at the Beckman Center in Irvine, where Ritvin and Karthik had the opportunity to introduce our early project ideas to professionals in biotechnology, healthcare, entrepreneurship, and venture capital. Notable participants included Dr. Edward Kim of City of Hope Orange County, Dan Ross of BioPharma Capital, Han Li of Riviera Holdings VC, and Benjamin Albaum, co-founder and CEO of VIZQ Technologies. We used this opportunity to present RENATA’s preliminary progress, pitch SultFlux, and seek perspectives on its potential development in the industry itself."
+    },
+    {
+      id: "commercial-viability",
+      eyebrow: "02 / Commercial viability",
+      title: "From experimental concept to a feasible product",
+      text: "We wanted to understand what would be required to translate SultFlux, our proposed bacterial system for sulfating lithocholic acid (LCA), from an experimental concept into a potentially useful healthcare technology. We focused on two dimensions of our project’s potential impact: commercial viability and clinical applications. From an investment perspective, we wanted to understand what would make SultFlux a feasible biomedical product rather than simply a successful laboratory experiment. This meant considering whether our engineered bacterial system could consistently sulfate sufficient quantities of lithocholic acid (LCA), whether its production and delivery could be scaled economically, and what experimental evidence would be needed to justify further investment. These questions encouraged us to think about development costs, manufacturing, and the practical limitations of bringing a synthetic biology-based product to market."
+    },
+    {
+      id: "clinical-applications",
+      eyebrow: "03 / Clinical applications",
+      title: "Distinguishing enzyme activity from patient benefit",
+      text: "From a clinical perspective, we examined the distinction between demonstrating LCA sulfation and establishing a meaningful therapeutic benefit. Although our proposed system aims to modify LCA in the gastrointestinal tract, successful enzyme activity alone would not demonstrate that the treatment improves patient outcomes. We therefore considered the challenges of safely delivering engineered bacteria to the intestine, controlling their activity, evaluating possible effects on the broader gut environment, and determining whether the resulting changes in bile acid composition could benefit patients experiencing post-cholecystectomy symptoms."
+    },
+    {
+      id: "development-reflection",
+      eyebrow: "04 / Reflection",
+      title: "What this means for future development",
+      text: "The forum helped us recognize that SultFlux would need to satisfy different standards at each stage of development. Our immediate research could establish whether the engineered system functions as intended, but clinical translation would require additional evidence of safety and therapeutic benefit, while commercialization would depend on scalability, cost, and a viable delivery strategy. We incorporated these considerations into our broader evaluation of RENATA's future applications, distinguishing what our experiments could demonstrate from what would still be required to develop an accessible biomedical treatment."
+    }
+  ]
+});
+window.SITE_DATA.pages["education-event-02"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 02 / Clinical Interview",
+  title: "Interview with Gastroenterologist and Team",
+  lead: window.SITE_DATA.educationEventRoutes[1].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Interview at a glance",
+  cardsLead: "A professional perspective on PCS and feedback on RENATA’s project direction.",
+  cards: [
+    { tag: "Interview", title: "Dr. Singh", text: "Discussing gastrointestinal complications following gallbladder removal." },
+    { tag: "Diagnosis", title: "Overlapping symptoms", text: "Considering possible causes of diarrhea and bloating before attributing them to bile acid metabolism." },
+    { tag: "Treatment", title: "Everyday limitations", text: "Discussing cholestyramine, medication interactions, and the challenges of daily use." },
+    { tag: "Reflection", title: "Project practicality", text: "Considering patient needs, existing medications, and the broader gut microbiome." }
+  ],
+  details: [
+    {
+      id: "pcs-diagnosis",
+      eyebrow: "01 / Diagnosis",
+      title: "Understanding the challenges of diagnosing PCS",
+      text: "To better understand Post-Cholecystectomy Syndrome (PCS) from a professional’s perspective and for feedback on our project’s direction, we interviewed Dr. Singh about challenges he’s faced around diagnosing and treating patients with gastrointestinal complications following a gallbladder removal. One of the first things we discussed was how difficult PCS can be to diagnose, due to the fact that symptoms such as diarrhea and bloating often overlap with other gastrointestinal conditions such as IBS (Irritable Bowel Syndrome). During our interview, he told RENATA that physicians have to consider many possible causes before determining whether a patient’s symptoms are related to bile acid metabolism."
+    },
+    {
+      id: "existing-treatments",
+      eyebrow: "02 / Existing treatments",
+      title: "Discussing treatment limitations and daily use",
+      text: "Following this, we started to discuss different existing treatments within the medical sphere, such as cholestyramine, which patients can take to bind bile acids in the digestive tract. While these medications can help patients manage their current symptoms, Dr. Singh explained to us the limitations and concerns that patients and physicians have alike when dealing with this treatment. Cholestyramine has an unpleasant taste and can interfere with the absorption of other medications, as well as how difficult it may be in order to take cholestyramine on a day-to-day basis. To RENATA, this meant a lot, as our proposed treatment aims to use the BtSULT enzyme in order to modify secondary bile acids instead of simply binding to them."
+    },
+    {
+      id: "project-practicality",
+      eyebrow: "03 / Project practicality",
+      title: "Considering patient needs and the gut microbiome",
+      text: "Moving on, when we introduced our project, Dr. Singh challenged us to consider whether our approach was practical on a realistic scale. He mentioned to us that although digestive symptoms may be present after a gallbladder removal on a much wider patient scale, long-term complications have a smaller patient base, and many can be treated using existing medications. He also encouraged our team to investigate the relationship between the gut microbiome and other gastrointestinal symptoms, and suggested that focusing only on bile acids may overlook other factors that contribute to the discomfort of patients."
+    },
+    {
+      id: "interview-reflection",
+      eyebrow: "04 / Reflection",
+      title: "Reconsidering the potential benefit of our approach",
+      text: "This interview helped us think more critically about our project at hand, and made us rethink how patients could benefit the most from our proposed treatment and whether our approach could offer a meaningful edge over existing medications."
+    }
+  ]
+});
+window.SITE_DATA.pages["education-event-03"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 03 / Patient Interviews",
+  title: "Interview with Two Patients to Understand Personal Experiences",
+  lead: window.SITE_DATA.educationEventRoutes[2].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Patient perspectives at a glance",
+  cardsLead: "Two individual experiences informed the questions RENATA asks about its proposed treatment.",
+  cards: [
+    { tag: "Approach", title: "Two individual interviews", text: "Listening to how gallbladder removal and continuing digestive symptoms affect everyday life." },
+    { tag: "Patient 1", title: "Long-term daily adjustments", text: "Chronic diarrhea, dietary restrictions, and the impact on meals and special occasions." },
+    { tag: "Patient 2", title: "Relief with remaining challenges", text: "Improvement after surgery alongside continuing difficulty with oily and fatty foods." },
+    { tag: "Learning", title: "Usability and transparency", text: "Simple administration, clinical testing, and clear information about potential side effects and risks." }
+  ],
+  details: [
+    {
+      id: "patient-interview-context",
+      eyebrow: "01 / Listening to patients",
+      title: "Understanding everyday experiences",
+      text: "In addition to Dr. Singh and his personal feedback on what PCS entails and how he has seen it within the medical environment, we wanted to hear from patients who have experienced or are currently experiencing PCS and how that affects their everyday lives. To do this, we conducted two individual patient interviews, each revealing different challenges that surround gallbladder removal and the possible long-term effects of doing so.",
+      note: "These are two personal accounts shared with the team. They illustrate individual experiences; they cannot establish how common symptoms are or demonstrate the safety or effectiveness of RENATA’s proposed treatment. Source 1: RENATA. “Interview with Two Patients to Understand Personal Experiences.” Team-provided interview account, supplied 21 Oct. 2026."
+    },
+    {
+      id: "first-patient-experience",
+      eyebrow: "02 / Patient 1",
+      title: "Living with long-term dietary restrictions",
+      text: "Our first patient had a cholecystectomy in 2009 after having gastrointestinal problems, which included pancreatitis and gallbladder dysfunction. After surgery, her digestive symptoms continued, which left her with chronic diarrhea and dietary restrictions that she has dealt with for over 16 years. She described having to avoid fried food and other dietary triggers, relying on fiber supplements, digestive enzymes, exercise, and strict diet adjustments in order to make her symptoms more manageable. One personal account she had was not being able to have holiday meals or eat on special occasions, as that could disrupt her routine and worsen her symptoms. She explained to us that current medications, including Prilosec, had done little to help her. Prilosec (omeprazole) is a proton pump inhibitor that reduces the amount of acid produced in the stomach.[2]",
+      source: { label: "2. “Omeprazole.” MedlinePlus, U.S. National Library of Medicine. Accessed 21 Oct. 2026.", href: "https://medlineplus.gov/druginfo/meds/a693050.html" }
+    },
+    {
+      id: "second-patient-experience",
+      eyebrow: "03 / Patient 2",
+      title: "Improvement after surgery and remaining food sensitivities",
+      text: "Our second patient was an elderly Chinese man who shared a different experience than our first. Before undergoing his gallbladder removal surgery, he mentioned that he struggled with gas, severe bloating, digestive discomfort, and the constant feeling that food was sitting in his chest without being digested. Due to this, his appetite and energy were heavily affected. We learned that his gallbladder removal cleared up most of his discomfort, but he still struggles with oily and fatty foods, particularly those in Chinese cuisine."
+    },
+    {
+      id: "patient-interview-learning",
+      eyebrow: "04 / Learning moment",
+      title: "Ease of use, clinical testing, and transparency",
+      text: "When we discussed our possible treatment through RENATA, he emphasized to us that <strong>an ideal medication should be simple to use, especially for older patients</strong>. He also expressed concerns about long-term side effects from using a medication of this sort. Our first patient also put an emphasis on the importance of clinical testing and transparency regarding potential side effects or risks of using medication that is biotechnology-based."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-event-04"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 04 / Online Patient Outreach",
+  title: "Facebook Patient Responses",
+  lead: window.SITE_DATA.educationEventRoutes[3].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Outreach at a glance",
+  cardsLead: "Listening beyond our existing networks to understand everyday concerns after gallbladder removal.",
+  cards: [
+    { tag: "Approach", title: "Facebook communities", text: "Reaching people and groups beyond the team’s personal connections and Orange County." },
+    { tag: "Reach", title: "International outreach", text: "Contacting communities in the United Kingdom, Australia, Canada, and across the United States." },
+    { tag: "Responses", title: "Different lived experiences", text: "Accounts ranged from smooth recoveries to long-term digestive symptoms and difficulty accessing medication." },
+    { tag: "Design priorities", title: "Convenience and tolerability", text: "Considering how a proposed prebiotic–probiotic approach could fit patients’ daily lives." }
+  ],
+  details: [
+    {
+      id: "outreach-motivation",
+      eyebrow: "01 / Motivation",
+      title: "Hearing from people beyond our networks",
+      text: "While our two patient interviews provided valuable insights into patients and how they have been affected by gallbladder removals, we realized that we could broaden the range of patient perspectives we heard. We wanted to get insights into PCS from people beyond our personal connections, email contacts, and Orange County."
+    },
+    {
+      id: "international-outreach",
+      eyebrow: "02 / Outreach",
+      title: "Connecting through Facebook communities",
+      text: "Thinking about this, we turned to technology. With Facebook communities, we could reach people beyond our networks, in other countries and continents. We reached out to people and groups in the United Kingdom, Australia, Canada, and all across the United States in order to hear about symptoms or issues post-gallbladder removal."
+    },
+    {
+      id: "patient-response-themes",
+      eyebrow: "03 / Responses",
+      title: "Varied recoveries and everyday challenges",
+      text: "One unique aspect of our research was the fact that responses varied very significantly. We found patients who had pretty seamless surgeries, whereas others had major digestive problems for years or decades after surgery. We heard from a patient who experienced malabsorption issues for almost 12 years, and another patient mentioned how unpredictable digestive symptoms led to them having to organize their days around bathroom visits. One person also mentioned how difficult it is to get cholestyramine, and other responders in the same thread agreed."
+    },
+    {
+      id: "outreach-reflection",
+      eyebrow: "04 / Reflection",
+      title: "Broadening the concerns we considered",
+      text: "Overall, our experience with Facebook showed us how technology could contribute to our research. By reaching people outside of our community, state, country, and continent, we were able to learn about concerns that we might not have identified through our interviews or through literature that we read."
+    },
+    {
+      id: "convenience-learning",
+      eyebrow: "05 / Learning moment",
+      title: "Making convenience a design priority",
+      text: "These responses made us reconsider how patients would take our proposed treatment. After receiving these Facebook responses and going through our research after interviewing patients and professionals within the field, we realized that developing an effective enzyme was only one part of the whole. For patients, one of the most important parts of medicine was <strong>how convenient it would be to take medications without introducing additional complications into their already-difficult lifestyles</strong>."
+    },
+    {
+      id: "prebiotic-probiotic-design",
+      eyebrow: "06 / Design direction",
+      title: "Exploring a prebiotic–probiotic approach",
+      text: "With this in mind, we moved towards developing a prebiotic–probiotic approach, with the goal of minimizing unwanted side effects associated with existing medications. This shift led us to consider how our engineered probiotic could work alongside existing prebiotic components and broadened our focus beyond the BtSULT enzyme itself. The patient and professional feedback we received helped us establish <strong>convenience and tolerability as major factors in our design</strong>.",
+      note: "Evidence boundary: These self-selected Facebook responses describe personal experiences. They cannot establish symptom prevalence or demonstrate the safety, effectiveness, or improved tolerability of RENATA’s proposed approach. Reduced side effects remain a design goal requiring experimental and clinical evaluation. Source 1: RENATA. “Facebook Patient Responses.” Team-provided outreach account, supplied 21 Oct. 2026."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-event-05"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 05 / Community Service",
+  title: "Seva Collective Event",
+  lead: window.SITE_DATA.educationEventRoutes[4].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Community service at a glance",
+  cardsLead: "Putting selfless service into practice while learning to communicate our research beyond the biotechnology community.",
+  cards: [
+    { tag: "Organizer", title: "SEVA Collective", text: "A community service event supporting individuals and families in need." },
+    { tag: "Contribution", title: "Food packaging and distribution", text: "Working alongside fellow volunteers to help meet immediate community needs." },
+    { tag: "Community", title: "Across Orange County", text: "Volunteers came from Santa Ana, Irvine, Tustin, Costa Mesa, and other communities around us." },
+    { tag: "Learning", title: "Accessible science communication", text: "Discussing RENATA’s PCS research with people outside the biotechnology field." }
+  ],
+  details: [
+    {
+      id: "seva-community-service",
+      eyebrow: "01 / Community service",
+      title: "Packaging and distributing food together",
+      text: "As a team, we participated in a community service event organized by SEVA Collective, where we helped package and distribute food to individuals and families in need. The event brought together volunteers from across Orange County, including Santa Ana, Irvine, Tustin, and Costa Mesa, which gave us the opportunity to work alongside people from other communities around us."
+    },
+    {
+      id: "seva-science-conversations",
+      eyebrow: "02 / Community conversations",
+      title: "Making our research easier to understand",
+      text: "Throughout the event, our members spoke to fellow volunteers and families about RENATA and explained our research into post-cholecystectomy syndrome (PCS) and how our proposed treatment could potentially help patients. This event was different from the scientific conferences we attended, as it allowed us to discuss our research with people outside of the biotechnology field. These conversations helped us practice our presentation skills and make our project easier for people to understand."
+    },
+    {
+      id: "seva-service-reflection",
+      eyebrow: "03 / Reflection",
+      title: "Putting selfless service into practice",
+      text: "Beyond sharing our research, we wanted to put the meaning of <strong>“seva,” or selfless service, into practice</strong> by contributing to the community around us. This gave us an opportunity to help serve people facing immediate needs and reminded us of the communities we hope our research can ultimately benefit.",
+      note: "Source 1: RENATA. “Seva Collective Event.” Team-provided event account, supplied 21 Oct. 2026."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-event-06"] = makePage({
+  group: "engagement",
+  kicker: "Education Event 06 / July",
+  title: "27th Annual San Diego MedChem Symposium at UCSD",
+  lead: window.SITE_DATA.educationEventRoutes[5].summary,
+  buttons: [{ text: "Back to education", href: "education.html", style: "secondary" }],
+  cardsTitle: "Symposium at a glance",
+  cardsLead: "Sharing the project’s development since the May SABPA forum and gathering feedback on the next iteration.",
+  cards: [
+    { tag: "When", title: "July", text: "27th Annual San Diego MedChem Symposium." },
+    { tag: "Where", title: "UC San Diego", text: "Conversations with researchers and pharmaceutical professionals." },
+    { tag: "Progress", title: "Patient-informed design", text: "A PCS-focused BtSULT approach and proposed prebiotic–probiotic delivery strategy." },
+    { tag: "Feedback", title: "Enzyme engineering", text: "Discussion of enzymatic activity, substrate specificity, and simulation-based evaluation." }
+  ],
+  details: [
+    {
+      id: "medchem-participation",
+      eyebrow: "01 / Participation",
+      title: "Sharing progress at UC San Diego",
+      text: "Following our patient and professional interviews, RENATA travelled to UC San Diego in July to attend the 27th Annual San Diego MedChem Symposium. The event brought together researchers and pharmaceutical professionals from organizations such as Scripps Research, Schrödinger, Novartis, Johnson &amp; Johnson, and Pfizer. At our visit to SABPA in May, we were still introducing our initial project ideas, but at this symposium we had the opportunity to showcase how far RENATA had progressed throughout the season through multiple project iterations."
+    },
+    {
+      id: "medchem-project-progress",
+      eyebrow: "02 / Project progress",
+      title: "Explaining how patient feedback shaped the project",
+      text: "By this point we had narrowed our focus to post-cholecystectomy syndrome (PCS) and developed our proposed approach of using a custom-engineered BtSULT enzyme to modify secondary bile acids. Our Human Practices research had also influenced considerations about how patients would need to receive treatment, which led us towards a prebiotic–probiotic delivery approach with the goals of minimizing side effects and improving ease of use. At UCSD, we shared this progress with industry professionals and explained how feedback from patients and responses from people suffering from similar issues had shaped the direction of our research."
+    },
+    {
+      id: "medchem-engineering-feedback",
+      eyebrow: "03 / Industry feedback",
+      title: "Discussing enzyme design and evaluation",
+      text: "We also discussed enzyme engineering and our approach with scientists experienced in small-molecule design and drug development. We received feedback on factors to consider when creating a custom enzyme, including enzymatic activity, substrate specificity, and how we interpreted scores from the simulation software used in our project. These conversations helped us identify areas for further development and investigation as we continued to refine our project. Overall, the symposium allowed RENATA to share its progress, receive industry feedback, and reconsider how we were engineering our enzymes.",
+      note: "Evidence boundary: This account documents discussion and project direction. It does not establish improved enzyme activity, substrate specificity, or reduced treatment side effects. Source 1: RENATA. “27th Annual San Diego MedChem Symposium at UCSD.” Team-provided event account, supplied 21 Oct. 2026."
+    },
+    {
+      id: "medchem-design-follow-up",
+      eyebrow: "04 / Working note — details pending",
+      title: "Documenting the change to our protein-design workflow",
+      text: "The specific workflow change and score-based selection evidence still need to be added from the team’s records. Complete the following points to show how the symposium feedback influenced the custom-engineered protein design.",
+      steps: [
+        { label: "Workflow", text: "Describe the original design process, the change proposed after the symposium, and whether it was implemented. Link the dated design records supporting that sequence." },
+        { label: "Metrics", text: "Name the software and versions, exact score or metric names, what each measures, and the selection criteria actually used. Include units and thresholds where applicable." },
+        { label: "Evidence", text: "Provide candidate identifiers and score tables or plots, with links to the underlying outputs and comparison baseline. Explain how those results informed which candidate was selected, if selection is complete." },
+        { label: "Validation", text: "Separate simulation-based predictions from measured experimental results, and identify the assays completed or still required to evaluate activity and substrate specificity." }
+      ],
+      note: "Pending evidence: No specific workflow revision, metric names, thresholds, score values, or final candidate selection was supplied for this event."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-ulp"] = makePage({
+  "group": "engagement",
+  "kicker": "Education Event / ULP",
+  "title": "ULP Education Event: Introducing Children to Genetics",
+  "lead": "RENATA worked with ULP to introduce over 30 children ages nine and above to DNA, genetics, and synthetic biology through LEGO and bead activities.",
+  "buttons": [
+    {
+      "text": "Back to education",
+      "href": "education.html",
+      "style": "secondary"
+    }
+  ],
+  "cardsTitle": "Bringing DNA into the classroom",
+  "cardsLead": "Hands-on models introduce DNA sequences and observable traits through familiar materials.",
+  "cards": [
+    {
+      "tag": "Participants",
+      "title": "Over 30 children",
+      "text": "Ages nine and above, with limited experience in molecular biology."
+    },
+    {
+      "tag": "Collaboration",
+      "title": "RENATA and ULP",
+      "text": "Our first education initiative introducing DNA, genetics, and synthetic biology."
+    },
+    {
+      "tag": "Activity 1",
+      "title": "LEGO DNA sequences",
+      "text": "Using colored bricks to explore bases, sequence order, and genetic information."
+    },
+    {
+      "tag": "Activity 2",
+      "title": "Beads and traits",
+      "text": "Representing selected observable characteristics and discussing variation."
+    }
+  ],
+  "details": [
+    {
+      "id": "ulp-classroom",
+      "eyebrow": "01 / Introduction",
+      "title": "Bringing DNA into the Classroom",
+      "text": "For our first education initiative, RENATA worked with ULP to introduce over 30 children ages nine and above to the fundamentals of DNA, genetics, and synthetic biology overall.",
+      "paragraphs": [
+        "To us, teaching synthetic biology presented us with quite an interesting question. How do you explain a molecule that can’t be seen with the naked eye to a student who might never have studied cells before?",
+        "We began to tackle this problem by introducing DNA as a set of instructions that organisms use in order to develop and function. Furthering this, we introduced the relationship between DNA and observable characteristics. Traits such as hair texture and certain inherited physical features such as height helped provide some familiar examples for how genetic information can influence and come to create an organism as a whole. Through this, our students were given something that they already understood before we introduced more unfamiliar concepts",
+        "From there, we explained the basic idea behind synthetic biology. Scientists can study genetic information, and through processes within genetic engineering, modify certain sequences to change how an organism functions. This is a similar principle behind many iGEM projects, including RENATA’s work.",
+        "However, we wanted students not only to listen and see these ideas, but also experience them tangibly instead of simply relying on verbal explanations. With this in mind, we designed two activities that turned genetic concepts into a tangible model that students could experience in front of them."
+      ]
+    },
+    {
+      "id": "ulp-lego-dna",
+      "eyebrow": "02 / Activity 1",
+      "title": "Activity 1: Building DNA using LEGO Bricks",
+      "text": "Our first activity used LEGO blocks to represent the four kinds of nucleotide bases that make up DNA. Each DNA base was represented by a different type of color of block, which allowed students to distinguish between adenine, thymine, cytosine, and guanine. Students could then arrange the blocks into sequences, which created a simplified physical representation of genetic information.",
+      "paragraphs": [
+        "The purpose of this activity was to explain why the order of DNA bases matters. Two sequences can contain the same bases but result in unique genetic information being stored, as those bases are organized differently. By rearranging their LEGO bricks, students could see that the sequence itself was important even when the building materials were the same.",
+        "We connected this idea to the way genetic changes can influence an organism’s traits. In real biological systems, certain sequences of DNA contain instructions for making proteins. Proteins perform many of the functions necessary for life, and changes to the sequences encoding them can sometimes change their structure or activity.",
+        "This also gave us a way to introduce genetic engineering without beginning with unfamiliar laboratory techniques. If genetic information is stored in sequences, scientists can modify biological functions by changing those sequences to their liking. Although the LEGO model simplified the actual complexity of DNA, it gave students a starting point for understanding how genetic information can be modified.",
+        "All in all, this activity allowed students to experiment with different arrangements themselves, which allowed them to directly work with the model, compare their own sequences, and ask questions about how those changes may affect a living organism on a long term scale."
+      ]
+    },
+    {
+      "id": "ulp-bead-traits",
+      "eyebrow": "03 / Activity 2",
+      "title": "Activity 2: Exploring DNA Traits Through Beads",
+      "text": "Our second activity was centered around defining the relationship between genetics and physical characteristics that an organism has. We developed a trait chart that students could use to identify some of their own physical characteristics. Different colored beads corresponded to different responses on the chart, hence allowing students to create a physical representation of their selected traits. This gave a look into how inherited genetic information can relate to observable physical characteristics, which is a little different from the LEGO activity we had done previously.",
+      "paragraphs": [
+        "Students used their completed bead arrangements to compare traits that they had recorded down from their own personal perspectives. This also helped introduce the concept of variation between individuals and why members of the same species can have different physical characteristics. Additionally, this activity created opportunities to discuss inheritance and the relationship between genes and traits. We introduced these ideas through simplified examples appropriate for the students' ages, since many physical characteristics are influenced by multiple genes and environmental factors.",
+        "When designing this activity, one of the main considerations that we put into picture was to make science personal enough for students to understand. DNA is quite an abstract concept when understood as a double helix or sequence of nucleotides. However, when students are able to see their own characteristics, it gives students a familiar example of why genetic information matters."
+      ]
+    },
+    {
+      "id": "ulp-synthetic-biology",
+      "eyebrow": "04 / Educational purpose",
+      "title": "Educational Purpose and Synthetic Biology Connection",
+      "text": "After introducing DNA sequences and inherited traits, we connected the two activities to the basic principles of synthetic biology. The LEGO activity showed students how genetic information is organized, while the bead activity gave them examples of how biological characteristics can vary. Together, they provided a base for explaining to younger individuals how scientists study genetic information and attempt to modify biological systems.",
+      "paragraphs": [
+        "Our ULP event was designed as an introduction to genetics for students who had limited experience with molecular biology. We taught over 30 children through activities that allowed them to build models, examine their own characteristics, and discuss the concepts behind their work. The LEGO and bead activities were selected because they made different parts of genetics easier to visualize. One dealt with the information stored in DNA, while the other dealt with observable characteristics influenced by genetics. These activities also gave us experience explaining scientific concepts without relying on the terminology we normally use when discussing our project."
+      ],
+      "note": "Source 1: RENATA. “Overview and Education Initiatives.” User-supplied write-up, n.d. This account describes the activities and their educational purpose; no formal learning-assessment results were supplied."
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-troy"] = makePage({
+  "group": "engagement",
+  "kicker": "Education Event / Troy High School",
+  "title": "Troy Biotechnology Education Day",
+  "lead": "Hands-on biotechnology activities at Troy High School and the student-led BYLD club introduced students to biotechnology and pathways into RENATA.",
+  "buttons": [
+    {
+      "text": "Back to education",
+      "href": "education.html",
+      "style": "secondary"
+    }
+  ],
+  "cardsTitle": "From classroom to research",
+  "cardsLead": "Introducing biotechnology through experiments, lectures, and opportunities to participate.",
+  "cards": [
+    {
+      "tag": "Education day",
+      "title": "Hands-on biotechnology",
+      "text": "Students explored how living organisms function through experiments at Troy High School."
+    },
+    {
+      "tag": "Student-led club",
+      "title": "BYLD",
+      "text": "Karthik and Humza founded the Biotechnology Youth Literacy Directive to introduce biotechnology and synthetic biology at their school."
+    }
+  ],
+  "details": [
+    {
+      "id": "troy-classroom",
+      "eyebrow": "01 / Classroom activities",
+      "title": "Bringing Biotechnology into the High School Classroom",
+      "text": "After our education event at ULP, we wanted to move towards a more complex and experimental side of explaining synthetic biology and our project. Our event at Troy High School gave the opportunity for students to see how living organisms function through hands-on experiments.",
+      "paragraphs": []
+    },
+    {
+      "id": "troy-byld",
+      "eyebrow": "02 / Student-led education",
+      "title": "Biotech Youth Literacy Directive Club",
+      "text": "Karthik and Humza founded the Biotechnology Youth Literacy Directive (BYLD), a student-led club dedicated to introducing biotechnology and synthetic biology to students at our school. Through multiple lectures on DNA analysis techniques and their applications in research, we helped students explore concepts beyond their regular biology classes. BYLD also served as a pathway into RENATA, encouraging students interested in biotechnology to get involved in iGEM and participate in hands-on synthetic biology research.",
+      "paragraphs": [],
+      "note": "Source 1: RENATA. “Overview and Education Initiatives.” User-supplied write-up, n.d."
+    }
+  ]
+});
 
 window.SITE_DATA.pages["experiment-assembly"] = makePage({
   group: "lab-work",
