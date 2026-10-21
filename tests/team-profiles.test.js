@@ -112,11 +112,11 @@ test("compact cards expose an accessible full-card button and escape member text
   assert.match(html, /R&amp;D/);
   assert.doesNotMatch(html, /Long private draft/);
   const brandon = students.find(member => member.name === "Brandon Trinh");
-  const noPhoto = render({ key: "students" }, brandon, students.indexOf(brandon));
-  assert.equal(brandon.photo, undefined);
-  assert.match(noPhoto, /class="member-photo-placeholder"/);
-  assert.match(noPhoto, /View profile: Brandon Trinh/);
-  assert.doesNotMatch(noPhoto, /<img/);
+  const withPhoto = render({ key: "students" }, brandon, students.indexOf(brandon));
+  assert.match(brandon.photo, /^assets\/Team Images\/Brandon Trinh\.jpeg\?v=/);
+  assert.match(withPhoto, /class="member-photo"/);
+  assert.match(withPhoto, /View profile: Brandon Trinh/);
+  assert.match(withPhoto, /Brandon Trinh\.jpeg\?v=/);
   assert.doesNotMatch(brandon.bio, /leave me without|photo|let me know/i);
   assert.ok(fs.existsSync(path.join(__dirname, "../assets/Team Images/Brandon Trinh.jpeg")));
 });
