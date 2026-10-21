@@ -66,7 +66,7 @@ test("the full-team photo block is removed while individual roster cards remain"
   assert.match(html, /class="team-roster"/);
   assert.match(html, /id="mentors"/);
   assert.match(html, /id="students"/);
-  assert.equal(pageData.teamGroups.reduce((total, group) => total + group.members.length, 0), 28);
+  assert.equal(pageData.teamGroups.reduce((total, group) => total + group.members.length, 0), 29);
 });
 
 test("roster data, card dealing and profile behavior stay under existing controllers", () => {

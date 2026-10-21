@@ -12,8 +12,8 @@ const data = context.window.SITE_DATA;
 const groups = data.pages.team.teamGroups;
 const students = groups.find(group => group.key === "students").members;
 
-test("all 17 supplied bios map to unique students; Noah has one consolidated entry", () => {
-  const names = ["Alex Fang", "Hanyu Huang", "Margaret Lin", "Vanessa Liang", "Tiger Liu", "Kylie Tien", "Aaron Torres", "Ryan Jian", "Humza Shahzad", "Matthew She", "Deena Singh", "Yuqing Zhuo", "Karthik Sajeev", "Kyle Kao", "Noah Chu", "Brandon Trinh", "Lakshya Gupta"];
+test("all supplied student bios map to unique students; Noah has one consolidated entry", () => {
+  const names = ["Alex Fang", "Hanyu Huang", "Margaret Lin", "Vanessa Liang", "Tiger Liu", "Kylie Tien", "Aaron Torres", "Ryan Jian", "Humza Shahzad", "Matthew She", "Deena Singh", "Yuqing Zhuo", "Karthik Sajeev", "Kyle Kao", "Noah Chu", "Brandon Trinh", "Lakshya Gupta", "Kavi Shrivastava", "Ritvin Rejith", "Aidan R.", "Hannah Bae"];
   for (const name of names) {
     const matches = students.filter(member => member.name === name);
     assert.equal(matches.length, 1, name);
@@ -23,25 +23,25 @@ test("all 17 supplied bios map to unique students; Noah has one consolidated ent
   }
   assert.equal(students.length, 23);
   assert.ok(students.every(member => !/faizaan/i.test(member.name)));
-  assert.equal(students.filter(member => member.bio?.trim()).length, 17);
+  assert.equal(students.filter(member => member.bio?.trim()).length, 21);
   assert.ok(students.every(member => member.role === "Student"));
   assert.match(students.find(member => member.name === "Noah Chu").bio, /aquariums/);
 });
 
 test("mentors and members with no supplied biography are preserved", () => {
-  assert.deepEqual(Array.from(groups[0].members, member => member.name), ["Emma Zschunke", "Preya Shrivastava", "Matt M.", "Tasha B.", "Sharan S."]);
-  for (const name of ["Kavi S.", "Ritvin R.", "Aidan R.", "Ella Y.", "Hannah B.", "Toni D."]) {
+  assert.deepEqual(Array.from(groups[0].members, member => member.name), ["Emma Zschunke", "Preya Shrivastava", "Matt M.", "Dr. Tasha Barr", "Sharan S.", "Samantha Renusch"]);
+  for (const name of ["Ella Y.", "Toni D."]) {
     const member = students.find(item => item.name === name);
     assert.ok(member, name); assert.equal(member.bio?.trim() || "", "", name);
   }
-  assert.deepEqual(Array.from(groups[0].members, member => member.role), ["Primary PI", "Secondary PI", "Advisor", "Advisor", "Community Mentor"]);
+  assert.deepEqual(Array.from(groups[0].members, member => member.role), ["Primary PI", "Secondary PI", "Advisor", "Mentor", "Community Mentor", "Scientific Mentor"]);
 });
 
 test("all supplied student and mentor portraits retain their member assignments", () => {
-  const expected = ["Humza Shahzad", "Karthik Sajeev", "Kavi S.", "Kyle Kao", "Ritvin R.", "Aaron Torres", "Brandon Trinh", "Ella Y.", "Alex Fang", "Hannah B.", "Hanyu Huang", "Kylie Tien", "Margaret Lin", "Matthew She", "Ryan Jian", "Tiger Liu", "Toni D.", "Vanessa Liang", "Yuqing Zhuo", "Deena Singh", "Noah Chu", "Lakshya Gupta"];
+  const expected = ["Humza Shahzad", "Karthik Sajeev", "Kavi Shrivastava", "Kyle Kao", "Ritvin Rejith", "Aaron Torres", "Aidan R.", "Ella Y.", "Alex Fang", "Hannah Bae", "Hanyu Huang", "Kylie Tien", "Margaret Lin", "Matthew She", "Ryan Jian", "Tiger Liu", "Toni D.", "Vanessa Liang", "Yuqing Zhuo", "Deena Singh", "Noah Chu", "Lakshya Gupta"];
   const portraits = students.filter(member => member.photo);
   assert.deepEqual(Array.from(portraits, member => member.name), expected);
-  for (const [name, file] of Object.entries({"Emma Zschunke": "Emma Zschunke.png", "Matt M.": "Matt M.png", "Tasha B.": "Tasha B.png", "Sharan S.": "Sharan.png"})) {
+  for (const [name, file] of Object.entries({"Emma Zschunke": "Emma Zschunke.png", "Preya Shrivastava": "Preya.png", "Matt M.": "Matt M.png", "Dr. Tasha Barr": "Tasha B.png", "Sharan S.": "Sharan.png"})) {
     const member = groups[0].members.find(item => item.name === name);
     assert.equal(member.photo, `assets/Team Images/${file}`);
     assert.ok(fs.existsSync(path.join(__dirname, "..", member.photo)));
@@ -51,13 +51,45 @@ test("all supplied student and mentor portraits retain their member assignments"
     assert.ok(fs.existsSync(path.join(__dirname, "..", member.photo)), member.photo);
   }
   assert.equal(students.find(member => member.name === "Yuqing Zhuo").photo, "assets/Team Images/skylar zhuo.jpg");
-  assert.equal(students.find(member => member.name === "Kavi S.").bio, "");
-  assert.equal(students.find(member => member.name === "Ritvin R.").bio, " ");
+  assert.equal(students.find(member => member.name === "Kavi Shrivastava").photo, "assets/Team Images/Kavi S.jpg");
+  assert.equal(students.find(member => member.name === "Ritvin Rejith").photo, "assets/Team Images/ritvin.png");
+});
+
+test("the 17 updated bios retain supplied roles and school corrections", () => {
+  const members = groups.flatMap(group => group.members);
+  const details = {
+    "Deena Singh": /16 years old[\s\S]*Fundraising Manager[\s\S]*sponsors/,
+    "Aaron Torres": /15 years old[\s\S]*wiki\/web development[\s\S]*business/,
+    "Tiger Liu": /15 years old[\s\S]*plasmid engineering/,
+    "Brandon Trinh": /17[\s\S]*Dry Lab[\s\S]*Humza[\s\S]*Paris/,
+    "Matthew She": /14 years old[\s\S]*fundraising and marketing/,
+    "Kylie Tien": /16[\s\S]*Dry Lab & Business Member/,
+    "Dr. Tasha Barr": /Ph\.D\.[\s\S]*UC Riverside[\s\S]*experimental design/,
+    "Ritvin Rejith": /17[\s\S]*Student Leader[\s\S]*Dry Lab/,
+    "Margaret Lin": /wiki\/webdev head[\s\S]*documentation and data analysis/,
+    "Samantha Renusch": /Director of Education[\s\S]*IMPOWER Learning Lab[\s\S]*independent scientists/,
+    "Yuqing Zhuo": /17 years old[\s\S]*upcoming senior/,
+    "Humza Shahzad": /17[\s\S]*co-founders[\s\S]*Karthik Sajeev/,
+    "Kavi Shrivastava": /Northwood High School[\s\S]*Wetlab Manager/,
+    "Hanyu Huang": /17[\s\S]*Business Department fundraising/,
+    "Aidan R.": /17-year-old[\s\S]*Damien High School[\s\S]*funding and outreach/,
+    "Vanessa Liang": /15[\s\S]*secretary[\s\S]*taking attendance/,
+    "Hannah Bae": /17[\s\S]*wet lab researcher[\s\S]*Renata for Gold!!!/
+  };
+  for (const [name, pattern] of Object.entries(details)) {
+    const matches = members.filter(member => member.name === name);
+    assert.equal(matches.length, 1, name);
+    assert.match(matches[0].bio, pattern, name);
+  }
+  assert.equal(students.find(member => member.name === "Kavi Shrivastava").school, "Northwood High School");
+  assert.equal(students.find(member => member.name === "Hannah Bae").school, "Northwood High School");
+  assert.equal(students.find(member => member.name === "Aidan R.").school, "Damien High School");
+  assert.ok(students.every(member => member.role === "Student"));
 });
 
 test("profile keys match card positions and school labels use supplied facts only", () => {
   const profiles = profileMap(groups);
-  assert.equal(profiles.size, 28);
+  assert.equal(profiles.size, 29);
   for (const group of groups) group.members.forEach((member, index) => assert.equal(profiles.get(`${group.key}:${index}`), member));
   assert.equal(schoolLine(students.find(member => member.name === "Alex Fang")), "Troy High School · Class of 2027");
   assert.equal(schoolLine(students.find(member => member.name === "Margaret Lin")), "Troy High School · Senior");
@@ -69,7 +101,7 @@ test("compact cards expose an accessible full-card button and escape member text
   const start = source.indexOf("  function renderMemberCard(");
   const end = source.indexOf("  function renderExperimentsPage(", start);
   const render = vm.runInNewContext(`(${source.slice(start, end).trim()})`);
-  const html = render({ key: "students" }, { name: 'Test <Name> "One"', role: "R&D", bio: "Long private draft" }, 3);
+  const html = render({ key: "students" }, { name: 'Test <Name> "One"', photo: 'assets/Team Images/Test "One".png', role: "R&D", bio: "Long private draft" }, 3);
   assert.match(html, /data-member-profile="students:3"/);
   assert.match(html, /class="member-photo" src=/);
   assert.match(html, /loading="lazy"/);
@@ -79,6 +111,14 @@ test("compact cards expose an accessible full-card button and escape member text
   assert.match(html, /Test &lt;Name&gt; &quot;One&quot;/);
   assert.match(html, /R&amp;D/);
   assert.doesNotMatch(html, /Long private draft/);
+  const brandon = students.find(member => member.name === "Brandon Trinh");
+  const noPhoto = render({ key: "students" }, brandon, students.indexOf(brandon));
+  assert.equal(brandon.photo, undefined);
+  assert.match(noPhoto, /class="member-photo-placeholder"/);
+  assert.match(noPhoto, /View profile: Brandon Trinh/);
+  assert.doesNotMatch(noPhoto, /<img/);
+  assert.doesNotMatch(brandon.bio, /leave me without|photo|let me know/i);
+  assert.ok(fs.existsSync(path.join(__dirname, "../assets/Team Images/Brandon Trinh.jpeg")));
 });
 
 function fixture(reduced = false) {
@@ -143,6 +183,19 @@ test("backdrop closes the dialog; clicking inside preserves it; missing bios are
   assert.equal(f.dialog.open, true);
   f.dialog.listeners.click({ target: f.dialog, clientX: 0, clientY: 0 });
   assert.equal(f.dialog.open, false);
+});
+
+test("long student and mentor biographies retain paragraph breaks in their dialogs", () => {
+  for (const name of ["Deena Singh", "Dr. Tasha Barr", "Samantha Renusch"]) {
+    const group = groups.find(group => group.members.some(member => member.name === name));
+    const index = group.members.findIndex(member => member.name === name);
+    const f = fixture();f.open(`${group.key}:${index}`);
+    assert.equal(f.parts["#team-profile-name"].textContent, name);
+    assert.equal(f.parts["#team-profile-bio"].textContent, group.members[index].bio);
+    assert.match(f.parts["#team-profile-bio"].textContent, /\n\n/);
+    assert.equal(f.dialog.scrollTop, 0);
+  }
+  assert.match(read("css/team-profiles.css"), /white-space: pre-line/);
 });
 
 test("team entry point loads profile assets and mobile profiles can scroll", () => {
