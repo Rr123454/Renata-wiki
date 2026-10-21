@@ -151,7 +151,7 @@ window.SITE_DATA = {
               name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
               bio: "I play tennis and enjoy gaming. A fun fact about me is that I can chug a plastic water bottle really fast."
             },
-            { name: "Aiden R.", photo: "assets/Team Images/Aidan Reyes.png", role: "Student" },
+            { name: "Aidan R.", photo: "assets/Team Images/Aidan Reyes.png", role: "Student" },
             {
               name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student", school: "Chino Hills High School", classYear: "2027",
               bio: "I love coding in my free time and watching movies. Fun fact: my favorite movie is Fight Club."

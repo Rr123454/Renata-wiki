@@ -30,7 +30,7 @@ test("all 17 supplied bios map to unique students; Noah has one consolidated ent
 
 test("mentors and members with no supplied biography are preserved", () => {
   assert.deepEqual(Array.from(groups[0].members, member => member.name), ["Emma Zschunke", "Preya Shrivastava", "Matt M.", "Tasha B.", "Sharan S."]);
-  for (const name of ["Kavi S.", "Ritvin R.", "Aiden R.", "Ella Y.", "Hannah B.", "Toni D."]) {
+  for (const name of ["Kavi S.", "Ritvin R.", "Aidan R.", "Ella Y.", "Hannah B.", "Toni D."]) {
     const member = students.find(item => item.name === name);
     assert.ok(member, name); assert.equal(member.bio?.trim() || "", "", name);
   }
