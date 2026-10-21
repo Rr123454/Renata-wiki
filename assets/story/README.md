@@ -4,7 +4,7 @@ The active homepage uses unchanged copies of these supplied image files:
 
 | Repository file | Original filename |
 | --- | --- |
-| `bottle-new.png` | `New Sulfluxbottle.png` |
+| `sulflux-bottle.png` | Updated SulFlux bottle artwork (new lettering) |
 | `spaceship.png` | `New Spaceship.png` |
 | `spaceship-inside.png` | `spaceship_inside.png` |
 | `liver.png` | `liver.png` |
@@ -20,4 +20,4 @@ The SVG compositions are included directly in `index.html`. View boxes and clip 
 
 The exterior rocket's registration matrix in `js/mission-home.js` maps the supplied tilted artwork onto the bottle emblem. That shared matrix drives both the SVG frame and animation. The rocket stays attached until the bottle disappears, turns upright, then zooms toward its window before the interior is revealed.
 
-`home-copy.json` preserves the seven supplied science paragraphs. Rebuild after editing this file. Earlier bottle and rocket illustrations remain in this directory for reference but do not drive the current homepage.
+`home-copy.json` preserves the seven supplied science paragraphs. Rebuild after editing this file. The homepage bottle now uses `sulflux-bottle.png` with a version query to bypass cached earlier artwork. `bottle-new.png` and the earlier rocket illustrations remain in this directory for reference but do not drive the current homepage.
