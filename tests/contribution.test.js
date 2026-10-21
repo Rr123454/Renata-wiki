@@ -12,7 +12,7 @@ const data = context.window.SITE_DATA;
 const orbit = require("../js/orbit-pages.js");
 
 test("Kickstart is a Contribution entry, with no separate main-menu or footer item", () => {
-  assert.equal(data.contributionRoutes.length, 1);
+  assert.equal(data.contributionRoutes.length, 2);
   assert.equal(data.contributionRoutes[0].href, "igem-kickstart.html");
   assert.equal(data.contributionRoutes[0].title, data.pages["igem-kickstart"].title);
   assert.doesNotMatch(JSON.stringify(data.nav), /igem-kickstart\.html/);
@@ -32,6 +32,11 @@ test("Contribution features Kickstart in a large linked editorial layout", () =>
   assert.doesNotMatch(html, /coming soon|PLACEHOLDER|experiment-route-number/);
   assert.match(html, /<h2 id="kickstart-feature-title">/);
   assert.match(html, /aria-labelledby="kickstart-feature-title"/);
+  assert.match(html, /href="https:\/\/registry.igem.org\/parts\/bba-26tr5lm8" aria-labelledby="registry-part-feature-title" target="_blank" rel="noopener noreferrer"/);
+  assert.match(html, /View Registry entry/);
+  assert.match(html, /<h2 id="registry-part-feature-title">Registry Part: BBa_26TR5LM8<\/h2>/);
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(new Set(ids).size, ids.length, "each resource has a unique heading ID");
   assert.match(read("contribution.html"), /css\/contribution.css/);
   assert.match(read("css/contribution.css"), /@media \(max-width: 760px\)/);
   assert.match(source, /pageKey === "contribution"\) \{\s*main.innerHTML = renderContributionPage\(\)/);

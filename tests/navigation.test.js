@@ -11,7 +11,6 @@ const context = { window: {} };
 vm.runInNewContext(read("js/site-content.js"), context);
 const data = context.window.SITE_DATA;
 const redirects = {
-  "engineering.html": "project-description.html",
   "home-orbit.html": "index.html",
   "experiments.html": "wet-lab.html",
   "experiment-enzyme-design.html": "model.html",
@@ -67,9 +66,10 @@ test("every content page shows the shared logo, brand, and labels with no icons 
     assert.match(markup, /src="assets\/logo.png"/);
     assert.match(markup, /class="brand-text">ULP-CA<\/span>/);
     assert.match(markup, /id="renata-nav-list">/);
-    assert.equal([...markup.matchAll(/href="project-description\.html"/g)].length, 1, file);
-    assert.match(markup, /<a class="renata-nav-trigger(?: is-active)?" href="project-description\.html"(?: aria-current="page")?>Our Project<\/a>/, file);
-    assert.doesNotMatch(markup, /renata-nav-project|project-description\.html#/, file);
+    assert.match(markup, /<button class="renata-nav-trigger(?: is-active)?" type="button" aria-expanded="false" aria-controls="renata-nav-project" id="renata-nav-project-trigger">Our Project<span/, file);
+    assert.equal([...markup.matchAll(/href="engineering\.html#dbtl-cycle"/g)].length, 1, file);
+    assert.equal([...markup.matchAll(/href="project-description\.html#abstract"/g)].length, 1, file);
+    assert.doesNotMatch(markup, /href="project-description\.html"/, file);
     assert.doesNotMatch(markup, /renata-nav-shortcut|Explore this section|Explore Renata/, file);
     assert.doesNotMatch(markup, /flight-brand|Begin journey|<span>Menu<\/span>|<h1/);
   }
@@ -94,21 +94,32 @@ test("the collapsed menu is a three-bar toggle and panels open under their own t
   assert.match(headerCss, /min-height: 44px/);
 });
 
-test("Home and Our Project are direct links while Team, Lab Work and Engagement have dropdowns", () => {
+test("Home and Our Team are direct links while Project, Lab Work and Engagement have dropdowns", () => {
   const flat = Array.from(data.nav).filter(item => !item.children);
-  assert.deepEqual(Array.from(flat, item => item.key), ["home", "project"]);
-  assert.deepEqual(Array.from(flat, item => item.href), ["index.html", "project-description.html"]);
+  assert.deepEqual(Array.from(flat, item => item.key), ["home", "team"]);
+  assert.deepEqual(Array.from(flat, item => item.href), ["index.html", "team.html"]);
   assert.equal(flat.every(item => !item.icon), true, "direct labels carry no icon of their own");
   const grouped = Array.from(data.nav).filter(item => item.children);
-  assert.deepEqual(Array.from(grouped, item => item.key), ["team", "lab-work", "engagement"]);
+  assert.deepEqual(Array.from(grouped, item => item.key), ["project", "lab-work", "engagement"]);
   const markup = render(data.nav);
   assert.equal([...markup.matchAll(/class="renata-nav-panel"/g)].length, 3);
-  assert.match(markup, /aria-controls="renata-nav-team"/);
+  assert.doesNotMatch(markup, /aria-controls="renata-nav-team"/);
+  assert.match(markup, /href="team.html">Our Team<\/a>/);
+  assert.match(render(data.nav, {pageKey: "team", group: "team"}), /href="team.html" aria-current="page">Our Team<\/a>/);
+  assert.match(read("index.html"), /href="team.html">Our Team<\/a>/);
+  assert.doesNotMatch(read("index.html"), /aria-controls="renata-nav-team"/);
   assert.match(markup, /href="contribution.html"/);
-  assert.match(markup, /<li><a class="renata-nav-trigger" href="project-description.html">Our Project<\/a><\/li>/);
-  assert.equal(data.nav.find(item => item.key === "project").children, undefined);
-  assert.match(read("index.html"), /href="project-description.html">Our Project<\/a>/);
-  assert.doesNotMatch(read("index.html"), /renata-nav-project/);
+  assert.match(markup, /aria-controls="renata-nav-project"/);
+  const destinations = [
+    ["Engineering", "engineering.html#dbtl-cycle"],
+    ["Project Description", "project-description.html#abstract"]
+  ];
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, child => [child.label, child.href]), destinations);
+  assert.match(read("index.html"), /aria-controls="renata-nav-project"/);
+  for (const [label, href] of destinations) {
+    assert.ok(markup.includes(`href="${href}"`), label);
+    assert.ok(read("index.html").includes(`href="${href}"`), `homepage: ${label}`);
+  }
 });
 
 test("dropdown cards carry the section icons that used to sit in the menu bar", () => {
@@ -119,7 +130,7 @@ test("dropdown cards carry the section icons that used to sit in the menu bar", 
     assert.ok(markup.includes(`assets/nav-icons/${child.icon}.png`), child.icon);
   }
   const icons = new Set([...markup.matchAll(/src="([^"]+)"/g)].map(match => match[1]));
-  assert.equal(icons.size, 5, "the dropdown destinations reuse five local badges");
+  assert.equal(icons.size, 4, "the dropdown destinations reuse four local badges");
   let bytes = 0;
   for (const icon of icons) {
     const png = fs.readFileSync(path.join(root, icon));
@@ -154,9 +165,14 @@ test("active pages and related records stay distinct, and labels are escaped", (
   assert.match(html, /renata-nav-card is-section" href="wet-lab.html"/);
   assert.doesNotMatch(html, /aria-current="page"/);
   const current = render(data.nav, { pageKey: "project-description", group: "project" });
+  assert.match(current, /renata-nav-trigger is-active[^>]+id="renata-nav-project-trigger"/);
+  assert.match(current, /href="engineering.html#dbtl-cycle"/);
+  assert.match(current, /href="project-description.html#abstract" aria-current="page"/);
   assert.equal([...current.matchAll(/aria-current="page"/g)].length, 1);
-  assert.match(current, /href="project-description.html" aria-current="page">Our Project<\/a>/);
-  assert.doesNotMatch(current, /href="engineering\.html(?:[?#][^"]*)?"/);
+  const engineering = render(data.nav, { pageKey: "engineering", group: "project" });
+  assert.match(engineering, /renata-nav-trigger is-active[^>]+id="renata-nav-project-trigger"/);
+  assert.match(engineering, /href="engineering.html#dbtl-cycle" aria-current="page"/);
+  assert.equal([...engineering.matchAll(/aria-current="page"/g)].length, 1);
   assert.match(render([{ key: "home", href: "index.html", label: '<script>"&' }]), /&lt;script&gt;&quot;&amp;/);
 });
 
@@ -224,7 +240,7 @@ function fixture(isMobile = false) {
 
 test("click toggles menus, opens only one, and outside clicks dismiss", () => {
   const f = fixture();
-  assert.equal(f.triggers.length, 3, "Team, Lab Work and Engagement are dropdowns");
+  assert.equal(f.triggers.length, 3, "Project, Lab Work and Engagement are dropdowns");
   f.triggers[0].emit("click");
   assert.equal(f.panels[0].hidden, false);
   assert.equal(f.triggers[0].getAttribute("aria-expanded"), "true");
@@ -258,13 +274,15 @@ test("keyboard opens links, navigates, and Escape returns focus to its trigger",
 
 test("arrow keys move across direct labels and dropdown triggers alike", () => {
   const f = fixture();
-  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["index.html", "project-description.html"]);
+  assert.deepEqual(f.links.map(link => link.getAttribute("href")), ["index.html", "team.html"]);
   f.links[0].emit("keydown", { key: "ArrowRight" });
-  assert.equal(f.doc.activeElement, f.triggers[0]);
-  f.triggers[0].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.links[1]);
   f.links[1].emit("keydown", { key: "ArrowRight" });
+  assert.equal(f.doc.activeElement, f.triggers[0]);
+  f.triggers[0].emit("keydown", { key: "ArrowRight" });
   assert.equal(f.doc.activeElement, f.triggers[1]);
+  f.triggers[1].emit("keydown", { key: "ArrowRight" });
+  assert.equal(f.doc.activeElement, f.triggers[2]);
   f.links[0].emit("keydown", { key: "ArrowLeft" });
   assert.equal(f.doc.activeElement, f.triggers[2], "focus wraps to the last trigger");
 });
@@ -279,7 +297,7 @@ test("Contribution has exactly one dropdown link, under Engagement", () => {
   const markup = render(data.nav, { pageKey: "contribution", group: "engagement" });
   assert.match(markup, /href="contribution.html" aria-current="page"/);
   assert.equal((markup.match(/href="contribution.html"/g) || []).length, 1);
-  assert.ok(!data.nav.find(item => item.key === "team").children.some(item => item.key === "contribution"));
+  assert.equal(data.nav.find(item => item.key === "team").children, undefined);
   assert.ok(data.pages.home.linkColumns[0].links.some(link => link.href === "contribution.html"));
 });
 
@@ -302,17 +320,35 @@ test("Engagement replaces Education + HP and includes the existing Contribution 
   assert.deepEqual(Array.from(footer.links, item => item.href), ["human-practices.html", "education.html", "contribution.html"]);
 });
 
-test("Our Project follows one direct link on desktop and mobile without opening a panel", () => {
+test("Our Project opens two section links on desktop and mobile, with keyboard navigation and native anchor clicks", () => {
   for (const mobile of [false, true]) {
     const f = fixture(mobile);
     f.toggle.emit("click");
-    f.triggers[0].emit("click");
-    const project = f.links.find(link => link.getAttribute("href") === "project-description.html");
-    assert.equal(project.getAttribute("aria-controls"), null);
-    assert.equal(project.getAttribute("aria-expanded"), null);
-    const click = project.emit("click");
-    assert.ok(!click.defaultPrevented, "the browser follows the link on the first click");
+    f.triggers[1].emit("click");
+    const projectIndex = f.triggers.findIndex(trigger => trigger.getAttribute("id") === "renata-nav-project-trigger");
+    const project = f.triggers[projectIndex];
+    project.focus(); project.emit("keydown", { key: "ArrowDown" });
+    const panel = f.panels[projectIndex];
+    const links = panel.querySelectorAll("a");
+    assert.equal(f.panels[1].hidden, true, "opening Project closes Lab Work");
+    assert.equal(panel.hidden, false);
+    assert.equal(project.getAttribute("aria-expanded"), "true");
+    assert.deepEqual(links.map(link => link.getAttribute("href")), ["engineering.html#dbtl-cycle", "project-description.html#abstract"]);
+    assert.equal(f.doc.activeElement, links[0]);
+    links[0].emit("keydown", { key: "ArrowDown" });
+    assert.equal(f.doc.activeElement, links[1]);
+    links[1].emit("keydown", { key: "Home" });
+    assert.equal(f.doc.activeElement, links[0]);
+    links[0].emit("keydown", { key: "End" });
+    assert.equal(f.doc.activeElement, links[1]);
+    const click = links[1].emit("click");
+    assert.ok(!click.defaultPrevented, "the browser follows the abstract fragment on the first click");
     assert.ok(f.panels.every(panel => panel.hidden));
+    assert.equal(f.nav.dataset.navOpen, "false");
+    f.toggle.emit("click"); project.emit("click");
+    const engineeringClick = links[0].emit("click");
+    assert.ok(!engineeringClick.defaultPrevented, "the browser follows the DBTL fragment on the first click");
+    assert.equal(panel.hidden, true);
     assert.equal(f.nav.dataset.navOpen, "false");
   }
 });

@@ -7,7 +7,7 @@
   const plain = value => String(value || "").replace(/<[^>]*>/g, "");
   const chapters = {
     team: { number: "01", label: "Our team", icon: "Phoenix", satellite: "DNA", title: ["Our team."], lead: "", next: "project-description.html", nextLabel: "Explore our project", nextIcon: "Stomach" },
-    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Our project."], lead: "", next: "project-description.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
+    project: { number: "02", label: "Our project", icon: "Stomach", satellite: "DNA", title: ["Our project."], lead: "", next: "engineering.html#dbtl-cycle", nextLabel: "Explore the DBTL cycle", nextIcon: "DNA" },
     lab: { number: "04", label: "Lab work", icon: "DNA", satellite: "Plant", title: ["Lab work."], lead: "", next: "human-practices.html", nextLabel: "Human Practices", nextIcon: "Mic" },
     engagement: { number: "05", label: "Human practices", icon: "Mic", satellite: "Phoenix", title: ["Human practices."], lead: "", next: "education.html", nextLabel: "Education", nextIcon: "Plant" },
     education: { number: "06", label: "Education", icon: "Plant", satellite: "Mic", title: ["Education."], lead: "", next: "team.html", nextLabel: "Meet the Renata team", nextIcon: "Phoenix" },

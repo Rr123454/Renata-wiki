@@ -16,12 +16,16 @@ const text = html => String(html).replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&"
 
 test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
   assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Our Project", "Lab Work", "Engagement"]);
-  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Our Project is a direct link");
-  assert.deepEqual(Array.from(data.nav.find(item => item.key === "team").children, item => item.label), ["Meet Our Team"]);
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, item => [item.label, item.href]), [
+    ["Engineering", "engineering.html#dbtl-cycle"],
+    ["Project Description", "project-description.html#abstract"]
+  ]);
+  assert.equal(data.nav.find(item => item.key === "team").href, "team.html");
+  assert.equal(data.nav.find(item => item.key === "team").children, undefined);
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
   assert.deepEqual(Array.from(menu[0].children, item => [item.label, item.href]), [["Process/Background", "wet-lab.html#process-background"], ["Model Wetlab", "wet-lab.html#model-wetlab"], ["Experimentation/Protocols", "wet-lab.html#experimentation-protocols"]]);
-  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Engagement"]);
+  assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Our Project", "Lab Work", "Engagement"]);
 });
 
 test("Wetlab renders each source-backed experiment with its evidence, interpretation and next decision", () => {
@@ -45,13 +49,16 @@ test("Wetlab renders each source-backed experiment with its evidence, interpreta
   for (const id of ["reporter", "growth-response", "master-plan", "handoff"]) {
     assert.ok(ids(pages["wet-lab"]).includes(id), `Historical anchor retained: ${id}`);
   }
-  assert.match(rendered, /(?:historical|archived|earlier)\s+(?:[^.]*\s)?plans?/i);
+  for (const html of [pages['wet-lab'], read('wet-lab.html')]) {
+    assert.doesNotMatch(html, /Earlier planning context|Open archived plans and prompts|lab-historical|id="(?:review-)?historical-plans"/);
+    assert.doesNotMatch(html, /Original procedure and notebook prompts|Six-week master plan — proposed milestones/);
+  }
 });
 
 test("Wetlab retains source provenance and separates assay measurements from functional claims", () => {
   const rendered = text(pages["wet-lab"]);
   assert.match(source.citation, /iGEM Renata Lab Documentation 2026/);
-  assert.doesNotMatch(rendered, /Source record|This is a team primary record/);
+  assert.doesNotMatch(rendered, /Source record|This is a team primary record|\[1, pp?\.|Source pp?\./);
   assert.ok(!pages["wet-lab"].includes('href="#sources"'));
   assert.ok(pages["wet-lab"].includes(source.pdf), "Original source document remains available");
   assert.match(rendered, /(?:uncertain|unresolved|incomplete|pending|discrepan|conflict|ambig)/i);
@@ -73,7 +80,8 @@ test("Model retains every computational source section, figures, and detailed co
   assert.match(pages.model, /0\.529/);
   assert.match(pages.model, /cofactor-region\.png/);
   assert.match(pages.model, /candidate-residues\.png/);
-  assert.equal([...pages.model.matchAll(/id="source-\d+"/g)].length, 15);
+  assert.equal([...pages.model.matchAll(/id="source-\d+"/g)].length, 14);
+  assert.doesNotMatch(pages.model, /Source: iGEM Renata|href="#source-1"|id="source-1"/);
 });
 
 test("Model preserves the original chronology and incomplete-method provenance before each record", () => {
@@ -83,7 +91,7 @@ test("Model preserves the original chronology and incomplete-method provenance b
     const position = pages.model.indexOf(introduction);
     assert.ok(position > pages.model.indexOf(`class="lab-model-group" id="${group}"`), view);
     assert.ok(position < pages.model.indexOf(`id="${firstSection}"`), view);
-    assert.ok(introduction.includes('href="#source-1"'), "The original source citation remains attached");
+    assert.ok(!introduction.includes('href="#source-1"'), "Internal source citations are omitted");
   }
   assert.match(pages.model, /Most computational entries have no recorded date/);
   assert.match(pages.model, /Dates are retained as written; the year is unspecified/);

@@ -14,29 +14,33 @@
   <link rel="stylesheet" href="css/navigation.css?v=9e7f097573b3" />
   <link rel="stylesheet" href="css/site-header.css?v=945d59804f6c" />
   <link rel="stylesheet" href="css/cosmic-theme.css?v=2786ed3c9533" />
-  <link rel="stylesheet" href="css/mission-home.css?v=1e4ff54f48d7" />
+  <link rel="stylesheet" href="css/mission-home.css?v=927da73c1193" />
 </head>
 <body data-page="home" data-home-variant="orbit" class="mission-page" data-home-brand="ULP-CA">
   <script src="js/loading-screen.js?v=4bc284f2f712"></script>
   <a class="flight-skip" href="#observatory">Skip to the planets</a>
   <header class="site-header flight-header" id="siteHeader"><div class="container header-inner"><a class="brand" href="index.html" aria-label="ULP-CA, homepage"><span class="brand-logo-wrap"><img src="assets/logo.png" alt="" class="brand-logo" width="52" height="52" /></span><span class="brand-text">ULP-CA</span></a><nav class="renata-nav" aria-label="Main navigation"><button class="renata-nav-toggle" type="button" aria-expanded="false" aria-controls="renata-nav-list" aria-label="Menu"><span class="renata-nav-bars" aria-hidden="true"></span></button>
-      <ul class="renata-nav-list" id="renata-nav-list"><li><a class="renata-nav-trigger is-active" href="index.html" aria-current="page">Home</a></li><li class="renata-nav-group">
-          <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-team" id="renata-nav-team-trigger">Our Team<span class="renata-nav-chevron" aria-hidden="true"></span></button>
-          <div class="renata-nav-panel" id="renata-nav-team" aria-labelledby="renata-nav-team-trigger" hidden>
+      <ul class="renata-nav-list" id="renata-nav-list"><li><a class="renata-nav-trigger is-active" href="index.html" aria-current="page">Home</a></li><li><a class="renata-nav-trigger" href="team.html">Our Team</a></li><li class="renata-nav-group">
+          <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-project" id="renata-nav-project-trigger">Our Project<span class="renata-nav-chevron" aria-hidden="true"></span></button>
+          <div class="renata-nav-panel" id="renata-nav-project" aria-labelledby="renata-nav-project-trigger" hidden>
             <div class="renata-nav-intro">
-              <span class="renata-nav-eyebrow">02 / Our Team</span>
-              <p class="renata-nav-heading">Our team.</p>
+              <span class="renata-nav-eyebrow">03 / Our Project</span>
+              <p class="renata-nav-heading">Our project.</p>
               <p class="renata-nav-description"></p>
             </div>
             <div class="renata-nav-pages">
-              <ul><li><a class="renata-nav-card" href="team.html">
-                  <img class="renata-nav-icon" src="assets/nav-icons/Phoenix.png" width="48" height="48" alt="" decoding="async" />
-                  <span class="renata-nav-copy"><strong>Meet Our Team</strong><small>Meet the students and mentors behind RENATA.</small></span>
+              <ul><li><a class="renata-nav-card" href="engineering.html#dbtl-cycle">
+                  <img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Engineering</strong><small>Explore our Design–Build–Test–Learn cycle.</small></span>
+                  <span class="renata-nav-arrow" aria-hidden="true">↗</span>
+                </a></li><li><a class="renata-nav-card" href="project-description.html#abstract">
+                  <img class="renata-nav-icon" src="assets/nav-icons/Stomach.png" width="48" height="48" alt="" decoding="async" />
+                  <span class="renata-nav-copy"><strong>Project Description</strong><small>Explore the problem, scientific background, and proposed SulFlux system.</small></span>
                   <span class="renata-nav-arrow" aria-hidden="true">↗</span>
                 </a></li></ul>
             </div>
           </div>
-        </li><li><a class="renata-nav-trigger" href="project-description.html">Our Project</a></li><li class="renata-nav-group">
+        </li><li class="renata-nav-group">
           <button class="renata-nav-trigger" type="button" aria-expanded="false" aria-controls="renata-nav-lab-work" id="renata-nav-lab-work-trigger">Lab Work<span class="renata-nav-chevron" aria-hidden="true"></span></button>
           <div class="renata-nav-panel" id="renata-nav-lab-work" aria-labelledby="renata-nav-lab-work-trigger" hidden>
             <div class="renata-nav-intro">
@@ -79,7 +83,7 @@
                   <span class="renata-nav-arrow" aria-hidden="true">↗</span>
                 </a></li><li><a class="renata-nav-card" href="contribution.html">
                   <img class="renata-nav-icon" src="assets/nav-icons/DNA.png" width="48" height="48" alt="" decoding="async" />
-                  <span class="renata-nav-copy"><strong>Contribution</strong><small>Shared resources, including iGEM Kickstart.</small></span>
+                  <span class="renata-nav-copy"><strong>Contribution</strong><small>iGEM Kickstart and our Registry part.</small></span>
                   <span class="renata-nav-arrow" aria-hidden="true">↗</span>
                 </a></li></ul>
             </div>
@@ -122,13 +126,13 @@
       <div class="mission-scene-copy"><a class="mission-back" href="#observatory">← Back to the planets</a><p class="mission-eyebrow">SulFlux</p><h2 id="sulflux-title"><em>Escherichia coli</em></h2><p data-science-copy="probiotic">Utilizing <em>Escherichia coli</em> as an expression chassis for SulFlux production, which is then consumed in the form of a probiotic, allows for direct delivery of bacterial sulfonation enzymes to assist in secondary bile acid detoxification.</p><a class="mission-button" href="project-description.html">Explore the project <span aria-hidden="true">↗</span></a></div>
       <figure class="mission-scene-art mission-person-art"><svg viewBox="0 190 1030 1240" role="img" aria-label="A person drinking from a SulFlux bottle" class="mission-framed-art"><defs><clipPath id="person-cut"><path d="M20 1390V840L36 654 55 612 55 468Q69 408 141 398L204 378Q256 378 306 426L350 463Q347 383 408 306Q302 300 269 327Q264 272 360 263L405 262Q479 197 578 204Q704 214 734 360L731 460 751 611 748 667Q817 721 908 835L1007 985 1020 1035Q1005 1152 947 1262L874 1379Q768 1407 706 1424L615 1387 580 1353Q432 1353 295 1334L270 1315 197 1297Q198 1211 225 1157L276 992Q169 998 66 970Q13 924 20 845Z"/></clipPath></defs><image href="assets/story/person-drinking.png" width="1052" height="1578" clip-path="url(#person-cut)"/></svg></figure>
     </section>
-    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div><a class="mission-back" href="#observatory">← Back to the planets</a></section>
+    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="engineering.html#dbtl-cycle">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div><a class="mission-back" href="#observatory">← Back to the planets</a></section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
-  <script src="js/site-content.js?v=8a3716396a8e"></script>
+  <script src="js/site-content.js?v=e04ddc427423"></script>
   <script src="js/navigation.js?v=95be8fc6aeaa"></script>
-  <script src="js/site.js?v=e49278024985"></script>
-  <script src="js/mission-home.js?v=1e0655fbd266"></script>
+  <script src="js/site.js?v=fd269be632c3"></script>
+  <script src="js/mission-home.js?v=48993c555b0b"></script>
   <script src="js/rocket-cursor.js?v=15bae7dec998"></script>
 </body>
 </html>

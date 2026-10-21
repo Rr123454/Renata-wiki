@@ -34,6 +34,6 @@ const bookmarks = [...originalNotebook.matchAll(/id="([^"]+)" data-notebook-page
 const transcript = originalNotebook.match(/<details class="lab-notebook-transcript">([\s\S]*)<\/details>/)[1]
   .replace(/<summary>[\s\S]*?<\/summary>/, "<summary>Annotated chronology · June–October</summary>");
 process.stdout.write(JSON.stringify({
-  review: `<details class="lab-method-details lab-evidence-review" id="evidence-review"><summary>Annotated evidence review · 74-page documentation</summary><p>This review preserves the separately supplied <cite>iGEM Renata Lab Documentation 2026</cite>. Its source-page citations, uncertainty notes, and earlier planning context refer to that document; the source writeups above are preserved separately.</p>${review}</details>`,
+  review: `<details class="lab-method-details lab-evidence-review" id="evidence-review"><summary>Annotated evidence review</summary>${review}</details>`,
   chronology: `<section class="lab-section" id="additional-lab-documentation"><h2>Additional lab documentation</h2><p>The separately supplied <a href="${source.pdf}" target="_blank" rel="noopener">74-page iGEM Renata Lab Documentation 2026 PDF</a> and its annotated chronology remain available alongside the 19-page notebook above. Page references in this section refer to the 74-page document.</p><ul aria-label="74-page source bookmarks">${bookmarks}</ul><details class="lab-notebook-transcript">${prefixIds(transcript)}</details></section>`
 }));

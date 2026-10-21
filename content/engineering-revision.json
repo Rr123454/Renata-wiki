@@ -1,0 +1,427 @@
+{
+  "sha256": "30d9ce2afff83eb796c729a9b72802625ca2fb07250819549dec1c900cc09d99",
+  "abstract": [
+    "Cholecystectomy, the surgical removal of the gallbladder, can be followed by post-cholecystectomy syndrome (PCS), involving chronic diarrhea and gastrointestinal discomfort. Altered secondary bile acid metabolism may contribute to these symptoms, and prolonged exposure to certain bile acids has been associated with colorectal cancer risk. Existing treatments primarily manage symptoms rather than directly modifying these metabolites. ULP-CA is developing a probiotic-based therapeutic proof of concept designed to reduce harmful secondary bile acid activity in the gut. Our engineered enzyme, SulFlux, is derived from BtSULT, a bacterial sulfotransferase found in Bacteroides thetaiotaomicron. Computational modeling suggests SulFlux can accommodate lithocholic acid (LCA), a secondary bile acid poorly recognized by native BtSULT. In vitro, we transformed Escherichia coli with our construct, assessed protein production through BCA assays, and observed improved SDS-PAGE band formation. Continued experimentation aims to establish reliable SulFlux folding, catalytic activity, and LCA sulfation."
+  ],
+  "cycles": [
+    {
+      "title": "Cycle 1: BtSULT Structural Study",
+      "id": "engineering-cycle-1",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Design",
+          "page": 1
+        },
+        {
+          "type": "text",
+          "text": "Although crystal structures of human SULT2A1(PDB: 1J99) are well studied, BtSULT has not been studied through crystallography and therefore has no characterized geometry of its catalytic pocket. BtSULT is also not specific to LCA, but is shown to sulfonate isomers with flat A/B fusion rings such as isoLCA, necessitating its engineering for in vitro expression (Yao et al. 2022). The ideal reaction mechanism that indicates a working BtSULT mutant for wet-lab validation prioritizes sulfur-group transfer from PAPS to LCA 3-OH for production of sulfolithocholic acid, or sulfo-LCA. According to Kakuta et. al (1998), their study of human estrogen sulfotransferase activity asserts sulfuryl transfer is only possible if the catalytic base contacts the substrate OH at hydrogen bond range, 2.7 to 3.1 Å.",
+          "page": 1
+        },
+        {
+          "type": "text",
+          "text": "Build",
+          "page": 2
+        },
+        {
+          "type": "text",
+          "text": "In order to determine BtSULT’s catalytic base, homology and structural alignment between Foldseek and ClustalOmega were conducted to establish candidates for BtSULT’s catalytic base, using SULT2A1’s catalytic base, His99, as a reference (PDB: 1J99). However, in addition to this, Boltz-2 co-folding ensembles with BtSULT + LCA + PAPS were generated, using interaction maps from co-folding poses to identify the overall catalytic pocket. Additionally, steric clashes of LCA in the BtSULT pocket were mapped using MolProbity to determine the highest absolute clashes.",
+          "page": 2
+        },
+        {
+          "type": "text",
+          "text": "Test",
+          "page": 2
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-2-figure-1.png",
+          "page": 2
+        },
+        {
+          "type": "text",
+          "text": "Figure 1. Clustal Omega Vs. Foldseek Alignment of BtSULT and SULT2A1",
+          "page": 2
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-3-figure-1.png",
+          "page": 3
+        },
+        {
+          "type": "text",
+          "text": "Figure 2. Boltz-2 LCA+PAPS Interaction Map",
+          "page": 3
+        },
+        {
+          "type": "text",
+          "text": "Learn",
+          "page": 3
+        },
+        {
+          "type": "text",
+          "text": "Clustal Omega homology alignment tentatively suggested His215 as the closest histidine (Fig. 1). Extrapolating from the conserved PAPS binding motif, we also elect E136 as a catalytic base candidate. However, Boltz-2 co-folding poses, where BtSULT was complexed with PAPS and LCA, suggested E144 as the closest deprotonating residue to LCA 3-OH. Although E144 contacted the substrate OH outside of H-bond distance, E144 was still selected to account for co-folding overcompensating for pose stability (Fig. 2). Additional residues such as K211 and Y158 were derived from literature, drawing off of the homology alignment to elect literature-confirmed candidates (Tibbs et al.)(Chen et al.).",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "title": "Cycle 2: Mutant Design + Screening",
+      "id": "engineering-cycle-2",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Design",
+          "page": 4
+        },
+        {
+          "type": "text",
+          "text": "Drawing from the structural study and a study of SULT2A1’s catalytic loop 3 (Tibbs et al.), a mutant library was drafted and screened for catalytic capability. A distance-measuring framework was established to measure both Base-Substrate 3-OH and Substrate-PAPS sulfuryl transfer distance in order to rank candidates. The measured values of these geometries are derived from crystal structures:",
+          "page": 4
+        },
+        {
+          "type": "table",
+          "text": [
+            [
+              "Construct/PDB",
+              "Ligand(s) bound",
+              "Catalytic distance\nmeasured",
+              "Value"
+            ],
+            [
+              "1J99",
+              "PAP + DHEA",
+              "His99 NE2 → substrate\nOH",
+              "3.15 Å"
+            ],
+            [
+              "3F3Y",
+              "LCA + PAP",
+              "His99 → substrate OH",
+              "2.91 Å"
+            ],
+            [
+              "3F3Y",
+              "LCA + PAP",
+              "substrate OH → PAP",
+              "5.44 Å"
+            ]
+          ],
+          "page": 4
+        },
+        {
+          "type": "text",
+          "text": "Base-Substrate 3-OH distance was set to ~ 3 Å and sulfuryl transfer distance was lowered to ~ 5 Å, accounting for the lack of a sulfuryl group in 3F3Y.",
+          "page": 4
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-4-figure-1.png",
+          "page": 4
+        },
+        {
+          "type": "text",
+          "text": "Figure 3. BtSULT MolProbity Absolute Clash Map",
+          "page": 5
+        },
+        {
+          "type": "text",
+          "text": "A steric clash library was developed using MolProbity (Fig. 3). Although the greatest absolute clashes lie at Y158 and S150, studies of bile acid synthesis assert the importance of tyrosine in hydride transfer and brief analysis of the serine r-group dismissed it as an engineering focus due to its short, polar sidechain (Di Costanzo et al.). This shifted the focus to F147 as the principal steric clash, especially when considered as a selectivity marker for 5β steroids in human carbonic anhydrases (Fig. 3)(Brynda et al.). This informed an in-silico mutagenesis library of F147. The second mutagenesis round explored the redesign of the BtSULT catalytic loop through sequence grafting, pulling key loop 3 regions of SULT2A1 from literature and mapped regions of BtSULT from the catalytic study (Fig. 4)",
+          "page": 5
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-5-figure-1.png",
+          "page": 5
+        },
+        {
+          "type": "text",
+          "text": "Figure 4. Graft design methodology, V0-V10. Top: SULT2A1 loop three divided into its three functional",
+          "page": 5
+        },
+        {
+          "type": "text",
+          "text": "segments. Bottom: BtSULT regions as graft sites",
+          "page": 5
+        },
+        {
+          "type": "text",
+          "text": "Finally, AI-based redesign of BtSULT was employed in Round 3 of mutagenesis screening to determine if AI-guided mutation through chimera generation and ProteinMPNN screening would produce viable candidates Build Boltz-2 co-folding ensembles with 3 seeds, accounting for its stochastic nature, were used to evaluate all generated mutants. Additionally, transfer distance and Base-Substrate 3-OH were measured in the optimal binding pose and collected in Å.",
+          "page": 5
+        },
+        {
+          "type": "text",
+          "text": "Test:",
+          "page": 6
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-6-figure-1.png",
+          "page": 6
+        },
+        {
+          "type": "text",
+          "text": "Figure 5. All Mutants Summary",
+          "page": 6
+        },
+        {
+          "type": "text",
+          "text": "Learn",
+          "page": 6
+        },
+        {
+          "type": "text",
+          "text": "The majority of graft variants maintained catalytic activity, except V5 and V7. However, when retried without the background alanines, graft_Asp144 and graft_Glu144 emerged as stronger candidates. F147S and F147S_E144D were by far the strongest catalytic candidates, preserving the overall BtSULT geometry with carefully placed mutations. ProteinMPNN and chimera redesigns proved faulty and were therefore not considered as candidates for in-vitro validation. In light of sulfotransferase kinetics, where PAPS-bound enzymes change shape open their active sites to the substrate, F147S and F147S_E144D were selected for the in-vitro pipeline due to the minimal effect on overall BtSULT geometry (Tibbs et al.).",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "title": "Cycle 3: Protein Expression",
+      "id": "engineering-cycle-3",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Design",
+          "page": 7
+        },
+        {
+          "type": "text",
+          "text": "Following steric clash analysis and a 3-round enzyme engineering process, 4 BtSULT variants were selected for expression in Bl21 (DE3) cell lines: Wild-Type BtSULT (WT), F147S, and F147S_E144D. In order to analyze the protein for in-vitro viability, a 6x-His tag is selected for purification, flanked by a SUMO tag in order to improve folding of BtSULT variants in Bl21(DE3) cell lines.",
+          "page": 7
+        },
+        {
+          "type": "text",
+          "text": "Build",
+          "page": 7
+        },
+        {
+          "type": "text",
+          "text": "Each construct was flanked by a 6x His-tag for Ni-NTA purification and a SUMO tag to increase protein solubility across bacterial species. The SUMO tag was selected because it possesses a unique ULP-1 cleavage site that will allow us to separate the enzymes from their tags completely. The constructs were assembled into 4 distinct pET-28a(+) expression vectors using a double digest at NcoI and XhoI restriction sites through the GenScript FLASH service. Cycle 3 will be utilizing WT and the 6x-Alanine scan.",
+          "page": 7
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-8-figure-1.png",
+          "page": 8
+        },
+        {
+          "type": "text",
+          "text": "Figure 6. 4-Vector Map Summary",
+          "page": 8
+        },
+        {
+          "type": "text",
+          "text": "Test",
+          "page": 8
+        },
+        {
+          "type": "text",
+          "text": "WT BtSULT and SF (6xAla) were transformed into BL21 cells and selected on kanamycin, then screened by colony PCR with T7 primers. Gene-positive cultures were grown in TB broth, induced with 0 (control), 0.3, or 0.7 mM IPTG, lysed with B-PER, and His-purified. Protein was quantified by BCA before and after purification.",
+          "page": 8
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-9-figure-1.png",
+          "page": 9
+        },
+        {
+          "type": "text",
+          "text": "Figure 7: Colony PCR of DBTL 3 Samples » Sulflux is our experimental plasmid, and BT0416 is the control. This PCR gel samples also account for recent and previously plated colonies: “su” colonies being the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag.",
+          "page": 9
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-10-figure-1.png",
+          "page": 10
+        },
+        {
+          "type": "text",
+          "text": "Figure 8: Growth curve of wild-type BT0416 transformed cells using absorbance at OD600. Colored zones represent expected growth patterns across literature, with an expected value of 0.4-0.8 from 2-3 hours, 0.4-0.9 from 4-5 hours, and 1.5-3-fold if overnight. Different spiking densities were tested to measure ideal growth as culture took longer than usual to reach the logarithmic threshold. .",
+          "page": 10
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-11-figure-1.png",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "Figure 9: Comparative production of purified (6xAla) SF, relative to crude lysate, supports the BL21 system is an appropriate host for a completed SulFlux design.",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "Learn:",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "Colony PCR confirmed integration of both constructs, with several BtSULT and SF colonies showing the expected ~2 kb band (Fig. 6), and cultures reached the OD600 target of 0.4–0.8 before induction (Fig. 7). SF’s higher uninduced yield (99 vs. 54 µg/mL) suggests leaky expression or better solubility. Purified protein made up roughly 21–38% of the loaded sample.",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "The results are limited, since each condition is a single measurement. Conclusively, the host system and workflow is coherent and capable of producing notable amounts of soluble, purified proteins.",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "title": "Cycle 4: Protein Expression",
+      "id": "engineering-cycle-4",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Design",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "Following steric clash analysis and a 3-round enzyme engineering process, 4 BtSULT variants were selected for expression in Bl21 (DE3) cell lines: Wild-Type BtSULT (WT), F147S, and F147S_E144D. In order to analyze the protein for in-vitro viability, a 6x-His tag is selected for purification, flanked by a SUMO tag in order to improve folding of BtSULT variants in Bl21(DE3) cell lines.",
+          "page": 11
+        },
+        {
+          "type": "text",
+          "text": "Build",
+          "page": 12
+        },
+        {
+          "type": "text",
+          "text": "Each construct was flanked by a 6x His-tag for Ni-NTA purification and a SUMO tag to increase protein solubility across bacterial species. The SUMO tag was selected because it possesses a unique ULP-1 cleavage site that will allow us to separate the enzymes from their tags completely. The constructs were assembled into 4 distinct pET-28a(+) expression vectors using a double digest at NcoI and XhoI restriction sites through the GenScript FLASH service. Cycle 4 will be utilizing F147S and F147S_E144D.",
+          "page": 12
+        },
+        {
+          "type": "text",
+          "text": "Test",
+          "page": 13
+        },
+        {
+          "type": "text",
+          "text": "Colonies of transformation were screened by Colony PCR, and the positive clones",
+          "page": 13
+        },
+        {
+          "type": "text",
+          "text": "(1AB, 2AE, 3BE) were induced with either 0.7 mM IPTG or 1% skim milk.",
+          "page": 13
+        },
+        {
+          "type": "text",
+          "text": "Purified protein was quantified by BCA, run on SDS-PAGE, and tested for",
+          "page": 13
+        },
+        {
+          "type": "text",
+          "text": "sulfonation activity by TLC.",
+          "page": 13
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-13-figure-1.png",
+          "page": 13
+        },
+        {
+          "type": "text",
+          "text": "Figure 10: Colony PCR of BL21 transformants using T7 primers. Lanes 1aa–af: F147S; 2aa–af: F147S_E144D. Expected insert band at ~2 kb. 1 positive insert was present for each sample.",
+          "page": 13
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-14-figure-1.png",
+          "page": 14
+        },
+        {
+          "type": "text",
+          "text": "Figure 11a: BCA quantification of crude lysate and His-purified fractions. BSA standard curve (R² ≈ 0.95), 2000–15.6 µg/mL, read in duplicate. Concentrations used to calculate SDS-page and TLC Samples. b)",
+          "page": 14
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-14-figure-2.png",
+          "page": 14
+        },
+        {
+          "type": "text",
+          "text": "Figure 11b: BCA quantification of crude lysate relative to His-purified fractions. This indicates a stable production and expression of recombinant protein through the promoter system past induction.",
+          "page": 15
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-15-figure-1.png",
+          "page": 15
+        },
+        {
+          "type": "text",
+          "text": "Figure 12: SF2 IPTG: Some ladder-like horizontal features appear in the sample region, but can not safely confirm they are reliable molecular-weight bands. SF2 Milk: A diffuse pattern is visible, with no confidently assignable target band. SF3 IPTG and SF3 Milk: Little interpretable protein separation is visible in the displayed sample regions. WT IPTG: A broad, intense vertical signal spans a large molecular-weight range, consistent with a poorly resolved or underloaded sample rather than one identifiable protein.",
+          "page": 15
+        },
+        {
+          "type": "image",
+          "text": "assets/engineering/page-16-figure-1.png",
+          "page": 16
+        },
+        {
+          "type": "text",
+          "text": "Figure 13) Attempted thin layer chromatography, results are unable to be evaluated from material complications.",
+          "page": 16
+        },
+        {
+          "type": "text",
+          "text": "Learn:",
+          "page": 16
+        },
+        {
+          "type": "text",
+          "text": "Colony PCR identified at least one insert-positive colony for each construct (1AB, 2AE, 3BE) by the expected ~2 kb band (Fig. 10), though many lanes were negative or faint, so screening needed repeated rounds. His-purified protein reached roughly 200–300 µg/mL against about 1000 µg/mL crude lysate (Fig. 12b), or about 16–32% recovery. Skim milk performed comparably to IPTG as an inducer, but with no consistent winner: F147S gave slightly more purified protein with milk (~245 vs. ~195 µg/mL), while F147S_E144D gave far less (~195 vs. ~310 µg/mL). Because each condition is a single measurement and the BCA standard curve is nonlinear (Fig. 11a), these differences are suggestive, not conclusive. SDS-PAGE did not confirm the target band. Only SF2 IPTG showed ladder-like features that could not be confidently assigned a molecular weight; SF3 showed little interpretable separation, and WT IPTG gave a broad smear typical of overloading or a poorly resolved sample (Fig. 12). Chilling the running buffer and using a stained ladder helped, but the gels never fully resolved. The next run should dilute or buffer-exchange samples into a neutral buffer.",
+          "page": 16
+        },
+        {
+          "type": "text",
+          "text": "TLC likewise gave no usable result (Fig. 13). The gypsum binder in the plates failed to hold the sample, and with no standard visualization acid available due to lab safety constraints, the phosphomolybdic acid substitute to acetic acid did not stain reliably, so no sulfo-LCA spot could be identified. This cycle unforgivingly demonstrated the need to be resourceful.",
+          "page": 16
+        }
+      ]
+    }
+  ],
+  "references": [
+    "References:",
+    "Scientific references",
+    "1. Lina Yao, G. D'Agostino, Jinseok Park, et al. A biosynthetic pathway for the",
+    "selective sulfonation of steroidal metabolites by human gut bacteria. Nature Microbiology (2022). DOI: 10.1038/s41564-022-01176-y",
+    "2. Kakuta Y, Petrotchenko EV, Pedersen LC, Negishi M. The sulfuryl transfer",
+    "mechanism. Crystal structure of a vanadate complex of estrogen sulfotransferase and mutational analyses. Journal of Biological Chemistry 273: 27325–27330 (1998). DOI: 10.1074/jbc.273.42.27325",
+    "3. Zachary E. Tibbs, Katie Jo Rohn-Glowacki, Frank Crittenden, Amber L.",
+    "Guidry, Charles N. Falany. Structural plasticity in the human cytosolic sulfotransferase dimer and its role in substrate selectivity and catalysis. Drug Metabolism and Pharmacokinetics (2015). DOI: 10.1016/j.dmpk.2014.10.004",
+    "4. Chen M, Drury JE, Christianson DW, Penning TM. Conversion of human",
+    "steroid 5β-reductase (AKR1D1) into 3β-hydroxysteroid dehydrogenase by single point mutation E120H. Journal of Biological Chemistry (2012). DOI: 10.1074/jbc.m111.338780",
+    "5. Di Costanzo L, Drury JE, Penning TM, Christianson DW. Crystal structure",
+    "of human liver Δ4-3-ketosteroid 5β-reductase (AKR1D1) and implications for substrate binding and catalysis. Journal of Biological Chemistry (2008). DOI: 10.1074/jbc.m801778200",
+    "6. Brynda J, Kiss A, Pospíšilová K, et al. Steroidal A/B-ring fusion as a",
+    "strategy for isoform-selective inhibition of human carbonic anhydrases. RSC Advances 16: 9743–9755 (2026). DOI: 10.1039/d5ra06507k",
+    "7. PDB 1J99 — human SULT2A1 in complex with DHEA.",
+    "https://www.rcsb.org/structure/1J99",
+    "8. PDB 3F3Y — human SULT2A1 in complex with PAP and lithocholic acid.",
+    "https://www.rcsb.org/structure/3F3Y",
+    "9. UniProt Q06520 — human SULT2A1.",
+    "https://www.uniprot.org/uniprotkb/Q06520",
+    "10.UniProt Q8AAP8 — Bacteroides thetaiotaomicron BT0416 sulfotransferase",
+    "(BtSULT). https://www.uniprot.org/uniprotkb/Q8AAP8",
+    "AI models",
+    "11.Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and",
+    "Efficient Binding Affinity Prediction. bioRxiv (2025). DOI: 10.1101/2025.06.14.659707",
+    "12.Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure",
+    "prediction with AlphaFold. Nature 596: 583–589 (2021). DOI: 10.1038/s41586-021-03819-2",
+    "13.Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning-based",
+    "protein sequence design using ProteinMPNN. Science 378: 49–56 (2022). DOI: 10.1126/science.add2187",
+    "14.Watson JL, Juergens D, Bennett NR, et al. De novo design of protein",
+    "structure and function with RFdiffusion. Nature 620: 1089–1100 (2023). DOI: 10.1038/s41586-023-06415-8",
+    "Analysis tools",
+    "15.van Kempen M, Kim SS, Tumescheit C, et al. Fast and accurate protein",
+    "structure search with Foldseek. Nature Biotechnology (2023). DOI: 10.1038/s41587-023-01773-0",
+    "16.Sievers F, Wilm A, Dineen D, et al. Fast, scalable generation of high-quality",
+    "protein multiple sequence alignments using Clustal Omega. Molecular Systems Biology 7: 539 (2011). DOI: 10.1038/msb.2011.75",
+    "17.Davis IW, Leaver-Fay A, Chen VB, et al. MolProbity: all-atom contacts and",
+    "structure validation for proteins and nucleic acids. Nucleic Acids Research 35: W375–W383 (2007). DOI: 10.1093/nar/gkm216"
+  ]
+}

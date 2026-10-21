@@ -58,7 +58,7 @@ body.mission-page .flight-header { position:sticky; padding:0; background:#173e8
 /* Includes 100svh of extra sticky travel after the Explore images settle. */
 .mission-enhanced .mission-launch { height:560svh; }
 .mission-enhanced .mission-launch-stage { position:sticky; top:0; height:100svh; min-height:640px; padding:0; }
-.mission-enhanced .mission-intro { position:absolute; top:28%; left:38%; width:59%; margin:0; min-height:0; transform:translate3d(var(--intro-x,0px),0,0); opacity:var(--intro-opacity,1); }
+.mission-enhanced .mission-intro { position:absolute; top:var(--intro-top,28%); left:38%; width:59%; margin:0; min-height:0; transform:translate3d(var(--intro-x,0px),0,0); opacity:var(--intro-opacity,1); }
 .mission-enhanced .mission-bottle { top:var(--bottle-y,59%); left:var(--bottle-x,23%); transform:translate(-50%,-50%) scale(var(--bottle-scale,1)); opacity:var(--bottle-opacity,1); }
 /* PCS settles on the same horizontal centerline as the outgoing ULP-CA title. */
 .mission-enhanced .mission-zoom-copy { position:absolute; top:28%; left:67.5%; width:46%; max-width:600px; margin:0; opacity:var(--copy-opacity,0); transform:translate3d(calc(-50% + var(--copy-x,85vw)),0,0); }

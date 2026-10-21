@@ -149,11 +149,11 @@
   },
   "wetlab": {
     "source": {
-      "original": "Model WetLab WriteUp.pdf",
-      "path": "assets/wetlab/model-wetlab.pdf",
-      "sha256": "c07412e9506a2fdf3e2d97f2efc036f2223acc9dbc728010dcd70cf23c2363ea"
+      "original": "iGEM Renata Lab Documentation 2026 (1).pdf",
+      "path": "assets/wetlab/lab-writeup-2026.pdf",
+      "sha256": "1e6c79bf222a9d5df7b99621e423b7ecb78551a2a26612e4dbbaf298248acf3c"
     },
-    "pageCount": 25,
+    "pageCount": 26,
     "blocks": [
       {
         "type": "heading",
@@ -239,9 +239,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p01-1.png",
-        "width": 1212,
-        "height": 924,
+        "src": "assets/wetlab/revision-model-wetlab-006.png",
+        "width": 801,
+        "height": 612,
         "alt": "Original Wet Lab writeup, page 1, figure 1",
         "clip": [
           108,
@@ -253,7 +253,7 @@
           1
         ],
         "key": "model-wetlab-006",
-        "sha256": "31efd529aac08ed80d36e04158718de809a78b4cc3aacd90cb6d9cef519a1d8b"
+        "sha256": "6cddf0d594b4c74594fd8f94ffa805aa898f0c6bd79a7aaffd95e78cf4191a7b"
       },
       {
         "type": "caption",
@@ -678,9 +678,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p03-1.png",
-        "width": 1029,
-        "height": 702,
+        "src": "assets/wetlab/revision-model-wetlab-035.png",
+        "width": 680,
+        "height": 462,
         "alt": "Original Wet Lab writeup, page 3, figure 1",
         "clip": [
           72,
@@ -692,7 +692,7 @@
           3
         ],
         "key": "model-wetlab-035",
-        "sha256": "4ee71a03fe7f5320a55e22a1d12fb31bdf2cc65b5959e57c2e672f63b8c504b0"
+        "sha256": "56954b2c146dd81b161319228eb8d0e0fccf4712297b4033b16d993ea96dee52"
       },
       {
         "type": "caption",
@@ -739,9 +739,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p04-1.png",
-        "width": 1185,
-        "height": 1065,
+        "src": "assets/wetlab/revision-model-wetlab-039.png",
+        "width": 783,
+        "height": 704,
         "alt": "Original Wet Lab writeup, page 4, figure 1",
         "clip": [
           108,
@@ -753,7 +753,7 @@
           4
         ],
         "key": "model-wetlab-039",
-        "sha256": "7a570fc8a58a1f10f96606d5e94664509b2884848c4e66e546262fb897934471"
+        "sha256": "ec4568b51e4d5276d6379756af3111058cd6af79d82d656d95a75289dde694f4"
       },
       {
         "type": "caption",
@@ -1121,9 +1121,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p05-1.png",
-        "width": 1221,
-        "height": 612,
+        "src": "assets/wetlab/revision-model-wetlab-064.png",
+        "width": 807,
+        "height": 405,
         "alt": "Original Wet Lab writeup, page 5, figure 1",
         "clip": [
           72,
@@ -1135,7 +1135,7 @@
           5
         ],
         "key": "model-wetlab-064",
-        "sha256": "cb227cc88023aa4b146b27123a648db1c04c18a4c62ec15f9b3e0b5476a94317"
+        "sha256": "ae52a3bb054003a0c8913ab38d85eb75c557cb90225804e4be789b7cae5f37cc"
       },
       {
         "type": "caption",
@@ -1509,9 +1509,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p07-1.png",
-        "width": 1344,
-        "height": 765,
+        "src": "assets/wetlab/revision-model-wetlab-090.png",
+        "width": 888,
+        "height": 505,
         "alt": "Original Wet Lab writeup, page 7, figure 1",
         "clip": [
           72,
@@ -1523,13 +1523,13 @@
           7
         ],
         "key": "model-wetlab-090",
-        "sha256": "d73db9a06824769453005190e8db360fec417d84b2af66ac1d39d73b14660f00"
+        "sha256": "cdefdeeb36e06f777c9b31255ad1b2e6b0b961eeef7dbbe70fbb5d769708b79a"
       },
       {
         "type": "caption",
         "runs": [
           {
-            "text": "Colony PCR of DBTL 1 Samples: ",
+            "text": "Colony PCR of DBTL 3 Samples: ",
             "bold": true
           },
           {
@@ -1539,7 +1539,7 @@
         "pages": [
           7
         ],
-        "text": "Colony PCR of DBTL 1 Samples: Sulflux is our experimental plasmid, and BT0416 is the control. This PCR gel samples also account for recent and previously plated colonies: “su” colonies being the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag.",
+        "text": "Colony PCR of DBTL 3 Samples: Sulflux is our experimental plasmid, and BT0416 is the control. This PCR gel samples also account for recent and previously plated colonies: “su” colonies being the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag.",
         "key": "model-wetlab-091"
       },
       {
@@ -1887,9 +1887,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p10-1.png",
-        "width": 1200,
-        "height": 807,
+        "src": "assets/wetlab/revision-model-wetlab-110.png",
+        "width": 1064,
+        "height": 534,
         "alt": "Original Wet Lab writeup, page 10, figure 1",
         "clip": [
           72,
@@ -1901,7 +1901,7 @@
           10
         ],
         "key": "model-wetlab-110",
-        "sha256": "a82a63b5d0d22a922be76bb6db70bc7ceb0af4a64aa24ca1223095a3a0dfac13"
+        "sha256": "df51a0107a952f65665c604519c2519afcef8a0cbc0a52379c6899bbea2e7607"
       },
       {
         "type": "caption",
@@ -2817,9 +2817,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p13-1.png",
-        "width": 1416,
-        "height": 321,
+        "src": "assets/wetlab/revision-model-wetlab-171.png",
+        "width": 936,
+        "height": 209,
         "alt": "Original Wet Lab writeup, page 13, figure 1",
         "clip": [
           72,
@@ -2831,7 +2831,7 @@
           13
         ],
         "key": "model-wetlab-171",
-        "sha256": "1956e0e459b06766c28dc0ef619109a21c5bf91776ac3421e892dcbe2d17797d"
+        "sha256": "66621108a000e0f646c5e45d964e21704b0051c4804b24cd43f4400964a5adad"
       },
       {
         "type": "caption",
@@ -2929,9 +2929,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p14-1.png",
-        "width": 1245,
-        "height": 762,
+        "src": "assets/wetlab/revision-model-wetlab-177.png",
+        "width": 824,
+        "height": 502,
         "alt": "Original Wet Lab writeup, page 14, figure 1",
         "clip": [
           108,
@@ -2943,7 +2943,7 @@
           14
         ],
         "key": "model-wetlab-177",
-        "sha256": "115f0a5a8f569c913d5ce8f9108abaf4792d709b3eb91422172a5f12f7104b7c"
+        "sha256": "b32545927ab405c31de69fd90749aa3c604c8156c1854371de9d82199177e9cc"
       },
       {
         "type": "caption",
@@ -3619,9 +3619,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p16-1.png",
-        "width": 1416,
-        "height": 474,
+        "src": "assets/wetlab/revision-model-wetlab-223.png",
+        "width": 936,
+        "height": 311,
         "alt": "Original Wet Lab writeup, page 16, figure 1",
         "clip": [
           72,
@@ -3633,7 +3633,7 @@
           16
         ],
         "key": "model-wetlab-223",
-        "sha256": "45a0adbd9e490edef00485b9a89805e49924795301ee53c16619ba32f157850b"
+        "sha256": "bdbd6276f611446754599911f4eccbe0cc351afa6aa1b87c611f7af4f92d4bcf"
       },
       {
         "type": "caption",
@@ -3665,9 +3665,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p17-1.png",
-        "width": 1041,
-        "height": 765,
+        "src": "assets/wetlab/revision-model-wetlab-226.png",
+        "width": 687,
+        "height": 504,
         "alt": "Original Wet Lab writeup, page 17, figure 1",
         "clip": [
           72,
@@ -3679,7 +3679,7 @@
           17
         ],
         "key": "model-wetlab-226",
-        "sha256": "f399996a627f20a6dd70d0e402fdbee0e996d90b9a858afdaccb725becdc3c36"
+        "sha256": "2f7208fda9710d2626866b23b1608f4dd0d5d704a2ecd90ea57e007c28db0f1f"
       },
       {
         "type": "caption",
@@ -3715,9 +3715,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p17-2.png",
-        "width": 1008,
-        "height": 705,
+        "src": "assets/wetlab/revision-model-wetlab-229.png",
+        "width": 666,
+        "height": 463,
         "alt": "Original Wet Lab writeup, page 17, figure 2",
         "clip": [
           72,
@@ -3729,7 +3729,7 @@
           17
         ],
         "key": "model-wetlab-229",
-        "sha256": "615a9715dbdbf66d5bbfbdf1ab0946f2ce3e67458d0ed8ecf8685d8007d22074"
+        "sha256": "c940325f7565b3bc8bceda2b5222eb086b0355ce711ba2fc9cd2a053fa28da61"
       },
       {
         "type": "caption",
@@ -5562,6 +5562,31 @@
         "key": "model-wetlab-351"
       },
       {
+        "type": "figure",
+        "key": "revision-sds-gel",
+        "pages": [
+          22
+        ],
+        "src": "assets/wetlab/revision-sds-page.png",
+        "width": 878,
+        "height": 865,
+        "alt": "SDS-PAGE gel for SF2, SF3, and WT samples; band resolution limits interpretation.",
+        "sha256": "ab564352f5d8b1ba735ffb7e1d803da65de56b378da12bc626b58c6d1125171d"
+      },
+      {
+        "type": "paragraph",
+        "key": "revision-sds-interpretation",
+        "text": "SF2 IPTG: Some ladder-like horizontal features appear in the sample region, but they are distorted and should not be treated as reliable molecular-weight bands. SF2 Milk: A diffuse pattern is visible, with no confidently assignable target band. SF3 IPTG and SF3 Milk: Little interpretable protein separation is visible in the displayed sample regions. WT IPTG: A broad, intense vertical signal spans a large molecular-weight range, consistent with a poorly resolved or underloaded sample rather than one identifiable protein.",
+        "runs": [
+          {
+            "text": "SF2 IPTG: Some ladder-like horizontal features appear in the sample region, but they are distorted and should not be treated as reliable molecular-weight bands. SF2 Milk: A diffuse pattern is visible, with no confidently assignable target band. SF3 IPTG and SF3 Milk: Little interpretable protein separation is visible in the displayed sample regions. WT IPTG: A broad, intense vertical signal spans a large molecular-weight range, consistent with a poorly resolved or underloaded sample rather than one identifiable protein."
+          }
+        ],
+        "pages": [
+          22
+        ]
+      },
+      {
         "type": "heading",
         "level": 3,
         "id": "tlc",
@@ -5602,7 +5627,7 @@
         ],
         "text": "Thin-Layer Chromatography (TLC) Protocol",
         "pages": [
-          22
+          23
         ],
         "key": "model-wetlab-354"
       },
@@ -5615,7 +5640,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "text": "Materials",
         "key": "model-wetlab-355"
@@ -5628,7 +5653,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "text": "Lithocholic Acid (LCA) (1 mM), Thermo Fisher, Catalog No. 11-102-2967",
         "key": "model-wetlab-356"
@@ -5641,7 +5666,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5656,7 +5681,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5671,7 +5696,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5686,7 +5711,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5701,7 +5726,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5716,7 +5741,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5731,7 +5756,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5746,7 +5771,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5761,7 +5786,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5776,7 +5801,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5791,7 +5816,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5806,7 +5831,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5821,7 +5846,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5836,7 +5861,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5851,7 +5876,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "list": true,
         "indent": 0,
@@ -5867,7 +5892,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "text": "Part I: Preparation of Enzyme Reactions",
         "key": "model-wetlab-372"
@@ -5880,16 +5905,16 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "text": "Label the enzyme reaction tubes according to the reaction conditions.",
         "key": "model-wetlab-373"
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p22-1.png",
-        "width": 1680,
-        "height": 366,
+        "src": "assets/wetlab/revision-model-wetlab-374.png",
+        "width": 1196,
+        "height": 446,
         "alt": "Original Wet Lab writeup, page 22, figure 1",
         "clip": [
           52,
@@ -5898,10 +5923,10 @@
           648
         ],
         "pages": [
-          22
+          23
         ],
         "key": "model-wetlab-374",
-        "sha256": "7964f70e885b6b7a2a091180e6aa93c2e55dd3850ca571f04400d303c2926961"
+        "sha256": "c76753c9749c61f484762ab21ef726665995c750a94031be71c23da3bb4ea536"
       },
       {
         "type": "caption",
@@ -5915,7 +5940,7 @@
           }
         ],
         "pages": [
-          22
+          23
         ],
         "text": "Practical Sample Setup for TLC: This table shows the setup of the reactions we used for each respective protein to maintain an appropriate amount of protein-to-substrate and buffer ratio.",
         "key": "model-wetlab-375"
@@ -6013,7 +6038,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6028,7 +6053,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "text": "Pour the prepared developing solvent into a beaker to a depth of less than 1 cm, ensuring that the solvent level remains below the pencil line used for spotting the TLC plate.",
         "key": "model-wetlab-383"
@@ -6042,7 +6067,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "text": "Part III: Spotting the TLC Plate",
         "key": "model-wetlab-384"
@@ -6055,7 +6080,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "text": "Draw a pencil line approximately 1 cm from the bottom of the silica TLC plate. Label each lane sequentially to keep track of the samples.",
         "key": "model-wetlab-385"
@@ -6068,7 +6093,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6083,7 +6108,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6098,7 +6123,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6114,7 +6139,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "text": "Part IV: Developing the TLC Plate",
         "key": "model-wetlab-389"
@@ -6127,7 +6152,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6142,7 +6167,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6157,7 +6182,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6176,7 +6201,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6192,7 +6217,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "text": "Part V: Staining and Quantifying Results",
         "key": "model-wetlab-394"
@@ -6205,7 +6230,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6220,7 +6245,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6235,7 +6260,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6250,7 +6275,7 @@
           }
         ],
         "pages": [
-          23
+          24
         ],
         "list": true,
         "indent": 0,
@@ -6259,9 +6284,9 @@
       },
       {
         "type": "figure",
-        "src": "assets/wetlab/figure-p24-1.png",
-        "width": 1404,
-        "height": 495,
+        "src": "assets/wetlab/revision-model-wetlab-399.png",
+        "width": 815,
+        "height": 296,
         "alt": "Original Wet Lab writeup, page 24, figure 1",
         "clip": [
           72,
@@ -6273,7 +6298,35 @@
           24
         ],
         "key": "model-wetlab-399",
-        "sha256": "ed7f3d5c672eb7d008306804b71f439c311f8330c168f96c168da40a68119610"
+        "sha256": "6f40498b502a57257fba1acbfda703fd9e8f514fb1400598dedc03480bbd0b30"
+      },
+      {
+        "type": "heading",
+        "key": "revision-discussion",
+        "text": "Discussion",
+        "runs": [
+          {
+            "text": "Discussion"
+          }
+        ],
+        "pages": [
+          25
+        ],
+        "level": 2,
+        "id": "wetlab-discussion"
+      },
+      {
+        "type": "paragraph",
+        "key": "revision-discussion-text",
+        "text": "Over two cycles, we built a working expression-and-analysis pipeline for BtSULT variants in BL21 cells: heat-shock transformation, kanamycin selection, colony PCR, induction, B-PER lysis, His-tag purification, and BCA quantification. Cycle 3 with WT and the 6xAla SulFlux showed that both constructs integrate and express. Several colonies carried the expected 2 kb band, and His-purified proteins reached 54–102 µg/mL, about 21–38% of the loaded sample. Cycle 4 (F147S, F147S_E144D, and WT) reproduced this at higher yields, with roughly 200–300 µg/mL purified against about 1000 µg/mL crude lysate. Together these results show that the host, vector, and SUMO/His fusion design can produce soluble, purifiable protein, which supports the BL21 system as a suitable host. The parameters of our in vitro work were that we could not demonstrate that SulFlux or the F147S variants reliably fold correctly or sulfonate LCA, supporting only expression and purification, but no definitive catalytic activity.",
+        "runs": [
+          {
+            "text": "Over two cycles, we built a working expression-and-analysis pipeline for BtSULT variants in BL21 cells: heat-shock transformation, kanamycin selection, colony PCR, induction, B-PER lysis, His-tag purification, and BCA quantification. Cycle 3 with WT and the 6xAla SulFlux showed that both constructs integrate and express. Several colonies carried the expected 2 kb band, and His-purified proteins reached 54–102 µg/mL, about 21–38% of the loaded sample. Cycle 4 (F147S, F147S_E144D, and WT) reproduced this at higher yields, with roughly 200–300 µg/mL purified against about 1000 µg/mL crude lysate. Together these results show that the host, vector, and SUMO/His fusion design can produce soluble, purifiable protein, which supports the BL21 system as a suitable host. The parameters of our in vitro work were that we could not demonstrate that SulFlux or the F147S variants reliably fold correctly or sulfonate LCA, supporting only expression and purification, but no definitive catalytic activity."
+          }
+        ],
+        "pages": [
+          25
+        ]
       },
       {
         "type": "heading",
@@ -6287,7 +6340,7 @@
         ],
         "text": "References",
         "pages": [
-          24
+          26
         ],
         "key": "model-wetlab-400"
       },
@@ -6295,34 +6348,27 @@
         "type": "paragraph",
         "runs": [
           {
-            "text": "Adrianza, R. (2026). "
-          },
-          {
-            "text": "Education | University Lab Partners",
-            "italic": true
-          },
-          {
-            "text": ". University Lab Partners."
+            "text": "Adrianza, R., Renusch, S. (2026). Education | University Lab Partners. University Lab Partners."
           }
         ],
         "pages": [
-          24
+          26
         ],
-        "text": "Adrianza, R. (2026). Education | University Lab Partners. University Lab Partners.",
+        "text": "Adrianza, R., Renusch, S. (2026). Education | University Lab Partners. University Lab Partners.",
         "key": "model-wetlab-401"
       },
       {
         "type": "paragraph",
         "runs": [
           {
-            "text": "https://www.universitylabpartners.org/educationUtilizedproceduresfromULPIMPOWERSlaboratorymanuals:MolecularBiology1andMolecularBiology2",
-            "href": "https://www.universitylabpartners.org/educationUtilizedproceduresfromULPIMPOWERSlaboratorymanuals:MolecularBiology1andMolecularBiology2"
+            "text": "https://www.universitylabpartners.org/education",
+            "href": "https://www.universitylabpartners.org/education"
           }
         ],
         "pages": [
-          24
+          26
         ],
-        "text": "https://www.universitylabpartners.org/educationUtilizedproceduresfromULPIMPOWERSlaboratorymanuals:MolecularBiology1andMolecularBiology2",
+        "text": "https://www.universitylabpartners.org/education",
         "key": "model-wetlab-402"
       },
       {
@@ -6346,7 +6392,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "B-PERTM bacterial protein extraction reagent. (2026). Thermofisher.Com.",
         "key": "model-wetlab-403"
@@ -6360,7 +6406,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "https://www.thermofisher.com/order/catalog/product/90084",
         "key": "model-wetlab-404"
@@ -6387,7 +6433,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "Cass, O.W, Cowen, A.E, Hofmann, A.F, & Coffin, S.B. (1975). Thin-layer chromatographic separation of sulfated and nonsulfated lithocholic acids and their glycine and taurine conjugates. Journal of Lipid Research, 16 (2), 159–160.",
         "key": "model-wetlab-405"
@@ -6401,7 +6447,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "https://doi.org/10.1016/S0022-2275(20)36743-2",
         "key": "model-wetlab-406"
@@ -6421,7 +6467,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "GSL Biotech LLC. (2023). pET-28a(+) sequence and map. SnapGene.",
         "key": "model-wetlab-407"
@@ -6435,7 +6481,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-28a(%2B)",
         "key": "model-wetlab-408"
@@ -6452,7 +6498,7 @@
           }
         ],
         "pages": [
-          24
+          26
         ],
         "text": "His-Spin Protein Miniprep. (n.d.). Zymo Research.",
         "key": "model-wetlab-409"
@@ -6466,7 +6512,7 @@
           }
         ],
         "pages": [
-          25
+          26
         ],
         "text": "https://www.zymoresearch.com/products/his-spin-protein-miniprep?srsltid=AU7gw4Um7__JHS7xZIZ9W_qgeMnm-ctZUkOm-A3Q_pEpMtA2YC2tZo1w",
         "key": "model-wetlab-410"
@@ -6486,7 +6532,7 @@
           }
         ],
         "pages": [
-          25
+          26
         ],
         "text": "Shenekji, J. (2024). Using skimmed milk as a low-cost alternative to IPTG in plasmid expression induction (LacZ promoter) V1.",
         "key": "model-wetlab-411"
@@ -6500,7 +6546,7 @@
           }
         ],
         "pages": [
-          25
+          26
         ],
         "text": "https://doi.org/10.17504/protocols.io.j8nlk81z6l5r/v1",
         "key": "model-wetlab-412"
@@ -6527,7 +6573,7 @@
           }
         ],
         "pages": [
-          25
+          26
         ],
         "text": "Zhao, X., Liu, Z., Sun, F., Yao, L., Yang, G., & Wang, K. (2022). Bile acid detection techniques and bile acid-related diseases. Frontiers in Physiology, 13.",
         "key": "model-wetlab-413"
@@ -6541,7 +6587,7 @@
           }
         ],
         "pages": [
-          25
+          26
         ],
         "text": "https://doi.org/10.3389/fphys.2022.826740",
         "key": "model-wetlab-414"

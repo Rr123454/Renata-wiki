@@ -106,7 +106,7 @@
         const ancestor = group.node.contains(current.link);
         group.node.classList.toggle('is-active-ancestor', ancestor);
         // Preserve a branch containing keyboard focus until focus leaves it.
-        if (ancestor || !group.list.contains(doc.activeElement)) setGroup(group, ancestor);
+        if (nav.dataset.outlineAutocollapse !== 'false' && (ancestor || !group.list.contains(doc.activeElement))) setGroup(group, ancestor);
       });
       if (!rootList.hidden && !nav.contains(doc.activeElement)) {
         const item = current.link.getBoundingClientRect(), box = nav.getBoundingClientRect();

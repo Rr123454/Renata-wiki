@@ -82,7 +82,7 @@ const html = `<!DOCTYPE html>
       <div class="mission-scene-copy">${back}<p class="mission-eyebrow">SulFlux</p><h2 id="sulflux-title"><em>Escherichia coli</em></h2>${paragraph('probiotic')}<a class="mission-button" href="project-description.html">Explore the project <span aria-hidden="true">↗</span></a></div>
       <figure class="mission-scene-art mission-person-art">${person}</figure>
     </section>
-    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="project-description.html">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
+    <section class="mission-finale" id="mission"><p class="mission-eyebrow">ULP-CA / SulFlux</p><h2>Explore more.</h2><div class="mission-next-links"><a href="engineering.html#dbtl-cycle">Engineering ↗</a><a href="wet-lab.html">Wet lab ↗</a><a href="model.html">Model ↗</a><a href="team.html">Our team ↗</a></div>${back}</section>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
   <script src="js/site-content.js"></script>

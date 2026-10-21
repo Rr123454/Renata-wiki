@@ -114,8 +114,8 @@ test("patient accounts retain their differences, learning points, and evidence b
   for (const phrase of ["cholecystectomy in 2009", "over 16 years", "pancreatitis and gallbladder dysfunction", "holiday meals", "including Prilosec, had done little to help her", "reduces the amount of acid produced in the stomach", "cleared up most of his discomfort", "particularly those in Chinese cuisine", "<strong>an ideal medication should be simple to use, especially for older patients</strong>", "long-term side effects", "clinical testing and transparency"]) {
     assert.ok(text.includes(phrase), phrase);
   }
-  assert.match(record.details[0].note, /cannot establish how common symptoms are/);
-  assert.match(record.details[0].note, /safety or effectiveness/);
+  assert.equal(record.details[0].note, undefined);
+  assert.doesNotMatch(renderer('renderDetailSections', 'renderButtons')(record.details), /Working note|These are two personal accounts shared with the team/);
   assert.equal(record.details[1].source.href, "https://medlineplus.gov/druginfo/meds/a693050.html");
   assert.doesNotMatch(record.kicker, /2026|May/); // No interview date was supplied.
 });
@@ -201,14 +201,17 @@ test("MedChem account preserves progress and marks missing design evidence expli
   assert.doesNotMatch(text, /July \d|2026|TALK ABOUT/);
 });
 
-test("all four Education initiative cards are populated", () => {
-  assert.equal(data.educationEventRoutes.length, 4);
+test("all five Education initiative cards are populated", () => {
+  for (const route of data.educationEventRoutes) {
+    assert.doesNotMatch(JSON.stringify(data.pages[route.href.replace('.html', '')]), /no formal learning-assessment results were supplied/);
+  }
+  assert.equal(data.educationEventRoutes.length, 5);
   assert.doesNotMatch(JSON.stringify(data.educationEventRoutes), /PLACEHOLDER/);
   const index = renderer("renderEducationPage", "renderExperimentRecordPage", { data })();
   assert.doesNotMatch(index, /Entries marked as placeholders/);
 });
 
-test("Education owns four initiatives and Human Practices owns six records alongside its paper", () => {
+test("Education owns five initiatives and Human Practices owns six records alongside its paper", () => {
   const renderEvents = renderer("renderEducationPage", "renderExperimentRecordPage", { data });
   const renderHP = renderer("renderHumanPracticesPage", "renderStandardPage", { data });
   const hp = renderHP();
@@ -239,7 +242,8 @@ test("ULP genetics event preserves all four sections and renders every paragraph
   for (const section of record.details) {
     for (const paragraph of [section.text, ...(section.paragraphs || [])]) assert.ok(html.includes(paragraph));
   }
-  for (const phrase of ["over 30 children ages nine and above", "adenine, thymine, cytosine, and guanine", "multiple genes and environmental factors", "no formal learning-assessment results were supplied"]) assert.ok(html.includes(phrase), phrase);
+  for (const phrase of ["over 30 children ages nine and above", "adenine, thymine, cytosine, and guanine", "multiple genes and environmental factors"]) assert.ok(html.includes(phrase), phrase);
+  assert.doesNotMatch(html, /no formal learning-assessment results were supplied/);
   assert.match(read("education-ulp.html"), /data-page="education-ulp"/);
   const { pageChapter } = require("../js/orbit-pages.js");
   for (const route of data.educationEventRoutes) {
@@ -252,24 +256,35 @@ test("ULP genetics event preserves all four sections and renders every paragraph
 
 test("the Education overview appears before event cards and preserves the supplied account", () => {
   const html = renderer("renderEducationPage", "renderExperimentRecordPage", { data })();
+  assert.doesNotMatch(html, /Content status|Formal learning-assessment results|experiment-evidence-note/);
   assert.equal(data.educationOverview.paragraphs.length, 4);
   for (const paragraph of data.educationOverview.paragraphs) assert.ok(html.includes(paragraph));
   assert.ok(html.indexOf('id="education-overview"') < html.indexOf('class="experiment-route-list"'));
-  assert.ok(html.includes(data.educationOverview.source));
+  assert.ok(!html.includes(data.educationOverview.source));
   assert.equal(data.educationEventRoutes.filter(route => route.href === "education-ulp.html").length, 1);
   assert.equal(data.educationEventRoutes.filter(route => route.href === "education-troy.html").length, 1);
 });
 
-test("Troy Education Day and BYLD share a complete, linked event record", () => {
+test("Troy Education Day and BYLD have separate linked event records", () => {
   const record = data.pages["education-troy"];
   const route = data.educationEventRoutes[2];
   assert.equal(record.title, route.title);
   assert.equal(record.lead, route.summary);
   assert.equal(route.href, "education-troy.html");
-  assert.deepEqual(Array.from(record.details, section => section.id), ["troy-classroom", "troy-microscopy", "troy-yeast", "troy-enzyme", "troy-takeaway", "troy-byld"]);
+  assert.deepEqual(Array.from(record.details, section => section.id), ["troy-classroom", "troy-microscopy", "troy-yeast", "troy-enzyme", "troy-takeaway"]);
   const html = renderer("renderDetailSections", "renderButtons")(record.details);
   for (const section of record.details) assert.ok(html.includes(section.text));
-  assert.match(html, /Karthik and Humza founded the Biotechnology Youth Literacy Directive/);
+  assert.doesNotMatch(JSON.stringify(record), /BYLD|Biotechnology Youth Literacy Directive/);
+  const byld = data.pages["education-byld"];
+  const byldRoute = data.educationEventRoutes[3];
+  assert.equal(byldRoute.href, "education-byld.html");
+  assert.equal(byldRoute.title, byld.title);
+  assert.equal(byldRoute.summary, byld.lead);
+  const byldHtml = renderer("renderDetailSections", "renderButtons")(byld.details);
+  assert.match(byldHtml, /Karthik and Humza founded the Biotechnology Youth Literacy Directive/);
+  assert.match(byldHtml, /assets\/engagement\/page-24-1.jpg/);
+  assert.match(read(byldRoute.href), /data-page="education-byld"/);
+  assert.deepEqual(Array.from(data.educationEventRoutes, route => route.number), ["01", "02", "03", "04", "05"]);
   assert.match(read(route.href), /data-page="education-troy"/);
   assert.match(read(route.href), /<title>Troy Biotechnology Education Day \| ULP-CA<\/title>/);
   assert.doesNotMatch(JSON.stringify(record), /PLACEHOLDER|Edit this page|Content coming soon/);
@@ -279,7 +294,7 @@ test("Troy Education Day and BYLD share a complete, linked event record", () => 
 test("all 37 supplied Education paragraphs are preserved in order", () => {
   const lines = read("content/education/complete-education.txt").split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
   const paragraphs = lines.filter(s => s.length > 150);
-  const actual = [...data.educationOverview.paragraphs, ...["education-ulp","education-butterfly","education-troy","education-kickstart"].flatMap(key => data.pages[key].details.flatMap(section=>[section.text,...(section.paragraphs||[])]).filter(Boolean))];
+  const actual = [...data.educationOverview.paragraphs, ...["education-ulp","education-butterfly","education-troy","education-byld","education-kickstart"].flatMap(key => data.pages[key].details.flatMap(section=>[section.text,...(section.paragraphs||[])]).filter(Boolean))];
   assert.equal(paragraphs.length, 37);
   assert.deepEqual(Array.from(actual), paragraphs);
 });
@@ -323,7 +338,7 @@ test("all thirteen PDF photos appear once in their matching event records", () =
     assert.ok(photos.some(p=>p.src===photo.src));
     assert.ok(fs.existsSync(path.join(root,photo.src)));
     assert.ok(html.includes(`src="${photo.src}"`));
-    assert.ok(html.includes(`p. ${photo.page}.`));
+    assert.ok(!html.includes(`Writeup Education + HP, p. ${photo.page}.`));
   }
 });
 
@@ -335,8 +350,44 @@ test("Education prose matches the new PDF and HP has a source-backed overview", 
   for(const paragraph of paragraphs) assert.ok(pdf.includes(normalize(paragraph)),paragraph.slice(0,90));
   const hp=renderer('renderHumanPracticesPage','renderStandardPage',{data})();
   assert.doesNotMatch(hp,/PLACEHOLDER|At its roots, our Human Practices involvement comes from/);
-  assert.match(hp,/Overview synthesized from the six event accounts/);
-  assert.match(hp,/no interview quotations, participant counts, consent claims/);
-  assert.equal(data.educationEventRoutes.length,4);
+  assert.doesNotMatch(hp,/Team-supplied PDF|Overview synthesized from the six event accounts/);
+  assert.match(hp,/No clinical validation is reported here/);
+  assert.doesNotMatch(hp,/document’s opening HP overview is unfinished/);
+  assert.equal(data.educationEventRoutes.length,5);
   assert.equal(data.humanPracticesEventRoutes.length,6);
+});
+
+test("internal-file citations are omitted while external references and PDF viewers remain", () => {
+  const render=renderer('renderDetailSections','renderButtons');
+  const events=[...data.educationEventRoutes,...data.humanPracticesEventRoutes];
+  for(const route of events) {
+    const page=data.pages[route.href.replace('.html','')];
+    assert.doesNotMatch(render(page.details),/Team-supplied|User-supplied|Writeup Education \+ HP|Complete Education Account|Overview and Education Initiatives/);
+  }
+  assert.match(render(data.pages['education-event-03'].details),/medlineplus.gov/);
+  assert.match(render(data.pages['education-kickstart'].details),/<iframe/);
+  assert.match(render([{title:'Published reference',citation:'Published paper citation'}]),/Published paper citation/);
+});
+
+test("shared detail pages omit all Working note callouts and preserve the main write-ups", () => {
+  const render = renderer('renderDetailSections', 'renderButtons');
+  let legacyNotes = 0;
+  for (const [key, page] of Object.entries(data.pages)) {
+    if (!page.details?.length) continue;
+    const html = render(page.details);
+    assert.doesNotMatch(html, /Working note|class="evidence-note"/i, key);
+    for (const section of page.details) {
+      if (section.note) {
+        legacyNotes++;
+        assert.ok(!html.includes(section.note), `${key}: legacy note is omitted`);
+      }
+      for (const paragraph of [section.text, ...(section.paragraphs || [])].filter(Boolean)) {
+        assert.ok(html.includes(paragraph), `${key}: original prose is preserved`);
+      }
+    }
+  }
+  assert.ok(legacyNotes > 0, 'The test covers existing note-bearing records');
+  const future = render([{title:'Event account',text:'Original event account.',note:'An editorial note supplied by a future import.'}]);
+  assert.match(future, /Original event account\./);
+  assert.doesNotMatch(future, /editorial note|Working note|evidence-note/);
 });

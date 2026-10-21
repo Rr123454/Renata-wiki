@@ -1,4 +1,11 @@
 .project-paper-citation { font-size: .8em; font-weight: 700; white-space: nowrap; text-underline-offset: .15em; }
+body[data-page="project-description"] .project-paper-section > p + p { margin-top: 1rem; }
+body[data-page="project-description"] .project-paper-section > ul { margin-block: 1rem; padding-left: 1.4rem; list-style: disc; }
+#description-references ol { padding-left: 1.5rem; list-style: decimal; }
+#description-references li { margin-bottom: 1.3rem; scroll-margin-top: calc(var(--site-header-height, 71px) + 1.5rem); }
+#description-references a { text-decoration: underline; text-underline-offset: .15em; }
+#description-references h3 { margin: 2rem 0 1rem; }
+.project-reference-note { display: block; margin-top: .4rem; color: var(--muted-ink); font-size: .9em; }
 .project-paper-evidence-image { display: block; width: 100%; max-width: 58rem; height: auto; }
 .project-paper-section > p a { text-decoration: underline; text-underline-offset: .18em; }
 .project-paper-sidebar .project-sidebar-reference a { display: inline-block; width: fit-content; padding: .25rem 0; border: 0; border-radius: 0; background: transparent; font-size: .76rem; text-decoration: underline; }
@@ -77,6 +84,7 @@ body.project-dbtl-page .project-engineering-record { padding: 0; margin: .8rem 0
 .project-record-body .project-paper-note { margin-bottom: 1rem; }
 .project-dbtl-paper :is(summary, a, button):focus-visible { outline: 2px solid var(--deep-ink); outline-offset: 4px; }
 @media (max-width: 900px) {
+  #description-references li { scroll-margin-top: calc(var(--site-header-height, 71px) + 90px); }
   body.project-dbtl-page .project-paper-layout { display: flex; flex-direction: column; gap: 1.5rem; }
   body.project-dbtl-page .project-paper-sidebar { width: 100%; order: -1; align-self: auto; top: var(--site-header-height, 71px); background: var(--main-cream); z-index: 5; padding: .65rem 0; }
   body.project-dbtl-page .project-paper-sidebar-inner > h2 { margin-bottom: .5rem; font-size: .65rem; }
@@ -88,3 +96,25 @@ body.project-dbtl-page .project-engineering-record { padding: 0; margin: .8rem 0
   .project-cycle-nav a { gap: .3rem; font-size: .85rem; }
   .project-dbtl-stage { padding-block: 1.75rem; }
 }
+/* Current DBTL report: preserve the shared cream-and-blue article treatment. */
+.engineering-current-cycle { padding-block: 2rem; border-top: 1px solid #db805066; scroll-margin-top: 120px; }
+@media (max-width: 900px) {
+  .engineering-current-cycle { scroll-margin-top: calc(var(--site-header-height, 80px) + 90px); }
+  body[data-page="engineering"] .project-paper { width: 100%; max-width: 100%; overflow-wrap: anywhere; }
+}
+.engineering-current-cycle h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
+.engineering-current-cycle h4 { margin-block: 2rem 1rem; font-size: 1.25rem; color: #254780; }
+.engineering-table-scroll { overflow-x: auto; margin-block: 1.5rem; }
+.engineering-table-scroll table { border-collapse: collapse; width: 100%; }
+.engineering-table-scroll :is(th,td) { padding: .8rem; border: 1px solid #24305e44; text-align: left; }
+.engineering-table-scroll th { background: #f4dec4; }
+.engineering-history { margin-top: 3rem; padding: 1.5rem; border: 1px solid #24305e44; border-radius: 12px; }
+.engineering-history > summary { cursor: pointer; font-weight: 700; font-size: 1.3rem; }
+#engineering-current-references { overflow-wrap: anywhere; }
+.engineering-reference-list { padding-left: 1.7em; list-style: decimal outside; }
+.engineering-reference-list li { display: list-item; list-style: decimal outside; }
+#engineering-current-references h3 { font-size: 1.2rem; margin-block: 2rem 1rem; }
+body[data-page="engineering"] #abstract > p + p { margin-top: 1rem; }
+.engineering-reference-list li { padding-left: .4em; margin-block: 0 1.2em; line-height: 1.7; }
+.engineering-reference-list li::marker { font-weight: 700; }
+#engineering-current-references, [id^="engineering-refs-"] { scroll-margin-top: 120px; }

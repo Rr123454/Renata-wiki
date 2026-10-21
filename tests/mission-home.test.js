@@ -98,9 +98,9 @@ test('the supplied Sulflux PNG stays unchanged and its bottle uses an unclipped 
 function fixture({reducedMotion=false,height=900}={}) {
  let serial=0,time=0;const jobs=new Map();
  function el() {
-  const classes=new Set();return {events:{},style:{setProperty(k,v){this[k]=v;}},dataset:{},children:[],offsetHeight:900,offsetWidth:330,clientWidth:1440,
+  const classes=new Set();return {events:{},style:{setProperty(k,v){this[k]=v;},removeProperty(k){delete this[k];}},dataset:{},children:[],offsetTop:36,offsetHeight:900,offsetWidth:330,clientWidth:1440,
    classList:{add:k=>classes.add(k),contains:k=>classes.has(k),toggle(k,on){on?classes.add(k):classes.delete(k);}},
-   addEventListener(k,fn){this.events[k]=fn;},removeAttribute(k){if(k==='style')this.style={setProperty(k,v){this[k]=v;}};},
+   addEventListener(k,fn){this.events[k]=fn;},removeAttribute(k){if(k==='style')this.style={setProperty(k,v){this[k]=v;},removeProperty(k){delete this[k];}};},
    focus(){doc.activeElement=this;}
   };
  }
@@ -137,6 +137,13 @@ test('the actual controller exposes planets after zoom and back links restore th
  f.scroll(5200);f.hubLinks[0].events.click({preventDefault(){}});
  assert.equal(f.win.location.hash,'#observatory');assert.equal(f.win.scrollY,3320);assert.equal(f.doc.activeElement,f.heading);
  f.planets[0].events.click();assert.equal(f.planets[0].classList.contains('is-visited'),true);
+});
+
+test('desktop title center aligns with the SulFlux lettering without moving the bottle',()=>{
+ const f=fixture(),stage=f.nodes['.mission-launch-stage'];
+ const labelY=900*.59+(785-845)*330/490;
+ near(parseFloat(stage.style['--intro-top'])+f.heading.offsetTop+f.heading.offsetHeight/2,labelY);
+ near(parseFloat(stage.style['--bottle-y']),900*.59);
 });
 
 test('a 675px-tall desktop keeps the PCS transition active and reverses cleanly on scroll up',()=>{

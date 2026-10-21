@@ -40,38 +40,95 @@
     </li>`;
   }
 
+  function renderDescription(pageData) {
+    const description = pageData.description || {sections: [{id:"abstract",title:"Abstract",html:pageData.paper?.abstract || ""}], references: []};
+    return `<section class="project-paper-page" id="project-description"><div class="container project-paper-layout">
+      <aside class="project-paper-sidebar" aria-label="Project Description page outline">
+        <nav class="page-outline" data-project-outline aria-labelledby="project-outline-title"><div class="project-outline-heading"><p class="page-outline-title" id="project-outline-title">On this page</p><button type="button" data-outline-collapse aria-expanded="true" aria-controls="project-outline-list" aria-label="Toggle page contents" hidden>⌄</button></div>
+          <ul id="project-outline-list">${description.sections.map(s=>`<li><a href="#${escape(s.id)}">${escape(s.title)}</a></li>`).join("")}<li><a href="#description-references">References</a></li></ul>
+        </nav><a class="page-outline-related" href="engineering.html#dbtl-cycle">Engineering — DBTL cycle ↗</a>
+      </aside>
+      <article class="project-paper" aria-labelledby="project-paper-title"><header class="project-paper-header"><p class="project-paper-type">Background / Problem / Proposed approach</p><h1 id="project-paper-title">Project Description</h1></header>
+        ${description.sections.map(s=>`<section class="project-paper-section" id="${escape(s.id)}"><h2>${escape(s.title)}</h2>${s.html}</section>`).join("")}
+        <section class="project-paper-section" id="description-references"><h2>References</h2><ol>${description.references.filter(r=>!r.supplementary).map(r=>`<li id="description-ref-${r.number}">${r.html}</li>`).join("")}</ol><h3>Supplementary background</h3><ol start="12">${description.references.filter(r=>r.supplementary).map(r=>`<li id="description-ref-${r.number}">${r.html}</li>`).join("")}</ol></section>
+      </article></div></section>`;
+  }
+
+  function renderCurrentEngineering(pageData) {
+    const engineering = pageData.engineering;
+    const report = engineering.currentReport;
+    const retainedReferences = (pageData.paper?.references || []).filter(ref => !ref.internal && !report.referencesHtml.includes(escape(ref.href)));
+    const nextReference = (report.referencesHtml.match(/id="engineering-ref-/g) || []).length + 1;
+    const retainedReferenceMarkup = retainedReferences.length ? `<section id="engineering-retained-references"><h3>Additional references</h3><ol class="engineering-reference-list" start="${nextReference}">${retainedReferences.map((ref,index) => `<li id="engineering-ref-${nextReference+index}">${ref.citation} <a href="${escape(ref.href)}" target="_blank" rel="noopener noreferrer">${escape(ref.href)}</a></li>`).join('')}</ol></section>` : '';
+    // Keep earlier bookmarks usable without bringing the superseded layout back.
+    const legacyAnchors = ["engineering-current", "design", "build", "test", "learn", "methodology", "results", "conclusion", "figure-expression-vector", "figure-pathway", "figure-pcs-development", "figure-pcs-use", "figure-status", ...(engineering.details || []).map(record => record.id)];
+    return `<section class="project-paper-page project-dbtl-paper" id="engineering-page">
+      <div class="container project-paper-layout">
+        <aside class="project-paper-sidebar" aria-label="Engineering page outline">
+          <nav class="page-outline" data-project-outline data-outline-autocollapse="false" aria-labelledby="project-outline-title">
+            <div class="project-outline-heading"><p class="page-outline-title" id="project-outline-title">On this page</p><button type="button" data-outline-collapse aria-expanded="true" aria-controls="project-outline-list" aria-label="Toggle page contents" hidden><span aria-hidden="true">⌄</span></button></div>
+            <ul id="project-outline-list">
+              <li><a href="#abstract">Abstract</a></li>
+              ${outlineBranch("engineering", "DBTL Cycle", report.outline.map((cycle,index) => `<li><a href="#${escape(cycle.id)}">Cycle ${index+1}</a></li>`).join(''))}
+              <li><a href="#engineering-current-references">References</a></li>
+            </ul>
+          </nav>
+          <a class="page-outline-related" href="project-description.html#abstract">Project Description ↗</a>
+          <a class="page-outline-related" href="model.html">Molecular figures and model analysis ↗</a>
+          <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
+        </aside>
+        <article class="project-paper" aria-labelledby="project-paper-title">
+          <header class="project-paper-header"><p class="project-paper-type">Design / Build / Test / Learn</p><h1 id="project-paper-title">Engineering</h1></header>
+          <section class="project-paper-section" id="abstract" aria-labelledby="engineering-abstract-title">
+            <h2 id="engineering-abstract-title">Abstract</h2>${report.abstractHtml}
+          </section>
+          <section class="project-paper-section project-engineering" id="engineering" aria-labelledby="engineering-title">
+            <span class="project-legacy-anchor" id="dbtl-cycle" aria-hidden="true"></span>
+            ${legacyAnchors.map(id => `<span class="project-legacy-anchor" id="${escape(id)}" aria-hidden="true"></span>`).join('')}
+            <h2 id="engineering-title">DBTL Cycle</h2>
+            <p>Four cycles connect structural study, mutant screening, and two rounds of protein expression. Expression and purification were measured; reliable folding, target-band identity, and LCA sulfation remain unconfirmed.</p>
+            ${report.cyclesHtml}
+          </section>
+          <section class="project-paper-section" id="engineering-current-references" aria-labelledby="engineering-references-title">
+            <span class="project-legacy-anchor" id="engineering-sources" aria-hidden="true"></span>
+            <h2 id="engineering-references-title">References</h2>
+            ${report.referencesHtml}${retainedReferenceMarkup}
+          </section>
+        </article>
+      </div>
+    </section>`;
+  }
+
   function render(pageData) {
+    if (pageData.projectView === "description") return renderDescription(pageData);
+    if (pageData.engineering?.currentReport) return renderCurrentEngineering(pageData);
     const paper = pageData.paper || {};
     const engineering = pageData.engineering || {};
     const stages = paper.dbtl?.stages || [];
     const records = new Map((engineering.details || []).map(record => [record.id, record]));
-    return `<section class="project-paper-page project-dbtl-paper" id="project-description">
+    return `<section class="project-paper-page project-dbtl-paper" id="engineering-page">
       <div class="container project-paper-layout">
         <aside class="project-paper-sidebar" aria-label="Project page outline">
           <nav class="page-outline" data-project-outline aria-labelledby="project-outline-title">
             <div class="project-outline-heading"><p class="page-outline-title" id="project-outline-title">On this page</p><button type="button" data-outline-collapse aria-expanded="true" aria-controls="project-outline-list" aria-label="Toggle page contents" hidden><span aria-hidden="true">⌄</span></button></div>
             <ul id="project-outline-list">
-              <li><a href="#abstract">Abstract</a></li>
               ${outlineBranch("engineering", "DBTL Cycle", stages.map(stage => outlineBranch(stage.id, `${stage.label} — ${stage.title}`, `
                 ${stage.id === "design" ? '<li><a href="#figure-expression-vector">Figure 1 — Expression vector</a></li>' : ""}
                 ${stage.records.map(id => records.get(id)).filter(Boolean).map(record => `<li><a href="#${escape(record.id)}">${escape(record.title)}</a></li>`).join("")}
               `)).join(""))}
-              ${outlineBranch("engineering-sources", "References", (paper.references || []).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join(""))}
+              ${outlineBranch("engineering-sources", "References", (paper.references || []).filter(reference => !reference.internal).map((reference, index) => `<li><a href="${escape(reference.href)}" target="_blank" rel="noopener noreferrer">${index + 1}. ${escape(reference.title)}</a></li>`).join(""))}
             </ul>
           </nav>
+          <a class="page-outline-related" href="project-description.html#abstract">Project Description ↗</a>
           <a class="page-outline-related" href="model.html">Molecular figures and model analysis ↗</a>
           <a class="page-outline-related" href="wet-lab.html">Wetlab records ↗</a>
         </aside>
         <article class="project-paper" aria-labelledby="project-paper-title">
-          <header class="project-paper-header"><p class="project-paper-type">Research / Design / Evidence</p><h1 id="project-paper-title">Our Project</h1></header>
-          <section class="project-paper-section" id="abstract" aria-labelledby="abstract-title">
-            <p class="project-paper-section-number">Overview</p><h2 id="abstract-title">Abstract</h2>
-            <span class="project-legacy-anchor" id="figure-concept" aria-hidden="true"></span>
-            ${paper.abstract || ""}
-          </section>
+          <header class="project-paper-header"><p class="project-paper-type">Design / Build / Test / Learn</p><h1 id="project-paper-title">Engineering</h1></header>
           <section class="project-paper-section project-engineering" id="engineering" aria-labelledby="engineering-title">
             <span class="project-legacy-anchor" id="dbtl-cycle" aria-hidden="true"></span>
-            <p class="project-paper-section-number">The engineering cycle</p><h2 id="engineering-title">DBTL Cycle</h2><p>${paper.dbtl?.intro || engineering.intro || ""}</p>
+            <p class="project-paper-section-number">The engineering cycle</p><h2 id="engineering-title">DBTL Cycle</h2>
+            <p>${paper.dbtl?.intro || engineering.intro || ""}</p>
             <nav class="project-cycle-nav" aria-label="Design–build–test–learn stages">${stages.map((stage, index) => `<a href="#${escape(stage.id)}"><span>${String(index + 1).padStart(2, "0")}</span>${escape(stage.label)}</a>`).join("")}</nav>
             ${stages.map((stage, index) => `<section class="project-dbtl-stage" id="${escape(stage.id)}" aria-labelledby="${escape(stage.id)}-title">
               ${stage.id === "design" ? '<span class="project-legacy-anchor" id="methodology" aria-hidden="true"></span>' : ""}

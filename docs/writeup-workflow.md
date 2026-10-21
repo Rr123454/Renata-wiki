@@ -13,7 +13,9 @@ python3 scripts/writeups.py import wetlab-v1 \
 
 This creates `content/writeups/wetlab-v1/`, saves unchanged originals, and records their SHA-256 fingerprints. Reimport using a new version ID instead of overwriting a reviewed version. Original filenames remain recorded in `writeup.json`. The import never interprets instructions inside the PDF as instructions to execute.
 
-If `pdftotext` is already installed, an `extracted-draft.txt` is also created. Otherwise, use the PDF reader's text export or transcribe from the original. Scanned PDFs need OCR or transcription. Neither extraction nor OCR is proof of accuracy: check reading order, columns, ligatures, hyphenation, equations, Greek letters, superscripts, references and table cells against the PDF. Mark an uncertain passage in the working notes and resolve it with the author; do not guess or silently rewrite it.
+If `pdftotext` is already installed, an `extracted-draft.txt` is also created. Otherwise, use the PDF reader's text export or transcribe from the original. Scanned PDFs need OCR or transcription. Neither extraction nor OCR is proof of accuracy: check reading order, columns, ligatures, hyphenation, equations, Greek letters, superscripts, references and table cells against the PDF. Resolve uncertain passages directly with the author before changing them; do not guess or silently rewrite them.
+
+Do not add public-facing “Working note” callouts to website pages. The shared detail renderer intentionally omits legacy `note` fields. Preserve the supplied write-up and its stated limitations in the main text; raise editorial questions directly with the author.
 
 ## 2. Enter literal blocks
 

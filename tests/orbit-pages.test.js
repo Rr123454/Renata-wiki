@@ -9,13 +9,15 @@ const root = path.join(__dirname, "..");
 const read = file => fs.readFileSync(path.join(root, file), "utf8");
 const context = { window: {} };
 vm.runInNewContext(read("js/site-content.js"), context);
+vm.runInNewContext(read("js/project-description-content.js"), context);
+vm.runInNewContext(read("js/engineering-content.js"), context);
 vm.runInNewContext(read("js/dry-lab-content.js"), context);
 vm.runInNewContext(read("js/wet-lab-content.js"), context);
 vm.runInNewContext(read("js/wet-lab-notebook-data.js"), context);
 vm.runInNewContext(read("js/lab-content.js"), context);
 const data = context.window.SITE_DATA;
-const redirects = new Set(["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"]);
-const researchPages = new Set(["project-description", "wet-lab", "wet-lab-notebook", "model"]);
+const redirects = new Set(["home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"]);
+const researchPages = new Set(["project-description", "engineering", "wet-lab", "wet-lab-notebook", "model"]);
 
 test("illustrated chapters load their renderer while research papers and redirects stay separate", () => {
   for (const file of fs.readdirSync(root).filter(file => file.endsWith(".html"))) {
@@ -54,15 +56,15 @@ test("illustrated chapters load their renderer while research papers and redirec
   }
 });
 
-test("chapter destinations link directly to the consolidated Project DBTL section", () => {
+test("chapter destinations link directly to the separate Engineering DBTL page", () => {
   const project = pageChapter("project-description", data.pages["project-description"]);
   assert.equal(project.key, "project");
-  assert.equal(project.next, "project-description.html#dbtl-cycle");
-  assert.ok(!Object.hasOwn(data.pages, "engineering"));
+  assert.equal(project.next, "engineering.html#dbtl-cycle");
+  assert.ok(Object.hasOwn(data.pages, "engineering"));
   const legacy = pageChapter("engineering", data.pages.engineering);
   assert.equal(legacy.key, "project");
   assert.doesNotMatch(read("js/orbit-pages.js"), /["']engineering\.html["']/);
-  assert.equal(data.nav.find(item => item.key === "project").href, project.next.split("#")[0]);
+  assert.equal(data.nav.find(item => item.key === "project").children.find(item => item.key === "engineering").href, project.next);
 });
 
 test("lab records retain their own titles and the crew keeps its dedicated renderer and animations", () => {

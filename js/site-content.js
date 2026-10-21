@@ -29,13 +29,14 @@ window.SITE_DATA = {
 
   nav: [
     { key: "home", label: "Home", href: "index.html" },
+    { key: "team", label: "Our Team", href: "team.html" },
     {
-      key: "team", label: "Our Team", heading: "Our team.", description: "",
+      key: "project", label: "Our Project", heading: "Our project.", description: "",
       children: [
-        { key: "team", label: "Meet Our Team", href: "team.html", icon: "Phoenix", description: "Meet the students and mentors behind RENATA." }
+        { key: "engineering", label: "Engineering", href: "engineering.html#dbtl-cycle", icon: "DNA", description: "Explore our Design–Build–Test–Learn cycle." },
+        { key: "project-description", label: "Project Description", href: "project-description.html#abstract", icon: "Stomach", description: "Explore the problem, scientific background, and proposed SulFlux system." }
       ]
     },
-    { key: "project", label: "Our Project", href: "project-description.html" },
     {
       key: "lab-work", label: "Lab Work", icon: "DNA",
       heading: "Lab work.",
@@ -64,7 +65,7 @@ window.SITE_DATA = {
       children: [
         { key: "human-practices", label: "Human practices", href: "human-practices.html", icon: "Mic", description: "Stakeholder perspectives and project decisions." },
         { key: "education", label: "Education", href: "education.html", icon: "Plant", description: "Learning, outreach, and shared curiosity." },
-        { key: "contribution", label: "Contribution", href: "contribution.html", icon: "DNA", description: "Shared resources, including iGEM Kickstart." }
+        { key: "contribution", label: "Contribution", href: "contribution.html", icon: "DNA", description: "iGEM Kickstart and our Registry part." }
       ]
     }
   ],
@@ -88,10 +89,10 @@ window.SITE_DATA = {
           ]
         },
         {
-          title: "Engineering",
+          title: "Our Project",
           links: [
-            { text: "Abstract", href: "project-description.html" },
-            { text: "DBTL Cycle", href: "project-description.html" }
+            { text: "Engineering", href: "engineering.html#dbtl-cycle" },
+            { text: "Project Description", href: "project-description.html#abstract" }
           ]
         },
         {
@@ -449,11 +450,22 @@ window.SITE_DATA.educationOverview = {
 
 window.SITE_DATA.contributionRoutes = [
   {
+    id: "kickstart",
     number: "01",
     title: "iGEM Kickstart: The Guide We Wish We Had",
     summary: "Humza Shahzad’s beginner research guide brings together the fundamentals of gene design, plasmids, DNA assembly, and experimental reasoning, shared through our collaboration with NBJF and DBHS-CA.",
     href: "igem-kickstart.html",
     status: "Research fundamentals / Shared resource"
+  },
+  {
+    id: "registry-part",
+    number: "02",
+    title: "Registry Part: BBa_26TR5LM8",
+    summary: "Explore the linked part entry in the iGEM Registry of Standard Biological Parts.",
+    href: "https://registry.igem.org/parts/bba-26tr5lm8",
+    status: "Biological parts / iGEM Registry",
+    action: "View Registry entry",
+    external: true
   }
 ];
 
@@ -475,12 +487,19 @@ window.SITE_DATA.educationEventRoutes = [
   {
     "number": "03",
     "title": "Troy Biotechnology Education Day",
-    "summary": "Microscopy, yeast fermentation, and enzyme activity stations at Troy High School, alongside the student-led BYLD club.",
+    "summary": "Microscopy, yeast fermentation, and enzyme activity stations at Troy High School.",
     "href": "education-troy.html",
-    "status": "High-school biotechnology / BYLD"
+    "status": "High-school biotechnology"
   },
   {
     "number": "04",
+    "title": "Biotechnology Youth Literacy Directive (BYLD)",
+    "summary": "A student-led club introducing biotechnology, synthetic biology, and DNA analysis through lectures and a pathway into iGEM research.",
+    "href": "education-byld.html",
+    "status": "Student-led biotechnology education"
+  },
+  {
+    "number": "05",
     "title": "iGEM Kickstart: The Guide We Wish We Had",
     "summary": "A research fundamentals guide shared through our open-source education collaboration with NBJF and DBHS-CA.",
     "href": "education-kickstart.html",
@@ -580,6 +599,7 @@ window.SITE_DATA.pages["education-event-01"] = makePage({
       "eyebrow": "04 / Reflection",
       "title": "What this means for future development",
       "text": "The forum helped us recognize that SultFlux would need to satisfy different standards at each stage of development. Our immediate research could establish whether the engineered system functions as intended, but clinical translation would require additional evidence of safety and therapeutic benefit, while commercialization would depend on scalability, cost, and a viable delivery strategy. We incorporated these considerations into our broader evaluation of RENATA's future applications, distinguishing what our experiments could demonstrate from what would still be required to develop an accessible biomedical treatment.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -648,6 +668,7 @@ window.SITE_DATA.pages["education-event-02"] = makePage({
       "eyebrow": "04 / Reflection",
       "title": "Reconsidering the potential benefit of our approach",
       "text": "This interview helped us think more critically about our project at hand, and made us rethink how patients could benefit the most from our proposed treatment and whether our approach could offer a meaningful edge over existing medications.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -697,8 +718,7 @@ window.SITE_DATA.pages["education-event-03"] = makePage({
       "id": "patient-interview-context",
       "eyebrow": "01 / Listening to patients",
       "title": "Understanding everyday experiences",
-      "text": "In addition to Dr. Singh and his personal feedback on what PCS entails and how he has seen it within the medical environment, we wanted to hear from patients who have experienced or are currently experiencing PCS and how that affects their everyday lives. To do this, we conducted two individual patient interviews, each revealing different challenges that surround gallbladder removal and the possible long-term effects of doing so.",
-      "note": "These are two personal accounts shared with the team. They illustrate individual experiences; they cannot establish how common symptoms are or demonstrate the safety or effectiveness of RENATA’s proposed treatment. Source 1: RENATA. “Interview with Two Patients to Understand Personal Experiences.” Team-provided interview account, supplied 21 Oct. 2026."
+      "text": "In addition to Dr. Singh and his personal feedback on what PCS entails and how he has seen it within the medical environment, we wanted to hear from patients who have experienced or are currently experiencing PCS and how that affects their everyday lives. To do this, we conducted two individual patient interviews, each revealing different challenges that surround gallbladder removal and the possible long-term effects of doing so."
     },
     {
       "id": "first-patient-experience",
@@ -721,6 +741,7 @@ window.SITE_DATA.pages["education-event-03"] = makePage({
       "eyebrow": "04 / Learning moment",
       "title": "Ease of use, clinical testing, and transparency",
       "text": "When we discussed our possible treatment through RENATA, he emphasized to us that <strong>an ideal medication should be simple to use, especially for older patients</strong>. He also expressed concerns about long-term side effects from using a medication of this sort. Our first patient also put an emphasis on the importance of clinical testing and transparency regarding potential side effects or risks of using medication that is biotechnology-based.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -803,6 +824,7 @@ window.SITE_DATA.pages["education-event-04"] = makePage({
       "title": "Exploring a prebiotic–probiotic approach",
       "text": "With this in mind, we moved towards developing a prebiotic–probiotic approach, with the goal of minimizing unwanted side effects associated with existing medications. This shift led us to consider how our engineered probiotic could work alongside existing prebiotic components and broadened our focus beyond the BtSULT enzyme itself. The patient and professional feedback we received helped us establish <strong>convenience and tolerability as major factors in our design</strong>.",
       "note": "Evidence boundary: These self-selected Facebook responses describe personal experiences. They cannot establish symptom prevalence or demonstrate the safety, effectiveness, or improved tolerability of RENATA’s proposed approach. Reduced side effects remain a design goal requiring experimental and clinical evaluation. Source 1: RENATA. “Facebook Patient Responses.” Team-provided outreach account, supplied 21 Oct. 2026.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -874,9 +896,10 @@ window.SITE_DATA.pages["education-event-05"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "RENATA members volunteering at the SEVA Collective event.",
-          "caption": "RENATA members volunteering at the SEVA Collective event. Source: RENATA, Writeup Education + HP, p. 8."
+          "caption": "RENATA members volunteering at the SEVA Collective event."
         }
       ],
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -948,7 +971,7 @@ window.SITE_DATA.pages["education-event-06"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "RENATA members in conversation at the San Diego MedChem Symposium.",
-          "caption": "RENATA members in conversation at the San Diego MedChem Symposium. Source: RENATA, Writeup Education + HP, p. 10."
+          "caption": "RENATA members in conversation at the San Diego MedChem Symposium."
         },
         {
           "page": 10,
@@ -956,7 +979,7 @@ window.SITE_DATA.pages["education-event-06"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "RENATA members and symposium participants at UC San Diego.",
-          "caption": "RENATA members and symposium participants at UC San Diego. Source: RENATA, Writeup Education + HP, p. 10."
+          "caption": "RENATA members and symposium participants at UC San Diego."
         },
         {
           "page": 10,
@@ -964,9 +987,10 @@ window.SITE_DATA.pages["education-event-06"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "A group photograph from the San Diego MedChem Symposium.",
-          "caption": "A group photograph from the San Diego MedChem Symposium. Source: RENATA, Writeup Education + HP, p. 10."
+          "caption": "A group photograph from the San Diego MedChem Symposium."
         }
       ],
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ],
@@ -1053,7 +1077,7 @@ window.SITE_DATA.pages["education-ulp"] = makePage({
           "width": 1350,
           "height": 1800,
           "alt": "Genetics activity worksheets and colored beads at the ULP workshop.",
-          "caption": "Genetics activity worksheets and colored beads at the ULP workshop. Source: RENATA, Writeup Education + HP, p. 14."
+          "caption": "Genetics activity worksheets and colored beads at the ULP workshop."
         },
         {
           "page": 16,
@@ -1061,7 +1085,7 @@ window.SITE_DATA.pages["education-ulp"] = makePage({
           "width": 1350,
           "height": 1800,
           "alt": "Children working with genetics activity materials at ULP.",
-          "caption": "Children working with genetics activity materials at ULP. Source: RENATA, Writeup Education + HP, p. 16."
+          "caption": "Children working with genetics activity materials at ULP."
         },
         {
           "page": 16,
@@ -1069,7 +1093,7 @@ window.SITE_DATA.pages["education-ulp"] = makePage({
           "width": 1350,
           "height": 1800,
           "alt": "RENATA facilitating the ULP genetics activities.",
-          "caption": "RENATA facilitating the ULP genetics activities. Source: RENATA, Writeup Education + HP, p. 16."
+          "caption": "RENATA facilitating the ULP genetics activities."
         }
       ]
     },
@@ -1081,7 +1105,7 @@ window.SITE_DATA.pages["education-ulp"] = makePage({
       "paragraphs": [
         "Our ULP event was designed as an introduction to genetics for students who had limited experience with molecular biology. We taught over 30 children through activities that allowed them to build models, examine their own characteristics, and discuss the concepts behind their work. The LEGO and bead activities were selected because they made different parts of genetics easier to visualize. One dealt with the information stored in DNA, while the other dealt with observable characteristics influenced by genetics. These activities also gave us experience explaining scientific concepts without relying on the terminology we normally use when discussing our project."
       ],
-      "note": "Source 1: RENATA. “Overview and Education Initiatives.” User-supplied write-up, n.d. This account describes the activities and their educational purpose; no formal learning-assessment results were supplied.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ]
@@ -1091,7 +1115,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
   "group": "engagement",
   "kicker": "Education Event / Troy High School",
   "title": "Troy Biotechnology Education Day",
-  "lead": "Microscopy, yeast fermentation, and enzyme activity stations at Troy High School, alongside the student-led BYLD club.",
+  "lead": "Microscopy, yeast fermentation, and enzyme activity stations at Troy High School.",
   "buttons": [
     {
       "text": "Back to education",
@@ -1101,17 +1125,12 @@ window.SITE_DATA.pages["education-troy"] = makePage({
   ],
   "stats": [],
   "cardsTitle": "From classroom to research",
-  "cardsLead": "Introducing biotechnology through experiments, lectures, and opportunities to participate.",
+  "cardsLead": "Introducing biotechnology through hands-on experimental stations.",
   "cards": [
     {
       "tag": "Education day",
       "title": "Hands-on biotechnology",
       "text": "Students explored how living organisms function through experiments at Troy High School."
-    },
-    {
-      "tag": "Student-led club",
-      "title": "BYLD",
-      "text": "Karthik and Humza founded the Biotechnology Youth Literacy Directive to introduce biotechnology and synthetic biology at their school."
     }
   ],
   "ctaTitle": "",
@@ -1132,7 +1151,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "Introducing bile acids and RENATA’s project during the Troy presentation.",
-          "caption": "Introducing bile acids and RENATA’s project during the Troy presentation. Source: RENATA, Writeup Education + HP, p. 20."
+          "caption": "Introducing bile acids and RENATA’s project during the Troy presentation."
         },
         {
           "page": 20,
@@ -1140,7 +1159,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "Discussing enzyme engineering with students at Troy.",
-          "caption": "Discussing enzyme engineering with students at Troy. Source: RENATA, Writeup Education + HP, p. 20."
+          "caption": "Discussing enzyme engineering with students at Troy."
         }
       ]
     },
@@ -1167,7 +1186,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "Students observing the yeast balloon experiment.",
-          "caption": "Students observing the yeast balloon experiment. Source: RENATA, Writeup Education + HP, p. 23."
+          "caption": "Students observing the yeast balloon experiment."
         }
       ]
     },
@@ -1186,7 +1205,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1350,
           "height": 1800,
           "alt": "Students working together at an experimental station.",
-          "caption": "Students working together at an experimental station. Source: RENATA, Writeup Education + HP, p. 23."
+          "caption": "Students working together at an experimental station."
         },
         {
           "page": 23,
@@ -1194,7 +1213,7 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "Foam reactions from the enzyme activity demonstration.",
-          "caption": "Foam reactions from the enzyme activity demonstration. Source: RENATA, Writeup Education + HP, p. 23."
+          "caption": "Foam reactions from the enzyme activity demonstration."
         }
       ]
     },
@@ -1203,7 +1222,18 @@ window.SITE_DATA.pages["education-troy"] = makePage({
       "title": "Takeaway and Connection",
       "text": "Through our three experimental stations, we wanted students to understand how different biological processes come together in synthetic biology research. The yogurt experiment explained microorganisms and their useful functions, the yeast balloon experiment demonstrated how environmental conditions can affect microbial activity, and the catalase experiment explored the role of enzymes in chemical reactions. By alternating between presentation and the experimental stations, students could observe the biological principles behind our research and understand how they apply to an actual biotechnology project. Through this event, we hoped to make synthetic biology more accessible to our school's students and give them a firsthand look at the scientific concepts and experimental reasoning involved in developing RENATA.",
       "paragraphs": []
-    },
+    }
+  ]
+});
+
+window.SITE_DATA.pages["education-byld"] = makePage({
+  "group": "engagement",
+  "kicker": "Education Event / Student-led biotechnology",
+  "title": "Biotechnology Youth Literacy Directive (BYLD)",
+  "lead": "A student-led club introducing biotechnology, synthetic biology, and DNA analysis through lectures and a pathway into iGEM research.",
+  "buttons": [{ "text": "Back to education", "href": "education.html", "style": "secondary" }],
+  "cards": [],
+  "details": [
     {
       "id": "troy-byld",
       "title": "Biotechnology Youth Literacy Directive (BYLD)",
@@ -1216,9 +1246,10 @@ window.SITE_DATA.pages["education-troy"] = makePage({
           "width": 1800,
           "height": 1350,
           "alt": "Students attending a BYLD classroom session.",
-          "caption": "Students attending a BYLD classroom session. Source: RENATA, Writeup Education + HP, p. 24."
+          "caption": "Students attending a BYLD classroom session."
         }
       ],
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ]
@@ -1575,7 +1606,7 @@ window.SITE_DATA.pages["education-butterfly"] = makePage({
         "href": "https://docs.google.com/presentation/d/1ZaP8tsoNI2AWXiIO51uNXv36VdJprCPBiwy03zgKXto/edit?usp=sharing",
         "label": "Strawberry DNA — workshop presentation"
       },
-      "note": "1. RENATA. “Complete Education Account.” Team-supplied write-up, n.d. This account describes the team’s activities and intentions; no formal learning-assessment results were supplied.",
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ]
@@ -1606,8 +1637,7 @@ window.SITE_DATA.pages["education-kickstart"] = makePage({
       "text": "In collaboration with iGEM teams NBJF and DBHS-CA, RENATA contributed to a larger open-source education initiative designed to help new iGEMmers establish their own iGEM teams. Humza drew from the challenges we faced as a team in our first year and created the guide “Beginner's Guide to High School iGEM: Research Fundamentals”, compiling the scientific knowledge he wished he had when co-founding our team.",
       "paragraphs": [
         "The guide introduces viewers to the fundamentals of synthetic biology, covering DNA, proteins, the DBTL cycle, genetic circuit design, gene regulation, plasmids, and DNA assembly techniques such as Golden Gate Assembly. Also, it provides diagrams and references to additional research resources, which help students understand how these concepts apply to actual work in the laboratory. We wanted this collaboration to be a way for us to help make the early stages of synthetic biology less overwhelming, which gives future iGEM teams an accessible point to start their journey without requiring them to piece together hundreds of hours of foundational knowledge that we had to learn independently!"
-      ],
-      "note": "1. RENATA. “Complete Education Account.” Team-supplied write-up, n.d. This account describes the team’s activities and intentions; no formal learning-assessment results were supplied."
+      ]
     },
     {
       "id": "kickstart-reader",
@@ -1620,6 +1650,7 @@ window.SITE_DATA.pages["education-kickstart"] = makePage({
         "href": "igem-kickstart.html",
         "label": "Explore the full guide in Contribution"
       },
+      "citationType": "internal",
       "citation": "1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d."
     }
   ]

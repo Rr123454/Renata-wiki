@@ -56,7 +56,7 @@
 <header class="kickstart-guide-heading"><p class="detail-eyebrow">The complete guide · 11 source pages</p>
 <h2 id="research-fundamentals">Beginner’s Guide to Highschool iGEM: Research Fundamentals</h2>
 <p>Prepared By: Humza Shahzad, ULP-CA 2026 Co-Founder and Student Lead</p>
-<p>Transcribed from the supplied guide. Original wording, figures, and source links are retained. <a href="assets/kickstart/research-fundamentals.pdf">Read the original PDF</a> [1].</p></header>
+<p><a href="assets/kickstart/research-fundamentals.pdf">Read the guide as a PDF</a></p></header>
 <h3 id="guide-foreword" data-source-pages="2">Foreword</h3>
 <p data-source-pages="2">Hello Everyone, my name is Humza Shahzad and I am the Co-Founder of the new ULP-CA iGEM team competing in iGEM 2026. I’m a high school student in Fullerton, CA with a burning curiosity for the possibilities that synthetic biology can bring us one day. I hope this guide finds people that too want to start their research journey with more knowledge than I first had, once requiring hundreds of hours of reading research papers and designing experiments with my team to understand the fundamentals of biotech research. I’ve condensed the basics into this document and hope that all that read it truly appreciate it, as this is a testament to the very beginnings of my biotech journey and hopefully the start of yours. Onwards padawans!</p>
 <h3 id="guide-the-basics" data-source-pages="2">The Basics:</h3>
@@ -80,7 +80,7 @@
 </ul>
 <p data-source-pages="4">Key Tip: Thanks to the UC Berkeley iGEM team, we have a characterized library of promoters called Anderson Promoters, all which have varying strengths at relatively common levels used in experiments, such as 0.25, 0.5, 0.75, etc. I highly recommend considering the use of Anderson Promoters in your experiments because they are perfect for <em>tuning</em> of a system in terms of gene expression.</p>
 <p data-source-pages="5">Now, although this system for protein production <em>works</em>, there is a fatal flaw. If one were to follow the framework for a gene above, experiments would probably not go so well in terms of protein function. This is because the promoter is in a constitutive form, meaning that it is ALWAYS on. Usually, we are engineering bacteria, and we must not forget that bacteria have other stuff to care about besides our insignificant little gene. Making a gene constitutive means that it will not stop the protein production process, and that uses copious amounts of ATP and other cellular resources that cause metabolic stress, which can contribute to protein misfolding and ultimately the very death of our cells. So what do we use? We use the operon architecture, made up of an operator and a repressor.</p>
-<figure id="guide-figure-1" data-source-pages="5"><a href="assets/kickstart/figure-1.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-1.png" width="1298" height="537" loading="lazy" alt="Operon architecture showing a regulatory gene, promoter, operator, and structural genes."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=5">Source guide, p. 5</a></figcaption></figure>
+<figure id="guide-figure-1" data-source-pages="5"><a href="assets/kickstart/figure-1.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-1.png" width="1298" height="537" loading="lazy" alt="Operon architecture showing a regulatory gene, promoter, operator, and structural genes."></a></figure>
 <p class="kickstart-source-caption" data-source-pages="5"><em>Fig. 1 Operon Architecture. Source(</em><a href="http://bio.libretexts.org"><em>bio.libretexts.org</em></a><em>)  </em></p>
 <p data-source-pages="5">With reference to Fig.1, an operon architecture is different from a normal gene architecture in that we observe the use of an operator and regulatory sequence(also known as the repressor). The regulatory sequence is a separately expressed gene that creates a repressor protein that binds to the operator sequence. By binding to the operator sequence, it acts as a roadblock for RNA polymerase, and the genes following the operator aren’t able to be transcribed. This is the “OFF” state for our genes. In order to switch our gene into the “ON” state, bacteria must first be grown to a certain density in a phase called log phase with an optical density at 600 nm, or OD<sub>600</sub>, between 0.4 and 0.6. Don’t worry about this for now, but it is very important once you step into the lab and your PI uses this term when teaching you bacterial culture. Now, where were we?</p>
 <p data-source-pages="6">After the bacteria have reached an optimal growth phase, we add a solution of an inducing molecule. Besides containing a site to bind to the operator, repressor proteins also have a site that binds to an inducer molecule, causing a change in the shape of the repressor that forces it to detach from the DNA. In some cases, the “inducer” molecule is actually a “corepressor” molecule, in the sense that when it binds to the repressor protein, it actually ENABLES it to bind to the operator. When the concentration of a corepressor molecule decreases, so does the amount of its operator-bound repressor proteins, therefore causing us to observe the “ON” state of our gene.</p>
@@ -102,14 +102,14 @@
 </ul>
 <h3 id="guide-restriction-enzymes-when-dna-sequences-become-legos" data-source-pages="7">Restriction Enzymes: When DNA sequences become Legos.</h3>
 <p data-source-pages="7">When several DNA coding sequences are cloned in different plasmids and they need to be put into a singular plasmid, we must use restriction enzymes to cut out DNA at precise locations such that each cut strand is assembled into one plasmid by the hydrogen bonds made between base pairs. EcoRI is a common Type II restriction enzyme that cuts at an EcoRI site in DNA, highlighted in yellow in Fig. 2.</p>
-<figure id="guide-figure-2" data-source-pages="8"><a href="assets/kickstart/figure-2.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-2.png" width="2048" height="990" loading="lazy" alt="EcoRI recognition and cleavage sites with complementary sticky ends."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=8">Source guide, p. 8</a></figcaption></figure>
+<figure id="guide-figure-2" data-source-pages="8"><a href="assets/kickstart/figure-2.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-2.png" width="2048" height="990" loading="lazy" alt="EcoRI recognition and cleavage sites with complementary sticky ends."></a></figure>
 <p class="kickstart-source-caption" data-source-pages="8">Fig. 2 Diagram of EcoRI Type II Restriction Enzyme</p>
 <p data-source-pages="8">If you observe the way that EcoRI cuts at its recognition site, you can see that it leaves an overhang of 4 DNA base pairs. These are called <strong>sticky ends </strong>such that they will “stick” to another complementary 4 base pair overhang in another plasmid. Using Type II restriction enzymes is useful for gene insertion when two enzymes are used, since using the same restriction enzyme for the forward and reverse strand would prevent us from knowing the orientation the DNA has aligned in, and the wrong protein would be expressed if the DNA was reversed. This is called a <strong>double digest</strong>. This may be tricky to visualize, so I recommend watching this video from the wonderful people at Waterloo iGEM <a href="https://www.youtube.com/watch?v=zXgZOblz-94">here</a>. You may also reference Fig. 3.</p>
-<figure id="guide-figure-3" data-source-pages="9"><a href="assets/kickstart/figure-3.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-3.png" width="1540" height="1200" loading="lazy" alt="Comparison of single and double restriction digests from SnapGene."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=9">Source guide, p. 9</a></figcaption></figure>
+<figure id="guide-figure-3" data-source-pages="9"><a href="assets/kickstart/figure-3.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-3.png" width="1540" height="1200" loading="lazy" alt="Comparison of single and double restriction digests from SnapGene."></a></figure>
 <p class="kickstart-source-caption" data-source-pages="9"><em>Fig. 3 Single VS. Double Digests. Source: </em><a href="https://www.snapgene.com/guides/restriction-enzyme-cloning"><em>SnapGene</em></a><em> </em></p>
 <p data-source-pages="9">Well what if we have multiple fragments of DNA we need to assemble? What if we have multiple promoters, ribosome binding sites, coding sequences, and terminators that all need to be put into a specified order? That’s where my favorite kind of assembly method comes in: Golden Gate Assembly. Golden Gate Assembly is a DNA assembly method that uses a special Type IIS restriction enzyme to assemble multiple fragments of DNA into a plasmid using only one enzyme.</p>
 <p data-source-pages="9,10">The reason this works is due to the mechanism of a Type IIS restriction enzyme. Like any restriction enzyme, Type IIS restriction enzymes have recognition sites. However, instead of cutting DNA at the restriction site, Type IIS enzymes cut OUTSIDE of the recognition site, producing a very unique 4 base pair overhang. If you design your DNA fragments to have matching overhangs, you can theoretically assemble hundreds of DNA fragments at once without leaving a restriction “scar”, a nonfunctional sequence of DNA left behind from a restriction digest.</p>
-<figure id="guide-figure-4" data-source-pages="10"><a href="assets/kickstart/figure-4.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-4.png" width="1236" height="1312" loading="lazy" alt="Golden Gate Assembly diagram from New England Biolabs."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=10">Source guide, p. 10</a></figcaption></figure>
+<figure id="guide-figure-4" data-source-pages="10"><a href="assets/kickstart/figure-4.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-4.png" width="1236" height="1312" loading="lazy" alt="Golden Gate Assembly diagram from New England Biolabs."></a></figure>
 <p class="kickstart-source-caption" data-source-pages="10"><em>Fig. 4 Golden Gate Assembly. Source: </em><a href="https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly"><em>NEB</em></a><em> </em></p>
 <h3 id="guide-the-lab-and-onwards" data-source-pages="10">The Lab and Onwards!</h3>
 <p data-source-pages="11">Everything I’ve explained and attempted to teach is all usable in theory. However, in order to properly execute experiments and protocols in a laboratory, it is up to you to decide what procedures you need to follow. Thankfully, processes like DNA purification, protein purification, DNA assembly, and running assays are all well-laid out on sites such as New England Biolabs, SnapGene, and even the old iGEM parts registry .Here are some useful links that will help you draft up your own protocols with your mentors:</p>
@@ -117,18 +117,17 @@
 <p data-source-pages="11">Journey of Visualized Experiments: <a href="https://www.jove.com/">https://www.jove.com/</a></p>
 <p data-source-pages="11">OpenWetWare: <a href="https://openwetware.org/wiki/Main_Page">https://openwetware.org/wiki/Main_Page</a></p>
 <p data-source-pages="11">Best of luck with your research my fellow iGEMers. Now fly! ;)</p>
-<figure id="guide-figure-5" data-source-pages="11"><a href="assets/kickstart/figure-5.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-5.png" width="200" height="200" loading="lazy" alt="Author portrait included at the end of the guide."></a><figcaption><a href="assets/kickstart/research-fundamentals.pdf#page=11">Source guide, p. 11</a></figcaption></figure>
+<figure id="guide-figure-5" data-source-pages="11"><a href="assets/kickstart/figure-5.png" aria-label="Open full-size figure"><img src="assets/kickstart/figure-5.png" width="200" height="200" loading="lazy" alt="Author portrait included at the end of the guide."></a></figure>
 <p data-source-pages="11"><em>-</em> <em>Humza Shahzad, ULP-CA 2026 Co-Founder </em></p>
 <!-- kickstart-guide:end -->
         </section>
         <section id="kickstart-sources" class="detail-section">
-          <h2>Source &amp; further reading</h2>
+          <h2>Further reading</h2>
           <ol class="kickstart-references">
-            <li>Shahzad, Humza. <em>Beginner’s Guide to Highschool iGEM: Research Fundamentals.</em> ULP-CA, 2026. <a href="assets/kickstart/research-fundamentals.pdf">Original PDF</a>.</li>
-            <li>New England Biolabs. “Golden Gate Assembly.” <em>NEB</em>, <a href="https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly">DNA Assembly and Cloning</a>. Cited in the guide, p. 10.</li>
-            <li>SnapGene. “Restriction Enzyme Cloning.” <em>SnapGene</em>, <a href="https://www.snapgene.com/guides/restriction-enzyme-cloning">Restriction Enzyme Cloning Guide</a>. Cited in the guide, p. 9.</li>
+            <li>New England Biolabs. “Golden Gate Assembly.” <em>NEB</em>, <a href="https://www.neb.com/en-us/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/golden-gate-assembly">DNA Assembly and Cloning</a>.</li>
+            <li>SnapGene. “Restriction Enzyme Cloning.” <em>SnapGene</em>, <a href="https://www.snapgene.com/guides/restriction-enzyme-cloning">Restriction Enzyme Cloning Guide</a>.</li>
           </ol>
-          <p class="kickstart-source-note">The introductory account was supplied by ULP-CA. The guide is a student-authored learning resource; laboratory work requires mentor review, appropriate training, and approved protocols. External resource links from the PDF appear in their original sections.</p>
+          <p class="kickstart-source-note">The guide is a student-authored learning resource; laboratory work requires mentor review, appropriate training, and approved protocols.</p>
         </section>
       </article>
       <aside class="kickstart-sidebar" aria-label="Explore this page">
@@ -149,7 +148,7 @@
                 <li><a href="#guide-the-lab-and-onwards">The lab &amp; onwards</a></li>
               </ul>
             </li>
-            <li><a href="#kickstart-sources">Source &amp; further reading</a></li>
+            <li><a href="#kickstart-sources">Further reading</a></li>
           </ul>
           <a class="page-outline-related" href="assets/kickstart/research-fundamentals.pdf">Open original PDF</a>
         </nav>
@@ -157,10 +156,10 @@
     </div>
   </main>
   <footer class="site-footer" id="siteFooter"></footer>
-  <script src="js/site-content.js?v=8a3716396a8e"></script>
+  <script src="js/site-content.js?v=e04ddc427423"></script>
   <script src="js/navigation.js?v=95be8fc6aeaa"></script>
-  <script src="js/orbit-pages.js?v=9732fb7ed7ab"></script>
-  <script src="js/site.js?v=e49278024985"></script>
+  <script src="js/orbit-pages.js?v=8df39bd46679"></script>
+  <script src="js/site.js?v=fd269be632c3"></script>
   <script src="js/editorial-ui.js?v=83d70d4b8ff7"></script>
   <script src="js/rocket-cursor.js?v=15bae7dec998"></script>
 </body>

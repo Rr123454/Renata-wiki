@@ -13,6 +13,14 @@ ESC = html.escape
 
 
 def rich(block):
+    if block['key'] == 'revision-discussion-text':
+        # Reflow the supplied discussion into results, interpretation, and limits.
+        text = block['text']
+        results, rest = text.split('Together these results', 1)
+        interpretation, limits = rest.split('The parameters of our in vitro work', 1)
+        return (f'<span class="wetlab-discussion-part">{ESC(results)}</span>'
+                f'<span class="wetlab-discussion-part">Together these results{ESC(interpretation)}</span>'
+                f'<strong class="wetlab-discussion-part wetlab-result-limit">The parameters of our in vitro work{ESC(limits)}</strong>')
     parts = []
     for run in block['runs']:
         value = ESC(run['text'])

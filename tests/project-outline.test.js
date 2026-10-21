@@ -9,7 +9,7 @@ test('the reading marker follows visible headings in both directions, including 
  assert.equal(chooseActive(entries,800),'build');
  assert.equal(chooseActive([],125),null);
 });
-function fixture(isMobile=false) {
+function fixture(isMobile=false, autoCollapse=true) {
  let scroll=0,serial=0;const frames=new Map();
  function node(id='') {
   const classes=new Set();return {id,attrs:{},dataset:{},hidden:false,events:{},parent:null,scrollTop:0,
@@ -21,6 +21,7 @@ function fixture(isMobile=false) {
   };
  }
  const nav=node(),article=node(),rootList=node(),collapse=node(),header=node();
+ if (!autoCollapse) nav.dataset.outlineAutocollapse = 'false';
  rootList.parent=nav;collapse.parent=nav;
  const targets=Object.fromEntries(['abstract','engineering','design','record','build'].map((id,index)=>{
   const target=node(id);target.getBoundingClientRect=()=>({top:200+index*300-scroll});return [id,target];
@@ -63,6 +64,15 @@ test('manual toggles work and scrolling never hides a focused branch',()=>{
  f.groups[1].button.events.click();f.doc.activeElement=f.links[3];
  f.scrollTo(1400);assert.equal(f.groups[1].list.hidden,false,'focused content remains available');
  f.collapse.events.click();assert.equal(f.doc.activeElement,f.collapse);assert.equal(f.rootList.hidden,true);
+});
+
+test('a compact cycle outline stays expanded by default and preserves manual toggles while scrolling',()=>{
+ const f=fixture(false,false);
+ assert.ok(f.groups.every(g=>!g.list.hidden));
+ f.scrollTo(1400);assert.ok(f.groups.every(g=>!g.list.hidden));
+ f.groups[0].button.events.click();assert.equal(f.groups[0].list.hidden,true);
+ f.scrollTo(0);assert.equal(f.groups[0].list.hidden,true);
+ f.groups[0].button.events.click();assert.equal(f.groups[0].list.hidden,false);
 });
 
 test('mobile contents collapse after selection and record links open disclosures before scrolling',()=>{
@@ -117,8 +127,8 @@ test('HP, Wetlab, and Model prepare the same left outline from their real render
    const assembly=doc.getElementById('outline-assembly');
    assert.ok(links.some(link=>link.getAttribute('href')==='#assembly'&&link.textContent.includes('Transformation')));
    assert.ok(assembly.querySelectorAll('a').some(link=>link.textContent.includes('Methods & original record')));
-   const archived=doc.getElementById('outline-planned-assembly');
-   assert.ok(archived.querySelectorAll('a').some(link=>link.textContent.includes('Golden Gate/JUMP assembly')));
+   assert.ok(!doc.getElementById('outline-planned-assembly'));
+   assert.ok(!links.some(link => /Earlier planning context|archived plans/i.test(link.textContent)));
   }
   prepare(doc);assert.equal(nav.querySelectorAll('a').length,links.length,'idempotent preparation');
  }

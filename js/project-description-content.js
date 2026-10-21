@@ -7,6 +7,7 @@
     {
       title: "Dry Lab Documentation",
       href: documentUrl,
+      internal: true,
       citation: "iGEM Renata. <cite>Dry Lab Documentation</cite>. Google Docs, unpublished working notes. Accessed 6 Oct. 2026."
     },
     {
@@ -20,8 +21,9 @@
       citation: "Prather, Brittany, et al. “Golgi-Resident PAP-Specific 3′-Phosphatase-Coupled Sulfotransferase Assays.” <cite>Analytical Biochemistry</cite>, vol. 423, no. 1, 2012, pp. 86–92."
     }
   ];
-  const cite = number => `<a class="project-paper-citation" href="${sources[number - 1].href}" target="_blank" rel="noopener noreferrer" aria-label="Source ${number}: ${sources[number - 1].title}">[${number}]</a>`;
-  page.title = "Our Project";
+  const cite = number => sources[number - 1].internal ? "" : `<a class="project-paper-citation" href="${sources[number - 1].href}" target="_blank" rel="noopener noreferrer" aria-label="Source ${number - 1}: ${sources[number - 1].title}">[${number - 1}]</a>`;
+  page.title = "Project Description";
+  page.projectView = "description";
 
   page.paper = {
     abstract: `<p>Post-cholecystectomy syndrome (PCS) is the motivating context for Renata’s investigation of bile-acid chemistry after gallbladder removal. Our research goal is to test a synthetic biology route for converting lithocholic acid (LCA) into its sulfated form. Clinical benefit in PCS has yet to be established. ${cite(1)}</p><p>The proposed system combines an engineered BtSULT enzyme with a supply of PAPS, its sulfate donor. Published wild-type BtSULT substrate preferences motivate examining how the bent 5β-LCA scaffold fits the enzyme. ${cite(2)} Sequence comparison, structural overlays, docking, and complex prediction guide candidate design; the DBTL cycle connects these choices to expression-vector construction, transformation, and planned enzyme-characterization assays. ${cite(1)}</p><p>The current wet-lab record contains experimental plans and controls. Completed transformation, expression, product-formation, and kinetic datasets have yet to be supplied. Computational comparisons nominate candidates and revise earlier active-site assumptions, while BtSULT’s catalytic base remains unresolved. These findings guide the next experimental comparison. Full enzyme-engineering analysis is collected in the <a href="model.html">Model</a>; methods and future observations are organized in <a href="wet-lab.html">Wet Lab</a> and the <a href="wet-lab-notebook.html">Wet Lab Notebook</a>. ${cite(1)}</p>`,

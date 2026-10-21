@@ -75,6 +75,13 @@
       // Excluding that hold keeps the bottle, PCS, and spacecraft timing unchanged.
       distance=Math.max(1,launch.offsetHeight-2*stage.offsetHeight);
       geometry={width:stage.clientWidth||win.innerWidth,height:stage.offsetHeight,bottleWidth:bottle.offsetWidth,mobile:compact.matches};
+      // Align the title's center with the lettering baked into the bottle artwork.
+      // Keep the bottle/rocket registration and the compact stacked layout intact.
+      if(enabled&&!compact.matches) {
+        const title=doc.getElementById('mission-title');
+        const labelY=geometry.height*.59+(785-845)*geometry.bottleWidth/490;
+        stage.style.setProperty('--intro-top',`${labelY-title.offsetTop-title.offsetHeight/2}px`);
+      } else stage.style.removeProperty('--intro-top');
       scenes.forEach(scene=>{scene.top=scene.node.getBoundingClientRect().top+win.scrollY;scene.height=scene.node.offsetHeight;});
       target=Math.max(0,win.scrollY);
     }

@@ -16,14 +16,14 @@
   renderHeader();
   window.RenataNavigation.init(document.querySelector(".renata-nav"));
   renderMain();
-  if (!["home", "project-description", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
+  if (!["home", "project-description", "engineering", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
   initProjectSidebar();
   renderFooter();
   initEffects();
   initProjectAnchor();
 
   function initProjectAnchor() {
-    if (!["project-description", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) return;
+    if (!["project-description", "engineering", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) return;
 
     // The article is rendered by JS and the story is prepended by a later script.
     // Resolve deep links once that initial layout exists, including legacy redirects.
@@ -32,6 +32,12 @@
       try { id = decodeURIComponent(window.location.hash.slice(1)); }
       catch { return; }
       if (!id) return;
+      // Old shared-page DBTL bookmarks now belong to the Engineering page.
+      const engineeringAnchors = ["engineering", "dbtl-cycle", "design", "build", "test", "learn", "methodology", "results", "conclusion", "engineering-sources", "figure-expression-vector", "figure-pathway", "figure-pcs-development", "figure-pcs-use", "figure-status", ...(pageData.engineering?.details || []).map(record => record.id)];
+      if (pageKey === "project-description" && engineeringAnchors.includes(id)) {
+        window.location.replace(`engineering.html${window.location.search || ""}#${encodeURIComponent(id)}`);
+        return;
+      }
       const target = document.getElementById(id);
       if (target) {
         let disclosure = target.closest?.("details");
@@ -106,7 +112,7 @@
 
     if (pageKey === "team") {
       main.innerHTML = renderTeamPage();
-    } else if (pageKey === "project-description") {
+    } else if (pageKey === "project-description" || pageKey === "engineering") {
       main.innerHTML = window.RenataProject.render(pageData);
     } else if (["wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) {
       main.innerHTML = window.RenataLab.render(pageKey);
@@ -261,21 +267,21 @@
           </header>
           <div class="contribution-features" aria-label="Contribution resources">
             ${(data.contributionRoutes || []).map(resource => `
-              <a class="contribution-feature" href="${resource.href}" aria-labelledby="kickstart-feature-title">
+              <a class="contribution-feature${resource.external ? " contribution-feature--registry" : ""}" href="${resource.href}" aria-labelledby="${resource.id}-feature-title"${resource.external ? ' target="_blank" rel="noopener noreferrer"' : ""}>
                 <div class="contribution-feature-copy">
                   <p class="contribution-feature-kicker">${resource.status}</p>
-                  <h2 id="kickstart-feature-title">${resource.title}</h2>
+                  <h2 id="${resource.id}-feature-title">${resource.title}</h2>
                   <p class="contribution-feature-summary">${resource.summary}</p>
-                  <span class="contribution-feature-action">Read the guide <span aria-hidden="true">→</span></span>
+                  <span class="contribution-feature-action">${resource.action || "Read the guide"}${resource.external ? " (opens in a new tab)" : ""} <span aria-hidden="true">${resource.external ? "↗" : "→"}</span></span>
                 </div>
-                <div class="contribution-guide-preview" aria-hidden="true">
+                ${resource.external ? `<div class="contribution-part-preview" aria-hidden="true"><img src="assets/nav-icons/DNA.png" width="192" height="192" alt="" loading="lazy"><span>iGEM Registry</span><strong>BBa_26TR5LM8</strong></div>` : `<div class="contribution-guide-preview" aria-hidden="true">
                   <span class="contribution-guide-brand">ULP-CA / iGEM Kickstart</span>
                   <span class="contribution-guide-title">Research<br>Fundamentals</span>
                   <img src="assets/kickstart/figure-1.png" width="1298" height="537" alt="" loading="lazy">
                   <span class="contribution-guide-topics">Gene design · Plasmids<br>DNA assembly · DBTL</span>
                   <span class="contribution-guide-author">By Humza Shahzad</span>
                   <span class="contribution-guide-length">11 pages · A starting point for new teams</span>
-                </div>
+                </div>`}
               </a>
             `).join("")}
           </div>
@@ -305,7 +311,6 @@
               </div>
               <div class="education-overview-copy">
                 ${overview.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
-                <p class="education-source">${overview.source}</p>
               </div>
             </section>
           ` : ""}
@@ -324,10 +329,6 @@
             `).join("")}
           </div>
 
-          <div class="experiment-evidence-note reveal">
-            <strong>Content status</strong>
-            <p>These accounts document our activities and educational intentions. Formal learning-assessment results have not been supplied.</p>
-          </div>
         </div>
       </section>
     `;
@@ -470,7 +471,6 @@
             <section class="project-paper-section" id="hp-discussion">
               <h2>Evidence and limitations</h2>
               <p>Two patient interviews and self-selected Facebook responses provide individual experiences rather than estimates of symptom prevalence or treatment effectiveness. The records contain differing perspectives and cannot establish that the proposed system will improve patient outcomes or reduce side effects. No clinical validation is reported here.</p>
-              <p>The document’s opening HP overview is unfinished. This overview synthesizes the six completed accounts that follow it; it adds no interview quotations, participant counts, consent claims, or experimental results beyond the supplied record.</p>
 
             </section>
             <section class="project-paper-section" id="hp-conclusion">
@@ -478,7 +478,6 @@
               <p>Human Practices broadened RENATA’s evaluation of SultFlux to include practical use, patient concerns, scientific evidence, and development constraints. The accounts connect feedback to delivery considerations and research priorities while keeping laboratory feasibility, clinical benefit, and commercial viability as separate questions requiring different evidence.</p>
 
             </section>
-            <p class="education-source">1. RENATA. “Writeup Education + HP.” Team-supplied PDF, n.d., pp. 1–10. Overview synthesized from the six event accounts.</p>
           </article>
 
           <aside class="project-paper-sidebar reveal delay-1" aria-label="Human Practices page outline">
@@ -607,9 +606,8 @@
               <div class="construct-card"><span>${construct.id}</span><h3>${construct.title}</h3><p>${construct.text}</p></div>
             `).join("")}</div>` : ""}
             ${section.document ? `<figure class="education-document-reader"><iframe src="${section.document.src}" title="${section.document.title}" loading="lazy"></iframe><figcaption><a href="${section.document.src}" target="_blank" rel="noopener">Open the PDF in a new tab</a> · <a href="${section.document.src}" download>Download the guide</a></figcaption></figure>` : ""}
-            ${section.note ? `<div class="evidence-note"><strong>Working note</strong><p>${section.note}</p></div>` : ""}
             ${section.source ? `<a class="detail-source-link" href="${section.source.href}" target="_blank" rel="noopener">${section.source.label} <span aria-hidden="true">↗</span></a>` : ""}
-            ${section.citation ? `<p class="education-source">${section.citation}</p>` : ""}
+            ${section.citation && section.citationType !== "internal" ? `<p class="education-source">${section.citation}</p>` : ""}
           </article>
         </div>
       </section>

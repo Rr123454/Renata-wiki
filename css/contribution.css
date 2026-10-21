@@ -1,4 +1,10 @@
-/* The single contribution receives a full editorial feature. */
+/* Contribution resources retain the site's large editorial feature layout. */
+body[data-page="contribution"] .contribution-features { display: grid; gap: 3rem; }
+body[data-page="contribution"] .contribution-feature.contribution-feature--registry { min-height: 360px; background: #fffaf2; }
+body[data-page="contribution"] .contribution-feature--registry h2 { overflow-wrap: anywhere; }
+body[data-page="contribution"] .contribution-part-preview { display: grid; justify-items: center; gap: 1rem; padding: 2rem 0; text-align: center; }
+body[data-page="contribution"] .contribution-part-preview img { width: 144px; height: 144px; }
+body[data-page="contribution"] .contribution-part-preview strong { font-size: clamp(1.2rem, 2vw, 1.8rem); overflow-wrap: anywhere; }
 body[data-page="contribution"] .contribution-index { padding-block: clamp(28px, 5vw, 72px); }
 body[data-page="contribution"] .contribution-feature {
   display: grid;

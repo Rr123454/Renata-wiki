@@ -8,7 +8,7 @@ const root = path.join(__dirname, "..");
 const css = fs.readFileSync(path.join(root, "css/cosmic-theme.css"), "utf8");
 const marker = "/* Reading pages share the bottle's warm cream";
 const innerTheme = css.slice(css.indexOf(marker));
-const redirects = ["engineering.html", "home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
+const redirects = ["home-orbit.html", "experiments.html", "experiment-enzyme-design.html", "experiment-enzyme-design-notebook.html", "experiment-enzyme-design-protocols.html"];
 
 test("the reading palette uses the requested color values", () => {
   for (const [name, value] of Object.entries({
@@ -52,6 +52,7 @@ test("entry points retain the base theme and load their final page theme last", 
       "index.html": "css/mission-home.css",
       "team.html": "css/team-space.css",
       "project-description.html": "css/project-outline.css",
+      "engineering.html": "css/project-outline.css",
       "wet-lab.html": "css/wetlab-document.css",
       "wet-lab-notebook.html": "css/wetlab-document.css",
       "model.html": "css/project-outline.css",
@@ -61,11 +62,12 @@ test("entry points retain the base theme and load their final page theme last", 
   }
 });
 
-test("the Engineering redirect retains the cream reading theme for its fallback", () => {
+test("the separate Engineering page retains the cream research theme", () => {
   const html = fs.readFileSync(path.join(root, "engineering.html"), "utf8");
-  assert.match(html, /<body data-page="project-description">/);
+  assert.match(html, /<body\b[^>]*data-page="engineering"[^>]*>/);
   assert.match(html, /href="css\/cosmic-theme\.css(?:\?[^\"]+)?"/);
-  assert.match(html, /<a href="project-description\.html#(?:engineering|dbtl-cycle)">/);
+  assert.match(html, /css\/project-outline\.css/);
+  assert.doesNotMatch(html, /window\.location\.replace/);
   assert.doesNotMatch(html, /css\/orbit-pages\.css/);
 });
 
@@ -106,7 +108,7 @@ test("every footer surface shares the reference dark blue on Home and reading pa
 
 test("all content pages mount the shared sponsor, links, and copyright footer", () => {
   const files = fs.readdirSync(root).filter(file => file.endsWith(".html") && !redirects.includes(file));
-  assert.equal(files.length, 31);
+  assert.equal(files.length, 33);
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
     assert.equal((html.match(/id="siteFooter"/g) || []).length, 1, file);

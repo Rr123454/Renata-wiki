@@ -36,7 +36,7 @@ class WetlabDocumentTest(unittest.TestCase):
         cls.parsed=Blocks(); cls.parsed.feed(cls.html)
     def test_build_is_current_and_originals_are_unchanged(self):
         wetlab.build(check=True)  # Checks three PDFs and every exported figure hash.
-        self.assertEqual([self.doc[k]['pageCount'] for k in ['background','wetlab','notebook']],[1,25,19])
+        self.assertEqual([self.doc[k]['pageCount'] for k in ['background','wetlab','notebook']],[1,26,19])
     def test_every_transcribed_block_round_trips_without_wording_changes(self):
         for doc in [self.doc['background'],self.doc['wetlab']]:
             for b in doc['blocks']:
@@ -47,25 +47,40 @@ class WetlabDocumentTest(unittest.TestCase):
                 self.assertEqual(self.parsed.blocks[b['key']],expected,b['key'])
         self.assertEqual(len(self.parsed.ids),len(set(self.parsed.ids)))
     def test_no_source_characters_are_lost_during_reflow(self):
-        # Independent PDFKit extraction: ignores layout whitespace and page numerals.
+        # Independent PDF extraction: ignores layout whitespace and page numerals.
         # This complements (does not replace) the page/figure visual comparison.
         source=json.loads((ROOT/'content/wetlab/pdf-text.json').read_text())
         count=lambda s:collections.Counter(re.sub(r'\s','',s))
         for key in ['background','wetlab']:
-            original=''.join(re.sub(r'^\d+\n','',p['text']) for p in source[key])
+            original=''.join(re.sub(r'^\d+\s*\n','',p['text']) for p in source[key])
+            if key == 'wetlab':
+                # Explicit display edits: shorter heading, punctuation cleanup,
+                # and omission of internal-manual references requested by the owner.
+                original=original.replace('Scientific References', 'References')
+                original=original.replace('Renusch, S.,', 'Renusch, S.')
+                original=re.sub(r'Utilized procedures from ULP IMPOWERS Laboratory Manuals:\s*Molecular Biology 1\s*and Molecular Biology 2', '', original)
             transferred=''.join(b.get('text','')+(''.join(''.join(row) for row in b['rows']) if b['type']=='table' else '') for b in self.doc[key]['blocks'])
             self.assertEqual(count(original),count(transferred),key)
     def test_all_figures_tables_and_source_pages_are_present(self):
         blocks=self.doc['wetlab']['blocks']
-        self.assertEqual(sorted({n for b in blocks for n in b['pages']}),list(range(1,26)))
+        self.assertEqual(sorted({n for b in blocks for n in b['pages']}),list(range(1,27)))
         figures=[b for b in blocks if b['type']=='figure']
-        self.assertEqual(len(figures),13)
+        self.assertEqual(len(figures),14)
         self.assertEqual(len([b for b in blocks if b['type']=='table']),3)
         for figure in figures:
             self.assertIn('href="'+figure['src']+'"',self.html)
         self.assertIn('15.625ug/mL',self.html)
         self.assertIn('<sup>2</sup>',self.html)
         self.assertIn('***SUBSTITUTED FOR ACETIC ACID/UV VISUALIZATION***',self.html)
+    def test_revised_results_and_limitations_are_present(self):
+        self.assertIn('id="wetlab-discussion"', self.html)
+        self.assertIn('no definitive catalytic activity', self.html)
+        self.assertIn('no confidently assignable target band', self.html)
+        self.assertIn('Colony PCR of DBTL 3 Samples', self.html)
+        self.assertIn('assets/wetlab/lab-writeup-2026.pdf', self.html)
+        self.assertNotIn('educationUtilizedprocedures', self.html)
+        self.assertEqual(self.doc['notebook']['source']['sha256'],
+                         '8a28a7bfadcd876df62c3b7bc2dddb72b3287aa79fa74798fd25421641837323')
     def test_notebook_is_original_pdf_with_all_pages_selectable(self):
         page=(ROOT/'wet-lab-notebook.html').read_text(); source=self.doc['notebook']['source']
         self.assertEqual(hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest(),source['sha256'])
@@ -76,7 +91,9 @@ class WetlabDocumentTest(unittest.TestCase):
     def test_annotated_record_and_chronology_survive_the_merge(self):
         self.assertIn('id="evidence-review"', self.html)
         self.assertIn('id="review-record-checks"', self.html)
-        self.assertIn('id="review-historical-plans"', self.html)
+        self.assertNotIn('id="review-historical-plans"', self.html)
+        self.assertNotIn('Earlier planning context', self.html)
+        self.assertNotIn('Open archived plans and prompts', self.html)
         for anchor in ['assembly','screening','expression-plan','purification','quantification','protein-gels','assay-plan']:
             self.assertIn('id="review-'+anchor+'"', self.html)
         for href in re.findall(r'href="#([^"]+)"', self.html):

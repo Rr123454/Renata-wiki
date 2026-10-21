@@ -1,11 +1,12 @@
-/* Engineering section of Project Description, summarized from the team's records. */
+/* Engineering DBTL page, summarized from the team's records. */
 (function () {
   "use strict";
 
   const page = window.SITE_DATA.pages["project-description"];
   const engineering = page.engineering;
   const reference = page.paper.references[0];
-  const source = `<a class="project-paper-citation" href="${reference.href}" target="_blank" rel="noopener noreferrer" aria-label="Source 1: Dry Lab Documentation">[1]</a>`;
+  // Keep the source record in metadata; internal files have no public citation.
+  const source = "";
   const notebook = "model.html";
 
   engineering.intro = "Assembly, enzyme design, and experimental integration address different questions within the same proposed system. These records trace how sequence comparisons, predicted structures, and experimental planning changed Renata’s design decisions.";
@@ -84,7 +85,8 @@
     }
   ];
 
-  // Keep provenance in the paper's existing References panel, with one source number.
+  // Preserve internal provenance for editors without displaying a citation.
   reference.citation += " Engineering source tabs include BT Engineering, Model Wiki Writeup, Biomni summary, Dry + Wet Bridge, ODE Modeling, and MD Sample SOP.";
   engineering.sourceNote = `Detailed computational observations and method references are collected in the <a href="model.html">Model</a>. Experimental plans and their future records are organized in <a href="wet-lab.html">Wet Lab</a> and the <a href="wet-lab-notebook.html">Wet Lab Notebook</a>. ${source}`;
+  window.SITE_DATA.pages.engineering = { ...page, title: "Engineering", projectView: "engineering" };
 })();

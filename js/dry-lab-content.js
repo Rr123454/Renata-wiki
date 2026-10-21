@@ -6,7 +6,9 @@
   const data = window.SITE_DATA;
   const key = "experiment-enzyme-design";
   const escape = (text) => String(text).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const cite = (number, pages = "") => `<a class="dry-lab-citation" href="#source-${number}">[${number}${pages ? `, ${escape(pages)}` : ""}]</a>`;
+  // Source 1 is an unpublished internal record. Keep stable external anchors,
+  // while numbering the displayed references from the first published source.
+  const cite = (number, pages = "") => number === 1 ? "" : `<a class="dry-lab-citation" href="#source-${number}">[${number - 1}${pages ? `, ${escape(pages)}` : ""}]</a>`;
   const link = (url, text) => `<a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(text)}</a>`;
   const section = (id, title, content) => `<section class="dry-lab-section" id="${id}" aria-labelledby="${id}-title"><h2 id="${id}-title">${title}</h2>${content}</section>`;
   const table = (caption, heads, rows) => `<div class="dry-lab-table-wrap" tabindex="0" role="region" aria-label="${escape(caption)}"><table class="dry-lab-table"><caption>${caption}</caption><thead><tr>${heads.map(h => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${row.map((cell, i) => i ? `<td>${cell}</td>` : `<th scope="row">${cell}</th>`).join("")}</tr>`).join("")}</tbody></table></div>`;
@@ -15,8 +17,8 @@
   const toc = (items) => `<nav class="dry-lab-toc" aria-label="Sections in this record">${items.map(([id, label]) => `<a href="#${id}">${label}</a>`).join("")}</nav>`;
   const figure = (file, alt, caption) => `<figure class="dry-lab-figure"><a href="${assetUrl(`assets/dry-lab/${file}.png`)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure: ${escape(alt)}"><img src="${assetUrl(`assets/dry-lab/${file}.png`)}" alt="${escape(alt)}" loading="lazy" width="1116" height="854" /></a><figcaption>${caption}</figcaption></figure>`;
   const documentUrl = "https://docs.google.com/document/d/1hq1qmFW4YEaZQYAjRaq6p3PTumQB0m1oRSfn-F4U6K4/edit";
-  const documentTab = (id, label) => link(`${documentUrl}?tab=${id}`, label);
-  const workingDocument = `<p class="dry-lab-document-link">${link(`${documentUrl}?tab=t.0`, "Read the team's working document")} · Content reviewed 6 Oct. 2026. ${cite(1)}</p>`;
+  const documentTab = (id, label) => escape(label);
+  const workingDocument = "";
   const references = [
     `iGEM Renata. <cite>Dry Lab Documentation</cite>. Unpublished team working document, Google Docs, ${link(`${documentUrl}?tab=t.0`, "eleven source tabs")}. Accessed 6 Oct. 2026. Also supplied as an 89-page snapshot; page-number citations and the two original PyMOL figures refer to that snapshot. Computational outputs are reported records awaiting raw-file verification.`,
     `Yao, Lina, et al. “A Biosynthetic Pathway for the Selective Sulfonation of Steroidal Metabolites by Human Gut Bacteria.” <cite>Nature Microbiology</cite>, vol. 7, no. 9, 2022, pp. 1404–18. ${link("https://doi.org/10.1038/s41564-022-01176-y", "doi:10.1038/s41564-022-01176-y")}.`,
@@ -34,11 +36,11 @@
     `Prather, Brittany, et al. “Golgi-Resident PAP-Specific 3′-Phosphatase-Coupled Sulfotransferase Assays.” <cite>Analytical Biochemistry</cite>, vol. 423, no. 1, 2012, pp. 86–92. ${link("https://doi.org/10.1016/j.ab.2012.01.003", "doi:10.1016/j.ab.2012.01.003")}.`,
     `R&D Systems. <cite>Universal Sulfotransferase Activity Kit</cite>. Catalog EA003, ${link("https://resources.rndsystems.com/pdfs/datasheets/ea003.pdf", "Manufacturer's assay manual")}. Accessed 6 Oct. 2026.`
   ];
-  const sources = () => section("sources", "Sources", `<ol class="dry-lab-references">${references.map((ref, i) => `<li id="source-${i + 1}">${ref}</li>`).join("")}</ol>`);
+  const sources = () => section("sources", "Sources", `<ol class="dry-lab-references">${references.slice(1).map((ref, i) => `<li id="source-${i + 2}">${ref}</li>`).join("")}</ol>`);
   const boundary = note("Current evidence", `This record contains sequence comparisons, reported docking and structure predictions, and experimental plans. BtSULT’s catalytic base remains unresolved. Enzyme activity and improved LCA conversion require biochemical measurements. ${cite(1, "pp. 83–89")}`);
   const documentGuide = section("document-map", "Where the source material appears", table("The working document within the website's information hierarchy", ["Website page", "Source tabs", "Purpose"], [
     ['<a href="project-description.html">Project / Description</a>', `${documentTab("t.0", "BT Engineering")} · ${documentTab("t.9z9za7sypse6", "Model Wiki Writeup")}`, "Abstract, methodology, main computational results, and project conclusion."],
-    ['<a href="project-description.html#engineering">Project Description / Engineering</a>', `${documentTab("t.972qmrkdirwk", "Biomni summary")} · ${documentTab("t.4q1xtbwxkwv5", "Dry + Wet Bridge")}`, "The Engineering section within Project Description: design choices, revised hypotheses, construct options, and how evidence guides another iteration."],
+    ['<a href="engineering.html#dbtl-cycle">Engineering</a>', `${documentTab("t.972qmrkdirwk", "Biomni summary")} · ${documentTab("t.4q1xtbwxkwv5", "Dry + Wet Bridge")}`, "The Engineering page: design choices, revised hypotheses, construct options, and how evidence guides another iteration."],
     ["Lab Work / Enzyme-design overview", documentTab("t.0", "BT Engineering"), "The experiment's question, workflow, and evidence summary."],
     [`<a href="${key}-notebook.html">Lab Work / Enzyme design / Notebook</a>`, `${documentTab("t.8aufh9r2twos", "ACTIVESITE")} · ${documentTab("t.rrxztbt0ctj7", "docking")} · ${documentTab("t.e0uhhpvtzxr2", "8/2 work")} · ${documentTab("t.j6oa5dv0u3lh", "Action Items")}`, "Detailed observations, comparison tables, chronology, and interpretation."],
     [`<a href="${key}-protocols.html">Lab Work / Enzyme design / Protocols</a>`, `${documentTab("t.8jnhl5t9c7qw", "ODE Modeling")} · ${documentTab("t.4q1xtbwxkwv5", "Dry + Wet Bridge")} · ${documentTab("t.fm1ab4nonj08", "MD Sample SOP")} · ${documentTab("t.klgi10wz4wek", "Assay Logic")}`, "Reference inputs, computational methods, assay controls, and experimental/modelling plans."]
@@ -168,7 +170,7 @@
   data.labWorkModel = {
     title: "Expression, enzyme kinetics, and PAPS supply",
     imageLabel: "Planned ODE model figure",
-    text: `The proposed MATLAB model connects promoter output and protein abundance to BtSULT kinetics and cofactor availability. Reporter time courses, calibrated rates, and cofactor measurements are needed to estimate its parameters. A fitted model has yet to be supplied. <a href="${key}-protocols.html#ode-plan">Read the modelling plan</a> · ${documentTab("t.8jnhl5t9c7qw", "Source: ODE Modeling")}.`
+    text: `The proposed MATLAB model connects promoter output and protein abundance to BtSULT kinetics and cofactor availability. Reporter time courses, calibrated rates, and cofactor measurements are needed to estimate its parameters. A fitted model has yet to be supplied. <a href="${key}-protocols.html#ode-plan">Read the modelling plan</a>.`
   };
   for (const [view, title, lead] of [
     ["overview", "BtSULT enzyme design", "Sequence, structure, and ligand comparisons informing the next experimental design."],

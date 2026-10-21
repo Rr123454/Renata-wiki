@@ -73,6 +73,13 @@ class KickstartTests(unittest.TestCase):
     def test_generated_article_is_current(self):
         runpy.run_path(str(ROOT / 'scripts/build-kickstart.py'))['build'](ROOT, check=True)
 
+    def test_internal_citations_omitted_with_public_resources_preserved(self):
+        self.assertNotIn('Source guide, p.', self.page)
+        self.assertNotIn('Shahzad, Humza. <em>', self.page)
+        self.assertIn('https://www.neb.com/', self.page)
+        self.assertIn('https://www.snapgene.com/', self.page)
+        self.assertIn('Read the guide as a PDF', self.page)
+
 
 if __name__ == '__main__':
     unittest.main()

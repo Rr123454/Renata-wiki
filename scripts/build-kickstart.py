@@ -126,7 +126,7 @@ def build(root=ROOT, check=False):
     parts = [f'<header class="kickstart-guide-heading"><p class="detail-eyebrow">The complete guide · {data["page_count"]} source pages</p>',
              f'<h2 id="research-fundamentals">{html.escape(data["title"])}</h2>',
              f'<p>{html.escape(data["byline"])}</p>',
-             f'<p>Transcribed from the supplied guide. Original wording, figures, and source links are retained. <a href="{data["source"]}">Read the original PDF</a> [1].</p></header>']
+             f'<p><a href="{data["source"]}">Read the guide as a PDF</a></p></header>']
     in_list = False
     for index, block in enumerate(data['blocks']):
         page = block['pages'][0]
@@ -144,7 +144,7 @@ def build(root=ROOT, check=False):
             path = block['source']
             if hashlib.sha256((root / path).read_bytes()).hexdigest() != block['sha256']:
                 raise ValueError(f'Kickstart source figure changed: {path}')
-            parts.append(f'<figure id="guide-figure-{sum(b["type"] == "figure" for b in data["blocks"][:index + 1])}" {attributes}><a href="{path}" aria-label="Open full-size figure"><img src="{path}" width="{block["width"]}" height="{block["height"]}" loading="lazy" alt="{html.escape(block["alt"], quote=True)}"></a><figcaption><a href="{data["source"]}#page={page}">Source guide, p. {page}</a></figcaption></figure>')
+            parts.append(f'<figure id="guide-figure-{sum(b["type"] == "figure" for b in data["blocks"][:index + 1])}" {attributes}><a href="{path}" aria-label="Open full-size figure"><img src="{path}" width="{block["width"]}" height="{block["height"]}" loading="lazy" alt="{html.escape(block["alt"], quote=True)}"></a></figure>')
         else:
             css = ' class="kickstart-source-caption"' if block['text'].lstrip().startswith('Fig.') else ''
             tag = 'li' if is_item else 'h4' if block['text'].startswith('❖') else 'p'

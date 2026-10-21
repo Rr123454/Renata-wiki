@@ -52,7 +52,7 @@ test("the reader uses the unchanged 74-page PDF supplied by the team", () => {
   assert.doesNotMatch(notebook, /assets\/documents\/wet-lab-notebook\.pdf/);
 });
 
-test("the notebook preserves monthly chronology, source-page references and entry text", () => {
+test("the notebook preserves chronology and page metadata while omitting internal citation labels", () => {
   const months = [["June", 56], ["July", 57], ["August", 62], ["September", 66], ["October", 68]];
   let previous = -1;
   for (const [month, page] of months) {
@@ -65,9 +65,11 @@ test("the notebook preserves monthly chronology, source-page references and entr
     assert.ok(section.entries.length > 0, `${month}: documented entries`);
     for (const entry of section.entries) {
       assert.ok(entry.label && entry.text, `${month}: dated entry and evidence text`);
-      assert.ok(notebook.includes(entry.label), `${month}: chronology is visible`);
+      const visibleLabel = entry.label.replace(/\s*·\s*PDF pp?\.\s*[\d–-]+/g, "");
+      assert.ok(notebook.includes(visibleLabel), `${month}: chronology is visible`);
     }
   }
+  assert.doesNotMatch(notebook, /· PDF pp?\.|1\. RENATA\./);
   assert.match(JSON.stringify(data), /(?:date|heading|label)[^.]{0,180}(?:conflict|discrepan|mismatch|inconsisten|ambig|uncertain)|(?:conflict|discrepan|mismatch|inconsisten|ambig|uncertain)[^.]{0,180}(?:date|heading|label)/i, "Source chronology discrepancies remain explicit");
 });
 

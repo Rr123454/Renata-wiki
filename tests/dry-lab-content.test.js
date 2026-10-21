@@ -15,12 +15,14 @@ vm.runInContext(read("js/wet-lab-notebook-data.js"), context);
 vm.runInContext(read("js/lab-content.js"), context);
 vm.runInContext(read("js/project-description-content.js"), context);
 vm.runInContext(read("js/engineering-content.js"), context);
+vm.runInContext(read("js/project-overview-content.js"), context);
 vm.runInContext(read("js/project-paper.js"), context);
 const data = context.window.SITE_DATA;
 const key = "experiment-enzyme-design";
 const content = data.experimentRecordTabs[key].content;
 const pageContent = file => {
   if (file === "project-description.html") return context.window.RenataProject.render(data.pages["project-description"]);
+  if (file === "engineering.html") return context.window.RenataProject.render(data.pages.engineering);
   if (["wet-lab.html", "wet-lab-notebook.html", "model.html"].includes(file)) return context.window.RenataLab.render(file.replace(/\.html$/, ""));
   const page = data.pages[file.replace(/\.html$/, "")];
   return page?.recordKey === key ? content[page.recordView] : "";
@@ -39,17 +41,16 @@ test("source Overview, Notebook, and Protocols records remain available behind c
   assert.equal(data.experimentRoutes.filter(route => route.href === key + ".html").length, 1);
 });
 
-test("source guide covers all eleven Google Doc tabs with numbered sources", () => {
-  for (const tab of ["t.0", "t.e0uhhpvtzxr2", "t.8aufh9r2twos", "t.rrxztbt0ctj7", "t.9z9za7sypse6", "t.8jnhl5t9c7qw", "t.4q1xtbwxkwv5", "t.fm1ab4nonj08", "t.klgi10wz4wek", "t.j6oa5dv0u3lh", "t.972qmrkdirwk"]) {
-    assert.ok(content.overview.includes(`?tab=${tab}"`), tab);
-  }
+test("working records omit internal citations and retain numbered published references", () => {
   for (const html of Object.values(content)) {
-    assert.ok(html.includes("working document"));
-    assert.equal([...html.matchAll(/id="source-\d+"/g)].length, 15);
+    assert.equal([...html.matchAll(/id="source-\d+"/g)].length, 14);
+    assert.doesNotMatch(html, /id="source-1"|href="#source-1"|href="https:\/\/docs\.google\.com\/document|Unpublished team working document|dry-lab-document-link/);
+    assert.match(html, /10\.1038\/s41564-022-01176-y/);
     assert.doesNotMatch(html, /ppl-ai-file-upload/);
     const pdfLinks = [...html.matchAll(/href="([^"]+\.pdf)"/g)].map(match => match[1]);
     assert.deepEqual(pdfLinks, ["https://resources.rndsystems.com/pdfs/datasheets/ea003.pdf"]);
   }
+  assert.match(content.overview, /href="#source-2">\[1\]<\/a>/);
 });
 
 test("all generated IDs are unique and local links, anchors, and figures resolve", () => {
