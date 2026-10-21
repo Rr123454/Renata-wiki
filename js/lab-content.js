@@ -77,9 +77,37 @@
       const page = data.pages[record.key], resources = data.experimentRecordTabs[record.key];
       return `<section class="lab-section" id="${record.id}"><p class="detail-eyebrow">Planned experiment</p><h2>${record.title}</h2><p>${page.lead}</p><dl class="lab-reasoning"><div><dt>Question</dt><dd>${record.question}</dd></div><div><dt>Evidence / data</dt><dd>No completed dataset is attached to this record.</dd></div><div><dt>Interpretation framework</dt><dd>${record.interpretation}</dd></div><div><dt>Decision to record</dt><dd>${record.decision}</dd></div></dl><div class="lab-comparison">${page.cards.map(card => `<div><p class="detail-eyebrow">${card.tag}</p><h3>${card.title}</h3><p>${card.text}</p></div>`).join("")}</div>${details(page.details || [])}<details class="lab-method-details"><summary>Procedure documentation &amp; analysis requirements</summary><p>${resources.protocolsLead}</p>${entries(resources.protocols)}</details><p><a href="wet-lab-notebook.html#notebook-${record.id}">View this notebook record ↗</a></p></section>`;
     }).join("");
-    const body = `${status}${sourceNote}<span id="experiments-list" class="lab-anchor"></span>${experiments}<div class="lab-source-sections">${wetSections.map(section => section.id === "master-plan" ? `<span id="six-week-plan" class="lab-anchor"></span>${section.html}` : section.html).join("")}</div>${sourceSection}`;
-    const links = [["assembly", "Assembly & transformation"], ["reporter", "Reporter characterization"], ["growth-response", "Growth response"], ["expression-plan", "Expression & purification"], ["assay-plan", "Enzyme characterization assay"], ["master-plan", "Planned milestones"], ["sources", "Sources"]];
-    return `<section class="lab-page container" aria-labelledby="lab-page-title"><header class="lab-page-header"><p class="detail-eyebrow">Our Lab Work / Bench record</p><h1 id="lab-page-title">Wetlab</h1><p>Experimental logic, evidence, and interpretation.</p><p class="lab-related-links"><a href="wet-lab-notebook.html">Open notebook ↗</a> · <a href="project-description.html#dbtl-cycle">Project DBTL cycle ↗</a></p></header><div class="lab-layout">${toc(links)}<article class="lab-article" id="work-analysis">${body}</article></div></section>`;
+    const questions = records.map(record => `<div><p class="detail-eyebrow">Research question</p><h3>${record.title}</h3><p>${record.question}</p></div>`).join("");
+    const tabs = [["process-background", "Process/Background"], ["model-wetlab", "Model Wetlab"], ["experimentation-protocols", "Experimentation/Protocols"]];
+    const tabNav = `<nav class="wetlab-subtabs" aria-label="Wetlab subtabs">${tabs.map(([id, label], index) =>
+      `<a class="wetlab-subtab" href="#${id}"><span class="wetlab-subtab-number">0${index + 1}</span><strong>${label}</strong><span aria-hidden="true">↗</span></a>`
+    ).join("")}</nav>`;
+    const body = `${tabNav}
+      <section class="wetlab-subsection" id="process-background" aria-labelledby="wetlab-process-title">
+        <p class="detail-eyebrow">Wetlab / 01</p><h2 id="wetlab-process-title">Process/Background</h2>
+        <p>Start with the experimental questions, the current evidence status, and the distinction between planned work and reported observations.</p>
+        ${status}${sourceNote}
+        <div class="lab-comparison wetlab-question-grid">${questions}</div>
+        <p><a href="project-description.html#dbtl-cycle">How this work fits the design–build–test–learn cycle ↗</a></p>
+      </section>
+      <section class="wetlab-subsection" id="model-wetlab" aria-labelledby="wetlab-model-title">
+        <p class="detail-eyebrow">Wetlab / 02</p><h2 id="wetlab-model-title">Model Wetlab</h2>
+        <p>Bench-validation plans linked to the proposed enzyme design: expression and purification, characterization assays, and the planned milestones. These are plans, not completed assay results.</p>
+        <p><a href="model.html">Read the separate computational Model writeup ↗</a></p>
+        <div class="lab-source-sections">${wetSections.map(section => section.id === "master-plan" ? `<span id="six-week-plan" class="lab-anchor"></span>${section.html}` : section.html).join("")}</div>
+      </section>
+      <section class="wetlab-subsection" id="experimentation-protocols" aria-labelledby="wetlab-protocols-title">
+        <p class="detail-eyebrow">Wetlab / 03</p><h2 id="wetlab-protocols-title">Experimentation/Protocols</h2>
+        <p>Experiment records, procedure documentation, interpretation criteria, and notebook links are grouped here; recorded outcomes are not implied where data is pending.</p>
+        <span id="experiments-list" class="lab-anchor"></span>${experiments}${sourceSection}
+      </section>`;
+    const links = [
+      ["process-background", "Process/Background"], ["model-wetlab", "Model Wetlab"], ["experimentation-protocols", "Experimentation/Protocols"],
+      ["assembly", "Assembly & transformation"], ["reporter", "Reporter characterization"], ["growth-response", "Growth response"],
+      ["expression-plan", "Expression & purification"], ["assay-plan", "Enzyme characterization assay"],
+      ["master-plan", "Planned milestones"], ["sources", "Sources"]
+    ];
+    return `<section class="lab-page lab-page--wetlab container" aria-labelledby="lab-page-title"><header class="lab-page-header"><p class="detail-eyebrow">Our Lab Work / Bench record</p><h1 id="lab-page-title">Wetlab</h1><p>Experimental logic, evidence, and interpretation.</p><p class="lab-related-links"><a href="wet-lab-notebook.html">Open notebook ↗</a> · <a href="project-description.html#dbtl-cycle">Project DBTL cycle ↗</a></p></header><div class="lab-layout">${toc(links)}<article class="lab-article" id="work-analysis">${body}</article></div></section>`;
   }
 
   function notebook() {

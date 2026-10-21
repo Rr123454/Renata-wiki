@@ -42,7 +42,15 @@ window.SITE_DATA = {
       heading: "Lab work.",
       description: "",
       children: [
-        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
+        {
+          key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA",
+          description: "Experimental process, wet-lab plans, and protocols.",
+          children: [
+            { key: "wet-lab-background", label: "Process/Background", href: "wet-lab.html#process-background" },
+            { key: "wet-lab-model", label: "Model Wetlab", href: "wet-lab.html#model-wetlab" },
+            { key: "wet-lab-protocols", label: "Experimentation/Protocols", href: "wet-lab.html#experimentation-protocols" }
+          ]
+        },
         { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab-notebook.html", icon: "DNA", description: "Bench notebook, PDF reader, and text entries." },
         { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
       ]

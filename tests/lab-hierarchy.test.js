@@ -13,12 +13,12 @@ const pages = Object.fromEntries(["wet-lab", "wet-lab-notebook", "model"].map(ke
 const ids = html => [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 
 test("top-level navigation matches the requested hierarchy with Wetlab, Notebook, and Model under Lab Work", () => {
-  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Engineering", "Lab Work", "Education + HP"]);
-  assert.equal(data.nav.find(item => item.key === "project").children, undefined, "Engineering is a direct link");
+  assert.deepEqual(Array.from(data.nav, item => item.label), ["Home", "Our Team", "Project", "Lab Work", "Education + HP"]);
+  assert.deepEqual(Array.from(data.nav.find(item => item.key === "project").children, child => child.label), ["Engineering", "The Problem"]);
   assert.equal(data.nav.find(item => item.key === "team").children, undefined, "Our Team is a direct link");
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
-  assert.equal(menu[0].children, undefined, "all Lab Work destinations are siblings");
+  assert.deepEqual(Array.from(menu[0].children, item => [item.label, item.href]), [["Process/Background", "wet-lab.html#process-background"], ["Model Wetlab", "wet-lab.html#model-wetlab"], ["Experimentation/Protocols", "wet-lab.html#experimentation-protocols"]]);
   assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
 });
 
