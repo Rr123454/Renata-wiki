@@ -132,7 +132,7 @@ window.SITE_DATA = {
             },
             { name: "Sharan S.", photo: "assets/Team Images/Sharan.png", role: "Community Mentor" },
             {
-              name: "Samantha Renusch", role: "Scientific Mentor",
+              name: "Samantha Renusch", photo: "assets/Team Images/Samantha.png", role: "Scientific Mentor",
               bio: "My name is Samantha Renusch, and I am the Director of Education for Workforce Development at University Lab Partners. I have a background in molecular biology, immunology, biotechnology, and bioinformatics, and I oversee educational and research programs at the IMPOWER Learning Lab at Soka University. My role with the team is primarily as a scientific mentor and laboratory resource. I help students develop their research plans, learn laboratory techniques, troubleshoot experiments, and think about how their project can move from an idea to something that could have a real-world impact. I decided to join Renata because I really enjoy mentoring students who are willing to take ownership of ambitious scientific projects. What I especially like about iGEM is that it goes far beyond simply doing experiments. Students have to think about the science, engineering, communication, entrepreneurship, community impact, and how their idea could potentially become something much bigger.\n\nMy goal for iGEM this year is to help the students become increasingly independent scientists. I want them to understand not only how to perform an experiment, but why they are doing it, how to interpret the results, how to respond when something does not work, and how to communicate their science effectively. Ultimately, I want them to come out of the experience feeling like they are capable of developing and leading their own research projects."
             }
           ]
@@ -169,7 +169,7 @@ window.SITE_DATA = {
               bio: "Hey, I’m Aidan, a 17-year-old from Damien High School! With Renata, I help coordinate funding and outreach. I joined the team because I wanted to be part of efforts in synthetic biology and research. Renata offered a place where I could grow in my own skills, collaborate with people who care about science as much as I do, and contribute to a project with real impact. My goal for this year is simply to grow as much as I can in my science communication skills as it relates to our project and research on the whole, and to better understand how projects like those from iGEM function."
             },
             {
-              name: "Brandon Trinh", role: "Student", school: "Chino Hills High School", classYear: "2027",
+              name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg", role: "Student", school: "Chino Hills High School", classYear: "2027",
               bio: "I’m Brandon, I’m 17, and I go to Chino Hills High School. I’m part of Dry Lab. I decided to join Renata because Humza told me to and because I love science. I hope we get top 10 and make it to Paris!"
             },
             { name: "Ella Y.", photo: "assets/Team Images/ella.jpg", role: "Student" },
