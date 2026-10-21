@@ -58,11 +58,7 @@ test("dealing preserves roster order and offers an immediate complete roster", (
   assert.match(js, /if \(reduced.matches \|\| !cards.every/);
   assert.match(js, /data-deal-show/);
   assert.match(js, /window.addEventListener\("scroll", controller.onScroll, \{ passive: true \}\)/);
-<<<<<<< HEAD
   assert.match(read("team.html"), /js\/team-deal.js\?v=[a-f0-9]{12}/);
-=======
-  assert.match(read("team.html"), /js\/team-deal.js\?v=20261020-individual-flight1/);
->>>>>>> d6c6ec967570a02b9fc9905f351444e63877e6ce
 });
 
 // Exercise the real controller with a deterministic clock and scrollable layout.
