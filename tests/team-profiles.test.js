@@ -38,17 +38,17 @@ test("mentors and members with no supplied biography are preserved", () => {
 });
 
 test("all supplied student and mentor portraits retain their member assignments", () => {
-  const expected = ["Humza Shahzad", "Karthik Sajeev", "Kavi Shrivastava", "Kyle Kao", "Ritvin Rejith", "Aaron Torres", "Aidan R.", "Ella Y.", "Alex Fang", "Hannah Bae", "Hanyu Huang", "Kylie Tien", "Margaret Lin", "Matthew She", "Ryan Jian", "Tiger Liu", "Toni D.", "Vanessa Liang", "Yuqing Zhuo", "Deena Singh", "Noah Chu", "Lakshya Gupta"];
+  const expected = ["Humza Shahzad", "Karthik Sajeev", "Kavi Shrivastava", "Kyle Kao", "Ritvin Rejith", "Aaron Torres", "Aidan R.", "Brandon Trinh", "Ella Y.", "Alex Fang", "Hannah Bae", "Hanyu Huang", "Kylie Tien", "Margaret Lin", "Matthew She", "Ryan Jian", "Tiger Liu", "Toni D.", "Vanessa Liang", "Yuqing Zhuo", "Deena Singh", "Noah Chu", "Lakshya Gupta"];
   const portraits = students.filter(member => member.photo);
   assert.deepEqual(Array.from(portraits, member => member.name), expected);
-  for (const [name, file] of Object.entries({"Emma Zschunke": "Emma Zschunke.png", "Preya Shrivastava": "Preya.png", "Matt M.": "Matt M.png", "Dr. Tasha Barr": "Tasha B.png", "Sharan S.": "Sharan.png"})) {
+  for (const [name, file] of Object.entries({"Emma Zschunke": "Emma Zschunke.png", "Preya Shrivastava": "Preya.png", "Matt M.": "Matt M.png", "Dr. Tasha Barr": "Tasha B.png", "Sharan S.": "Sharan.png", "Samantha Renusch": "Samantha.png"})) {
     const member = groups[0].members.find(item => item.name === name);
     assert.equal(member.photo, `assets/Team Images/${file}`);
     assert.ok(fs.existsSync(path.join(__dirname, "..", member.photo)));
   }
   for (const member of portraits) {
     assert.match(member.photo, /^assets\/Team Images\//, member.name);
-    assert.ok(fs.existsSync(path.join(__dirname, "..", member.photo)), member.photo);
+    assert.ok(fs.existsSync(path.join(__dirname, "..", member.photo.split("?")[0])), member.photo);
   }
   assert.equal(students.find(member => member.name === "Yuqing Zhuo").photo, "assets/Team Images/skylar zhuo.jpg");
   assert.equal(students.find(member => member.name === "Kavi Shrivastava").photo, "assets/Team Images/Kavi S.jpg");
@@ -65,7 +65,7 @@ test("the 17 updated bios retain supplied roles and school corrections", () => {
     "Matthew She": /14 years old[\s\S]*fundraising and marketing/,
     "Kylie Tien": /16[\s\S]*Dry Lab & Business Member/,
     "Dr. Tasha Barr": /Ph\.D\.[\s\S]*UC Riverside[\s\S]*experimental design/,
-    "Ritvin Rejith": /17[\s\S]*Student Leader[\s\S]*Dry Lab/,
+    "Ritvin Rejith": /2027[\s\S]*Wiki and Software[\s\S]*volleyball/,
     "Margaret Lin": /wiki\/webdev head[\s\S]*documentation and data analysis/,
     "Samantha Renusch": /Director of Education[\s\S]*IMPOWER Learning Lab[\s\S]*independent scientists/,
     "Yuqing Zhuo": /17 years old[\s\S]*upcoming senior/,
@@ -112,11 +112,11 @@ test("compact cards expose an accessible full-card button and escape member text
   assert.match(html, /R&amp;D/);
   assert.doesNotMatch(html, /Long private draft/);
   const brandon = students.find(member => member.name === "Brandon Trinh");
-  const noPhoto = render({ key: "students" }, brandon, students.indexOf(brandon));
-  assert.equal(brandon.photo, undefined);
-  assert.match(noPhoto, /class="member-photo-placeholder"/);
-  assert.match(noPhoto, /View profile: Brandon Trinh/);
-  assert.doesNotMatch(noPhoto, /<img/);
+  const withPhoto = render({ key: "students" }, brandon, students.indexOf(brandon));
+  assert.match(brandon.photo, /^assets\/Team Images\/Brandon Trinh\.jpeg\?v=/);
+  assert.match(withPhoto, /class="member-photo"/);
+  assert.match(withPhoto, /View profile: Brandon Trinh/);
+  assert.match(withPhoto, /Brandon Trinh\.jpeg\?v=/);
   assert.doesNotMatch(brandon.bio, /leave me without|photo|let me know/i);
   assert.ok(fs.existsSync(path.join(__dirname, "../assets/Team Images/Brandon Trinh.jpeg")));
 });

@@ -73,9 +73,13 @@ test('the homepage keeps every supplied science paragraph verbatim and all three
  assert.deepEqual([...html.matchAll(/data-planet="([^"]+)"/g)].map(m=>m[1]),['gallbladder','sulfation','bile-acids']);
  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
  for(const m of html.matchAll(/href="#([^"]+)"|url\(#([^\)]+)\)/g)) assert.ok(ids.includes(m[1]||m[2]),m[0]);
- for(const name of ['lca-dca.webp','bottle-new.png','spaceship.png','spaceship-inside.png','liver.png','planet-1.png','planet-2.png','planet-3.png','person-drinking.png']) {
+ for(const name of ['lca-dca.webp','sulflux-bottle.png','spaceship.png','spaceship-inside.png','liver.png','planet-1.png','planet-2.png','planet-3.png','person-drinking.png']) {
   assert.ok(html.includes(`assets/story/${name}`),name);assert.ok(fs.existsSync(path.join(__dirname,'../assets/story',name)));
  }
+ assert.match(html, /<image href="assets\/story\/sulflux-bottle\.png\?v=2e5484d1"/);
+ assert.match(html, /data-preload="assets\/story\/sulflux-bottle\.png\?v=2e5484d1 /);
+ assert.doesNotMatch(html, /bottle-new\.png/);
+ assert.match(read('scripts/build-home.js'), /sulflux-bottle\.png\?v=2e5484d1/);
  assert.doesNotMatch(html,/mission-cabin-open|mission-cabin-dialog|Look inside|mission-craft-layer|mission-transit|Proposed design · not a validated treatment/);
 });
 

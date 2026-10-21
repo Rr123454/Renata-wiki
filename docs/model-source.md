@@ -10,7 +10,7 @@ The article contains the introduction, enzyme-engineering text, four numbered se
 - PDF line wrapping was reflowed. Extraction artifacts around underscores in variant names and spaces before punctuation were repaired against the rendered PDF.
 - Table cells were checked against the PDF rendering, rather than relying on the PDF's interleaved column extraction. Rows spanning pages were joined and continuation headers appear once.
 - The supplied PNGs were copied unchanged. No graph was recreated or reinterpreted.
-- Source figure references, typographical errors, numerical inconsistencies, and scientific statements are retained as supplied. In particular, the section 3 editorial parenthetical is retained as literal source text, not executed as an instruction. These remain available for the team's later editorial/scientific review.
+- Source figure references, typographical errors, numerical inconsistencies, and scientific statements are retained as supplied. The section 3 editorial parenthetical remains in the transcript's raw `source` field and PDF extraction; the displayed heading reads “3. Mutagenesis Screens.” This display-only cleanup is covered by a block-specific test. The source note is never executed as an instruction.
 - This is an AI-assisted transcription check, not a claim of independent scientific validation or completed human review.
 
 ## Updating the page

@@ -20,7 +20,7 @@ test("top-level navigation matches the requested hierarchy with Wetlab, Notebook
   assert.deepEqual(Array.from(data.nav.find(item => item.key === "team").children, item => item.label), ["Meet Our Team", "Contribution"]);
   const menu = data.nav.find(item => item.key === "lab-work").children;
   assert.deepEqual(Array.from(menu, item => item.label), ["Wetlab", "Notebook", "Model"]);
-  assert.equal(menu[0].children, undefined, "all Lab Work destinations are siblings");
+  assert.deepEqual(Array.from(menu[0].children, item => [item.label, item.href]), [["Process/Background", "wet-lab.html#process-background"], ["Model Wetlab", "wet-lab.html#model-wetlab"], ["Experimentation/Protocols", "wet-lab.html#experimentation-protocols"]]);
   assert.deepEqual(Array.from(data.pages.home.linkColumns, item => item.title), ["Our Team", "Engineering", "Lab Work", "Education + HP"]);
 });
 
@@ -101,16 +101,14 @@ test("new research pages have unique anchors, working local section links, and r
       if (hash && target) assert.ok(ids(target).includes(hash), `${key}: ${href}`);
     }
     const entry = read(`${key}.html`);
-    const dependencies = key === "model" ? ["site-content", "navigation"] : ["site-content", "dry-lab-content", "lab-content", "navigation"];
-    if (key === "model") assert.match(entry, /data-static-content="true"/, "Model keeps its generated source-backed article");
+    const dependencies = key === "model" ? ["site-content", "model-document", "navigation"] : ["site-content", "wetlab-document", "navigation"];
+    assert.match(entry, /data-static-content="true"/, "Source-backed pages remain readable without client rendering");
     for (const file of dependencies) {
       assert.ok(entry.indexOf(`js/${file}.js`) >= 0, `${key}: ${file} is present`);
       assert.ok(entry.indexOf(`js/${file}.js`) < entry.indexOf("js/site.js"));
     }
-    if (key !== "model") for (const file of ["wet-lab-content", "wet-lab-notebook-data"]) {
-      assert.ok(entry.indexOf(`js/${file}.js`) >= 0, `${key}: ${file} is present`);
-      assert.ok(entry.indexOf(`js/${file}.js`) < entry.indexOf("js/lab-content.js"), `${key}: source data loads before the renderer`);
-    }
+    if (key === "wet-lab") assert.match(entry, /id="evidence-review"/, "Annotated evidence is retained in the static page");
+    if (key === "wet-lab-notebook") assert.match(entry, /id="additional-lab-documentation"/, "The separately supplied 74-page chronology remains available");
     assert.doesNotMatch(entry, /js\/orbit-pages\.js/);
   }
 });

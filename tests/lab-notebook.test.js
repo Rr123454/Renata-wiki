@@ -95,6 +95,18 @@ test("rendered reader bookmarks target the supplied document's real pages", () =
   for (const page of Object.values(actual)) assert.ok(page >= 1 && page <= source.pageCount);
 });
 
+test("the reader uses the unchanged supplied 19-page notebook without generated prompts", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(root, "content/wetlab/document.json"), "utf8")).notebook;
+  const pdf = fs.readFileSync(path.join(root, data.source.path));
+  assert.ok(pdf.subarray(0, 5).equals(Buffer.from("%PDF-")));
+  assert.equal(createHash("sha256").update(pdf).digest("hex"), data.source.sha256);
+  assert.equal(data.pageCount, 19);
+  const page = fs.readFileSync(path.join(root, "wet-lab-notebook.html"), "utf8");
+  assert.equal([...page.matchAll(/<option value=/g)].length, 19);
+  assert.ok(page.includes(data.source.path));
+  assert.doesNotMatch(page, /undated entry prompts|Read notebook as text|No experiment dates/);
+});
+
 test("notebook anchors resolve to the correct PDF page and malformed hashes are safe", () => {
   assert.equal(pageFromHash("#notebook", anchors), 1);
   assert.equal(pageFromHash("#notebook-reporter", anchors), 56);

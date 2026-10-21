@@ -42,7 +42,15 @@ window.SITE_DATA = {
       heading: "Lab work.",
       description: "",
       children: [
-        { key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA", description: "All experimental work, its logic, and data interpretation." },
+        {
+          key: "wet-lab", label: "Wetlab", href: "wet-lab.html", icon: "DNA",
+          description: "Experimental process, wet-lab plans, and protocols.",
+          children: [
+            { key: "wet-lab-background", label: "Process/Background", href: "wet-lab.html#process-background" },
+            { key: "wet-lab-model", label: "Model Wetlab", href: "wet-lab.html#model-wetlab" },
+            { key: "wet-lab-protocols", label: "Experimentation/Protocols", href: "wet-lab.html#experimentation-protocols" }
+          ]
+        },
         { key: "wet-lab-notebook", label: "Notebook", href: "wet-lab-notebook.html", icon: "DNA", description: "Bench notebook, PDF reader, and text entries." },
         { key: "model", label: "Model", href: "model.html", icon: "Stomach", description: "Enzyme engineering, predictions, comparisons, and analysis." }
       ]
@@ -143,7 +151,7 @@ window.SITE_DATA = {
             },
             { name: "Sharan S.", photo: "assets/Team Images/Sharan.png", role: "Community Mentor" },
             {
-              name: "Samantha Renusch", role: "Scientific Mentor",
+              name: "Samantha Renusch", photo: "assets/Team Images/Samantha.png", role: "Scientific Mentor",
               bio: "My name is Samantha Renusch, and I am the Director of Education for Workforce Development at University Lab Partners. I have a background in molecular biology, immunology, biotechnology, and bioinformatics, and I oversee educational and research programs at the IMPOWER Learning Lab at Soka University. My role with the team is primarily as a scientific mentor and laboratory resource. I help students develop their research plans, learn laboratory techniques, troubleshoot experiments, and think about how their project can move from an idea to something that could have a real-world impact. I decided to join Renata because I really enjoy mentoring students who are willing to take ownership of ambitious scientific projects. What I especially like about iGEM is that it goes far beyond simply doing experiments. Students have to think about the science, engineering, communication, entrepreneurship, community impact, and how their idea could potentially become something much bigger.\n\nMy goal for iGEM this year is to help the students become increasingly independent scientists. I want them to understand not only how to perform an experiment, but why they are doing it, how to interpret the results, how to respond when something does not work, and how to communicate their science effectively. Ultimately, I want them to come out of the experience feeling like they are capable of developing and leading their own research projects."
             }
           ]
@@ -159,7 +167,7 @@ window.SITE_DATA = {
               bio: "Hi, my name is Humza Shahzad, I’m 17 and am an incoming senior at Troy High School. I am one of the co-founders of Renata alongside my comrade and best friend Karthik Sajeev. We created this organization to improve the accessibility to biotechnology research opportunities in our community, and the vision I have for Renata entails earning a Top 10 Ranking at the iGEM Grand Jamboree as a first-year team and establishing a community-tied program that is rooted in collaborative science long after I leave high school."
             },
             {
-              name: "Karthik Sajeev", photo: "assets/Team Images/Karthik Sajeev.png", role: "Student", school: "Troy High School", classYear: "2027",
+              name: "Karthik Sajeev", photo: "assets/Team Images/Karthik.jpeg", role: "Student", school: "Troy High School", classYear: "2027",
               bio: "I'm a senior at Troy, and I love to spend my time meeting new people. I'm interested in biomedical engineering and biotechnology, and I lead the Education and Human Practices sub-teams within Renata. I love watching Unstable Universe and hanging out with my friends in my free time! A fun fact about me is that I have a playlist for virtually every mood I'm in!"
             },
             { name: "Kavi Shrivastava", photo: "assets/Team Images/Kavi S.jpg", role: "Student", school: "Northwood High School",
@@ -170,7 +178,7 @@ window.SITE_DATA = {
               bio: "In my free time, I like to watch Unstable Universe (those who know) and play Valorant (don't ask me to queue with you because I'm absolute garbage). I'm excited to see where we can take our team! A fun fact about me is that I didn't learn to swim until I was 13 🥹"
             },
             { name: "Ritvin Rejith", photo: "assets/Team Images/ritvin.png", role: "Student", school: "Troy High School", classYear: "2027",
-              bio: "I’m Ritvin Rejith, I’m 17, and I go to Troy High School. I am a Student Leader and part of Dry Lab. I wanted to join Renata to explore genetic engineering and to provide something to the field. My motivation is to take our team as far as we can possibly go even though we’re high schoolers." },
+              bio: "Hi, I'm Ritvin! I go to Troy High School and am in the graduating class of 2027. I'm a senior at Troy and I manage the Wiki and Software. I play volleyball (varsity) and tennis. I love to rewatch the How To Train Your Dragon series and the movies when I get the time to do so. I also love to go on sunset walks daily and sit by the lake to watch the sunset." },
             {
               name: "Aaron Torres", photo: "assets/Team Images/Aaron Torres.webp", role: "Student", school: "Troy High School", classYear: "2029",
               bio: "My name is Aaron. I am 15 years old and I go to Troy High School. I am in wiki/web development as well as business. I joined Renata because I wanted to learn more about biology. Something else I also wanted to do was gain some experience in business."
@@ -180,7 +188,7 @@ window.SITE_DATA = {
               bio: "Hey, I’m Aidan, a 17-year-old from Damien High School! With Renata, I help coordinate funding and outreach. I joined the team because I wanted to be part of efforts in synthetic biology and research. Renata offered a place where I could grow in my own skills, collaborate with people who care about science as much as I do, and contribute to a project with real impact. My goal for this year is simply to grow as much as I can in my science communication skills as it relates to our project and research on the whole, and to better understand how projects like those from iGEM function."
             },
             {
-              name: "Brandon Trinh", role: "Student", school: "Chino Hills High School", classYear: "2027",
+              name: "Brandon Trinh", photo: "assets/Team Images/Brandon Trinh.jpeg?v=fa3905d4145a", role: "Student", school: "Chino Hills High School", classYear: "2027",
               bio: "I’m Brandon, I’m 17, and I go to Chino Hills High School. I’m part of Dry Lab. I decided to join Renata because Humza told me to and because I love science. I hope we get top 10 and make it to Paris!"
             },
             { name: "Ella Y.", photo: "assets/Team Images/ella.jpg", role: "Student" },

@@ -1,0 +1,8 @@
+.wetlab-document .model-download { flex-wrap: wrap; gap: 12px 24px; }
+.wetlab-document .source-list-item { padding-left: calc(1.3em + var(--source-indent, 0) * 1em); text-indent: -1.3em; margin-block: 9px; }
+.wetlab-document .lab-article h4 { margin: 24px 0 16px; font-size: 1.25rem; line-height: 1.4; }
+.wetlab-document .lab-article a { overflow-wrap: anywhere; }
+.wetlab-document .lab-article sup { font-size: .75em; vertical-align: super; }
+.wetlab-document .wetlab-subtabs { margin-block: 24px 40px; }
+.wetlab-document .model-table-scroll th, .wetlab-document .model-table-scroll td { min-width: 70px; }
+body[data-page="wet-lab-notebook"] .lab-notebook-pdf { width: 100%; height: 80vh; min-height: 480px; }

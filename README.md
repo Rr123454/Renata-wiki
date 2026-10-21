@@ -15,6 +15,7 @@ Visit `http://localhost:8080/`. This preview disables browser caching so edits a
 ```sh
 node scripts/build-home.js
 python3 scripts/build-model.py
+python3 scripts/build-wetlab.py
 node --test tests/*.test.js
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
@@ -28,6 +29,7 @@ Every HTML entry point uses a content hash for its local scripts and stylesheets
 ```sh
 node scripts/build-home.js
 python3 scripts/build-model.py
+python3 scripts/build-wetlab.py
 python3 scripts/build-wiki.py
 python3 scripts/package-wiki.py
 ```
@@ -60,3 +62,5 @@ The release build stops for missing identity/upload settings, draft text, broken
 See [the verbatim writeup workflow](docs/writeup-workflow.md). Add PDFs and PNGs locally; original bytes and page references are retained. Reviewed text is escaped into HTML without paraphrasing. Extraction/OCR requires human checking before publication.
 
 The Model page uses the supplied **Dry Lab Documentation (1).pdf** and **Fig1.png–Fig10.png**. Its transcript, original-file hashes, page references, and documented extraction repairs are in `content/model/document.json`; originals are in `assets/model/`. See [Model source notes](docs/model-source.md). Regenerate with `python3 scripts/build-model.py`, or verify that the committed HTML is current with `python3 scripts/build-model.py --check`. No PDF extraction software is needed to build or manually transfer the site.
+
+The Wetlab page includes the supplied **Process:Background.pdf** and **Model WetLab WriteUp.pdf** as static articles, while **Renata_Notebook.pdf** stays in the separate PDF reader. See [Wetlab source notes](docs/wetlab-source.md) for original-file locations, fidelity checks, and rebuild instructions.

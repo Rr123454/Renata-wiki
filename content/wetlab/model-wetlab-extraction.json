@@ -1,0 +1,10301 @@
+[
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      77.74203491210938,
+      166.0775604248047,
+      103.73703002929688
+    ],
+    "runs": [
+      {
+        "text": " Wet Lab ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      142.9931640625,
+      477.2623291015625,
+      154.9931640625
+    ],
+    "runs": [
+      {
+        "text": " Laboratory experimentation is an essential pillar in synthetic biology for testing the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " real-world behavior of designed biological parts and systems. Our wet lab workflow "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " primarily involves completing robust assays to quantify LCA sulfation activity of the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " reengineered BtSULT enzyme. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      159.8388671875,
+      480.0478820800781,
+      171.8388671875
+    ],
+    "runs": [
+      {
+        "text": " real-world behavior of designed biological parts and systems. Our wet lab workflow "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      176.6845703125,
+      476.9002380371094,
+      188.6845703125
+    ],
+    "runs": [
+      {
+        "text": " primarily involves completing robust assays to quantify LCA sulfation activity of the "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      193.5302734375,
+      219.94888305664062,
+      205.5302734375
+    ],
+    "runs": [
+      {
+        "text": " reengineered BtSULT enzyme. "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      224.14535522460938,
+      453.0456848144531,
+      244.14035034179688
+    ],
+    "runs": [
+      {
+        "text": " Bacterial Transformation and Host Expression ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      72.0,
+      253.4521484375,
+      193.51577758789062,
+      265.4521484375
+    ],
+    "runs": [
+      {
+        "text": " Transforming BL21 Cells ",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      273.2978515625,
+      536.3844604492188,
+      285.2978515625
+    ],
+    "runs": [
+      {
+        "text": " BL21 E. coli cells acted as the host for re-engineered BtSULT transformation. We elected "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the pET_28a(+) backbone as a vector to hold our gene insert for convenience of the T7 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " promoter region. This promoter region is highly transcribed by abundant T7 RNA "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " polymerase in BL21 cells, focusing the cells' resources on creating an abundance of "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " recombinant protein. We also used the selective antibiotic "
+      },
+      {
+        "text": " kanamycin ",
+        "italic": true
+      },
+      {
+        "text": " to limit streaked "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " bacterial cultures and other contaminants from growing without the included resistance "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " gene (Kan. R). "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      290.1435546875,
+      530.9452514648438,
+      302.1435546875
+    ],
+    "runs": [
+      {
+        "text": " the pET_28a(+) backbone as a vector to hold our gene insert for convenience of the T7 "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      306.9892578125,
+      502.0968933105469,
+      318.9892578125
+    ],
+    "runs": [
+      {
+        "text": " promoter region. This promoter region is highly transcribed by abundant T7 RNA "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      323.8349609375,
+      512.939208984375,
+      335.8349609375
+    ],
+    "runs": [
+      {
+        "text": " polymerase in BL21 cells, focusing the cells' resources on creating an abundance of "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      340.6806640625,
+      530.9938354492188,
+      352.6806640625
+    ],
+    "runs": [
+      {
+        "text": " recombinant protein. We also used the selective antibiotic "
+      },
+      {
+        "text": " kanamycin ",
+        "italic": true
+      },
+      {
+        "text": " to limit streaked "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      357.5263671875,
+      539.11669921875,
+      369.5263671875
+    ],
+    "runs": [
+      {
+        "text": " bacterial cultures and other contaminants from growing without the included resistance "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      374.3720703125,
+      177.8536376953125,
+      386.3720703125
+    ],
+    "runs": [
+      {
+        "text": " gene (Kan. R). "
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "bbox": [
+      108.0,
+      696.9480590820312,
+      537.0236206054688,
+      707.943115234375
+    ],
+    "runs": [
+      {
+        "text": " pET-28a(+) Plasmid Map from AddGene ; ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " including: 6xHis, T7 Promoter, lacI promoter, and KanR ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      72.0,
+      75.53312683105469,
+      239.3319091796875,
+      91.53062438964844
+    ],
+    "runs": [
+      {
+        "text": " Bacterial Transformation ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      72.0,
+      103.9453125,
+      517.144287109375,
+      115.9453125
+    ],
+    "runs": [
+      {
+        "text": " Bacterial transformation is a process in which foreign DNA is introduced into bacterial cells, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " leading to new genetic traits being expressed by the bacteria host. By having E-coli BL21 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " bacterial cells uptake plasmid DNA, we were able to produce our desired protein. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      72.0,
+      125.91796875,
+      501.4975891113281,
+      137.91796875
+    ],
+    "runs": [
+      {
+        "text": " leading to new genetic traits being expressed by the bacteria host. By having E-coli BL21 "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      72.0,
+      147.890625,
+      469.0256652832031,
+      159.890625
+    ],
+    "runs": [
+      {
+        "text": " bacterial cells uptake plasmid DNA, we were able to produce our desired protein. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      90.0,
+      181.86328125,
+      156.59912109375,
+      193.86328125
+    ],
+    "runs": [
+      {
+        "text": " A. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Materials "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      201.97265625,
+      245.8966064453125,
+      215.8359375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BtSULT Plasmid DNA "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      222.48046875,
+      246.55197143554688,
+      236.34375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SulFlux Plasmid DNA "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      242.98828125,
+      237.61961364746094,
+      256.8515625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BL21 culture tubes "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      263.49609375,
+      298.2423400878906,
+      277.359375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 37°C Bacterial shaker, at 200 xg "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      284.00390625,
+      226.969482421875,
+      297.8671875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 42°C Water bath "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      304.51171875,
+      234.60116577148438,
+      318.375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Microplate reader "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      325.01953125,
+      406.9907531738281,
+      338.8828125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Super Optimal with Catabolite repression Broth (SOC) "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      345.52734375,
+      226.60984802246094,
+      359.390625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Microfuge tubes "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      366.03515625,
+      332.28131103515625,
+      379.8984375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " LB agar plates treated with Kanamycin "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      386.54296875,
+      276.72344970703125,
+      400.40625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 96-well plate (transparent) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " B. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Procedure "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      90.0,
+      408.9140625,
+      160.88526916503906,
+      420.9140625
+    ],
+    "runs": [
+      {
+        "text": " B. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Procedure "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      430.88671875,
+      386.1795349121094,
+      442.88671875
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Thaw the BL-21 competent E. coli cells on wet ice "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      452.859375,
+      526.2597045898438,
+      464.859375
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Pipette 100 uL of bacterial culture (at OD of "
+      },
+      {
+        "text": "≥"
+      },
+      {
+        "text": "5) into a labelled microfuge tube "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " (initials, BL21 + BtSULT, date) "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      144.0,
+      474.83203125,
+      286.5544738769531,
+      486.83203125
+    ],
+    "runs": [
+      {
+        "text": " (initials, BL21 + BtSULT, date) "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      496.8046875,
+      524.67236328125,
+      508.8046875
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 100 ng of plasmid DNA to each microfuge tube, and mix by gently flicking "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the tube. Do not resuspend or vortex, as it will lyse the cells. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      144.0,
+      518.77734375,
+      439.6843566894531,
+      530.77734375
+    ],
+    "runs": [
+      {
+        "text": " the tube. Do not resuspend or vortex, as it will lyse the cells. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      540.75,
+      508.6901550292969,
+      552.75
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Incubate the microfuge tubes of bacteria and plasmid on ice for at least 30 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " minutes. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      144.0,
+      562.72265625,
+      189.2438507080078,
+      574.72265625
+    ],
+    "runs": [
+      {
+        "text": " minutes. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      584.6953125,
+      512.7747192382812,
+      596.6953125
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Heat-shock the microfuge tube in a water bath at 42°C for 45 seconds, then "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " immediately place the tube on ice for 2 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      144.0,
+      606.66796875,
+      382.7673034667969,
+      618.66796875
+    ],
+    "runs": [
+      {
+        "text": " immediately place the tube on ice for 2 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      628.640625,
+      515.1554565429688,
+      640.640625
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add the cells to a bacteria culture tube with 900 uL of room temperature LB "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " broth, closing the cap lightly to allow airflow (1:10 dilution) "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      144.0,
+      650.61328125,
+      434.0378723144531,
+      662.61328125
+    ],
+    "runs": [
+      {
+        "text": " broth, closing the cap lightly to allow airflow (1:10 dilution) "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      672.5859375,
+      530.3883666992188,
+      684.5859375
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Put the culture into the bacterial shaker, set to 200 XG, 37°C for 30-60 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "bbox": [
+      126.0,
+      694.55859375,
+      526.2681884765625,
+      706.55859375
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 200 uL of the recovered cells to the LB agar plate treated with kanamycin. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      162.0,
+      75.40219116210938,
+      169.78372192382812,
+      86.39718627929688
+    ],
+    "runs": [
+      {
+        "text": " i. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1,000 uL culture = 5 plates, containing 200 uL each "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      180.0,
+      74.6484375,
+      428.1103210449219,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 1,000 uL culture = 5 plates, containing 200 uL each "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      126.0,
+      94.7578125,
+      448.3941955566406,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Use a sterile L-spreader to distribute the bacterial cells evenly. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      126.0,
+      116.73046875,
+      451.093994140625,
+      130.59375
+    ],
+    "runs": [
+      {
+        "text": " 10. "
+      },
+      {
+        "text": " Put the plate into the 37°C bacterial incubator for 24-48 hours. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      126.0,
+      138.703125,
+      518.560546875,
+      152.56640625
+    ],
+    "runs": [
+      {
+        "text": " 11. "
+      },
+      {
+        "text": " Using a sterile loop, pick one large, well-isolated colony from each plate, and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " streak it onto a fresh plate "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      144.0,
+      162.5390625,
+      274.54541015625,
+      174.5390625
+    ],
+    "runs": [
+      {
+        "text": " streak it onto a fresh plate "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      126.0,
+      182.6484375,
+      475.43914794921875,
+      196.51171875
+    ],
+    "runs": [
+      {
+        "text": " 12. "
+      },
+      {
+        "text": " Put the fresh plate into the 37°C bacterial incubator for 24-48 hours "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      126.0,
+      204.62109375,
+      530.38916015625,
+      218.484375
+    ],
+    "runs": [
+      {
+        "text": " 13. "
+      },
+      {
+        "text": " Using a sterile loop, pick up one large, well-isolated colony from the fresh plate "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " and place it in a 15 mL conical tube. Then add 5 mL of LB broth + kanamycin. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      144.0,
+      228.45703125,
+      517.7076416015625,
+      240.45703125
+    ],
+    "runs": [
+      {
+        "text": " and place it in a 15 mL conical tube. Then add 5 mL of LB broth + kanamycin. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      72.0,
+      516.0643920898438,
+      362.51220703125,
+      526.0618896484375
+    ],
+    "runs": [
+      {
+        "text": " Credit Khan Academy, “Steps of bacterial transformation and selection” ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      72.0,
+      562.6218872070312,
+      170.35279846191406,
+      582.616943359375
+    ],
+    "runs": [
+      {
+        "text": " Colony PCR ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      108.0,
+      588.9287109375,
+      529.5347900390625,
+      600.9287109375
+    ],
+    "runs": [
+      {
+        "text": " Grown cultures were then further screened for containing gene inserts by Colony PCR. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Primers for the T7 promoter were used to identify the presence of the gene. Colonies "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " were evaluated using band size relative to a 1kB ladder, since primers that sit in the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " vector backbone produce a baseline-sized DNA band if the gene insert is missing, and a "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " larger band that includes the insert if cloning succeeded. "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      108.0,
+      605.7744140625,
+      525.1045532226562,
+      617.7744140625
+    ],
+    "runs": [
+      {
+        "text": " Primers for the T7 promoter were used to identify the presence of the gene. Colonies "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      108.0,
+      622.6201171875,
+      514.6212768554688,
+      634.6201171875
+    ],
+    "runs": [
+      {
+        "text": " were evaluated using band size relative to a 1kB ladder, since primers that sit in the "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      108.0,
+      639.4658203125,
+      533.6129150390625,
+      651.4658203125
+    ],
+    "runs": [
+      {
+        "text": " vector backbone produce a baseline-sized DNA band if the gene insert is missing, and a "
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "bbox": [
+      108.0,
+      656.3115234375,
+      385.889404296875,
+      668.3115234375
+    ],
+    "runs": [
+      {
+        "text": " larger band that includes the insert if cloning succeeded. "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      433.095703125,
+      518.0386352539062,
+      445.095703125
+    ],
+    "runs": [
+      {
+        "text": " Colony PCR Gel Electrophoresis: ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " Sample labels denoted with a “1” contain genes for ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " modification F147S_E144D, “2” encoding for modification F147S, and “3” encoding for ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " WT BT0416. Letters are intermediates that act as labels for colonies or plates within the ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " lab and are not indicative of the gene. Each experimental sample gene and control gene ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " had at least one positive colony at 2kB. This is the expected result, representing the ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " presence of both the Gene and MCS at the correct base pair amount. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      449.94140625,
+      528.4155883789062,
+      461.94140625
+    ],
+    "runs": [
+      {
+        "text": " modification F147S_E144D, “2” encoding for modification F147S, and “3” encoding for ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      466.787109375,
+      534.58935546875,
+      478.787109375
+    ],
+    "runs": [
+      {
+        "text": " WT BT0416. Letters are intermediates that act as labels for colonies or plates within the ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      483.6328125,
+      535.74072265625,
+      495.6328125
+    ],
+    "runs": [
+      {
+        "text": " lab and are not indicative of the gene. Each experimental sample gene and control gene ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      500.478515625,
+      512.7703247070312,
+      512.478515625
+    ],
+    "runs": [
+      {
+        "text": " had at least one positive colony at 2kB. This is the expected result, representing the ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      108.0,
+      517.32421875,
+      443.5841064453125,
+      529.32421875
+    ],
+    "runs": [
+      {
+        "text": " presence of both the Gene and MCS at the correct base pair amount. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      72.0,
+      574.24609375,
+      533.0877075195312,
+      586.24609375
+    ],
+    "runs": [
+      {
+        "text": " Purpose : ",
+        "bold": true
+      },
+      {
+        "text": " Polymerase Chain Reaction replicating DNA samples from transformed BL21 colonies "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " using temperature to separate DNA and control Taq polymerase activity. Includes denaturing "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " DNA into two single strands, primer annealing, and taq DNA extension. "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      72.0,
+      591.091796875,
+      524.2774047851562,
+      603.091796875
+    ],
+    "runs": [
+      {
+        "text": " using temperature to separate DNA and control Taq polymerase activity. Includes denaturing "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      72.0,
+      607.9375,
+      418.8709411621094,
+      619.9375
+    ],
+    "runs": [
+      {
+        "text": " DNA into two single strands, primer annealing, and taq DNA extension. "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      72.0,
+      636.783203125,
+      121.94246673583984,
+      648.783203125
+    ],
+    "runs": [
+      {
+        "text": " Materials ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      90.0,
+      663.765625,
+      233.66114807128906,
+      677.62890625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " DreamTaq 2X Master Mix "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      90.0,
+      680.611328125,
+      162.7184600830078,
+      694.474609375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " T7 Primers "
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "bbox": [
+      90.0,
+      697.45703125,
+      207.57717895507812,
+      711.3203125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " nuclease-free water "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      72.78515625,
+      252.27127075195312,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " bacterial plates with colonies "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      89.630859375,
+      198.91183471679688,
+      103.494140625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " sterile pipette tips "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      72.0,
+      120.33984375,
+      129.0893096923828,
+      132.33984375
+    ],
+    "runs": [
+      {
+        "text": " Procedure: ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      149.185546875,
+      508.1251220703125,
+      161.185546875
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 25 uL of DreamTaq 2X Master Mix solution to two 2 mL microfuge tubes each "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      166.03125,
+      412.7611999511719,
+      178.03125
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Designate one microfuge tube as BtSULT and one as SULTFLUX "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      182.876953125,
+      421.5857849121094,
+      194.876953125
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 2 uL of SulFlux T7 primers and reverse primers to each tube "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      199.72265625,
+      538.4996337890625,
+      211.72265625
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add enough nuclease-free water to each tube to bring the total volume to 40 uL (should "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " be 11 uL). "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      108.0,
+      216.568359375,
+      158.5800018310547,
+      228.568359375
+    ],
+    "runs": [
+      {
+        "text": " be 11 uL). "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      233.4140625,
+      256.13055419921875,
+      245.4140625
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Split each sample tube in half. "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      250.259765625,
+      540.1989135742188,
+      262.259765625
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Using a sterile pipette tip or toothpick, pick up one well-isolated colony from the desired "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " plate "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      108.0,
+      267.10546875,
+      135.27394104003906,
+      279.10546875
+    ],
+    "runs": [
+      {
+        "text": " plate "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      283.951171875,
+      383.591552734375,
+      295.951171875
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Swirl the tip with bacteria into each respective PCR tube "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      300.796875,
+      516.7842407226562,
+      312.796875
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Optionally, streak a fresh plate using the same tip to create a replica culture. "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      90.0,
+      334.48828125,
+      279.924560546875,
+      346.48828125
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Cycling temperatures should be at: "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      351.333984375,
+      240.46902465820312,
+      363.333984375
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 95C - 3 min, 1 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      368.1796875,
+      249.72683715820312,
+      380.1796875
+    ],
+    "runs": [
+      {
+        "text": " b. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 95C - 30 sec, 32 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      385.025390625,
+      249.72683715820312,
+      397.025390625
+    ],
+    "runs": [
+      {
+        "text": " c. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 55C - 30 sec, 32 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      401.87109375,
+      246.55105590820312,
+      413.87109375
+    ],
+    "runs": [
+      {
+        "text": " d. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 72C - 1 min, 32 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      418.716796875,
+      240.46902465820312,
+      430.716796875
+    ],
+    "runs": [
+      {
+        "text": " e. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 72C - 5 min, 1 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      126.0,
+      435.5625,
+      247.35379028320312,
+      447.5625
+    ],
+    "runs": [
+      {
+        "text": " f. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 12C - infinite, 1 cycle "
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      72.0,
+      672.4159545898438,
+      233.7700653076172,
+      682.4134521484375
+    ],
+    "runs": [
+      {
+        "text": " Credit Biorender, “Colony PCR Protocol” ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "bbox": [
+      72.0,
+      698.8935546875,
+      170.67835998535156,
+      710.8935546875
+    ],
+    "runs": [
+      {
+        "text": " Gel Electrophoresis ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      74.6484375,
+      207.70223999023438,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Making Agarose Gel "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Purpose : creating gel mold for DNA samples from colony PCR to quantify DNA fragment size. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      72.0,
+      91.494140625,
+      523.3526000976562,
+      103.494140625
+    ],
+    "runs": [
+      {
+        "text": " Purpose : creating gel mold for DNA samples from colony PCR to quantify DNA fragment size. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      72.0,
+      125.185546875,
+      128.1012725830078,
+      137.185546875
+    ],
+    "runs": [
+      {
+        "text": " Procedure: "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      142.03125,
+      422.9546203613281,
+      154.03125
+    ],
+    "runs": [
+      {
+        "text": " 1) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Determine powder amount for 1% (100 mL, 1g Agarose powder) "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      158.876953125,
+      310.5392761230469,
+      170.876953125
+    ],
+    "runs": [
+      {
+        "text": " 2) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Tare the erlenmeyer & weight 1g powder "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      175.72265625,
+      499.7471618652344,
+      187.72265625
+    ],
+    "runs": [
+      {
+        "text": " 3) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Using a graduated cylinder, measure out 100mL 1X TAE buffer, and pour into the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " erlenmeyer. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      108.0,
+      192.568359375,
+      168.6324920654297,
+      204.568359375
+    ],
+    "runs": [
+      {
+        "text": " erlenmeyer. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      209.4140625,
+      378.0445861816406,
+      221.4140625
+    ],
+    "runs": [
+      {
+        "text": " 4) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Swirl the flask and stop the opening with paper towels. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      226.259765625,
+      524.0748901367188,
+      238.259765625
+    ],
+    "runs": [
+      {
+        "text": " 5) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Microwave the flask in 30 sec increments, swirling with a heat-glove in between each "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      108.0,
+      243.10546875,
+      334.99188232421875,
+      255.10546875
+    ],
+    "runs": [
+      {
+        "text": " increment. Continue until the solution is clear. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      259.951171875,
+      442.28094482421875,
+      271.951171875
+    ],
+    "runs": [
+      {
+        "text": " 6) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Allow solution to cool (not solidify), assemble gel mold and stoppers "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      276.796875,
+      413.3364562988281,
+      288.796875
+    ],
+    "runs": [
+      {
+        "text": " 7) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Once cool to touch, add 10 uL (for 100 mL) SYBR safe-DNA dye "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      293.642578125,
+      354.60394287109375,
+      305.642578125
+    ],
+    "runs": [
+      {
+        "text": " 8) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Pour into agarose mold, wait until completely firm "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      108.0,
+      327.333984375,
+      259.46063232421875,
+      339.333984375
+    ],
+    "runs": [
+      {
+        "text": " 2. Running Gel Electrophoresis "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Purpose: quantify colony PCR DNA fragment samples’ size. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      72.0,
+      344.1796875,
+      358.8858337402344,
+      356.1796875
+    ],
+    "runs": [
+      {
+        "text": " Purpose: quantify colony PCR DNA fragment samples’ size. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      72.0,
+      377.87109375,
+      128.1012725830078,
+      389.87109375
+    ],
+    "runs": [
+      {
+        "text": " Procedure: "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      394.716796875,
+      450.9064636230469,
+      406.716796875
+    ],
+    "runs": [
+      {
+        "text": " 1) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Pour TAE buffer into the gel mold before removing stoppers and comb "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      411.5625,
+      463.5915832519531,
+      423.5625
+    ],
+    "runs": [
+      {
+        "text": " 2) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gently slide the gel into the tank, with wells facing the negative cathode. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      428.408203125,
+      336.4965515136719,
+      440.408203125
+    ],
+    "runs": [
+      {
+        "text": " 3) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add just enough 1X TAE buffer to cover the gel "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      445.25390625,
+      507.05230712890625,
+      457.25390625
+    ],
+    "runs": [
+      {
+        "text": " 4) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Mix samples of DNA with the 6X loading dye, diluting it to 1X (sample volume/6X) "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      462.099609375,
+      440.3949890136719,
+      474.099609375
+    ],
+    "runs": [
+      {
+        "text": " 5) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Slowly load 10ul sample mixture into the slots of the submerged gel "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      478.9453125,
+      435.5003662109375,
+      490.9453125
+    ],
+    "runs": [
+      {
+        "text": " 6) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Close the lid and attach electrical leads to corresponding cathodes. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      495.791015625,
+      530.595947265625,
+      507.791015625
+    ],
+    "runs": [
+      {
+        "text": " 7) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Apply a constant voltage of 50-120 V (used 80V, raised to 120V) for 10-40 minutes (ran "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " for approx. 30 min). "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      108.0,
+      512.63671875,
+      206.8961639404297,
+      524.63671875
+    ],
+    "runs": [
+      {
+        "text": " for approx. 30 min). "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      529.482421875,
+      420.2568664550781,
+      541.482421875
+    ],
+    "runs": [
+      {
+        "text": " 8) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Continue gel until bands migrate about 50-70% through the gel. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      90.0,
+      546.328125,
+      439.6527404785156,
+      558.328125
+    ],
+    "runs": [
+      {
+        "text": " 9) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Slide gel onto visualizing bluegel transilluminator to visualize bands. "
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "bbox": [
+      72.0,
+      596.865234375,
+      208.66171264648438,
+      608.865234375
+    ],
+    "runs": [
+      {
+        "text": " Gel Results (in order A,B,C) ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      307.845703125,
+      533.6029052734375,
+      319.845703125
+    ],
+    "runs": [
+      {
+        "text": " Colony PCR of DBTL 1 Samples: ",
+        "bold": true
+      },
+      {
+        "text": " Sulflux is our experimental plasmid, and BT0416 is the control. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " This PCR gel samples also account for recent and previously plated colonies: “su” colonies being "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag. "
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      324.69140625,
+      539.0628662109375,
+      336.69140625
+    ],
+    "runs": [
+      {
+        "text": " This PCR gel samples also account for recent and previously plated colonies: “su” colonies being "
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      341.537109375,
+      540.6973876953125,
+      353.537109375
+    ],
+    "runs": [
+      {
+        "text": " the newly streaked Sulflux samples, “S” colonies being the old Sulflux samples. Respectively, “b” "
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      358.3828125,
+      536.0034790039062,
+      370.3828125
+    ],
+    "runs": [
+      {
+        "text": " and “B” for the control BT0416. Multiple samples carried the expected result of 2kB, consistent "
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      375.228515625,
+      502.7200012207031,
+      387.228515625
+    ],
+    "runs": [
+      {
+        "text": " with the sum of base pairs for: MCS present, the template gene, SUMO-tag, and His-tag. "
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "bbox": [
+      72.0,
+      425.765625,
+      162.42001342773438,
+      437.765625
+    ],
+    "runs": [
+      {
+        "text": " Chart of Samples: ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      240.95492553710938,
+      336.55133056640625,
+      260.9499206542969
+    ],
+    "runs": [
+      {
+        "text": " Bacterial Growth and Induction ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      267.26171875,
+      268.7059020996094,
+      279.26171875
+    ],
+    "runs": [
+      {
+        "text": " Growth Conditions and IPTG/Allolactase ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      287.990234375,
+      527.3917236328125,
+      299.990234375
+    ],
+    "runs": [
+      {
+        "text": " Gene-positive cultures of streaked bacteria were inoculated overnight at 350 rpm and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 37°C, reaching an OD600 of 1.0 (cultures that overgrew were diluted to reach the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " density). These inoculations were spiked into larger liquid cultures at a ratio of 1:100 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " (v/v) and shaken at 150-200 rpm and 37°C, till cultures reached an OD600 of 0.4–0.8, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " indicating logarithmic phases of growth (usually within 2- 4 hours). At this phase, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 0.7 mM isopropyl "
+      },
+      {
+        "text": "β"
+      },
+      {
+        "text": "-D-1-thiogalactopyranoside (IPTG) or 1% nonfat dry milk powder "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " (cost-effective and resourceful allolactase supplement for insufficient IPTG) was added "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " to disburden the lacI repressor and shift cell metabolism from growth to protein "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      306.568359375,
+      505.0622863769531,
+      318.568359375
+    ],
+    "runs": [
+      {
+        "text": " 37°C, reaching an OD600 of 1.0 (cultures that overgrew were diluted to reach the "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      323.4140625,
+      521.0335693359375,
+      335.4140625
+    ],
+    "runs": [
+      {
+        "text": " density). These inoculations were spiked into larger liquid cultures at a ratio of 1:100 "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      340.259765625,
+      523.5095825195312,
+      352.259765625
+    ],
+    "runs": [
+      {
+        "text": " (v/v) and shaken at 150-200 rpm and 37°C, till cultures reached an OD600 of 0.4–0.8, "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      357.10546875,
+      503.09613037109375,
+      369.10546875
+    ],
+    "runs": [
+      {
+        "text": " indicating logarithmic phases of growth (usually within 2- 4 hours). At this phase, "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      373.951171875,
+      517.6681518554688,
+      385.951171875
+    ],
+    "runs": [
+      {
+        "text": " 0.7 mM isopropyl "
+      },
+      {
+        "text": "β"
+      },
+      {
+        "text": "-D-1-thiogalactopyranoside (IPTG) or 1% nonfat dry milk powder "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      390.796875,
+      530.050537109375,
+      402.796875
+    ],
+    "runs": [
+      {
+        "text": " (cost-effective and resourceful allolactase supplement for insufficient IPTG) was added "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      407.642578125,
+      499.6051940917969,
+      419.642578125
+    ],
+    "runs": [
+      {
+        "text": " to disburden the lacI repressor and shift cell metabolism from growth to protein "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      424.48828125,
+      540.5780639648438,
+      436.48828125
+    ],
+    "runs": [
+      {
+        "text": " production. Flasks were shaken for 16-18 hours at 150 rpm at 15–20°C (it was frequently "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the case that external lab temperatures prevented the shaker from cooling below 25°C). "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Cultures were then centrifuged at 15,000 × g for 10 minutes, decanted, and frozen as "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " naked pellets at –80°C. "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      441.333984375,
+      537.8975830078125,
+      453.333984375
+    ],
+    "runs": [
+      {
+        "text": " the case that external lab temperatures prevented the shaker from cooling below 25°C). "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      458.1796875,
+      523.1751708984375,
+      470.1796875
+    ],
+    "runs": [
+      {
+        "text": " Cultures were then centrifuged at 15,000 × g for 10 minutes, decanted, and frozen as "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      108.0,
+      475.025390625,
+      221.93736267089844,
+      487.025390625
+    ],
+    "runs": [
+      {
+        "text": " naked pellets at –80°C. "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      514.33203125,
+      108.6360092163086,
+      526.33203125
+    ],
+    "runs": [
+      {
+        "text": " OD600 ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      531.177734375,
+      539.6416625976562,
+      543.177734375
+    ],
+    "runs": [
+      {
+        "text": " OD600 measures the optical density and provides information on the growth of a liquid culture. "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      560.0234375,
+      121.94246673583984,
+      572.0234375
+    ],
+    "runs": [
+      {
+        "text": " Materials ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      90.0,
+      592.1328125,
+      298.4002990722656,
+      605.99609375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Cell density measuring device (OD600) "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      90.0,
+      614.10546875,
+      188.37623596191406,
+      627.96875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Bacteria sample "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      90.0,
+      636.078125,
+      211.0635986328125,
+      649.94140625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Polystyrene cuvettes "
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "bbox": [
+      72.0,
+      671.9140625,
+      125.77729797363281,
+      683.9140625
+    ],
+    "runs": [
+      {
+        "text": " Procedure ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      90.0,
+      74.6484375,
+      526.4351196289062,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " In a standard culture of 1:100 bacteria, it takes around 2-3 hours for optical density at "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 600nm (OD600) to reach between 0.4-0.8. Given that during the log-growth phase, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " doubling takes ~30 minutes, we will take time tags every 30 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      108.0,
+      96.62109375,
+      513.8733520507812,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " 600nm (OD600) to reach between 0.4-0.8. Given that during the log-growth phase, "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      108.0,
+      118.59375,
+      445.04071044921875,
+      130.59375
+    ],
+    "runs": [
+      {
+        "text": " doubling takes ~30 minutes, we will take time tags every 30 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      90.0,
+      140.56640625,
+      476.0616149902344,
+      152.56640625
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " NanoDrop2000C accommodates a minimum of 500μl for a cuvette reading. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      90.0,
+      162.5390625,
+      524.6221313476562,
+      174.5390625
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Once your culture is in the designated broth, begin to take readings every 30 minutes "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " starting ~2 hours. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      108.0,
+      184.51171875,
+      195.91824340820312,
+      196.51171875
+    ],
+    "runs": [
+      {
+        "text": " starting ~2 hours. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      491.2146911621094,
+      529.2574462890625,
+      502.2096862792969
+    ],
+    "runs": [
+      {
+        "text": " Growth curve of Wild Type BT0416 Transformed Cells using absorbance from OD600, DBTL1. ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " Colored ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " zones represent expected growth patterns across literature, with an expected value of 0.4-0.8 from 2-3 ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " hours, 0.4-0.9 from 4-5 hours, and 1.5-3 fold if overnight. We adjusted the RPM for the SulFlux culture ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " using the 1:75 ratio and an OD600 of 0.56 was achieved in 3 hours. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      506.6565856933594,
+      529.6011962890625,
+      517.651611328125
+    ],
+    "runs": [
+      {
+        "text": " zones represent expected growth patterns across literature, with an expected value of 0.4-0.8 from 2-3 ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      522.0984497070312,
+      525.4029541015625,
+      533.093505859375
+    ],
+    "runs": [
+      {
+        "text": " hours, 0.4-0.9 from 4-5 hours, and 1.5-3 fold if overnight. We adjusted the RPM for the SulFlux culture ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      537.5403442382812,
+      372.2138977050781,
+      548.535400390625
+    ],
+    "runs": [
+      {
+        "text": " using the 1:75 ratio and an OD600 of 0.56 was achieved in 3 hours. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      587.171875,
+      301.5355529785156,
+      599.171875
+    ],
+    "runs": [
+      {
+        "text": " Transformed Bacterial Culture Concentrations ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      620.86328125,
+      525.1637573242188,
+      632.86328125
+    ],
+    "runs": [
+      {
+        "text": " Purpose : ",
+        "bold": true
+      },
+      {
+        "text": " Culturing BL21 cells with wildtype BT0416 plasmid DNA and transformed BL21 cells "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " with SulFLUX plasmid DNA in TB broth for later IPTG stimulation. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      637.708984375,
+      387.5245056152344,
+      649.708984375
+    ],
+    "runs": [
+      {
+        "text": " with SulFLUX plasmid DNA in TB broth for later IPTG stimulation. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      72.0,
+      671.400390625,
+      129.0943145751953,
+      683.400390625
+    ],
+    "runs": [
+      {
+        "text": " Procedure : ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      90.0,
+      688.24609375,
+      535.68505859375,
+      700.24609375
+    ],
+    "runs": [
+      {
+        "text": " 1) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Proceeding after bacterial transformation procedure. 3 ml of bacterial culture (wildtype "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " and transformed), at 1-1.9 OD value. "
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "bbox": [
+      108.0,
+      705.091796875,
+      288.61541748046875,
+      717.091796875
+    ],
+    "runs": [
+      {
+        "text": " and transformed), at 1-1.9 OD value. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      74.6484375,
+      531.55517578125,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 2) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Aliquot into three separate beakers at 1:100, 1:75, and 1:125 concentrations of culture "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " to broth "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      108.0,
+      91.494140625,
+      150.5942840576172,
+      103.494140625
+    ],
+    "runs": [
+      {
+        "text": " to broth "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      108.33984375,
+      299.2801208496094,
+      120.33984375
+    ],
+    "runs": [
+      {
+        "text": " a) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1 mL culture : 75 mL broth 1:75 "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      125.185546875,
+      329.3348388671875,
+      137.185546875
+    ],
+    "runs": [
+      {
+        "text": " b) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 400 uL culture : 40 mL TB broth 1:100 "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      142.03125,
+      320.5574951171875,
+      154.03125
+    ],
+    "runs": [
+      {
+        "text": " c) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1.6 mL culture : 125 mL broth 1:125 "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      158.876953125,
+      470.7386474609375,
+      170.876953125
+    ],
+    "runs": [
+      {
+        "text": " 3) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Repeat these concentrations for other 3ml sample tube of bacteria (wt/sf) "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      175.72265625,
+      380.71307373046875,
+      187.72265625
+    ],
+    "runs": [
+      {
+        "text": " 4) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Set beakers in the shaker at 37C for 15 min, at 400 rpm. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      192.568359375,
+      267.12255859375,
+      204.568359375
+    ],
+    "runs": [
+      {
+        "text": " 5) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Place in a 4C freezer afterwards. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      209.4140625,
+      537.3336181640625,
+      221.4140625
+    ],
+    "runs": [
+      {
+        "text": " 6) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " OD at various 30 minute intervals until cells reach optimal logarithmic growth (OD value "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " of 0.6+), continue to IPTG stimulation. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      108.0,
+      226.259765625,
+      295.4209899902344,
+      238.259765625
+    ],
+    "runs": [
+      {
+        "text": " of 0.6+), continue to IPTG stimulation. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      259.951171875,
+      188.64793395996094,
+      271.951171875
+    ],
+    "runs": [
+      {
+        "text": " IPTG Stock Preparation ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      276.796875,
+      519.4720458984375,
+      288.796875
+    ],
+    "runs": [
+      {
+        "text": " Purpose : ",
+        "bold": true
+      },
+      {
+        "text": " preparation of IPTG stock to use in IPTG spike stimulation of bacterial cells (sf/wt). "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      310.48828125,
+      129.0943145751953,
+      322.48828125
+    ],
+    "runs": [
+      {
+        "text": " Procedure : ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      327.333984375,
+      533.2881469726562,
+      339.333984375
+    ],
+    "runs": [
+      {
+        "text": " 1) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 0.2383g IPTG stock powder to 10 mL of distilled water in a 15 mL conical tube (this "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " is considered the stock soln) "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      108.0,
+      344.1796875,
+      247.9566650390625,
+      356.1796875
+    ],
+    "runs": [
+      {
+        "text": " is considered the stock soln) "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      361.025390625,
+      409.48602294921875,
+      373.025390625
+    ],
+    "runs": [
+      {
+        "text": " 2) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Pipette 50 uL of stock solution into one of the 10 mL cultures. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      394.716796875,
+      126.76167297363281,
+      406.716796875
+    ],
+    "runs": [
+      {
+        "text": " IPTG Spike ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      428.408203125,
+      524.3422241210938,
+      440.408203125
+    ],
+    "runs": [
+      {
+        "text": " Purpose : ",
+        "bold": true
+      },
+      {
+        "text": " Spiking bacterial cells transformed with engineered plasmid with IPTG. IPTG acts as "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the lab-standard equivalent for chemical allolactose, which binds to lac repressor lacI to allow "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " for production of T7 RNA polymerase, transcribing the target gene artificially at a high rate. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      445.25390625,
+      529.3427734375,
+      457.25390625
+    ],
+    "runs": [
+      {
+        "text": " the lab-standard equivalent for chemical allolactose, which binds to lac repressor lacI to allow "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      462.099609375,
+      516.6201782226562,
+      474.099609375
+    ],
+    "runs": [
+      {
+        "text": " for production of T7 RNA polymerase, transcribing the target gene artificially at a high rate. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      495.791015625,
+      129.0943145751953,
+      507.791015625
+    ],
+    "runs": [
+      {
+        "text": " Procedure : ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      512.63671875,
+      327.5601806640625,
+      524.63671875
+    ],
+    "runs": [
+      {
+        "text": " 1) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Transfer bacterial culture into 50 mL conicals "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      529.482421875,
+      461.8526306152344,
+      541.482421875
+    ],
+    "runs": [
+      {
+        "text": " 2) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Keep IPTG stock tube on ice, waiting until it thaws to room temperature. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      546.328125,
+      381.3921813964844,
+      558.328125
+    ],
+    "runs": [
+      {
+        "text": " 3) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add IPTG at calculated amounts to each sample conical. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      563.173828125,
+      365.0463562011719,
+      575.173828125
+    ],
+    "runs": [
+      {
+        "text": " 4) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Incubate at room temp with slight oxygen allowance "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      580.01953125,
+      504.1930236816406,
+      592.01953125
+    ],
+    "runs": [
+      {
+        "text": " 5) "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " After overnight incubation, spin down, drain supernatant, and freeze to use later. "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      72.0,
+      613.7109375,
+      268.0061340332031,
+      625.7109375
+    ],
+    "runs": [
+      {
+        "text": " IPTG STIMULATION CONCENTRATIONS ",
+        "bold": true
+      },
+      {
+        "text": ": "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      630.556640625,
+      96.38400268554688,
+      642.556640625
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1:100 40 mL total "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      108.0,
+      630.556640625,
+      195.7841796875,
+      642.556640625
+    ],
+    "runs": [
+      {
+        "text": " 1:100 40 mL total "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      647.40234375,
+      132.38400268554688,
+      659.40234375
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 12.5 mL sample, control "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      144.0,
+      647.40234375,
+      263.3855895996094,
+      659.40234375
+    ],
+    "runs": [
+      {
+        "text": " 12.5 mL sample, control "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      664.248046875,
+      132.38400268554688,
+      676.248046875
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 12.5 mL sample, 0.3 mM = 3.75 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      144.0,
+      664.248046875,
+      366.2879333496094,
+      676.248046875
+    ],
+    "runs": [
+      {
+        "text": " 12.5 mL sample, 0.3 mM = 3.75 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      126.0,
+      681.09375,
+      132.38400268554688,
+      693.09375
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 12.5 mL sample, 0.7mM = 87.5 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      144.0,
+      681.09375,
+      363.5750427246094,
+      693.09375
+    ],
+    "runs": [
+      {
+        "text": " 12.5 mL sample, 0.7mM = 87.5 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      90.0,
+      697.939453125,
+      96.38400268554688,
+      709.939453125
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1:75 75 mL total "
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "bbox": [
+      108.0,
+      697.939453125,
+      189.7021484375,
+      709.939453125
+    ],
+    "runs": [
+      {
+        "text": " 1:75 75 mL total "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      74.6484375,
+      132.38400268554688,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 23 mL sample, control "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      144.0,
+      74.6484375,
+      254.2742462158203,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 23 mL sample, control "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      91.494140625,
+      132.38400268554688,
+      103.494140625
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 23 mL sample, 0.3 mM = 69 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      144.0,
+      91.494140625,
+      348.0652770996094,
+      103.494140625
+    ],
+    "runs": [
+      {
+        "text": " 23 mL sample, 0.3 mM = 69 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      108.33984375,
+      132.38400268554688,
+      120.33984375
+    ],
+    "runs": [
+      {
+        "text": " - "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 23 mL sample, 0.7 mM = 161 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      144.0,
+      108.33984375,
+      356.8601989746094,
+      120.33984375
+    ],
+    "runs": [
+      {
+        "text": " 23 mL sample, 0.7 mM = 161 uL stock IPTG "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      183.10726928710938,
+      238.2166290283203,
+      203.10226440429688
+    ],
+    "runs": [
+      {
+        "text": " Sample Purification ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      209.4140625,
+      235.1887969970703,
+      221.4140625
+    ],
+    "runs": [
+      {
+        "text": " Cell Lysis and His-Tag Purification ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      230.142578125,
+      529.9466552734375,
+      242.142578125
+    ],
+    "runs": [
+      {
+        "text": " Cell lysis was performed on pelleted and thawed bacterial cells using non-ionic 20 mM "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Tris•HCl buffer at pH 7.5 (B-PER"
+      },
+      {
+        "text": "™"
+      },
+      {
+        "text": " Bacterial Protein Extraction Reagent from Thermo "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Fisher #90084), including lysozyme, protease inhibitor tablets, and DNase. Lysed bacteria "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " were then purified using Nickel-charged His-Affinity Gel [IMAC] (His-Spin Protein "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Miniprep Zymo Cat #P2002) and eluted using supplied elution buffer (8M urea, 250 mM "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " imidazole, 0.1 M sodium phosphate monobasic, 0.01 M Tris, pH 4.5). "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      248.720703125,
+      521.2747802734375,
+      260.720703125
+    ],
+    "runs": [
+      {
+        "text": " Tris•HCl buffer at pH 7.5 (B-PER"
+      },
+      {
+        "text": "™"
+      },
+      {
+        "text": " Bacterial Protein Extraction Reagent from Thermo "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      265.56640625,
+      542.2938842773438,
+      277.56640625
+    ],
+    "runs": [
+      {
+        "text": " Fisher #90084), including lysozyme, protease inhibitor tablets, and DNase. Lysed bacteria "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      282.412109375,
+      500.8708190917969,
+      294.412109375
+    ],
+    "runs": [
+      {
+        "text": " were then purified using Nickel-charged His-Affinity Gel [IMAC] (His-Spin Protein "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      299.2578125,
+      537.4912719726562,
+      311.2578125
+    ],
+    "runs": [
+      {
+        "text": " Miniprep Zymo Cat #P2002) and eluted using supplied elution buffer (8M urea, 250 mM "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      108.0,
+      316.103515625,
+      443.6811218261719,
+      328.103515625
+    ],
+    "runs": [
+      {
+        "text": " imidazole, 0.1 M sodium phosphate monobasic, 0.01 M Tris, pH 4.5). "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      361.794921875,
+      140.66241455078125,
+      373.794921875
+    ],
+    "runs": [
+      {
+        "text": " His-Pulldown ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      383.767578125,
+      523.2860717773438,
+      395.767578125
+    ],
+    "runs": [
+      {
+        "text": " His-tag pulldown is a purification step utilizing the built in his-tag which is a short, negatively "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " charged amino acid sequence that lets us pull our desired protein out of the cell, due to its "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " attraction to a positively charged filter that separates it from other cellular proteins. "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      405.740234375,
+      514.5986328125,
+      417.740234375
+    ],
+    "runs": [
+      {
+        "text": " charged amino acid sequence that lets us pull our desired protein out of the cell, due to its "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      427.712890625,
+      482.1844177246094,
+      439.712890625
+    ],
+    "runs": [
+      {
+        "text": " attraction to a positively charged filter that separates it from other cellular proteins. "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      90.0,
+      459.822265625,
+      156.59912109375,
+      473.685546875
+    ],
+    "runs": [
+      {
+        "text": " A. "
+      },
+      {
+        "text": " Materials "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      481.794921875,
+      372.8727111816406,
+      495.658203125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Tagged Bacterial Cells w/ Recombinant Protein "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      503.767578125,
+      359.54254150390625,
+      517.630859375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " B-PER® Bacterial Protein Extraction Reagent "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      525.740234375,
+      242.8997344970703,
+      539.603515625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Lysozyme 50mg/mL "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      547.712890625,
+      241.00799560546875,
+      561.576171875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " DNase I, 2500U/mL "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      126.0,
+      569.685546875,
+      252.2692413330078,
+      583.548828125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Buffer Table Prepared "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " B. "
+      },
+      {
+        "text": " Procedure "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      90.0,
+      591.658203125,
+      160.88526916503906,
+      605.521484375
+    ],
+    "runs": [
+      {
+        "text": " B. "
+      },
+      {
+        "text": " Procedure "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      627.494140625,
+      529.6566162109375,
+      639.494140625
+    ],
+    "runs": [
+      {
+        "text": " Loading Buffer Requirements: ",
+        "bold": true
+      },
+      {
+        "text": " The pH value of the loaded sample should be between 7.5 and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 8.0. The sample should not contain higher concentrations of imidazole or histidine (OK up to 10 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " mM) and should be completely devoid of metal-chelating agents, such as EDTA or EGTA, and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " strong reducing agents such as DTT. If you are not sure what is in your sample, you can dilute "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the starting material with one volume of the His-Binding Buffer before proceeding with the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " purification process. "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      649.466796875,
+      537.75390625,
+      661.466796875
+    ],
+    "runs": [
+      {
+        "text": " 8.0. The sample should not contain higher concentrations of imidazole or histidine (OK up to 10 "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      671.439453125,
+      522.2876586914062,
+      683.439453125
+    ],
+    "runs": [
+      {
+        "text": " mM) and should be completely devoid of metal-chelating agents, such as EDTA or EGTA, and "
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "bbox": [
+      72.0,
+      693.412109375,
+      524.85791015625,
+      705.412109375
+    ],
+    "runs": [
+      {
+        "text": " strong reducing agents such as DTT. If you are not sure what is in your sample, you can dilute "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      72.0,
+      74.6484375,
+      516.26806640625,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " the starting material with one volume of the His-Binding Buffer before proceeding with the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " purification process. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      72.0,
+      96.62109375,
+      173.48428344726562,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " purification process. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      126.0,
+      128.73046875,
+      412.8738708496094,
+      142.59375
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Use cold buffers and work on ice for sensitive proteins. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      126.0,
+      150.703125,
+      306.0049743652344,
+      164.56640625
+    ],
+    "runs": [
+      {
+        "text": " b. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Centrifugal steps are at 15,000xg "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      172.67578125,
+      513.4298095703125,
+      186.5390625
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Use your P1000 tip to transfer 250 μl of yellow His-Affinity Gel to the Zymo-Spin P1 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " column and place the column into a collection tube. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      108.0,
+      196.51171875,
+      363.2064208984375,
+      208.51171875
+    ],
+    "runs": [
+      {
+        "text": " column and place the column into a collection tube. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      216.62109375,
+      529.3314819335938,
+      230.484375
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Spin down for 5-10 seconds and ensure that the His-Affinity Gel is completely drained. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      238.59375,
+      510.1645812988281,
+      252.45703125
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 150-300 μl of protein sample and resuspend the gel by shaking or tapping the "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      108.0,
+      262.4296875,
+      523.679931640625,
+      274.4296875
+    ],
+    "runs": [
+      {
+        "text": " column. Resuspend the gel a few more times during a two-minute incubation period. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      126.0,
+      282.5390625,
+      416.99774169921875,
+      296.40234375
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " If adding over 200 μl, incubate for 2 additional minutes. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      304.51171875,
+      527.9203491210938,
+      318.375
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Centrifuge the column/collection tube for 5-10 seconds. Discard the flow-through and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " place the column back in the collection tube. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      108.0,
+      328.34765625,
+      328.8939208984375,
+      340.34765625
+    ],
+    "runs": [
+      {
+        "text": " place the column back in the collection tube. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      348.45703125,
+      370.2881164550781,
+      362.3203125
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 250 μl of His-Wash Buffer and resuspend the gel. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      370.4296875,
+      395.1869812011719,
+      384.29296875
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Centrifuge for 5-10 seconds. Do NOT discard flow-through. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      392.40234375,
+      364.5892333984375,
+      406.265625
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Repeat steps 5 & 6, then discard the collection tube. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      414.375,
+      515.8067626953125,
+      428.23828125
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Place the Zymo-Spin P1 column into a standard microcentrifuge tube. Add 150 μl of "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " His-Elution Buffer to the column and resuspend. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      108.0,
+      438.2109375,
+      344.5259094238281,
+      450.2109375
+    ],
+    "runs": [
+      {
+        "text": " His-Elution Buffer to the column and resuspend. "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      90.0,
+      458.3203125,
+      383.7242736816406,
+      472.18359375
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Centrifuge for 5-10 seconds to elute the purified protein "
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      72.0,
+      607.0296020507812,
+      538.260986328125,
+      618.1986694335938
+    ],
+    "runs": [
+      {
+        "text": " Histagged proteins, or the desired proteins, adhere to a positively charged filter, allowing us to isolate our ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " desired protein. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      72.0,
+      624.2781372070312,
+      143.69259643554688,
+      635.4472045898438
+    ],
+    "runs": [
+      {
+        "text": " desired protein. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "bbox": [
+      72.0,
+      644.7304077148438,
+      363.88262939453125,
+      660.7279052734375
+    ],
+    "runs": [
+      {
+        "text": " Protein Quantification and Characterization ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      72.0,
+      74.6484375,
+      269.82568359375,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " Bicinchoninic Acid Assay Quantification ",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      94.494140625,
+      533.89111328125,
+      106.494140625
+    ],
+    "runs": [
+      {
+        "text": " Eluted protein and crude lysate samples were both quantified using BCA Quantification "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " in a 96-well plate and read at 595 nm. Dilution curve wells were made with Bovine "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Serum Albumin (BSA), with 8 dilution-standardized samples ranging from 2000ug/mL to "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1 "
+      },
+      {
+        "text": "5.625ug/mL of BSA. Standard wells were made in the buffers for each sample: elution "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " buffer and lysis buffer, respectively. A working reagent containing Cu "
+      },
+      {
+        "text": "2+",
+        "sup": true
+      },
+      {
+        "text": " ions is added to "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the samples, so that peptide bonds in the protein undergo chelation and form Cu "
+      },
+      {
+        "text": "+",
+        "sup": true
+      },
+      {
+        "text": " in the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " alkaline environment. These ions react with bicinchoninic acid (BCA) to form a "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " purple-colored complex that absorbs light around 562 nm and provides a means of "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " quantification. "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      111.33984375,
+      510.9354248046875,
+      123.33984375
+    ],
+    "runs": [
+      {
+        "text": " in a 96-well plate and read at 595 nm. Dilution curve wells were made with Bovine "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      128.185546875,
+      536.6785278320312,
+      140.185546875
+    ],
+    "runs": [
+      {
+        "text": " Serum Albumin (BSA), with 8 dilution-standardized samples ranging from 2000ug/mL to "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      143.16796875,
+      533.3707275390625,
+      157.03125
+    ],
+    "runs": [
+      {
+        "text": " 1 "
+      },
+      {
+        "text": "5.625ug/mL of BSA. Standard wells were made in the buffers for each sample: elution "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      160.64297485351562,
+      529.1363525390625,
+      173.876953125
+    ],
+    "runs": [
+      {
+        "text": " buffer and lysis buffer, respectively. A working reagent containing Cu "
+      },
+      {
+        "text": "2+",
+        "sup": true
+      },
+      {
+        "text": " ions is added to "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      173.888671875,
+      540.925048828125,
+      190.72265625
+    ],
+    "runs": [
+      {
+        "text": " the samples, so that peptide bonds in the protein undergo chelation and form Cu "
+      },
+      {
+        "text": "+",
+        "sup": true
+      },
+      {
+        "text": " in the "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      195.568359375,
+      489.4751281738281,
+      207.568359375
+    ],
+    "runs": [
+      {
+        "text": " alkaline environment. These ions react with bicinchoninic acid (BCA) to form a "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      212.4140625,
+      513.0885620117188,
+      224.4140625
+    ],
+    "runs": [
+      {
+        "text": " purple-colored complex that absorbs light around 562 nm and provides a means of "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      229.259765625,
+      181.4795684814453,
+      241.259765625
+    ],
+    "runs": [
+      {
+        "text": " quantification. "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      279.796875,
+      523.2131958007812,
+      291.796875
+    ],
+    "runs": [
+      {
+        "text": " Samples were run in duplicate, where the absorbance was plotted against a standard "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " curve of absorbance versus concentration (R "
+      },
+      {
+        "text": "2",
+        "sup": true
+      },
+      {
+        "text": " = 0.95) to determine sample concentration "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " (ug/mL). "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      295.4085998535156,
+      541.565673828125,
+      308.642578125
+    ],
+    "runs": [
+      {
+        "text": " curve of absorbance versus concentration (R "
+      },
+      {
+        "text": "2",
+        "sup": true
+      },
+      {
+        "text": " = 0.95) to determine sample concentration "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      108.0,
+      313.48828125,
+      152.6515350341797,
+      325.48828125
+    ],
+    "runs": [
+      {
+        "text": " (ug/mL). "
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      95.5107421875,
+      604.376953125,
+      519.1823120117188,
+      616.376953125
+    ],
+    "runs": [
+      {
+        "text": " Plotted standard curve of dilutions for the BCA we used to quantify samples used in the ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SDS-PAGE trials. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      267.169921875,
+      621.22265625,
+      347.5217590332031,
+      633.22265625
+    ],
+    "runs": [
+      {
+        "text": " SDS-PAGE trials. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      72.0,
+      666.9140625,
+      169.32957458496094,
+      678.9140625
+    ],
+    "runs": [
+      {
+        "text": " BCA Quantification ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "bbox": [
+      72.0,
+      688.88671875,
+      526.57861328125,
+      700.88671875
+    ],
+    "runs": [
+      {
+        "text": " Bicinchoninic quantification is a colorimetric method used to measure protein concentration, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " where the binding of bicinchoninic acid to the electrons exposed by denatured proteins "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " produces a color change quantified with a spectrophotometer. "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      72.0,
+      74.6484375,
+      499.7151184082031,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " where the binding of bicinchoninic acid to the electrons exposed by denatured proteins "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " produces a color change quantified with a spectrophotometer. "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      72.0,
+      96.62109375,
+      378.26336669921875,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " produces a color change quantified with a spectrophotometer. "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      72.0,
+      130.59375,
+      121.94246673583984,
+      142.59375
+    ],
+    "runs": [
+      {
+        "text": " Materials ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      157.576171875,
+      246.18118286132812,
+      171.439453125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Microplate reader @480nm "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      174.421875,
+      295.72540283203125,
+      188.28515625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 96 well-plate microplate (transparent) "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      191.267578125,
+      243.13751220703125,
+      205.130859375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Piece BCA Protein Assay Kit "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      208.11328125,
+      239.68692016601562,
+      221.9765625
+    ],
+    "runs": [
+      {
+        "text": " ○ "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Working Reagent A "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      224.958984375,
+      239.2669219970703,
+      238.822265625
+    ],
+    "runs": [
+      {
+        "text": " ○ "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Working Reagent B "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      241.8046875,
+      291.0216979980469,
+      255.66796875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Bovine Serum Albumin (BSA) powder "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      258.650390625,
+      229.12457275390625,
+      272.513671875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protease inhibitor tablet "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      275.49609375,
+      181.656005859375,
+      289.359375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " B-PER solution "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      292.341796875,
+      128.95199584960938,
+      306.205078125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " PBS "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      309.1875,
+      142.260009765625,
+      323.05078125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " DNase "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      326.033203125,
+      157.11239624023438,
+      339.896484375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Lysozyme "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      342.87890625,
+      183.908203125,
+      356.7421875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein sample "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      72.0,
+      373.587890625,
+      125.77729797363281,
+      385.587890625
+    ],
+    "runs": [
+      {
+        "text": " Procedure ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      407.560546875,
+      164.96817016601562,
+      419.560546875
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Make CBLB "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      429.533203125,
+      274.6080017089844,
+      441.533203125
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " In 50 mL of B-PER solution "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      451.505859375,
+      473.87652587890625,
+      463.505859375
+    ],
+    "runs": [
+      {
+        "text": " b. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Combine 2uL DNase, 2uL lysozyme, B-PER, protease inhibitor tablet "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      473.478515625,
+      397.82183837890625,
+      485.478515625
+    ],
+    "runs": [
+      {
+        "text": " c. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 50mL B-PER 100 µL DNase and Lysozyme 1 PI Tablet "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      495.451171875,
+      164.90586853027344,
+      507.451171875
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Create BBB "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      517.423828125,
+      416.9391174316406,
+      529.423828125
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " In a 15mL conical combine 1mL of PBS and 1mL of CBLB "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      539.396484375,
+      299.3755798339844,
+      551.396484375
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Make stock solution of BSA (40mg/mL) "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      561.369140625,
+      499.9219665527344,
+      573.369140625
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " In a 15mL conical tubes, combine 0.5g of BSA powder and 12.5mL of PBS "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      583.341796875,
+      307.1158142089844,
+      595.341796875
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Make working solution of BSA (2mg/mL) "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      605.314453125,
+      424.7404479980469,
+      617.314453125
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " In a 2mL tube combined 50uL of BSA stock and 1mL CBLB "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      627.287109375,
+      305.5631103515625,
+      639.287109375
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Get eight 2mL tubes and label them A-H "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      90.0,
+      649.259765625,
+      192.86610412597656,
+      661.259765625
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Create standards "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      671.232421875,
+      373.7930603027344,
+      683.232421875
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 200uL of BSA working solution into tube A "
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "bbox": [
+      126.0,
+      693.205078125,
+      296.8985900878906,
+      705.205078125
+    ],
+    "runs": [
+      {
+        "text": " b. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 100uL of BBB to tubes B-H "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      126.0,
+      74.6484375,
+      433.9156799316406,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " c. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Take 100uL from tube A and add to tube B. Mix thoroughly. "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      126.0,
+      96.62109375,
+      509.1649475097656,
+      108.62109375
+    ],
+    "runs": [
+      {
+        "text": " d. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Take 100uL from tube B and add to tube C. Mix thoroughly. Continue serial "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " dilutions until all standards are made (until tube H) "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      144.0,
+      118.59375,
+      394.1802673339844,
+      130.59375
+    ],
+    "runs": [
+      {
+        "text": " dilutions until all standards are made (until tube H) "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      140.56640625,
+      326.31341552734375,
+      152.56640625
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Map out plate layout on 96 well sheet paper "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      162.5390625,
+      415.5621643066406,
+      174.5390625
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Load triplicates of every standard and sample into plate reader "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      184.51171875,
+      356.45361328125,
+      196.51171875
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 20uL of each standard to 3 wells in microplate "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      206.484375,
+      348.64892578125,
+      218.484375
+    ],
+    "runs": [
+      {
+        "text": " 10. Add 20uL of each sample to 3 wells in microplate "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      228.45703125,
+      524.2455444335938,
+      240.45703125
+    ],
+    "runs": [
+      {
+        "text": " 11. Make Working Reagent (WR) within 15-30 minutes of use (due to light sensitivity and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " reactiveness) "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      108.0,
+      250.4296875,
+      174.8785400390625,
+      262.4296875
+    ],
+    "runs": [
+      {
+        "text": " reactiveness) "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      126.0,
+      272.40234375,
+      521.3616943359375,
+      284.40234375
+    ],
+    "runs": [
+      {
+        "text": " a. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Use 50mL conical tube covered in foil or tube rack covered in foil to block out "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " light "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      144.0,
+      294.375,
+      168.0816192626953,
+      306.375
+    ],
+    "runs": [
+      {
+        "text": " light "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      126.0,
+      316.34765625,
+      493.0591125488281,
+      328.34765625
+    ],
+    "runs": [
+      {
+        "text": " b. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1:50 ratio of Reagent A to Reagent B, vortex to dissolve blue precipitate "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      126.0,
+      338.3203125,
+      450.4426574707031,
+      350.3203125
+    ],
+    "runs": [
+      {
+        "text": " c. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Cover plate with tinfoil to shield plate from light while working "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      360.29296875,
+      508.21905517578125,
+      372.29296875
+    ],
+    "runs": [
+      {
+        "text": " 12. Add 200uL of WR to every standard and sample well (not blank background wells) "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      382.265625,
+      279.0439758300781,
+      394.265625
+    ],
+    "runs": [
+      {
+        "text": " 13. Add 220uL of BBB buffer to 3 wells "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      404.23828125,
+      538.4260864257812,
+      416.23828125
+    ],
+    "runs": [
+      {
+        "text": " 14. Remove tinfoil and incubate plate at room temperature for 5 minutes. Read plate within "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 30 minutes "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      108.0,
+      426.2109375,
+      165.0968017578125,
+      438.2109375
+    ],
+    "runs": [
+      {
+        "text": " 30 minutes "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      90.0,
+      448.18359375,
+      373.21844482421875,
+      460.18359375
+    ],
+    "runs": [
+      {
+        "text": " 15. Measure the absorbance at 480nm on a plater reader. "
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "bbox": [
+      72.0,
+      647.3261108398438,
+      284.3043518066406,
+      657.3236083984375
+    ],
+    "runs": [
+      {
+        "text": " Credit University Lab Partners, “BCA Quantification” ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      74.6484375,
+      162.87867736816406,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " BCA RESULTS: 8/6 ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      366.287109375,
+      533.4873657226562,
+      378.287109375
+    ],
+    "runs": [
+      {
+        "text": " (Above: Protein Quantification vs BCA Assay) ",
+        "bold": true
+      },
+      {
+        "text": " Crude protein lysate of a large grown-up culture ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " of our first cycle of DBTL proteins. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      383.1328125,
+      237.1712646484375,
+      395.1328125
+    ],
+    "runs": [
+      {
+        "text": " of our first cycle of DBTL proteins. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      416.82421875,
+      318.2547607421875,
+      428.82421875
+    ],
+    "runs": [
+      {
+        "text": " Comparative Protein Sample Concentrations: 8/6 ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      671.3671875,
+      496.20367431640625,
+      683.3671875
+    ],
+    "runs": [
+      {
+        "text": " ( "
+      },
+      {
+        "text": "Above: His-Tagged Protein Concentrations ug/mL) ",
+        "bold": true
+      },
+      {
+        "text": " Crude protein lysate concentration ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " compared to purified protein concentrations shows that in the first DBTL cycle, purified proteins ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " comprised 15- 20% of the mass of total cellular proteins. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      688.212890625,
+      536.414794921875,
+      700.212890625
+    ],
+    "runs": [
+      {
+        "text": " compared to purified protein concentrations shows that in the first DBTL cycle, purified proteins ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "bbox": [
+      72.0,
+      705.05859375,
+      347.2689208984375,
+      717.05859375
+    ],
+    "runs": [
+      {
+        "text": " comprised 15- 20% of the mass of total cellular proteins. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      104.37882995605469,
+      441.4565124511719,
+      120.37632751464844
+    ],
+    "runs": [
+      {
+        "text": " SDS-PAGE (Sodium Dodecyl Sulfate–Polyacrylamide Gel ",
+        "bold": true
+      },
+      {
+        "text": " Electrophoresis)",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      133.6757049560547,
+      182.7392120361328,
+      149.67320251464844
+    ],
+    "runs": [
+      {
+        "text": " Electrophoresis) ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      162.087890625,
+      421.4772033691406,
+      174.087890625
+    ],
+    "runs": [
+      {
+        "text": " Sodium Dodecyl Sulfate–Polyacrylamide Gel Electrophoresis (SDS-PAGE) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      196.060546875,
+      541.4409790039062,
+      208.060546875
+    ],
+    "runs": [
+      {
+        "text": " We used SDS-PAGE to compare a protein's migration distance against a known molecular weight "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " ladder from 250 kilodaltons (kDa) to 10 kilodaltons (kDa). "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      212.90625,
+      353.2763366699219,
+      224.90625
+    ],
+    "runs": [
+      {
+        "text": " ladder from 250 kilodaltons (kDa) to 10 kilodaltons (kDa). "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      241.751953125,
+      538.1737060546875,
+      253.751953125
+    ],
+    "runs": [
+      {
+        "text": " Used to separate proteins primarily by molecular weight. When combined with Coomassie Blue "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " staining, it allows visualization of protein bands to evaluate protein expression, estimate "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " molecular weight, and assess relative purity before and after His-tag purification. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      263.724609375,
+      502.6860656738281,
+      275.724609375
+    ],
+    "runs": [
+      {
+        "text": " staining, it allows visualization of protein bands to evaluate protein expression, estimate "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      285.697265625,
+      467.3819274902344,
+      297.697265625
+    ],
+    "runs": [
+      {
+        "text": " molecular weight, and assess relative purity before and after His-tag purification. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      74.93840026855469,
+      321.8924865722656,
+      129.02804565429688,
+      334.8900146484375
+    ],
+    "runs": [
+      {
+        "text": " Materials ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      347.67578125,
+      189.41619873046875,
+      361.5390625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein Samples "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      362.32421875,
+      387.8672790527344,
+      376.1875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Reducing Agent ("
+      },
+      {
+        "text": "β"
+      },
+      {
+        "text": "-mercaptoethanol, Dithiothreitol, Bolt) "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      376.97265625,
+      315.1025695800781,
+      390.8359375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Chilled 1× Tris-Glycine-SDS Running Buffer "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      391.62109375,
+      253.45660400390625,
+      405.484375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " mPAGE Precast SDS-PAGE Gel "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      406.26953125,
+      314.4520263671875,
+      420.1328125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Laemmli Sample Loading Buffer (LDS Bolt) "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      420.91796875,
+      234.638671875,
+      434.78125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Unstained Protein Ladder "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      435.56640625,
+      311.0350036621094,
+      449.4296875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Mini Gel Tank and Power Supply (BioRad) "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      450.21484375,
+      304.5808410644531,
+      464.078125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Coomassie Brilliant Blue R-250 Aqueous "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      464.86328125,
+      260.1900329589844,
+      478.7265625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Coomassie Destaining Solution "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      479.51171875,
+      191.61624145507812,
+      493.375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Deionized Water "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      494.16015625,
+      219.88429260253906,
+      508.0234375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Microcentrifuge Tubes "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      508.80859375,
+      282.9294128417969,
+      522.671875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Micropipettes and Gel-Loading Tips "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      523.45703125,
+      215.79747009277344,
+      537.3203125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Heat Block set @95 "
+      },
+      {
+        "text": "o",
+        "sup": true
+      },
+      {
+        "text": " C "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      538.10546875,
+      160.3941192626953,
+      551.96875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Ice Bucket "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      552.75390625,
+      219.0860595703125,
+      566.6171875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gel Staining Container "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      567.40234375,
+      179.78616333007812,
+      581.265625
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Orbital Shaker "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      598.1366577148438,
+      143.25039672851562,
+      611.1341552734375
+    ],
+    "runs": [
+      {
+        "text": " 2. Procedure ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      625.783203125,
+      431.4482727050781,
+      637.783203125
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Record the identity and order of every sample loaded into the gel. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      640.431640625,
+      357.4787292480469,
+      652.431640625
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Use the appropriate PPE when handling chemicals. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      90.0,
+      655.080078125,
+      488.4332580566406,
+      667.080078125
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Follow the manufacturer's instructions for the precast gel and electrophoresis "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " equipment. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      108.0,
+      669.728515625,
+      167.14468383789062,
+      681.728515625
+    ],
+    "runs": [
+      {
+        "text": " equipment. "
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "bbox": [
+      72.0,
+      696.376953125,
+      205.39990234375,
+      708.376953125
+    ],
+    "runs": [
+      {
+        "text": " Part I: Sample Preparation ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      74.6484375,
+      306.2685546875,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " Calculate 50-100ng of protein samples per well. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      101.296875,
+      534.0908203125,
+      113.296875
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " (**For 100ng) Add 10 µL of reducing agent and 25 µL of Laemmli sample loading buffer "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " to a microcentrifuge tube. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      108.0,
+      115.9453125,
+      237.8676300048828,
+      127.9453125
+    ],
+    "runs": [
+      {
+        "text": " to a microcentrifuge tube. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      130.59375,
+      338.3439025878906,
+      142.59375
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add estimated µL’s of protein per sample tube. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      145.2421875,
+      434.99188232421875,
+      157.2421875
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Close the tube securely and heat the sample at 95°C for 5 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      171.890625,
+      188.44871520996094,
+      183.890625
+    ],
+    "runs": [
+      {
+        "text": " Part II: Gel Preparation ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      198.5390625,
+      525.29736328125,
+      210.5390625
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Open the precast gel packaging and remove the comb carefully. Make sure to remove "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " straight out. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      108.0,
+      213.1875,
+      169.97137451171875,
+      225.1875
+    ],
+    "runs": [
+      {
+        "text": " straight out. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      227.8359375,
+      537.4209594726562,
+      239.8359375
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Remove the green tape and protective sealing tape from the bottom of the gel cassette. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      242.484375,
+      379.88037109375,
+      254.484375
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Open the gel holder by pulling the green handles apart. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      257.1328125,
+      470.8543701171875,
+      269.1328125
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Insert the gel cassette into the holder, ensuring that the wells face inward. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      271.78125,
+      539.5205078125,
+      283.78125
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " If running a single gel, install the appropriate buffer dam on the opposite side. If running "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " two gels, install the second gel cassette. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      108.0,
+      286.4296875,
+      304.4112243652344,
+      298.4296875
+    ],
+    "runs": [
+      {
+        "text": " two gels, install the second gel cassette. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      301.078125,
+      353.8768310546875,
+      313.078125
+    ],
+    "runs": [
+      {
+        "text": " 10. Place the assembled holder into the mini gel tank. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      315.7265625,
+      532.5153198242188,
+      327.7265625
+    ],
+    "runs": [
+      {
+        "text": " 11. Add 1× Running Buffer to the inner chamber until the wells are covered. Ensure there’s "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " no leakage. Then fill the outer chamber appropriately. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      108.0,
+      330.375,
+      372.68524169921875,
+      342.375
+    ],
+    "runs": [
+      {
+        "text": " no leakage. Then fill the outer chamber appropriately. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      345.0234375,
+      509.0619201660156,
+      357.0234375
+    ],
+    "runs": [
+      {
+        "text": " 12. Gently flush the wells with running buffer using a micropipette to remove residual "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " storage solution and debris. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      108.0,
+      359.671875,
+      245.87942504882812,
+      371.671875
+    ],
+    "runs": [
+      {
+        "text": " storage solution and debris. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      386.3203125,
+      192.05636596679688,
+      398.3203125
+    ],
+    "runs": [
+      {
+        "text": " Part III: Sample Loading ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      412.96875,
+      531.3345947265625,
+      424.96875
+    ],
+    "runs": [
+      {
+        "text": " 14. Using a P10 micropipette with gel-loading tips, withdraw the prepared protein sample. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      427.6171875,
+      477.7959289550781,
+      439.6171875
+    ],
+    "runs": [
+      {
+        "text": " 15. Carefully guide the tip into the appropriate well without puncturing the gel. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      442.265625,
+      311.0908203125,
+      454.265625
+    ],
+    "runs": [
+      {
+        "text": " 16. Slowly dispense the sample into the well. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      456.9140625,
+      384.90789794921875,
+      468.9140625
+    ],
+    "runs": [
+      {
+        "text": " 17. Repeat for all samples, using the recorded loading order. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      471.5625,
+      421.9150390625,
+      483.5625
+    ],
+    "runs": [
+      {
+        "text": " 18. Load 50 µL of unstained protein ladder into the designated well. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      486.2109375,
+      534.7548828125,
+      498.2109375
+    ],
+    "runs": [
+      {
+        "text": " 19. Record the identity of each sample, control, and ladder position before running the gel. "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      512.859375,
+      192.7520751953125,
+      524.859375
+    ],
+    "runs": [
+      {
+        "text": " RENATA Sample Layout: ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      539.5078125,
+      217.3089141845703,
+      551.5078125
+    ],
+    "runs": [
+      {
+        "text": " HT - Hit-tag Purified Samples ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      72.0,
+      566.15625,
+      166.55612182617188,
+      578.15625
+    ],
+    "runs": [
+      {
+        "text": " W - Whole Protein ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      90.0,
+      590.94140625,
+      181.05599975585938,
+      604.8046875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gel 1 — 10/17 "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      607.453125,
+      218.40818786621094,
+      619.453125
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein Ladder "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      622.1015625,
+      218.06591796875,
+      634.1015625
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF3 HT (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      636.75,
+      215.41748046875,
+      648.75
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF3 W (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      651.3984375,
+      236.0039825439453,
+      663.3984375
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF3 W (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      666.046875,
+      238.6439971923828,
+      678.046875
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF3 HT (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      680.6953125,
+      215.41748046875,
+      692.6953125
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF2 W (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "bbox": [
+      126.0,
+      695.34375,
+      218.06591796875,
+      707.34375
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF2 HT (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      74.6484375,
+      236.0039825439453,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF2 W (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      89.296875,
+      232.55999755859375,
+      101.296875
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " SF HT (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      102.08203125,
+      181.05599975585938,
+      115.9453125
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gel 2 — 10/17 "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      118.59375,
+      218.40818786621094,
+      130.59375
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein Ladder "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      133.2421875,
+      250.55014038085938,
+      145.2421875
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BtSult HT (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      147.890625,
+      247.91014099121094,
+      159.890625
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BtSult W (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      162.5390625,
+      227.32958984375,
+      174.5390625
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BtSult W (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      177.1875,
+      229.97802734375,
+      189.1875
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " BtSult HT (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      189.97265625,
+      332.0999450683594,
+      203.8359375
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gel 3 — 10/19 **NEW HT Purified Samples** "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      206.484375,
+      218.40818786621094,
+      218.484375
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein Ladder "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      221.1328125,
+      204.47216796875,
+      233.1328125
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1AB (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      235.78125,
+      225.07199096679688,
+      247.78125
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1AB (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      250.4296875,
+      207.70797729492188,
+      262.4296875
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      265.078125,
+      203.80419921875,
+      277.078125
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 2AE (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      279.7265625,
+      224.39999389648438,
+      291.7265625
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 2AE (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      294.375,
+      203.38818359375,
+      306.375
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 3BE (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      309.0234375,
+      207.70797729492188,
+      321.0234375
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      323.671875,
+      207.70797729492188,
+      335.671875
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      338.3203125,
+      207.70797729492188,
+      350.3203125
+    ],
+    "runs": [
+      {
+        "text": " 10. — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      351.10546875,
+      328.17596435546875,
+      364.96875
+    ],
+    "runs": [
+      {
+        "text": " ● "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Gel 4 — 10/19 **OLD HT Purified Samples** "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      367.6171875,
+      218.40818786621094,
+      379.6171875
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Protein Ladder "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      382.265625,
+      207.70797729492188,
+      394.265625
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      396.9140625,
+      204.47216796875,
+      408.9140625
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 1AB (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      411.5625,
+      207.70797729492188,
+      423.5625
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      426.2109375,
+      203.80419921875,
+      438.2109375
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 2AE (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      440.859375,
+      224.39999389648438,
+      452.859375
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 2AE (Milk Stim.) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      455.5078125,
+      203.38818359375,
+      467.5078125
+    ],
+    "runs": [
+      {
+        "text": " 7. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " 3BE (IPTG+) "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      470.15625,
+      207.70797729492188,
+      482.15625
+    ],
+    "runs": [
+      {
+        "text": " 8. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      484.8046875,
+      207.70797729492188,
+      496.8046875
+    ],
+    "runs": [
+      {
+        "text": " 9. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      126.0,
+      499.453125,
+      207.70797729492188,
+      511.453125
+    ],
+    "runs": [
+      {
+        "text": " 10. — LDS Blank "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      72.0,
+      526.1015625,
+      511.5869140625,
+      538.1015625
+    ],
+    "runs": [
+      {
+        "text": " (Confirm that these sample identities and induction conditions match the samples actually ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " prepared.) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      72.0,
+      540.75,
+      125.74800109863281,
+      552.75
+    ],
+    "runs": [
+      {
+        "text": " prepared.) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      72.0,
+      567.3984375,
+      193.76620483398438,
+      579.3984375
+    ],
+    "runs": [
+      {
+        "text": " Part IV: Running the Gel ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      594.046875,
+      432.7145080566406,
+      606.046875
+    ],
+    "runs": [
+      {
+        "text": " 20. Close the electrophoresis tank and connect it to the power supply. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      608.6953125,
+      534.5034790039062,
+      620.6953125
+    ],
+    "runs": [
+      {
+        "text": " 21. Set the voltage, current, power, and duration according to the validated settings for the "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " specific gel system. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      108.0,
+      623.34375,
+      203.53244018554688,
+      635.34375
+    ],
+    "runs": [
+      {
+        "text": " specific gel system. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      637.9921875,
+      253.47293090820312,
+      649.9921875
+    ],
+    "runs": [
+      {
+        "text": " 22. Start the electrophoresis run. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      652.640625,
+      525.5221557617188,
+      664.640625
+    ],
+    "runs": [
+      {
+        "text": " 23. Confirm that the system is operating and that bubbles are visible near the electrodes. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      90.0,
+      667.2890625,
+      531.5446166992188,
+      679.2890625
+    ],
+    "runs": [
+      {
+        "text": " 24. Monitor the migration of the tracking dye and stop the run when the dye has migrated "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " sufficiently toward the bottom of the gel. "
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "bbox": [
+      108.0,
+      681.9375,
+      311.0205383300781,
+      693.9375
+    ],
+    "runs": [
+      {
+        "text": " sufficiently toward the bottom of the gel. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      74.6484375,
+      339.6891784667969,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " Original settings: ",
+        "bold": true
+      },
+      {
+        "text": " 300 V, 75 mA, 25 W, and 30 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      101.296875,
+      335.5002746582031,
+      113.296875
+    ],
+    "runs": [
+      {
+        "text": " Slower settings: ",
+        "bold": true
+      },
+      {
+        "text": " 100 V, 75 mA, 25 W, and 1-1.5 hours. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      127.9453125,
+      231.89932250976562,
+      139.9453125
+    ],
+    "runs": [
+      {
+        "text": " Part V: Coomassie Blue Staining ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      154.59375,
+      495.8779602050781,
+      166.59375
+    ],
+    "runs": [
+      {
+        "text": " 25. Carefully remove the gel from its cassette and transfer it into a suitable staining "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " container. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      169.2421875,
+      158.8590545654297,
+      181.2421875
+    ],
+    "runs": [
+      {
+        "text": " container. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      183.890625,
+      464.4189758300781,
+      195.890625
+    ],
+    "runs": [
+      {
+        "text": " 26. Add approximately 55 mL of deionized water, or enough to cover the gel. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      198.5390625,
+      463.5348205566406,
+      210.5390625
+    ],
+    "runs": [
+      {
+        "text": " 27. Gently agitate at approximately 40–50 rpm, then discard the rinse water. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      213.1875,
+      283.1583557128906,
+      225.1875
+    ],
+    "runs": [
+      {
+        "text": " 28. Repeat the water rinse three times. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      227.8359375,
+      517.558349609375,
+      239.8359375
+    ],
+    "runs": [
+      {
+        "text": " 29. To prepare the staining solution, add 0.10 g of Brilliant Blue R-250 powder to a glass "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " beaker containing 45 mL of methanol. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      242.484375,
+      295.1466979980469,
+      254.484375
+    ],
+    "runs": [
+      {
+        "text": " beaker containing 45 mL of methanol. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      257.1328125,
+      425.7093200683594,
+      269.1328125
+    ],
+    "runs": [
+      {
+        "text": " 30. Stir until the powder has dissolved and no visible clumps remain. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      271.78125,
+      529.0272827148438,
+      283.78125
+    ],
+    "runs": [
+      {
+        "text": " 31. Add 10 mL of glacial acetic acid, followed by 45 mL of deionized water, and stir for 1–2 "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " minutes. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      286.4296875,
+      153.2438507080078,
+      298.4296875
+    ],
+    "runs": [
+      {
+        "text": " minutes. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      301.078125,
+      527.04345703125,
+      313.078125
+    ],
+    "runs": [
+      {
+        "text": " 32. Filter the solution through Whatman No. 1 filter paper into a suitable, labeled storage "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " bottle. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      315.7265625,
+      142.96243286132812,
+      327.7265625
+    ],
+    "runs": [
+      {
+        "text": " bottle. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      330.375,
+      485.7652893066406,
+      342.375
+    ],
+    "runs": [
+      {
+        "text": " 33. Add approximately 50–60 mL of staining solution to cover the gel completely. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      345.0234375,
+      491.9637145996094,
+      357.0234375
+    ],
+    "runs": [
+      {
+        "text": " 34. Agitate gently and allow the gel to stain for 1–2 hours or overnight, as needed. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      371.671875,
+      517.222412109375,
+      383.671875
+    ],
+    "runs": [
+      {
+        "text": " (Handle methanol and glacial acetic acid according to laboratory safety procedures and the ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " relevant safety data sheets. Prepare and use the staining solution with appropriate ventilation ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " and protective equipment.) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      386.3203125,
+      530.4957885742188,
+      398.3203125
+    ],
+    "runs": [
+      {
+        "text": " relevant safety data sheets. Prepare and use the staining solution with appropriate ventilation ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      400.96875,
+      206.50527954101562,
+      412.96875
+    ],
+    "runs": [
+      {
+        "text": " and protective equipment.) ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      427.6171875,
+      166.95399475097656,
+      439.6171875
+    ],
+    "runs": [
+      {
+        "text": " Part VI: Destaining ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      454.265625,
+      482.6288146972656,
+      466.265625
+    ],
+    "runs": [
+      {
+        "text": " Destaining Solution: Methanol 200mL, Deionized Water 160 mL, Acetic Acid 40 mL ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      480.9140625,
+      423.2613830566406,
+      492.9140625
+    ],
+    "runs": [
+      {
+        "text": " 35. Transfer the stained gel into the appropriate destaining solution. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      495.5625,
+      398.72821044921875,
+      507.5625
+    ],
+    "runs": [
+      {
+        "text": " 36. Agitate the gel at approximately 40–50 rpm for 30 minutes. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      510.2109375,
+      539.14306640625,
+      522.2109375
+    ],
+    "runs": [
+      {
+        "text": " 37. Replace the destaining solution as needed and continue destaining until the background "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " becomes sufficiently clear to distinguish the protein bands. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      524.859375,
+      397.24359130859375,
+      536.859375
+    ],
+    "runs": [
+      {
+        "text": " becomes sufficiently clear to distinguish the protein bands. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      539.5078125,
+      462.6707458496094,
+      551.5078125
+    ],
+    "runs": [
+      {
+        "text": " 38. Document the final gel image for analysis. (e.g. Odyssey CLx/White light) "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      72.0,
+      568.3788452148438,
+      264.05462646484375,
+      581.3763427734375
+    ],
+    "runs": [
+      {
+        "text": " 3. Reading and Interpreting the Gel ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      596.025390625,
+      542.27197265625,
+      608.025390625
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Compare the migration distance of the sample bands with the protein ladder to estimate "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " their molecular weights. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      610.673828125,
+      228.84840393066406,
+      622.673828125
+    ],
+    "runs": [
+      {
+        "text": " their molecular weights. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      625.322265625,
+      463.3420715332031,
+      637.322265625
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Identify bands near the expected molecular weight of the target protein. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      639.970703125,
+      499.7113952636719,
+      651.970703125
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Compare induced and uninduced samples to evaluate whether IPTG induction is "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " associated with increased target-protein expression. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      654.619140625,
+      364.194580078125,
+      666.619140625
+    ],
+    "runs": [
+      {
+        "text": " associated with increased target-protein expression. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      90.0,
+      669.267578125,
+      532.9159545898438,
+      681.267578125
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Examine the number and intensity of bands to assess the sample's apparent purity and "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " relative protein abundance. "
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "bbox": [
+      108.0,
+      683.916015625,
+      245.18014526367188,
+      695.916015625
+    ],
+    "runs": [
+      {
+        "text": " relative protein abundance. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      90.0,
+      74.6484375,
+      492.8989562988281,
+      86.6484375
+    ],
+    "runs": [
+      {
+        "text": " 5. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Look for smearing or unexpected bands that may indicate sample degradation, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " overloading, or the presence of additional proteins. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      108.0,
+      89.296875,
+      361.0769958496094,
+      101.296875
+    ],
+    "runs": [
+      {
+        "text": " overloading, or the presence of additional proteins. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      90.0,
+      103.9453125,
+      442.39630126953125,
+      115.9453125
+    ],
+    "runs": [
+      {
+        "text": " 6. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Save the gel image and document the observations for each sample. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      131.4784393310547,
+      295.0887756347656,
+      147.47593688964844
+    ],
+    "runs": [
+      {
+        "text": " Thin Layer Chromatography (TLC) ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      150.125,
+      503.5942687988281,
+      162.125
+    ],
+    "runs": [
+      {
+        "text": " Thin-layer chromatography (TLC) is a fast, low-cost analytical technique used to separate "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " non-volatile mixtures. It relies on a thin stationary phase (such as silica gel coated on a glass or "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " plastic plate) and a liquid mobile phase (solvent) that travels up the plate via capillary action. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      164.7734375,
+      533.2969970703125,
+      176.7734375
+    ],
+    "runs": [
+      {
+        "text": " non-volatile mixtures. It relies on a thin stationary phase (such as silica gel coated on a glass or "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      179.421875,
+      524.8968505859375,
+      191.421875
+    ],
+    "runs": [
+      {
+        "text": " plastic plate) and a liquid mobile phase (solvent) that travels up the plate via capillary action. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      203.78627014160156,
+      302.28997802734375,
+      216.0697479248047
+    ],
+    "runs": [
+      {
+        "text": " Thin-Layer Chromatography (TLC) Protocol ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      232.87879943847656,
+      122.72480773925781,
+      245.1622772216797
+    ],
+    "runs": [
+      {
+        "text": " Materials ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      247.42506408691406,
+      426.83709716796875,
+      259.7085266113281
+    ],
+    "runs": [
+      {
+        "text": " Lithocholic Acid (LCA) (1 mM), Thermo Fisher, Catalog No. 11-102-2967 "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      261.9713134765625,
+      278.3619079589844,
+      274.2547912597656
+    ],
+    "runs": [
+      {
+        "text": " PAPS, Thermo Fisher, Catalog No. 78243 "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      276.517578125,
+      229.45352172851562,
+      288.8010559082031
+    ],
+    "runs": [
+      {
+        "text": " HEPES (50 mM) reaction buffer "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      291.0638427734375,
+      408.7340087890625,
+      303.3473205566406
+    ],
+    "runs": [
+      {
+        "text": " Silica TLC-Gypsum plates, MilliporeSigma, Catalog No. 1003900001 "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      305.610107421875,
+      526.366455078125,
+      317.8935852050781
+    ],
+    "runs": [
+      {
+        "text": " Phosphomolybdic acid (PMA) ***SUBSTITUTED FOR ACETIC ACID/UV VISUALIZATION*** "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      320.1563720703125,
+      189.94561767578125,
+      332.4398498535156
+    ],
+    "runs": [
+      {
+        "text": " SulFlux Protein Sample "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      334.70263671875,
+      190.96029663085938,
+      346.9861145019531
+    ],
+    "runs": [
+      {
+        "text": " BtSULT Protein Sample "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      349.2489013671875,
+      212.536865234375,
+      361.73101806640625
+    ],
+    "runs": [
+      {
+        "text": " Magnesium chloride (MgCl"
+      },
+      {
+        "text": "₂"
+      },
+      {
+        "text": ") "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      363.795166015625,
+      153.5730438232422,
+      376.0786437988281
+    ],
+    "runs": [
+      {
+        "text": " 1× PBS (10mM) "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      378.3414306640625,
+      129.4356231689453,
+      390.6249084472656
+    ],
+    "runs": [
+      {
+        "text": " Chloroform "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      392.8876953125,
+      120.28744506835938,
+      405.1711730957031
+    ],
+    "runs": [
+      {
+        "text": " Methanol "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      407.4339599609375,
+      128.2222900390625,
+      419.7174377441406
+    ],
+    "runs": [
+      {
+        "text": " Acetic acid "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      421.980224609375,
+      155.9245147705078,
+      434.2637023925781
+    ],
+    "runs": [
+      {
+        "text": " Deionized Water "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      436.5264892578125,
+      112.34721374511719,
+      448.8099670410156
+    ],
+    "runs": [
+      {
+        "text": " Ethanol "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      451.07275390625,
+      347.0213928222656,
+      463.3562316894531
+    ],
+    "runs": [
+      {
+        "text": " Beakers, Micropipettes and pipette tips, Pencil and ruler "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      465.6190185546875,
+      153.28314208984375,
+      477.9024963378906
+    ],
+    "runs": [
+      {
+        "text": " Microfuge tubes "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      494.7115478515625,
+      284.0151062011719,
+      506.9950256347656
+    ],
+    "runs": [
+      {
+        "text": " Part I: Preparation of Enzyme Reactions ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      509.2578125,
+      413.0557556152344,
+      521.5413208007812
+    ],
+    "runs": [
+      {
+        "text": " Label the enzyme reaction tubes according to the reaction conditions. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      655.7947998046875,
+      525.7639770507812,
+      667.7947998046875
+    ],
+    "runs": [
+      {
+        "text": " Practical Sample Setup for TLC: ",
+        "bold": true
+      },
+      {
+        "text": " This table shows the setup of the reactions we used for each "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " respective protein to maintain an appropriate amount of protein-to-substrate and buffer ratio. "
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "bbox": [
+      72.0,
+      674.3729248046875,
+      533.1111450195312,
+      686.3729248046875
+    ],
+    "runs": [
+      {
+        "text": " respective protein to maintain an appropriate amount of protein-to-substrate and buffer ratio. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      72.36438751220703,
+      519.3604125976562,
+      84.64786529541016
+    ],
+    "runs": [
+      {
+        "text": " Prepare the enzyme reaction mixtures using the appropriate combinations of enzyme, LCA, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " buffer (1× PBS or HEPES), MgCl"
+      },
+      {
+        "text": "₂"
+      },
+      {
+        "text": ", and PAPS, as indicated in the original protocol. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      86.91065216064453,
+      473.4207458496094,
+      99.39276885986328
+    ],
+    "runs": [
+      {
+        "text": " buffer (1× PBS or HEPES), MgCl"
+      },
+      {
+        "text": "₂"
+      },
+      {
+        "text": ", and PAPS, as indicated in the original protocol. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      116.00318145751953,
+      216.19293212890625,
+      128.2866668701172
+    ],
+    "runs": [
+      {
+        "text": " Part II: Solvent Preparation ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      130.54945373535156,
+      337.2344055175781,
+      142.8329315185547
+    ],
+    "runs": [
+      {
+        "text": " Prepare the chloroform and methanol solvent mixture. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      159.64198303222656,
+      293.9878845214844,
+      171.9254608154297
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 115 mL’s of chloroform (3.25 mL) "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      174.18824768066406,
+      244.1023712158203,
+      186.4717254638672
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 42.5 mL’s of methanol. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      188.73451232910156,
+      378.1252136230469,
+      201.0179901123047
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Add 26.5 mL of acetic acid to 16 mL of water and swirl. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      203.28077697753906,
+      527.2500610351562,
+      215.5642547607422
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Pour solvent in beaker to less than 1 cm in height-- must be shorter than pencil drawn "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " line. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      108.0,
+      217.82704162597656,
+      131.2266082763672,
+      230.1105194091797
+    ],
+    "runs": [
+      {
+        "text": " line. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      246.91957092285156,
+      532.255615234375,
+      259.2030334472656
+    ],
+    "runs": [
+      {
+        "text": " Pour the prepared developing solvent into a beaker to a depth of less than 1 cm, ensuring that "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " the solvent level remains below the pencil line used for spotting the TLC plate. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      261.4658203125,
+      454.5982666015625,
+      273.7492980957031
+    ],
+    "runs": [
+      {
+        "text": " the solvent level remains below the pencil line used for spotting the TLC plate. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      290.558349609375,
+      233.26527404785156,
+      302.8418273925781
+    ],
+    "runs": [
+      {
+        "text": " Part III: Spotting the TLC Plate ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      305.1046142578125,
+      452.1018981933594,
+      317.3880920410156
+    ],
+    "runs": [
+      {
+        "text": " Draw a pencil line approximately 1 cm from the bottom of the silica TLC plate. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Label each lane sequentially to keep track of the samples. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      319.65087890625,
+      357.4365539550781,
+      331.9343566894531
+    ],
+    "runs": [
+      {
+        "text": " Label each lane sequentially to keep track of the samples. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      348.743408203125,
+      474.5193176269531,
+      361.0268859863281
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Spot with a micropipette 2uL’s of each sample reaction onto the pencil line. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      363.2896728515625,
+      276.4645080566406,
+      375.5731506347656
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Allow each spot to dry completely. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      377.8359375,
+      534.02001953125,
+      390.1194152832031
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Repeat the spotting process as needed to concentrate each sample, allowing the spots "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " to dry between applications. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      108.0,
+      392.3822021484375,
+      247.35574340820312,
+      404.6656799316406
+    ],
+    "runs": [
+      {
+        "text": " to dry between applications. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      421.4747314453125,
+      248.56588745117188,
+      433.7582092285156
+    ],
+    "runs": [
+      {
+        "text": " Part IV: Developing the TLC Plate ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      436.02099609375,
+      500.4068603515625,
+      448.3044738769531
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Place the spotted TLC plate into the developing chamber containing the solvent. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      450.5672607421875,
+      496.7239074707031,
+      462.8507385253906
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Ensure that the solvent level is below the pencil baseline and the sample spots. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      465.113525390625,
+      363.46343994140625,
+      477.3970031738281
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Allow the solvent front to travel up most of the plate. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      479.6597900390625,
+      432.9122619628906,
+      491.9432678222656
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Remove the plate from the chamber and allow it to "
+      },
+      {
+        "text": " dry completely. ",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      72.0,
+      508.7523193359375,
+      285.8189392089844,
+      521.0358276367188
+    ],
+    "runs": [
+      {
+        "text": " Part V: Staining and Quantifying Results ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      523.298583984375,
+      516.271240234375,
+      535.5820922851562
+    ],
+    "runs": [
+      {
+        "text": " 1. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Prepare the phosphomolybdic acid (PMA) staining solution using PMA and ethanol, "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " bringing the solution to the required final volume. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      108.0,
+      537.8448486328125,
+      348.2057800292969,
+      550.1283569335938
+    ],
+    "runs": [
+      {
+        "text": " bringing the solution to the required final volume. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      552.39111328125,
+      397.07110595703125,
+      564.6746215820312
+    ],
+    "runs": [
+      {
+        "text": " 2. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Briefly dip or spray the TLC plate with the staining solution. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      566.9373779296875,
+      270.9670715332031,
+      579.2208862304688
+    ],
+    "runs": [
+      {
+        "text": " 3. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Allow the plate to dry completely. "
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "bbox": [
+      90.0,
+      581.483642578125,
+      501.6308898925781,
+      593.7671508789062
+    ],
+    "runs": [
+      {
+        "text": " 4. "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Examine the stained plate and quantify the results based on the observed spots. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      296.126953125,
+      265.183349609375,
+      354.8747863769531,
+      278.472412109375
+    ],
+    "runs": [
+      {
+        "text": " References ",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      108.0,
+      292.781005859375,
+      511.90191650390625,
+      306.070068359375
+    ],
+    "runs": [
+      {
+        "text": " Adrianza, R. (2026). "
+      },
+      {
+        "text": " Education | University Lab Partners ",
+        "italic": true
+      },
+      {
+        "text": ". University Lab Partners. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      320.378662109375,
+      378.63262939453125,
+      333.667724609375
+    ],
+    "runs": [
+      {
+        "text": " https://www.universitylabpartners.org/education "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Utilized procedures from ULP IMPOWERS laboratory manuals: Molecular "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " Biology 1 and Molecular Biology 2 "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      347.976318359375,
+      510.6120300292969,
+      361.265380859375
+    ],
+    "runs": [
+      {
+        "text": " Utilized procedures from ULP IMPOWERS laboratory manuals: Molecular "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      375.573974609375,
+      318.0,
+      388.863037109375
+    ],
+    "runs": [
+      {
+        "text": " Biology 1 and Molecular Biology 2 "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      108.0,
+      402.89532470703125,
+      466.7013244628906,
+      416.460693359375
+    ],
+    "runs": [
+      {
+        "text": " B-PER ",
+        "italic": true
+      },
+      {
+        "text": "TM",
+        "italic": true,
+        "sup": true
+      },
+      {
+        "text": " bacterial protein extraction reagent ",
+        "italic": true
+      },
+      {
+        "text": ". (2026). Thermofisher.Com. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      430.769287109375,
+      432.8529968261719,
+      444.058349609375
+    ],
+    "runs": [
+      {
+        "text": " https://www.thermofisher.com/order/catalog/product/90084 "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      108.0,
+      458.366943359375,
+      469.0231018066406,
+      471.656005859375
+    ],
+    "runs": [
+      {
+        "text": " Cass, O.W, Cowen, A.E, Hofmann, A.F, & Coffin, S.B. (1975). Thin-layer "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " chromatographic separation of sulfated and nonsulfated lithocholic acids and their "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " glycine and taurine conjugates. "
+      },
+      {
+        "text": " Journal of Lipid Research ",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": " 16 ",
+        "italic": true
+      },
+      {
+        "text": "(2), 159–160. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      485.964599609375,
+      541.260009765625,
+      499.253662109375
+    ],
+    "runs": [
+      {
+        "text": " chromatographic separation of sulfated and nonsulfated lithocholic acids and their "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      513.562255859375,
+      507.48028564453125,
+      526.851318359375
+    ],
+    "runs": [
+      {
+        "text": " glycine and taurine conjugates. "
+      },
+      {
+        "text": " Journal of Lipid Research ",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": " 16 ",
+        "italic": true
+      },
+      {
+        "text": "(2), 159–160. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      541.159912109375,
+      378.7811279296875,
+      554.448974609375
+    ],
+    "runs": [
+      {
+        "text": " https://doi.org/10.1016/S0022-2275(20)36743-2 "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      108.0,
+      568.757568359375,
+      450.81024169921875,
+      582.046630859375
+    ],
+    "runs": [
+      {
+        "text": " GSL Biotech LLC. (2023). "
+      },
+      {
+        "text": " pET-28a(+) sequence and map ",
+        "italic": true
+      },
+      {
+        "text": ". SnapGene. "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      596.355224609375,
+      534.3590698242188,
+      609.644287109375
+    ],
+    "runs": [
+      {
+        "text": " https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-28a( "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " %2B) "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      144.0,
+      623.952880859375,
+      174.99600219726562,
+      637.241943359375
+    ],
+    "runs": [
+      {
+        "text": " %2B) "
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "bbox": [
+      108.0,
+      651.550537109375,
+      355.4036865234375,
+      664.839599609375
+    ],
+    "runs": [
+      {
+        "text": " His-Spin Protein Miniprep ",
+        "italic": true
+      },
+      {
+        "text": ". (n.d.). Zymo Research. "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      72.509765625,
+      540.9465942382812,
+      85.798828125
+    ],
+    "runs": [
+      {
+        "text": " https://www.zymoresearch.com/products/his-spin-protein-miniprep?srsltid=AU7g "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " w4Um7__JHS7xZIZ9W_qgeMnm-ctZUkOm-A3Q_pEpMtA2YC2tZo1w "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      100.107421875,
+      502.968017578125,
+      113.396484375
+    ],
+    "runs": [
+      {
+        "text": " w4Um7__JHS7xZIZ9W_qgeMnm-ctZUkOm-A3Q_pEpMtA2YC2tZo1w "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      108.0,
+      127.705078125,
+      521.6445922851562,
+      140.994140625
+    ],
+    "runs": [
+      {
+        "text": " Shenekji, J. (2024). "
+      },
+      {
+        "text": " Using skimmed milk as a low-cost alternative to IPTG in plasmid ",
+        "italic": true
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " expression induction (LacZ promoter) V1 ",
+        "italic": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      155.302734375,
+      348.421875,
+      168.591796875
+    ],
+    "runs": [
+      {
+        "text": " expression induction (LacZ promoter) V1 ",
+        "italic": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      182.900390625,
+      402.7931213378906,
+      196.189453125
+    ],
+    "runs": [
+      {
+        "text": " https://doi.org/10.17504/protocols.io.j8nlk81z6l5r/v1 "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      108.0,
+      210.498046875,
+      515.9525146484375,
+      223.787109375
+    ],
+    "runs": [
+      {
+        "text": " Zhao, X., Liu, Z., Sun, F., Yao, L., Yang, G., & Wang, K. (2022). Bile acid detection "
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": " techniques and bile acid-related diseases. "
+      },
+      {
+        "text": " Frontiers in Physiology ",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": " 13 ",
+        "italic": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      238.095703125,
+      482.126953125,
+      251.384765625
+    ],
+    "runs": [
+      {
+        "text": " techniques and bile acid-related diseases. "
+      },
+      {
+        "text": " Frontiers in Physiology ",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": " 13 ",
+        "italic": true
+      },
+      {
+        "text": ". "
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "bbox": [
+      144.0,
+      265.693359375,
+      352.78912353515625,
+      278.982421875
+    ],
+    "runs": [
+      {
+        "text": " https://doi.org/10.3389/fphys.2022.826740 "
+      }
+    ]
+  }
+]

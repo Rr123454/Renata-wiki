@@ -107,3 +107,17 @@ body[data-page] .lab-page { padding-block: clamp(28px, 5vw, 68px); }
   .lab-data-table :is(th,td) { padding:10px; min-width:95px; }
   .lab-historical[open] { padding-inline:12px; }
 }
+
+/* Wetlab subtabs link to permanent sections, preserving existing experiment and protocol anchors. */
+.lab-page--wetlab .wetlab-subtabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:36px; }
+.lab-page--wetlab .wetlab-subtab { display:flex; align-items:center; gap:9px; min-height:72px; padding:14px 16px; border:1px solid #24305e30; border-bottom:3px solid #db8050; border-radius:12px; background:#fffaf2; color:#24305e; text-decoration:none; line-height:1.3; }
+.lab-page--wetlab .wetlab-subtab strong { flex:1 1 auto; overflow-wrap:anywhere; font-size:.92rem; }
+.lab-page--wetlab .wetlab-subtab-number { flex:none; font-size:.66rem; font-weight:800; letter-spacing:.1em; color:#a05435; }
+.lab-page--wetlab .wetlab-subtab:hover, .lab-page--wetlab .wetlab-subtab:focus-visible { background:#f4dec4; border-color:#db8050; }
+.lab-page--wetlab .wetlab-subsection { padding:24px 0 42px; margin-bottom:36px; border-bottom:1px solid #24305e33; scroll-margin-top:calc(var(--site-header-height,88px) + 24px); }
+.lab-page--wetlab .wetlab-subsection > h2 { font-size:clamp(1.8rem,3vw,2.65rem); margin:8px 0 20px; line-height:1.2; }
+.lab-page--wetlab .wetlab-question-grid { margin-top:16px; }
+@media (max-width:900px) {
+  .lab-page--wetlab .wetlab-subtabs { grid-template-columns:1fr; }
+  .lab-page--wetlab .wetlab-subtab { min-height:54px; }
+}

@@ -1366,6 +1366,6 @@
     "Four missing page-1 glyphs restored to β with explicit user approval.",
     "Line wraps and extraction artifacts (split underscores and spacing before punctuation) repaired against PDF rendering.",
     "Table cells transcribed from the PDF, with continuation rows joined and repeated column headings omitted.",
-    "All wording and source inconsistencies retained, including the editorial parenthetical in section 3."
+    "Source inconsistencies are retained. The editorial parenthetical in section 3 remains in the raw source field; the displayed heading omits the editor-facing note."
   ]
 }

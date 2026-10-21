@@ -80,6 +80,11 @@ class ModelDocumentTest(unittest.TestCase):
             expected = " ".join(b["source"].split())
             for old, new in repairs.items():
                 expected = expected.replace(old, new)
+            # The raw source keeps this editor-facing note; the published
+            # section heading already omits it. Keep the exception block-specific.
+            if b["key"] == "b023":
+                self.assertEqual(expected, "3. Mutagenesis Screens (break this into more subtabs wiki ppl)")
+                expected = "3. Mutagenesis Screens"
             self.assertEqual(b["text"], expected, b["key"])
             self.assertEqual(self.parsed.blocks[b["key"]], expected, b["key"])
         page_one = " ".join(b["text"] for b in self.doc["blocks"] if b["pages"] == [1])

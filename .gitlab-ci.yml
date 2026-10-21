@@ -9,6 +9,7 @@ verify:
   stage: test
   script:
     - python3 scripts/build-model.py --check
+    - python3 scripts/build-wetlab.py --check
     - node scripts/build-home.js
     - node --test tests/*.test.js
     - python3 -m unittest discover -s tests -p 'test_*.py'
@@ -23,6 +24,7 @@ preview:
   stage: build
   script:
     - python3 scripts/build-model.py
+    - python3 scripts/build-wetlab.py
     - node scripts/build-home.js
     - python3 scripts/build-wiki.py --output public
   artifacts:
@@ -36,6 +38,7 @@ pages:
   stage: deploy
   script:
     - python3 scripts/build-model.py
+    - python3 scripts/build-wetlab.py
     - node scripts/build-home.js
     - python3 scripts/build-wiki.py --release --output public
   artifacts:

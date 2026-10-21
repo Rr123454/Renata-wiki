@@ -135,10 +135,10 @@ test("dropdown cards carry the section icons that used to sit in the menu bar", 
 test("Notebook is an independent Lab Work destination with its own current-page marker", () => {
   const lab = data.nav.find(item => item.key === "lab-work");
   assert.deepEqual(Array.from(lab.children, item => item.key), ["wet-lab", "wet-lab-notebook", "model"]);
-  assert.equal(lab.children.every(child => !child.children), true);
+  assert.deepEqual(Array.from(lab.children[0].children, item => item.label), ["Process/Background", "Model Wetlab", "Experimentation/Protocols"]);
   const markup = render(data.nav, { pageKey: "wet-lab-notebook", group: "lab-work" });
   assert.match(markup, /href="wet-lab-notebook.html" aria-current="page"/);
-  assert.doesNotMatch(markup, /is-section" href="wet-lab.html"|renata-nav-subpages/);
+  assert.match(markup, /renata-nav-subpages/);
 });
 
 test("the sponsor navigation card stays out while the footer carousel data is intact", () => {
@@ -301,11 +301,11 @@ test("Lab Work lists Wetlab, Notebook, and Model, each reachable by keyboard", (
   const trigger = f.triggers[labIndex];
   trigger.focus(); trigger.emit("keydown", { key: "ArrowDown" });
   const links = f.panels[labIndex].querySelectorAll("a");
-  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "wet-lab-notebook.html", "model.html"]);
+  assert.deepEqual(links.map(link => link.getAttribute("href")), ["wet-lab.html", "wet-lab.html#process-background", "wet-lab.html#model-wetlab", "wet-lab.html#experimentation-protocols", "wet-lab-notebook.html", "model.html"]);
   assert.equal(f.panels[labIndex].querySelectorAll("img").length, 3, "icons now live on the dropdown cards");
   links[0].emit("keydown", { key: "End" });
-  assert.equal(f.doc.activeElement, links[2]);
-  links[2].emit("keydown", { key: "Home" });
+  assert.equal(f.doc.activeElement, links[5]);
+  links[5].emit("keydown", { key: "Home" });
   assert.equal(f.doc.activeElement, links[0]);
 });
 
