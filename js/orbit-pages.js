@@ -101,7 +101,7 @@
   }
 
   function createSceneController({ win, doc, reduced, measure, paint }) {
-    let frame = 0, last = null, elapsed = 0, visible = true, progress = 0;
+    let frame = 0, last = null, elapsed = 0, visible = true, progress = 0, targetProgress = 0;
     let previousTheta = null, direction = 1;
     let target = { x: 0, y: 0 }, pointer = { x: 0, y: 0 };
     function allowed() { return !reduced.matches && !doc.hidden && visible; }
@@ -114,7 +114,7 @@
       const smoothing = 1 - Math.exp(-delta / 110);
       pointer.x += (target.x - pointer.x) * smoothing;
       pointer.y += (target.y - pointer.y) * smoothing;
-      progress += (measure().progress - progress) * smoothing;
+      progress += (targetProgress - progress) * smoothing;
       let state = sceneState(progress, elapsed, pointer);
       const turn = previousTheta === null ? 0 : state.theta - previousTheta;
       if (Math.abs(turn) > 1e-7) direction = turn < 0 ? -1 : 1;
@@ -124,7 +124,9 @@
       frame = win.requestAnimationFrame(render);
     }
     function sync() {
-      const bounds = measure(); visible = bounds.visible;
+      const bounds = measure();
+      visible = bounds.visible;
+      targetProgress = clamp(bounds.progress);
       if (!allowed()) {
         cancel();
         if (reduced.matches) paint(sceneState(0, 0));
@@ -147,8 +149,13 @@
     const trail = scene.querySelector(".orbit-scene-trail");
     const reduced = win.matchMedia("(prefers-reduced-motion: reduce)");
     const fine = win.matchMedia("(hover: hover) and (pointer: fine)");
+    let pointerBox = null;
     const controller = createSceneController({ win, doc, reduced,
-      measure() { const box = hero.getBoundingClientRect(); return { visible: box.bottom > 0 && box.top < win.innerHeight, progress: clamp(-box.top / Math.max(1, box.height)) }; },
+      measure() {
+        const box = hero.getBoundingClientRect();
+        pointerBox = box;
+        return { visible: box.bottom > 0 && box.top < win.innerHeight, progress: clamp(-box.top / Math.max(1, box.height)) };
+      },
       paint(state) {
         craft.setAttribute("transform", `translate(${state.x} ${state.y}) rotate(${state.angle})`);
         center.setAttribute("transform", `translate(0 ${state.float})`);
@@ -161,7 +168,8 @@
     });
     hero.addEventListener("pointermove", event => {
       if (!fine.matches || event.pointerType !== "mouse") return;
-      const box = hero.getBoundingClientRect();
+      const box = pointerBox || hero.getBoundingClientRect();
+      pointerBox = box;
       controller.point((event.clientX - box.left) / box.width * 2 - 1, (event.clientY - box.top) / box.height * 2 - 1);
     });
     hero.addEventListener("pointerleave", () => controller.point(0, 0));

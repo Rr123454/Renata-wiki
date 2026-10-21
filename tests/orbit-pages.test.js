@@ -137,11 +137,12 @@ test("scene motion plays automatically, honors reduced motion, and resumes when 
   const step = () => { time += 16; const callbacks = [...frames.values()]; frames.clear(); callbacks.forEach(fn => fn(time)); };
   controller.sync(); step(); step();
   assert.equal(frames.size, 1);
+  const measuresAfterSync = painted.length;
   assert.notEqual(painted[0].theta, painted[1].theta, "the scene moves without interaction");
-  controller.point(1, 1); progress = .7; step(); step();
+  controller.point(1, 1); progress = .7; controller.sync(); step(); step();
   assert.ok(painted.at(-1).tiltY > 0);
   assert.equal(painted.at(-1).direction, 1);
-  progress = 0; step();
+  progress = 0; controller.sync(); step();
   assert.equal(painted.at(-1).direction, -1, "scrolling back reverses the nose and trail together");
   assert.equal(painted.at(-1).trailSweep, 0);
   visible = false; controller.sync(); assert.equal(frames.size, 0);

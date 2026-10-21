@@ -16,6 +16,7 @@
   renderHeader();
   window.RenataNavigation.init(document.querySelector(".renata-nav"));
   renderMain();
+  initMemberPhotos();
   if (!["home", "project-description", "wet-lab", "wet-lab-notebook", "model"].includes(pageKey)) window.RenataPages.decorate(document.getElementById("siteMain"), { pageKey, pageData });
   initProjectSidebar();
   renderFooter();
@@ -100,6 +101,31 @@
     });
   }
 
+  function initMemberPhotos() {
+    if (pageKey !== "team") return;
+    const images = [...document.querySelectorAll("img.member-photo[data-src]")];
+    if (!images.length) return;
+    const load = image => {
+      const src = image.dataset.src;
+      if (!src) return;
+      image.src = src;
+      image.removeAttribute("data-src");
+    };
+    if (!("IntersectionObserver" in window)) {
+      images.forEach(load);
+      return;
+    }
+    const observer = new window.IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        load(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "700px 0px" });
+    images.forEach(image => observer.observe(image));
+    window.addEventListener("pagehide", () => observer.disconnect(), { once: true });
+  }
+
   function renderMain() {
     const main = document.getElementById("siteMain");
     if (!main || pageKey === "home" || main.dataset.staticContent === "true") return;
@@ -178,7 +204,7 @@
     const memberRole = escape(typeof member === "string" ? group.memberLabel : member.role);
     const memberPhoto = typeof member === "string" ? "" : member.photo;
     const portrait = memberPhoto
-      ? `<img class="member-photo" src="${escape(memberPhoto)}" alt="Portrait of ${memberName}" loading="lazy" decoding="async" />`
+      ? `<img class="member-photo" data-src="${escape(memberPhoto)}" alt="Portrait of ${memberName}" loading="lazy" decoding="async" fetchpriority="low" />`
       : `<div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for ${memberName}">
           <span aria-hidden="true">+</span>
         </div>`;

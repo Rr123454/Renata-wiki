@@ -71,6 +71,9 @@ test("compact cards expose an accessible full-card button and escape member text
   const render = vm.runInNewContext(`(${source.slice(start, end).trim()})`);
   const html = render({ key: "students" }, { name: 'Test <Name> "One"', role: "R&D", bio: "Long private draft" }, 3);
   assert.match(html, /data-member-profile="students:3"/);
+  assert.match(html, /data-src=/);
+  assert.match(html, /fetchpriority="low"/);
+  assert.doesNotMatch(html, /class="member-photo" src=/);
   assert.match(html, /aria-haspopup="dialog"/);
   assert.match(html, /type="button"/);
   assert.match(html, /Test &lt;Name&gt; &quot;One&quot;/);

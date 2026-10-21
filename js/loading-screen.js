@@ -1,6 +1,11 @@
 /* A short, skippable loading screen; it never locks scrolling or hides content. */
 (function () {
   "use strict";
+  const sessionKey = "renata-loader-seen-v1";
+  try {
+    if (window.sessionStorage?.getItem(sessionKey) === "1") return;
+    window.sessionStorage?.setItem(sessionKey, "1");
+  } catch {}
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   const started = performance.now();
   const loader = document.createElement("div");

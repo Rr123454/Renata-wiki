@@ -1,6 +1,5 @@
 # Local PDF build dependencies and review artifacts; the website PDF lives in assets/documents.
-/tmp/pdf-tools/
-/tmp/pdfs/
+/tmp/
 /output/pdf/
 /public/
 /build/
